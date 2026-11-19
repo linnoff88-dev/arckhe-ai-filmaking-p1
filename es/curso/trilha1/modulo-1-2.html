@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 1.2 — Control espacial cinematográfico | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:1-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>1</b> Fundamentos (Luz)</span>
+<span class="sep">·</span>
+<span>Módulo <b>1.2</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Sección 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Módulo 1.2 · Ruta 1 · Fundamentos (Luz)</p>
+<h1 class="module">Control espacial <em>Cinematográfico</em></h1>
+<p class="deck">El cine no consiste en crear imágenes bonitas, sino en controlar el espacio, la atención y la emoción. Cada
+          cuadro profesional responde en un instante a tres preguntas: dónde miramos, qué sentimos y dónde
+          estamos en el espacio.</p>
+<p class="read-meta">
+<span class="here">Leyendo ahora</span>
+<span>~17 min · módulo completo</span>
+<span>5 secciones</span>
+</p>
+<!-- objetivos -->
+<section aria-label="Lo que vas a entender" class="aims">
+<h2>Lo que vas a entender</h2>
+<ul>
+<li>Por qué <b>composición y jerarquía</b>, no decoración — y cómo el peso visual decide qué ve primero el ojo.</li>
+<li>Cómo el <b>blocking</b>, la línea de la mirada y la regla de los 180° convierten la posición en poder, tensión y claridad.</li>
+<li>Los <b>sistemas de encuadre</b> — regla de los tercios, simetría, diagonales, líneas guía, espacio negativo — y lo que cada uno hace sentir.</li>
+<li>Cómo la <b>profundidad en tres capas</b> separa el encuadre plano del cine y cómo la gramática de los planos guía la emoción.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<p class="toc-head">Resumen: cinco movimientos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Composición y jerarquía, no decoración</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Bloqueo, línea de mirada y la regla de los 180°</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Los sistemas de encuadre</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Profundidad en tres capas</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">La gramática de los planos</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-1" data-inema-track="1" id="topico-1">
+<div class="section-mark">
+<span class="where">Sección 1 de 5</span><span>·</span><span>Jerarquía</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Composición y jerarquía, no decoración</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m1-2-t1-p1">La composición es la <em>arquitectura del
+              encuadre</em>.<span class="sidenote-ref">1</span> No es la disposición bonita de los elementos, sino la
+              organización intencional del <em>peso visual</em> dentro del encuadre. Todo cuadro profesional
+              contiene tres cosas: un punto focal dominante, elementos secundarios que lo apoyan y un espacio
+              negativo controlado. Cuando esta jerarquía es clara, el espectador siente claridad y emoción. Cuando
+              colapsa, la imagen se convierte en ruido — bonita, quizá, pero sin dirección.</p>
+<p data-inema-block="m1-2-t1-p2">El peso visual no es un misterio: se controla mediante el brillo y el contraste,
+              el tamaño y la escala, el movimiento, el predominio del color y la posición en el encuadre. Un punto claro
+              sobre un fondo oscuro atrae la mirada; un elemento grande pesa más que uno pequeño; lo que se mueve vence a lo
+              que está quieto. <strong>La composición fuerte controla la atención</strong> — crea el tono
+              emocional, guía el foco narrativo y construye el ritmo de la escena. Nada en un cuadro profesional es
+              accidental: personajes, objetos, luz, vacío y movimiento se colocan con intención.</p>
+<h3 class="sub">Un centro de gravedad, siempre</h3>
+<p data-inema-block="m1-2-t1-p3">La regla que organiza todo: cada cuadro debe tener <em>un</em> punto
+              focal dominante, y todo lo demás lo apoya, lo equilibra, lo enmarca o lo contrasta. Cuando dos
+              elementos compiten por el mismo peso, la mirada duda — y la duda es exactamente la sensación de
+              una imagen amateur. Antes de generar o aprobar un cuadro, pregúntate: <strong>si mirara durante
+              medio segundo, ¿hacia dónde iría mi mirada?</strong> Si la respuesta es «no sé», falta
+              jerarquía.</p>
+</div>
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Generas una imagen con dos personajes iluminados por igual, del mismo tamaño, uno en cada
+              mitad del encuadre. La composición parece «incorrecta» aunque no haya nada feo. ¿Por qué?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">Porque no hay <strong>punto focal dominante</strong> — ambos compiten por el mismo peso visual y la mirada queda atrapada en medio, sin saber qué importa. La corrección no es estética, sino de jerarquía: cambia la luz, la escala o la posición para que <em>un</em> de ellos lidere y el otro apoye.</p>
+</details>
+</div>
+<!-- figura 1: hierarquia x ruido -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · Peso visual con <b>un centro</b> — la mirada sabe dónde posarse</figcaption>
+<svg aria-label="Diagrama: a la izquierda, elementos con el mismo peso y sin jerarquía; a la derecha, un punto focal dominante respaldado por elementos secundarios y espacio negativo." class="diagram" role="img" viewbox="0 0 720 206">
+<defs>
+<pattern height="6" id="hatch-1-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- esquerda -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="175" y="28">JERARQUÍA COLAPSADA</text>
+<rect class="rule-stroke" fill="none" height="138" rx="3" stroke-width="1.2" width="270" x="40" y="42"></rect>
+<g class="rule-stroke" fill="none" stroke-width="1.3">
+<circle cx="100" cy="95" r="24"></circle><circle cx="200" cy="110" r="24"></circle><circle cx="160" cy="155" r="22"></circle><circle cx="255" cy="70" r="23"></circle>
+</g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="175" y="198">peso parejo — ruido visual</text>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="182"></line>
+<!-- direita -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">JERARQUÍA CLARA</text>
+<rect class="accent-stroke" fill="none" height="138" rx="3" stroke-width="1.3" width="270" x="405" y="42"></rect>
+<circle class="accent-stroke" cx="520" cy="108" fill="url(#hatch-1-2)" r="38" stroke-width="1.6"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="520" y="113">enfoque</text>
+<circle class="rule-stroke" cx="615" cy="80" fill="none" r="14" stroke-width="1.2"></circle>
+<circle class="rule-stroke" cx="600" cy="150" fill="none" r="11" stroke-width="1.2"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="198">dominante + apoyo + vacío</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: los seis controles del peso visual
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Capa opcional: útil para diagnosticar por qué un elemento «se roba» la escena.</p>
+<p>El peso de cualquier elemento es la suma de seis fuerzas: <strong>brillo</strong> (lo claro vence a lo
+                oscuro), <strong>contraste</strong> (lo que desentona con el entorno destaca), <strong>tamaño</strong> (el
+                más grande pesa más), <strong>movimiento</strong> (lo que se mueve domina lo estático), <strong>color</strong>
+                (lo saturado/cálido avanza sobre lo desaturado/frío) y <strong>posición</strong> (los centros y puntos de
+                fuerza atraen). Cuando una generación pone la mirada en el lugar equivocado, casi siempre uno de estos seis elementos
+                está gritando sin que lo hayas pedido — un reflejo brillante en una esquina, un objeto rojo al fondo.
+                Controlar la composición es, en el fondo, gestionar estas seis palancas para que sumen a favor de tu
+                punto focal.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-2" data-inema-track="1" id="topico-2">
+<div class="section-mark">
+<span class="where">Sección 2 de 5</span><span>·</span><span>Bloqueo</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Bloqueo, línea de mirada y la regla de los 180°</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-2-t2-p1">Composición sin blocking y fotografía. El <span class="dfn"><details class="dfn"><summary>blocking</summary><span class="body"><b>Bloqueo</b> es la posición y el movimiento de los personajes dentro del cuadro, en profundidad. Viene del teatro: es la coreografía que define quién ocupa cada lugar y cómo cambia eso a lo largo de la escena.</span></details></span>
+              es lo que transforma una imagen en cine. Controla la posición de los personajes en profundidad, crea
+              dinámicas de poder mediante la distancia, genera tensión con la proximidad y mantiene la claridad narrativa mediante la
+              lógica espacial. Los principios son simples: <strong>dominancia</strong> se expresa mediante una posición más
+              alta, mayor presencia y gravedad central; <strong>vulnerabilidad</strong>, con una posición más baja, aislamiento y distancia.<span class="sidenote-ref">2</span></p>
+<p data-inema-block="m1-2-t2-p2">La regla de oro del movimiento dentro del encuadre: siempre debe
+              <em>cambiar</em> algo — el poder, la emoción, la relación. El movimiento que solo existe para impresionar
+              debilita la escena. Si un personaje se acerca, la tensión cambia; si retrocede, la relación cambia. Cuando el
+              desplazamiento no cambia nada, es ruido — exactamente el tipo de «cámara moviéndose porque sí»
+              que hace que un plano parezca gratuito.</p>
+<h3 class="sub">La línea de mirada y la regla de los 180°</h3>
+<p data-inema-block="m1-2-t2-p3">La dirección de la mirada de los personajes define las relaciones emocionales: la
+              <em>línea de la mirada</em> es la geometría invisible de la escena, que comunica conflicto, intimidad, miedo,
+              control y conexión. Una regla profesional se mantiene constante: <strong>la historia emocional viaja
+              por la mirada antes que por el diálogo.</strong> Una vez establecida la relación direccional, nace el
+              <em>eje de acción</em> — la regla de los 180°: la cámara debe permanecer a un lado de ese eje para
+              preservar la lógica de izquierda y derecha, la orientación emocional y el flujo de poder entre los
+              personajes. Cruzar el eje sin intención desorienta al público, aunque no sepa decir por qué.
+              Los maestros solo lo cruzan a propósito: para impactar, desestabilizar o marcar una ruptura
+              psicológica.</p>
+</div>
+<!-- figura 2: regra dos 180 -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · O <b>eje de acción</b> — la cámara se queda de un lado para preservar la geografía</figcaption>
+<svg aria-label="Diagrama: dos personajes definen un eje de acción; las cámaras del lado permitido mantienen la coherencia izquierda-derecha, y la cámara que cruza el eje invierte y desorienta." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- eixo entre os dois personagens -->
+<line class="accent-stroke" stroke-dasharray="6 5" stroke-width="1.8" x1="220" x2="500" y1="80" y2="80"></line>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="70">EJE DE ACCIÓN (180°)</text>
+<circle class="ink" cx="220" cy="80" r="13"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="220" y="56">A</text>
+<circle class="ink" cx="500" cy="80" r="13"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="500" y="56">B</text>
+<!-- zona permitida (abaixo) -->
+<path class="rule-stroke" d="M220 80 L160 175 M360 80 L360 178 M500 80 L560 175" fill="none" stroke-width="1.3"></path>
+<g class="rule-stroke" fill="none" stroke-width="1.4">
+<rect height="18" rx="2" width="28" x="146" y="176"></rect><rect height="18" rx="2" width="28" x="346" y="178"></rect><rect height="18" rx="2" width="28" x="546" y="176"></rect>
+</g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="204">lado permitido — A queda a la izquierda, B a la derecha</text>
+<!-- camera que cruza (acima) -->
+<path class="mark-stroke" d="M360 80 L360 18" fill="none" stroke-dasharray="3 4" stroke-width="1.4"></path>
+<rect class="mark-stroke" fill="none" height="18" rx="2" stroke-width="1.4" width="28" x="346" y="6"></rect>
+<text class="mark-fill" font-family="Source Serif 4, serif" font-size="10" x="392" y="20">cruza el eje → invierte A/B</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m1-2-t2-p4">Cuando escribes un prompt de escena con más de un personaje, conviene
+              fijar esas relaciones con palabras — el generador respeta las instrucciones espaciales explícitas. El
+              prompt de abajo describe el poder mediante el blocking y mantiene el eje coherente.</p>
+<div class="codeblock"><span class="c"># Receta de blocking — poder y eje definidos en el prompt</span>
+<span class="k">Escena:</span> a tense standoff between two characters in a dim warehouse.
+<span class="k">Bloqueo:</span> el líder está de pie en el centro, un poco más arriba sobre un escalón, en posición dominante;
+el rival está más abajo y desplazado hacia el borde izquierdo del encuadre, aislado, vulnerable.
+<span class="k">Línea de mirada:</span> se miran directamente a los ojos a través del encuadre (eje de izquierda a derecha).
+<span class="k">Cámara:</span> stay on one side of the line — medium shot, leader frame-right,
+rival frame-left, eyelines crossing.
+<span class="k">Estilo:</span> low-key cinematic lighting, deep shadows, shallow depth of field.</div>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: cuándo romper la regla de los 180° se convierte en una herramienta
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Capa opcional. La regla existe para servir a la claridad, y por eso puede romperse
+                a propósito.</p>
+<p>Cruzar el eje invierte la posición de los personajes en pantalla: quien estaba a la izquierda pasa a la derecha.
+                Si se hace por accidente, confunde: el público pierde la geografía. Si se hace a propósito, se convierte en
+                significado: los directores cruzan el eje en el momento en que una relación <em>se invierte</em> (el
+                dominado toma el control), cuando un personaje pierde la cordura o para impactar con un giro.
+                La diferencia entre un error y una decisión autoral es la <em>intención</em>: si el cruce subraya una ruptura que la
+                escena ya vive, es lenguaje; si ocurre solo porque la cámara cambió de lugar, es desorientación.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-3" data-inema-track="1" id="topico-3">
+<div class="section-mark">
+<span class="where">Sección 3 de 5</span><span>·</span><span>Encuadre</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Los sistemas de encuadre</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-2-t3-p1">Los sistemas de composición no existen para la belleza:
+              existen para la <em>emoción</em>. Cada uno organiza el encuadre de una manera y, con eso, produce una
+              sensación diferente. Conocerlos es ganar vocabulario: en vez de generar imágenes aleatorias, eliges
+              la estructura que sirve a lo que la escena necesita hacerte sentir.</p>
+<h3 class="sub">Cinco estructuras y lo que cada una te hace sentir</h3>
+<p data-inema-block="m1-2-t3-p2">A <strong>regla de los tercios</strong> divide el encuadre en tres franjas
+              horizontales y verticales y coloca al sujeto sobre una línea o intersección; evita el centro estático
+              y crea energía dinámica: es el equilibrio «vivo», ideal para el diálogo, el paisaje y los
+              momentos emocionales. A <strong>simetría</strong> centra al sujeto y refleja los lados: genera
+              estabilidad, autoridad e inevitabilidad — el cerebro interpreta la simetría como orden, y suele
+              sonar formal u opresiva, ideal para escenas de poder y control. Las <strong>diagonales</strong>
+              introducen energía, inestabilidad y transformación; expresan conflicto y escalada: perfectas
+              para la acción y los puntos de inflexión.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m1-2-t3-p3">Las <strong>líneas guía</strong> — los pasillos, las escaleras,
+              la arquitectura y la perspectiva conducen la mirada hasta el sujeto sin forzar la atención, haciendo que
+              domine de manera natural; sirven para revelaciones, encuadres heroicos y el foco narrativo. Es el
+              <strong>espacio negativo</strong> no es oscuridad vacía: mucha área oscura o abierta alrededor de un
+              sujeto pequeño comunica soledad, silencio, vulnerabilidad y tensión existencial — la propia
+              oscuridad se vuelve expresiva. Cada elemento tiene peso visual; la composición profesional equilibra
+              estas fuerzas, y el desequilibrio solo se justifica cuando el caos sirve a la historia.</p>
+</div>
+<!-- figura 3: grade de sistemas -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · Cuatro estructuras de encuadre, <b>cuatro sensaciones</b></figcaption>
+<svg aria-label="Diagrama con cuatro miniaturas de encuadre: regla de los tercios, simetría, diagonal y espacio negativo, cada una con su sensación." class="diagram" role="img" viewbox="0 0 720 200">
+<!-- 1 terços -->
+<rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.2" width="150" x="24" y="34"></rect>
+<line class="faint" stroke-width="0.9" x1="74" x2="74" y1="34" y2="134"></line>
+<line class="faint" stroke-width="0.9" x1="124" x2="124" y1="34" y2="134"></line>
+<line class="faint" stroke-width="0.9" x1="24" x2="174" y1="67" y2="67"></line>
+<line class="faint" stroke-width="0.9" x1="24" x2="174" y1="101" y2="101"></line>
+<circle class="accent-stroke" cx="124" cy="67" fill="url(#hatch-1-2)" r="9" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="99" y="150">tercios</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="99" y="166">vivo, dinámico</text>
+<!-- 2 simetria -->
+<rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.2" width="150" x="200" y="34"></rect>
+<line class="faint" stroke-dasharray="3 3" stroke-width="0.9" x1="275" x2="275" y1="34" y2="134"></line>
+<circle class="accent-stroke" cx="275" cy="84" fill="url(#hatch-1-2)" r="11" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="275" y="150">simetría</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="275" y="166">poder, orden</text>
+<!-- 3 diagonal -->
+<rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.2" width="150" x="376" y="34"></rect>
+<line class="accent-stroke" stroke-width="1.6" x1="384" x2="518" y1="128" y2="42"></line>
+<circle class="accent-stroke" cx="451" cy="85" fill="url(#hatch-1-2)" r="9" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="451" y="150">diagonal</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="451" y="166">conflicto, escalada</text>
+<!-- 4 espaço negativo -->
+<rect class="wash rule-stroke" height="100" rx="3" stroke-width="1.2" width="150" x="552" y="34"></rect>
+<circle class="ink" cx="660" cy="115" r="6"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="627" y="150">vacío</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="627" y="166">soledad, tensión</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m1-2-t3-p4">La próxima ruta muestra estos sistemas controlados directamente por
+              prompts de imagen: con ejemplos como un monstruo espagueti colosal o un superhéroe a contraluz,
+              el texto guía la regla de los tercios, la profundidad espacial, la luz cinematográfica y la atmósfera. Por ahora,
+              el beneficio ya es concreto: al nombrar la estructura en el prompt, dejas de generar cuadros aleatorios y empiezas
+              a componer frases visuales intencionales.</p>
+</div>
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Quieres transmitir que un villano tiene el control total y absoluto de la sala. ¿Qué sistema de
+              encuadre funciona mejor y cuál sería el peor?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">A <strong>simetría</strong> la composición centrada funciona mejor: el cerebro la interpreta como orden,
+                autoridad e inevitabilidad — suena opresiva, que es exactamente el efecto. Lo peor sería la
+                <em>diagonal</em>, que transmite inestabilidad y conflicto: sugeriría que el control está a punto
+                de derrumbarse, contradiciendo la intención.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-4" data-inema-track="1" id="topico-4">
+<div class="section-mark">
+<span class="where">Sección 4 de 5</span><span>·</span><span>Profundidad</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Profundidad en tres capas</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-2-t4-p1">El cine es una historia en tres dimensiones. Los cuadros planos
+              parecen «contenido»; los cuadros con capas parecen cine. El diseño espacial profesional
+              siempre usa profundidad, y esta se organiza en tres planos: el <strong>primer plano</strong> atrae al
+              espectador emocionalmente hacia el interior de la escena, el <strong>medio</strong> sostiene la acción narrativa y
+              el <strong>fondo</strong> de la escala, el mundo y las consecuencias. Esta estructura en capas es lo que crea
+              realismo y riqueza visual.</p>
+<p data-inema-block="m1-2-t4-p2">La profundidad <em>no</em> y desenfoque de fondo. Se construye mediante la
+              organización: formas que se superponen, líneas de perspectiva que retroceden, contraste de escala entre
+              cerca y lejos, separación de luz motivada, partículas atmosféricas (neblina, polvo, lluvia) y
+              movimiento en distintas capas — el paralaje.<span class="sidenote-ref">4</span> El desenfoque
+              por sí solo no crea profundidad; el <em>organización</em> crea. Si la composición le dice al espectador
+              <em>lo que importa</em>, la profundidad dice <em>dónde está él</em>.</p>
+<h3 class="sub">Sin una, la otra falla</h3>
+<p data-inema-block="m1-2-t4-p3">La composición y la profundidad son inseparables. Sin composición, la
+              profundidad se vuelve caos: muchas capas sin jerarquía, solo confusión. Sin profundidad, la
+              composición queda débil: bonita, pero plana. La imagen cinematográfica real exige ambas:
+              una para indicar dónde mirar, otra para indicar dónde estamos. Imagina un personaje solo en un puente
+              al atardecer, ubicado según la regla de los tercios, con espacio negativo en el cielo que crea aislamiento, las líneas
+              del puente que guían la atención y montañas al fondo que dan profundidad. En un solo encuadre sentimos espacio,
+              emoción, dirección e historia. Eso es diseño cinematográfico.</p>
+</div>
+<!-- figura 4: tres camadas de profundidade -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Tres planos</b> — primer plano, plano medio y fondo trabajando juntos</figcaption>
+<svg aria-label="Diagrama en corte lateral que muestra tres capas de profundidad: fondo con escala, plano medio con la acción y primer plano que enmarca; las flechas indican retroceso en perspectiva." class="diagram" role="img" viewbox="0 0 720 210">
+<rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.1" width="640" x="40" y="40"></rect>
+<!-- fundo -->
+<line class="faint" stroke-width="1" x1="60" x2="660" y1="70" y2="70"></line>
+<path class="faint" d="M120 70 L150 55 L185 70 M520 70 L560 50 L600 70" fill="none" stroke-width="1"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="62">FONDO — escala, mundo, consecuencia</text>
+<!-- meio -->
+<circle class="wash accent-stroke" cx="360" cy="112" r="16" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="360" y="116">acción</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="142">MEDIO — la acción narrativa</text>
+<!-- primeiro plano -->
+<path class="accent-stroke" d="M40 180 L120 150 L120 180 Z" fill="url(#hatch-1-2)" stroke-width="1.2"></path>
+<path class="accent-stroke" d="M680 180 L600 150 L600 180 Z" fill="url(#hatch-1-2)" stroke-width="1.2"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="174">PRIMER PLANO — encuadra y atrae hacia dentro</text>
+<!-- seta de recuo -->
+<path class="mark-stroke" d="M90 100 L150 78" fill="none" stroke-width="1.2"></path>
+<path class="mark-stroke" d="M150 78 l -8 0 m 8 0 l -3 6" fill="none" stroke-width="1.2"></path>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: la luz y la cámara también hablan
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Capa opcional, un puente hacia los módulos de luz y cámara más adelante.</p>
+<p>Dos controles refuerzan todo esto y merecen quedar registrados. La <strong>luz</strong> moldea el enfoque, el tono
+                emocional, la profundidad y la jerarquía — y, a veces, la <em>sombra</em> crea más drama que
+                cualquier brillo. La luz motivada (proveniente de una fuente plausible en la escena) separa las capas y le indica
+                al ojo qué importa. En cambio, la <strong>altura de cámara</strong> es psicología, no estilo: el
+                contrapicado (cámara baja) sugiere poder, dominio y presencia mítica; la cámara a la altura de los
+                ojos crea realismo y conexión; el plano picado (cámara alta) expresa vulnerabilidad, debilidad y
+                aislamiento. Nada de esto es adorno — cada decisión responde a una motivación narrativa: peligro,
+                esperanza, poder o soledad.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="1-2" data-inema-topic="modulo-1-2#topico-5" data-inema-track="1" id="topico-5">
+<div class="section-mark">
+<span class="where">Sección 5 de 5</span><span>·</span><span>Planos</span>
+</div>
+<h2 class="head"><span class="num">5.</span>La gramática de los planos</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-2-t5-p1">El cine respira a distintas distancias. Una escena suele fluir del
+              plano general al medio, al primer plano, al detalle y de vuelta al general; cada distancia aporta
+              algo. El <strong>amplio</strong> introduce el espacio y el contexto emocional. El <strong>medio</strong>
+              revela la interacción y la progresión. El <strong>close-up</strong> entrega la emoción interna. El
+              <strong>detalle</strong> enfatiza el significado. Volver al plano general muestra la consecuencia. La
+              distancia, en cine, equivale a intensidad emocional: cuanto más cerca, más intenso.</p>
+<p data-inema-block="m1-2-t5-p2">De ahí una regla que evita el error más común de quien empieza:
+              <strong>los primeros planos deben ganarse con la historia, no usarse como adorno.</strong> Acercar
+              la cámara solo tiene sentido si la intensidad emocional aumenta de verdad; un primer plano gratuito gasta la carta
+              más fuerte de la baraja sin motivo. Cada plano debe añadir información o sentimiento: si no
+              añade ninguno de los dos, no debería existir. Y, en toda la secuencia, la claridad espacial debe
+              mantenerse intacta: el público nunca debe perderse sobre dónde está.<span class="sidenote-ref">5</span></p>
+<h3 class="sub">Cuando todo se alinea</h3>
+<p data-inema-block="m1-2-t5-p3">Cuando la composición, el blocking, la luz y la psicología del lente se alinean, el
+              público no solo <em>ve</em> la escena: él la <em>siente</em>. Los encuadres bonitos no crean cine;
+              lo crea la historia espacial. Y la prueba final de cualquier encuadre sigue siendo la misma de las tres preguntas:
+              en un instante, dónde debe mirar el espectador, qué debe sentir, dónde está en el espacio. Si el
+              encuadre responde las tres, es cinematográfico — con o sin efecto.</p>
+</div>
+<!-- figura 5: escada de planos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · La respiración de la escena — <b>distancia = intensidad</b></figcaption>
+<svg aria-label="Diagrama: cinco planos en secuencia —amplio, medio, primer plano, detalle y vuelta al plano amplio— con la intensidad emocional que sube hasta el detalle y baja en el regreso." class="diagram" role="img" viewbox="0 0 720 200">
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="170" y2="170"></line>
+<!-- amplo -->
+<rect class="rule-stroke" fill="none" height="44" rx="3" stroke-width="1.2" width="92" x="40" y="120"></rect>
+<circle class="ink" cx="86" cy="142" r="4"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="86" y="188">amplio</text>
+<!-- medio -->
+<rect class="rule-stroke" fill="none" height="60" rx="3" stroke-width="1.2" width="92" x="172" y="104"></rect>
+<circle class="ink" cx="218" cy="134" r="9"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="218" y="188">medio</text>
+<!-- close -->
+<rect class="accent-stroke" fill="url(#hatch-1-2)" height="78" rx="3" stroke-width="1.4" width="92" x="304" y="86"></rect>
+<circle class="ink" cx="350" cy="125" r="16"></circle>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="350" y="188">plano cercano</text>
+<!-- detalhe (pico) -->
+<rect class="accent-stroke" height="94" rx="3" stroke-width="1.6" width="92" x="436" y="70"></rect>
+<circle class="ink" cx="482" cy="117" r="24"></circle>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="482" y="188">detalle</text>
+<!-- volta ao amplo -->
+<rect class="rule-stroke" fill="none" height="44" rx="3" stroke-width="1.2" width="92" x="568" y="120"></rect>
+<circle class="ink" cx="614" cy="142" r="4"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="614" y="188">vuelve al plano general</text>
+<!-- curva de intensidade -->
+<path class="mark-stroke" d="M86 130 L218 116 L350 96 L482 78 L614 130" fill="none" stroke-dasharray="4 4" stroke-width="1.3"></path>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="30">LA INTENSIDAD AUMENTA CON LA PROXIMIDAD</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m1-2-t5-p4">Resume el módulo en una frase: <em>la composición indica dónde mirar,
+              la profundidad indica dónde estás y la distancia de los planos indica cuánto sentir; juntas, forman la
+              gramática espacial del cine.</em> Ahora tienes la mentalidad (1.1) y la lectura del espacio (1.2). La próxima clase deja la teoría y pasa a la práctica: producir una escena completa, desde el guion hasta los cuadros finales.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Autocomprobación" class="check">
+<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>¿Por qué la composición es «jerarquía» y no «decoración»?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque organiza el <em>peso visual</em> para crear un punto focal dominante,
+              elementos de apoyo y espacio vacío, controlando qué ve primero el ojo. La decoración ordena los elementos; la jerarquía
+              decide la atención. Sin ella, la imagen se convierte en ruido bonito.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>¿Qué preserva la regla de los 180° y qué pasa si la cruzas sin querer?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Preserva la geografía: la lógica de izquierda/derecha, la orientación emocional y
+              el flujo de poder. Cruzar el eje sin intención invierte la posición de los personajes en pantalla y desorienta al
+              público, aunque no sepa explicar por qué.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>¿La profundidad viene del desenfoque del fondo? Justifica tu respuesta.</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>No, viene de <em>organización</em>: superposición de formas, perspectiva,
+              contraste de escala, luz motivada, atmósfera y paralaje en tres capas (frente, medio, fondo). El
+              desenfoque por sí solo no crea profundidad; la estructura espacial sí.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>¿Por qué un primer plano «hay que ganárselo»?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque la distancia = intensidad emocional. Acercarse solo funciona si la intensidad
+              realmente aumenta; un primer plano gratuito desperdicia el plano más potente sin motivo. Cada plano debe añadir
+              información o sentimiento; si no, no debería existir.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Mi recorrido</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">En este módulo</div>
+<div class="v" data-inema-meter="modulo:1-2">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En la ruta 1</div>
+<div class="v" data-inema-meter="trilha:1">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En el curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Módulo 1.3 — Del guion a la escena</div>
+</div>
+<a class="go" href="modulo-1-3.html">Siguiente →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-1-2#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Peso visual.</b> La fuerza con la que un elemento atrae la mirada, sumada al brillo, el contraste, el tamaño,
+          el movimiento, el color y la posición. Componer es gestionar estos pesos a favor de un punto focal.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          Lección 1 del bloque Luz — “Control espacial cinematográfico”. Premisa: <i>todo encuadre
+          profesional responde, en un instante, dónde miramos, qué sentimos y dónde estamos en el espacio</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-1-2#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Línea de mirada.</b> La geometría invisible que forman las direcciones de las miradas de los personajes. Transmite conflicto,
+          intimidad, miedo y control — la historia emocional viaja por ella antes que el diálogo.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          Dominancia = posición más alta + mayor presencia + centro. Vulnerabilidad = posición más baja +
+          aislamiento + distancia. El poder se convierte en geometría, y el bloqueo escénico lo escribe en el encuadre.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-1-2#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Espacio negativo.</b> Área vacía u oscura alrededor del sujeto. No es “espacio sobrante”: comunica
+          soledad, silencio y vulnerabilidad; la propia oscuridad se vuelve expresiva.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          Regla rápida de las estructuras: tercios = dinamismo; simetría = poder/opresión; diagonal = conflicto/escalada;
+          líneas guía = revelación; vacío = aislamiento. Elige la sensación, no la belleza.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-1-2#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Paralaje.</b> Capas a diferentes profundidades que se desplazan a distintas velocidades cuando la
+          cámara se mueve. Es una de las señales más claras de profundidad real, y lo opuesto a un cuadro plano.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          La altura de la cámara y la psicología: contrapicado = poder; a la altura de los ojos = realismo; picado = vulnerabilidad. La elección responde a una motivación de la escena, nunca al azar.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-1-2#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Gramática de planos.</b> La secuencia plano general → plano medio → primer plano → detalle → plano general. Cada
+          distancia cumple una función; cuanto más cerca, más intenso. El primer plano se gana con la historia.
+        </aside>
+<aside class="sidenote" data-kind="fonte" style="margin-bottom:0">
+<div class="tag">Fuente</div>
+          La síntesis de la lección: <i>los fotogramas bonitos no crean cine: lo crea la historia espacial</i>. La composición y la profundidad son inseparables; la imagen cinematográfica real exige ambas.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Módulo 1.2 — folio ii</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

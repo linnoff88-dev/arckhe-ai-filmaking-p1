@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Ruta 4 — Lenguaje de cámara | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="trilha:4"><span data-inema-meter-frac=""><strong>0</strong> de 19</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>4</b> Lenguaje de cámara</span>
+<span class="sep">·</span>
+<span>Índice de la ruta</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura editorial da trilha -->
+<p class="kicker">Ruta 4 · Lenguaje de cámara</p>
+<h1 class="module">La cámara deja de grabar y empieza a <em>decir</em></h1>
+<p class="deck">Cuatro módulos sobre la gramática que transforma un generador de video en un set de
+          filmación: qué hace que una imagen parezca cine, cómo se mueve la cámara con motivación, cómo la
+          distancia se convierte en emoción — y cómo aplicar todo esto en la práctica dentro de Seedance.</p>
+<!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
+<p class="read-meta" data-inema-meter="trilha:4">
+<span class="here" data-inema-meter-frac=""><strong>0</strong> de 19</span>
+<span>secciones leídas en esta ruta</span>
+<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+</p>
+<!-- o "porque" da trilha -->
+<div class="prose">
+<p class="lede" data-inema-block="t4-porque-p1">Hasta aquí aprendiste a pensar la escena (Ruta 1), a
+            leerla como cine (Ruta 2) y a manejar las herramientas (Ruta 3). Esta ruta une ambos extremos:
+            es la <em>lenguaje</em> con que le hablas a la cámara —y, por extensión, al generador—. La
+            distancia entre una imagen que “parece IA” y una que “parece película” casi
+            nunca está en el modelo; está en la <strong>lenguaje de cámara</strong> del prompt. El Módulo 4.1 establece los
+            cuatro pilares de la cinematografía: composición, luz, cámara y ritmo, y el principio que
+            atraviesa el curso: la IA no crea cine; la cinematografía sí. El 4.2 convierte la cámara en verbo:
+            cuándo hacer un <em>push-in</em>, cuándo orbitar y cuándo — y esto importa tanto como lo anterior — quedarse absolutamente quieto. El 4.3 trata la distancia como una emoción: desde el plano que establece el mundo hasta el primer plano que se mete en la piel del personaje, con la regla de los 180° y la línea de mirada que mantienen el espacio legible. Y el 4.4 cierra aplicando toda esta gramática dentro de Seedance, con storyboard, bloqueo de identidad y prompts estructurados en YAML. Al final, no escribes prompts: diriges.</p>
+</div>
+<!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
+<p class="toc-head" style="margin-top:var(--s7)">El recorrido — cuatro módulos, en orden</p>
+<!-- ---- ENTRADA / MODULO 4.1 ---- -->
+<section data-inema-module="4-1" data-inema-topic="modulo-4-1#indice" data-inema-track="4" id="topico-1">
+<div class="section-mark">
+<span class="where">Módulo 4.1</span><span>·</span><span>4 secciones · ~15 min</span>
+</div>
+<h2 class="head"><span class="num">4.1</span>Cinematografía</h2>
+<div class="prose">
+<p data-inema-block="t4-m4-1-p1">La base de la ruta. Por qué una escena parece cine y no un resultado de
+              IA: la respuesta está en los cuatro pilares que deben estar presentes al mismo tiempo: composición con
+              profundidad, luz con dirección y contraste, cámara con ángulo y sensación de lente, y ritmo del plano.
+              Si falta uno, el ojo acusa “esto es IA”; si están todos juntos, parece una película. También
+              verás por qué la herramienta — Seedance — es solo quien ejecuta: quien dirige eres tú, y la
+              precisión de tu lenguaje de cámara determina el resultado.</p>
+<p data-inema-block="t4-m4-1-p2">
+<a class="entry-link" href="modulo-4-1.html">Leer el Módulo 4.1 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 4.2 ---- -->
+<section data-inema-module="4-2" data-inema-topic="modulo-4-2#indice" data-inema-track="4" id="topico-2">
+<div class="section-mark">
+<span class="where">Módulo 4.2</span><span>·</span><span>5 secciones · ~17 min</span>
+</div>
+<h2 class="head"><span class="num">4.2</span>Movimiento de cámara</h2>
+<div class="prose">
+<p data-inema-block="t4-m4-2-p1">La cámara como verbo. Los movimientos fundamentales: <em>pan</em> e
+              <em>inclinación</em> (la cámara que gira sobre su propio eje), <em>dolly</em> e <em>push-in</em> (la cámara que
+              viaja por el espacio), <em>órbita</em> e <em>tracking</em> — y lo que cada uno le dice al espectador.
+              El hilo conductor: el movimiento sin motivación es ruido. Cada movimiento de cámara es una frase; un
+              <em>push-in</em> dice «presta atención», un temblor de mano dice «nervioso», un
+              trípode inmóvil dice «observa». Aprenderás cuándo mover la cámara y a tener el valor, muchas
+              veces más difícil, de mantenerla quieta.</p>
+<p data-inema-block="t4-m4-2-p2">
+<a class="entry-link" href="modulo-4-2.html">Leer el Módulo 4.2 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 4.3 ---- -->
+<section data-inema-module="4-3" data-inema-topic="modulo-4-3#indice" data-inema-track="4" id="topico-3">
+<div class="section-mark">
+<span class="where">Módulo 4.3</span><span>·</span><span>5 secciones · ~18 min</span>
+</div>
+<h2 class="head"><span class="num">4.3</span>Planos y encuadre</h2>
+<div class="prose">
+<p data-inema-block="t4-m4-3-p1">La distancia entre la cámara y el sujeto no es un detalle técnico: es
+              una decisión emocional. Recorrerás toda la escala de planos, desde el <em>establishing</em> que
+              muestra el mundo al <em>extreme close-up</em> que convierte un detalle en algo monumental, pasando por el plano
+              general, el plano americano, el plano medio y el primer plano. Cada uno responde a una pregunta distinta:
+              <em>¿dónde estamos?</em> o <em>cómo se siente?</em> — y cada uno tiene su efecto en el cuerpo de
+              quien mira. Cierra con la gramática que mantiene el espacio legible: la línea de mirada (<em>eyeline</em>)
+              y es la regla de los 180°.</p>
+<p data-inema-block="t4-m4-3-p2">
+<a class="entry-link" href="modulo-4-3.html">Leer el Módulo 4.3 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 4.4 ---- -->
+<section data-inema-module="4-4" data-inema-topic="modulo-4-4#indice" data-inema-track="4" id="topico-4">
+<div class="section-mark">
+<span class="where">Módulo 4.4</span><span>·</span><span>5 secciones · ~18 min</span>
+</div>
+<h2 class="head"><span class="num">4.4</span>Video cinematográfico con Seedance 2</h2>
+<div class="prose">
+<p data-inema-block="t4-m4-4-p1">La síntesis práctica. Ahora todo el lenguaje de las tres clases anteriores
+              entra en un generador real. Partirás de un storyboard de seis planos —
+              escala, velocidad, control, emoción, acción, alivio—, fijarás la identidad del personaje con
+              una imagen de referencia y escribirás el prompt en <em>YAML</em>: no por estética, sino porque la IA
+              no piensa, interpreta estructuras. Conocerás la regla de oro de YAML (una función por campo,
+              movimiento físico y no una idea, luz siempre presente, bloques de tiempo, transiciones explícitas) y la
+              incómoda realidad de que, en Seedance, las transiciones se rompen, y por eso hacen falta dirección e iteración.</p>
+<p data-inema-block="t4-m4-4-p2">
+<a class="entry-link" href="modulo-4-4.html">Leer el Módulo 4.4 →</a>
+</p>
+</div>
+</section>
+<!-- indo mais fundo: divulgacao progressiva (opcional) -->
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: por qué «lenguaje» y no «efectos»
+            <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>El camino recomendado es lineal: 4.1, 4.2, 4.3, 4.4. Esta capa explica el nombre de la ruta y puedes
+              saltártela sin perder nada.</p>
+<p>Lo llamamos <em>lenguaje</em> de cámara porque cada elección —un ángulo, un movimiento, una
+              distancia— es una unidad de significado, como una palabra. Un <em>push-in</em> no es un
+              “efecto genial”: es un verbo que dice “acércate a esto”. Un plano general no
+              es “mostrar el escenario”: es una frase que dice “este personaje es pequeño frente al
+              mundo”. Cuando tratas la cámara como vocabulario, el prompt deja de ser una lista de
+              deseos y se convierte en una <em>oración</em> que la herramienta puede leer.</p>
+<p>Por eso esta trilha viene después del pipeline (Trilha 3): no sirve de nada dominar Seedance, Kling
+              o Runway si no tienes qué decirles. Las herramientas ejecutan dirección — no la
+              inventan. Aquí aprendes a hablar el idioma que ellas obedecen.</p>
+</div>
+</details>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Empezar por la base</div>
+<div class="t">Módulo 4.1 — Cinematografía</div>
+</div>
+<a class="go" href="modulo-4-1.html">Leer el primero →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- MODULO 4.1 ---- -->
+<aside data-inema-rail="modulo-4-1#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Cinematografía.</b> El conjunto de decisiones —composición, luz, cámara y ritmo— que hace
+          que una imagen en movimiento signifique algo. Es lo que la IA <i>no</i> decide por ti.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          El orden de la ruta es deliberado: 4.1 es el <i>vocabulario</i>, 4.2 e o <i>verbo</i> (movimiento), 4.3 es el
+          <i>distancia</i> (emoción) y 4.4 es la <i>frase completa</i>, escrita dentro del generador.
+        </aside>
+<!-- ---- MODULO 4.2 ---- -->
+<aside data-inema-rail="modulo-4-2#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Motivación de cámara.</b> La razón narrativa para que exista un movimiento. Sin ella, el desplazamiento se convierte en
+          mareo visual; con ella, se convierte en puntuación: una señal de hacia dónde debe mirar el espectador.
+        </aside>
+<!-- ---- MODULO 4.3 ---- -->
+<aside data-inema-rail="modulo-4-3#indice"></aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          La escala de planos se demuestra con una historia en el desierto: una nave caída en el Sahara, Ella con un
+          traje rosa, un hombre con una orquídea blanca: el mismo mundo filmado desde siete distancias.
+          <div class="src-line">Module 3 · Block 4 — Camera Language</div>
+</aside>
+<!-- ---- MODULO 4.4 ---- -->
+<aside data-inema-rail="modulo-4-4#indice"></aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          La frase que organiza el 4.4: una buena secuencia <i>fluye</i> — escala → velocidad → emoción → acción → alivio. El storyboard garantiza el flujo; el YAML garantiza que la IA lo entienda.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Ruta 4 — índice</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

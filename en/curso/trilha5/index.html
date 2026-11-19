@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Course 5 — VFX and Action | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha5/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha5/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha5/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha5/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="trilha:5"><span data-inema-meter-frac=""><strong>0</strong> of 19</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>5</b> VFX and Action</span>
+<span class="sep">·</span>
+<span>Track index</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura editorial da trilha -->
+<p class="kicker">Course 5 · VFX and Action</p>
+<h1 class="module">The effect in service of <em>perception</em></h1>
+<p class="deck">Four modules on spectacle—and why it only works when it’s under
+          control. Visual effects, slow motion, particles, and action scenes aren’t decoration: they’re tools for
+          directing the viewer’s attention, and each one works against you when it becomes noise.</p>
+<!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
+<p class="read-meta" data-inema-meter="trilha:5">
+<span class="here" data-inema-meter-frac=""><strong>0</strong> of 19</span>
+<span>sections read in this track</span>
+<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+</p>
+<!-- o "porque" da trilha -->
+<div class="prose">
+<p class="lede" data-inema-block="t5-porque-p1">This is the track where the course directly addresses what
+            most people mistake for AI cinema: <em>the spectacle</em>. Explosions, slow motion,
+            smoke, chases. The risk is treating all of this like a button to press—and the result is an
+            overload of effects, the “too much CGI” that gives away an amateur. The thesis of this learning path is the same as that of the
+            entire course, but applied to the most dangerous territory: <strong>the effect exists to serve
+            perception, never to show off</strong>. Module 5.1 establishes the principle—when VFX
+            adds realism and when it becomes noise. 5.2 examines the psychology of slow motion: why it says
+            “this matters,” and why it needs acceleration beforehand to work. 5.3 covers
+            particles—smoke, sparks, dust, rain—as the layer that brings atmosphere,
+            depth, and scale back to a lifeless digital frame. And 5.4 wraps up with the action scene: clarity amid chaos,
+            spatial geography, and cutting rhythm. In every case, the question isn’t “how do I make the effect?”, it’s
+            “what does this effect do for the viewer?”.</p>
+</div>
+<!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
+<p class="toc-head" style="margin-top:var(--s7)">The journey — four modules, in order</p>
+<!-- ---- ENTRADA / MODULO 5.1 ---- -->
+<section data-inema-module="5-1" data-inema-topic="modulo-5-1#indice" data-inema-track="5" id="topico-1">
+<div class="section-mark">
+<span class="where">Module 5.1</span><span>·</span><span>4 sections · ~15 min</span>
+</div>
+<h2 class="head"><span class="num">5.1</span>Visual Effects</h2>
+<div class="prose">
+<p data-inema-block="t5-m5-1-p1">The principle that governs the entire course. Why do techniques that
+              pursue <em>physical realism</em> — real fire, practical rain, miniatures, wire suspension,
+              LED wall — teach something that also applies to AI: the brain believes what
+              has weight, and “perfect movement” looks fake. You'll understand VFX as
+              <em>decision</em>, not as a button; when the effect adds something and when it becomes overwhelming; and why structuring the prompt in logical blocks (YAML style) controls the image better than one long, confusing sentence.</p>
+<p data-inema-block="t5-m5-1-p2">
+<a class="entry-link" href="modulo-5-1.html">Read Module 5.1 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 5.2 ---- -->
+<section data-inema-module="5-2" data-inema-topic="modulo-5-2#indice" data-inema-track="5" id="topico-2">
+<div class="section-mark">
+<span class="where">Module 5.2</span><span>·</span><span>5 sections · ~17 min</span>
+</div>
+<h2 class="head"><span class="num">5.2</span>Slow Motion</h2>
+<div class="prose">
+<p data-inema-block="t5-m5-2-p1">The most misused technique in AI cinema, examined through psychology.
+              Slow motion isn’t “making everything slower”: it tells the viewer’s brain that
+              <em>that</em> the moment matters. You’ll see why the impact comes from <strong>contrast</strong>
+              — the fast → slow → fast rule — why slow motion doesn’t
+work without acceleration beforehand, and how to specify the frame rate (120fps → 24fps) and micro-performance to avoid
+AI’s “dead faces” in Seedance.</p>
+<p data-inema-block="t5-m5-2-p2">
+<a class="entry-link" href="modulo-5-2.html">Read Module 5.2 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 5.3 ---- -->
+<section data-inema-module="5-3" data-inema-topic="modulo-5-3#indice" data-inema-track="5" id="topico-3">
+<div class="section-mark">
+<span class="where">Module 5.3</span><span>·</span><span>5 sections · ~18 min</span>
+</div>
+<h2 class="head"><span class="num">5.3</span>Particle Systems in Cinema</h2>
+<div class="prose">
+<p data-inema-block="t5-m5-3-p1">The AI filmmaker’s secret tool. Smoke, sparks, dust in the
+              light, rain, fog: the real world is never perfectly static, and it’s this micro-instability that
+              a lifeless digital frame lacks. You’ll understand particles as systems driven by
+              behavior—and, more importantly, how they <em>hide</em> AI’s flaws: they obscure
+              changing topology, soften unstable edges, and redirect the eye toward the environment’s movement.
+              The central example: a woman turning into a cat, which only works because the atmosphere masks the anatomy.</p>
+<p data-inema-block="t5-m5-3-p2">
+<a class="entry-link" href="modulo-5-3.html">Read Module 5.3 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 5.4 ---- -->
+<section data-inema-module="5-4" data-inema-topic="modulo-5-4#indice" data-inema-track="5" id="topico-4">
+<div class="section-mark">
+<span class="where">Module 5.4</span><span>·</span><span>5 sections · ~18 min</span>
+</div>
+<h2 class="head"><span class="num">5.4</span>Action Scenes</h2>
+<div class="prose">
+<p data-inema-block="t5-m5-4-p1">Closing the track: five blockbuster action mechanics and the rule behind them all. Action isn't movement—it's danger, movement, anticipation, and payoff, with the viewer always wondering “how will this end?” You'll explore the transformation in flight, the near-miss chase, the survivable rollover, the gravity-defying parkour escape, and the countdown rescue—and learn what really matters in execution: <em>clarity in the chaos</em>, legible spatial geography and editing rhythm.</p>
+<p data-inema-block="t5-m5-4-p2">
+<a class="entry-link" href="modulo-5-4.html">Read Module 5.4 →</a>
+</p>
+</div>
+</section>
+<!-- indo mais fundo: divulgacao progressiva (opcional) -->
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why spectacle comes with a warning
+            <span class="opt">optional</span></summary>
+<div class="inner">
+<p>The happy path is linear: 5.1, 5.2, 5.3, 5.4. This layer explains the thread that ties the learning path together—and can be skipped.</p>
+<p>This is the course’s most seductive track, and therefore the riskiest. Effects impress; effects sell
+              the video in a thumbnail. But effects are also what most easily turn against a scene: slow motion applied to everything gets tiring, smoke added without reason becomes visual clutter, a chase without geography becomes confusing, constant explosions numb the viewer. One thread runs through all four modules:
+              <em>every effect is a promise of meaning</em>. When the camera slows down, it says
+              “pay attention”; if there was nothing to pay attention to, you lied to the brain of
+              the person watching—and it learns to distrust you.</p>
+<p>Notice how this track revisits the algorithm from Track 1 (stability → rupture → escalation
+              → acceleration → slow motion at the peak → impact) and applies it piece by piece. Slow motion is the
+              fifth beat of that curve. The action is the entire curve in motion. Particles are the atmosphere that
+              adds weight to the impact. VFX is the discipline that decides when each one comes in. You aren't learning
+              new effects—you're learning to <em>direct</em> the ones you already knew.</p>
+</div>
+</details>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Start with the principle</div>
+<div class="t">Module 5.1 — Visual Effects</div>
+</div>
+<a class="go" href="modulo-5-1.html">Read the first one →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes and your learning dashboard" class="margin-rail">
+<!-- ---- MODULO 5.1 ---- -->
+<aside data-inema-rail="modulo-5-1#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>VFX.</b> Visual effects — everything built or altered outside of direct capture. In
+          this track, the point isn’t the technique, it’s the <i>decision</i>: why this effect, here, now.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Order matters: 5.1 is the <i>principle</i> (effect in service of perception), 5.2 is the <i>time</i> (slow motion), 5.3 is the <i>atmosphere</i> (particles) and 5.4 is the <i>chaos under control</i> (action).
+        </aside>
+<!-- ---- MODULO 5.2 ---- -->
+<aside data-inema-rail="modulo-5-2#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Overcranking.</b> The on-set term for slow motion: shoot at a high frame rate (120/240fps) to
+          play back at 24fps. It stretches time—and is the fifth beat in the tension curve from Track 1.
+        </aside>
+<!-- ---- MODULO 5.3 ---- -->
+<aside data-inema-rail="modulo-5-3#indice"></aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          The transformation example (woman → black cat) is shown in the lesson as proof that AI doesn’t need perfect anatomy: atmosphere carries the illusion.
+          <div class="src-line">Block 5 · AI Filmmaking</div>
+</aside>
+<!-- ---- MODULO 5.4 ---- -->
+<aside data-inema-rail="modulo-5-4#indice"></aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          The golden rule of 5.4: <i>one strong visual idea = one action scene</i>. Stacking mechanics creates
+          confusion; one clear mechanic, with readable geography, already feels like a blockbuster.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Course 5 — index</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

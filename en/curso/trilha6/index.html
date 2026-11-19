@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Course 6 — Character and Performance | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha6/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha6/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha6/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="trilha:6"><span data-inema-meter-frac=""><strong>0</strong> of 19</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>6</b> Character and Performance</span>
+<span class="sep">·</span>
+<span>Track index</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura editorial da trilha -->
+<p class="kicker">Course 6 · Character and Performance</p>
+<h1 class="module">What moves the audience isn’t the dialogue — it’s what remains <em>underneath</em></h1>
+<p class="deck">Four modules on the most human layer of AI filmmaking: how a dialogue scene becomes
+          drama, how to give a generated character a believable, consistent performance, how a close-up shapes emotion,
+          and how to structure a conversation scene around what no one says.</p>
+<!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
+<p class="read-meta" data-inema-meter="trilha:6">
+<span class="here" data-inema-meter-frac=""><strong>0</strong> of 19</span>
+<span>sections read in this track</span>
+<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+</p>
+<!-- o "porque" da trilha -->
+<div class="prose">
+<p class="lede" data-inema-block="t6-porque-p1">So far, you've learned to build the world: light,
+            composition, camera movement, effects, action. This track turns the camera inward—to
+            <em>character</em>. And this is where most AI projects stumble: the frame is beautiful, the physics
+            are convincing, and yet the scene feels empty because the character doesn't seem <em>alive</em> and the conversation
+            seems like nothing more than an exchange of information. One principle runs through all four modules: in cinema,
+            movement is not performance and speech is not dialogue — what matters is the emotion underneath.
+            Module 6.1 establishes the anatomy of a dialogue scene: subtext, reaction, silence, conflict, and
+            framing. 6.2 gets into the details of a generated character’s performance — motivation before
+            movement, micro-performance, timing, body, rhythm — and tackles AI’s typical weakness: keeping the
+            same character consistent between shots. 6.3 puts the camera at the service of emotion: the close-up as a decision, negative
+            space, the push-in, distance, POV. And 6.4 assembles the entire dialogue scene — rhythm, turn,
+            shot and reverse shot across the axis — around what is left unsaid. By the end of this learning path, you stop
+            generating “people who talk” and start directing characters who feel.</p>
+</div>
+<!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
+<p class="toc-head" style="margin-top:var(--s7)">The journey — four modules, in order</p>
+<!-- ---- ENTRADA / MODULO 6.1 ---- -->
+<section data-inema-module="6-1" data-inema-topic="modulo-6-1#indice" data-inema-track="6" id="topico-1">
+<div class="section-mark">
+<span class="where">Module 6.1</span><span>·</span><span>4 sections · ~15 min</span>
+</div>
+<h2 class="head"><span class="num">6.1</span>Dialogue and Performance</h2>
+<div class="prose">
+<p data-inema-block="t6-m6-1-p1">The anatomy of a dialogue scene. Why a “clear and
+              logical” conversation feels lifeless, and what brings it to life: the <em>subtext</em> (what is said isn’t what is
+              felt), the <em>reaction</em> the listener (often stronger than the dialogue), the <em>silence</em>
+              as pressure, the <em>conflict</em> of two conflicting desires and the <em>framing</em> that changes the
+              emotional meaning of the same scene. It closes with the principle running through the course: emotion plus subtext
+              plus reaction plus conflict — not the amount of dialogue — is what turns a conversation into
+              cinema.</p>
+<p data-inema-block="t6-m6-1-p2">
+<a class="entry-link" href="modulo-6-1.html">Read Module 6.1 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 6.2 ---- -->
+<section data-inema-module="6-2" data-inema-topic="modulo-6-2#indice" data-inema-track="6" id="topico-2">
+<div class="section-mark">
+<span class="where">Module 6.2</span><span>·</span><span>5 sections · ~17 min</span>
+</div>
+<h2 class="head"><span class="num">6.2</span>Character Acting with AI</h2>
+<div class="prose">
+<p data-inema-block="t6-m6-2-p1">How to give a generated character a performance that feels alive.
+              Five mechanisms: <em>motivation before movement</em> (every gesture begins with an emotional reason),
+              <em>micro-performance</em> e <em>eye performance</em> (the smallest detail that carries the emotion),
+              <em>emotional timing</em> (the emotion builds gradually, not all at once), <em>body language</em>
+              (posture and psychology) and <em>rhythm</em> (stillness, movement, stillness). It’s a problem unique
+              to AI: maintaining <em>consistent character identity</em> between shots, with the identity block locked and a reference.</p>
+<p data-inema-block="t6-m6-2-p2">
+<a class="entry-link" href="modulo-6-2.html">Read Module 6.2 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 6.3 ---- -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#indice" data-inema-track="6" id="topico-3">
+<div class="section-mark">
+<span class="where">Module 6.3</span><span>·</span><span>5 sections · ~17 min</span>
+</div>
+<h2 class="head"><span class="num">6.3</span>Emotional Close-ups and Shots</h2>
+<div class="prose">
+<p data-inema-block="t6-m6-3-p1">Emotion isn’t just acted—it’s framed. Five camera
+              decisions: the <em>emotional close-up</em> that makes the microexpression visible, the <em>negative space</em>
+              that turns emptiness into loneliness, the <em>slow push-in</em> that subtly increases the pressure, the
+              <em>camera distance</em> that becomes emotional distance (with the over-the-shoulder shot) and the <em>POV</em>
+              that makes the audience experience the emotion instead of watching it. The throughline: the close-up as
+              <em>decision</em> — when to move closer is the question “what is this emotion made of?”.</p>
+<p data-inema-block="t6-m6-3-p2">
+<a class="entry-link" href="modulo-6-3.html">Read Module 6.3 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 6.4 ---- -->
+<section data-inema-module="6-4" data-inema-topic="modulo-6-4#indice" data-inema-track="6" id="topico-4">
+<div class="section-mark">
+<span class="where">Module 6.4</span><span>·</span><span>5 sections · ~18 min</span>
+</div>
+<h2 class="head"><span class="num">6.4</span>Dialogue Scene Structure</h2>
+<div class="prose">
+<p data-inema-block="t6-m6-4-p1">The entire dialogue scene edited, shot by shot. The scene as
+              <em>emotional negotiation</em> with built-in conflict; the <em>subtext</em> about direct speech (with
+              pairs of weak and strong dialogue); the <em>silence</em>, o <em>rhythm</em> of the exchange and the <em>power
+              dynamics</em>; a <em>emotional turn</em> that every scene needs; it’s the grammar of <em>shot and
+              reverse shot</em> about the <em>axis</em> (180° line), with the eyeline matching across the cut. The
+              question that brings it all together: what are these characters emotionally incapable of saying?</p>
+<p data-inema-block="t6-m6-4-p2">
+<a class="entry-link" href="modulo-6-4.html">Read Module 6.4 →</a>
+</p>
+</div>
+</section>
+<!-- indo mais fundo: divulgacao progressiva (opcional) -->
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why character comes after the camera
+            <span class="opt">optional</span></summary>
+<div class="inner">
+<p>The happy path is linear: 6.1, 6.2, 6.3, 6.4. This layer explains the order—and can be skipped.</p>
+<p>The previous tracks built the <em>world</em>: lighting, composition, movement, effects, action. It only
+              makes sense to turn the camera toward the <em>character</em> after you already know how to build the space around
+              it — because acting doesn't happen in a vacuum: it's read through the framing, the
+              distance, and the light you've learned to control. That's why 6.1 establishes the <em>anatomy</em> of the
+              dialogue scene before 6.2 moves into the details of performance; and that's why 6.3 (the camera in service of
+              emotion) comes before 6.4, which brings acting and camera together in the complete scene structure. The logic is
+              always from the piece to the whole: first what makes a conversation scene come alive, then how to direct the
+              character within it, and finally how to build the entire scene around what's left unsaid.</p>
+<p>This is the course’s most “invisible” track: what you learn here doesn’t show up as a
+              flashy effect, but as the difference between a scene the audience watches and one the audience
+              <em>feels</em>.</p>
+</div>
+</details>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Start with anatomy</div>
+<div class="t">Module 6.1 — Dialogue and Acting</div>
+</div>
+<a class="go" href="modulo-6-1.html">Read the first one →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes and your learning dashboard" class="margin-rail">
+<!-- ---- MODULO 6.1 ---- -->
+<aside data-inema-rail="modulo-6-1#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Track block.</b> Track 6 is “Character”: after building the world (light,
+          camera, VFX), it turns the camera toward those who live in it — emotion, performance, dialogue.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Order matters: 6.1 is the <i>anatomy</i> of the dialogue scene, 6.2 is the <i>performance</i> of the character,
+          6.3 puts the <i>camera</i> in service of emotion, and 6.4 assembles the <i>entire scene</i> around what is left unsaid.
+        </aside>
+<!-- ---- MODULO 6.2 ---- -->
+<aside data-inema-rail="modulo-6-2#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Character consistency.</b> Keep the face, age, hair, and wardrobe consistent across shots. AI's typical
+          weakness — solved with a locked identity block and a reference portrait.
+        </aside>
+<!-- ---- MODULO 6.3 ---- -->
+<aside data-inema-rail="modulo-6-3#indice"></aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Block 6 of the program — <i>Character &amp; Performance</i> — covers dialogue and acting,
+AI character performance, emotional shots, and dialogue scene structure.
+        </aside>
+<!-- ---- MODULO 6.4 ---- -->
+<aside data-inema-rail="modulo-6-4#indice"></aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          The rule that wraps up the track: <i>in a dialogue scene, what matters most is almost always what no one
+          says</i>. Conflict, subtext, silence, and turns exist to make room for this.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Course 6 — index</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

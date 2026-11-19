@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 7.2 — Propósito de la escena | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha7/modulo-7-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha7/modulo-7-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha7/modulo-7-2.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:7-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>7</b> Historia y estructura cinematográfica</span>
+<span class="sep">·</span>
+<span>Módulo <b>7.2</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Sección 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Módulo 7.2 · Ruta 7 · Historia y estructura cinematográfica</p>
+<h1 class="module">Propósito de <em>Escena</em></h1>
+<p class="deck">Cinematográfico no quiere decir bonito: quiere decir significativo. Una escena puede
+          impresionar visualmente y aun así sentirse vacía. Antes de generar cualquier plano, la pregunta no es cómo
+          se ve, sino por qué existe.</p>
+<p class="read-meta">
+<span class="here">Leyendo ahora</span>
+<span>~17 min · módulo completo</span>
+<span>5 secciones</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="Lo que vas a entender" class="aims">
+<h2>Lo que vas a entender</h2>
+<ul>
+<li>Por qué <b>toda escena debe justificar su existencia</b> — y la prueba de eliminación que revela las escenas prescindibles.</li>
+<li>La fórmula que hace que una escena funcione: <b>propósito → objetivo → conflicto → cambio emocional</b>.</li>
+<li>La diferencia entre <b>conflicto externo e interno</b> — y por qué cuanto más difícil es alcanzar el éxito, más le importa al público.</li>
+<li>O <b>prueba definitiva</b>: si quitas todos los diálogos, ¿puedes sentir el cambio emocional solo por la acción?</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<p class="toc-head">Resumen: cinco movimientos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Toda escena necesita un motivo</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Propósito: el trabajo que hace la escena</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Objetivo: lo que el personaje quiere ahora</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Conflicto: lo que dificulta el éxito</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Cambio emocional: entrar y salir diferente</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="7-2" data-inema-topic="modulo-7-2#topico-1" data-inema-track="7" id="topico-1">
+<div class="section-mark">
+<span class="where">Sección 1 de 5</span><span>·</span><span>El motivo</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Toda escena necesita un motivo</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m7-2-t1-p1">Muchos creadores confunden <em>cinematográfico</em>
+              con <em>bonito</em>. Pero, en la práctica, una buena narrativa se construye con <strong>escenas significativas</strong>.
+              Una escena puede ser visualmente impresionante y, aun así, sentirse emocionalmente vacía —y el público lo percibe, aunque no sepa cómo expresarlo. El principio que organiza esta clase es directo: <strong>toda
+              escena debe justificar su propia existencia</strong>. Antes de escribir o generar cualquier plano, la
+              pregunta no es “¿cómo se ve?”, sino <em>por qué existe esta escena?</em><span class="sidenote-ref">1</span></p>
+<p data-inema-block="m7-2-t1-p2">Existe una prueba sencilla e implacable para esto: el <span class="dfn"><details class="dfn"><summary>prueba de eliminación</summary><span class="body"><b>Prueba de eliminación</b> — saca mentalmente la escena de la historia. Si nada cambia en el conjunto — ni la trama, ni la emoción, ni lo que sabemos del personaje — entonces la escena no tiene propósito y probablemente no debería estar ahí.</span></details></span>.
+              Saca la escena de la historia, mentalmente. Si nada cambia en el arco general —la trama sigue igual, la emoción sigue igual, no aprendemos nada nuevo sobre el personaje— entonces probablemente no la necesitas. Una escena que se puede eliminar sin consecuencias es adorno, no narrativa. Este criterio parece severo, pero es justamente lo que mantiene una historia concisa y viva.</p>
+<h3 class="sub">La fórmula de una escena potente</h3>
+<p data-inema-block="m7-2-t1-p3">Para que una escena funcione de verdad, sigue una progresión de cuatro
+              eslabones: <strong>propósito → objetivo → conflicto → cambio emocional</strong>. El
+              propósito es el trabajo que la escena hace en la historia; el objetivo es lo que el personaje quiere en ese
+              instante; el conflicto es lo que hace difícil ese deseo; y el cambio emocional es lo que se transforma
+              entre la primera y la última imagen. Las próximas cuatro secciones desglosan cada eslabón, pero
+              recuerda desde ahora que trabajan juntos: quitar uno suele vaciar toda la escena.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Una escena muestra a un jardinero podando arbustos, con una luz hermosa y un movimiento de cámara suave. Técnicamente
+              impecable. Aun así, parece «no decir nada». ¿Qué falta — y cómo la transformaría una sola
+              frase?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">Falta <strong>propósito</strong>: la escena no hace ningún trabajo en la historia, no
+                hay nada en juego. Una frase lo resuelve: «un jardinero <em>endeudado</em> poda los
+                arbustos deprisa, antes de que el banco se quede con la tierra”. Ahora hay un objetivo (terminar a
+                tiempo), un conflicto (la deuda, el plazo) y la posibilidad de un cambio emocional — y el público
+                <em>empieza a importar</em>. La imagen no cambió; el motivo de la escena, sí.</p>
+</details>
+</div>
+<!-- figura 1: a formula da cena -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · La fórmula de la escena fuerte — <b>cuatro eslabones</b> encadenados</figcaption>
+<svg aria-label="Diagrama en cuatro cajas conectadas por flechas: el propósito lleva al objetivo, que lleva al conflicto, que lleva al cambio emocional; abajo, la prueba de eliminación evalúa el conjunto." class="diagram" role="img" viewbox="0 0 720 176">
+<defs>
+<pattern height="6" id="hatch-7-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<g class="ink" font-family="Spectral, serif" font-size="13" text-anchor="middle">
+<rect class="wash accent-stroke" height="46" rx="4" stroke-width="1.3" width="142" x="30" y="44"></rect>
+<text font-style="italic" x="101" y="64">Propósito</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="101" y="80">por qué existe</text>
+<rect class="wash accent-stroke" height="46" rx="4" stroke-width="1.3" width="142" x="206" y="44"></rect>
+<text font-style="italic" x="277" y="64">Objetivo</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="277" y="80">qué quiere</text>
+<rect class="wash accent-stroke" height="46" rx="4" stroke-width="1.3" width="142" x="382" y="44"></rect>
+<text font-style="italic" x="453" y="64">Conflicto</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="453" y="80">qué lo dificulta</text>
+<rect class="accent-stroke" fill="url(#hatch-7-2)" height="46" rx="4" stroke-width="1.4" width="142" x="558" y="44"></rect>
+<text font-style="italic" x="629" y="64">Cambio</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="629" y="80">lo que se desplaza</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.8">
+<path d="M172 67 L206 67" marker-mid=""></path>
+<path d="M348 67 L382 67"></path>
+<path d="M524 67 L558 67"></path>
+</g>
+<g class="accent" font-family="IBM Plex Mono, monospace" font-size="11"><text text-anchor="middle" x="189" y="60">→</text><text text-anchor="middle" x="365" y="60">→</text><text text-anchor="middle" x="541" y="60">→</text></g>
+<!-- teste de remocao -->
+<line class="rule-stroke" opacity="0.6" stroke-dasharray="2 4" stroke-width="0.8" x1="101" x2="629" y1="110" y2="110"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="360" y="138">PRUEBA DE ELIMINACIÓN — QUITA LA ESCENA: SI NADA CAMBIA, NO LA NECESITAS</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: por qué esto vale aún más para los clips cortos de IA
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>El camino recomendado de arriba ya basta. Esta capa amplía el alcance y puedes saltártela.</p>
+<p>En un videoclip de IA de pocos segundos, la prueba del propósito queda <em>más</em> exigente, no menos.
+                No tienes dos minutos para que el público simpatice con la escena por inercia: o esta hace un trabajo
+                emocional claro en los primeros instantes, o es descartable. Por eso, la disciplina del propósito es el
+                mejor filtro antes de gastar una generación. Antes de escribir el prompt, responde en una frase: ¿qué
+                trabajo hace esta escena? Si no puedes decirlo, el modelo tampoco lo va a descubrir — te
+                entregará una imagen bonita y vacía, que es exactamente lo que estamos intentando evitar.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="7-2" data-inema-topic="modulo-7-2#topico-2" data-inema-track="7" id="topico-2">
+<div class="section-mark">
+<span class="where">Sección 2 de 5</span><span>·</span><span>Propósito</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Propósito: el trabajo que hace la escena</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-2-t2-p1">El primer eslabón es el propósito: <em>toda escena tiene que cumplir
+              una función específica</em>. No basta con que exista: tiene que contribuir a algo. Una escena
+              potente hace al menos una de estas cuatro cosas: <strong>hace avanzar la historia</strong>, <strong>construye
+              emoción</strong>, <strong>aumenta la tensión</strong> o <strong>revela el carácter</strong>. Si una escena
+              no hace ninguna de esas cosas, es peso muerto — y la prueba de eliminación de la sección anterior lo delata.</p>
+<p data-inema-block="m7-2-t2-p2">Volvamos al jardinero. «Un jardinero poda arbustos» no
+              hace ningún trabajo: no hace avanzar nada, no revela nada, no genera tensión. «Un jardinero endeudado
+              poda arbustos a toda prisa antes de que el banco se quede con el terreno» hace, de una sola vez, varios trabajos:
+              establece lo que está en juego (el terreno), revela carácter (alguien que lucha, que no se rinde) y crea
+              tensión (el plazo). Por eso ahora al público le importa. <em>El propósito es lo que transforma
+              una imagen en un acontecimiento.</em></p>
+<h3 class="sub">Los cuatro trabajos posibles</h3>
+<p data-inema-block="m7-2-t2-p3">Conviene tener los cuatro presentes, porque funcionan como un
+              menú de intenciones. <strong>Mover la historia</strong>: la escena cambia la situación, abre o cierra una
+              puerta en la trama. <strong>Construir emoción</strong>: profundiza lo que sentimos por alguien o por
+              algo. <strong>Aumentar la tensión</strong>: eleva lo que está en juego, estrecha el cerco.
+              <strong>Revelar el carácter</strong>: nos muestra quién es el personaje en el fondo, a través de la elección que hace
+              bajo presión. Una escena puede hacer más de una de estas cosas a la vez — cuantas más, mejor —
+              pero debe hacer al menos una.<span class="sidenote-ref">2</span></p>
+</div>
+<!-- figura 2: os quatro trabalhos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · <b>Los cuatro trabajos</b> — una escena necesita hacer al menos una</figcaption>
+<svg aria-label="Diagrama con cuatro cuadrantes alrededor de un centro rotulado escena: mover la historia, construir emoción, aumentar la tensión y revelar el carácter." class="diagram" role="img" viewbox="0 0 720 198">
+<!-- centro -->
+<circle class="accent-stroke" cx="360" cy="99" fill="url(#hatch-7-2)" r="34" stroke-width="1.5"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="103">la escena</text>
+<!-- quatro trabalhos -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="12.5">
+<!-- topo-esq -->
+<line class="rule-stroke" stroke-width="1.1" x1="336" x2="200" y1="78" y2="42"></line>
+<text class="ink" text-anchor="end" x="195" y="38">mueve la historia</text>
+<text class="faint" font-size="9.5" text-anchor="end" x="195" y="54">abre o cierra una puerta</text>
+<!-- topo-dir -->
+<line class="rule-stroke" stroke-width="1.1" x1="384" x2="520" y1="78" y2="42"></line>
+<text class="ink" x="525" y="38">construye emoción</text>
+<text class="faint" font-size="9.5" x="525" y="54">profundiza el vínculo</text>
+<!-- base-esq -->
+<line class="rule-stroke" stroke-width="1.1" x1="336" x2="200" y1="120" y2="156"></line>
+<text class="ink" text-anchor="end" x="195" y="152">aumenta la tensión</text>
+<text class="faint" font-size="9.5" text-anchor="end" x="195" y="168">eleva lo que está en juego</text>
+<!-- base-dir -->
+<line class="accent-stroke" stroke-width="1.3" x1="384" x2="520" y1="120" y2="156"></line>
+<text class="accent" x="525" y="152">revela el carácter</text>
+<text class="faint" font-size="9.5" x="525" y="168">la elección bajo presión</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-2-t2-p4">Observa que «ser bonita» no está en la lista. La belleza puede
+              <em>acompañar</em> cualquiera de los cuatro trabajos, pero no sustituye a ninguno. Una escena
+              deslumbrante que no conmueve, no emociona, no crea tensión ni revela nada sigue siendo descartable —
+              solo que con un acabado costoso. El propósito va primero; la estética es la forma de transmitirlo.</p>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="7-2" data-inema-topic="modulo-7-2#topico-3" data-inema-track="7" id="topico-3">
+<div class="section-mark">
+<span class="where">Sección 3 de 5</span><span>·</span><span>Objetivo</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Objetivo: lo que el personaje quiere ahora</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-2-t3-p1">El segundo eslabón es el objetivo: <em>el personaje necesita
+              querer algo, ahora</em>. Sin deseo, la escena se vuelve pasiva y estancada — el público
+              ve a alguien simplemente existir, y la atención se escapa. El objetivo de la <strong>dirección</strong>:
+              crea un vector, una flecha que apunta hacia donde quiere ir la escena. Y es esa flecha la que sigue el espectador,
+              incluso sin darse cuenta.</p>
+<p data-inema-block="m7-2-t3-p2">Compara. “Un hombre sentado en un café, pensando” es una
+              imagen, no un acontecimiento. No hay vector: puede quedarse allí durante horas y nada tiene que
+              cambiar. Ahora: “un hombre espera nervioso en un café, intentando impedir que su exesposa se vaya con su
+              hija”. Hay un objetivo urgente y concreto (impedir que se vaya), y de repente cada gesto —
+              la mirada hacia la puerta, las manos inquietas, el reloj— transmite tensión. El mismo escenario, el mismo
+              café; lo que cambió fue el <em>querer</em>.</p>
+<h3 class="sub">Los objetivos crean dirección y legibilidad</h3>
+<p data-inema-block="m7-2-t3-p3">Un objetivo claro también hace que la escena se entienda sin diálogo, lo
+              que se conecta directamente con la prueba del silencio de la clase anterior. Si el público entiende lo que el personaje
+              quiere, puede interpretar cada acción como un paso hacia ese deseo (o un obstáculo para alcanzarlo). El
+              objetivo es lo que transforma el movimiento en <em>intención</em>: la persona no solo camina — va
+              <em>en dirección</em> a algo. Sin un objetivo, la mejor luz del mundo ilumina una escena que no avanza
+              hacia ninguna parte.<span class="sidenote-ref">3</span></p>
+</div>
+<!-- figura 3: objetivo como vetor -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · El objetivo le da a la escena un <b>vector</b> — sin él, ella solo flota</figcaption>
+<svg aria-label="Diagrama que compara dos escenas: arriba, un personaje sin objetivo flota en el lugar, sin dirección; abajo, un personaje con objetivo sigue una flecha clara hacia una meta." class="diagram" role="img" viewbox="0 0 720 190">
+<!-- cena sem objetivo -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" x="30" y="34">SIN OBJETIVO</text>
+<circle class="rule-stroke" cx="120" cy="60" fill="none" r="9" stroke-width="1.4"></circle>
+<g class="rule-stroke" opacity="0.6" stroke-width="1">
+<path d="M120 44 l0 -10"></path><path d="M120 76 l0 10"></path><path d="M104 60 l-10 0"></path><path d="M136 60 l10 0"></path>
+</g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="360" y="64">el personaje queda flotando — podría quedarse ahí para siempre, nada cambia</text>
+<!-- divisor -->
+<line class="rule-stroke" opacity="0.5" stroke-dasharray="2 5" stroke-width="0.8" x1="40" x2="680" y1="96" y2="96"></line>
+<!-- cena com objetivo -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" x="30" y="128">CON OBJETIVO</text>
+<circle class="accent-stroke" cx="120" cy="154" fill="none" r="9" stroke-width="1.6"></circle>
+<path class="accent-stroke" d="M138 154 L600 154" fill="none" stroke-width="2.2"></path>
+<path class="accent" d="M600 154 l-12 -6 l0 12 z"></path>
+<rect class="accent-stroke" fill="url(#hatch-7-2)" height="24" rx="3" stroke-width="1.2" width="70" x="610" y="142"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="645" y="158">el objetivo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="180">cada acción se convierte en un paso hacia lo que quiere</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-2-t3-p4">Al escribir el prompt de una escena de IA, deja claro el objetivo.
+              En lugar de describir un estado (“una mujer bajo la lluvia”), describe un deseo en acción
+              (“una mujer corre bajo la lluvia intentando alcanzar el último autobús”). El modelo representa mejor
+              una intención que una pose, y el resultado adquiere el vector que distingue una escena de una postal.</p>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="7-2" data-inema-topic="modulo-7-2#topico-4" data-inema-track="7" id="topico-4">
+<div class="section-mark">
+<span class="where">Sección 4 de 5</span><span>·</span><span>Conflicto</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Conflicto: lo que dificulta el éxito</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-2-t4-p1">El tercer eslabón y el conflicto: <em>algo debe estar
+              dificultando activamente el éxito</em> para el personaje. Un objetivo sin obstáculo es un
+              paseo, y los paseos no atrapan. La regla que subraya el instructor es casi una ley de la atención:
+              <strong>cuanto más difícil es el éxito, más le importa al público</strong>. El conflicto es lo que
+              convierte un deseo en una apuesta.</p>
+<h3 class="sub">Exterior e interior</h3>
+<p data-inema-block="m7-2-t4-p2">El conflicto tiene dos sabores, y los mejores momentos usan ambos.
+              El <strong>conflicto externo</strong> es el obstáculo en el mundo: problemas de dinero, mal tiempo,
+              competencia feroz, presión del tiempo, una puerta cerrada con llave, un rival. El <strong>conflicto interno</strong>
+              es el obstáculo dentro del personaje: miedo, vergüenza, duda, duelo profundo, orgullo. El externo crea la
+              dificultad visible; el interno crea la profundidad — la sensación de que hay algo en juego más allá de la
+              tarea inmediata. Una escena que combina ambos (el hombre necesita pedir ayuda, pero el orgullo se lo impide)
+              tiene el doble de presión.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m7-2-t4-p3">Cuando una escena parece tibia a pesar de tener un objetivo, casi siempre
+              falta conflicto — o es demasiado débil. La solución no es añadir efectos: es <em>elevar el
+              obstáculo</em>. Acorta el plazo, aumenta el riesgo, saca a la luz el miedo interno. Recuerda la pregunta
+              de la clase sobre el arco: “¿la situación se volvió más difícil?”. Si la respuesta es no, la escena
+              pierde fuerza, porque, sin una dificultad creciente, no hay motivo para alentar.</p>
+</div>
+<!-- figura 4: conflito externo e interno -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Dos conflictos</b> acercan al personaje al límite entre el mundo y sí mismo</figcaption>
+<svg aria-label="Diagrama: en el centro están el personaje y su objetivo; desde arriba, flechas de conflicto externo (dinero, tiempo, rival, clima) presionan hacia abajo; desde abajo, flechas de conflicto interno (miedo, vergüenza, duda, orgullo) presionan hacia arriba." class="diagram" role="img" viewbox="0 0 720 196">
+<!-- conflito externo (de cima) -->
+<text class="ink-soft" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="360" y="26">CONFLICTO EXTERNO — el mundo</text>
+<g class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
+<text x="180" y="48">dinero</text><text x="300" y="48">tiempo</text><text x="420" y="48">rival</text><text x="540" y="48">ambiente</text>
+</g>
+<g class="rule-stroke" fill="none" stroke-width="1.3">
+<path d="M180 54 L300 84"></path><path d="M300 54 L335 84"></path><path d="M420 54 L385 84"></path><path d="M540 54 L420 84"></path>
+</g>
+<!-- centro -->
+<rect class="accent-stroke" fill="url(#hatch-7-2)" height="40" rx="4" stroke-width="1.5" width="120" x="300" y="86"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="360" y="105">personaje</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="360" y="119">+ objetivo</text>
+<!-- conflito interno (de baixo) -->
+<g class="accent-stroke" fill="none" stroke-width="1.3">
+<path d="M180 158 L300 128"></path><path d="M300 158 L335 128"></path><path d="M420 158 L385 128"></path><path d="M540 158 L420 128"></path>
+</g>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
+<text x="180" y="172">miedo</text><text x="300" y="172">vergüenza</text><text x="420" y="172">duda</text><text x="540" y="172">orgullo</text>
+</g>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="360" y="190">CONFLICTO INTERNO — el personaje</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-2-t4-p4">En el prompt, el conflicto casi siempre puede <em>escenificado en la imagen</em>,
+              sin necesidad de diálogo. El mal tiempo es visible; la prisa en las manos es visible; el miedo en el rostro es visible.
+              Describe el obstáculo como acción y expresión, y el generador lo traduce en tensión, mientras mantiene la escena
+              legible incluso sin sonido. El siguiente prompt reescribe una escena débil como una escena sólida, marcando los cuatro
+              eslabones uno por uno.</p>
+<div class="codeblock"><span class="c"># Escena débil -&gt; escena fuerte: define el propósito, el objetivo, el conflicto y el cambio</span>
+<span class="c"># (genera ~5s en Kling; escenifica el conflicto mediante la acción, sin depender del diálogo)</span>
+<span class="k">Débil:</span> a gardener trims bushes in a sunny yard.
+<span class="k">Purpose:</span> reveal character and raise stakes — show a man fighting to keep what is his.
+<span class="k">Meta:</span> finish trimming the hedges before the bank repossession deadline.
+<span class="k">Conflict (external):</span> a foreclosure notice nailed to the gate, fading light, time running out.
+<span class="k">Conflict (internal):</span> exhaustion and pride — he refuses to ask for help.
+<span class="k">Cambio emocional:</span> from grim determination to a flicker of despair as he glances at the notice.
+<span class="k">Plano:</span> plano medio, manos trabajando rápido, sudor, luego un lento acercamiento al rostro cansado.
+<span class="k">Regla:</span> cuanto más difícil se vuelve el éxito, más le importa al público.</div>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="7-2" data-inema-topic="modulo-7-2#topico-5" data-inema-track="7" id="topico-5">
+<div class="section-mark">
+<span class="where">Sección 5 de 5</span><span>·</span><span>Cambio</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Cambio emocional: entrar y salir diferente</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-2-t5-p1">El cuarto y último eslabón — y el más importante —
+              es el cambio emocional. Los profesionales se enfocan en el <em>movimiento</em> emocional: una escena nunca debería
+              terminar emocionalmente idéntica a como empezó. Si el personaje entra y sale en el mismo estado, la escena
+              no cumplió su función. <strong>El público necesita sentir que algo se desplazó.</strong> Este es el
+nexo que une la lección con la tesis de la trilha: la historia visual es cambio emocional.</p>
+<h3 class="sub">Los desplazamientos</h3>
+<p data-inema-block="m7-2-t5-p2">El cambio puede ser pequeño, pero tiene que existir. Algunos ejemplos de
+              desplazamiento dentro de una escena: <em>confianza → duda</em>, <em>esperanza → frustración</em>,
+              <em>miedo → valentía</em>, <em>soledad → conexión</em>. Y en una historia más larga, esos
+              desplazamientos se encadenan en un arco mayor; por ejemplo: <strong>fracaso → esperanza
+              → lucha → desesperación → victoria silenciosa</strong>. Y es precisamente esta progresión de
+              estados, y no los acontecimientos en sí, lo que crea el sentido. El público no recuerda lo que pasó; recuerda
+              cómo se sintió al cambiar.<span class="sidenote-ref">5</span></p>
+<h3 class="sub">Las cinco preguntas antes de cada escena</h3>
+<p data-inema-block="m7-2-t5-p3">Toda la clase se condensa en una lista de verificación de cinco preguntas para evaluar
+              cualquier escena antes de generarla: <strong>(1)</strong> ¿Por qué existe esta escena? <strong>(2)</strong> ¿Qué
+              quiere el personaje? <strong>(3)</strong> ¿Qué dificulta el éxito? <strong>(4)</strong> ¿Qué
+              cambió emocionalmente? <strong>(5)</strong> ¿Por qué debería importarle al público? Si respondes
+              las cinco con claridad, la escena tiene un propósito. Si te trabas con alguna, ahí está el eslabón débil, y ahí
+              está la solución.</p>
+<h3 class="sub">La prueba definitiva: quita el diálogo</h3>
+<p data-inema-block="m7-2-t5-p4">Y, para cerrar, la prueba más difícil de todas — con el mismo espíritu de la
+              prueba del silencio, ahora aplicada al propósito: <strong>quita todo el diálogo de la escena y pregúntate: ¿el
+              público aún entendería el cambio emocional solo por la acción?</strong> Si la respuesta es sí, el propósito
+              de la escena funciona perfectamente. Si tú <em>necesita</em> de un diálogo para que el cambio ocurra, todavía no ha <em>escenificada</em> — se está explicando. Representa el cambio con el gesto, el encuadre, la luz que cambia, la decisión que toma el personaje. La próxima clase lleva este principio de una escena única a la secuencia de varias: cómo construir una secuencia completa en la que la emoción evoluciona de un plano a otro.</p>
+</div>
+<!-- figura 5: o estado entra diferente do que sai -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · La escena <b>entra en un estado y sale en otro</b> — el desplazamiento es el trabajo</figcaption>
+<svg aria-label="Diagrama: la escena como una caja por la que el personaje entra en un estado emocional (izquierda) y sale en un estado diferente (derecha); abajo, ejemplos de cambio como de confianza a duda y de soledad a conexión." class="diagram" role="img" viewbox="0 0 720 188">
+<!-- entrada -->
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12.5" text-anchor="middle" x="90" y="56">entra</text>
+<circle class="rule-stroke" cx="90" cy="86" fill="none" r="16" stroke-width="1.5"></circle>
+<text class="faint" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="90" y="91">A</text>
+<!-- a cena -->
+<rect class="accent-stroke" fill="url(#hatch-7-2)" height="56" rx="5" stroke-width="1.4" width="420" x="150" y="58"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="16" font-style="italic" text-anchor="middle" x="360" y="84">la escena</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="360" y="102">PROPÓSITO · OBJETIVO · CONFLICTO</text>
+<!-- saida -->
+<text class="accent" font-family="Source Serif 4, serif" font-size="12.5" text-anchor="middle" x="630" y="56">sale</text>
+<circle class="accent-stroke" cx="630" cy="86" fill="none" r="16" stroke-width="1.7"></circle>
+<text class="accent" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="630" y="91">B</text>
+<!-- setas -->
+<path class="rule-stroke" d="M108 86 L150 86" stroke-width="1.6"></path>
+<path class="accent-stroke" d="M570 86 L612 86" stroke-width="2"></path>
+<path class="accent" d="M612 86 l-11 -5 l0 10 z"></path>
+<!-- exemplos -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle">
+<text x="360" y="146">confianza → duda  ·  esperanza → frustración</text>
+<text x="360" y="166">miedo → valentía  ·  soledad → conexión</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-2-t5-p5">Resume esta lección en una frase: <em>una escena se justifica cuando realiza
+              un trabajo, persigue un objetivo, enfrenta un obstáculo y termina de forma distinta a como empezó.</em> Los
+              cuatro eslabones no son teoría de guion distante: son el filtro que separa, en tu propio
+              trabajo, la escena que merece existir de la que solo ocupa espacio. De ahora en adelante, ya no miras
+              una generación y preguntas “¿quedó bonita?”, sino “¿por qué existe y qué cambió?”.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Autocomprobación" class="check">
+<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>¿Cuál es la “prueba de eliminación” y qué detecta?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Quita la escena de la historia. Si nada cambia en el arco general —trama, emoción,
+              conocimiento del personaje—, no tiene propósito y probablemente no necesita existir. Detecta
+              escenas prescindibles, por bonitas que sean.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>¿Cuáles son los cuatro trabajos que puede hacer una escena y cuántos necesita hacer?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Mover la historia, construir emoción, aumentar la tensión o revelar el carácter. Tiene
+              que hacer <em>al menos uno</em>. “Ser bonita” no está en la lista — la belleza
+              acompaña el trabajo, no lo sustituye.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>¿Por qué el conflicto interno y el externo juntos le dan más fuerza a una escena?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Lo externo (dinero, tiempo, rival, clima) crea la dificultad visible; lo interno
+              (miedo, vergüenza, orgullo) crea profundidad. Juntos, acorralan al personaje entre el mundo y sí mismo
+              y cuanto más difícil es alcanzar el éxito, más le importa al público.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>¿Cuál es la prueba definitiva del propósito de la escena?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Quita todo el diálogo y pregunta: ¿se puede entender el cambio emocional solo por la
+              acción? Si sí, el propósito funciona. Si el cambio depende de una frase, está siendo <em>explicada</em>,
+              no <em>escenificada</em> — y tiene que ir al gesto, al encuadre, a la luz.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Mi recorrido</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">En este módulo</div>
+<div class="v" data-inema-meter="modulo:7-2">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En la ruta 7</div>
+<div class="v" data-inema-meter="trilha:7">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En el curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Módulo 7.3 — Construcción de secuencias cinematográficas</div>
+</div>
+<a class="go" href="modulo-7-3.html">Siguiente →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-7-2#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Escena significativa.</b> La que cumple una función en la historia y no solo muestra un elemento visual. Lo
+          opuesto a la escena bonita y vacía: la que impresiona a la vista y no mueve nada por dentro.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          Lección 20 del programa <i>AI Filmmaking</i> — “Scene Purpose”. La regla de apertura:
+          <i>toda escena debe justificar su propia existencia</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-7-2#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Propósito.</b> El trabajo específico que hace la escena: mover la historia, construir emoción, aumentar la
+          tensión o revelar el carácter. Al menos uno, siempre: la belleza no cuenta como trabajo.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-7-2#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Objetivo.</b> Lo que el personaje quiere ahora. Le da a la escena un vector: sin él, la escena queda suspendida y la atención
+          se dispersa. En el prompt, describe un deseo en acción, no una pose.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          Un objetivo claro hace que la escena sea comprensible sin diálogo: cada acción se convierte en un paso hacia (o en contra de) lo que se desea. Es
+          lo que conecta esta lección con la prueba del silencio del módulo anterior.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-7-2#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Conflicto.</b> Lo que hace que el éxito sea activamente más difícil. Externo (dinero, tiempo, rival, clima)
+          + interno (miedo, vergüenza, duda, orgullo). Cuanto más difícil, más le importa al público.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-7-2#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Cambio emocional.</b> El paso entre el estado en que empieza la escena y el estado en que termina.
+          Si entra y sale igual, la escena no hizo su trabajo.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          Las cinco preguntas: ¿por qué existe? ¿qué quiere? ¿qué lo dificulta? ¿qué cambió? ¿por qué importa? Y la prueba
+          final: quita el diálogo; ¿se puede sentir el cambio solo mediante la acción?
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Módulo 7.2 — folio ii</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

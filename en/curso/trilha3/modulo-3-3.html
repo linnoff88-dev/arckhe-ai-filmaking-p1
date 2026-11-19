@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 3.3 — Motion Generation in Seedance | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:3-3"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>3</b> AI Cinema Workflow</span>
+<span class="sep">·</span>
+<span>Module <b>3.3</b> / 5</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Section 1 of 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Module 3.3 · Track 3 · AI Filmmaking Workflow</p>
+<h1 class="module">Motion Generation in <em>Seedance</em></h1>
+<p class="deck">The still frame comes alive — with physics, not adjectives. Seedance understands
+          force, timing, and weight. Thinking about movement like a director (who observes, measures, sequences, and tests) is what
+          separates a clip that looks real from one that looks like cheap animation.</p>
+<p class="read-meta">
+<span class="here">Reading now</span>
+<span>~18 min · full module</span>
+<span>5 sections</span>
+</p>
+<!-- objetivos -->
+<section aria-label="What you will understand" class="aims">
+<h2>What you will understand</h2>
+<ul>
+<li>Why Seedance understands <b>physics, not adjectives</b> — and what that changes about how you write the prompt.</li>
+<li>The four-part system for building a scene: <b>force, sequence, camera, and human reaction</b>.</li>
+<li>The rule of <b>physical linkage</b> — large → small → particles — and the role of secondary motion.</li>
+<li>How <b>show emotion through the body</b> is controlling time (real time, 30% slow motion, precise durations) instead of naming feelings.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Module summary" class="toc" data-inema-toc="">
+<p class="toc-head">Summary — five movements</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Physics, not adjectives</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Force and sequence: the order of events</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Camera and human reaction</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Time, weight, and secondary motion</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Emotion through movement</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-1" data-inema-track="3" id="topico-1">
+<div class="section-mark">
+<span class="where">Section 1 of 5</span><span>·</span><span>Physics</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Physics, not adjectives</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m3-3-t1-p1">A director doesn’t <em>guesses</em> movement—
+              it observes, measures, sequences, and tests. That sentence sums up the entire lesson. Seedance, the video
+              generator for this stage, was designed to respond to <strong>physics, not adjectives</strong>: it understands
+              force, time, and weight much better than it understands words like “epic” or
+              “dramatic.”<span class="sidenote-ref">1</span> Asking for “an incredible movement”
+              produces something generic; describing <em>what moves, how strongly, in what order, and over how much time</em>
+              brings back real movement.</p>
+<p data-inema-block="m3-3-t1-p2">Every movement rests on three elements. <strong>Force</strong> —
+              what drives the action (impact, gravity, push, jump). <strong>Time</strong> — how long each
+              action lasts. <strong>Weight</strong> — how objects behave physically. When you
+provide these three, the generator has what it needs to produce something the eye accepts as real.
+When you provide adjectives, it fills in the gaps on its own — and the result
+floats, slips, and feels weightless.</p>
+<h3 class="sub">Before writing: five questions for a director</h3>
+<p data-inema-block="m3-3-t1-p3">Before writing a scene, the source suggests defining five things:
+              <strong>camera</strong> (where it is, how it moves), <strong>force</strong> (explosion, gravity,
+              shove, jump), <strong>sequence</strong> (what happens first → what happens last),
+              <strong>delays</strong> (time offsets between actions) and <strong>perception</strong> (what the
+              viewer experiences). The synthesis is simple and powerful: <em>movement is a controlled sequence of
+              events.</em> Not a single effect—a chain ordered over time.</p>
+</div>
+<!-- figura 1: adjetivo x física -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · Seedance reads <b>physics</b>, not an adjective</figcaption>
+<svg aria-label="Diagram: on the left, the word epic goes in and out as vague, floating movement; on the right, force, timing, and weight go in and out as solid, believable movement." class="diagram" role="img" viewbox="0 0 720 206">
+<defs>
+<pattern height="6" id="hatch-3-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- esquerda: adjetivo -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="175" y="28">ADJECTIVE</text>
+<rect class="rule-stroke" fill="none" height="34" rx="3" stroke-width="1.2" width="120" x="60" y="44"></rect>
+<text class="ink-soft" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="120" y="66">“epic”</text>
+<path class="rule-stroke" d="M120 78 V 110" stroke-dasharray="3 4" stroke-width="1.2"></path>
+<path class="faint" d="M70 150 q 30 -22 60 0 t 60 0" fill="none" stroke-width="1.4"></path>
+<path class="faint" d="M70 168 q 30 -16 60 0 t 60 0" fill="none" stroke-width="1.2"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="175" y="194">vague, floating movement</text>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="34" y2="190"></line>
+<!-- direita: física -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="545" y="28">PHYSICS</text>
+<g font-family="Source Serif 4, serif" font-size="11" text-anchor="middle">
+<rect class="wash accent-stroke" height="30" rx="3" stroke-width="1.1" width="86" x="408" y="44"></rect>
+<text class="ink" x="451" y="64">force</text>
+<rect class="wash accent-stroke" height="30" rx="3" stroke-width="1.1" width="86" x="502" y="44"></rect>
+<text class="ink" x="545" y="64">time</text>
+<rect class="wash accent-stroke" height="30" rx="3" stroke-width="1.1" width="86" x="596" y="44"></rect>
+<text class="ink" x="639" y="64">weight</text>
+</g>
+<path class="accent-stroke" d="M545 76 V 104" stroke-width="1.4"></path>
+<rect class="accent-stroke" fill="url(#hatch-3-3)" height="46" rx="3" stroke-width="1.4" width="150" x="470" y="116"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="545" y="144">believable movement</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="545" y="186">solid, weighty</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>You ask Seedance for “an epic and dramatic explosion” and get something vague and weightless.
+              How would you rewrite the request so the generator produces an explosion the eye accepts as real?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">Replace the adjective with <strong>physics and sequence</strong>: what triggers it (a charge
+                detonates), the sequence (the shock wave first, then the debris, then the dust), the timing (the
+                detonation in real time, the dust rising over ~2s), and the weight (heavy debris falls quickly,
+                light smoke lingers). Describe the event, not the impression — “epic” comes from the
+                right physics, not the word.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-2" data-inema-track="3" id="topico-2">
+<div class="section-mark">
+<span class="where">Section 2 of 5</span><span>·</span><span>Force and sequence</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Force and sequence: the order of events</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-3-t2-p1">Every strong prompt begins with <em>force</em>: what
+              starts the movement? It could be a <strong>impact</strong>, a <strong>acceleration</strong>, a
+              <strong>gravity</strong> or a <strong>interaction</strong>. Force is the trigger—without it, the
+              scene has no cause, and movement without a cause looks like drifting. Defining the force first is what anchors
+              everything that follows.</p>
+<p data-inema-block="m3-3-t2-p2">Next comes the <em>sequence</em>: the order of events over time.
+              <strong>Main action first</strong>, secondary movement afterward, residual effects last. The source’s golden rule is brief and applies to almost anything that explodes, falls, or collides:
+              <strong>large → small → particles</strong> (dust, smoke, debris). This order
+              isn’t aesthetic—it’s physics. In the real world, the large mass moves first and pushes the smaller ones; the
+              particles are the last link in the chain. Reversing this (dust before impact) is what makes a scene
+              feel “wrong” without anyone knowing why.<span class="sidenote-ref">2</span></p>
+</div>
+<!-- prompt pronto: força + sequência -->
+<div class="prose">
+<p data-inema-block="m3-3-t2-p3">A movement prompt built around force and sequence, ready for
+              Seedance—notice how each action has an order and timing:</p>
+<div class="codeblock"><span class="c"># Seedance — movement through force + sequence (large -&gt; small -&gt; particles)</span>
+<span class="k">Scene:</span> a heavy steel door is kicked open into a dusty warehouse.
+<span class="k">Force:</span> a hard impact from the right drives the door inward.
+<span class="k">Sequence:</span>
+  1. the door swings open fast (main action, ~0.4s)
+  2. loose papers and dust lift off the floor (secondary, ~0.3s delay)
+  3. fine dust drifts and settles in the light shaft (residual, lingers ~2s)
+<span class="k">Weight:</span> the door is heavy — it swings with momentum, not a flick.
+<span class="k">Camera:</span> static low-angle wide, stable, no shake.
+<span class="c"># rule: large mass first, then small elements, then particles.</span></div>
+</div>
+<!-- figura 2: a cadeia grande -> pequeno -> partículas -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · The physical chain — <b>large, small, particles</b>, in that order</figcaption>
+<svg aria-label="Diagram of three links in time: the large mass moves first, then the small elements, then the particles (dust, smoke), with increasing delay between them." class="diagram" role="img" viewbox="0 0 720 180">
+<line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="120" y2="120"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="40" y="140">TIME →</text>
+<!-- elo 1: grande -->
+<circle class="accent-stroke" cx="140" cy="80" fill="url(#hatch-3-3)" r="30" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="140" y="84">large</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="140" y="150">main action</text>
+<!-- elo 2: pequeno -->
+<circle class="wash accent-stroke" cx="360" cy="86" r="18" stroke-width="1.3"></circle>
+<text class="ink-soft" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="360" y="90">small</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="150">secondary</text>
+<!-- elo 3: partículas -->
+<g class="accent"><circle cx="560" cy="92" r="2.5"></circle><circle cx="580" cy="84" r="2"></circle><circle cx="600" cy="96" r="2.2"></circle><circle cx="585" cy="100" r="1.8"></circle><circle cx="565" cy="80" r="1.6"></circle></g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="585" y="150">particles · residual</text>
+<!-- setas com atraso -->
+<g class="accent-stroke" fill="none" stroke-width="1.4">
+<path d="M172 84 H 338"></path><path d="M338 84 l -7 -4 m 7 4 l -7 4"></path>
+<path d="M380 88 H 548"></path><path d="M548 88 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="255" y="74">delay</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="465" y="78">longer delay</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: examples of the chain across different scenes
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer. The same rule applied to several types of events.</p>
+<p>The source gives two model sequences that serve as templates: <strong>debris → dust
+                → smoke</strong> (a demolition) and <strong>splash → droplets → mist</strong> (an
+                impact on the water). In both, the larger mass moves first and creates smaller layers in a cascade. What you learn from this is <em>habit of thinking in layers</em>: never a single effect, always a
+                chain—primary, secondary, residual. When you write the prompt this way, the generator gets the
+                temporal structure missing from most vague requests.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-3" data-inema-track="3" id="topico-3">
+<div class="section-mark">
+<span class="where">Section 3 of 5</span><span>·</span><span>Camera + body</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Camera and human reaction</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-3-t3-p1">A <em>camera</em> defines perception — it decides
+              <strong>what</strong> the viewer experiences of the event. Three controls: <strong>position</strong>
+              (low, wide, close-up), <strong>movement</strong> (pan, tilt, dolly, orbit, shake) and
+              <strong>behavior</strong> (stable vs. handheld). In the lesson examples, the camera appears on a
+              helmet (<em>helmet cam</em>), tracking shots (<em>tracking</em>), drone follow,
+              continuous orbit, and constant pullback—each placing the viewer in a different position in
+              relation to the action.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m3-3-t3-p2">A <em>human reaction</em> is the fourth pillar, and perhaps the most subtle. Emotion is shown <strong>physically</strong>: breathing, micro-movements, gaze focus, body
+              tension. The rule is absolute: <strong>never state the emotion—show it through movement.</strong>
+              Instead of asking “he is afraid,” describe the fingers slipping, the eyes widening,
+              the breathing changing. The generator doesn’t know how to interpret “fear”; it knows how to animate
+              slipping fingers. Translating emotion into the body is what makes the performance believable.</p>
+</div>
+<!-- prompt pronto: câmera + reação humana -->
+<div class="prose">
+<p data-inema-block="m3-3-t3-p3">A prompt that combines camera behavior and human reaction—
+              the emotion appears only through the body, never named:</p>
+<div class="codeblock"><span class="c"># Seedance — camera + human reaction (show the emotion through the body)</span>
+<span class="k">Scene:</span> a climber clings to a cliff edge as a gust hits.
+<span class="k">Camera:</span> close-up, slight handheld sway, then a slow pull-back to reveal the drop.
+<span class="k">Force:</span> a sudden side gust pushes the body; gravity pulls at the legs.
+<span class="k">Human reaction (show, never name):</span>
+  - fingers tighten and slip a few millimeters on the rock
+  - eyes widen and fix on the hand-hold
+  - chest rises with a sharp, shallow breath
+  - shoulder muscles tense, jaw clenches
+<span class="k">Timing:</span> real-time grip, then 30% slow motion on the slip.
+<span class="c"># never write "he is scared" — write the body.</span></div>
+</div>
+<!-- figura 3: do sentimento ao corpo -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · <b>Never name</b> the emotion—translate it into body language</figcaption>
+<svg aria-label="Diagram: the word fear, crossed out on the left, is replaced on the right by four observable bodily signs: fingers slipping, eyes widening, breathing changing, body tensing." class="diagram" role="img" viewbox="0 0 720 188">
+<!-- esquerda: o que não fazer -->
+<rect class="rule-stroke" fill="none" height="50" rx="3" stroke-width="1.2" width="150" x="50" y="68"></rect>
+<text class="ink-soft" font-family="Spectral, serif" font-size="16" font-style="italic" text-anchor="middle" x="125" y="98">“he’s afraid”</text>
+<line class="accent-stroke" stroke-width="1.6" x1="60" x2="190" y1="93" y2="93"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="125" y="138">THE GENERATOR DOESN’T ANIMATE THIS</text>
+<!-- seta -->
+<path class="accent-stroke" d="M210 93 H 274" stroke-width="1.8"></path><path class="accent-stroke" d="M274 93 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
+<!-- direita: sinais do corpo -->
+<g font-family="Source Serif 4, serif" font-size="11" text-anchor="start">
+<rect class="accent-stroke" fill="url(#hatch-3-3)" height="26" rx="3" stroke-width="1.1" width="200" x="290" y="40"></rect>
+<text class="ink" x="302" y="58">slipping fingers</text>
+<rect class="accent-stroke" fill="url(#hatch-3-3)" height="26" rx="3" stroke-width="1.1" width="200" x="290" y="74"></rect>
+<text class="ink" x="302" y="92">eyes widening</text>
+<rect class="accent-stroke" fill="url(#hatch-3-3)" height="26" rx="3" stroke-width="1.1" width="200" x="290" y="108"></rect>
+<text class="ink" x="302" y="126">changing breathing</text>
+<rect class="wash accent-stroke" height="26" rx="3" stroke-width="1.1" width="180" x="500" y="74"></rect>
+<text class="ink-soft" x="512" y="92">tense body</text>
+</g>
+<text class="accent" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="585" y="126">the fear appears</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>Two takes of the same character in danger. One uses the prompt “he’s terrified”; the
+              other describes short breaths, trembling hands, and a fixed stare. Which should produce a more
+              believable performance—and why?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">The second. The generator animates <strong>observable movement</strong>, not concepts: it can make hands tremble, but it can’t interpret “terrified.” By describing the body’s signals, you give it exactly what the model’s physics can execute—and the viewer
+                <em>infers</em> the fear, which is always stronger than stated fear.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-4" data-inema-track="3" id="topico-4">
+<div class="section-mark">
+<span class="where">Section 4 of 5</span><span>·</span><span>Time and weight</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Time, weight, and secondary motion</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-3-t4-p1">O <em>time</em> is what creates realism. The source is specific: think of <strong>real-time action</strong>, in <strong>30% slow motion</strong>
+              when a moment needs weight, and in <strong>precise durations</strong> — 0.3s, 1.2s —
+              instead of “fast” or “slow.” Numbers give the generator a target; timing
+              adjectives leave everything adrift. Measuring time means treating movement like engineering, not wishful thinking.</p>
+<p data-inema-block="m3-3-t4-p2">O <em>secondary movement</em> is what separates the amateur from the professional. Everything remains <strong>after</strong> from the main action: dust lingers, smoke leaves a trail, water hangs in the air before falling. These residual layers create depth and realism — they’re proof that the world has inertia. An explosion that ends abruptly, with nothing continuing, feels like a cut; one that leaves dust settling for two seconds feels real. The secret, once again, is
+              <em>layers over time</em>: primary, secondary, residual.<span class="sidenote-ref">4</span></p>
+</div>
+<!-- prompt pronto: timing + secundário -->
+<div class="prose">
+<p data-inema-block="m3-3-t4-p3">A prompt focused on timing control and secondary movement, with
+              measured durations—ready for Seedance:</p>
+<div class="codeblock"><span class="c"># Seedance — timing control + secondary movement (measured durations)</span>
+<span class="k">Scene:</span> a runner leaps over a puddle on a wet street at night.
+<span class="k">Force:</span> push-off from the right foot; gravity arcs the body.
+<span class="k">Timing:</span>
+  - approach in real time (~1.0s)
+  - 30% slow motion on the apex of the jump (~0.8s of screen time)
+  - landing in real time (~0.4s)
+<span class="k">Secondary motion (must continue after the leap):</span>
+  - water droplets hang in the air, then fall (lingers ~1.2s)
+  - shoe spray scatters, ripples spread on the puddle
+  - coat tail trails and settles
+<span class="k">Camera:</span> tracking shot alongside, stable, slight low angle.
+<span class="c"># precise durations create realism — never just "fast" or "slow".</span></div>
+</div>
+<!-- figura 4: linha do tempo com slow-mo -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Measured time</b> — real time, 30% slow motion at the peak, and the lingering aftermath</figcaption>
+<svg aria-label="Timeline diagram: real-time approach, a slow-motion plateau at the jump’s peak, real-time landing, and a residual trail of particles that continues afterward." class="diagram" role="img" viewbox="0 0 720 184">
+<line class="rule-stroke" stroke-width="1" x1="30" x2="700" y1="120" y2="120"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" x="30" y="140">TIME →</text>
+<!-- aproximação -->
+<path class="accent-stroke" d="M50 120 L180 120" stroke-width="2.2"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="115" y="108">real ~1.0s</text>
+<!-- pico slow-mo -->
+<path class="accent-stroke" d="M180 120 C 250 120, 270 50, 360 50 L470 50 C 560 50, 580 120, 650 120" fill="none" stroke-width="2.2"></path>
+<line class="mark-stroke" stroke-width="3.4" x1="360" x2="470" y1="50" y2="50"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="415" y="40">30% SLOW-MO ~0.8s</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="415" y="138">peak of the jump</text>
+<!-- pouso -->
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="600" y="108">real ~0.4s</text>
+<!-- residual -->
+<g class="accent"><circle cx="500" cy="96" r="2"></circle><circle cx="520" cy="104" r="1.8"></circle><circle cx="540" cy="92" r="2.2"></circle><circle cx="560" cy="100" r="1.6"></circle></g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="540" y="160">residual: droplets hover, then fall ~1.2s</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-3-t4-p4">The source's key rules bring the idea together: no vague descriptions; use
+              measurable details (time, distance, angle); focus on observable actions; always think in
+              sequences; always define camera behavior. In one sentence: <em>believable, measured movement,
+              linked together and shown—never described with adjectives.</em></p>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-5" data-inema-track="3" id="topico-5">
+<div class="section-mark">
+<span class="where">Section 5 of 5</span><span>·</span><span>Synthesis</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Emotion through movement</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-3-t5-p1">The final lesson ties it all together: you don’t need to describe
+              every detail of the scene. You only need <strong>four pieces</strong> — force, sequence,
+              camera, and human reaction — and Seedance turns that into movement. The rest is noise. That's the
+              practical relief of the method: instead of trying to predict every frame, you define the four levers and
+              let the model's physics fill in the space between them.</p>
+<p data-inema-block="m3-3-t5-p2">In this frame, the emotion is never stated—it’s <em>staged through movement and timing</em>. A character
+              isn’t “exhausted”: their shoulders droop, their steps drag, their breathing slows. The camera isn’t “tense”: it shakes slightly and moves closer
+              slowly. Time isn’t “dramatic”: it slows down 30% at the moment that matters. When
+              you direct these levers, emotion emerges from the physical details—and the viewer feels it without you
+              having to name it.</p>
+<h3 class="sub">The assignment—and the bridge to the next lesson</h3>
+<p data-inema-block="m3-3-t5-p3">The source assignment is straightforward: build your own scene using the method,
+              including force, sequence, camera, and human reaction—and then explain why that
+              speed, why that camera, and what the viewer feels (without naming emotions). Show everything through
+              movement and timing. Sum up the module in one sentence: <em>Seedance reads physics, not adjectives—
+              from force, sequence, camera, and body, with measured timing, comes movement that feels real.</em> In the
+              next lesson, we shift the focus from the physics of movement to the <strong>camera</strong>: fine control over
+              how it moves, in Kling.</p>
+</div>
+<!-- figura 5: as quatro peças -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · The <b>four pieces</b> — Seedance fills in the rest</figcaption>
+<svg aria-label="Diagram in four quadrants (force, sequence, camera, human reaction) converging on a center labeled movement, with an indication that the generator fills in the gaps between the pieces." class="diagram" role="img" viewbox="0 0 720 200">
+<g font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle">
+<rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.2" width="180" x="80" y="34"></rect>
+<text class="ink" x="170" y="63">force</text>
+<rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.2" width="180" x="460" y="34"></rect>
+<text class="ink" x="550" y="63">sequence</text>
+<rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.2" width="180" x="80" y="118"></rect>
+<text class="ink" x="170" y="147">camera</text>
+<rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.2" width="180" x="460" y="118"></rect>
+<text class="ink" x="550" y="147">human reaction</text>
+</g>
+<circle class="accent-stroke" cx="360" cy="100" fill="url(#hatch-3-3)" r="40" stroke-width="1.6"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="96">movement</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="360" y="114">Seedance completes</text>
+<g class="accent-stroke" fill="none" stroke-width="1.4">
+<path d="M260 58 C 310 70, 320 80, 332 88"></path>
+<path d="M460 58 C 410 70, 400 80, 388 88"></path>
+<path d="M260 142 C 310 130, 320 120, 332 112"></path>
+<path d="M460 142 C 410 130, 400 120, 388 112"></path>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-3-t5-p4">Notice how the method connects with the scene algorithm you saw at the
+              beginning of the course: force triggers the rupture, the sequence controls the escalation, timing (with
+              30% slow motion) marks the peak, and human reaction is what makes the impact matter. The tools change;
+              the grammar of a powerful moment stays the same—you’re just writing it now in a
+              language the motion generator understands.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Self-check" class="check">
+<h2>Before moving on: four quick checks</h2>
+<p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>What does it mean to say Seedance understands “physics, not adjectives”?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>That it responds to <em>force, timing, and weight</em> — not words like
+              “epic.” Describe what moves, with what force, in what order, and over how much time, and the
+              movement feels believable. Adjectives let the generator fill in the gaps, and the result floats.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>What’s the order-of-physics rule in an impact scene?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p><em>Large → small → particles.</em> The largest mass moves first and
+              triggers the smaller layers in a cascade (debris → dust → smoke). Reversing the order—
+              dust before impact—is what makes the scene feel “wrong.”</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Why describe the body instead of naming the emotion?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because the generator animates <em>observable movement</em> — fingers slipping,
+eyes widening, breathing changing — and doesn’t interpret concepts like “fear.”
+Showing it through the body delivers what the model’s physics can execute, and the viewer infers the feeling.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>Why does secondary motion (floating dust, water that falls afterward) matter?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because it proves the world has <em>inertia</em>. The residual layers—
+              primary, secondary, residual—create depth and realism. An explosion that ends abruptly
+              feels like a cut; one with dust settling for two seconds feels real.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="My journey — consolidated progress" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> My journey</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">In this module</div>
+<div class="v" data-inema-meter="modulo:3-3">
+<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In track 3</div>
+<div class="v" data-inema-meter="trilha:3">
+<span data-inema-meter-frac=""><strong>0</strong> of 24</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In the course</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continue</div>
+<div class="t">Module 3.4 — Camera Control in Kling</div>
+</div>
+<a class="go" href="modulo-3-4.html">Next →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-3-3#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Physics, not adjectives.</b> Seedance responds to force, timing, and weight. Describe the event (what
+          moves, with what force, in what order, and over how much time) — not the impression (“epic”).
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Lesson 8 of the AI Cinema Workflow block — “Seedance Motion Generation.” The thesis: <i>a
+director doesn't guess — they observe, measure, sequence, and test</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-3-3#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Force.</b> What starts the movement: impact, acceleration, gravity, interaction. It’s the trigger —
+          movement without a cause looks like floating.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The chain <i>large → small → particles</i> and physical, not aesthetic: the largest mass moves first and generates the smaller ones. Debris → dust → smoke; splash → droplets → mist.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-3-3#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Human reaction.</b> The emotion shown through the body—breathing, micro-movements, gaze focus,
+          tension. Rule: never name the emotion; show it through movement.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The generator animates fingers slipping, not “fear.” Translating a feeling into observable signs in the body is what makes the performance believable—and the viewer infers the rest.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-3-3#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Secondary movement.</b> What continues after the main action — dust that lingers, smoke
+          that leaves a trail, water that hangs in the air. Residual layers create depth and prove the world’s inertia.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Time measured instead of described with adjectives: real time, 30% slow motion at the peak, precise durations (0.3s,
+          1.2s). Give the generator a target number; “fast” leaves room for drift.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-3-3#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>The four pieces.</b> Force, sequence, camera, human reaction. Define all four and Seedance fills in the gaps — you don’t need to describe every detail.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          The method echoes the scene's algorithm: force triggers the rupture, the sequence escalates, slow-mo marks the peak, and the human reaction makes the impact matter. The grammar of a powerful moment remains.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Module 3.3 — folio xi</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

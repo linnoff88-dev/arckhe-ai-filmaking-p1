@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Ruta 7 — Historia y estructura cinematográfica | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha7/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha7/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha7/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="trilha:7"><span data-inema-meter-frac=""><strong>0</strong> de 19</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>7</b> Historia y estructura cinematográfica</span>
+<span class="sep">·</span>
+<span>Índice de la ruta</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura editorial da trilha -->
+<p class="kicker">Ruta 7 · Historia y estructura cinematográfica</p>
+<h1 class="module">Qué hace que el público <em>recordar</em></h1>
+<p class="deck">La ruta final. Cuatro módulos sobre lo único que separa el video de IA olvidable de la historia que permanece: no la belleza del plano, sino la <em>cambio emocional</em> — y cómo encadenar
+          planos en una secuencia que respira, avanza y cierra con sentido.</p>
+<!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
+<p class="read-meta" data-inema-meter="trilha:7">
+<span class="here" data-inema-meter-frac=""><strong>0</strong> de 19</span>
+<span>secciones leídas en esta ruta</span>
+<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+</p>
+<!-- o "porque" da trilha -->
+<div class="prose">
+<p class="lede" data-inema-block="t7-porque-p1">Llegamos al final del curso y a su núcleo. Todo lo que
+            incorporaste hasta aquí —luz, composición, pipeline, lenguaje de cámara, VFX, actuación—
+            servía para una cosa: <em>contar</em>. Pero la mayoría de los videos de IA falla exactamente en este
+            punto. Empiezan con luz dramática y un movimiento atractivo, y en segundos se vuelven olvidables, porque nada
+            <em>cambia</em>. Esta ruta trata de la diferencia entre una imagen que <em>muestra</em> algo es una escena que
+            <em>transforma</em> algo. El Módulo 7.1 plantea la tesis: la historia visual es cambio emocional, y una
+            buena escena se entiende sin sonido. El 7.2 profundiza en el propósito de la escena — por qué existe, qué quiere el
+            personaje, qué lo dificulta, qué cambia del principio al final. El 7.3 enseña a enlazar planos en una
+            secuencia donde la tensión crece y la cámara evoluciona con la emoción. Y el 7.4 une todo el curso: tomar
+            ritmo, continuidad e intención y construir una secuencia completa, cinematográfica, desde el primer plano
+            hasta el último. Aquí no hay trucos — está la pregunta que reorganiza todo: <em>¿qué cambió
+            emocionalmente?</em></p>
+</div>
+<!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
+<p class="toc-head" style="margin-top:var(--s7)">El recorrido — cuatro módulos, en orden</p>
+<!-- ---- ENTRADA / MODULO 7.1 ---- -->
+<section data-inema-module="7-1" data-inema-topic="modulo-7-1#indice" data-inema-track="7" id="topico-1">
+<div class="section-mark">
+<span class="where">Módulo 7.1</span><span>·</span><span>4 secciones · ~15 min</span>
+</div>
+<h2 class="head"><span class="num">7.1</span>Narrativa visual</h2>
+<div class="prose">
+<p data-inema-block="t7-m7-1-p1">La tesis de la ruta. Por qué tantos videos de IA impresionan durante tres
+              segundos y desaparecen de la memoria: porque muestran, pero no cambian. Entenderás que la historia visual es
+              <em>cambio emocional</em> — que una escena debería tener sentido sin diálogo — y va
+              a recorrer, plano a plano, un arco de cinco escenas dentro de Kling: establecer el mundo, introducir
+              el conflicto, aumentar la presión, abrir espacio para la emoción y cerrar con sentido. También aprende las
+              reglas que el instructor repite: la claridad crea emoción, una acción fuerte por escena, acerca la cámara cuando el rostro importa, y escribe prompts con intención en vez de estética vacía.</p>
+<p data-inema-block="t7-m7-1-p2">
+<a class="entry-link" href="modulo-7-1.html">Leer el Módulo 7.1 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 7.2 ---- -->
+<section data-inema-module="7-2" data-inema-topic="modulo-7-2#indice" data-inema-track="7" id="topico-2">
+<div class="section-mark">
+<span class="where">Módulo 7.2</span><span>·</span><span>5 secciones · ~17 min</span>
+</div>
+<h2 class="head"><span class="num">7.2</span>Propósito de la escena</h2>
+<div class="prose">
+<p data-inema-block="t7-m7-2-p1">El zoom de la escena única. Toda escena debe justificar su propia
+              existencia: si la quitas y nada cambia en la historia, no debería estar ahí. Vas a
+              trabajar con la fórmula que hace que una escena funcione: <em>propósito → objetivo → conflicto
+              → cambio emocional</em>. Cada elemento tiene su sección: por qué existe la escena, qué quiere el personaje
+              ahora, qué hace difícil el éxito (conflicto externo e interno) y qué cambia
+              emocionalmente entre la primera y la última imagen. Cierra con la prueba definitiva: quita el diálogo,
+              ¿se puede sentir el cambio solo por la acción?</p>
+<p data-inema-block="t7-m7-2-p2">
+<a class="entry-link" href="modulo-7-2.html">Leer el Módulo 7.2 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 7.3 ---- -->
+<section data-inema-module="7-3" data-inema-topic="modulo-7-3#indice" data-inema-track="7" id="topico-3">
+<div class="section-mark">
+<span class="where">Módulo 7.3</span><span>·</span><span>5 secciones · ~17 min</span>
+</div>
+<h2 class="head"><span class="num">7.3</span>Construyendo secuencias cinematográficas</h2>
+<div class="prose">
+<p data-inema-block="t7-m7-3-p1">De la escena única al encadenamiento. El cine no es un buen plano: es
+              <em>progresión</em>. La mayoría de los videos de IA sufre del mismo problema: cada plano es bonito, pero
+              no hay un tejido que los conecte. Aprenderás la pregunta que hace el director antes de generar
+              cualquier plano (“¿qué emoción debe sentir el público <em>ahora</em>?”) y la fórmula de seis
+              tiempos: <em>establecer, conectar, perturbar, reaccionar, revelar, escapar</em> — en la que el
+              lenguaje de cámara evoluciona junto con la emoción. Abarca la regla de la reacción antes de la revelación,
+              las transiciones que unen, el ritmo y la continuidad.</p>
+<p data-inema-block="t7-m7-3-p2">
+<a class="entry-link" href="modulo-7-3.html">Leer el Módulo 7.3 →</a>
+</p>
+</div>
+</section>
+<!-- ---- ENTRADA / MODULO 7.4 ---- -->
+<section data-inema-module="7-4" data-inema-topic="modulo-7-4#indice" data-inema-track="7" id="topico-4">
+<div class="section-mark">
+<span class="where">Módulo 7.4</span><span>·</span><span>5 secciones · ~18 min</span>
+</div>
+<h2 class="head"><span class="num">7.4</span>El arte de la secuencia cinematográfica</h2>
+<div class="prose">
+<p data-inema-block="t7-m7-4-p1">El cierre del curso. Aquí todo se une: ritmo, continuidad e intención
+              dejan de ser conceptos sueltos y se convierten en una <em>secuencia completa</em>, del primer plano al último. Consolidarás la fórmula en un método de trabajo repetible, planificarás toda la secuencia antes de generar un solo plano, mantendrás al personaje y la luz consistentes entre clips, controlarás el ritmo en el montaje y tomarás la decisión final: cuándo está lista la secuencia. Este módulo vuelve a unir todo lo que enseñó el curso y te prepara como director, no como generador de imágenes.</p>
+<p data-inema-block="t7-m7-4-p2">
+<a class="entry-link" href="modulo-7-4.html">Leer el Módulo 7.4 →</a>
+</p>
+</div>
+</section>
+<!-- indo mais fundo: divulgacao progressiva (opcional) -->
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: por qué la historia cierra el curso
+            <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>El camino recomendado es lineal: 7.1, 7.2, 7.3, 7.4. Esta capa explica el orden y puedes
+              saltártela sin perder nada.</p>
+<p>La historia va al final a propósito. La técnica sin narrativa genera el típico video de IA: hermoso y
+              vacío. Pero la narrativa sin técnica no se sostiene — necesitas luz, cámara y movimiento
+              para <em>ejecutar</em> el cambio emocional. Por eso el curso instala primero la herramienta y deja la intención para el final: ahora que sabes construir un plan, esta ruta te enseña a hacerlos
+              <em>significar</em> algo juntos. Va de lo micro a lo macro: 7.1 plantea la tesis (cambio emocional), 7.2
+              se centra en una sola escena (propósito), 7.3 enlaza escenas (secuencia) y 7.4 une toda la secuencia como
+              una obra.</p>
+<p>Resume la frase que atraviesa toda la ruta, desde el primer módulo hasta el último: la pregunta no es
+              <em>qué pasó</em>, e <em>qué cambió emocionalmente</em>. Esta única pregunta mejora
+              cualquier escena que generes de ahora en adelante.</p>
+</div>
+</details>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Empezar por la tesis</div>
+<div class="t">Módulo 7.1 — Narrativa visual</div>
+</div>
+<a class="go" href="modulo-7-1.html">Leer el primero →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- MODULO 7.1 ---- -->
+<aside data-inema-rail="modulo-7-1#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Historia visual.</b> El cambio emocional que produce una imagen en movimiento. Si nada cambia
+          emocionalmente desde el principio hasta el final, no es una historia — es solo un plano bonito.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          El orden importa: 7.1 es la <i>tesis</i> (cambio emocional), 7.2 es el <i>escena</i> (propósito), 7.3 es la
+          <i>secuencia</i> (encadenamiento) y 7.4 <i>ata</i> la secuencia completa como obra.
+        </aside>
+<!-- ---- MODULO 7.2 ---- -->
+<aside data-inema-rail="modulo-7-2#indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Propósito de la escena.</b> El trabajo específico que hace una escena en la historia: hacer avanzar la trama, construir
+          emoción, aumentar la tensión o revelar el carácter. Sin ese trabajo, la escena es prescindible.
+        </aside>
+<!-- ---- MODULO 7.3 ---- -->
+<aside data-inema-rail="modulo-7-3#indice"></aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          La fórmula de seis tiempos — establecer, conectar, perturbar, reaccionar, revelar, escapar — es
+          la columna vertebral de las lecciones 21 y 22 del programa <i>AI Filmmaking</i>, demostrada para generar secuencias en Kling.
+        </aside>
+<!-- ---- MODULO 7.4 ---- -->
+<aside data-inema-rail="modulo-7-4#indice"></aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          La regla de oro del cierre: <i>planea toda la secuencia antes de generar el primer plano</i>. Generar
+          plano por plano sin un mapa produce una colección de imágenes, nunca una secuencia.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Ruta 7 — índice</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

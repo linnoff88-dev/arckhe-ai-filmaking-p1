@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 1.1 — The Director’s Framework | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:1-1"><span data-inema-meter-frac=""><strong>0</strong> of 4</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>1</b> Fundamentals (Light)</span>
+<span class="sep">·</span>
+<span>Module <b>1.1</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Section 1 of 4</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Module 1.1 · Track 1 · Fundamentals (Light)</p>
+<h1 class="module">The Director’s <em>Director</em></h1>
+<p class="deck">Technology has already removed the technical barrier—what decides the scene now isn’t
+          the budget, but control over perception. Before generating any image, adopt the mindset that makes
+          impact a system, not an accident.</p>
+<p class="read-meta">
+<span class="here">Reading now</span>
+<span>~15 min · full module</span>
+<span>4 sections</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="What you will understand" class="aims">
+<h2>What you will understand</h2>
+<ul>
+<li>Why the <b>“wow” isn’t the effect</b> — and what happens to the brain when it loses the ability to predict what comes next.</li>
+<li>The <b>three levels</b> that every strong scene works in: the sensory (the body), the structure (the meaning), and the form (the professional choice).</li>
+<li>O <b>algorithm</b> almost every powerful moment — stability, rupture, escalation, acceleration, slow motion at the peak, impact.</li>
+<li>Why a scene <b>looks expensive or cheap</b>, and how to treat cinema as an architecture of attention instead of a collection of effects.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Module summary" class="toc" data-inema-toc="">
+<p class="toc-head">Summary — four movements</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">The “wow” is perception control</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">The three levels of visual impact</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">The algorithm behind every strong scene</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Cinema as an architecture of attention</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="1-1" data-inema-topic="modulo-1-1#topico-1" data-inema-track="1" id="topico-1">
+<div class="section-mark">
+<span class="where">Section 1 of 4</span><span>·</span><span>Perception</span>
+</div>
+<h2 class="head"><span class="num">1.</span>The “wow” is perception control</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m1-1-t1-p1">Today, to create scenes that once would have cost
+              millions, you need a laptop and a clear understanding of <span class="sidenote-ref">1</span>visual form. This is not advertising hype: every month, image and video generators become more cinematic, more realistic, more production-ready. What seemed like an experiment a year ago already looks like real production. The technical barrier has fallen. The question is no longer <em>how much you
+              can spend</em> became <em>how well you think through the image</em>.</p>
+<p data-inema-block="m1-1-t1-p2">Most people get this wrong. They believe the impact—the
+              “wow”—comes from the effect: the explosion, the giant wave, the collapsing spacecraft, the science-fiction
+              destruction. But the “wow” <em>no</em> is the effect. The “wow” comes from controlling perception. If you don’t understand this principle, AI will give you beautiful images — and nothing more. No scenes, no emotion, no cinematic impact, no ad that convinces.</p>
+<h3 class="sub">The brain reacts when it can’t predict what’s coming</h3>
+<p data-inema-block="m1-1-t1-p3">From a perception standpoint, the “wow” happens at a
+              very specific moment: when the brain <em>loses the ability to predict what comes next</em>. It's triggered by increasing scale, acceleration, instability, contrast between light and
+              shadow, a sense of danger, depth, and height. That's biology, not taste. The human brain
+              is evolutionarily wired to react to objects approaching, fast movement, sudden
+              flashes, and loss of balance.<span class="sidenote-ref">2</span> When you understand
+              this, you stop hoping for a good result and start controlling the physical response of the viewer—
+              and that is both the foundation of cinema and the foundation of a powerful ad.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>Two shots show the same giant wave. In one, the wave appears already formed, filling the screen. In
+the other, the camera starts on a calm sea and the wave <em>grows</em> over the course
+              of three seconds. Which one gets the biggest “wow” — and why?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">The second. The impact doesn’t come from the size of the wave, but from the <strong>breaks the
+                prediction</strong>: calm establishes an expectation, and the increasing scale breaks it. The first
+                shot already delivers the climax, so there is no build-up to break — the brain registers
+                “big image,” not “danger.”</p>
+</details>
+</div>
+<!-- figura 1: o uau e a quebra da previsao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · The “wow” is in the <b>breaks the prediction</b>, not at the peak</figcaption>
+<svg aria-label="Diagram: the brain’s prediction line stays steady, then is broken by an unexpected spike; the break point is where the wow is born." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-1-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="170" y2="170"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="190">TIME →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 60)" x="14" y="60">INTENSITY</text>
+<!-- linha estavel (previsivel) -->
+<path class="rule-stroke" d="M40 150 L160 150 L300 148 L420 150" fill="none" stroke-width="1.6"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="180" y="138">stability — the brain predicts</text>
+<!-- continuacao esperada (tracejada) -->
+<path class="rule-stroke" d="M420 150 L660 150" fill="none" opacity="0.7" stroke-dasharray="3 5" stroke-width="1.2"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="560" y="142">expectation</text>
+<!-- ruptura: escalada acelerada -->
+<path class="accent-stroke" d="M420 150 C 470 150, 500 70, 560 40" fill="none" stroke-width="2.4"></path>
+<circle class="accent" cx="420" cy="150" r="4.5"></circle>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="end" x="416" y="168">DISRUPTION</text>
+<rect class="accent-stroke" fill="url(#hatch-1-1)" height="30" rx="3" stroke-width="1.2" width="150" x="500" y="20"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="575" y="40">the “wow”</text>
+<path class="mark-stroke" d="M560 40 L575 50" fill="none" stroke-width="1.2"></path>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why this matters for ads and clips, not just films
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>The happy path above is enough. This layer broadens the scope—and can be skipped.</p>
+<p>The same perceptual mechanism operates outside narrative cinema. In a <strong>announcement</strong>, the “wow” is the instant the product gains visual weight and the transformation is revealed (before/after, problem/solution). In a <strong>music video</strong>, and the emotional climax sustained
+                by pacing. In <strong>fashion and branding</strong>, and it’s the light contrast that makes the texture feel
+                tactile. Biology doesn’t change its form: scale, movement, contrast, and danger are still what
+                the body registers first, before any story.</p>
+<p>That’s why the course’s thesis runs through all these genres. You’re not learning “movie
+                effects”; you’re learning to direct a brain’s attention — and that applies to any
+                moving image that needs to persuade.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="1-1" data-inema-topic="modulo-1-1#topico-2" data-inema-track="1" id="topico-2">
+<div class="section-mark">
+<span class="where">Section 2 of 4</span><span>·</span><span>Three levels</span>
+</div>
+<h2 class="head"><span class="num">2.</span>The three levels of visual impact</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-1-t2-p1">Every strong scene — whether it’s a two-hour film or
+              a fifteen-second commercial — operates on <em>three levels</em> at the same time. They aren't
+              stages: they're layers that coexist in every frame. When one fails, the scene falls apart in a way that
+              the audience feels but can't always name. Understanding them is what separates a director from someone who just generates
+              images.</p>
+<h3 class="sub">Level 1—the sensory: the level of the body</h3>
+<p data-inema-block="m1-1-t2-p2">Comes <em>before</em> of the logic and before the story. It’s made up of scale,
+              movement, speed, depth, light, and contrast. If this level fails, the scene <em>seems
+              cheap</em> — not because the idea is bad, but because the brain doesn't register weight, danger,
+              or meaning. In advertising, this is decisive: if a product has no visual weight, it doesn't look
+              premium; if the light doesn't shape form, it doesn't look expensive; if there's no depth, the frame looks
+              fake.<span class="sidenote-ref">3</span> AI generates texture; only someone who understands form creates
+              <em>physical presence</em>.</p>
+<h3 class="sub">Level 2—the structure: where meaning lives</h3>
+<p data-inema-block="m1-1-t2-p3">Here are the questions that give the frame meaning: who is the
+              center? What is wanted? What’s at stake? In a film, the center is the character; in an ad, it’s the
+              product, idea, or transformation; in a music video, it’s the rhythm and emotional escalation. Even a
+              ten-second ad needs conflict—before and after, problem and solution, limitation and
+              freedom, chaos and control. <strong>Without tension, there is no impact.</strong></p>
+<h3 class="sub">Level 3—the form: the professional layer</h3>
+<p data-inema-block="m1-1-t2-p4">This is where you justify every choice. Why <em>this</em> angle? why
+              the slow motion <em>here</em>? why the close-up <em>now</em>? why cool colors? The emotion
+              isn't accidental — it's constructed. And this is the critical point of the entire course: AI doesn't create
+              emotion; it creates <em>material</em>. You create emotion through your choices. If a camera, lighting,
+              or pacing decision can’t be justified, it weakens the scene.</p>
+</div>
+<!-- figura 2: tres niveis empilhados -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · The <b>three layers</b> that every strong scene sustains at the same time</figcaption>
+<svg aria-label="Diagram in three stacked bands: at the base, the sensory level (body); in the middle, the structure (meaning); and at the top, the form (professional choice)." class="diagram" role="img" viewbox="0 0 720 232">
+<!-- base: sensorial -->
+<rect class="accent-stroke" fill="url(#hatch-1-1)" height="54" rx="3" stroke-width="1.3" width="600" x="60" y="150"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="80" y="172">01</text>
+<text class="ink" font-family="Spectral, serif" font-size="17" font-style="italic" x="120" y="174">Sensory</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="300" y="174">scale · movement · depth · light — the body</text>
+<!-- meio: estrutura -->
+<rect class="wash accent-stroke" height="54" rx="3" stroke-width="1.3" width="480" x="120" y="86"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="140" y="108">02</text>
+<text class="ink" font-family="Spectral, serif" font-size="17" font-style="italic" x="180" y="110">Structure</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="360" y="110">who is at the center? what is the conflict? — the meaning</text>
+<!-- topo: forma -->
+<rect class="wash accent-stroke" height="54" rx="3" stroke-width="1.3" width="360" x="180" y="22"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="200" y="44">03</text>
+<text class="ink" font-family="Spectral, serif" font-size="17" font-style="italic" x="240" y="46">Form</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="400" y="46">why this angle? — the choice</text>
+<!-- eixo de justificativa -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="40" x2="40" y1="22" y2="204"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" transform="rotate(-90 30 118)" x="30" y="118">FROM THE BODY TO THE CHOICE</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m1-1-t2-p5">Notice the inverted pyramid: the sensory level is the broad base—
+              without physical weight, nothing above it can stand. Structure rests on it, and form is the thinnest,
+              most deliberate layer, the director’s layer. Scenes that fail often have beautiful form and an empty base: lots
+              of elegant framing, no weight. The opposite approach—establishing the physical presence first—is
+              what makes a simple image look expensive.</p>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: diagnosing which level of the scene broke
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer, useful for reviewing a generation that “didn’t work” when you don’t know why.</p>
+<p>Use the three levels as a diagnostic checklist, from the bottom up. <strong>Sensory:</strong>
+                does the image have weight, depth, and a light source that shapes its form? If not, fix that before anything else — no framing can save a flat image. <strong>Structure:</strong> can you tell
+                in one second who the focus is and what the conflict is? If the answer is “there are beautiful things,
+                but I don’t know what to look at,” it lacks hierarchy. <strong>Form:</strong> does every choice of
+                angle, lens, and pacing have a reason? If you can't justify it, the AI probably chose it — and the result is generic. The level where you get stuck first is the one you fix first.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="1-1" data-inema-topic="modulo-1-1#topico-3" data-inema-track="1" id="topico-3">
+<div class="section-mark">
+<span class="where">Section 3 of 4</span><span>·</span><span>The algorithm</span>
+</div>
+<h2 class="head"><span class="num">3.</span>The algorithm behind every strong scene</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-1-t3-p1">Almost every powerful cinematic moment follows the
+              same timing structure. It’s not a straitjacket—it’s a pattern that repeats because it matches
+              how the brain processes tension: <strong>stability → rupture → escalation
+              → acceleration → slow motion at the peak → impact.</strong> Each piece sets up the
+              next, and removing one usually drains the whole scene.</p>
+<p data-inema-block="m1-1-t3-p2">The logic is simple when you read it in order. <em>No consistency</em>,
+              there’s nothing to break—the rupture needs calm ground to create contrast. <em>No
+              escalation</em>, tension doesn’t build, and the climax arrives without weight. It’s the <strong>slow motion at the peak</strong>
+              isn't decoration: it tells the brain “<em>this</em> timing matters,” stretching the instant
+              when the prediction was broken. But be careful—slow motion <em>without</em> acceleration beforehand
+              doesn't work; it only matters as a contrast to what was moving quickly.<span class="sidenote-ref">4</span></p>
+<h3 class="sub">The same skeleton, different genres</h3>
+<p data-inema-block="m1-1-t3-p3">In a film, the peak is usually life or death. In an ad, it’s the contact
+              with the product — the moment it fills the frame. In a music video, it’s the emotional climax.
+              The content changes; the skeleton doesn’t. When an action scene, a product launch, or a chorus
+              gives you goosebumps, this algorithm is almost always operating underneath — even if no one in the room
+              can name it.</p>
+</div>
+<!-- figura 3: a curva do algoritmo -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · The tension curve — <b>six beats</b> almost every powerful scene</figcaption>
+<svg aria-label="Curve diagram: tension starts stable, breaks, escalates, accelerates, freezes in slow motion at the peak, and ends in impact." class="diagram" role="img" viewbox="0 0 720 220">
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="180" y2="180"></line>
+<!-- a curva -->
+<path class="accent-stroke" d="M40 165 L150 165 L210 140 C 280 110, 320 70, 430 50 L470 50 C 540 70, 600 150, 680 168" fill="none" stroke-width="2.4"></path>
+<!-- marcas dos seis tempos -->
+<g class="accent"><circle cx="95" cy="165" r="3"></circle><circle cx="210" cy="140" r="3"></circle><circle cx="320" cy="86" r="3"></circle><circle cx="430" cy="50" r="3.5"></circle><circle cx="470" cy="50" r="3.5"></circle><circle cx="600" cy="150" r="3"></circle></g>
+<!-- patamar do pico (slow motion) -->
+<line class="mark-stroke" stroke-width="3" x1="430" x2="470" y1="50" y2="50"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="450" y="38">SLOW-MO</text>
+<!-- rotulos -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
+<text x="95" y="198">stability</text>
+<text x="210" y="160">rupture</text>
+<text x="320" y="76">escalation</text>
+<text class="faint" x="400" y="44">acceleration</text>
+<text x="600" y="170">impact</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m1-1-t3-p4">You don’t need a video generator to rehearse this. When you
+              write the prompt for a scene or sequence, describe the timing — the generator understands
+              progression instructions. The prompt below is an example of <em>direction recipe</em>: it doesn’t ask
+              for an effect; it asks for the <em>curve</em>.</p>
+<div class="codeblock"><span class="c"># Direction recipe — the tension arc in a single shot</span>
+<span class="c"># (use in Seedance / Kling / Runway / Luma to generate a scene sequence)</span>
+<span class="k">Subject:</span> a lone runner sprinting across a flooded street at night.
+<span class="k">Beat 1 (stability):</span> open on stillness — calm wet asphalt, steady wide framing.
+<span class="k">Beat 2 (disruption):</span> headlights cut in from the left, the runner reacts.
+<span class="k">Beat 3 (escalation):</span> camera tracks alongside, pace and water spray build.
+<span class="k">Beat 4 (acceleration):</span> fast dolly-in as the gap closes, motion blur rises.
+<span class="k">Beat 5 (slow motion at peak):</span> hard slow-mo on the moment of impact, water frozen mid-air.
+<span class="k">Beat 6 (impact):</span> return to real speed, hold on the aftermath.
+<span class="k">Style:</span> cinematic lighting, shallow depth, rain, high contrast.</div>
+</div>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>An action scene has beautiful explosions from beginning to end, all at the same frantic pace, but the
+              viewer gets bored. Looking at the six beats, which piece is probably missing?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">A <strong>stability</strong> (and, with it, the rupture). Without calm ground to
+                contrast against, the brain <em>gets used to it</em> to the constant chaos and stops reacting — everything becomes the
+                new normal. Without variation in rhythm, there is no peak: it's a steady din, not a build. Uninterrupted frenzy
+                wears you out; tension needs a breather before the hit.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="1-1" data-inema-topic="modulo-1-1#topico-4" data-inema-track="1" id="topico-4">
+<div class="section-mark">
+<span class="where">Section 4 of 4</span><span>·</span><span>Architecture</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Cinema as an architecture of attention</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m1-1-t4-p1">Why does Hollywood look expensive? High-budget scenes
+              share a set of traits: <em>clear spatial geography</em>, readable composition,
+              depth, coherent color scale, controlled lighting, and managed pacing. Cheap scenes are the opposite:
+              chaos without hierarchy. And the rule to remember is short: <strong>scale without clarity is noise;
+              clarity with scale is epic.</strong></p>
+<p data-inema-block="m1-1-t4-p2">Hence the definition that reorganizes everything: cinema isn’t storytelling, it’s
+              <em>organize perception</em>. You decide what the viewer sees, when they see it, from what distance, at
+              what pace. The story says <em>what happens</em>; form controls <em>how it feels</em>. Think of the
+              frame as a <span class="dfn"><details class="dfn"><summary>attention architecture</summary><span class="body"><b>Attention architecture</b> is the idea that each frame is designed to guide the eye: a dominant focal point, supporting elements that reinforce it, and empty space that makes it stand out — like an architect guiding the body through a space.</span></details></span>:
+              every element is there to guide the eye, not to decorate.</p>
+<h3 class="sub">Expensive vs. cheap: what changes in the frame</h3>
+<p data-inema-block="m1-1-t4-p3">In practice, a few controls determine the sense of cost. <strong>Spatial
+              geography:</strong> can tell where everything is in relation to everything else. <strong>Hierarchy:</strong> there is a clear
+              visual center of gravity. <strong>Depth:</strong> foreground, middle ground, and background
+              working together. <strong>Light:</strong> motivated, shaping form rather than just illuminating it. <strong>Rhythm:</strong>
+              the duration of each shot and the transitions between them, managed. Applied to an ad, this becomes a
+              concrete discipline: know where the viewer looks in the first 0.3 seconds, what dominates the frame,
+              where the focal point is, where the turning point occurs, and where the final impact lands.<span class="sidenote-ref">5</span>
+              A good ad doesn’t show a product—it builds a visual center of gravity.</p>
+<p data-inema-block="m1-1-t4-p4">That’s why we start with theory: AI <em>expands what already exists</em>.
+              If there’s structure, it amplifies the structure; if there’s chaos, it amplifies the chaos. You no longer need a million-dollar budget—you need a director’s mindset: build tension, create scale, control the light, create depth, develop rhythm, understand the psychology of slow motion. Without that, the “wow” is random. With it, it becomes a system. The next lessons build that system, piece by piece—and form always comes before effect, because epic isn’t an explosion: it’s precise visual calculation.</p>
+</div>
+<!-- figura 4: clareza x escala -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Scale without clarity</b> and noise; clarity with scale is epic</figcaption>
+<svg aria-label="Diagram comparing two frames: on the left, many equally sized elements with no hierarchy (noise); on the right, a dominant focal point with supporting elements and depth (epic)." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- quadro esquerdo: caos -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="30">SCALE WITHOUT CLARITY</text>
+<rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.2" width="280" x="40" y="44"></rect>
+<g class="rule-stroke" fill="none" opacity="0.85" stroke-width="1.2">
+<circle cx="90" cy="90" r="20"></circle><circle cx="160" cy="120" r="22"></circle><circle cx="230" cy="80" r="19"></circle>
+<circle cx="270" cy="140" r="21"></circle><circle cx="120" cy="160" r="18"></circle><rect height="34" width="34" x="180" y="60"></rect>
+</g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">everything competes — nothing dominates</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="186"></line>
+<!-- quadro direito: hierarquia -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="30">CLARITY WITH SCALE</text>
+<rect class="accent-stroke" fill="none" height="140" rx="3" stroke-width="1.3" width="280" x="400" y="44"></rect>
+<!-- fundo -->
+<line class="rule-stroke" opacity="0.6" stroke-width="1" x1="412" x2="668" y1="150" y2="150"></line>
+<!-- apoios -->
+<circle class="rule-stroke" cx="460" cy="120" fill="none" r="12" stroke-width="1.2"></circle>
+<circle class="rule-stroke" cx="620" cy="118" fill="none" r="14" stroke-width="1.2"></circle>
+<!-- ponto focal dominante -->
+<circle class="accent-stroke" cx="540" cy="110" fill="url(#hatch-1-1)" r="34" stroke-width="1.6"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="540" y="115">focus</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="200">a center, supports, depth</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m1-1-t4-p5">Capture this module in a single sentence: <em>the tool executes direction — it doesn't invent it; the impact is control of perception, and that's a system you can learn.</em> The question the instructor ends with serves as a challenge for the rest of the track: are you
+              ready to <strong>analyze</strong> the scenes instead of just generating them? The next lesson provides
+              the first concrete tool for that control — how the space in the frame organizes attention.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Self-check" class="check">
+<h2>Before moving on: four quick checks</h2>
+<p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>If “wow” isn’t the effect, what is it — in terms of perception?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>It’s the moment when the brain <em>loses the ability to predict</em> what comes next. Increasing scale, acceleration, instability, and contrast break the pattern—the break, not the size of the effect, is what triggers the reaction.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>A scene has elegant framing but “looks cheap.” Which of the three levels probably failed?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>In the <em>sensory</em> — the foundation. A beautiful shape (level 3) can't save a frame
+              without weight, depth, or light that shapes form. If the body doesn't register physical presence, nothing above it
+              holds up.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Why doesn’t slow motion at the peak, by itself, guarantee impact?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because it works through <em>contrast</em>: needs acceleration first. Stretching
+              time only matters if things were moving fast. Slow-mo without a prior build-up becomes empty slowness — it doesn’t tell the
+              brain “this moment matters.”</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>What’s the practical difference between scale and clarity in a frame?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Scale is size/quantity; clarity is the hierarchy that tells you where to look. <em>Scale
+              without clarity is noise</em> (everything competes); <em>clarity with scale and epic scope</em> (a visual center of
+              gravity, support, and depth). A good ad builds this center; it doesn’t just show the
+              product.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="My journey — consolidated progress" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> My journey</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">In this module</div>
+<div class="v" data-inema-meter="modulo:1-1">
+<span data-inema-meter-frac=""><strong>0</strong> of 4</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In track 1</div>
+<div class="v" data-inema-meter="trilha:1">
+<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In the course</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continue</div>
+<div class="t">Module 1.2 — Cinematic Spatial Control</div>
+</div>
+<a class="go" href="modulo-1-2.html">Next →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-1-1#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Visual form.</b> Understanding how scale, light, depth, and movement create weight and presence.
+          It’s what AI <i>no</i> delivers on its own — and what makes a simple image look expensive.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The reaction to approaching objects and fast movement is <i>evolutionary</i>: the brain was shaped to
+          detect danger before thinking. Cinema hijacks exactly those triggers.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Program Module 0 <i>AI Filmmaking</i> — “The Director’s Framework”. The central thesis:
+          <i>AI tools don’t create intent; they execute direction</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-1-1#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Visual weight.</b> The sense of mass and materiality of an element in the frame, created by light,
+          contrast, scale, and depth—not texture. A product without weight doesn’t feel premium.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The three levels form a pyramid: sensory base (wide), structure (middle), form (top, narrow). Almost
+          every weak scene has elegant form over an empty base—fix it from the bottom up.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-1-1#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Slow motion at the peak.</b> Stretch the exact instant when the prediction is broken. It’s not decoration:
+          it signals to the brain that <i>that</i> timing matters. It only works as a contrast to what came before at speed.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          The algorithm—stability, rupture, escalation, acceleration, slow-mo, impact—is presented as the shared structure of “every cinematic moment” in Module 0.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-1-1#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Spatial geography.</b> Clarity about where each element is in relation to the others and the viewer.
+          It’s the first thing that separates an expensive scene from a cheap one — without it, scale turns to chaos.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          “AI amplifies what already exists”: structure becomes more structure, chaos becomes more chaos. That’s why
+          theory comes first — you establish what will be amplified.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Module 1.1 — folio i</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

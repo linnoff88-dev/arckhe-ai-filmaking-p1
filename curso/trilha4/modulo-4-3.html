@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Modulo 4.3 — Planos e Enquadramento | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/modulo-4-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/modulo-4-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/modulo-4-3.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Pular para o conteudo</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:4-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<div aria-label="Tema de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+</div>
+<div aria-label="Fonte de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamanho do texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Largura da linha" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Onde voce esta" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Trilha <b>4</b> Linguagem de Camera</span>
+<span class="sep">·</span>
+<span>Modulo <b>4.3</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Secao 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Modulo 4.3 · Trilha 4 · Linguagem de Camera</p>
+<h1 class="module">Planos e Enquadramento: a distancia vira <em>emocao</em></h1>
+<p class="deck">A distancia entre a camera e o sujeito nao e um detalhe tecnico — e uma decisao
+          emocional. Quanto mais perto, menos o espectador consegue desviar o olhar. Esta aula percorre a escala
+          inteira de planos e a gramatica que mantem o espaco legivel: eyeline e a regra dos 180°.</p>
+<p class="read-meta">
+<span class="here">Lendo agora</span>
+<span>~18 min · modulo inteiro</span>
+<span>5 secoes</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="O que voce vai entender" class="aims">
+<h2>O que voce vai entender</h2>
+<ul>
+<li>Por que <b>distancia e emocao</b>: o plano amplo responde <em>onde estamos?</em>, o close responde
+              <em>como se sente?</em> — mesma cena, significados opostos.</li>
+<li>A <b>escala completa de planos</b>, do <em>establishing</em> ao <em>extreme close-up</em>, e o
+              efeito de cada um sobre o corpo de quem assiste.</li>
+<li>A <b>regra de ouro</b>: comece amplo para estabelecer o mundo, aproxime-se para revelar emocao,
+              termine no close para o impacto maximo — um plano, uma emocao.</li>
+<li>A gramatica que mantem o espaco coerente: a <b>linha de olhar</b> (eyeline) e a <b>regra dos
+              180°</b>, e por que rompe-las desorienta o espectador.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
+<p class="toc-head">Sumario — cinco movimentos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Distancia e uma decisao emocional</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">O lado amplo: estabelecer, isolar, contextualizar</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">O lado fechado: medio, close, extreme close</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">A regra de ouro e a regra de decisao</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Eyeline e a regra dos 180 graus</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-1" data-inema-track="4" id="topico-1">
+<div class="section-mark">
+<span class="where">Secao 1 de 5</span><span>·</span><span>Principio</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Distancia e uma decisao emocional</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m4-3-t1-p1">No cinema, a distancia entre a camera e o sujeito
+              nunca e um detalhe tecnico — e uma <em>decisao emocional</em>.<span class="sidenote-ref">1</span>
+              Quando voce se aproxima, entra no mundo interior do personagem; quando se afasta, mostra o lugar dele
+              no universo. O mesmo ator, a mesma fala, a mesma posicao: mudar o tamanho do plano muda o
+              significado. E essa a primeira coisa a internalizar — o enquadramento nao registra a cena,
+              ele a <em>interpreta</em>.</p>
+<p data-inema-block="m4-3-t1-p2">Para nao se perder na lista de nomes que vem a seguir, guarde a
+              pergunta que cada plano responde. <strong>Planos amplos respondem “onde estamos?”</strong>
+              — geografia, clima, escala. <strong>Planos fechados respondem “como se sente?”</strong>
+              — reacao, decisao, emocao. E o <strong>extreme close-up revela um detalhe que pode mudar a
+              historia</strong> — um dedo, uma chave, uma lagrima. Toda a escala de planos vive entre esses
+              dois polos: o contexto e a emocao.</p>
+<h3 class="sub">O que o tamanho do plano controla</h3>
+<p data-inema-block="m4-3-t1-p3">Tres coisas estao em jogo a cada escolha. A primeira e
+              <em>contexto versus emocao</em>, que voce ja viu. A segunda e o <em>ritmo</em>: alternar planos
+              amplos e fechados cria energia; ficar em planos medios cria calma. A terceira e a <em>atencao</em> —
+              e aqui esta a regra mais reveladora: quanto mais fechado o plano, <strong>menos o publico consegue
+              desviar o olhar.</strong> Um plano amplo deixa o olho passear; um close prende. Por isso diretores
+              constroem cenas indo do amplo ao fechado: comecam soltando o olhar e terminam capturando-o.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Uma atriz diz a mesma frase — “eu sabia” — em dois planos. No primeiro, ela
+              aparece pequena, ao longe, num deserto imenso. No segundo, o rosto dela preenche a tela inteira.
+              A fala e identica. O que muda no que o espectador sente?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">Quase tudo. No plano amplo, “eu sabia” soa como destino, solidao,
+                pequenez diante do mundo — o <em>contexto</em> fala mais alto. No close, a mesma frase vira
+                intimidade pura: lemos a micro-expressao, sentimos a <em>emocao</em>, e nao conseguimos desviar o
+                olhar. A distancia, sozinha, reescreveu a linha.</p>
+</details>
+</div>
+<!-- figura 1: o eixo contexto-emocao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · Um <b>eixo</b>: do contexto (amplo) a emocao (fechado)</figcaption>
+<svg aria-label="Diagrama de eixo horizontal: a esquerda o plano amplo responde onde estamos e da contexto; a direita o close responde como se sente e da emocao; a atencao do publico cresce da esquerda para a direita." class="diagram" role="img" viewbox="0 0 720 184">
+<defs>
+<pattern height="6" id="hatch-4-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<line class="rule-stroke" stroke-width="1.4" x1="40" x2="680" y1="96" y2="96"></line>
+<polygon class="mark-fill" points="680,91 692,96 680,101"></polygon>
+<!-- polo amplo -->
+<rect class="rule-stroke" fill="none" height="72" rx="3" stroke-width="1.3" width="120" x="60" y="60"></rect>
+<circle class="ink-soft" cx="120" cy="100" r="4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="120" y="50">amplo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="120" y="150">“onde estamos?”</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="120" y="166">CONTEXTO</text>
+<!-- polo fechado -->
+<rect class="accent-stroke" fill="url(#hatch-4-3)" height="72" rx="3" stroke-width="1.4" width="120" x="540" y="60"></rect>
+<circle class="accent-stroke" cx="600" cy="96" fill="none" r="22" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="600" y="50">fechado</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="600" y="150">“como se sente?”</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="600" y="166">EMOCAO</text>
+<!-- atencao crescente -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="84">ATENCAO DO PUBLICO →</text>
+<path class="mark-stroke" d="M260 116 L460 116" fill="none" opacity="0.5" stroke-width="2.6"></path>
+<path class="accent-stroke" d="M260 116 L460 116" fill="none" stroke-dasharray="2 4" stroke-width="1.4"></path>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Indo mais fundo: o mundo-laboratorio do deserto
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>O caminho-feliz acima ja basta. Esta camada explica os exemplos que vao reaparecer — e pode
+                ser pulada.</p>
+<p>Os planos desta aula sao demonstrados por uma unica historia no deserto, filmada de varias
+                distancias: uma nave caida no Saara, tempestades de areia, uma personagem chamada Ella num traje
+                rosa, um homem misterioso com uma orquidea branca, e o reflexo de naves no olho dela. Usar
+                <em>o mesmo mundo</em> para todos os planos e proposital: mantendo cenario, luz e personagens
+                constantes, fica facil ver que <strong>so a distancia</strong> mudou — e como essa unica
+                variavel altera escala, emocao e para onde o olho corre. E um laboratorio controlado da gramatica
+                de planos.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-2" data-inema-track="4" id="topico-2">
+<div class="section-mark">
+<span class="where">Secao 2 de 5</span><span>·</span><span>O amplo</span>
+</div>
+<h2 class="head"><span class="num">2.</span>O lado amplo: estabelecer, isolar, contextualizar</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-3-t2-p1">Comece pela ponta larga da escala, onde o mundo fala mais
+              alto que o rosto. Tres planos vivem aqui, e cada um faz um trabalho distinto, embora pareçam
+              parecidos a primeira vista.</p>
+<h3 class="sub">Establishing shot — a primeira pagina do capitulo</h3>
+<p data-inema-block="m4-3-t2-p2">O <strong>establishing shot</strong> (plano de estabelecimento),
+              geralmente um plano geral extremo ou aereo, e a primeira pagina de um capitulo: diz ao publico
+              “estamos em algo novo”. Mostra a geografia, o clima, a hora do dia e a escala do mundo.
+              Sem ele, o espectador se sente perdido; com ele, relaxa e confia na narrativa. Use-o na abertura de
+              uma cena ou ao mudar de locacao — seu efeito emocional e deslumbramento e solidao.</p>
+<h3 class="sub">Wide shot — a escala do sujeito</h3>
+<p data-inema-block="m4-3-t2-p3">Diferente do establishing, que e sobre <em>lugar</em>, o
+              <strong>wide shot</strong> (plano geral) e sobre <em>escala</em>: o quao grande ou pequeno o sujeito
+              e em relacao ao que o cerca. Ele faz o publico sentir isolamento, vulnerabilidade ou poder
+              avassalador. Posicione a camera no chao, em angulo baixo — uma nave que ocupa quase todo o
+              quadro vira um gigante adormecido, e o angulo baixo a faz pairar. Quando o ambiente engole o sujeito,
+              esse e o plano: um personagem solitario contra montanhas, um monstro emergindo, uma figura diante da
+              tempestade.</p>
+<h3 class="sub">Medium wide / cowboy — a ponte para o personagem</h3>
+<p data-inema-block="m4-3-t2-p4">O <strong>medium wide shot</strong>, tambem chamado de
+              <span class="dfn"><details class="dfn"><summary>cowboy shot</summary><span class="body"><b>Cowboy shot</b> e um plano que corta a figura na altura das coxas. O nome vem dos faroestes: enquadrava-se ali para mostrar o coldre e a arma na cintura, alem do rosto. E a distancia da prontidao e da postura.</span></details></span>,
+              e a ponte entre o ambiente e o personagem. Vemos o suficiente do fundo para entender o contexto, mas
+              a linguagem corporal — postura, movimento, atitude — vira o foco. E o plano da acao com
+              contexto: alguem andando de skate, dancando, lutando, correndo. Tambem aparece antes de um confronto,
+              para mostrar prontidao. Seu efeito e dinamico, energico, confiante — admiramos a habilidade do
+              personagem enquanto o mundo epico continua visivel atras.</p>
+</div>
+<!-- figura 2: tres planos amplos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · Tres distancias amplas: <b>estabelecer</b>, <b>isolar</b>, <b>aproximar do corpo</b></figcaption>
+<svg aria-label="Diagrama com tres quadros: establishing com figura minuscula numa paisagem, wide com a figura maior contra o ambiente, e cowboy shot cortando a figura na altura das coxas." class="diagram" role="img" viewbox="0 0 720 190">
+<!-- establishing -->
+<rect class="rule-stroke" fill="none" height="108" rx="3" stroke-width="1.3" width="190" x="40" y="40"></rect>
+<line class="rule-stroke" opacity="0.6" stroke-width="1" x1="40" x2="230" y1="120" y2="120"></line>
+<line class="rule-stroke" opacity="0.5" stroke-width="1" x1="120" x2="150" y1="100" y2="100"></line>
+<rect class="ink-soft" height="8" width="3" x="132" y="112"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="135" y="34">ESTABLISHING</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="135" y="166">o mundo, a escala</text>
+<!-- wide -->
+<rect class="rule-stroke" fill="none" height="108" rx="3" stroke-width="1.3" width="190" x="265" y="40"></rect>
+<line class="rule-stroke" opacity="0.6" stroke-width="1" x1="265" x2="455" y1="124" y2="124"></line>
+<rect class="ink-soft" height="28" width="8" x="352" y="96"></rect>
+<circle class="ink-soft" cx="356" cy="92" r="4"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="360" y="34">WIDE</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="166">isolamento, poder</text>
+<!-- cowboy -->
+<rect class="accent-stroke" fill="none" height="108" rx="3" stroke-width="1.4" width="190" x="490" y="40"></rect>
+<line class="rule-stroke" opacity="0.4" stroke-width="1" x1="490" x2="680" y1="148" y2="148"></line>
+<circle class="accent-stroke" cx="585" cy="70" fill="none" r="11" stroke-width="1.3"></circle>
+<path class="accent-stroke" d="M585 81 L585 132 M585 96 L566 120 M585 96 L604 120" fill="none" stroke-width="1.4"></path>
+<line class="rule-stroke" opacity="0.7" stroke-dasharray="2 3" stroke-width="1" x1="490" x2="680" y1="132" y2="132"></line>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="585" y="34">COWBOY</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="585" y="166">corpo, atitude</text>
+</svg>
+</figure>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-3" data-inema-track="4" id="topico-3">
+<div class="section-mark">
+<span class="where">Secao 3 de 5</span><span>·</span><span>O fechado</span>
+</div>
+<h2 class="head"><span class="num">3.</span>O lado fechado: medio, close, extreme close</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-3-t3-p1">Agora atravesse para a outra ponta, onde o rosto fala mais
+              alto que o mundo. Conforme a camera se aproxima, o espectador perde a saida: cada passo a frente e
+              menos liberdade para o olho e mais intimidade com o personagem.</p>
+<h3 class="sub">Medium shot — o plano neutro e realista</h3>
+<p data-inema-block="m4-3-t3-p2">O <strong>medium shot</strong> (plano medio), em geral da cintura para
+              cima, e o quadro mais neutro e realista — imita como vemos as pessoas no dia a dia. Perto o
+              bastante para ler expressao facial, longe o bastante para ainda ver linguagem corporal. Ele nao
+              manipula o publico; apresenta o personagem como ele e, em movimento. E o cavalo de batalha do
+              dialogo realista — e a regra pratica diz: se voce esta perdido, comece com um medium shot. Ele
+              raramente falha.</p>
+<h3 class="sub">Medium close-up e close-up — entrando no espaco pessoal</h3>
+<p data-inema-block="m4-3-t3-p3">O <strong>medium close-up</strong> (do peito para cima) entra no
+              espaco pessoal: o rosto domina, mas ainda vemos ombros e alguns gestos. E perfeito para reacoes
+              emocionais — surpresa, medo, deslumbramento — sem a intensidade total de um close. E o
+              plano da intimidade <em>antes</em> do mergulho final. Ja o <strong>close-up</strong> (ombros e
+              rosto, ou so o rosto) captura emocao pura: quando a face preenche o quadro, um sorriso vira
+              contagiante e um aceno vira saudacao a distancia. E a ferramenta mais forte para o momento decisivo —
+              alegria, medo, a decisao que muda uma vida.</p>
+<h3 class="sub">Extreme close-up — um detalhe que vira monumento</h3>
+<p data-inema-block="m4-3-t3-p4">O <strong>extreme close-up</strong> isola um detalhe minusculo e o
+              torna monumental. Um olho vira um espelho vivo, refletindo nao so a luz, mas o mundo inteiro —
+              imagine a cornea de Ella refletindo dunas e naves alienigenas, deformadas pela curvatura do olho. E
+              o plano do primeiro contato, da pista que muda a historia, do climax. Combina-se lindamente com um
+              <em>push-in</em> lento e com som — um batimento cardiaco que comeca lento e acelera —,
+              empurrando o publico da observacao para a imersao. Seu efeito e suspense e espanto.<span class="sidenote-ref">2</span></p>
+<div class="codeblock"><span class="c"># Extreme close-up — um detalhe vira o mundo inteiro</span>
+<span class="c"># a distancia mais intima da escala; combine com push-in lento e som</span>
+<span class="k">Format:</span> cinematic 16:9, macro lens, ultra-shallow depth, film grain.
+<span class="k">Shot:</span> extreme close-up of a woman's eye, starting a few centimeters out, slowly pushing in until the iris fills the frame.
+<span class="k">Detail:</span> in the corneal reflection, a vast desert with dunes and several futuristic spacecraft, warped by the curve of the eye.
+<span class="k">Action:</span> the eye moves naturally — glances left, then right, then blinks softly.
+<span class="k">Lighting:</span> soft natural daylight, warm catchlight, high micro-contrast on the iris.
+<span class="k">Sound:</span> low slow heartbeat that accelerates as the camera pushes closer.</div>
+</div>
+<!-- figura 3: a escala fechada -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · Aproximando: <b>medio</b> → <b>close</b> → <b>extreme close</b></figcaption>
+<svg aria-label="Diagrama com tres quadros mostrando o mesmo rosto cada vez mais perto: plano medio com cintura, close com rosto e ombros, e extreme close so com o olho." class="diagram" role="img" viewbox="0 0 720 188">
+<!-- medium -->
+<rect class="rule-stroke" fill="none" height="116" rx="3" stroke-width="1.3" width="180" x="50" y="36"></rect>
+<circle class="rule-stroke" cx="140" cy="80" fill="none" r="16" stroke-width="1.3"></circle>
+<path class="rule-stroke" d="M118 110 Q140 96 162 110 L162 152 L118 152 Z" fill="none" stroke-width="1.3"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="140" y="30">MEDIO</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="140" y="170">neutro, realista</text>
+<!-- close -->
+<rect class="rule-stroke" fill="none" height="116" rx="3" stroke-width="1.3" width="180" x="270" y="36"></rect>
+<circle class="rule-stroke" cx="360" cy="88" fill="none" r="40" stroke-width="1.4"></circle>
+<circle class="ink-soft" cx="346" cy="82" r="3"></circle><circle class="ink-soft" cx="374" cy="82" r="3"></circle>
+<path class="rule-stroke" d="M346 104 Q360 114 374 104" fill="none" stroke-width="1.3"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="360" y="30">CLOSE</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="170">emocao pura</text>
+<!-- extreme close -->
+<rect class="accent-stroke" fill="url(#hatch-4-3)" height="116" rx="3" stroke-width="1.4" width="180" x="490" y="36"></rect>
+<ellipse class="accent-stroke" cx="580" cy="94" fill="none" rx="78" ry="40" stroke-width="1.4"></ellipse>
+<circle class="accent-stroke" cx="580" cy="94" fill="none" r="26" stroke-width="1.5"></circle>
+<circle class="mark-fill" cx="580" cy="94" r="11"></circle>
+<circle class="ink" cx="572" cy="88" r="3"></circle>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="580" y="30">EXTREME CLOSE</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="580" y="170">o detalhe vira mundo</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Indo mais fundo: lente e som como parte do plano
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Camada opcional — dois reforcos que potencializam cada distancia.</p>
+<p><strong>A escolha da lente e escolha de personagem.</strong> Lentes grande-angulares (21–35mm)
+                exageram espaco e movimento — casam com planos amplos e acao. Teleobjetivas (85mm e acima)
+                comprimem o espaco e isolam o rosto — casam com closes e intimidade. Escolher a distancia
+                focal e, de novo, escolher uma emocao. <strong>E o audio e metade da emocao.</strong> Nos prompts,
+                inclua sons diegeticos (vento, passos, o estalo de um isqueiro) e nao-diegeticos (um grave baixo,
+                um pulso sintetico). Um extreme close-up com batimento cardiaco vale o dobro de um sem som: o
+                ritmo conecta a imagem ao corpo, transformando misterio visual em experiencia fisica.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-4" data-inema-track="4" id="topico-4">
+<div class="section-mark">
+<span class="where">Secao 4 de 5</span><span>·</span><span>As regras</span>
+</div>
+<h2 class="head"><span class="num">4.</span>A regra de ouro e a regra de decisao</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-3-t4-p1">Conhecer os planos nao basta; e preciso saber
+              <em>encadea-los</em>. Aqui entra a regra de ouro, a que nunca falha: <strong>comece amplo para
+              estabelecer o mundo, mova para o medio para a acao, depois feche para a emocao — e, no momento
+              crucial, um extreme close-up sobre um detalhe.</strong><span class="sidenote-ref">3</span> E a
+              gramatica natural do cinema: do “onde estamos” ao “como ele ou ela se sente”.
+              Comece amplo, termine perto.</p>
+<p data-inema-block="m4-3-t4-p2">A essa regra se soma uma disciplina: <strong>um plano, uma
+              emocao.</strong> Nao tente fazer tudo num unico quadro. Planos amplos dao contexto; closes dao
+              emocao — respeite a funcao de cada um. Querer que um plano so estabeleca o mundo <em>e</em>
+              entregue a lagrima e pedir que ele faça dois trabalhos opostos; o resultado nao faz nenhum dos dois
+              bem. Atribua uma tarefa por plano, e a sequencia ganha clareza.</p>
+<h3 class="sub">A pergunta que escolhe o plano por voce</h3>
+<p data-inema-block="m4-3-t4-p3">Quando bater a duvida sobre qual plano usar, faca uma unica pergunta:
+              <em>o que e mais importante agora — a localizacao e a acao, ou o rosto e a emocao?</em> Se o
+              que importa e o espaco, a escala, o ambiente ou a acao, va de plano amplo (establishing, wide ou
+              medium wide). Se o que importa e o rosto, a emocao, a decisao interna ou a reacao, va de plano
+              fechado (medio para perto, close). Se for uma conversa comum, sem emocao forte nem circunstancia
+              epica, fique no medium shot neutro. E se um pequeno detalhe entra em cena e <em>vira o enredo</em> —
+              um botao, um simbolo, uma rachadura, um toque —, voce precisa de um extreme close-up.</p>
+</div>
+<!-- figura 4: a curva amplo->perto -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · A regra de ouro: a cena <b>caminha</b> do amplo ao close</figcaption>
+<svg aria-label="Diagrama de progressao: cinco quadros em sequencia, do establishing ao extreme close-up, com a atencao subindo e a pergunta mudando de onde estamos para como se sente." class="diagram" role="img" viewbox="0 0 720 198">
+<line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="150" y2="150"></line>
+<!-- 5 marcos -->
+<g class="rule-stroke" fill="none" stroke-width="1.3">
+<rect height="32" rx="2" width="70" x="50" y="118"></rect>
+<rect height="46" rx="2" width="62" x="190" y="104"></rect>
+<rect height="64" rx="2" width="56" x="320" y="86"></rect>
+<rect height="86" rx="2" width="50" x="448" y="64"></rect>
+</g>
+<rect class="accent-stroke" fill="url(#hatch-4-3)" height="110" rx="2" stroke-width="1.4" width="46" x="566" y="40"></rect>
+<!-- conteudo simbolico crescente -->
+<rect class="ink-soft" height="8" width="3" x="82" y="138"></rect>
+<circle class="ink-soft" cx="221" cy="120" r="4"></circle>
+<circle class="rule-stroke" cx="348" cy="108" fill="none" r="8" stroke-width="1.2"></circle>
+<circle class="rule-stroke" cx="473" cy="92" fill="none" r="14" stroke-width="1.2"></circle>
+<circle class="mark-fill" cx="589" cy="92" r="10"></circle>
+<!-- rotulos -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
+<text x="85" y="170">establishing</text>
+<text x="221" y="170">wide</text>
+<text x="348" y="170">medio</text>
+<text x="473" y="170">close</text>
+<text class="accent" x="589" y="170">ext. close</text>
+</g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" font-style="italic" x="120" y="32">“onde estamos?”</text>
+<text class="ink" font-family="Source Serif 4, serif" font-size="11" font-style="italic" text-anchor="end" x="600" y="32">“como se sente?”</text>
+<path class="accent-stroke" d="M70 26 L660 26" fill="none" opacity="0.7" stroke-dasharray="2 5" stroke-width="1.2"></path>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Voce vai gerar uma cena de dialogo simples entre duas pessoas, sem grande drama nem ambiente epico,
+              e nao sabe por onde comecar. Pela regra de decisao, qual plano e a aposta mais segura para abrir?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">O <strong>medium shot</strong> neutro. Para uma conversa comum, sem emocao forte
+                nem circunstancia epica, ele e o cavalo de batalha que “raramente falha”: perto o
+                bastante para ler o rosto, longe o bastante para a linguagem corporal. Depois, voce <em>adiciona</em>
+                um close para a emocao mais forte e, se preciso, um wide para reestabelecer o espaco.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-5" data-inema-track="4" id="topico-5">
+<div class="section-mark">
+<span class="where">Secao 5 de 5</span><span>·</span><span>Continuidade</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Eyeline e a regra dos 180 graus</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-3-t5-p1">Escolher bons planos nao adianta se, ao corta-los juntos,
+              o espectador se perde no espaco. Duas regras de continuidade guardam essa coerencia — e ambas
+              importam ainda mais com IA, porque o gerador nao tem nocao de geografia e precisa que voce a
+              imponha. A primeira e a <span class="dfn"><details class="dfn"><summary>linha de olhar</summary><span class="body"><b>Linha de olhar</b> (eyeline) e a direcao para onde um personagem olha. Se ele olha para fora do quadro a direita, o que ele ve deve estar a esquerda no plano seguinte — assim os dois planos “se olham” e o publico entende que estao no mesmo espaco.</span></details></span>:
+              a direcao para onde o personagem olha.</p>
+<p data-inema-block="m4-3-t5-p2">A regra do <em>eyeline</em> e intuitiva quando dita em voz alta: se um
+              personagem olha para a direita, fora do quadro, o objeto ou a pessoa que ele observa deve aparecer a
+              esquerda no plano seguinte — como se os dois planos se olhassem. Quando o eyeline bate, o
+              cerebro costura os dois quadros num espaco unico, mesmo que tenham sido gerados separadamente.
+              Quando nao bate — os dois olhando para o mesmo lado —, parece que se ignoram, e a cena
+              desorienta. Em prompts de IA, dizer explicitamente “ela olha para fora do quadro, a
+              direita” e “ele entra pela esquerda, retribuindo o olhar” salva a continuidade.</p>
+<h3 class="sub">A regra dos 180 graus — uma linha imaginaria</h3>
+<p data-inema-block="m4-3-t5-p3">A <strong>regra dos 180°</strong> e a irma geografica do eyeline.
+              Imagine uma linha invisivel ligando dois personagens em cena; a camera deve permanecer sempre do
+              <em>mesmo lado</em> dessa linha. Enquanto ela respeita esse semicirculo, as posicoes se mantem
+              coerentes: quem estava a esquerda continua a esquerda, quem estava a direita continua a direita.
+              Se a camera <em>cruza a linha</em>, as posicoes se invertem de um corte para o outro, e o publico
+              sente — sem saber por que — que algo ficou errado, como se os personagens tivessem
+              trocado de lugar magicamente.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m4-3-t5-p4">Guarde a aula numa frase: <em>a distancia escolhe a emocao, e a
+              continuidade — eyeline e 180° — mantem o espaco crivel.</em> Voce ja tem, agora, os
+              tres verbos da linguagem de camera: o que ela <strong>faz</strong> (movimento, 4.2), de que
+              <strong>distancia</strong> observa (planos, esta aula) e como manter tudo coerente. A proxima e a
+              ultima aula da trilha junta esse vocabulario inteiro e o escreve dentro de um gerador de verdade —
+              o Seedance — com storyboard, trava de identidade e estrutura em YAML.</p>
+</div>
+<!-- figura 5: a regra dos 180 graus -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · A <b>linha dos 180°</b>: fique de um lado, e o espaco se mantem</figcaption>
+<svg aria-label="Diagrama: dois personagens A e B ligados por uma linha; do lado permitido as cameras mantem A a esquerda e B a direita; uma camera que cruza a linha inverte as posicoes e e marcada como erro." class="diagram" role="img" viewbox="0 0 720 200">
+<!-- a linha de acao -->
+<line class="rule-stroke" stroke-dasharray="5 4" stroke-width="1.3" x1="230" x2="490" y1="70" y2="70"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1.2" text-anchor="middle" x="360" y="60">A LINHA</text>
+<!-- personagem A e B -->
+<circle class="accent-stroke" cx="250" cy="70" fill="none" r="13" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="250" y="74">A</text>
+<circle class="rule-stroke" cx="470" cy="70" fill="none" r="13" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="470" y="74">B</text>
+<!-- lado permitido (abaixo) -->
+<path class="accent-stroke" d="M300 150 L360 110 L420 150" fill="url(#hatch-4-3)" stroke-width="1.3"></path>
+<rect class="accent-stroke" fill="none" height="20" rx="2" stroke-width="1.2" width="60" x="330" y="150"></rect>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="360" y="164">CAMERAS OK</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="190">A fica a esq., B a dir.</text>
+<!-- lado proibido (acima, cruzando) -->
+<circle class="rule-stroke" cx="600" cy="70" fill="none" r="14" stroke-width="1.3"></circle>
+<path class="mark-stroke" d="M600 30 L600 56 M588 44 L612 44" stroke-width="1.6"></path>
+<line class="rule-stroke" stroke-width="1.3" x1="560" x2="640" y1="20" y2="120"></line>
+<line class="rule-stroke" stroke-width="1.3" x1="640" x2="560" y1="20" y2="120"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="600" y="140">CRUZOU = INVERTE</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="158">posicoes trocam</text>
+</svg>
+</figure>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Auto-checagem" class="check">
+<h2>Antes de seguir: quatro checagens rapidas</h2>
+<p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>Que pergunta cada lado da escala de planos responde?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Planos amplos respondem <em>“onde estamos?”</em> — contexto,
+              geografia, escala. Planos fechados respondem <em>“como se sente?”</em> — reacao,
+              emocao, decisao. E o extreme close-up revela um detalhe que pode mudar a historia. A distancia, por
+              si so, escolhe entre contexto e emocao.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Por que “quanto mais fechado o plano, menos o publico desvia o olhar”?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque o close <em>preenche</em> o quadro com o rosto: nao sobra para onde o olho
+              fugir. O plano amplo deixa o olho passear pelo cenario; o fechado prende a atencao. Por isso a cena
+              caminha do amplo (solta o olhar) ao close (captura-o) no momento decisivo.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Qual a regra de ouro do encadeamento de planos?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Comece amplo para estabelecer o mundo, mova para o medio na acao, feche para a
+              emocao — e, no momento crucial, um extreme close-up num detalhe. Do <em>onde estamos</em> ao
+              <em>como se sente</em>. E uma emocao por plano: amplo da contexto, close da emocao; nao peça os dois
+              ao mesmo quadro.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>O que a regra dos 180° protege, e o que acontece se a camera cruza a linha?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Protege a <em>geografia</em> da cena: uma linha imaginaria liga dois personagens e
+              a camera fica sempre do mesmo lado dela, mantendo quem esta a esquerda a esquerda. Se cruza a linha,
+              as posicoes se invertem de um corte para o outro — o publico sente que algo ficou errado, como
+              se os personagens trocassem de lugar. O eyeline e a versao do olhar dessa mesma coerencia.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Minha jornada</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">Neste modulo</div>
+<div class="v" data-inema-meter="modulo:4-3">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">Na trilha 4</div>
+<div class="v" data-inema-meter="trilha:4">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">No curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Modulo 4.4 — Video Cinematografico no Seedance 2</div>
+</div>
+<a class="go" href="modulo-4-4.html">Proximo →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-4-3#topico-1"></aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fonte</div>
+          Lesson 12 — <i>Shot Sizes and Framing</i> (Block 4). A tese: <i>“Shot size is not just
+          camera distance. It is an emotional and narrative decision.”</i>
+</aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Tamanho de plano (shot size).</b> A distancia aparente entre camera e sujeito. Controla tres coisas:
+          contexto ou emocao, ritmo, e atencao — quanto mais fechado, menos o olho escapa.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-4-3#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Establishing vs wide.</b> O establishing e sobre <i>lugar</i> (geografia, clima, escala do mundo);
+          o wide e sobre <i>escala do sujeito</i> (quao pequeno ou grande ele e diante do que o cerca).
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          O angulo baixo no wide nao e detalhe: ele faz a nave “pairar como um gigante adormecido”.
+          Sem humano no quadro, o proprio objeto vira o personagem — uma forca da natureza.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-4-3#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Medium shot.</b> Da cintura para cima, o plano mais neutro — imita como vemos pessoas no dia
+          a dia. A regra de socorro: <i>se estiver perdido, comece com um medium shot. Raramente falha.</i>
+</aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          O extreme close-up no olho de Ella reflete dunas e naves alienigenas deformadas pela cornea: o detalhe
+          minusculo carrega o mundo inteiro. E onde o som (batimento que acelera) vira metade da emocao.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-4-3#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Um plano, uma emocao.</b> Cada plano faz um trabalho: amplo da contexto, close da emocao. Pedir os
+          dois ao mesmo quadro e pedir tarefas opostas — e nenhuma sai bem.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          A pergunta-bussola: <i>o que importa mais agora — localizacao/acao ou rosto/emocao?</i>
+          Localizacao → amplo. Emocao → fechado. Conversa comum → medio. Detalhe que vira enredo
+          → extreme close.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-4-3#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Eyeline.</b> A direcao do olhar de um personagem. Se ele olha a direita, o que ve aparece a esquerda
+          no proximo plano — os planos “se olham” e o espaco se costura.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Indo mais fundo</div>
+          Na IA, eyeline e regra dos 180° precisam ser <i>ditos</i> no prompt — o gerador nao tem
+          geografia propria. “Ela olha a direita; ele entra pela esquerda” salva a continuidade.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Caderno do aluno</span>
+<span class="pg">Modulo 4.3 — folio iii</span>
+<span>Composto em Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

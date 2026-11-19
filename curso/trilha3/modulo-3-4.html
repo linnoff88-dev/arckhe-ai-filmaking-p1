@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Modulo 3.4 — Controle de Camera no Kling | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-4.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Pular para o conteudo</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:3-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<div aria-label="Tema de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+</div>
+<div aria-label="Fonte de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamanho do texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Largura da linha" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Onde voce esta" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Trilha <b>3</b> Workflow de Cinema com IA</span>
+<span class="sep">·</span>
+<span>Modulo <b>3.4</b> / 5</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Secao 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Modulo 3.4 · Trilha 3 · Workflow de Cinema com IA</p>
+<h1 class="module">Controle de Camera no <em>Kling</em></h1>
+<p class="deck">A camera como instrumento de emocao. A diferenca entre dolly, zoom e dolly zoom nao e
+          tecnica — e narrativa. Aqui voce ganha um catalogo de movimentos com a intencao de cada um, e a
+          regra que decide quando a camera deve se mover de verdade.</p>
+<p class="read-meta">
+<span class="here">Lendo agora</span>
+<span>~18 min · modulo inteiro</span>
+<span>5 secoes</span>
+</p>
+<!-- objetivos -->
+<section aria-label="O que voce vai entender" class="aims">
+<h2>O que voce vai entender</h2>
+<ul>
+<li>A diferenca real entre <b>dolly, zoom e dolly zoom</b> — e por que confundi-los e a causa mais comum de video de IA que “parece falso”.</li>
+<li>Como o movimento de camera <b>molda a percepcao emocional</b>: intimidade, isolamento, tensao, escala.</li>
+<li>Um <b>catalogo de mais de 25 movimentos</b> (dolly, truck, pan, tilt, crane, orbita, dutch, whip pan...) com a intencao de cada um.</li>
+<li>O papel do <b>parallax</b> na profundidade — e a distincao entre mover a camera e mover a lente.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
+<p class="toc-head">Sumario — cinco movimentos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Dolly, zoom, dolly zoom: o principio</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">A camera molda a emocao</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">O catalogo de movimentos</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Parallax: camera x lente</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Intencionalidade: o porque do movimento</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="3-4" data-inema-topic="modulo-3-4#topico-1" data-inema-track="3" id="topico-1">
+<div class="section-mark">
+<span class="where">Secao 1 de 5</span><span>·</span><span>O principio</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Dolly, zoom, dolly zoom: o principio</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m3-4-t1-p1">Tres movimentos parecem semelhantes na tela e
+              fazem coisas opostas na percepcao. O <strong>dolly</strong> e a camera <em>movendo-se fisicamente</em>
+              pelo espaco — isso introduz parallax, profundidade e uma forte sensacao de realismo. O
+              <strong>zoom</strong> e a <em>lente</em> mudando de distancia focal sem que a camera ande — o
+              resultado parece mais chapado, mais observacional, menos imersivo. O <strong>dolly zoom</strong> e um
+              efeito combinado em que movimento de camera e zoom se <em>opoem</em>: o fundo parece dilatar ou
+              colapsar enquanto o sujeito fica do mesmo tamanho, criando distorcao espacial — usada para
+              tensao e inquietacao psicologica.<span class="sidenote-ref">1</span></p>
+<p data-inema-block="m3-4-t1-p2">Dai a regra de ouro da aula, que vale palavra por palavra: use
+              <strong>dolly</strong> para criar imersao e profundidade cinematografica; use <strong>zoom</strong>
+              para um enquadramento observacional, estilo documentario; use <strong>dolly zoom</strong> para
+              introduzir desorientacao e tensao emocional. Nao sao tres formas de fazer a mesma coisa — sao
+              tres intencoes diferentes. Escolher o errado e a origem da maior parte do video de IA que parece
+              “artificial”: um zoom onde a cena pedia profundidade entrega um quadro chapado, por mais
+              bonito que seja.</p>
+</div>
+<!-- prompt pronto: dolly vs zoom vs dolly-zoom -->
+<div class="prose">
+<p data-inema-block="m3-4-t1-p3">Tres prompts de camera para o Kling, lado a lado — a mesma cena,
+              tres intencoes distintas:</p>
+<div class="codeblock"><span class="c"># Kling — dolly vs zoom vs dolly zoom (mesma cena, intencoes opostas)</span>
+<span class="c"># A) immersion + depth</span>
+<span class="k">Camera:</span> slow dolly-in toward a man at a rain-streaked window; real parallax,
+foreground objects slide past; cinematic depth.
+
+<span class="c"># B) observational / documentary</span>
+<span class="k">Camera:</span> static position, slow lens zoom-in on the same man; flatter, detached,
+observational framing — no parallax.
+
+<span class="c"># C) tension / unease</span>
+<span class="k">Camera:</span> dolly zoom on the same man — push the camera in while zooming out so the
+background warps and stretches; subject stays the same size; vertigo, psychological unease.</div>
+</div>
+<!-- figura 1: três movimentos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · <b>Dolly, zoom, dolly zoom</b> — parecidos na tela, opostos na percepcao</figcaption>
+<svg aria-label="Diagrama de tres paineis: dolly (camera move pelo espaco, fundo desliza), zoom (lente muda, fundo fixo e chapado) e dolly zoom (camera e zoom opostos, o fundo distorce enquanto o sujeito fica igual)." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-3-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- dolly -->
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="120" y="28">dolly</text>
+<rect class="rule-stroke" fill="none" height="96" rx="3" stroke-width="1.1" width="160" x="40" y="40"></rect>
+<circle class="accent-stroke" cx="120" cy="92" fill="url(#hatch-3-4)" r="14" stroke-width="1.3"></circle>
+<path class="accent-stroke" d="M62 120 L92 100 M178 120 L148 100" fill="none" stroke-width="1.3"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="120" y="156">camera anda · fundo desliza</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="120" y="172">PROFUNDIDADE</text>
+<!-- zoom -->
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="28">zoom</text>
+<rect class="rule-stroke" fill="none" height="96" rx="3" stroke-width="1.1" width="160" x="280" y="40"></rect>
+<circle class="wash accent-stroke" cx="360" cy="92" r="14" stroke-width="1.2"></circle>
+<rect class="rule-stroke" fill="none" height="56" stroke-dasharray="3 3" stroke-width="1" width="120" x="300" y="60"></rect>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="156">lente muda · fundo fixo</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="360" y="172">CHAPADO</text>
+<!-- dolly zoom -->
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="600" y="28">dolly zoom</text>
+<rect class="accent-stroke" fill="none" height="96" rx="3" stroke-width="1.3" width="160" x="520" y="40"></rect>
+<circle class="accent-stroke" cx="600" cy="92" fill="url(#hatch-3-4)" r="14" stroke-width="1.4"></circle>
+<path class="mark-stroke" d="M540 50 L560 70 M660 50 L640 70 M540 126 L560 110 M660 126 L640 110" fill="none" stroke-width="1.2"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="156">opostos · fundo distorce</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="600" y="172">TENSAO</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="198">o sujeito fica do mesmo tamanho nos tres — o que muda e o que acontece ao redor</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Voce quer que o espectador sinta que <em>esta entrando</em> no quarto junto com a camera, com
+              profundidade real. Voce pede um zoom-in lento. Por que o resultado vai frustrar — e o que
+              pedir no lugar?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">Porque o zoom <strong>nao move a camera</strong> — ele so amplia a lente, e o
+                quadro fica chapado, sem parallax. A sensacao de “entrar” vem do <strong>dolly</strong>:
+                a camera andando pelo espaco faz o primeiro plano deslizar em relacao ao fundo, e e esse parallax
+                que o cerebro le como profundidade e imersao. Peca um dolly-in, nao um zoom.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="3-4" data-inema-topic="modulo-3-4#topico-2" data-inema-track="3" id="topico-2">
+<div class="section-mark">
+<span class="where">Secao 2 de 5</span><span>·</span><span>Emocao</span>
+</div>
+<h2 class="head"><span class="num">2.</span>A camera molda a emocao</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-4-t2-p1">O movimento de camera nao e neutro — ele
+              <em>molda a percepcao emocional</em> da cena, mesmo quando o espectador nao percebe. A aula mapeia
+              quatro associacoes fundamentais: <strong>intimidade</strong> nasce do <em>dolly in</em> (a camera se
+              aproxima, o mundo encolhe ao redor do rosto); <strong>isolamento</strong> nasce do <em>dolly out</em>
+              (a camera recua, o personagem fica pequeno diante do espaco); <strong>tensao</strong> nasce do
+              <em>dutch angle</em> ou do <em>dolly zoom</em> (o equilibrio se quebra); <strong>escala</strong> nasce
+              dos <em>planos de grua</em> e do movimento espacial amplo (o mundo se revela grande).<span class="sidenote-ref">2</span></p>
+<p data-inema-block="m3-4-t2-p2">Repare que cada associacao tem uma <em>logica fisica</em> por tras.
+              Aproximar-se de um rosto e, na vida real, um gesto de intimidade — a camera empresta esse
+              significado. Recuar e abandonar, deixar so — o dolly out carrega essa solidao. Inclinar o
+              horizonte e o sinal de que algo esta errado, fora do prumo. Subir e ganhar perspectiva, ver o todo.
+              A camera nao “representa” a emocao de forma arbitraria: ela reproduz movimentos que o
+              corpo humano ja associa a estados emocionais. Por isso o catalogo funciona — ele e gramatica,
+              nao convencao.</p>
+</div>
+<!-- prompt pronto: emoção via movimento -->
+<div class="prose">
+<p data-inema-block="m3-4-t2-p3">Quatro prompts curtos para o Kling, cada um escolhendo o movimento
+              pela emocao que ele carrega — prontos para adaptar:</p>
+<div class="codeblock"><span class="c"># Kling — o movimento escolhido pela emocao</span>
+<span class="k">Intimacy</span> → slow dolly-in on the character's face, the room softening around them.
+<span class="k">Isolation</span> → slow dolly-out from the character, revealing the vast empty space.
+<span class="k">Tension</span> → subtle dutch angle that tilts the horizon, the frame off-balance.
+<span class="k">Scale</span> → rising crane shot that lifts up and away, the world opening below.
+<span class="c"># the move carries the meaning — choose it for what the audience should feel.</span></div>
+</div>
+<!-- figura 2: matriz emoção -> movimento -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · A <b>emocao</b> escolhe o movimento — aproximar, afastar, inclinar, elevar</figcaption>
+<svg aria-label="Diagrama com quatro quadrantes: dolly in para intimidade (camera aproxima), dolly out para isolamento (camera afasta), dutch angle para tensao (horizonte inclinado), crane para escala (camera sobe)." class="diagram" role="img" viewbox="0 0 720 200">
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="24" y2="176"></line>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="40" x2="680" y1="100" y2="100"></line>
+<!-- intimidade -->
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="200" y="48">intimidade</text>
+<circle class="accent-stroke" cx="200" cy="74" fill="url(#hatch-3-4)" r="13" stroke-width="1.3"></circle>
+<path class="accent-stroke" d="M150 74 H 176 M250 74 H 224" fill="none" stroke-width="1.4"></path>
+<path class="accent-stroke" d="M176 74 l -6 -3 m 6 3 l -6 3 M224 74 l 6 -3 m -6 3 l 6 3" fill="none" stroke-width="1.2"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="200" y="92">DOLLY IN</text>
+<!-- isolamento -->
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="540" y="48">isolamento</text>
+<circle class="wash accent-stroke" cx="540" cy="74" r="7" stroke-width="1.2"></circle>
+<path class="accent-stroke" d="M500 74 l 8 -3 m -8 3 l 8 3 M580 74 l -8 -3 m 8 3 l -8 3" fill="none" stroke-width="1.2"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="540" y="92">DOLLY OUT</text>
+<!-- tensão -->
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="200" y="128">tensao</text>
+<g transform="rotate(-12 200 150)">
+<rect class="rule-stroke" fill="none" height="24" stroke-width="1.2" width="80" x="160" y="138"></rect>
+</g>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="200" y="178">DUTCH ANGLE</text>
+<!-- escala -->
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="540" y="128">escala</text>
+<path class="accent-stroke" d="M540 168 V 140" stroke-width="1.4"></path><path class="accent-stroke" d="M540 140 l -3 7 m 3 -7 l 3 7" fill="none" stroke-width="1.2"></path>
+<line class="rule-stroke" opacity="0.6" stroke-width="1" x1="510" x2="570" y1="168" y2="168"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="540" y="180">CRANE UP</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Indo mais fundo: o sistema de demonstracao da aula
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Camada opcional. Um detalhe de metodo que vale a curiosidade.</p>
+<p>A fonte ilustra <em>todos</em> os movimentos dentro de uma unica cena controlada — um
+                esqueleto numa suite de hotel de luxo. A escolha nao e gratuita: manter o mesmo cenario, o mesmo
+                sujeito e a mesma luz permite observar com precisao o que <strong>so</strong> o movimento muda
+                — a variacao de profundidade, o movimento relativo dos objetos, o comportamento do fundo e a
+                percepcao cinematografica geral. E o equivalente, em camera, ao esboco em preto e branco do
+                storyboard: isolar uma variavel para julga-la limpa. Quando voce testar movimentos, vale repetir o
+                truque — uma cena fixa, so a camera mudando.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="3-4" data-inema-topic="modulo-3-4#topico-3" data-inema-track="3" id="topico-3">
+<div class="section-mark">
+<span class="where">Secao 3 de 5</span><span>·</span><span>O catalogo</span>
+</div>
+<h2 class="head"><span class="num">3.</span>O catalogo de movimentos</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-4-t3-p1">A aula percorre mais de <strong>vinte e cinco
+              movimentos</strong> — dolly, truck, pan, tilt, crane, orbita e por ai vai — mas o que
+              importa nao e decora-los, e ter um <em>guia de referencia pratico</em> que liga cada intencao ao
+              movimento certo. A fonte organiza exatamente assim: nao “o que e um arc shot”, mas
+              “quando eu quero X, qual movimento usar”. Esse e o jeito de um diretor pensar —
+              da necessidade dramatica para a ferramenta de camera, nunca o contrario.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m3-4-t3-p2">Vale ler o guia como um dicionario de intencoes. Para
+              <em>proximidade emocional</em>, dolly in. Para <em>enfatizar escala ou solidao</em>, dolly out. Para
+              <em>revelar verticalmente</em> (de baixo para cima), tilt up. Para <em>conectar elementos
+              visuais</em>, rack focus. Para um <em>toque premium</em>, arc shot. Para <em>realismo ou energia de
+              documentario</em>, handheld. Para <em>inquietacao ou instabilidade</em>, dutch angle. Para
+              <em>impacto ou choque</em>, fast dolly in / crash zoom. Para <em>revelar o ambiente lateralmente</em>,
+              truck. Para <em>transicao dinamica</em>, whip pan. Para <em>distorcer a percepcao e induzir
+              tensao</em>, dolly zoom.</p>
+</div>
+<!-- prompt pronto: guia de referência prático -->
+<div class="prose">
+<p data-inema-block="m3-4-t3-p3">O guia de referencia inteiro como cartao de prompt para o Kling
+              — escolha a linha pela intencao e cole o movimento na sua cena:</p>
+<div class="codeblock"><span class="c"># Kling — guia de referencia: intencao -&gt; movimento de camera</span>
+<span class="k">emotional proximity</span>      → dolly in
+<span class="k">scale / loneliness</span>       → dolly out
+<span class="k">reveal vertically (bottom-up)</span> → tilt up
+<span class="k">connect visual elements</span>  → rack focus
+<span class="k">premium cinematic feel</span>   → arc shot
+<span class="k">realism / documentary</span>    → handheld
+<span class="k">unease / instability</span>     → dutch angle
+<span class="k">impact / shock</span>           → fast dolly in / crash zoom
+<span class="k">reveal environment laterally</span> → truck movement
+<span class="k">dynamic transition</span>       → whip pan
+<span class="k">distort perception / tension</span> → dolly zoom
+<span class="c"># pick the line by the feeling you want, then write the move into the shot prompt.</span></div>
+</div>
+<!-- figura 3: o léxico como tabela de intenções -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · O <b>lexico</b> da camera — cada movimento e uma intencao, nao um efeito</figcaption>
+<svg aria-label="Diagrama em duas colunas ligando intencoes (proximidade, solidao, instabilidade, impacto, transicao, premium) aos movimentos correspondentes (dolly in, dolly out, dutch, crash zoom, whip pan, arc shot)." class="diagram" role="img" viewbox="0 0 720 220">
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="end">
+<text x="250" y="42">proximidade</text>
+<text x="250" y="74">solidao / escala</text>
+<text x="250" y="106">instabilidade</text>
+<text x="250" y="138">impacto</text>
+<text x="250" y="170">transicao</text>
+<text x="250" y="202">toque premium</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.3">
+<path d="M262 38 H 458"></path><path d="M262 70 H 458"></path><path d="M262 102 H 458"></path>
+<path d="M262 134 H 458"></path><path d="M262 166 H 458"></path><path d="M262 198 H 458"></path>
+</g>
+<g class="accent"><circle cx="262" cy="38" r="2.4"></circle><circle cx="262" cy="70" r="2.4"></circle><circle cx="262" cy="102" r="2.4"></circle><circle cx="262" cy="134" r="2.4"></circle><circle cx="262" cy="166" r="2.4"></circle><circle cx="262" cy="198" r="2.4"></circle></g>
+<g font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="start">
+<rect class="accent-stroke" fill="url(#hatch-3-4)" height="26" rx="3" stroke-width="1.1" width="200" x="462" y="26"></rect>
+<text class="ink" x="476" y="44">dolly in</text>
+<rect class="wash accent-stroke" height="26" rx="3" stroke-width="1.1" width="200" x="462" y="58"></rect>
+<text class="ink" x="476" y="76">dolly out</text>
+<rect class="wash accent-stroke" height="26" rx="3" stroke-width="1.1" width="200" x="462" y="90"></rect>
+<text class="ink" x="476" y="108">dutch angle</text>
+<rect class="wash accent-stroke" height="26" rx="3" stroke-width="1.1" width="200" x="462" y="122"></rect>
+<text class="ink" x="476" y="140">crash zoom</text>
+<rect class="wash accent-stroke" height="26" rx="3" stroke-width="1.1" width="200" x="462" y="154"></rect>
+<text class="ink" x="476" y="172">whip pan</text>
+<rect class="wash accent-stroke" height="26" rx="3" stroke-width="1.1" width="200" x="462" y="186"></rect>
+<text class="ink" x="476" y="204">arc shot</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-4-t3-p3b">Uma advertencia herdada das trilhas anteriores: o catalogo e uma
+              despensa, nao uma receita. <strong>Um plano = uma intencao.</strong> Empilhar movimentos —
+              orbita + dolly + pan + whip ao mesmo tempo — gera video instavel e confuso, o oposto do
+              cinema. Escolha o <em>um</em> movimento que serve ao que a cena precisa sentir, e deixe-o respirar.</p>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="3-4" data-inema-topic="modulo-3-4#topico-4" data-inema-track="3" id="topico-4">
+<div class="section-mark">
+<span class="where">Secao 4 de 5</span><span>·</span><span>Parallax</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Parallax: camera x lente</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-4-t4-p1">A distincao mais importante da aula, e a que mais
+              transforma um resultado, e entre <strong>movimento de camera</strong> e <strong>movimento de
+              lente</strong>. Quando a camera se move pelo espaco, ela gera <em>parallax</em>: os objetos do
+              primeiro plano deslizam mais rapido que os do fundo, exatamente como acontece quando voce mexe a
+              cabeca. E essa separacao entre as camadas — primeiro plano, sujeito, fundo — que cria a
+              ilusao de profundidade. A lente, por si so, nao faz isso: ela so amplia ou comprime o que ja esta
+              la.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m3-4-t4-p2">E por isso que o parallax e o ingrediente secreto do
+              “look high-end” em video de IA. Um clipe com parallax real parece tridimensional, vivo,
+              filmado com uma camera de verdade; um clipe sem parallax — so com zoom — parece uma
+              imagem chapada sendo ampliada. Quando voce escreve o prompt, vale ser explicito: peca movimento de
+              camera <em>atraves</em> do espaco, mencione o primeiro plano deslizando, e o gerador entrega a
+              separacao de camadas que o olho le como profundidade.</p>
+</div>
+<!-- prompt pronto: parallax explícito -->
+<div class="prose">
+<p data-inema-block="m3-4-t4-p3">Um prompt que pede parallax de forma explicita, separando as tres
+              camadas — pronto para o Kling:</p>
+<div class="codeblock"><span class="c"># Kling — parallax explicito (separe primeiro plano, sujeito e fundo)</span>
+<span class="k">Camera:</span> a real dolly move that travels laterally through the space (camera move,
+NOT a lens zoom).
+<span class="k">Foreground:</span> pillars and foliage close to the lens slide past quickly.
+<span class="k">Subject:</span> a woman walking, kept centered, mid-distance.
+<span class="k">Background:</span> a distant city skyline drifts slowly — clear separation of layers.
+<span class="k">Goal:</span> strong parallax for a three-dimensional, high-end cinematic depth.
+<span class="c"># parallax = the foreground and background move at different speeds — that is depth.</span></div>
+</div>
+<!-- figura 4: parallax — camadas em velocidades diferentes -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Parallax</b> — as camadas deslizam em velocidades diferentes, e isso e profundidade</figcaption>
+<svg aria-label="Diagrama: tres faixas horizontais (primeiro plano, sujeito, fundo); setas mostram o primeiro plano deslizando rapido, o sujeito centrado e o fundo deslizando devagar conforme a camera se move." class="diagram" role="img" viewbox="0 0 720 196">
+<!-- fundo -->
+<rect class="rule-stroke" fill="none" height="34" opacity="0.7" rx="2" stroke-width="1" width="600" x="60" y="36"></rect>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="80" y="58">fundo</text>
+<path class="rule-stroke" d="M520 53 H 600" stroke-width="1.2"></path><path class="rule-stroke" d="M600 53 l -6 -3 m 6 3 l -6 3" fill="none" stroke-width="1"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" x="430" y="50">lento</text>
+<!-- sujeito -->
+<rect class="wash accent-stroke" height="34" rx="2" stroke-width="1.2" width="600" x="60" y="82"></rect>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="80" y="104">sujeito</text>
+<circle class="accent-stroke" cx="360" cy="99" fill="url(#hatch-3-4)" r="9" stroke-width="1.2"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" x="430" y="100">centrado</text>
+<!-- primeiro plano -->
+<rect class="accent-stroke" fill="none" height="34" rx="2" stroke-width="1.3" width="600" x="60" y="128"></rect>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="80" y="150">1º plano</text>
+<path class="accent-stroke" d="M420 145 H 600" stroke-width="2"></path><path class="accent-stroke" d="M600 145 l -8 -4 m 8 4 l -8 4" fill="none" stroke-width="1.4"></path>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" x="360" y="142">RAPIDO</text>
+<!-- legenda -->
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="186">a camera anda — o 1º plano desliza mais que o fundo. O zoom, sozinho, nao faz isto.</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Dois clipes da mesma paisagem urbana. Um foi feito com dolly lateral; o outro, com zoom-in sobre
+              uma foto. Qual vai parecer “3D” e vivo — e qual e o sinal que entrega a
+              diferenca?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">O do <strong>dolly</strong>. O sinal e o <em>parallax</em>: no clipe com camera
+                movendo-se, o primeiro plano desliza mais rapido que o fundo — a separacao das camadas que o
+                cerebro le como profundidade. No clipe com zoom, tudo amplia junto, na mesma proporcao, denunciando
+                que e uma imagem plana sendo esticada. Parallax e a assinatura do movimento de camera real.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="3-4" data-inema-topic="modulo-3-4#topico-5" data-inema-track="3" id="topico-5">
+<div class="section-mark">
+<span class="where">Secao 5 de 5</span><span>·</span><span>Intencao</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Intencionalidade: o porque do movimento</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-4-t5-p1">A aula fecha onde toda boa direcao fecha: na
+              <strong>intencionalidade</strong>. O objetivo nao e saber <em>o que</em> usar, e saber <em>quando</em>
+              e <em>por que</em> usar. Cada movimento de camera deve poder ser justificado — nao porque
+              “fica bonito”, mas porque serve a um proposito emocional ou cinematografico especifico.
+              Um arc shot sem razao e so um arc shot; um arc shot que revela a solidao do personagem ao circular em
+              torno dele e direcao.</p>
+<p data-inema-block="m3-4-t5-p2">A tarefa da fonte traduz isso em pratica: criar tres videos curtos
+              com movimentos de camera diferentes, e para cada um (1) escolher um movimento especifico, (2)
+              escrever um prompt preciso e (3) <em>explicar o raciocinio</em> — por que este movimento? que
+              proposito emocional ou cinematografico ele serve? O foco e a intencao, nao a aparencia. Esse exercicio
+              e o antidoto contra o erro mais comum: mover a camera por mover, acumulando movimento sem significado.</p>
+<h3 class="sub">Da camera-efeito a camera-significado</h3>
+<p data-inema-block="m3-4-t5-p3">Guarde o modulo em uma frase: <em>a camera nao mostra a cena —
+              ela diz como senti-la, e cada movimento e uma escolha que precisa de razao.</em> Dolly para imersao,
+              zoom para observacao, dolly zoom para tensao; aproximar para intimidade, afastar para isolamento,
+              inclinar para inquietacao, elevar para escala; e parallax como a marca de que a camera de fato se
+              moveu. Com esse vocabulario, voce sai do “movimento aleatorio” e entra na linguagem de
+              camera de verdade — que e, nao por acaso, o tema da proxima trilha inteira. Antes disso, a
+              proxima aula fecha a oficina: Luma e Runway, onde voce dirige conversando.</p>
+</div>
+<!-- figura 5: o filtro da intenção -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · O <b>filtro da intencao</b> — todo movimento passa pela pergunta “por que?”</figcaption>
+<svg aria-label="Diagrama: muitos movimentos de camera entram num funil rotulado por que este movimento; so os que tem proposito emocional ou cinematografico passam, e viram direcao." class="diagram" role="img" viewbox="0 0 720 190">
+<g class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle">
+<text x="80" y="44">dolly</text><text x="80" y="64">orbita</text><text x="80" y="84">pan</text>
+<text x="80" y="104">tilt</text><text x="80" y="124">crane</text><text x="80" y="144">whip</text>
+</g>
+<g class="rule-stroke" fill="none" stroke-width="1.2">
+<path d="M140 40 H 420 L 470 95 L 420 150 H 140 Z"></path>
+</g>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="290" y="86">por que</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="290" y="108">este movimento?</text>
+<path class="accent-stroke" d="M470 95 H 540" stroke-width="1.8"></path><path class="accent-stroke" d="M540 95 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
+<rect class="accent-stroke" fill="url(#hatch-3-4)" height="54" rx="3" stroke-width="1.5" width="150" x="548" y="68"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="623" y="92">direcao</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="623" y="110">movimento com razao</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="290" y="174">um plano = uma intencao — empilhar movimentos gera video instavel</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Um clipe usa orbita, dolly-in, pan e whip pan, tudo no mesmo plano de cinco segundos. Parece
+              “dinamico”, mas o espectador sai desorientado e cansado. Qual principio foi violado?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer"><strong>Um plano = uma intencao.</strong> Empilhar movimentos faz a camera competir
+                consigo mesma: nenhum gesto chega a comunicar nada porque o proximo o atropela. O olho nao tem onde
+                se firmar, e o resultado e instabilidade, nao energia. Escolher <em>um</em> movimento com proposito
+                e deixa-lo respirar comunica mais do que quatro empilhados.</p>
+</details>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Auto-checagem" class="check">
+<h2>Antes de seguir: quatro checagens rapidas</h2>
+<p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>Qual e a diferenca entre dolly e zoom — e por que ela importa tanto?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>O <em>dolly</em> move a camera pelo espaco (gera parallax, profundidade, imersao);
+              o <em>zoom</em> muda a lente sem a camera andar (achata, fica observacional). Confundir os dois e a
+              causa mais comum de video de IA que “parece falso” — um zoom onde a cena pedia
+              profundidade entrega um quadro chapado.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Que emocao cada um carrega: dolly in, dolly out, dutch angle, crane?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><em>Dolly in</em> → intimidade; <em>dolly out</em> → isolamento;
+              <em>dutch angle</em> → tensao/inquietacao; <em>crane</em> → escala. Cada um reproduz um
+              movimento que o corpo ja associa a um estado — e por isso o catalogo e gramatica, nao
+              convencao.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>O que e parallax, e por que ele cria o “look high-end”?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>E o primeiro plano deslizando mais rapido que o fundo quando a <em>camera</em> se
+              move — a separacao das camadas que o cerebro le como profundidade. So o movimento de camera
+              gera parallax; o zoom amplia tudo junto. Por isso clipe com parallax parece 3D e vivo.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>Por que “um plano = uma intencao”?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque empilhar movimentos (orbita + dolly + pan + whip) faz a camera competir
+              consigo mesma — nenhum gesto comunica, o olho nao se firma, o video fica instavel. Escolher um
+              movimento com proposito e deixa-lo respirar e o que separa direcao de barulho visual.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Minha jornada</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">Neste modulo</div>
+<div class="v" data-inema-meter="modulo:3-4">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">Na trilha 3</div>
+<div class="v" data-inema-meter="trilha:3">
+<span data-inema-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">No curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Modulo 3.5 — Integracao Luma e Runway</div>
+</div>
+<a class="go" href="modulo-3-5.html">Proximo →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-3-4#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Dolly.</b> A camera movendo-se fisicamente pelo espaco — introduz parallax, profundidade e
+          realismo. E o oposto do zoom, que so muda a lente.
+        </aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Dolly zoom.</b> Camera e zoom em oposicao: o fundo dilata ou colapsa enquanto o sujeito fica do mesmo
+          tamanho. Cria distorcao espacial — tensao, inquietacao psicologica.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fonte</div>
+          Licao 9 do bloco AI Cinema Workflow — “Kling Camera Control”. A regra de ouro: dolly
+          para imersao, zoom para observacao, dolly zoom para desorientacao.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-3-4#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Camera como emocao.</b> Aproximar = intimidade; afastar = isolamento; inclinar = tensao; elevar =
+          escala. A camera reproduz movimentos que o corpo ja liga a estados emocionais.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          A fonte demonstra tudo numa cena unica (um esqueleto numa suite de hotel) para isolar o que <i>so</i> o
+          movimento muda — profundidade, movimento relativo, comportamento do fundo.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-3-4#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Guia de referencia.</b> Um dicionario de intencoes → movimentos: proximidade=dolly in,
+          solidao=dolly out, instabilidade=dutch, impacto=crash zoom, transicao=whip pan, premium=arc shot.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          O catalogo e despensa, nao receita: <i>um plano = uma intencao</i>. Orbita + dolly + pan + whip ao mesmo
+          tempo gera video instavel — o oposto do cinema.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-3-4#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Parallax.</b> O primeiro plano deslizando mais rapido que o fundo quando a camera se move. E a
+          separacao das camadas que o cerebro le como profundidade — e a marca do movimento de camera real.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          Camera x lente: a camera anda pelo espaco e gera parallax; a lente so amplia ou comprime. Para o
+          “look high-end”, peca movimento de camera <i>atraves</i> do espaco, com o 1º plano deslizando.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-3-4#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Intencionalidade.</b> Cada movimento deve poder ser justificado — nao “fica bonito”,
+          mas serve a um proposito emocional ou cinematografico. Saber quando e por que, nao so o que.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Indo mais fundo</div>
+          A tarefa: tres clipes, tres movimentos, e para cada um explicar o porque. O antidoto contra mover a
+          camera por mover — e a ponte para a linguagem de camera da Trilha 4.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Caderno do aluno</span>
+<span class="pg">Modulo 3.4 — folio xii</span>
+<span>Composto em Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

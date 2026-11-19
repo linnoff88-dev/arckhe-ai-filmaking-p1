@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 2.1 — Visual Thinking | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:2-1"><span data-inema-meter-frac=""><strong>0</strong> of 4</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>2</b> Cinematic Fundamentals</span>
+<span class="sep">·</span>
+<span>Module <b>2.1</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Section 1 of 4</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Module 2.1 · Track 2 · Cinematic Fundamentals</p>
+<h1 class="module">Thought <em>Visual</em></h1>
+<p class="deck">Before learning any rules, learn to look. A professional prompt doesn’t describe a
+          scene—it controls perception over time, deciding what you see first, what you understand
+          next, and what question stays in your mind at the end.</p>
+<p class="read-meta">
+<span class="here">Reading now</span>
+<span>~15 min · full module</span>
+<span>4 sections</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="What you will understand" class="aims">
+<h2>What you will understand</h2>
+<ul>
+<li>Why is a professional prompt a <b>decision systems</b> — format, environment, lighting,
+              character, sequence — not a list of pretty things.</li>
+<li>How <b>read an image like a director</b>: see each element as a choice that controls
+              what the viewer sees, where they look, and when they find out.</li>
+<li>Why the <b>contradiction</b> — a character who doesn’t belong in the world — creates intrigue,
+              and why the environment and light tell the story before a single word is spoken.</li>
+<li>Why the final goal isn’t to produce a scene, but to <b>create a question in the viewer's
+              mind</b> — the student stops receiving and starts discovering.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Module summary" class="toc" data-inema-toc="">
+<p class="toc-head">Summary — four movements</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Read before generating: the prompt as a system</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Format and environment: the camera and the world</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Light and character: emotion and contradiction</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">The scene as a sequence — and as a question</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-1" data-inema-track="2" id="topico-1">
+<div class="section-mark">
+<span class="where">Section 1 of 4</span><span>·</span><span>Reading</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Read before generating: the prompt as a system</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m2-1-t1-p1">This track begins with a skill that seems
+              passive, but is the most active of all: <em>read</em> one image. Before writing a prompt, before
+              choosing a lens, before any generation, you need to look at a scene and see the
+              <span class="sidenote-ref">1</span>decisions that support it. Most people look at a good
+              image and think, “that’s beautiful.” A director looks at the same image and sees a list of
+              choices: this format, this light source, this character, this order of revelation. The difference isn’t
+              talent — it’s <em>vocabulary</em>. Whoever names it is in control.</p>
+<p data-inema-block="m2-1-t1-p2">That’s why the definition that opens the section is so precise: a
+              professional prompt <em>doesn't describe a scene</em> — it <strong>controls perception over time</strong>. It decides what the viewer sees first, what they understand later, and which question
+              stays in their mind at the end. That changes what you write. You stop piling on adjectives
+              (“epic, cinematic, 8K, award-winning”) and start making directing decisions: how the
+              camera behaves, what the world says, where the light comes from, who the person in the frame is, and in what order the
+              information appears. Every part stops being decoration and becomes a purposeful choice.</p>
+<h3 class="sub">The five layers of an effective prompt</h3>
+<p data-inema-block="m2-1-t1-p3">The lesson organizes the professional prompt into <strong>five layers</strong>,
+              and it’s useful to memorize them as a mental checklist. <strong>Format</strong> — camera behavior: aspect ratio, lens, depth of field, motion blur, movement. <strong>Environment</strong>
+              — the story without words: the world already tells you what happened. <strong>Light</strong> — the
+              emotion: warm for humanity, cool for danger. <strong>Character</strong> — the contradiction:
+someone who doesn’t fit into the world, and is intriguing for that reason. <strong>Scene structure</strong> — the
+              sequence: not one shot, but a progression that makes the viewer <em>discover</em> instead of
+              receiving.<span class="sidenote-ref">2</span> In the next sections, we’ll open up each layer with a concrete
+              example.</p>
+</div>
+<!-- figura 1: as cinco camadas do prompt -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · The professional prompt as <b>stack of five decisions</b>, not a list of adjectives</figcaption>
+<svg aria-label="Diagram in five stacked bands: format (camera behavior), environment (story without words), light (emotion), character (contradiction), and scene structure (sequence)." class="diagram" role="img" viewbox="0 0 720 232">
+<defs>
+<pattern height="6" id="hatch-2-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="44" x2="44" y1="20" y2="212"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" transform="rotate(-90 34 118)" x="34" y="118">EVERY LAYER IS A CHOICE</text>
+<!-- faixas -->
+<rect class="accent-stroke" fill="url(#hatch-2-1)" height="34" rx="3" stroke-width="1.3" width="600" x="64" y="22"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="44">01</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="44">Format</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="44">camera behavior—proportion, lens, focus, movement</text>
+<rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="60"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="82">02</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="82">Environment</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="82">the story without words — the world already tells you what happened</text>
+<rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="98"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="120">03</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="120">Light</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="120">the emotion—warm (human) against cold (danger, emptiness)</text>
+<rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="136"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="158">04</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="158">Character</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="158">contradiction—those who don’t belong in the world intrigue us</text>
+<rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="174"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="196">05</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="196">Sequence</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="196">the structure — the viewer discovers, not receives</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>Two prompts ask for “a woman in a ruined city”. The first adds ten
+              quality adjectives: <em>epic, hyperdetailed, 8K, award-winning, masterpiece</em>. The second
+              defines the format, the light source, the character’s contradiction, and the order of revelation. Which one is more likely to
+              produce a scene—and not just an image—and why?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">Second. Quality adjectives are not <strong>decisions</strong>: they ask for
+                “polish,” but don’t say what the camera does, what the world contributes, or where the eye should
+                go. The second prompt controls the <em>perception</em> — and that's what separates a beautiful image from
+                a scene with intention. “8K” directs nothing; “the camera opens on a calm sea and the
+                figure only appears in the third second” directs everything.</p>
+</details>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: description versus direction
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>The happy path above is enough. This layer distinguishes two ways of writing—and can be skipped.</p>
+<p>There’s a clear line between <strong>describe</strong> e <strong>direct</strong>. Describing
+                means listing what's in the frame: “a woman, a red dress, destroyed buildings.”
+                Directing means deciding how the frame behaves and how the information arrives: “opening on a wide
+                shot of the destruction, camera slowly descends, the figure enters with her back turned, the red of the dress is
+                the only saturated color.” The image generator accepts both — but only the second controls the
+                experience. When you feel you're piling up nouns and adjectives, stop and ask: what is the <em>camera decision</em> here? what is the <em>order</em> in which this is revealed? That’s where
+                cinema lives.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-2" data-inema-track="2" id="topico-2">
+<div class="section-mark">
+<span class="where">Section 2 of 4</span><span>·</span><span>Camera and world</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Format and environment: the camera and the world</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-1-t2-p1">The first layer, <em>format</em>, defines the camera’s language <strong>before anything happens</strong>. It’s not what’s in the frame—it’s
+              how the frame behaves. Aspect ratio defines composition and space. The lens defines how space is
+              perceived (a wide-angle lens opens it up; a telephoto lens compresses it). Depth of field defines where
+              focus falls. Motion blur and frame rate define how real movement looks. And aggressive movements—fast tracking,
+              whip pans, aerial dives—define <em>energy</em>. Just
+              with these choices, before describing a single object, the viewer already knows whether the scene is passive or
+              controlled chaos.</p>
+<h3 class="sub">The environment tells the story without saying a word</h3>
+<p data-inema-block="m2-1-t2-p2">The second layer, <em>environment</em>, and the story without words. A
+              well-chosen world <strong>already narrates</strong>. A megacity in ruins says “lost
+              civilization.” Architecture from different eras says “layered history.” Dust,
+              debris, and smoke suspended in the air say “something moved through here recently”—and keep the world
+              alive even when nothing moves. The point is that the viewer <em>doesn't need an explanation</em>: they
+              look and realize something is wrong.<span class="sidenote-ref">3</span> Instead of a caption
+              saying “the world ended,” you show a cracked billboard and a car covered in ash
+              —and the idea comes across without text.</p>
+<p data-inema-block="m2-1-t2-p3">Notice how format and environment work together. Format determines the
+              <em>distance</em> e o <em>rhythm</em> you see the world; the environment determines <em>what</em> this
+              world confesses. A slow wide shot over a ruined city lets desolation breathe; a
+              fast, unsteady tracking shot through the same setting conveys imminent danger. Same setting, opposite readings
+              — because the format layer changed. Deciding on these two layers before thinking about the
+              character already solves half the scene.</p>
+</div>
+<!-- figura 2: formato decide a leitura do mesmo mundo -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · Same <b>environment</b>, two readings—who decides and the <b>format</b></figcaption>
+<svg aria-label="Diagram comparing two frames of the same ruined setting: on the left, a slow wide shot conveys desolation; on the right, fast, tilted tracking conveys danger." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- quadro esquerdo: aberto e lento -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">WIDE SHOT · SLOW</text>
+<rect class="rule-stroke" fill="none" height="130" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
+<line class="rule-stroke" opacity="0.7" stroke-width="1" x1="52" x2="308" y1="140" y2="140"></line>
+<g class="rule-stroke" fill="none" opacity="0.8" stroke-width="1.1">
+<rect height="44" width="26" x="70" y="96"></rect><rect height="56" width="20" x="104" y="84"></rect>
+<rect height="36" width="30" x="132" y="104"></rect><rect height="50" width="22" x="210" y="90"></rect>
+<rect height="30" width="34" x="244" y="110"></rect>
+</g>
+<path class="mark-stroke" d="M150 160 L150 132" stroke-width="2"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="194">desolation breathes—melancholy</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="174"></line>
+<!-- quadro direito: tracking inclinado -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">FAST TRACKING · TILTED</text>
+<rect class="accent-stroke" fill="none" height="130" rx="3" stroke-width="1.3" transform="rotate(-4 540 105)" width="280" x="400" y="40"></rect>
+<g class="rule-stroke" fill="none" opacity="0.8" stroke-width="1.1" transform="rotate(-4 540 105)">
+<rect height="50" width="24" x="430" y="92"></rect><rect height="64" width="20" x="466" y="78"></rect>
+<rect height="46" width="28" x="610" y="96"></rect>
+</g>
+<!-- vetores de velocidade -->
+<g class="accent-stroke" stroke-width="2">
+<path d="M520 70 L470 76"></path><path d="M560 96 L506 102"></path><path d="M600 122 L548 128"></path>
+</g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="194">the same world becomes a threat—tension</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m2-1-t2-p4">It's worth practicing this directly in the prompt. The two lines below describe
+              the <em>same</em> world — change only the format block. Paste them into a video generator and watch
+              how the feeling reverses without changing a single element of the setting. That's the lesson of layer 1: the
+              camera speaks first.</p>
+<div class="codeblock"><span class="c"># Same setting, two formats — the camera decides the emotion</span>
+<span class="c"># (test both in the same generator: Seedance / Kling / Runway / Luma)</span>
+<span class="k">Environment (fixed):</span> a ruined megacity at dusk, ash in the air, a cracked billboard, dust drifting.
+<span class="k">Take A — desolation:</span> wide static shot, anamorphic 2.39:1, deep focus, slow almost imperceptible push-in.
+<span class="k">Take B — danger:</span> same city, fast handheld tracking, slight dutch tilt, shallow focus, motion blur, urgent pace.
+<span class="k">Note:</span> change only the camera block — keep the world identical — and compare how the scene feels.</div>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why “how it behaves” comes before “what's there”
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer—useful when a generation “looks right” but doesn’t move you.</p>
+<p>When an image has all the right elements and still feels lifeless, the problem is almost always in the format layer, which was left on automatic. The generator chose a neutral lens, everything in focus, a stationary camera—and the result is a catalog photo of a world that should be frightening. Treating the <em>camera behavior</em> how the first decision, before
+                listing objects, is what prevents this emptiness. Always ask: from what distance do I see this? Is the camera
+                still, pushing in, orbiting? Does the focus isolate someone or show everything? These answers carry
+                more emotion than any quality adjective.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-3" data-inema-track="2" id="topico-3">
+<div class="section-mark">
+<span class="where">Section 3 of 4</span><span>·</span><span>Emotion and contradiction</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Light and character: emotion and contradiction</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-1-t3-p1">The third layer, <em>light</em>, and it’s psychological before it’s visual. Warm, reddish light suggests something human and beautiful that still resists; cool, greenish shadows suggest danger, emptiness, and loss. When both coexist in the same frame, the image feels
+              <strong>conflict</strong> — and conflict and tension. Volumetric light (the kind you can see cutting through
+              smoke) creates depth; high contrast creates clarity, allowing the character to stand out
+              without forcing you to draw attention to them. The lesson develops this in detail in the next
+              module; here, the idea is enough: <strong>light and emotion</strong>, not lighting.</p>
+<h3 class="sub">The character as a contradiction</h3>
+<p data-inema-block="m2-1-t3-p2">The fourth layer is the most counterintuitive: the <em>character as
+              contradiction</em>. The lesson’s example is an elegant woman in an evening gown, calmly crossing a
+              destroyed world. That isn’t logical—and that’s exactly why <strong>works</strong>.
+              Every detail becomes a question. The red dress isn’t just a color: it’s a visual threat that immediately draws the eye. The high heels aren’t practical; they’re <em>symbolic</em> — say she doesn’t
+adapt to the world; the world should adapt to her. The sunglasses conceal emotion and create
+distance and control. A large weapon is elegant and destructive at the same time. Nothing there is
+“about” the world — everything there <em>contradicts</em> the world.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m2-1-t3-p3">Contradiction creates intrigue because the brain <em>needs</em> resolve
+              what doesn't fit. A perfect character in a perfect world is propaganda; a perfect character in
+              a world in ruins is <em>mystery</em>. Notice how this revisits, at another scale, the lesson from Track 1: impact comes when
+              expectation is broken. Here, what breaks is <em>coherence</em> — the figure
+contradicts the context, and that contradiction raises questions. Beauty against destruction, calm against chaos, control
+against instability: it’s the friction between the character and the world that holds the viewer’s attention, not the sum of
+beautiful elements.</p>
+</div>
+<!-- figura 3: o atrito personagem x mundo -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · A <b>contradiction</b> — the character contradicts the world, and the contradiction opens a question</figcaption>
+<svg aria-label="Diagram: on the left, a field of chaos and ruins; on the right, a calm, elegant figure; between them, a line of friction that gives rise to the viewer's question." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- campo do mundo: caos -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="170" y="28">THE WORLD — CHAOS, RUIN, COLD</text>
+<rect class="rule-stroke" fill="url(#hatch-2-1)" height="140" opacity="0.85" rx="3" stroke-width="1.2" width="260" x="40" y="40"></rect>
+<g class="rule-stroke" fill="none" opacity="0.7" stroke-width="1.1">
+<path d="M64 150 L96 96 L128 150"></path><path d="M150 150 L182 110 L214 150"></path>
+<path d="M60 120 L120 120"></path><path d="M200 130 L270 124"></path>
+</g>
+<!-- linha de atrito -->
+<line class="accent-stroke" stroke-dasharray="5 4" stroke-width="2.2" x1="330" x2="330" y1="40" y2="180"></line>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="330" y="32">FRICTION</text>
+<!-- a figura: calma e elegante -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">THE FIGURE — CALM, ELEGANT, WARM</text>
+<rect class="accent-stroke" fill="none" height="140" rx="3" stroke-width="1.3" width="280" x="400" y="40"></rect>
+<line class="accent-stroke" stroke-width="2.4" x1="540" x2="540" y1="64" y2="150"></line>
+<circle class="accent-stroke" cx="540" cy="58" r="9" stroke-width="2"></circle>
+<path class="accent-stroke" d="M540 78 L520 110 M540 78 L560 110" stroke-width="2"></path>
+<path class="accent-stroke" d="M540 150 L528 176 M540 150 L552 176" stroke-width="2"></path>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" x="600" y="96">red</text>
+<text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" x="600" y="120">control</text>
+<!-- a pergunta -->
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="202">“who is she? why is she calm?”</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m2-1-t3-p4">In the prompt, the contradiction is built with deliberate choices in lighting
+              and character — never with “a beautiful woman.” You specify the light’s color temperature, its
+              source, and the symbolic details that contradict the setting. The example below is a <em>contradiction recipe</em>: notice how each line of the character clashes with each line of the world, and how the warm
+              light on the figure separates them from the cold surroundings.</p>
+<div class="codeblock"><span class="c"># Contradiction recipe — the figure that defies the world</span>
+<span class="c"># perfect character + ruined world = a question, not propaganda</span>
+<span class="k">World:</span> a frozen ruined city, cold green shadows, ash and broken concrete, volumetric haze.
+<span class="k">Figure:</span> an elegant woman in a saturated red evening dress, high heels, dark sunglasses, perfectly calm.
+<span class="k">Light:</span> warm amber key on the figure only; the world stays cold — the two temperatures clash on purpose.
+<span class="k">Contradiction:</span> she does not adapt to the world; her stillness denies the chaos around her.
+<span class="k">Goal:</span> the viewer should ask "who is she?" — not admire, but wonder.</div>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: symbolic detail versus practical detail
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer on how to choose a character’s details.</p>
+<p>There are two ways to detail a character. The <strong>practice</strong> asks, “would this make
+                sense in this world?” — sturdy boots, dirty clothes, backpack. The <strong>symbolic</strong>
+                asks “what this <em>says</em> about who she is?” — high heels that reject the
+                ground, red that demands attention, glasses that deny access to emotion. Cinema of contradiction chooses
+                the symbolic on purpose, and that’s why it works: the detail that <em>no</em> should be there, and
+                precisely what makes people ask. When designing a character, separate the two types and decide
+                which details go against the world — those are what carry the mystery.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-4" data-inema-track="2" id="topico-4">
+<div class="section-mark">
+<span class="where">Section 4 of 4</span><span>·</span><span>Sequence</span>
+</div>
+<h2 class="head"><span class="num">4.</span>The scene as a sequence — and as a question</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-1-t4-p1">The fifth layer ties it all together: <em>scene structure</em>.
+              A strong scene isn't a shot—it's a <strong>progression</strong>. The order proposed in the lesson is
+              simple and powerful: first <em>show the world</em>, then <em>move closer</em>, then <em>reveal the
+              character</em>, then <em>introduce the rupture</em> and finally <em>show the intention</em>. This
+              order isn't a whim: it makes the viewer <strong>discover instead of receive</strong>. When you
+              give everything at once, the brain files it as “complete image” and moves on. When
+              you reveal it in stages, it leans forward—each step opens up the expectation of the
+              next.</p>
+<p data-inema-block="m2-1-t4-p2">That’s why the scene feels cinematic: it uses <em>scale against
+              intimacy</em>, <em>chaos versus control</em>, <em>beauty versus destruction</em> — and controls
+              four things at once: what you see, where you look, how things move, and <em>when</em>
+              the information is revealed.<span class="sidenote-ref">5</span> This “when” is the dimension
+              most people ignore. Two scenes with the same elements can be banal or hypnotic depending only
+              on the <em>order</em> that show each thing. Sequencing means directing the timing of discovery.</p>
+<h3 class="sub">The idea that reframes everything: you create a question</h3>
+<p data-inema-block="m2-1-t4-p3">Hence the thesis that closes the module and defines the entire block: <em>you're not
+              creating a scene — you're creating a question in the viewer's mind</em>. Beauty alone
+              satisfies and is forgotten; a question <span class="dfn"><details class="dfn"><summary>visual question</summary><span class="body"><b>Visual question</b> is the deliberate gap an image leaves — a contradiction or delayed information — that the viewer feels compelled to resolve. It is what turns “beautiful” into “unforgettable.”</span></details></span>
+              stays. The goal of the module task is exactly that: take a structure that works, keep the
+              skeleton, change the contradiction — and define, in one sentence, what the <em>contrast</em>, what is <em>tension</em> and what is the <em>question</em>. If you can name all three, your scene has
+              direction; if you can’t, it’s still just an image.</p>
+<p data-inema-block="m2-1-t4-p4">Capture the module as a single discipline: before generating, <em>read</em>.
+              Break down the image you want into five layers—format, environment, light, character, sequence—and make sure each one is a decision, not an accident. The next three lessons unpack three of these layers in craft-level depth: composition (where the eye goes), light (how the scene feels), and depth (how space gains three dimensions). But they all build on what you established here—the habit of looking at a scene and seeing decisions.</p>
+</div>
+<!-- figura 4: a sequencia de revelacao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · A <b>sequence</b> of revelation — the viewer discovers, step by step</figcaption>
+<svg aria-label="Diagram with five frames in sequence from left to right: show the world, move closer, reveal the character, introduce the rupture, show the intent; an arrow of growing curiosity runs through them all." class="diagram" role="img" viewbox="0 0 720 200">
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="150" y2="150"></line>
+<!-- 5 quadros -->
+<g>
+<rect class="rule-stroke" fill="none" height="78" rx="3" stroke-width="1.2" width="112" x="34" y="44"></rect>
+<line class="rule-stroke" opacity="0.6" stroke-width="1" x1="44" x2="136" y1="108" y2="108"></line>
+<rect class="rule-stroke" fill="none" height="22" stroke-width="1" width="14" x="58" y="86"></rect>
+<rect class="rule-stroke" fill="none" height="28" stroke-width="1" width="12" x="96" y="80"></rect>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="90" y="138">1 · the world</text>
+</g>
+<g>
+<rect class="rule-stroke" fill="none" height="78" rx="3" stroke-width="1.2" width="112" x="172" y="44"></rect>
+<rect class="rule-stroke" fill="none" height="44" stroke-width="1.1" width="44" x="206" y="70"></rect>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="228" y="138">2 · move closer</text>
+</g>
+<g>
+<rect class="rule-stroke" fill="none" height="78" rx="3" stroke-width="1.2" width="112" x="310" y="44"></rect>
+<circle class="accent-stroke" cx="366" cy="74" r="7" stroke-width="1.6"></circle>
+<line class="accent-stroke" stroke-width="1.6" x1="366" x2="366" y1="81" y2="110"></line>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="366" y="138">3 · character</text>
+</g>
+<g>
+<rect class="accent-stroke" fill="none" height="78" rx="3" stroke-width="1.3" width="112" x="448" y="44"></rect>
+<path class="accent-stroke" d="M470 100 L496 64 L522 100" fill="none" stroke-width="1.6"></path>
+<circle class="accent" cx="538" cy="70" r="4"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="504" y="138">4 · rupture</text>
+</g>
+<g>
+<rect class="accent-stroke" fill="none" height="78" rx="3" stroke-width="1.3" width="112" x="586" y="44"></rect>
+<line class="accent-stroke" stroke-width="2" x1="642" x2="642" y1="64" y2="110"></line>
+<path class="accent-stroke" d="M642 64 L666 80" stroke-width="1.6"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="642" y="138">5 · intention</text>
+</g>
+<!-- seta de curiosidade -->
+<path class="mark-stroke" d="M34 170 C 300 162, 520 160, 690 162" fill="none" marker-end="" stroke-width="1.6"></path>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="190">RISING CURIOSITY →</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>You have five frames — world, approach, character, rupture, intention — and a colleague
+              suggests showing the character <em>logo in the first</em>, in close-up, “to hook them right away.” By this module’s logic, what gets lost with that?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">The <strong>discovery</strong>. Starting with the character close-up, you
+                give the answer before the question: the viewer hasn't had a world to find strange or a contradiction
+                to feel. The strength of the structure lies in <em>delay</em> — showing the world first creates the
+                context that makes the character contradict something. Without that context, the close-up is just a pretty face,
+                not a mystery.</p>
+</details>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Self-check" class="check">
+<h2>Before moving on: four quick checks</h2>
+<p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>What’s the difference between a prompt that <em>describes</em> is a what <em>controls perception</em>?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Describing lists what’s in the frame (objects, quality adjectives). Controlling
+              perception decides <em>how</em> the frame behaves and <em>when</em> the information arrives — camera format, what the world tells you, where the light comes from, what the contradiction is, in what order it is revealed. Only the second directs a scene.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Why the layer of <em>format</em> you can change the emotion of a setting without changing any of its elements?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because the format — lens, focus, aspect ratio, movement — defines the
+              distance and rhythm with which we see the world. The same ruined setting becomes melancholy in a slow, wide shot,
+              or threatening in a fast, tilted tracking shot. The camera speaks before any object does.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Why a character who <em>doesn’t fit</em> in the world is more intriguing than one that fits?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because contradiction opens a question the brain needs to resolve. A
+              perfect character in a perfect world is advertising; a perfect character in a world in ruins is a mystery. The friction
+              between figure and context — beauty against destruction, calm against chaos — is what holds attention, not
+              the sum of beautiful elements.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>What’s the ultimate goal of a scene, according to this module—and why does the order of revelation matter?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Create a <em>question</em> in the viewer's mind, not just a beautiful image. The
+              order matters because revealing things in stages (world → approach → character → rupture
+              → intention) makes the viewer <em>discover</em>; delivering everything at once makes the brain file it away and
+              move on. Sequencing means directing the timing of discovery.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="My journey — consolidated progress" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> My journey</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">In this module</div>
+<div class="v" data-inema-meter="modulo:2-1">
+<span data-inema-meter-frac=""><strong>0</strong> of 4</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In track 2</div>
+<div class="v" data-inema-meter="trilha:2">
+<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In the course</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continue</div>
+<div class="t">Module 2.2 — Composition for Cinema</div>
+</div>
+<a class="go" href="modulo-2-2.html">Next →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-2-1#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Read an image.</b> Look at a scene and see the decisions that make it up—not “how
+          beautiful,” but “this shape, this light, this contradiction, this order.” Whoever names them
+          is in control.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Program Module 1 — <i>Visual Thinking</i>, opening of Block 2 (Cinematic Fundamentals).
+          Thesis: <i>a professional prompt controls perception over time</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-2-1#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Format.</b> The camera’s behavior before the content: aspect ratio, lens, depth of field, motion blur, frame rate, and movement. It determines whether the scene is passive or controlled chaos.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The environment narrates without text: suspended dust and debris keep the world “alive” even when still. The viewer understands that something is wrong without a single caption.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-2-1#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Contradiction.</b> A character who denies the world—elegant in ruin, calm in chaos. The detail
+          that <i>no</i> should be there and what makes the viewer ask questions.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Light is the first emotional cue: warm = human, cool = danger. When the two temperatures clash in the
+          same frame, the image is already in conflict before any action.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-2-1#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Sequence.</b> The reveal order—world, approach, character, rupture, intention—
+          that makes the viewer <i>discover</i> instead of receiving. The “when” is the most
+          overlooked dimension.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          The thesis that defines the block: <i>you don't create a scene, you create a question</i>. Always name three things—
+          the contrast, the tension, and the question. If you can’t, it’s still just an image.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Module 2.1 — folio v</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

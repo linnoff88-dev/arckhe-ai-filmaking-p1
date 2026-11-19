@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 3.5 — Luma and Runway Integration | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-5.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:3-5"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>3</b> AI Cinema Workflow</span>
+<span class="sep">·</span>
+<span>Module <b>3.5</b> / 5</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Section 1 of 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Module 3.5 · Track 3 · AI Filmmaking Workflow</p>
+<h1 class="module">Integration <em>Luma</em> and Runway</h1>
+<p class="deck">The finishing touch, directed through conversation. Luma (with Uni-1) is no longer an image or video generator—it’s a filmmaking environment where you speak as you would with a human collaborator. The system remembers the project context, and you direct instead of typing commands.</p>
+<p class="read-meta">
+<span class="here">Reading now</span>
+<span>~18 min · full module</span>
+<span>5 sections</span>
+</p>
+<!-- objetivos -->
+<section aria-label="What you will understand" class="aims">
+<h2>What you will understand</h2>
+<ul>
+<li>Why Luma (Uni-1) is a <b>cinematic environment</b>, and not a generator—is what Unified Intelligence does for coherence.</li>
+<li>The difference between <b>write commands and direct by talking</b> — and why speaking naturally helps AI understand intent.</li>
+<li>The practical workflow in <b>three steps</b>: create the character, direct the cinematic shot, animate.</li>
+<li>How <b>compare outputs</b> (Kling x Ray) and choosing the one that serves the vision — refining through natural language.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Module summary" class="toc" data-inema-toc="">
+<p class="toc-head">Summary — five movements</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">A cinematic environment, not a generator</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Direct by talking, not commanding</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Step 1: create the character</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Stages 2 and 3: directing and animating</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Compare outputs and choose</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-1" data-inema-track="3" id="topico-1">
+<div class="section-mark">
+<span class="where">Section 1 of 5</span><span>·</span><span>The environment</span>
+</div>
+<h2 class="head"><span class="num">1.</span>A cinematic environment, not a generator</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m3-5-t1-p1">The key shift in this lesson is in one sentence: Luma, with
+              the model <strong>Uni-1</strong>, it’s not “just another image or video generator”—it’s a
+              <em>cinematic creative environment</em> where you act as a director, not a prompt engineer.<span class="sidenote-ref">1</span>
+              The difference isn’t cosmetic. A generator treats each request as an isolated event; a cinematic
+              environment understands that you’re building a <em>film</em>, with continuity between the parts.</p>
+<p data-inema-block="m3-5-t1-p2">What makes this possible is the <em>Unified Intelligence</em>: the
+              system <strong>remember the project context</strong>, so the film remains visually and
+              narratively coherent. According to the source, this has three practical consequences: you no longer need
+              to keep switching tools at every step; the <strong>characters remain consistent</strong> between shots; and the
+              <strong>the lighting, style, and tone stay consistent</strong>. Everything that took manual effort in earlier stages—
+              keeping the same face, the same palette—is now remembered by the
+              environment itself.</p>
+<h3 class="sub">Why this solves the pipeline problem</h3>
+<p data-inema-block="m3-5-t1-p3">The previous lessons taught you to enforce continuity <em>by force</em>:
+              reference the character in Freepik, repeat the physics in Seedance, justify each movement in Kling.
+              Uni-1 changes the nature of the work by carrying the context for you. You still direct — but
+              you direct a memory, not a blank page with every request. That’s why the lesson treats Luma as the
+              <em>refinement</em> of the pipeline: it is where the pieces built earlier gain the coherence of a film without you
+              needing to recreate the context for every shot.</p>
+</div>
+<!-- figura 1: gerador isolado x ambiente com memória -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · Standalone generator x <b>environment with memory</b> project</figcaption>
+<svg aria-label="Diagram: on the left, three isolated requests produce disconnected outputs; on the right, three requests within an environment that remembers the context produce consistent outputs in character, light, and tone." class="diagram" role="img" viewbox="0 0 720 206">
+<defs>
+<pattern height="6" id="hatch-3-5" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- esquerda: gerador isolado -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="170" y="28">ISOLATED GENERATOR</text>
+<g class="rule-stroke" fill="none" stroke-width="1.2">
+<rect height="44" rx="3" width="70" x="60" y="48"></rect><rect height="44" rx="3" width="70" x="140" y="100"></rect><rect height="44" rx="3" width="70" x="220" y="56"></rect>
+</g>
+<g class="faint"><circle cx="95" cy="70" r="6"></circle><circle cx="175" cy="122" r="9"></circle><circle cx="255" cy="78" r="5"></circle></g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="175" y="172">each isolated request — disconnected</text>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="34" y2="186"></line>
+<!-- direita: ambiente com memória -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">ENVIRONMENT WITH MEMORY</text>
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="118" rx="4" stroke-width="1.3" width="268" x="406" y="44"></rect>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="540" y="62">PROJECT CONTEXT</text>
+<g class="wash accent-stroke" stroke-width="1.2">
+<rect height="44" rx="3" width="64" x="426" y="78"></rect><rect height="44" rx="3" width="64" x="500" y="78"></rect><rect height="44" rx="3" width="64" x="574" y="78"></rect>
+</g>
+<g class="accent"><circle cx="458" cy="100" r="7"></circle><circle cx="532" cy="100" r="7"></circle><circle cx="606" cy="100" r="7"></circle></g>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="540" y="150">same character · same light · same tone</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>In previous lessons, keeping the same face across shots required manually referencing the character
+              shot by shot. What changes when the environment “remembers the project context”?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">Continuity stops being <strong>your task</strong> becomes
+                <em>environment ownership</em>. Instead of reattaching the character reference to every request, you
+                direct from a persistent memory: Uni-1 already knows who the character is, what the lighting is like, and what
+                the tone is. You spend less energy maintaining consistency and more energy making
+                directing decisions.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-2" data-inema-track="3" id="topico-2">
+<div class="section-mark">
+<span class="where">Section 2 of 5</span><span>·</span><span>Directing</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Direct by talking, not commanding</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-5-t2-p1">The second shift is in the <em>way of speaking</em>. You don’t
+              write technical commands—you <strong>speaks, describes, and directs</strong>, as you would with a
+              human collaborator. Ask, describe the scene, adjust. This shift in register is not a minor interface detail:
+              it changes what the AI can do with your request.<span class="sidenote-ref">2</span></p>
+<p data-inema-block="m3-5-t2-p2">The source explains why this works. When you speak naturally,
+              three things happen: the AI understands the <strong>intention</strong>, not just keywords; it <strong>remember the context</strong> between the steps; and you <strong>stays in a creative
+              mindset</strong>, instead of slipping into technical mode. The synthesis is elegant: <em>you're not giving
+              a prompt — you're directing your creative partner.</em> Natural language is what keeps you in the
+              director’s chair.</p>
+<h3 class="sub">Refinement is also a conversation</h3>
+<p data-inema-block="m3-5-t2-p3">The refinement follows the same approach. Instead of rewriting an entire prompt, you have a conversation: “keep everything the same, just add a cowboy on the left,” “make the jump more realistic,” “improve the cinematic flow.” Because the environment carries the context, these incremental requests work—it knows what “everything” means when you say “keep everything the same.” Iterating stops being redoing; it becomes <em>engage in dialogue</em>.</p>
+</div>
+<!-- prompt pronto: comando x direção conversacional -->
+<div class="prose">
+<p data-inema-block="m3-5-t2-p4">The same intention, written as a blunt command and as conversational direction—
+              the version below is what Uni-1 expects:</p>
+<div class="codeblock"><span class="c"># Bare command vs. conversational direction</span>
+<span class="c"># A) command style (avoid) — treated as isolated keywords</span>
+<span class="k">cmd:</span> cowboy, golden hills, drone, gallop, jump, cinematic, 16:9
+
+<span class="c"># B) direction style (use) — natural language, intent + context</span>
+<span class="k">say:</span> "Hey — let's open on an ultra-wide drone shot, top-down over the golden
+hills at dawn. Then flip down to our cowboy riding at full gallop, jumping between the
+cliffs. Keep it cinematic and photorealistic, 16:9."
+<span class="c"># refine by talking: "keep everything the same, just add a cowboy on the left."</span></div>
+</div>
+<!-- figura 2: comando vs conversa -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · <b>Keyword</b> becomes just a word; <b>conversation</b> becomes intention + context</figcaption>
+<svg aria-label="Diagram: on the left, loose keywords go in and produce fragments; on the right, natural speech goes in and produces intention, remembered context, and creative mindset." class="diagram" role="img" viewbox="0 0 720 192">
+<!-- esquerda: keywords -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="160" y="28">KEYWORDS</text>
+<g class="ink-soft" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle">
+<rect class="rule-stroke" fill="none" height="22" rx="2" stroke-width="1" width="58" x="60" y="42"></rect><text x="89" y="57">cowboy</text>
+<rect class="rule-stroke" fill="none" height="22" rx="2" stroke-width="1" width="58" x="128" y="42"></rect><text x="157" y="57">drone</text>
+<rect class="rule-stroke" fill="none" height="22" rx="2" stroke-width="1" width="58" x="196" y="42"></rect><text x="225" y="57">jump</text>
+</g>
+<path class="rule-stroke" d="M160 70 V 100" stroke-dasharray="3 4" stroke-width="1.2"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="160" y="128">loose fragments</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="160" y="146">without intention</text>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="34" y2="178"></line>
+<!-- direita: conversa -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="540" y="28">CONVERSATION</text>
+<rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="260" x="410" y="40"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="62">“open on a wide drone shot...”</text>
+<path class="accent-stroke" d="M540 74 V 96" stroke-width="1.4"></path>
+<g font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="30" rx="3" stroke-width="1.1" width="84" x="412" y="104"></rect><text class="ink" x="454" y="123">intention</text>
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="30" rx="3" stroke-width="1.1" width="84" x="500" y="104"></rect><text class="ink" x="542" y="123">context</text>
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="30" rx="3" stroke-width="1.1" width="84" x="588" y="104"></rect><text class="ink" x="630" y="123">creativity</text>
+</g>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="540" y="160">you direct a partner — you don’t prompt</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: attaching images as references
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer, useful when you already have frames from previous lessons.</p>
+<p>The conversational workflow accepts <em>images</em> as a starting point—you don't need
+                to start from scratch. To direct from an image, just attach it and describe the camera, the action, and
+                the feeling you want; if there are several (three in the source example), select them all at once.
+                This completes the pipeline: the <strong>final frames</strong> that you built in Freepik
+                (Module 3.2) and animated in Seedance (Module 3.3) come in here as references, and Uni-1 uses them to
+                maintain identity while directing the shot. Refinement literally becomes a conversation about the
+                material you already have.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-3" data-inema-track="3" id="topico-3">
+<div class="section-mark">
+<span class="where">Section 3 of 5</span><span>·</span><span>Character</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Step 1: create the character</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-5-t3-p1">The practical workflow for the lesson has three stages, each entirely in conversational language. The first is <strong>create the character</strong> — and it exists
+              for a continuity reason: asking for a <em>complete character sheet</em> (character sheet) locks in
+              the face, outfit, and proportions for the entire film. Without this anchor, each shot risks a
+              slightly different character; with it, the identity is fixed from the start.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m3-5-t3-p2">The request is phrased as a conversation, with a character description and an
+              explicit request for front, side, and back views — all with the <em>same face, same
+              outfit, same proportions</em>. A practical warning the source repeats throughout the whole track: AI may
+              start by generating just one view; <strong>guide step by step; iteration is key.</strong> You don’t
+              get the complete sheet in one request — you build it through conversation, adjusting until the three views
+              line up.</p>
+</div>
+<!-- prompt pronto: character sheet conversacional -->
+<div class="prose">
+<p data-inema-block="m3-5-t3-p3">The natural-language request for a character sheet, locking in
+              consistency — ready for Luma:</p>
+<div class="codeblock"><span class="c"># Luma (Uni-1) — Step 1: character sheet (locks face, wardrobe, proportions)</span>
+<span class="k">say:</span> "Hey, let's create our main character. I need a cinematic, photorealistic
+cowboy in his early 40s — rugged, broad shoulders, strong build. Dressed in a fringed
+suede jacket, denim, worn leather boots and a classic cowboy hat.
+Please generate a full-body character sheet with front, side and back views.
+All three must share the SAME face, SAME outfit, SAME proportions.
+Straight, relaxed posture, clean clothes, natural lighting, subtle film grain,
+clean background. Make it look like a real film still, 16:9."
+<span class="c"># tip: the AI may start with one view — guide it step by step, iteration is key.</span>
+<span class="c"># keep the character generic — do not replicate any real identifiable person.</span></div>
+</div>
+<!-- figura 3: a folha de personagem trava a identidade -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · A <b>character sheet</b> locks the identity for the entire film</figcaption>
+<svg aria-label="Diagram: three character views (front, side, back) with the same face and costume form a sheet that serves as an identity anchor for all following shots." class="diagram" role="img" viewbox="0 0 720 188">
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
+<rect class="wash rule-stroke" height="96" rx="3" stroke-width="1.2" width="80" x="60" y="40"></rect>
+<circle class="ink" cx="100" cy="68" r="11"></circle><line class="rule-stroke" stroke-width="1.4" x1="100" x2="100" y1="80" y2="116"></line>
+<text x="100" y="150">front</text>
+<rect class="wash rule-stroke" height="96" rx="3" stroke-width="1.2" width="80" x="150" y="40"></rect>
+<circle class="ink" cx="190" cy="68" r="11"></circle><line class="rule-stroke" stroke-width="1.4" x1="190" x2="190" y1="80" y2="116"></line>
+<text x="190" y="150">side</text>
+<rect class="wash rule-stroke" height="96" rx="3" stroke-width="1.2" width="80" x="240" y="40"></rect>
+<circle class="ink" cx="280" cy="68" r="11"></circle><line class="rule-stroke" stroke-width="1.4" x1="280" x2="280" y1="80" y2="116"></line>
+<text x="280" y="150">back</text>
+</g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="190" y="30">SAME FACE · SAME WARDROBE</text>
+<g class="accent-stroke" fill="none" stroke-width="1.6">
+<path d="M320 88 H 470"></path><path d="M470 88 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="64" rx="3" stroke-width="1.5" width="200" x="480" y="56"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="580" y="84">identity anchor</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="580" y="106">the same in every shot</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>Why is the first step in the workflow a <em>character sheet with three views</em>, and isn’t that already the
+              first shot of the scene? What does this sheet prevent later on?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">It prevents the <strong>identity drift</strong>. The sheet locks the face, wardrobe,
+                and output proportions, giving the setting a stable reference for all the following shots. If
+                you started with the first shot, each new shot would risk a slightly different character—and
+                inconsistency between shots is exactly what gives away an AI film. Locking the identity first
+                is what keeps the film believable.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-4" data-inema-track="3" id="topico-4">
+<div class="section-mark">
+<span class="where">Section 4 of 5</span><span>·</span><span>Directing + animating</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Stages 2 and 3: directing and animating</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-5-t4-p1">With the character locked in, the <strong>Stage 2</strong> is
+              directing a cinematic shot — now thinking like a director. You describe the shot in
+              natural language and control the four levers you already know from previous lessons:
+              <em>camera movement, composition, light, and emotion</em>. In the source example, an ultra-wide drone shot,
+              looking down over golden hills, dives toward the cowboy galloping and jumping between
+              cliffs. Refining follows the logic of conversation: “keep everything the same, just add a cowboy on the
+              left”.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m3-5-t4-p2">A <strong>Stage 3</strong> is bringing the shot to life — <em>animate</em>.
+              Here you describe the movement you want: “make the camera feel like a fast drone, sweeping around the rider, high energy, realistic movement”. Then you refine it through conversation: “make the jump more realistic”, “improve the cinematic flow”. Notice that the three stages—create, direct, animate—are the same arc as the entire pipeline (image → direction → motion), condensed into a single conversational environment. What changed wasn’t the grammar; it was the interface, which now carries the context for you.</p>
+</div>
+<!-- prompt pronto: dirigir + animar -->
+<div class="prose">
+<p data-inema-block="m3-5-t4-p3">The prompts for steps 2 and 3, in sequence—direct the shot and
+              then animate it, both through conversation:</p>
+<div class="codeblock"><span class="c"># Luma (Uni-1) — Step 2: direct the shot (camera, composition, lighting, emotion)</span>
+<span class="k">say:</span> "Give me an ultra-wide drone shot, top-down over the golden hills at dawn.
+Then flip the camera down to the cowboy riding at full gallop, jumping between the cliffs.
+Cinematic, photorealistic, dramatic low sun, wide negative space."
+<span class="k">refine:</span> "Keep everything the same, just add a cowboy on the left."
+
+<span class="c"># Step 3: animate the shot (describe the movement, then adjust)</span>
+<span class="k">say:</span> "Make the camera feel like a fast drone sweeping around the rider —
+high energy, realistic motion."
+<span class="k">refine:</span> "Make the jump more realistic." / "Improve the cinematic flow."</div>
+</div>
+<!-- figura 4: as três etapas conversacionais -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Create, direct, animate</b> — the entire pipeline condensed into a conversation</figcaption>
+<svg aria-label="Diagram of three linked steps: create the character, direct the shot, and animate, all through conversational language, with refinement arrows looping back to each step." class="diagram" role="img" viewbox="0 0 720 184">
+<g font-family="Source Serif 4, serif" font-size="12" text-anchor="middle">
+<rect class="wash accent-stroke" height="52" rx="3" stroke-width="1.2" width="180" x="30" y="56"></rect>
+<text class="ink-soft" x="120" y="80">1 · create</text>
+<text class="faint" font-size="9.5" x="120" y="97">character sheet</text>
+<rect class="wash accent-stroke" height="52" rx="3" stroke-width="1.2" width="180" x="270" y="56"></rect>
+<text class="ink-soft" x="360" y="80">2 · direct</text>
+<text class="faint" font-size="9.5" x="360" y="97">camera, light, emotion</text>
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="52" rx="3" stroke-width="1.3" width="180" x="510" y="56"></rect>
+<text class="ink" x="600" y="80">3 · animate</text>
+<text class="accent" font-size="9.5" x="600" y="97">movement + flow</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.8">
+<path d="M210 82 H 268"></path><path d="M268 82 l -7 -4 m 7 4 l -7 4"></path>
+<path d="M450 82 H 508"></path><path d="M508 82 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<!-- laços de refino -->
+<g class="mark-stroke" fill="none" stroke-dasharray="3 3" stroke-width="1.2">
+<path d="M120 56 C 120 30, 160 30, 160 50"></path>
+<path d="M360 56 C 360 30, 400 30, 400 50"></path>
+<path d="M600 56 C 600 30, 640 30, 640 50"></path>
+</g>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1.2" text-anchor="middle" x="360" y="24">REFINE THROUGH CONVERSATION AT EVERY STAGE</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="150">image → direction → movement — the same arc, now in a single environment</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-5-t4-p4">Notice how each step has its <em>refinement loop</em>: you never
+              have to get it right on the first try. Create → adjust the sheet; direct → adjust the composition;
+              animate → adjust the movement. Conversational iteration drives the workflow — and because the
+              environment remembers the context, each adjustment preserves what was already right instead of starting over.</p>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-5" data-inema-track="3" id="topico-5">
+<div class="section-mark">
+<span class="where">Section 5 of 5</span><span>·</span><span>Compare</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Compare outputs and choose</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-5-t5-p1">A practical differentiator wraps up the lesson: you can
+              <strong>compare outputs</strong> of different models — for example, Kling versus Ray (3.14)
+              — and choose the one that best serves your vision.<span class="sidenote-ref">5</span> This brings back, at the shot level, the routing logic from Module 3.1: the right tool isn't the “best” in the abstract, but the one that delivers what <em>this</em> precise scene. One model may give you smoother movement;
+              another, more believable texture. You judge by the result, not the brand.</p>
+<p data-inema-block="m3-5-t5-p2">This habit of comparing and choosing is what connects Luma and Runway
+              in the pipeline. Runway, as we saw in the map, brings <em>precise control, motion editing, and
+              VFX-style workflows</em> — and shines precisely where you need to adjust a movement detail with more control. Luma brings the conversational environment and atmospheric motion. Used together,
+              they cover the <strong>refinement</strong> of the pipeline: Luma directs and generates; Runway penalizes and edits. The choice
+              between them — and between the outputs each produces — is the final directing decision before
+              editing.</p>
+<h3 class="sub">The end of the workshop—and what comes next</h3>
+<p data-inema-block="m3-5-t5-p3">The source assignment summarizes the workflow: do three things with the
+              assistant—create the character sheet, generate a cinematic shot, and animate the shot. It’s the
+              entire track pipeline, in miniature, inside a conversational environment. Sum up the module in one
+              sentence: <em>in Luma, you don't write commands — you direct a partner that remembers the context, and
+              compare outputs to choose the one that serves the scene.</em> That wraps up the Trilha 3 workshop: you
+              now know how to build a scene, add movement, direct the camera, and refine by talking it through. The next track
+              explores <strong>camera language</strong> — the grammar that turns these streams into
+real cinema.</p>
+</div>
+<!-- figura 5: comparar e escolher -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · <b>Compare and choose</b> — the right tool is the one that serves this scene</figcaption>
+<svg aria-label="Diagram: the same direction generates two outputs (Kling and Ray); a vision filter chooses one, which moves on to editing." class="diagram" role="img" viewbox="0 0 720 188">
+<rect class="accent-stroke" fill="url(#hatch-3-5)" height="40" rx="3" stroke-width="1.3" width="130" x="40" y="76"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="105" y="101">direction</text>
+<g class="accent-stroke" fill="none" stroke-width="1.5">
+<path d="M170 90 C 220 90, 230 60, 288 60"></path>
+<path d="M170 102 C 220 102, 230 130, 288 130"></path>
+</g>
+<g font-family="Source Serif 4, serif" font-size="11" text-anchor="middle">
+<rect class="wash accent-stroke" height="36" rx="3" stroke-width="1.1" width="130" x="290" y="42"></rect>
+<text class="ink-soft" x="355" y="65">output · Kling</text>
+<rect class="wash accent-stroke" height="36" rx="3" stroke-width="1.1" width="130" x="290" y="112"></rect>
+<text class="ink-soft" x="355" y="135">output · Ray</text>
+</g>
+<g class="rule-stroke" fill="none" stroke-width="1.3">
+<path d="M420 60 C 470 60, 470 88, 500 92"></path>
+<path d="M420 130 C 470 130, 470 100, 500 96"></path>
+</g>
+<path class="accent-stroke" d="M500 94 H 520" stroke-width="1.6"></path>
+<circle class="accent-stroke" cx="560" cy="94" fill="none" r="34" stroke-width="1.4"></circle>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="560" y="90">the vision</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="560" y="106">choose</text>
+<path class="accent-stroke" d="M594 94 H 640" stroke-width="1.8"></path><path class="accent-stroke" d="M640 94 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="668" y="90">MONTAGE</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="668" y="104">→</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-5-t5-p4">Notice how the arc closes: Track 3 opened with the map—
+              image, motion, refinement, editing—and ends exactly where refinement hands the chosen
+              shot over to editing. You’ve worked through the whole workshop: Freepik built it, Seedance moved it,
+              Kling directed the camera, Luma and Runway refined it. What held it all together, from the first module to the last,
+              was the same thesis: <em>the tool executes your direction — it doesn't invent it.</em></p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Self-check" class="check">
+<h2>Before moving on: four quick checks</h2>
+<p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>What does Uni-1’s Unified Intelligence change about the work?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>It <em>remember the project context</em>, so the character, lighting, style, and tone stay consistent across shots. Continuity stops being a manual task for you and becomes a property of the environment—you direct a memory, not a blank slate with every request.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Why does natural language work better than giving commands?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because AI understands the <em>intention</em> (not just keywords), remembers the context
+              between steps and keeps you in a creative mindset. You're not prompting—you're
+              directing a creative partner, including during refinement (“keep everything the same, just...”).</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>What are the three stages of the workflow, and why start with the character?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p><em>Create the character → direct the shot → animate.</em> Start with the
+              character sheet (three views, same face/outfit/proportions) because it <em>locks the
+identity</em> for the entire film—prevents the shot-to-shot drift that gives away an AI film.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>Why compare outputs (Kling x Ray), and why do Luma and Runway complement each other?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because the right tool is the one that serves <em>this</em> scene, not the “best”
+              in the abstract — you judge by the result. Luma brings a conversational environment and atmospheric movement; Runway brings precise control and VFX-style motion editing. Together, they cover the refinement of the
+              pipeline.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="My journey — consolidated progress" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> My journey</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">In this module</div>
+<div class="v" data-inema-meter="modulo:3-5">
+<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In track 3</div>
+<div class="v" data-inema-meter="trilha:3">
+<span data-inema-meter-frac=""><strong>0</strong> of 24</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In the course</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continue — next track</div>
+<div class="t">Module 4.1 — Cinematography (Camera Language)</div>
+</div>
+<a class="go" href="../trilha4/modulo-4-1.html">Next →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-3-5#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Uni-1.</b> The Luma model that makes it a <i>cinematic environment</i>, not a generator. You act as a director, not a prompt engineer.
+        </aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Unified Intelligence.</b> The system remembers the project's context — character, lighting, style,
+          tone — keeping the film consistent without making you recreate the context for every shot.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Lesson 10 of the AI Cinema Workflow block — “Luma and Runway Integration.” The turning point: <i>you don’t write commands — you speak, describe, and direct</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-3-5#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Direct by talking.</b> Speaking naturally helps AI understand intent (not just keywords), remember the
+          context between steps, and keep you in a creative mindset.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The workflow accepts images as a starting point: attach frames from Freepik/Seedance and describe the camera, action, and feel. Refinement becomes a conversation about the material you already have.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-3-5#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Character sheet.</b> Front/side/back views with the same face, outfit, and proportions. Lock in
+          the identity for the entire film — the anchor against drift between shots.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          AI can start with just one view — guide it step by step; iteration is key. Keep the
+          character generic, without replicating a real person.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-3-5#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Create, direct, animate.</b> The workflow's three stages—the pipeline arc (image → direction
+          → movement) condensed into a single conversational environment, with refinement at each stage.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          When directing, control the same four levers: camera movement, composition, lighting, and emotion. When
+          animating, describe the movement and refine it through conversation (“make the jump more realistic”).
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-3-5#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Compare outputs.</b> Generate the same direction in different models (Kling x Ray) and choose based on the
+          result, not the brand — the routing logic of 3.1, now at the shot level.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          Luma and Runway complement each other in refinement: Luma directs and generates (conversation, atmosphere); Runway critiques and edits
+          (precise control, motion, VFX). The choice is the last decision before editing.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Module 3.5 — folio xiii</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 2.4 — Depth and Spatial Structure | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-4.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:2-4"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>2</b> Cinematic Fundamentals</span>
+<span class="sep">·</span>
+<span>Module <b>2.4</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Section 1 of 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Module 2.4 · Track 2 · Cinematic Fundamentals</p>
+<h1 class="module">Depth and Structure <em>Spatial</em></h1>
+<p class="deck">Depth is the illusion of three dimensions—and it’s built by organizing the frame into
+          layers: foreground, where the viewer is; midground, where the subject lives; background, where the context resides. Without
+          layers, the image is a print; with them, it’s a space the camera can enter.</p>
+<p class="read-meta">
+<span class="here">Reading now</span>
+<span>~18 min · full module</span>
+<span>5 sections</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="What you will understand" class="aims">
+<h2>What you will understand</h2>
+<ul>
+<li>A <b>three-layer rule</b> — why every frame needs foreground, middle ground, and
+              background to keep it from looking flat.</li>
+<li>How <b>separate</b> the layers through focus, light, and color, and how the <b>depth of field</b> directs
+              attention by deciding what's in focus.</li>
+<li>How the <b>atmosphere</b> pushes elements away and is how the choice to <b>lens</b> (wide versus
+              telephoto) expands or compresses space.</li>
+<li>Why the <b>movement reveals depth</b> (parallax) and why <b>distance and emotion</b>:
+              positioning characters in layers tells relationships without dialogue.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Module summary" class="toc" data-inema-toc="">
+<p class="toc-head">Summary — five movements</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">The three-layer rule</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Separation and depth of field</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Atmosphere and lens choice</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Movement, parallax, and scale</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Depth and emotion: everything as a system</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-1" data-inema-track="2" id="topico-1">
+<div class="section-mark">
+<span class="where">Section 1 of 5</span><span>·</span><span>Three layers</span>
+</div>
+<h2 class="head"><span class="num">1.</span>The three-layer rule</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m2-4-t1-p1">The screen is flat. The world isn’t. The entire art of this
+              module lies in creating, on a two-dimensional surface, the <strong>illusion of three-dimensional space</strong>
+              — and this illusion has a golden rule so simple it fits on one line: every frame needs
+              <em>close-up</em>, <em>middle</em> e <em>background</em>. These are three layers with distinct roles. The
+              foreground is <span class="sidenote-ref">1</span>where the viewer is—what’s close to the camera, the frame we look through. The middle is where the subject lives—the center of the action. The background is where the context lives—the world that explains the scene. Leave out any of these layers, and the image loses its third dimension.</p>
+<p data-inema-block="m2-4-t1-p2">Why does this work? Because the brain reconstructs depth from
+              <em>relationships between objects at different distances</em>. When there’s something close, something in the middle, and something
+              far away, the eye compares their sizes, positions, and overlaps—and infers space. A
+              frame with everything at the same distance gives the brain nothing to compare, so it reads the scene as
+              <em>flat</em>, a pasted-on print. It’s the flaw Track 1 called “looks cheap”: it doesn’t lack resolution, it lacks <strong>depth</strong>. The three-layer rule is the most
+              direct antidote, and also the cheapest—just put something in the foreground.</p>
+<h3 class="sub">The foreground is what’s most often missing</h3>
+<p data-inema-block="m2-4-t1-p3">In practice, most weak images have a middle ground and a background, but
+              <em>forget</em> the foreground. The result is a subject against a backdrop, with nothing between them and the camera — and that empty space in front is exactly what flattens the image. Adding a foreground layer — out-of-focus branches, the edge of a table, the silhouette of a shoulder, a doorframe — transforms the image instantly: suddenly the camera is <em>inside</em> of the space, not looking
+              at a postcard. In AI, explicitly asking for <em>foreground element</em> is one of the instructions
+              that most heighten the sense of depth, and almost nobody uses it.<span class="sidenote-ref">2</span></p>
+</div>
+<!-- figura 1: tres camadas -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · A <b>three-layer rule</b> — foreground, middle ground, and background, each with its own role</figcaption>
+<svg aria-label="Side-view diagram showing three layers of depth: foreground near the camera, middle ground with the subject, background with the context; arrows indicate increasing distances from the lens." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-2-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="178" y2="178"></line>
+<!-- camera -->
+<path class="accent-stroke" d="M44 150 l-18 -10 l0 20 z" fill="none" stroke-width="1.4"></path>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" x="40" y="196">camera</text>
+<!-- primeiro plano -->
+<rect class="accent-stroke" fill="url(#hatch-2-4)" height="114" stroke-width="1.5" width="40" x="110" y="64"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="130" y="56">1st shot</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="130" y="200">where you are</text>
+<!-- meio -->
+<circle class="accent-stroke" cx="360" cy="120" r="14" stroke-width="1.8"></circle>
+<line class="accent-stroke" stroke-width="1.8" x1="360" x2="360" y1="134" y2="178"></line>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="360" y="86">middle</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="360" y="200">the subject</text>
+<!-- fundo -->
+<g class="rule-stroke" fill="none" opacity="0.55" stroke-width="1.1">
+<rect height="40" width="20" x="560" y="120"></rect><rect height="52" width="16" x="588" y="108"></rect><rect height="32" width="22" x="612" y="128"></rect>
+</g>
+<text class="faint" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="600" y="98">background</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="600" y="200">the context</text>
+<!-- eixo de distancia -->
+<path class="mark-stroke" d="M70 168 L680 168" stroke-dasharray="2 4" stroke-width="1.2"></path>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="160">INCREASING DISTANCE →</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>You generate a shot of a character on a street. The lighting is good, the pose is good, but the image
+              feels “pasted on,” as if the character were a sticker against a background. Without changing
+              the character or setting, what addition tends to fix that impression — and why?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">Add a <strong>close-up</strong>. The “sticker” feeling
+                almost always comes from a frame with only two layers (subject + background) and nothing near the camera. Putting
+                something in the foreground—a blurred branch, the corner of a wall, the silhouette of someone with their back
+                turned—creates the missing third layer. The brain now has something nearby to compare with what's far away, and the camera seems to be <em>inside</em> on the street, not in front of a poster.</p>
+</details>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: the depth cues you layer
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>The happy path above is enough. This layer lists the complete repertoire—and can be skipped.</p>
+<p>The three-layer rule is the structure; within it, several <em>depth cues</em> add up. <strong>Overlay:</strong> what covers something else is in front—the most primitive and powerful of the clues. <strong>Relative size:</strong> identical objects look smaller when farther away.
+                <strong>Convergence:</strong> parallel lines converge in the background (the guide lines from Module 2.2).
+                <strong>Texture gradient:</strong> surfaces become smoother with distance. <strong>Focus and
+                atmosphere</strong> come into the next sections. Each cue you layer reinforces the illusion—and that's why a frame with three layers, overlap, convergence, and haze feels so much more three-dimensional than a flat subject against a flat background. Depth is the sum of cues, not a single trick.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-2" data-inema-track="2" id="topico-2">
+<div class="section-mark">
+<span class="where">Section 2 of 5</span><span>·</span><span>Separation</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Separation and depth of field</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-4-t2-p1">Having three layers isn’t enough — they need to be
+              <strong>visually separated</strong>. If the foreground, middle ground, and background have the same color, brightness,
+              and sharpness, they merge into a single blob and depth disappears, even if the objects are at
+              different distances. The lesson names three separation tools: <em>focus</em>, <em>light</em> e
+              <em>color</em>. You distinguish one layer from another by making one sharp and the other blurred, or one light and
+              the other dark, or one warm and the other cool. Each difference pushes one layer forward and the other
+              back. Separation is what makes the three layers <em>read</em> as three distances.</p>
+<h3 class="sub">Light that separates: backlight and contrast</h3>
+<p data-inema-block="m2-4-t2-p2">Light is the most cinematic tool for separation—and this is where
+              Module 2.3 connects directly to this one. A <em>backlighting</em> (backlight) that outlines the subject
+              sets them apart from the background: that rim light creates a luminous boundary between the middle layer and
+              the background. Similarly, a bright subject against a dark background — or the reverse — uses
+              <em>contrast</em> to separate shots. The mist from Lesson 5 also returns: it progressively clears
+              the more distant layers, separating them by density. Light doesn’t just reveal; it
+              <strong>organizes space in layers</strong>.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m2-4-t2-p3">The most powerful separation tool, however, is the <strong>depth of field</strong>: control over what’s in focus. With shallow depth of
+              field, only a narrow band of space is in focus—the subject in the middle is crystal clear,
+              while the foreground and background melt into a soft blur. This does two things at once:
+              <em>separates</em> the layers unequivocally and <em>directs attention</em>, because the eye is irresistibly drawn to the only sharp area. Depth of field is both a tool for space and a tool for hierarchy—it isolates the layer that matters from the blurred world around it.</p>
+</div>
+<!-- figura 2: profundidade de campo rasa -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · <b>Shallow depth of field</b> — only the middle stays sharp; everything else melts away and isolates the subject</figcaption>
+<svg aria-label="Diagram: three layers, with the foreground and background blurred and the middle layer in focus; a band marks the narrow focus zone that isolates the subject." class="diagram" role="img" viewbox="0 0 720 200">
+<line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="168" y2="168"></line>
+<!-- primeiro plano borrado -->
+<circle class="rule-stroke" cx="120" cy="100" fill="none" opacity="0.35" r="30" stroke-width="3"></circle>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="120" y="156">blurry</text>
+<!-- zona de foco -->
+<rect class="wash accent-stroke" height="128" rx="3" stroke-dasharray="4 3" stroke-width="1.3" width="120" x="300" y="40"></rect>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="360" y="34">FOCUS AREA</text>
+<!-- meio nitido -->
+<circle class="accent-stroke" cx="360" cy="98" r="15" stroke-width="2"></circle>
+<line class="accent-stroke" stroke-width="2" x1="360" x2="360" y1="113" y2="168"></line>
+<text class="ink" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="156">sharp</text>
+<!-- fundo borrado -->
+<g class="rule-stroke" fill="none" opacity="0.28" stroke-width="4">
+<rect height="52" width="22" x="560" y="92"></rect><rect height="64" width="18" x="590" y="80"></rect><rect height="44" width="24" x="616" y="100"></rect>
+</g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="600" y="156">blurry</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="192">SEPARATES AND DIRECTS ATTENTION AT THE SAME TIME</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m2-4-t2-p4">In the prompt, you name the three layers <em>e</em> the separation between
+              them — and the generator responds well to that. The example below is a <em>depth recipe</em>:
+              foreground, middle ground, and background clearly defined, separated by focus, light, and color. Notice how each layer gets
+              a role and an explicit distinction.</p>
+<div class="codeblock"><span class="c"># Depth recipe — three layers separated by focus, lighting, and color</span>
+<span class="c"># declare the layers and their separation; the generator (Freepik / Seedance) understands</span>
+<span class="k">Foreground:</span> out-of-focus leaves framing the bottom-left, dark, close to camera.
+<span class="k">Midground:</span> the subject in sharp focus, lit by a warm key — the only crisp element.
+<span class="k">Background:</span> a distant cool-blue cityscape, soft and hazy, pushed far by atmosphere.
+<span class="k">Separation:</span> shallow depth of field; backlight rim on the subject; warm subject vs cool background.
+<span class="k">Lens:</span> 85mm look, shallow focus, strong subject isolation.</div>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-3" data-inema-track="2" id="topico-3">
+<div class="section-mark">
+<span class="where">Section 3 of 5</span><span>·</span><span>Atmosphere and lens</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Atmosphere and lens choice</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-4-t3-p1">Two tools control the <em>scale</em> of the space: the
+              atmosphere and the lens. A <strong>atmosphere</strong> — mist, fog, smoke, even snow —
+pushes elements into the distance. It works because it imitates what air actually does: the farther
+away an object is, the more air there is between it and the eye, and that air makes it progressively lighter, bluer, and
+lower in contrast. This effect has a name — <em>atmospheric perspective</em> — and is
+              one of the strongest depth cues there is. A sharp mountain seems close; the same
+              mountain faded by haze seems miles away. You control perceived depth simply
+              by adjusting the atmosphere between the layers.<span class="sidenote-ref">4</span></p>
+<h3 class="sub">The lens decides whether space opens up or compresses</h3>
+<p data-inema-block="m2-4-t3-p2">The choice of <strong>lens</strong> dramatically changes the perceived distance. A lens <em>wide</em> (wide-angle) <strong>expands the space</strong>: it exaggerates the
+              distance between the layers, makes the foreground pop and the background recede, and creates that feeling of
+              vastness, of a big world around a small subject. A lens <em>telephoto lens</em>, unlike
+              <strong>compresses space</strong>: it flattens the layers against one another, making the background
+              look pasted to the subject’s back — useful for isolating, creating density, and creating the feeling
+              that there’s nowhere to escape. Same scene, different lenses, emotionally opposite spaces.</p>
+<p data-inema-block="m2-4-t3-p3">The connection between lens and emotion is direct, and the lesson spells it out: the wide
+              lens <em>exaggerates</em> the separation — physical and emotional — while the telephoto lens <em>collapses</em>.
+              Want to show an isolated character, lost in the vastness? Wide-angle lens, strong foreground, distant background. Want two characters trapped in suffocating tension, with no escape? Telephoto lens, compressed shots, background pressed close. The lens isn’t a neutral technical choice; it <strong>sculpts the relationship
+              between the subject and the space</strong>, and that relationship is pure emotion. In AI, terms like <em>wide-angle</em>,
+              <em>24mm</em>, <em>telephoto</em>, <em>85mm</em>, <em>compressed background</em> radically change the
+              spatial reading of the frame.</p>
+</div>
+<!-- figura 3: lente ampla vs tele -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · A <b>lens</b> decides the space — wide expands it (isolation), tele compresses it (tension)</figcaption>
+<svg aria-label="Diagram comparing two lenses: on the left, a wide-angle lens pushes the background back and exaggerates distance, with the subject small in a vast world; on the right, a telephoto lens compresses the background and brings it close behind the subject." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- esquerda: ampla -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">WIDE — EXPANDS</text>
+<rect class="rule-stroke" fill="none" height="150" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
+<!-- linhas divergentes -->
+<path class="rule-stroke" d="M180 188 L60 60 M180 188 L300 60" opacity="0.6" stroke-width="1.1"></path>
+<circle class="accent-stroke" cx="180" cy="150" r="12" stroke-width="1.8"></circle>
+<g class="rule-stroke" fill="none" opacity="0.5" stroke-width="1"><rect height="22" width="12" x="120" y="70"></rect><rect height="20" width="12" x="232" y="72"></rect></g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="206">small subject, vast world</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="190"></line>
+<!-- direita: tele -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TELE — COMPRESSES</text>
+<rect class="accent-stroke" fill="none" height="150" rx="3" stroke-width="1.3" width="280" x="400" y="40"></rect>
+<!-- camadas coladas -->
+<rect class="rule-stroke" fill="url(#hatch-2-4)" height="100" opacity="0.5" stroke-width="1" width="140" x="470" y="70"></rect>
+<circle class="accent-stroke" cx="540" cy="120" r="20" stroke-width="2"></circle>
+<line class="accent-stroke" stroke-width="2" x1="540" x2="540" y1="140" y2="170"></line>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="206">background pressed close, no escape</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>You want a shot that communicates “two rivals face to face, suffocating tension, no way out.”
+              Between a wide-angle lens that shows the entire hall around them and a telephoto lens that presses the background
+              right behind them, which better serves the idea — and why?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">A <strong>telephoto lens</strong>. It compresses space, flattening the layers and
+                pressing the background up against the characters' backs — and that compression produces exactly the feeling of
+                “no way out,” of the world closing in around them. A wide-angle lens would do the opposite: open up the
+                hall, give them air, show escape routes, diluting the tension in the vastness. The lens shapes the relationship
+                with space, and the idea here calls for tightness, not breadth.</p>
+</details>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why the telephoto lens “pulls” the background closer
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer on the physics of compression—you can skip it.</p>
+<p>Telephoto compression isn’t magic: it’s a consequence of <em>camera distance</em>. To
+                frame the same subject with a telephoto lens, you need to be much farther away. And when the camera is
+                far away, the difference <em>proportional</em> of distance between the subject and background shrinks — if you’re
+                a hundred meters away, the background at a hundred and ten meters is “almost the same distance,” so
+                it looks the same size and sticks right behind. With a wide-angle lens, you get very close to the subject, and then the
+                proportional difference becomes huge: the background, only a little farther away, looks much smaller and more distant. That’s
+                why lens and distance go together — choosing a lens is really choosing where the camera
+                sees the space from.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-4" data-inema-track="2" id="topico-4">
+<div class="section-mark">
+<span class="where">Section 4 of 5</span><span>·</span><span>Movement</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Movement, parallax, and scale</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-4-t4-p1">So far, we've built depth in a still frame.
+              When the camera moves, the most powerful clue of all emerges: the <strong>parallax</strong>. The rule is
+              simple, and the eye has always known it—when you move, the <em>layers move at
+              different speeds</em>. What’s close crosses the frame quickly; what’s far away barely
+              moves. Look out a car window: the pole beside you flies past, the house in the middle distance slides by, the mountain on the
+              horizon practically keeps pace with you. It’s this difference in speed that the brain reads, instantly
+              and accurately, as <em>real depth</em>. That’s why a simple camera move—a dolly,
+              a lateral tracking shot—gives a scene a three-dimensionality that no still image
+              can achieve.<span class="sidenote-ref">5</span></p>
+<p data-inema-block="m2-4-t4-p2">Parallax is why the lesson emphasizes that <em>movement reveals
+              depth</em>. A dolly-in passing through a foreground element (moving the camera behind a column,
+              through foliage) activates parallax explicitly: the front layer sweeps across the frame while the
+              background stays put, making the space undeniable. This is also why the foreground (Section 1)
+              matters so much in video: when still, it already helps; in motion, it <em>fires</em> and parallax multiplies depth. A moving camera with nothing in the foreground wastes the strongest tool you have.</p>
+<h3 class="sub">Movement also separates characters — physically and emotionally</h3>
+<p data-inema-block="m2-4-t4-p3">There’s an extra layer to the idea of movement that this lesson takes care to
+              point out: the movement <strong>separates characters</strong>, and not only in space. When the camera moves
+              and reveals that two characters are on different planes—one near, one far—it tells
+              their relationship without a word. The distance that opens or closes through movement <em>e</em> the
+              emotional dynamic. A character who enters the foreground while the other remains small in the
+              background establishes dominance; two who approach from different layers until they share the same shot
+              stage a reconciliation. Movement and depth tell the story together — which leads us directly to
+              the module’s central idea.</p>
+</div>
+<!-- figura 4: parallax -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Parallax</b> — when the camera moves, layers travel at different speeds</figcaption>
+<svg aria-label="Diagram: three layers with motion vectors of different lengths: the foreground has a long vector, the middle ground a medium one, and the background a short one, indicating that nearby objects cross the frame faster as the camera moves." class="diagram" role="img" viewbox="0 0 720 200">
+<line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="168" y2="168"></line>
+<!-- primeiro plano: vetor longo -->
+<rect class="accent-stroke" fill="url(#hatch-2-4)" height="98" stroke-width="1.5" width="34" x="90" y="70"></rect>
+<path class="accent-stroke" d="M132 56 L236 56" stroke-width="2.4"></path>
+<path class="accent" d="M236 56 l-12 -5 l0 10 z"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="107" y="186">close — fast</text>
+<!-- meio: vetor medio -->
+<circle class="accent-stroke" cx="360" cy="118" r="14" stroke-width="1.8"></circle>
+<line class="accent-stroke" stroke-width="1.8" x1="360" x2="360" y1="132" y2="168"></line>
+<path class="mark-stroke" d="M380 100 L440 100" stroke-width="2"></path>
+<path class="mark-fill" d="M440 100 l-10 -4 l0 8 z"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="186">middle — medium</text>
+<!-- fundo: vetor curto -->
+<g class="rule-stroke" fill="none" opacity="0.55" stroke-width="1.1">
+<rect height="42" width="20" x="560" y="118"></rect><rect height="54" width="16" x="588" y="106"></rect>
+</g>
+<path class="rule-stroke" d="M610 92 L632 92" stroke-width="1.6"></path>
+<path class="faint" d="M632 92 l-8 -3 l0 6 z"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="186">far away — almost still</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m2-4-t4-p4">In the video prompt, you ask for parallax by describing a camera
+              movement <em>through</em> of layers. The example below is a <em>parallax recipe</em>: a lateral
+              move with a strong foreground that reveals the space. Note that it’s the foreground + the
+              movement that produce the effect — neither one alone.</p>
+<div class="codeblock"><span class="c"># Parallax recipe — movement that reveals real depth</span>
+<span class="c"># for video (Seedance / Kling / Luma / Runway): camera + layers</span>
+<span class="k">Layers:</span> tall grass in the foreground, a walking figure in the midground, mountains far in the background.
+<span class="k">Camera movement:</span> slow lateral tracking (dolly) from left to right, low to the ground.
+<span class="k">Parallax:</span> the foreground grass sweeps fast across the frame; the figure drifts; the mountains barely move.
+<span class="k">Why:</span> the different layer speeds read as true 3D depth — impossible in a still.
+<span class="k">Mood:</span> immersive, calm, expansive.</div>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-5" data-inema-track="2" id="topico-5">
+<div class="section-mark">
+<span class="where">Section 5 of 5</span><span>·</span><span>Emotion and system</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Depth and emotion: everything as a system</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-4-t5-p1">We’ve reached the heart of the module, and it comes down to one sentence:
+              <strong>depth isn’t just visual—it’s emotional</strong>. The layers you built don't
+              just make the image look three-dimensional; they <em>mean</em>. A short distance between the
+              camera and the subject creates <em>intimacy</em>. A long distance creates <em>isolation</em>. O
+              <em>movement</em> between layers means change; the <em>stillness</em> a distant, fixed figure means tension, anticipation. Depth is, at its core, a vocabulary of <em>emotional
+              distance</em>: where you place someone along the near–far axis says what that person feels, or what
+              you feel about them.<span class="sidenote-ref">6</span></p>
+<p data-inema-block="m2-4-t5-p2">The practical consequence is powerful: when you position characters in
+              <em>different layers</em>, you tell the story of their relationship <strong>without dialogue</strong>. A
+              character in the foreground, large and dominant, and another small and blurred in the background—that conveys
+              power, surveillance, or threat, depending on the context. Two characters side by side on the same layer—
+              that conveys equality, partnership. One moving away into the background while the other stays—that conveys
+              loss, farewell. The geometry of the space <span class="dfn"><details class="dfn"><summary>stages</summary><span class="body"><b>Staging through depth</b> is using the characters’ positions across layers (near/far) and focus to convey power dynamics, intimacy, or conflict — a form of direction that needs no dialogue or action.</span></details></span>
+              the drama. That’s exactly what the module assignment asks for—three scenes, two characters on different
+              layers, emotion conveyed only through position and gaze, with no dialogue or action.</p>
+<h3 class="sub">Everything works as a system</h3>
+<p data-inema-block="m2-4-t5-p3">The lesson closes Block 2 with the synthesis that ties the four modules together: a
+              truly cinematic shot isn’t composition <em>or</em> light <em>or</em> depth—
+              and <strong>everything at once, working as a system</strong>. Composition decides where the eye goes;
+              light decides what is revealed and what is hidden; lens and depth decide how space is organized in
+              layers; movement and character positioning decide the relationship and emotion. None of these elements
+              can save a weak scene on its own, and none can make the scene alone. It's the <em>deliberate combination</em> —
+              each element chosen to reinforce the others—which creates that density we recognize as
+              cinema.</p>
+<p data-inema-block="m2-4-t5-p4">This is the leap that brings Track 2 to a close: you go from <em>create images</em>
+              to <em>direct scenes</em> — shaping space, controlling attention, telling stories through
+              depth. The four foundations — visual thinking, composition, lighting, and depth —
+              now form a single vocabulary you can use to read and build any frame. The next learning paths
+              put this vocabulary in motion: the tool pipeline that carries out these decisions, the camera
+              language that animates them, the effects and performances that bring them to life. But the foundation is in place. You no longer
+              look at an image and think “how beautiful” — you look and see the layers, the light, the hierarchy, and the
+              space, and you know why it works.</p>
+</div>
+<!-- figura 5: profundidade como emocao + sistema -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · <b>Distance and emotion</b> — and the cinematic shot is the sum of all the fundamentals</figcaption>
+<svg aria-label="Diagram in two parts: on the left, a near-far axis linking intimacy with closeness and isolation with distance, with two characters on different planes; on the right, four gears labeled composition, light, depth, and movement converging into a cinematic shot." class="diagram" role="img" viewbox="0 0 720 220">
+<!-- esquerda: eixo emocional -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">DISTANCE = EMOTION</text>
+<line class="rule-stroke" stroke-width="1.2" x1="60" x2="320" y1="150" y2="150"></line>
+<text class="ink" font-family="Source Serif 4, serif" font-size="10.5" x="70" y="170">close = intimacy</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="end" x="310" y="170">far away = isolation</text>
+<circle class="accent-stroke" cx="96" cy="120" r="16" stroke-width="2"></circle>
+<line class="accent-stroke" stroke-width="2" x1="96" x2="96" y1="136" y2="150"></line>
+<circle class="rule-stroke" cx="286" cy="132" opacity="0.7" r="7" stroke-width="1.4"></circle>
+<line class="rule-stroke" opacity="0.7" stroke-width="1.4" x1="286" x2="286" y1="139" y2="150"></line>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="180" y="206">layers convey relationships without dialogue</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="200"></line>
+<!-- direita: o sistema -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">EVERYTHING AS A SYSTEM</text>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
+<circle class="wash accent-stroke" cx="460" cy="74" r="26" stroke-width="1.3"></circle><text x="460" y="78">composition</text>
+<circle class="wash accent-stroke" cx="620" cy="74" r="26" stroke-width="1.3"></circle><text x="620" y="78">light</text>
+<circle class="wash accent-stroke" cx="460" cy="150" r="26" stroke-width="1.3"></circle><text x="460" y="148">depth—</text><text x="460" y="160">age</text>
+<circle class="wash accent-stroke" cx="620" cy="150" r="26" stroke-width="1.3"></circle><text x="620" y="154">movement</text>
+</g>
+<circle class="accent-stroke" cx="540" cy="112" fill="url(#hatch-2-4)" r="20" stroke-width="1.6"></circle>
+<g class="mark-stroke" stroke-width="1.2">
+<path d="M478 88 L522 104"></path><path d="M602 88 L558 104"></path><path d="M478 138 L522 122"></path><path d="M602 138 L558 122"></path>
+</g>
+<text class="ink" font-family="Spectral, serif" font-size="9.5" font-style="italic" text-anchor="middle" x="540" y="116">scene</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>You need to show “a father and son who have grown apart over the years” in a single shot,
+              without dialogue or action. Using only what this module taught, how would you stage it through
+              depth?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">Put both in <strong>different layers</strong> and use separation to
+                mark the emotional distance. For example: one in the foreground, in focus, with their back to us or in profile;
+                the other in the background, smaller, slightly out of focus, perhaps separated by a doorframe or mist.
+                Shallow depth of field isolates them from each other; the distance between the layers <em>e</em> the
+                distance. If there is movement, let the camera or one of the two characters increase the distance. The geometry of
+                the space says “they are far apart” without a word—this is the module’s thesis: distance is
+                emotion.</p>
+</details>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Self-check" class="check">
+<h2>Before moving on: four quick checks</h2>
+<p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>What’s the three-layer rule—and why does its absence make an image look “flat”?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Every frame needs a <em>close-up</em> (where you are), <em>middle</em> (the
+              subject) and <em>background</em> (context). The brain reconstructs depth by comparing objects at
+              different distances; with everything at the same distance, there's nothing to compare, and the scene becomes a pattern. What's
+              most often missing from weak images is the foreground.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Why is shallow depth of field both a tool for space and for hierarchy?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because it leaves only a narrow band in focus. This <em>separates</em> the layers
+              unequivocally (sharp subject, blurred foreground and background) and <em>directs attention</em>, because the eye is irresistibly drawn to the only sharp area. It separates the space and isolates what matters in one stroke.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>What do wide-angle and telephoto lenses do to space—and what emotion does each serve?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>A <em>wide</em> expands: exaggerates the distance between layers, subject small in a vast
+              world — isolation, breadth. A <em>tele</em> compresses: flattens the layers and pushes the background right up against
+              the subject—tension, density, “no way out.” The lens sculpts the relationship between the
+              subject and the space, and that relationship is emotion.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>Why does “movement reveal depth,” and why are distance and emotion connected?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Fur <em>parallax</em>: when the camera moves, nearby layers cross the frame quickly and
+              distant ones barely move — the brain reads this difference in speed as real 3D. And
+              distance is emotion because close = intimacy, far = isolation, movement = change: positioning
+              characters in layers tells the story of their relationship without dialogue. It all works as a system.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="My journey — consolidated progress" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> My journey</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">In this module</div>
+<div class="v" data-inema-meter="modulo:2-4">
+<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In track 2</div>
+<div class="v" data-inema-meter="trilha:2">
+<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In the course</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Start the next track</div>
+<div class="t">Module 3.1 — AI Tool Pipeline</div>
+</div>
+<a class="go" href="../trilha3/modulo-3-1.html">Next →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-2-4#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>The three-layer rule.</b> Every frame needs foreground (where you are), midground (the subject), and
+          background (the context). Without all three, the image looks flat — like a print.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Ten professional blocks on how to build and control depth in a scene—the closing section of Block 2.
+          <div class="src-line">Block 2 · Lesson 6 — Depth and Spatial Structure</div>
+</aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-2-4#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Separation.</b> Distinguish the layers through focus, light, or color so they read as three distances. Equal layers
+          blend into a smear—the difference is what creates depth.
+        </aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Depth of field.</b> Control over what’s in focus. Shallow = only one band in focus—it isolates the subject and guides the eye. At the same time, it’s a tool for space and hierarchy.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-2-4#topico-3"></aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Atmospheric perspective: the more air between the eye and an object, the lighter, bluer, and more diffuse it appears. Haze simulates this and is one of the strongest depth cues.
+        </aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Lens and space.</b> Wide <i>expands</i> (small subject, vast world, isolation); tele <i>compresses</i>
+          (stuck background, no escape, tension). The lens shapes the relationship between subject and space.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-2-4#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Parallax.</b> As the camera moves, nearby layers cross the frame quickly while distant ones barely
+          move. The brain reads this difference as real 3D—depth that a still image doesn’t have.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-2-4#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Emotional distance.</b> Close = intimacy, far = isolation, movement = change. Positioning characters in layers conveys their relationship without dialogue or action.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          Closing Block 2: composition, light, depth, and movement work <i>as a system</i>. You move from
+          creating images to directing scenes—shaping space, controlling attention, telling stories through depth.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Module 2.4 — folio viii</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

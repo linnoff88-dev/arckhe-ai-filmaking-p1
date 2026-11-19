@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 6.3 — Primeros planos y planos emocionales | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha6/modulo-6-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha6/modulo-6-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha6/modulo-6-3.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:6-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>6</b> Personaje y actuación</span>
+<span class="sep">·</span>
+<span>Módulo <b>6.3</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Sección 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Módulo 6.3 · Ruta 6 · Personaje y actuación</p>
+<h1 class="module">Primeros planos y planos <em>Emocionales</em></h1>
+<p class="deck">Un personaje puede llorar, la actuación puede convencer, el diálogo puede sonar emotivo —
+          y aun así la escena parecer plana. El motivo suele ser uno solo: la cámara no acompaña la emoción. En el cine, la
+          emoción no solo se actúa; también se encuadra.</p>
+<p class="read-meta">
+<span class="here">Leyendo ahora</span>
+<span>~17 min · módulo completo</span>
+<span>5 secciones</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="Lo que vas a entender" class="aims">
+<h2>Lo que vas a entender</h2>
+<ul>
+<li>Por qué <b>la emoción está encuadrada, no solo actuada</b> — y cómo el primer plano hace visible la microexpresión que el plano general oculta.</li>
+<li>Cómo el <b>espacio negativo</b> transforma el vacío en soledad, y cómo el <b>push-in lento</b> hace crecer la presión sin que el público se dé cuenta.</li>
+<li>Por qué <b>la distancia en el encuadre se convierte en distancia emocional</b>, y cómo el plano sobre el hombro sitúa al público dentro de la relación.</li>
+<li>Cómo el <b>POV</b> hace que el público deje de mirar y pase a experimentar la emoción — y, sobre todo, <b>cuándo acercar</b>: el primer plano como decisión, no como reflejo.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<p class="toc-head">Resumen: cinco decisiones de cámara</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">La emoción se encuadra: el primer plano</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Espacio negativo: el vacío como emoción</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">El push-in lento: el movimiento se convierte en presión</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Distancia de cámara = distancia emocional</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">POV es cuándo acercarse</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-1" data-inema-track="6" id="topico-1">
+<div class="section-mark">
+<span class="where">Sección 1 de 5</span><span>·</span><span>El primer plano</span>
+</div>
+<h2 class="head"><span class="num">1.</span>La emoción se encuadra: el primer plano</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m6-3-t1-p1">Muchos creadores creen que la emoción viene
+              únicamente de la actuación. En la práctica, las escenas emocionales suelen fallar porque <strong>la cámara no
+              acompaña la emoción.</strong> Un personaje llora, la actuación convence, el diálogo suena emotivo — y
+              aun así, la escena parece plana.<span class="sidenote-ref">1</span> ¿Por qué? Porque en el cine la
+              emoción no es <em>así</em> actuada: ella es <em>encuadrada</em>. La distancia crea intimidad, la
+              composición crea aislamiento, el movimiento crea presión, la perspectiva configura la experiencia. La cámara
+              no registra la emoción: la <em>traduce</em> la emoción. El público no debería solo <em>ver</em>
+              la emoción; debería <em>sentirla</em>.</p>
+<p data-inema-block="m6-3-t1-p2">El primer mecanismo es el <span class="dfn"><details class="dfn"><summary>primer plano emocional</summary><span class="body"><b>Primer plano emocional</b>: el encuadre cerrado del rostro que hace visibles detalles mínimos: respiración, parpadeo, vacilación, micromovimiento de la mirada. Cuanto más cerca, más lo siente el público.</span></details></span>.
+              Casi no pasa nada: un personaje escucha, su respiración cambia un poco, la mirada se desplaza,
+              aparece un parpadeo tardío, y de repente la emoción se vuelve visible. Los detalles pequeños se convierten en
+              emociones grandes porque las personas leen las emociones instintivamente en el rostro; los ojos, la respiración y
+              la vacilación comunican más rápido que el diálogo. La fórmula: <strong>detalle igual a emoción.</strong>
+              La idea clave: cuanto más nos acercamos, más sentimos.</p>
+<h3 class="sub">Un ejemplo: el mensaje que ella nunca envía</h3>
+<p data-inema-block="m6-3-t1-p3">Una mujer vuelve a leer un mensaje que nunca envió. A medida que crece la vacilación,
+              la cámara se acerca y revela la respiración contenida y el sutil titubeo. La mano casi presiona
+              «enviar» — y baja. Físicamente, casi nada cambia. Emocionalmente, todo cambia.<span class="sidenote-ref">2</span>
+              El primer plano elimina las distracciones y hace perceptible la emoción sutil <em>ser leída</em>: a veces el rostro se convierte en toda la escena
+              Y por eso el primer plano es una <em>decisión</em>, no es un estándar — te acercas cuando quieres que el público viva dentro de un detalle que, desde lejos, pasaría desapercibido.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>La misma escena de la mujer que vuelve a leer el mensaje se filma en plano general: ella aparece pequeña, sentada en la
+              cocina. La actuación es la misma. ¿Por qué cae el impacto emocional — y qué hace el plano general
+              <em>pierde</em>?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">El plano amplio pierde la <strong>microexpresión</strong>: desde lejos, la respiración
+                contenida, la mirada vacilante y la mano que duda se vuelven invisibles. El primer plano <em>elimina la distracción</em>
+                y amplía el detalle hasta que se convierte en la escena. Como aquí la emoción vive en señales mínimas, sin
+                acercamiento no hay nada que sentir — el detalle equivale a emoción, y el plano amplio borra el detalle.</p>
+</details>
+</div>
+<!-- figura 1: escala de plano vs leitura da emocao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · Cuanto más cerca, más <b>microexpresión</b> se vuelve legible</figcaption>
+<svg aria-label="Diagrama de tres cuadros uno al lado del otro, del plano amplio al primer plano: la figura crece y aparecen los detalles del rostro; una flecha indica que la lectura de la emoción aumenta a medida que la cámara se acerca." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-6-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- amplo -->
+<rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="40" y="50"></rect>
+<circle class="rule-stroke" cx="130" cy="118" fill="none" r="10" stroke-width="1.2"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="130" y="40">AMPLIO</text>
+<!-- medio -->
+<rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="250" y="50"></rect>
+<circle class="rule-stroke" cx="340" cy="110" fill="none" r="26" stroke-width="1.3"></circle>
+<circle class="ink" cx="332" cy="106" r="2.4"></circle><circle class="ink" cx="348" cy="106" r="2.4"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="340" y="40">MEDIO</text>
+<!-- close -->
+<rect class="accent-stroke" fill="url(#hatch-6-3)" height="110" rx="3" stroke-width="1.4" width="180" x="460" y="50"></rect>
+<circle class="accent-stroke" cx="550" cy="118" fill="none" r="44" stroke-width="1.5"></circle>
+<ellipse class="ink" cx="536" cy="104" fill="none" rx="8" ry="5" stroke-width="1.2"></ellipse>
+<ellipse class="ink" cx="564" cy="104" fill="none" rx="8" ry="5" stroke-width="1.2"></ellipse>
+<circle class="accent" cx="539" cy="104" r="2.6"></circle><circle class="accent" cx="567" cy="104" r="2.6"></circle>
+<path class="ink" d="M538 132 q12 6 24 0" fill="none" stroke-width="1.4"></path>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="550" y="40">PRIMER PLANO</text>
+<!-- seta de leitura -->
+<path class="mark-stroke" d="M40 184 L640 184" fill="none" stroke-width="1.2"></path>
+<path class="mark-fill" d="M640 184 l-9 -5 l0 10 z"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="340" y="200">la emoción sutil se vuelve más legible →</text>
+</svg>
+</figure>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-2" data-inema-track="6" id="topico-2">
+<div class="section-mark">
+<span class="where">Sección 2 de 5</span><span>·</span><span>Espacio negativo</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Espacio negativo: el vacío como emoción</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t2-p1">Si el close acerca, el segundo mecanismo hace lo contrario y
+              llega al mismo lugar: el <strong>espacio negativo</strong>. Un personaje se queda solo dentro del
+              encuadre, empequeñecido por el vacío. La habitación parece demasiado grande, el silencio parece demasiado pesado. No
+              ocurre nada dramático — pero la soledad se vuelve <em>visible</em>. El vacío crea sentimiento.</p>
+<p data-inema-block="m6-3-t2-p2">Por qué funciona: reaccionamos instintivamente al aislamiento visual. El
+              espacio vacío crea distancia emocional y refleja, en silencio, el estado interno del personaje. A
+              veces el entorno dice más que el personaje.<span class="sidenote-ref">3</span> La fórmula:
+              <strong>aislamiento más espacio igual a distancia emocional.</strong> El espacio vacío puede parecer
+              emoción, y esa es la clave para entender que encuadrar no es solo elegir dónde queda el rostro, sino
+              cuánto espacio vacío lo rodea.</p>
+<h3 class="sub">Un ejemplo: el hombre en el estacionamiento</h3>
+<p data-inema-block="m6-3-t2-p3">Un hombre está solo en un estacionamiento silencioso después de recibir
+              una noticia difícil. En vez de encuadrarlo en un plano cerrado, la cámara se queda <em>abierta</em>. Casi no se
+              mueve, pero el cuadro comunica en silencio: nunca se sintió tan solo. Fíjate en la decisión: el
+              instinto pediría un primer plano para “mostrar la emoción”, pero aquí el <em>amplio</em> y es la que cuenta
+              la verdad, porque la emoción es el aislamiento — y el aislamiento se muestra con espacio, no con
+              proximidad. La elección del plano siempre responde a una pregunta: <em>de qué está hecha esta emoción?</em></p>
+</div>
+<!-- figura 2: a figura encolhida pelo vazio -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · O <b>vacío</b> lo que está alrededor se convierte en distancia emocional</figcaption>
+<svg aria-label="Diagrama: un cuadro amplio con una pequeña figura desplazada hacia una esquina, rodeada de mucho espacio vacío; los señalamientos indican que el vacío comunica soledad." class="diagram" role="img" viewbox="0 0 720 210">
+<rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.3" width="600" x="60" y="36"></rect>
+<!-- chao -->
+<line class="rule-stroke" opacity="0.5" stroke-width="1" x1="72" x2="648" y1="150" y2="150"></line>
+<!-- pequena figura no canto -->
+<circle class="accent-stroke" cx="560" cy="132" fill="none" r="10" stroke-width="1.4"></circle>
+<line class="accent-stroke" stroke-width="1.4" x1="560" x2="560" y1="142" y2="150"></line>
+<!-- preenchimento de vazio -->
+<rect fill="url(#hatch-6-3)" height="100" opacity="0.5" width="420" x="80" y="56"></rect>
+<text class="ink-soft" font-family="Spectral, serif" font-size="16" font-style="italic" text-anchor="middle" x="280" y="100">espacio vacío</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="280" y="122">la sala parece demasiado grande</text>
+<line class="mark-stroke" stroke-width="1" x1="540" x2="500" y1="124" y2="96"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="end" x="496" y="90">la figura, pequeña</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: ¿primer plano o plano amplio? La emoción decide la escala
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>El camino recomendado de arriba ya basta. Esta capa ayuda a elegir entre acercarse y alejarse.</p>
+<p>Los primeros planos y el espacio negativo parecen opuestos —uno aprieta, el otro abre—, pero ambos son
+                respuestas a la misma pregunta: <em>de qué está hecha esta emoción?</em> Cuando la emoción está en un detalle
+                interno (una duda, una mirada que cede, el borde del llanto), el <strong>plano cercano</strong> es la elección:
+                elimina el resto del mundo y amplifica la señal. Cuando la emoción <em>e</em> la relación del personaje
+                con el mundo —soledad, abandono, pérdida—, el <strong>amplio con espacio negativo</strong>
+                dice más, porque el vacío se vuelve parte del sentimiento. La pregunta correcta nunca es «¿el primer plano queda
+                bonito?», sino «¿la emoción de esta escena es interna o relacional?». La respuesta
+                elige la escala.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-3" data-inema-track="6" id="topico-3">
+<div class="section-mark">
+<span class="where">Sección 3 de 5</span><span>·</span><span>Push-in lento</span>
+</div>
+<h2 class="head"><span class="num">3.</span>El push-in lento: el movimiento se convierte en presión</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t3-p1">El tercer mecanismo y el <span class="dfn"><details class="dfn"><summary>push-in lento</summary><span class="body"><b>Push-in lento</b>: la aproximación gradual de la cámara hacia el personaje, lo bastante lenta para que no se perciba conscientemente, pero suficiente para aumentar la tensión emocional a lo largo del plano.</span></details></span>:
+              un movimiento de cámara casi imperceptible que, en silencio, aumenta la presión. Puede que el público no
+              perciba el movimiento de forma consciente, pero la tensión crece emocionalmente. La fórmula:
+              <strong>movimiento lento igual a emoción creciente.</strong></p>
+<p data-inema-block="m6-3-t3-p2">Un ejemplo: una mujer oye a alguien decir que se va «para
+              siempre». Al principio, el encuadre parece emocionalmente distante. Cuando la realidad de la frase la
+              alcanza, la cámara <em>atrae</em> despacio, más cerca. Su expresión apenas cambia — y, aun
+              así, el peso emocional entra en el cuadro.<span class="sidenote-ref">4</span> El movimiento hace el
+              trabajo que el rostro contenido no necesita hacer: subraya el instante en que algo cambia por dentro.</p>
+<p data-inema-block="m6-3-t3-p3">La diferencia entre un push-in que funciona y uno que distrae es la
+              <em>velocidad</em> e a <em>motivación</em>: tiene que ser lo bastante lento para pasar
+              desapercibido y empezar en el momento emocional adecuado — típicamente cuando llega la realidad, no
+              antes. Para el generador, esto se convierte en una instrucción precisa de cámara; el prompt de abajo describe la
+              aproximación gradual vinculada al beat emocional.</p>
+<div class="codeblock"><span class="c"># Acercamiento lento — aproximación gradual ligada al beat emocional</span>
+<span class="c"># (Kling / Seedance — describe la velocidad y el momento del movimiento)</span>
+<span class="k">Sujeto:</span> a woman at a kitchen table as someone tells her they are leaving.
+<span class="k">Inicio:</span> encuadre medio, la cámara se siente emocionalmente distante, ella permanece inmóvil.
+<span class="k">Activador:</span> en el momento en que se pronuncian las palabras, empieza un acercamiento muy lento.
+<span class="k">Movement:</span> almost imperceptible dolly-in over the whole shot, no zoom snap.
+<span class="k">Actuación:</span> su expresión apenas cambia: contención, una respiración contenida.
+<span class="k">Cámara:</span> eye level, shallow depth, soft window light; smooth, unhurried.
+<span class="k">Meta:</span> el público siente cómo aumenta la presión sin darse cuenta del movimiento.</div>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-4" data-inema-track="6" id="topico-4">
+<div class="section-mark">
+<span class="where">Sección 4 de 5</span><span>·</span><span>Distancia</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Distancia de cámara = distancia emocional</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t4-p1">El cuarto mecanismo es una ecuación que sirve para toda escena
+              de relación: el encuadre cambia la relación. Dos personas están en la misma habitación, pero emocionalmente
+              distantes — los planos abiertos crean distancia; los planos cerrados crean intimidad. La misma escena puede
+              parecer cálida, frágil, vulnerable o desconectada, según el encuadre. Leemos el espacio
+              físico como espacio emocional: la distancia <em>dentro</em> del encuadre se convierte en la psicología de la relación.<span class="sidenote-ref">5</span>
+              La fórmula: <strong>encuadre equivale a relación.</strong></p>
+<p data-inema-block="m6-3-t4-p2">Un ejemplo: una pareja se sienta en silencio después de una pelea. En vez de
+              reunirlos en un plano cerrado, la cámara los deja <em>separados</em> dentro de una composición amplia.
+              Nadie habla — pero la relación ya parece rota. La distancia entre los cuerpos en el cuadro cuenta la
+              historia antes del diálogo. La distancia dentro del cuadro es distancia dentro de la emoción.</p>
+<h3 class="sub">El plano sobre el hombro: el público dentro de la relación</h3>
+<p data-inema-block="m6-3-t4-p3">El mecanismo gemelo es la <span class="dfn"><details class="dfn"><summary>tensión por encima del hombro</summary><span class="body"><b>Plano sobre el hombro</b> (over-the-shoulder): encuadre en el que un hombro del personaje en primer plano enmarca al otro. Coloca al público <i>dentro</i> de la relación y hace que las reacciones mínimas pesen más.</span></details></span>:
+              un personaje habla, el otro escucha y la tensión se construye en silencio entre ellos. Un hombro bloquea
+              parcialmente el cuadro, el contacto visual parece frágil, el momento se siente íntimo o irresuelto. El
+              plano por encima del hombro coloca al público <em>dentro</em> de la relación, y las reacciones pequeñas pesan
+              más porque la emoción existe <em>entre</em> dos personas. La fórmula: <strong>perspectiva más tensión
+              igual a conexión emocional.</strong> Un ejemplo: dos exparejas se encuentran en un café; uno pregunta
+              en voz baja: «Entonces, ¿cómo te ha ido?». La cámara se queda sobre el hombro; una pequeña
+              vacilación y una mirada que se desvía de pronto parecen importantes. No pasa nada dramático, y
+              la tensión llena el encuadre.</p>
+</div>
+<!-- figura 3: amplo separa, OTS aproxima -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · <b>Separar</b> en el plano amplio se lee como distancia; el <b>sobre el hombro</b> pone al público en la relación</figcaption>
+<svg aria-label="Diagrama de dos cuadros: a la izquierda, un plano general con dos personajes separados por espacio, marcado como distancia; a la derecha, un plano over-the-shoulder con un hombro en primer plano que enmarca al otro personaje, marcado como conexión." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- amplo: separados -->
+<rect class="rule-stroke" fill="none" height="130" rx="3" stroke-width="1.2" width="290" x="40" y="44"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" text-anchor="middle" x="185" y="34">AMPLIO — SEPARADOS</text>
+<circle class="rule-stroke" cx="90" cy="112" fill="none" r="16" stroke-width="1.3"></circle>
+<circle class="rule-stroke" cx="280" cy="112" fill="none" r="16" stroke-width="1.3"></circle>
+<line class="rule-stroke" opacity="0.6" stroke-dasharray="3 4" stroke-width="1" x1="112" x2="258" y1="112" y2="112"></line>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="185" y="160">la relación parece fría</text>
+<!-- OTS -->
+<rect class="accent-stroke" fill="url(#hatch-6-3)" height="130" rx="3" stroke-width="1.4" width="320" x="360" y="44"></rect>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" text-anchor="middle" x="520" y="34">SOBRE EL HOMBRO</text>
+<!-- ombro em primeiro plano -->
+<path class="ink" d="M360 174 Q 392 110 444 110 Q 470 110 472 174 Z" opacity="0.18"></path>
+<path class="rule-stroke" d="M360 174 Q 392 110 444 110 Q 470 110 472 174" fill="none" stroke-width="1.3"></path>
+<!-- rosto emoldurado -->
+<circle class="accent-stroke" cx="585" cy="108" fill="none" r="30" stroke-width="1.5"></circle>
+<circle class="accent" cx="576" cy="104" r="2.6"></circle><circle class="accent" cx="594" cy="104" r="2.6"></circle>
+<path class="ink" d="M574 122 q11 6 22 0" fill="none" stroke-width="1.3"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="560" y="162">el público entra en la escena</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Quieres mostrar que una pareja, sentada lado a lado en un sofá, ya se ha separado emocionalmente,
+              sin una línea de diálogo que lo diga. ¿Qué elección de encuadre comunica la ruptura?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">Filmar en un <strong>plano amplio que los mantiene separados</strong> en la composición, con
+                espacio entre los cuerpos, en lugar de un plano cerrado que los junte. Interpretamos la distancia en el encuadre como
+                distancia emocional — el vacío entre ellos comunica la ruptura antes de que alguien diga una palabra.
+                El encuadre equivale a la relación.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-5" data-inema-track="6" id="topico-5">
+<div class="section-mark">
+<span class="where">Sección 5 de 5</span><span>·</span><span>POV y decisión</span>
+</div>
+<h2 class="head"><span class="num">5.</span>POV es cuándo acercarse</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t5-p1">El quinto mecanismo es el <span class="dfn"><details class="dfn"><summary>POV</summary><span class="body"><b>POV</b> (point of view): el plano filmado desde la perspectiva del personaje, como si el público viera a través de sus ojos. Cambia la observación por la experiencia directa de la emoción.</span></details></span>:
+              el público deja de <em>ver</em> la emoción y comienza a <em>experimentarla</em>. Un personaje
+              entra a una habitación después de recibir una noticia, y el mundo parece más silencioso, más pesado, más distante. La
+              realidad, de repente, parece distinta. En vez de observar al personaje, el público vive la emoción
+              desde su perspectiva — el miedo se siente más cerca, la soledad más personal. La fórmula:
+              <strong>visión subjetiva = inmersión emocional.</strong> La perspectiva crea empatía.</p>
+<p data-inema-block="m6-3-t5-p2">Un ejemplo: un hombre entra en un departamento vacío después de una
+              ruptura; la escena comienza desde su perspectiva, y los objetos familiares parecen emocionalmente
+              diferentes. Nada cambia de forma dramática, pero emocionalmente todo parece vacío. El POV es la forma
+              más directa de transmitir un estado interno: el público no deduce lo que siente el personaje, sino que
+              <em>siente junto con los demás</em>.</p>
+<h3 class="sub">El primer plano como decisión, no como reflejo</h3>
+<p data-inema-block="m6-3-t5-p3">Al reunir los cinco mecanismos — primer plano, espacio negativo, acercamiento, distancia, POV — la lección principal no es «usa primeros planos», sino <em>decide</em> a cada
+              plano, cuál es la emoción y qué cámara la sirve. Acercarse es una elección costosa: cuando vas al primer plano,
+              eliminas el mundo y le dices al público: “quédate aquí, en este detalle”. Hazlo cuando la emoción
+              sea interna y quepa en un rostro. Cuando la emoción sea soledad, aléjate; cuando sea tensión entre dos,
+              usa el plano sobre el hombro; cuando quieras que el público <em>sea</em> el personaje, usa el POV.<span class="sidenote-ref">6</span>
+              La fórmula final lo reúne todo: <strong>encuadre más distancia más movimiento más perspectiva
+              equivale a cine emocional</strong> — o, más simple, <em>cómo se siente la cámara y cómo se siente el público.</em></p>
+</div>
+<!-- figura 4: arvore de decisao do plano emocional -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>¿Qué emoción?</b> → la pregunta elige el plan</figcaption>
+<svg aria-label="Diagrama de decisión: a partir de la pregunta «¿de qué está hecha la emoción?», cuatro ramas conducen a close-up para el detalle interno, plano general para la soledad, over-the-shoulder para la tensión entre dos y POV para hacer que el público sea el personaje." class="diagram" role="img" viewbox="0 0 720 214">
+<!-- no raiz -->
+<rect class="accent-stroke" fill="url(#hatch-6-3)" height="40" rx="3" stroke-width="1.4" width="180" x="270" y="20"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="45">de qué es la emoción?</text>
+<!-- conectores -->
+<path class="rule-stroke" d="M300 60 L110 110" fill="none" stroke-width="1.1"></path>
+<path class="rule-stroke" d="M340 60 L300 110" fill="none" stroke-width="1.1"></path>
+<path class="rule-stroke" d="M380 60 L470 110" fill="none" stroke-width="1.1"></path>
+<path class="rule-stroke" d="M420 60 L630 110" fill="none" stroke-width="1.1"></path>
+<!-- folhas -->
+<g font-family="Source Serif 4, serif">
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="40" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="114" y="134">interna, en el rostro</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="114" y="156">PRIMER PLANO</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="114" y="174">detalle = emoción</text>
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="226" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="300" y="134">soledad</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="300" y="156">AMPLIO</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="300" y="174">espacio negativo</text>
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="412" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="486" y="134">tensión entre dos</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="486" y="156">SOBRE EL HOMBRO</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="486" y="174">perspectiva</text>
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="598" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="672" y="134">ser el personaje</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="672" y="156">POV</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="672" y="174">inmersión</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m6-3-t5-p4">Resume el módulo en una frase: <em>la emoción en el cine no es solo lo que
+              siente el personaje: es cómo la cámara hace que el público lo sienta.</em> Si el público siente la emoción
+              <em>antes</em> de que el personaje la explique, el plano está funcionando. Con la cámara ahora al servicio de la
+              emoción, la última lección de la ruta reúne todo: cómo estructurar la escena de diálogo completa — ritmo,
+              plano y contraplano, eje — en torno a lo que no se dice.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Autocomprobación" class="check">
+<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>La actuación convence y el diálogo es emocional, pero la escena parece plana. ¿Qué probablemente falta?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>A <em>la cámara no acompaña la emoción</em>. En el cine, la emoción no solo se actúa: también se
+              encuadra. Faltó traducir el sentimiento en una decisión de plano: distancia, composición, movimiento,
+              perspectiva. La cámara no graba la emoción, la traduce.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>¿Cuándo comunica más el espacio negativo (plano amplio y vacío) que un primer plano?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Cuando la emoción <em>e</em> soledad, abandono o aislamiento — una relación del
+              personaje con el mundo. El vacío a su alrededor se vuelve parte del sentimiento. Aislamiento más espacio equivale a
+              distancia emocional. El primer plano sirve a la emoción interna; el plano general, a la relacional.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>¿Por qué el acercamiento lento aumenta la tensión incluso cuando el público no percibe el movimiento?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque el movimiento gradual crea presión emocional de forma inconsciente: la cámara
+              se acerca y subraya el instante en que algo cambia por dentro, aunque el rostro permanezca contenido. Movimiento
+              lento equivale a emoción creciente, siempre que empiece en el beat correcto y sea imperceptible.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>¿Cuál es la pregunta correcta para decidir el plano de una escena emocional?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>No es “¿el primer plano queda bonito?”, sino <em>de qué está hecha esta emoción?</em>
+              Interioridad y rostro → primer plano; soledad → plano amplio con espacio negativo; tensión entre dos →
+              sobre el hombro; hacer que el público sea el personaje → POV. La emoción elige la cámara.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Mi recorrido</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">En este módulo</div>
+<div class="v" data-inema-meter="modulo:6-3">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En la ruta 6</div>
+<div class="v" data-inema-meter="trilha:6">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En el curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Módulo 6.4 — Estructura de una escena de diálogo</div>
+</div>
+<a class="go" href="modulo-6-4.html">Siguiente →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Primer plano emocional.</b> El encuadre cerrado que hace visible el mínimo detalle: la respiración,
+          un parpadeo, una vacilación. Cuanto más cerca, más siente el público. Detalle = emoción.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          Lección 18 del programa <i>AI Filmmaking</i> — “Close-ups and Emotional Shots”. Tesis:
+          <i>la emoción no solo se actúa: también se encuadra</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Espacio negativo.</b> El espacio vacío que rodea a la figura en el encuadre. El aislamiento visual se convierte en distancia emocional;
+          a veces, el entorno dice más que el personaje. Aislamiento más espacio = distancia.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          La escala responde a una pregunta: ¿la emoción es <i>interna</i> (primer plano) o <i>relacional</i> (¿plano amplio con
+          vacío)? No “¿el primer plano se ve bonito?”, sino “¿de qué está hecha esta emoción?”.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Push-in lento.</b> Acercamiento gradual e imperceptible de la cámara que hace crecer la tensión a lo largo
+          del plano. Empieza en el beat emocional adecuado. Movimiento lento = emoción creciente.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Plano sobre el hombro.</b> Un hombro en primer plano enmarca al otro personaje. Sitúa al público
+          dentro de la relación; las reacciones mínimas cobran más peso. Perspectiva más tensión = conexión.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          Leemos el espacio físico como espacio emocional. Una pareja separada en un plano amplio se lee como una ruptura antes de
+          cualquier diálogo: la distancia dentro del encuadre es la distancia dentro de la emoción.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>POV.</b> El plano desde la perspectiva del personaje. El público deja de observar la emoción y empieza a
+          experimentarla. Punto de vista subjetivo = inmersión emocional; la perspectiva crea empatía.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          El primer plano es una elección costosa: acercarse elimina el mundo y ordena «mira este detalle». La
+          regla final: cómo lo siente la cámara y cómo lo siente el público.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Módulo 6.3 — folio iii</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

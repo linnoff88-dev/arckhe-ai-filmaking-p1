@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Modulo 4.4 — Video Cinematografico no Seedance 2 | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/modulo-4-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/modulo-4-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/modulo-4-4.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Pular para o conteudo</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:4-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<div aria-label="Tema de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+</div>
+<div aria-label="Fonte de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamanho do texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Largura da linha" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Onde voce esta" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Trilha <b>4</b> Linguagem de Camera</span>
+<span class="sep">·</span>
+<span>Modulo <b>4.4</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Secao 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Modulo 4.4 · Trilha 4 · Linguagem de Camera</p>
+<h1 class="module">Video Cinematografico no Seedance 2: dirigir, nao <em>gerar</em></h1>
+<p class="deck">A sintese pratica da trilha. Toda a linguagem de camera entra, agora, num gerador real —
+          com storyboard, trava de identidade e prompts em YAML. A IA nao pensa: ela interpreta estrutura. E o
+          objetivo nunca e gerar — e controlar.</p>
+<p class="read-meta">
+<span class="here">Lendo agora</span>
+<span>~18 min · modulo inteiro</span>
+<span>5 secoes</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="O que voce vai entender" class="aims">
+<h2>O que voce vai entender</h2>
+<ul>
+<li>Por que um <b>storyboard de seis planos</b> — escala, velocidade, controle, emocao, acao,
+              alivio — impede o modelo de improvisar e quebrar a continuidade.</li>
+<li>Como <b>travar a identidade</b> do personagem com uma imagem de referencia, eliminando o
+              <em>drift</em> de rosto, proporcoes e design.</li>
+<li>Por que escrever o prompt em <b>YAML</b> — a IA nao pensa como humano, ela interpreta
+              estrutura — e as regras essenciais desse formato.</li>
+<li>Como as <b>transicoes</b> controlam ritmo, emocao e atencao; e por que, no Seedance, elas
+              quebram — tornando direcao e iteracao inseparaveis.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
+<p class="toc-head">Sumario — cinco movimentos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">A IA interpreta estrutura, nao desejo</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Storyboard de seis planos</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Travar a identidade do personagem</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Escrever em YAML — as regras</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Transicoes, limites e iteracao</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-1" data-inema-track="4" id="topico-1">
+<div class="section-mark">
+<span class="where">Secao 1 de 5</span><span>·</span><span>Principio</span>
+</div>
+<h2 class="head"><span class="num">1.</span>A IA interpreta estrutura, nao desejo</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m4-4-t1-p1">Toda a linguagem das tres aulas anteriores —
+              os pilares, o movimento, os planos — precisa, em algum momento, descer ao gerador. E aqui
+              aparece o principio que organiza esta aula inteira: <em>a IA nao pensa — ela interpreta
+              estrutura.</em><span class="sidenote-ref">1</span> O Seedance nao “entende” a sua cena
+              como um colaborador humano entenderia; ele faz uma analise mecanica do texto e procura blocos
+              claros. Quanto mais estruturada a sua descricao, mais previsivel o resultado.</p>
+<p data-inema-block="m4-4-t1-p2">Isso reorienta o que e um bom prompt. Um paragrafo longo e bonito,
+              cheio de adjetivos, e exatamente o tipo de entrada que confunde o modelo: ele nao sabe o que e
+              camera, o que e acao, o que e luz, e mistura tudo. A solucao nao e escrever mais — e escrever
+              <strong>organizado</strong>. Por isso a aula adota o YAML: nao por estetica de programador, mas
+              porque ele e um <em>sistema de controle</em>. Cada coisa no seu campo, sem ambiguidade.</p>
+<h3 class="sub">O objetivo e controle, nao geracao</h3>
+<p data-inema-block="m4-4-t1-p3">Repita isto como mantra do modulo: <strong>o objetivo nao e gerar
+              video — e controla-lo como um cineasta.</strong> Gerar e facil; qualquer um digita uma frase e
+              recebe um clipe. Controlar e o trabalho do diretor: decidir a sequencia, travar a identidade,
+              estruturar cada bloco de tempo, prever as transicoes. A diferenca entre um amador e um diretor com
+              IA nao esta na ferramenta — esta em quanto da cena ele <em>governa</em> de proposito, em vez
+              de aceitar o que a maquina improvisou.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Voce tem uma cena clara na cabeca e a descreve num paragrafo unico, rico e fluido, com camera, luz,
+              acao e emocao misturados na mesma frase. O modelo devolve algo confuso, que ignora metade do que
+              voce pediu. Por que um texto tao caprichado falhou?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">Porque a IA <strong>interpreta estrutura</strong>, nao prosa. Num paragrafo unico,
+                ela nao consegue separar o que e movimento de camera do que e acao do sujeito ou da luz —
+                tudo vira uma sopa ambigua, e ela “chuta”. O mesmo conteudo, quebrado em blocos
+                (camera, action, lighting, transitions), remove a ambiguidade e ela passa a seguir um plano
+                claro.</p>
+</details>
+</div>
+<!-- figura 1: paragrafo x blocos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · O mesmo conteudo: <b>paragrafo ambiguo</b> versus <b>blocos claros</b></figcaption>
+<svg aria-label="Diagrama: a esquerda um paragrafo unico onde camera, acao e luz se misturam e a IA chuta; a direita o mesmo conteudo em blocos separados que a IA segue com precisao." class="diagram" role="img" viewbox="0 0 720 196">
+<defs>
+<pattern height="6" id="hatch-4-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- paragrafo -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="170" y="28">PARAGRAFO UNICO</text>
+<rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.3" width="240" x="50" y="40"></rect>
+<g class="rule-stroke" opacity="0.55" stroke-width="2">
+<line x1="66" x2="274" y1="60" y2="60"></line><line x1="66" x2="260" y1="74" y2="74"></line>
+<line x1="66" x2="274" y1="88" y2="88"></line><line x1="66" x2="250" y1="102" y2="102"></line>
+<line x1="66" x2="270" y1="116" y2="116"></line>
+</g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="170" y="160">camera + acao + luz misturados</text>
+<text class="faint" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="170" y="178">a IA chuta</text>
+<!-- seta -->
+<path class="mark-stroke" d="M300 90 L360 90" fill="none" stroke-width="1.6"></path>
+<polygon class="mark-fill" points="360,85 372,90 360,95"></polygon>
+<!-- blocos -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="540" y="28">BLOCOS (YAML)</text>
+<g>
+<rect class="accent-stroke" fill="url(#hatch-4-4)" height="22" rx="2" stroke-width="1.2" width="280" x="400" y="40"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9" x="412" y="55">camera:</text>
+<rect class="rule-stroke" fill="none" height="22" rx="2" stroke-width="1.2" width="280" x="400" y="66"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9" x="412" y="81">action:</text>
+<rect class="rule-stroke" fill="none" height="22" rx="2" stroke-width="1.2" width="280" x="400" y="92"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9" x="412" y="107">lighting:</text>
+<rect class="rule-stroke" fill="none" height="22" rx="2" stroke-width="1.2" width="280" x="400" y="118"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9" x="412" y="133">transitions:</text>
+</g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="160">cada coisa no seu campo</text>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="178">a IA segue o plano</text>
+</svg>
+</figure>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-2" data-inema-track="4" id="topico-2">
+<div class="section-mark">
+<span class="where">Secao 2 de 5</span><span>·</span><span>Storyboard</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Storyboard de seis planos</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-4-t2-p1">Antes de escrever uma linha de prompt, desenhe a
+              sequencia. O <strong>storyboard</strong> — aqui, seis planos — nao e formalidade: sem
+              ele, o modelo comeca a <em>improvisar</em> e quebra a continuidade visual entre os planos.<span class="sidenote-ref">2</span>
+              Com ele, voce da a cena um esqueleto que a IA pode seguir, em vez de inventar.</p>
+<h3 class="sub">Seis planos que ja contam uma historia</h3>
+<p data-inema-block="m4-4-t2-p2">A sequencia-exemplo segue um motociclista — estilizado, com
+              silhueta forte e proporcoes consistentes — e seus seis planos formam uma curva narrativa
+              completa: um <em>drone</em> de cima da estrada (escala), um <em>plano geral</em> com o piloto
+              ganhando velocidade (velocidade), um <em>plano medio</em> durante uma curva (controle), um
+              <em>close-up</em> (emocao), um plano de <em>acao</em> com o salto (acao) e um <em>plano geral</em> de
+              por do sol fechando (alivio). Repare: cada plano usa um tamanho diferente, de proposito, exatamente
+              como voce aprendeu na aula anterior.</p>
+<p data-inema-block="m4-4-t2-p3">Essa ordem nao e aleatoria. Ela e a estrutura cinematografica em
+              estado puro: <strong>escala → velocidade → emocao → acao → alivio.</strong>
+              Primeiro entendemos o mundo, depois sentimos a velocidade, depois nos conectamos com o personagem,
+              depois vemos habilidade e risco, e por fim sentimos a liberacao. Uma boa sequencia <em>flui</em>
+              nessa progressao — e o storyboard e onde voce garante esse fluxo antes que a IA tenha chance de
+              embaralha-lo.</p>
+</div>
+<!-- figura 2: os seis planos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · Seis planos, uma curva: <b>escala → velocidade → emocao → acao → alivio</b></figcaption>
+<svg aria-label="Diagrama de seis quadros em sequencia: drone, plano geral, plano medio, close-up, acao e plano geral de por do sol, formando uma curva narrativa." class="diagram" role="img" viewbox="0 0 720 190">
+<g class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle">
+<text x="80" y="34">DRONE</text><text x="190" y="34">WIDE</text><text x="300" y="34">MEDIO</text>
+<text x="410" y="34">CLOSE</text><text x="520" y="34">ACAO</text><text x="630" y="34">WIDE</text>
+</g>
+<g class="rule-stroke" fill="none" stroke-width="1.3">
+<rect height="48" rx="3" width="72" x="44" y="42"></rect>
+<rect height="48" rx="3" width="72" x="154" y="42"></rect>
+<rect height="48" rx="3" width="72" x="264" y="42"></rect>
+<rect height="48" rx="3" width="72" x="374" y="42"></rect>
+<rect height="48" rx="3" width="72" x="484" y="42"></rect>
+</g>
+<rect class="accent-stroke" fill="url(#hatch-4-4)" height="48" rx="3" stroke-width="1.3" width="72" x="594" y="42"></rect>
+<!-- conteudos simbolicos -->
+<circle class="ink-soft" cx="80" cy="66" r="3"></circle>
+<rect class="ink-soft" height="16" width="3" x="186" y="58"></rect><circle class="ink-soft" cx="187" cy="55" r="2.5"></circle>
+<circle class="rule-stroke" cx="300" cy="62" fill="none" r="7" stroke-width="1.1"></circle>
+<circle class="rule-stroke" cx="410" cy="62" fill="none" r="12" stroke-width="1.1"></circle>
+<path class="rule-stroke" d="M504 78 L520 50 L536 78" fill="none" stroke-width="1.2"></path>
+<line class="accent-stroke" opacity="0.7" stroke-width="1" x1="600" x2="660" y1="78" y2="78"></line>
+<circle class="accent-stroke" cx="630" cy="60" fill="none" r="8" stroke-width="1.2"></circle>
+<!-- curva por baixo -->
+<path class="accent-stroke" d="M80 110 C 240 110, 240 140, 410 140 C 560 140, 560 118, 630 130" fill="none" stroke-width="1.6"></path>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
+<text x="80" y="126">escala</text><text x="190" y="126">velocidade</text><text x="300" y="126">controle</text>
+<text x="410" y="158">emocao</text><text x="520" y="134">acao</text><text x="630" y="148">alivio</text>
+</g>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Indo mais fundo: por que seis, e nao um plano longo
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Camada opcional — sobre granularidade e controle.</p>
+<p>Poderia parecer mais simples pedir um unico plano longo de quinze segundos. Mas planos longos sao
+                onde o gerador mais erra: quanto mais tempo continuo, mais chance de deriva, deformacao e perda de
+                identidade. Quebrar a cena em seis planos curtos da a voce <em>pontos de controle</em>: cada plano
+                e gerado, avaliado e, se preciso, refeito isoladamente, sem comprometer os outros. E ainda
+                impoe a gramatica de planos — cada um com seu tamanho e sua funcao. Seis planos nao e so
+                narrativa; e uma estrategia de risco contra as fraquezas da IA.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-3" data-inema-track="4" id="topico-3">
+<div class="section-mark">
+<span class="where">Secao 3 de 5</span><span>·</span><span>Identidade</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Travar a identidade do personagem</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-4-t3-p1">O segundo pilar pratico e a <strong>trava de
+              identidade</strong>. Voce ja viu, no Modulo 4.1, que o Seedance oscila rostos; a solucao aqui e
+              ainda mais direta. Suba a imagem do storyboard (ou da ficha de personagem) como referencia e, no
+              prompt, <em>trave explicitamente</em> a identidade — instrua o modelo a casar com aquela
+              referencia, com bloqueio estrito.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m4-4-t3-p2">A instrucao tem uma forma reconhecivel:
+              <code>base: "matching reference @image1 with strict identity lock"</code>. Isso diz ao gerador para
+              manter exatamente o mesmo rosto, capacete, traje, proporcoes e cores ao longo de todos os planos.
+              Vale travar tambem o <em>ambiente</em> — a estrada, as montanhas, a luz — para que o
+              cenario nao mude de plano para plano. Essa unica etapa elimina os tres fantasmas mais comuns do
+              video de IA: o <em>drift</em> de identidade, a mudanca de estilo e os redesenhos aleatorios.</p>
+<h3 class="sub">Por que isso vem antes do YAML</h3>
+<p data-inema-block="m4-4-t3-p3">A ordem importa: trava primeiro, estrutura depois. De nada adianta um
+              YAML impecavel se, no plano 4, o personagem virou outra pessoa. A trava de identidade e a fundacao
+              da continuidade — ela garante <em>quem</em> esta na cena; o YAML governa <em>o que</em>
+              acontece com essa pessoa. Sem a primeira, a segunda constroi sobre areia. Com as duas, voce tem um
+              personagem estavel se movendo por uma sequencia estruturada — que e, em essencia, o que um set
+              de filmagem entrega.</p>
+<div class="codeblock"><span class="c"># Trava de identidade — antes de qualquer outra coisa</span>
+<span class="c"># suba a imagem do storyboard/ficha como @image1</span>
+<span class="k">base:</span> matching reference @image1 with strict identity lock
+<span class="k">lock_character:</span> exact same face, helmet, suit, proportions and colors across all shots
+<span class="k">lock_environment:</span> same road, mountains and lighting throughout
+<span class="k">production_notes:</span> no deformation, no identity drift, no redesigns, no extra limbs</div>
+</div>
+<!-- figura 3: drift x lock -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · Sem trava: o rosto <b>deriva</b>; com trava: a identidade <b>se mantem</b></figcaption>
+<svg aria-label="Diagrama: na fileira de cima, sem trava, o mesmo personagem muda de rosto a cada plano; na fileira de baixo, com trava de identidade, o personagem permanece identico." class="diagram" role="img" viewbox="0 0 720 188">
+<!-- sem trava -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" x="60" y="30">SEM TRAVA</text>
+<g class="rule-stroke" fill="none" stroke-width="1.2">
+<circle cx="120" cy="60" r="16"></circle><circle cx="230" cy="60" r="20"></circle><circle cx="340" cy="60" r="13"></circle><circle cx="450" cy="60" r="18"></circle>
+</g>
+<g class="ink-soft"><circle cx="114" cy="56" r="2"></circle><circle cx="126" cy="56" r="2"></circle>
+<circle cx="222" cy="56" r="2.5"></circle><circle cx="238" cy="56" r="2.5"></circle>
+<circle cx="335" cy="57" r="1.6"></circle><circle cx="345" cy="57" r="1.6"></circle>
+<circle cx="443" cy="56" r="2.2"></circle><circle cx="457" cy="56" r="2.2"></circle></g>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="285" y="96">muda a cada plano — drift</text>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="500" x2="500" y1="40" y2="150"></line>
+<!-- com trava -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" x="60" y="124">COM TRAVA</text>
+<g class="accent-stroke" fill="none" stroke-width="1.3">
+<circle cx="120" cy="150" r="16"></circle><circle cx="230" cy="150" r="16"></circle><circle cx="340" cy="150" r="16"></circle><circle cx="450" cy="150" r="16"></circle>
+</g>
+<g class="ink"><circle cx="114" cy="146" r="2"></circle><circle cx="126" cy="146" r="2"></circle>
+<circle cx="224" cy="146" r="2"></circle><circle cx="236" cy="146" r="2"></circle>
+<circle cx="334" cy="146" r="2"></circle><circle cx="346" cy="146" r="2"></circle>
+<circle cx="444" cy="146" r="2"></circle><circle cx="456" cy="146" r="2"></circle></g>
+<text class="ink" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="285" y="182">o mesmo, do plano 1 ao 6</text>
+<!-- referencia -->
+<rect class="accent-stroke" fill="url(#hatch-4-4)" height="44" rx="3" stroke-width="1.3" width="120" x="560" y="78"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="620" y="98">@image1</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="7.5" letter-spacing="0.5" text-anchor="middle" x="620" y="112">IDENTITY LOCK</text>
+</svg>
+</figure>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-4" data-inema-track="4" id="topico-4">
+<div class="section-mark">
+<span class="where">Secao 4 de 5</span><span>·</span><span>YAML</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Escrever em YAML — as regras</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-4-t4-p1">O <span class="dfn"><details class="dfn"><summary>YAML</summary><span class="body"><b>YAML</b> e um jeito de escrever instrucoes em blocos rotulados — cada informacao numa linha <code>chave: valor</code>. No contexto de prompts, ele organiza a cena em campos (camera, action, lighting, transitions) para que o modelo saiba exatamente o que pertence a onde.</span></details></span>
+              e a forma de transformar o storyboard em instrucao que a IA executa. Em vez de um paragrafo, voce
+              quebra a cena em blocos: personagem, camera, acao, luz, som, transicoes. Como o Seedance interpreta
+              estrutura, o YAML <em>remove a ambiguidade</em> e ajuda o modelo a entender exatamente o que
+              pertence a onde. Mas o YAML so funciona se voce respeitar algumas regras — e elas resumem
+              toda a linguagem de camera da trilha.</p>
+<h3 class="sub">As seis regras essenciais</h3>
+<p data-inema-block="m4-4-t4-p2"><strong>Uma funcao por campo.</strong> Camera nao e acao; nao misture.
+              <strong>Descreva movimento fisico, nao ideia abstrata.</strong> Nao escreva “ela corre
+              rapido”; escreva “os pes comprimem, o corpo se inclina, o cenario acelera” —
+              o modelo entende fisica, nao adjetivos. <strong>Mantenha a camera simples e controlada</strong> —
+              um movimento por plano, como voce aprendeu no 4.2.</p>
+<p data-inema-block="m4-4-t4-p3"><strong>Sempre inclua luz</strong> em cada plano; mesmo uma frase
+              curta como “warm side light” melhora muito o resultado. <strong>Defina blocos de
+              tempo</strong> claros — <code>00_02</code>, <code>02_04</code>, <code>04_06</code> —
+              para que cada segundo seja descrito, sem lacunas. <strong>Escreva as transicoes explicitamente</strong>,
+              com momento, direcao e proposito. A regra-mae por tras de tudo: <em>se a estrutura quebra, o
+              resultado quebra.</em><span class="sidenote-ref">4</span></p>
+<div class="codeblock"><span class="c"># Plano em YAML — uma funcao por campo, movimento fisico, luz sempre</span>
+<span class="c"># um dos seis blocos da sequencia do motociclista</span>
+<span class="k">base:</span> matching reference @image1 with strict identity lock
+<span class="k">shot_03_medium:</span>
+<span class="k">  time:</span> 04_06
+<span class="k">  camera:</span> medium shot, single slow tracking move alongside the rider — no zoom, no orbit
+<span class="k">  action:</span> rider leans into a curve, feet compress on the pegs, gravel sprays from the rear wheel
+<span class="k">  lighting:</span> warm low side light, long shadows, dust catching the sun
+<span class="k">  sound:</span> engine growl (diegetic), low synth pulse rising (non-diegetic)
+<span class="k">  transition_out:</span> match-on-action into the close-up at 06s — the lean continues across the cut
+<span class="k">  production_notes:</span> no deformation, no identity drift, physical motion only</div>
+</div>
+<!-- figura 4: anatomia de um bloco YAML -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · Anatomia de um <b>bloco</b>: cada campo, uma funcao</figcaption>
+<svg aria-label="Diagrama anotando um bloco YAML: o campo time define o intervalo, camera define um movimento, action descreve fisica, lighting sempre presente, transition_out liga ao proximo plano." class="diagram" role="img" viewbox="0 0 720 196">
+<!-- coluna de campos -->
+<g>
+<rect class="accent-stroke" fill="url(#hatch-4-4)" height="24" rx="2" stroke-width="1.2" width="300" x="60" y="30"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9.5" x="72" y="46">time: 04_06</text>
+<rect class="rule-stroke" fill="none" height="24" rx="2" stroke-width="1.2" width="300" x="60" y="60"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9.5" x="72" y="76">camera: one slow track</text>
+<rect class="rule-stroke" fill="none" height="24" rx="2" stroke-width="1.2" width="300" x="60" y="90"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9.5" x="72" y="106">action: leans, feet compress</text>
+<rect class="rule-stroke" fill="none" height="24" rx="2" stroke-width="1.2" width="300" x="60" y="120"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9.5" x="72" y="136">lighting: warm side light</text>
+<rect class="rule-stroke" fill="none" height="24" rx="2" stroke-width="1.2" width="300" x="60" y="150"></rect>
+<text class="ink" font-family="IBM Plex Mono, monospace" font-size="9.5" x="72" y="166">transition_out: match cut</text>
+</g>
+<!-- anotacoes a direita -->
+<g class="mark-stroke" fill="none" stroke-width="1.1">
+<path d="M360 42 L420 42"></path><path d="M360 72 L420 72"></path><path d="M360 102 L420 102"></path>
+<path d="M360 132 L420 132"></path><path d="M360 162 L420 162"></path>
+</g>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5">
+<text x="428" y="46">quando — sem lacunas</text>
+<text x="428" y="76">um movimento, so</text>
+<text x="428" y="106">fisica, nao adjetivo</text>
+<text x="428" y="136">sempre presente</text>
+<text x="428" y="166">liga ao proximo plano</text>
+</g>
+</svg>
+</figure>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-5" data-inema-track="4" id="topico-5">
+<div class="section-mark">
+<span class="where">Secao 5 de 5</span><span>·</span><span>Transicoes</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Transicoes, limites e iteracao</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m4-4-t5-p1">As <strong>transicoes</strong> sao a cola que mantem a
+              sequencia inteira. No cinema, elas nao sao efeitos — sao ferramentas de narrativa, e controlam
+              tres coisas: ritmo, emocao e atencao.<span class="sidenote-ref">5</span> Quatro delas estruturam a
+              cena-exemplo, e cada uma tem um proposito distinto.</p>
+<h3 class="sub">Quatro transicoes, quatro propositos</h3>
+<p data-inema-block="m4-4-t5-p2">O <strong>corte seco</strong> (cut) e a transicao da estrutura: ele
+              comeca o ritmo, liga um plano ao outro sem disfarce. O <strong>whip pan</strong> e a transicao do
+              movimento: a camera gira rapido, cria borrao e <em>esconde</em> o corte — serve para conectar
+              acoes rapidas e manter a energia. O <strong>smash cut</strong> e a transicao do contraste: uma
+              mudanca subita de escala, som ou emocao, usada para impacto e surpresa. E o <strong>match on
+              action</strong> (ou passagem) e a transicao da continuidade: o movimento atravessa o corte, de modo
+              que o espectador nao sente a edicao — mantem o fluxo na acao. Juntas, no exemplo: o corte
+              inicia o ritmo, o whip pan constroi velocidade, o smash cut cria impacto e o match on action sustenta
+              o movimento ate o alivio final.</p>
+<h3 class="sub">O limite incomodo: no Seedance, transicoes quebram</h3>
+<p data-inema-block="m4-4-t5-p3">E aqui vem a verdade que o curso nao esconde: no Seedance, transicoes
+              <em>frequentemente quebram</em>. Mesmo com um prompt correto, o movimento pode derivar, o tempo pode
+              falhar, os planos podem colapsar. <strong>Isso e normal.</strong> A IA nao <em>executa</em> —
+              ela <em>aproxima</em>. Esperar que ela acerte a transicao de primeira e o erro de quem ainda pensa
+              como usuario, nao como diretor. A resposta certa nao e frustracao: e <em>iteracao</em>. Gere,
+              observe o ponto exato do corte, ajuste o bloco, gere de novo. O controle nasce da repeticao
+              dirigida.</p>
+<p data-inema-block="m4-4-t5-p4">Feche a trilha com a frase que a resume: <em>uma boa sequencia flui —
+              escala, velocidade, emocao, acao, alivio — e o objetivo nunca foi gerar, foi controlar.</em>
+              Voce entrou nesta trilha sabendo operar ferramentas; sai dela falando a lingua que elas obedecem:
+              os pilares, o movimento, os planos, a continuidade, a estrutura. A proxima trilha — VFX e Acao —
+              assume tudo isso e vai alem, para a camera lenta, os sistemas de particulas e as cenas de acao. Voce
+              ja nao prompta: voce dirige.</p>
+</div>
+<!-- figura 5: transicoes e o laco de iteracao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · Quatro transicoes — e o <b>laco</b> que conserta o que a IA so aproxima</figcaption>
+<svg aria-label="Diagrama: quatro tipos de transicao ligando planos (cut, whip pan, smash cut, match on action), e abaixo um ciclo de gerar, observar o corte e ajustar." class="diagram" role="img" viewbox="0 0 720 200">
+<!-- quatro transicoes em linha -->
+<g class="rule-stroke" fill="none" stroke-width="1.3">
+<rect height="34" rx="3" width="48" x="40" y="40"></rect><rect height="34" rx="3" width="48" x="200" y="40"></rect>
+<rect height="34" rx="3" width="48" x="360" y="40"></rect><rect height="34" rx="3" width="48" x="520" y="40"></rect>
+<rect height="34" rx="3" width="40" x="640" y="40"></rect>
+</g>
+<!-- conectores rotulados -->
+<g class="accent-stroke" fill="none" stroke-width="1.6">
+<path d="M88 57 L200 57"></path><path d="M248 57 C 290 40, 320 74, 360 57"></path>
+<path d="M408 57 L520 57"></path><path d="M568 57 L640 57"></path>
+</g>
+<g class="accent" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle">
+<text x="144" y="50">CUT</text><text x="304" y="34">WHIP PAN</text>
+<text x="464" y="50">SMASH</text><text x="604" y="50">MATCH</text>
+</g>
+<g class="faint" font-family="Source Serif 4, serif" font-size="8.5" text-anchor="middle">
+<text x="144" y="88">ritmo</text><text x="304" y="88">velocidade</text>
+<text x="464" y="88">impacto</text><text x="604" y="88">fluxo</text>
+</g>
+<!-- laco de iteracao -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="124">A IA APROXIMA — VOCE ITERA</text>
+<g class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle">
+<text x="220" y="160">gerar</text><text x="360" y="184">observar o corte</text><text x="500" y="160">ajustar</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.6">
+<path d="M252 156 C 300 150, 320 168, 322 176"></path>
+<path d="M398 176 C 400 168, 420 150, 468 156"></path>
+<path d="M488 148 C 420 132, 300 132, 232 148"></path>
+</g>
+<g class="mark-fill">
+<polygon points="322,172 326,182 316,178"></polygon>
+<polygon points="468,151 478,156 467,161"></polygon>
+<polygon points="232,143 222,148 233,153"></polygon>
+</g>
+</svg>
+</figure>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Auto-checagem" class="check">
+<h2>Antes de seguir: quatro checagens rapidas</h2>
+<p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>Por que YAML, e nao um paragrafo bem escrito?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque a IA <em>nao pensa — ela interpreta estrutura</em>. Um paragrafo
+              mistura camera, acao e luz, e o modelo “chuta”. O YAML quebra a cena em blocos rotulados
+              (camera, action, lighting, transitions), removendo a ambiguidade. Nao e formatacao — e um
+              sistema de controle.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Qual a curva narrativa do storyboard de seis planos?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><em>Escala → velocidade → emocao → acao → alivio.</em> Drone
+              (escala), wide (velocidade), medio (controle), close (emocao), acao (salto), wide de por do sol
+              (alivio). Cada plano usa um tamanho diferente de proposito — e o storyboard garante esse fluxo
+              antes que a IA improvise.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>O que a trava de identidade resolve, e por que vem antes do YAML?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Ela mantem rosto, traje, proporcoes e cores iguais em todos os planos (e o ambiente,
+              se travado tambem), eliminando <em>drift</em>, mudanca de estilo e redesenhos. Vem antes porque
+              garante <em>quem</em> esta na cena; o YAML governa <em>o que</em> acontece. Sem a trava, a melhor
+              estrutura constroi sobre areia.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>No Seedance, transicoes quebram. Qual a resposta correta a isso?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><em>Iteracao</em>, nao frustracao. A IA aproxima, nao executa: movimento deriva,
+              tempo falha, planos colapsam — e isso e normal. A resposta de diretor e gerar, observar o
+              ponto exato do corte, ajustar o bloco e gerar de novo. O objetivo nunca foi gerar de primeira; foi
+              <em>controlar</em>.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Minha jornada</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">Neste modulo</div>
+<div class="v" data-inema-meter="modulo:4-4">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">Na trilha 4</div>
+<div class="v" data-inema-meter="trilha:4">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">No curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar na proxima trilha</div>
+<div class="t">Modulo 5.1 — Efeitos Visuais</div>
+</div>
+<a class="go" href="../trilha5/modulo-5-1.html">Proximo →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-4-4#topico-1"></aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fonte</div>
+          Lesson 13 — <i>Cinematic Video in Seedance 2</i> (Block 4). O principio central:
+          <i>“AI does not think — it parses structure. That's why we use YAML. It's not formatting — it's
+          a control system.”</i>
+</aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Interpretar estrutura.</b> O modelo nao compreende a cena como um humano; ele analisa o texto em
+          busca de blocos claros. Quanto mais estruturada a entrada, mais previsivel a saida.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-4-4#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Storyboard.</b> A sequencia de planos desenhada antes de gerar. Sem ele, o modelo improvisa e quebra
+          a continuidade; com ele, segue um esqueleto. Aqui: seis planos, cada um com seu tamanho e funcao.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          Os seis planos sao a gramatica da Aula 4.3 em acao: drone e wide (amplo), medio (neutro), close
+          (emocao), acao e wide final. A escala dos planos conta a historia tanto quanto o roteiro.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-4-4#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Trava de identidade.</b> <code>base: matching reference @image1 with strict identity lock</code> —
+          mantem rosto, traje, proporcoes e cores estaveis em todos os planos. Trave o ambiente tambem.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          Trava primeiro, estrutura depois: garante <i>quem</i> esta na cena antes de governar <i>o que</i>
+          acontece. Um YAML impecavel nao salva um personagem que virou outra pessoa no plano 4.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-4-4#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>YAML.</b> Instrucoes em blocos <code>chave: valor</code>. Regras: uma funcao por campo, movimento
+          fisico (nao ideia), camera simples, luz sempre, blocos de tempo, transicoes explicitas.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          “Descreva fisica, nao adjetivo”: troque “ela corre rapido” por “os pes
+          comprimem, o corpo se inclina, o cenario acelera”. O modelo entende movimento, nao impressao.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-4-4#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Match on action.</b> Transicao de continuidade: o movimento atravessa o corte, e o espectador nao
+          sente a edicao. Mantem o fluxo — oposta ao smash cut, que existe para o impacto da quebra.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Indo mais fundo</div>
+          “AI doesn't execute — it approximates.” Transicoes quebram no Seedance, e isso e esperado.
+          Direcao e iteracao sao inseparaveis: gere, observe o corte, ajuste, repita. Controle, nao geracao.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Caderno do aluno</span>
+<span class="pg">Modulo 4.4 — folio iv</span>
+<span>Composto em Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

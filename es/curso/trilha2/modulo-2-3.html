@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 2.3 — Luz y atmósfera | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:2-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>2</b> Fundamentos cinematográficos</span>
+<span class="sep">·</span>
+<span>Módulo <b>2.3</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Sección 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Módulo 2.3 · Ruta 2 · Fundamentos cinematográficos</p>
+<h1 class="module">Luz y <em>Atmósfera</em></h1>
+<p class="deck">En el cine, la luz no es visibilidad: es sentimiento. La gran cinematografía
+          muchas veces no agrega luz: la quita. Aprende a ocultar el 80% de lo que existe, a motivar cada
+          fuente y a usar la sombra como tu herramienta principal.</p>
+<p class="read-meta">
+<span class="here">Leyendo ahora</span>
+<span>~18 min · módulo completo</span>
+<span>5 secciones</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="Lo que vas a entender" class="aims">
+<h2>Lo que vas a entender</h2>
+<ul>
+<li>Por qué <b>luz y emoción</b>, no iluminación — y por qué la buena fotografía muchas veces
+              <b>elimina</b> luz (negative fill) en vez de añadir.</li>
+<li>Cómo guiar la mirada por <b>contraste de recorte</b> (rim light) y cómo obtener luz <b>suave por la
+              distancia</b>, no por el tamaño de la fuente.</li>
+<li>Por qué cada luz necesita una <b>fuente motivada</b> y por qué solo ~20% de ella debe ser
+              visible — la regla 80/20 que crea profundidad.</li>
+<li>Cómo construir <b>atmósfera</b> en capas, usar <b>contraste de color</b> cálido/frío y dar
+              <b>vida</b> la escena con luz en movimiento.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<p class="toc-head">Resumen: cinco movimientos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Luz y emoción — y la sombra es la herramienta</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Recorte que guía, suavidad por la distancia</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Luz motivada y la regla 80/20</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Atmósfera en capas y contraste de color</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Exposición selectiva y luz viva</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-1" data-inema-track="2" id="topico-1">
+<div class="section-mark">
+<span class="where">Sección 1 de 5</span><span>·</span><span>Luz y sombra</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Luz y emoción — y la sombra es la herramienta</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m2-3-t1-p1">La frase que abre este módulo reorganiza todo lo que
+              un principiante cree sobre la iluminación: en el cine, la luz <em>no</em> es visibilidad: luz y
+              <strong>sentimiento</strong>. No iluminas una escena para que se vea; la iluminas para que
+              sea <em>sentida</em>. Esto cambia la pregunta que haces. En vez de «¿está todo
+              visible?», preguntas <em>“¿qué debe hacer sentir esta escena al espectador — y
+              qué luz produce ese sentimiento?”</em><span class="sidenote-ref">1</span> Toda la clase se deriva de esa
+              única reorientación: la luz dirige la atención, moldea la profundidad y define el ambiente. No solo lo que
+              vemos, sino lo que sentimos.</p>
+<p data-inema-block="m2-3-t1-p2">La consecuencia más contraintuitiva aparece primero. La gran
+              cinematografía, dice la clase, no se trata de <em>agregar</em> luz — y se trata de <strong>eliminarla</strong>.
+              Esta es la idea del <em>negative fill</em>: en vez de echar más luz sobre un lado oscuro del rostro, tú
+              <em>tira</em> la luz reflejada que naturalmente llenaría esa sombra (colocando algo oscuro del
+              lado). El resultado es que las sombras se profundizan y, de repente, la imagen parece misteriosa,
+              acogedora, viva. El principiante ilumina todo por miedo a la oscuridad; el profesional <em>protege</em> la
+              oscuridad, porque es lo que da forma, volumen y emoción.</p>
+<h3 class="sub">La oscuridad como afirmación</h3>
+<p data-inema-block="m2-3-t1-p3">Piensa en la sombra no como una ausencia, sino como <em>material</em>. Una escena
+              bañada en luz uniforme no tiene dónde esconder ni dónde revelar — y por eso parece plana y
+              barata, exactamente el defecto que la Ruta 1 llamaba una falla en el nivel sensorial. Cuando dejas
+              que parte del encuadre caiga en negro, creas <strong>contraste</strong>, y el contraste es lo que aporta claridad y tridimensionalidad. La oscuridad bien ubicada se convierte en una afirmación: dice «aquí hay más de lo que ves», y esa promesa es lo que hace que la imagen sea inquietante y atractiva al mismo tiempo. Restar luz es la primera decisión de fotografía, no la última.</p>
+</div>
+<!-- figura 1: negative fill -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · <b>Relleno negativo</b> — quitar la luz de relleno profundiza la sombra y crea volumen</figcaption>
+<svg aria-label="Diagrama que compara dos rostros de perfil: a la izquierda, iluminación plana con un fill que elimina la sombra; a la derecha, el mismo rostro con una superficie oscura del lado de la sombra que profundiza el contraste y crea volumen." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- esquerda: plano -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">CON FILL — PLANO</text>
+<rect class="rule-stroke" fill="none" height="150" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
+<circle class="rule-stroke" cx="180" cy="112" fill="none" r="46" stroke-width="1.4"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="92" y="118">key →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="268" y="118">← completar</text>
+<path class="rule-stroke" d="M236 100 L208 110 M236 124 L208 116" opacity="0.7" stroke-width="1"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="206">la sombra desaparece —sin volumen</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="190"></line>
+<!-- direita: negative fill -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">NEGATIVE FILL — VOLUMEN</text>
+<rect class="accent-stroke" fill="none" height="150" rx="3" stroke-width="1.3" width="280" x="400" y="40"></rect>
+<circle class="rule-stroke" cx="540" cy="112" fill="none" r="46" stroke-width="1.4"></circle>
+<!-- lado de luz -->
+<path class="accent-stroke" d="M540 66 A 46 46 0 0 0 540 158" fill="none" stroke-width="2.2"></path>
+<!-- bandeira escura -->
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="64" stroke-width="1" width="14" x="600" y="80"></rect>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" x="620" y="116">bandera</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="206">sombra profunda = misterio, forma</text>
+<defs>
+<pattern height="6" id="hatch-2-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Generas un retrato nocturno y la imagen sale «sin gracia», como una foto de documento
+              incluso con un bonito arte de fondo. Tu instinto es <em>agregar</em> más luz para mejorar. Según la lógica
+              de este módulo, ¿qué probablemente arregla la imagen y por qué?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">Casi siempre la solución es <strong>sustraer</strong>, no añadir. La imagen
+                “sin gracia” suele tener una luz demasiado plana: todo está iluminado por igual, sin ninguna
+                sombra que cree volumen. Pedir <em>negative fill</em>, dejar que un lado caiga en la oscuridad, aumentar el contraste: eso es lo que devuelve la tridimensionalidad y la atmósfera. Más luz solo dejaría la imagen aún más plana. En el cine, la sombra es la herramienta.</p>
+</details>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: por qué el cerebro lee las sombras como profundidad
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>El camino recomendado de arriba ya basta. Esta capa explica la base perceptiva y puedes saltártela.</p>
+<p>El sistema visual reconstruye principalmente la forma tridimensional de los objetos mediante el
+                <em>sombreado</em> — la forma en que la luz decae de un lado al otro de una superficie
+                curva. Sin esta variación (luz intensa de un lado, sombra del otro), el cerebro no puede inferir
+                volumen y lee la superficie como <em>plano</em>. Y por eso la iluminación uniforme aplana: borra
+                justamente el gradiente que señala las tres dimensiones. El negative fill, el contraste y la luz lateral existen
+                para preservar ese gradiente. No estás “oscureciendo por estilo”: le estás dando
+                al cerebro la información que necesita para ver la forma.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-2" data-inema-track="2" id="topico-2">
+<div class="section-mark">
+<span class="where">Sección 2 de 5</span><span>·</span><span>Recorte y suavidad</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Recorte que guía, suavidad por la distancia</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-3-t2-p1">Si no necesitas iluminarlo todo, ¿cuánto basta? A veces,
+              <em>un hilo</em>. El segundo principio es el <strong>contraste de recorte</strong> (rim light, o edge
+              light): una línea fina de luz en el borde del sujeto basta para definirlo contra el fondo. La
+              mirada sigue <em>contraste</em>, no el brillo: va hacia donde la diferencia entre la luz y la oscuridad es
+              mayor, no hacia el punto más iluminado. Un recorte azulado que separa el hombro de una figura de la penumbra
+              detrás de ella hace que el cerebro “dibuje” por sí solo el resto del cuerpo. Defines la forma con un
+              pequeño trazo de luz y dejas que la oscuridad haga el resto.<span class="sidenote-ref">2</span></p>
+<p data-inema-block="m2-3-t2-p2">En el extremo, la clase propone la <em>solo luz de recorte</em>: elimina
+              por completo la luz frontal y deja solo la luz de contorno. El sujeto se convierte en una silueta con un borde luminoso
+              —misteriosa, pero aún <strong>leg­ible</strong>. Esa es la clave: el misterio no es confusión. Ocultas la información (el rostro, los detalles) sin perder la <em>lectura</em> (sabemos que es una persona,
+              hacia dónde mira, cuál es su postura). Cuando el curso habla de “misterioso, pero aún
+              legible”, está dando la regla de seguridad de la oscuridad: reduce la luz hasta el límite en que la forma
+              todavía se entiende, y detente ahí.</p>
+<h3 class="sub">La suavidad no es tamaño, sino distancia</h3>
+<p data-inema-block="m2-3-t2-p3">El tercer principio desmonta un mito común. Mucha gente piensa que la luz
+              suave requiere una fuente gigante. No es así: <strong>la suavidad viene de la distancia relativa</strong>. Una
+              fuente pequeña colocada bien <em>cerca</em> del sujeto lo envuelve en una luz suave: «abraza»
+              la piel, crea intimidad y calidez, perfecta para una escena nocturna acogedora. La misma fuente alejada
+              se convierte en una luz dura, con sombras definidas. La clase es muy concreta: una llama pequeña a unos 30 cm
+              del rostro crea una geometría precisa y cálida que humaniza. La lección práctica es liberadora: tú
+              controlas la calidad de la luz según la <em>posición</em>, no por el equipo.</p>
+</div>
+<!-- figura 2: rim light + suavidade por distancia -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · O <b>recorte</b> define la forma con un hilo · a <b>distancia</b> decide si es dura o suave</figcaption>
+<svg aria-label="Diagrama: a la izquierda, una silueta en la oscuridad con una línea de luz de contorno en el borde; a la derecha, dos situaciones: una fuente pequeña cerca genera una luz suave y envolvente; una fuente alejada genera una luz dura con una sombra bien definida." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- esquerda: rim light -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">SOLO EL RECORTE — FORMA EN LA OSCURIDAD</text>
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="150" opacity="0.5" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
+<path class="accent-stroke" d="M150 180 C 150 130, 140 96, 180 96 C 220 96, 210 130, 210 180" fill="none" stroke-width="2.4"></path>
+<circle class="accent-stroke" cx="180" cy="78" fill="none" r="16" stroke-width="2.4"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="206">misterioso, pero legible</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="190"></line>
+<!-- direita: distancia -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">SUAVIDAD = DISTANCIA</text>
+<!-- perto: suave -->
+<circle class="rule-stroke" cx="470" cy="90" fill="none" r="34" stroke-width="1.3"></circle>
+<circle class="accent" cx="430" cy="90" r="5"></circle>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="7.5" text-anchor="middle" x="430" y="74">cerca</text>
+<path class="accent-stroke" d="M438 90 L440 90" stroke-width="1"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="470" y="138">suave, envolvente</text>
+<!-- longe: dura -->
+<circle class="rule-stroke" cx="620" cy="90" fill="none" r="34" stroke-width="1.3"></circle>
+<path class="ink-soft" d="M620 56 A 34 34 0 0 1 620 124" fill="none" stroke-width="0"></path>
+<line class="rule-stroke" stroke-dasharray="2 3" stroke-width="2" x1="603" x2="603" y1="60" y2="120"></line>
+<circle class="mark-fill" cx="690" cy="90" r="4"></circle>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="7.5" text-anchor="middle" x="690" y="74">lejos</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="620" y="138">dura, recortada</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m2-3-t2-p4">En el prompt, describes la luz según <em>posición</em> y por la
+              <em>calidad</em>, nunca solo por “bien iluminado”. El ejemplo de abajo es una <em>receta de
+              recorte</em> para una escena nocturna íntima: luz de contorno azul para separarla del fondo, fuente pequeña y cercana
+              para suavizar, luz frontal eliminada para preservar el misterio: todo en términos que el generador entiende.</p>
+<div class="codeblock"><span class="c"># Receta de luz — rim que dibuja la forma, suavidad mediante la distancia</span>
+<span class="c"># describe la posición y la calidad de la luz; el generador (Seedance / Kling) lo entiende</span>
+<span class="k">Sujeto:</span> a person seen against a near-black background, night.
+<span class="k">Luz principal:</span> a small warm flame placed very close (about 30 cm), wrapping the skin softly.
+<span class="k">Luz de contorno:</span> a thin cool blue rim on the edge, separating the silhouette from the dark.
+<span class="k">Fill:</span> none — no front fill; let the shadow side fall into black.
+<span class="k">Mood words:</span> íntimo, misterioso, legible, suave, cálido.</div>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-3" data-inema-track="2" id="topico-3">
+<div class="section-mark">
+<span class="where">Sección 3 de 5</span><span>·</span><span>Motivación y 80/20</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Luz motivada y la regla 80/20</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-3-t3-p1">El cuarto principio es lo que separa una imagen creíble de una
+              falsa: <strong>toda luz debe provenir de algún lugar real</strong>. El sol. Una lámpara. Una fogata. La
+              pantalla de un celular. La ventana. Luz <em>motivada</em> es una luz cuya fuente el espectador puede explicar —
+              la ve o la intuye. Y cuando cree en la fuente, cree en la escena. La luz sin motivación —
+              ese brillo bonito que aparece de la nada, sin un origen posible — <em>parece falsa</em>, aunque la
+              persona no sepa decir por qué. La clase da un ejemplo claro: en una escena nocturna, las únicas luces son las
+              estrellas y una linterna. Simple, honesto, creíble, y por eso inspirador.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m2-3-t3-p2">Motivar la luz tiene un beneficio que va más allá del realismo:
+              <em>ya viene con dirección, color y calidad incorporados</em>. Si la fuente es una fogata, la luz es cálida,
+              baja, parpadeante y viene de abajo. Si es una ventana al atardecer, es suave, lateral y dorada. No
+              necesitas inventar la estética de la luz — basta con elegir la fuente y dejar que imponga sus
+              propiedades. En IA, nombrar la fuente («lit only by a campfire», «single bare bulb
+              overhead», «moonlight through a window») suele producir una luz mucho más coherente que
+              pedir «cinematic lighting» en abstracto.</p>
+<h3 class="sub">La regla 80/20: ocultar es lo que crea profundidad</h3>
+<p data-inema-block="m2-3-t3-p3">El quinto principio une los anteriores en una proporción fácil de recordar: apenas
+              alrededor de <strong>20% de la luz debe ser visible; el otro 80% permanece oculto</strong>. Y es justamente
+              ese desequilibrio lo que crea profundidad y hace que la imagen parezca cine en vez de plana. Piensa en una
+              escena iluminada solo por la pantalla de un dispositivo: la pantalla es lo visible (el 20 %) y todo el resto del ambiente
+              vive en penumbra (el 80 %). La mirada descansa en la pequeña zona iluminada, y la inmensidad oscura a su alrededor da peso y
+              misterio. La iluminación de principiante invierte la proporción: ilumina el 80 %, oculta el 20 %, y por
+              eso parece plana. La disciplina es <em>resistir las ganas de iluminar</em>.</p>
+<p data-inema-block="m2-3-t3-p4">Fíjate en cómo la motivación y la regla 80/20 se refuerzan. Una fuente motivada
+              <em>justifica de forma natural</em> la proporción 80/20: una vela ilumina un círculo pequeño y deja el resto
+              oscuro —y eso es físicamente correcto, no un truco. Cuando eliges una fuente puntual y
+              auténtica, la regla 80/20 ocurre por sí sola. Por eso ambas van juntas: motiva la luz y la proporción
+              cinematográfica viene de regalo. Forzar el 80/20 sin motivación genera imágenes artificialmente oscuras; motivar
+              la fuente genera oscuridad <em>con sentido</em>.</p>
+</div>
+<!-- figura 3: a regra 80/20 -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · La regla <b>80/20</b> — una fuente motivada se enciende al 20%, la oscuridad guarda el 80%</figcaption>
+<svg aria-label="Diagrama: un cuadro mayormente oscuro con una pequeña fuente de luz (pantalla o vela) que ilumina cerca del 20 por ciento del área; una barra lateral muestra la proporción 80 oscuro y 20 luz." class="diagram" role="img" viewbox="0 0 720 200">
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="140" opacity="0.55" rx="3" stroke-width="1.3" width="430" x="60" y="34"></rect>
+<!-- fonte motivada: tela/vela -->
+<rect class="accent-stroke" fill="none" height="30" stroke-width="1.6" width="40" x="150" y="86"></rect>
+<g class="accent-stroke" opacity="0.6" stroke-width="1">
+<path d="M170 86 L150 66 M170 86 L190 66 M150 116 L130 130 M190 116 L210 130"></path>
+</g>
+<!-- figura leg­ivel perto da luz -->
+<circle class="accent-stroke" cx="250" cy="96" r="9" stroke-width="1.6"></circle>
+<line class="accent-stroke" stroke-width="1.6" x1="250" x2="250" y1="105" y2="142"></line>
+<text class="faint" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="360" y="70">el 80% oculto</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="170" y="138">el 20%</text>
+<!-- barra de proporcao -->
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="112" stroke-width="1.2" width="40" x="520" y="34"></rect>
+<rect class="accent" height="28" width="40" x="520" y="118"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" x="580" y="80">80% oscuro</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" x="580" y="136">20% de luz</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="275" y="190">esconder es lo que crea profundidad</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Dos prompts piden una escena nocturna en un bosque. El primero dice «beautiful cinematic
+              lighting, glowing atmosphere». El segundo dice «lit only by a single handheld lantern and
+              distant stars». ¿Cuál tiende a producir una luz más creíble y cinematográfica, y por qué?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">Lo segundo. Este <strong>motiva</strong> la luz: la linterna y las estrellas son fuentes
+                reales, y el generador infiere automáticamente de ellas la dirección, el color, la caída y la proporción 80/20 (un círculo iluminado, el resto
+                oscuro). “Cinematic lighting” es una petición vaga, sin fuente — tiende a
+                producir ese brillo genérico que viene de todas partes y de ninguna, justo lo que parece
+                falso. Nombrar la fuente es más eficaz que adjetivar la luz.</p>
+</details>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: «premium» casi siempre está motivado por la regla 80/20
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Capa opcional: por qué esto vale tanto para productos y marcas como para películas.</p>
+<p>Cuando un anuncio de producto parece “caro”, fíjate en la luz: casi siempre hay una fuente
+                claramente motivada y una gran zona de sombra controlada. El reloj brilla en un haz; el resto de la
+                escena queda en una penumbra elegante. Eso es un 80/20 motivado, y es lo opuesto al producto plano, iluminado
+                de manera uniforme, que parece una foto de catálogo barato. Lo mismo ocurre con los retratos de marca y la moda: la sensación
+                de lujo nace de la <em>contención</em> de la luz, no de la abundancia. Si quieres que algo parezca prémium,
+                resiste la tentación de iluminarlo todo: elige una fuente, enciéndela al 20 % y deja que el resto se sugiera.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-4" data-inema-track="2" id="topico-4">
+<div class="section-mark">
+<span class="where">Sección 4 de 5</span><span>·</span><span>Atmósfera y color</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Atmósfera en capas y contraste de color</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-3-t4-p1">Hasta aquí, la luz moldeó al sujeto. Ahora va a llenar el
+              <em>espacio</em>. El sexto principio es la <strong>atmósfera en capas</strong>: la profundidad nace de
+              los planos —primer plano, medio y fondo— y la bruma (haze, humo, niebla) es lo que vuelve la
+              luz <em>vis­ible en el aire</em>. Sin partículas en el ambiente, un haz de luz es invisible: solo ves dónde
+              incide. Con bruma, el propio haz cobra cuerpo — esos rastros volumétricos que separan las
+              capas y dan la sensación de un espacio real, habitado. Las chispas flotantes y el humo no son adornos:
+              materializan la luz y empujan el fondo hacia lejos.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m2-3-t4-p2">La atmósfera también es lo que conecta esta clase con la siguiente. Cuando la clase
+              habla de “siluetas al fondo, linternas, profundidad volumétrica”, describe cómo la
+              luz construye capas de distancia: exactamente el tema del Módulo 2.4. Por ahora, recuerda el mecanismo:
+              la bruma crea un <em>gradiente</em>, en la que cada plano más lejano queda un poco más claro, más
+              desaturado y más difuso. Ese gradiente es una de las señales más fuertes de profundidad que existen, y
+              lo activas con una palabra en el prompt: <em>haze</em>, <em>profundidad atmosférica</em>, <em>volumetric
+              light</em>.</p>
+<h3 class="sub">Contraste de color: la tensión entre cálido y frío</h3>
+<p data-inema-block="m2-3-t4-p3">El séptimo principio es quizá el más utilizado en el cine contemporáneo: el
+              <strong>contraste de color</strong> entre tonos cálidos y fríos. El cálido y el frío en el mismo encuadre crean
+              tensión, equilibrio y emoción, y es esa fricción la que hace que la imagen parezca viva. Un entorno
+              dominado por luz cálida con un <em>acento</em> frío (una ventana azulada al fondo, el brillo de una
+              pantalla) gana profundidad y relaja la vista; un ambiente frío con un punto cálido (una fogata, una
+              lámpara) crea un refugio visual. La lógica es la misma que en la composición: estableces un campo dominante y
+              lo rompes con un acento opuesto. En color, ese acento es casi siempre la temperatura complementaria.</p>
+<p data-inema-block="m2-3-t4-p4">Fíjate en que el contraste de color con frecuencia <em>carga</em> la
+              narrativa de la luz que vimos en la Ruta 1: lo cálido sugiere humanidad y calor; lo frío sugiere distancia,
+              peligro, tecnología, vacío. Un personaje bañado en luz cálida en un mundo frío no solo se ve bonito: está
+              separado visualmente y marcado emocionalmente como «lo humano». El color no es maquillaje de la
+              imagen; es <em>sentido</em>. Cuando eliges la paleta de una escena, decides lo que el espectador
+              va a sentir antes de entender cualquier cosa — y dos temperaturas en tensión transmiten más que
+              una sola, por más bella que sea.</p>
+</div>
+<!-- figura 4: camadas de atmosfera + quente/frio -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · La bruma hace que la luz <b>vis­ible en el aire</b> · el calor y el frío crean <b>tensión</b></figcaption>
+<svg aria-label="Diagrama: tres planos de profundidad con bruma creciente al fondo y haces de luz visibles en el aire; de un lado, un campo cálido; del otro, un acento frío, que muestran el contraste de temperatura." class="diagram" role="img" viewbox="0 0 720 210">
+<rect class="rule-stroke" fill="none" height="150" rx="3" stroke-width="1.3" width="600" x="60" y="30"></rect>
+<!-- gradiente de planos (quanto mais ao fundo, mais claro/difuso) -->
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="124" opacity="0.7" stroke-width="1" width="180" x="72" y="44"></rect>
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="100" opacity="0.45" stroke-width="1" width="180" x="252" y="56"></rect>
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="80" opacity="0.22" stroke-width="1" width="180" x="432" y="66"></rect>
+<!-- feixes visiveis -->
+<g class="accent-stroke" opacity="0.8" stroke-width="1.4">
+<path d="M120 44 L170 168"></path><path d="M150 44 L200 168"></path>
+</g>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="160" y="100">cálido</text>
+<text class="mark-fill" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="100">frío (acento)</text>
+<!-- silhueta entre planos -->
+<circle class="accent-stroke" cx="330" cy="96" r="8" stroke-width="1.6"></circle>
+<line class="accent-stroke" stroke-width="1.6" x1="330" x2="330" y1="104" y2="140"></line>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="198">capas + haze = profundidad visible</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: por qué la bruma es “gratis” en IA
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Capa opcional sobre cómo pedir atmósfera a los generadores.</p>
+<p>En un set físico, crear atmósfera cuesta caro y lleva tiempo: máquinas de humo, tiempo del equipo, control de
+                la ventilación. En un generador de imágenes o videos, basta una palabra: <em>haze</em>, <em>fog</em>,
+                <em>volumetric light</em>, <em>floating embers</em>, <em>god rays</em> — y aparece la profundidad
+                volumétrica. Este es uno de los lugares donde la IA <em>amplifica</em> más de lo que pediste: un
+                poco de bruma transforma un cuadro plano en un espacio con aire. La trampa es el exceso: demasiada
+                bruma borra el contraste y hace desaparecer al sujeto. La dosis correcta es la que hace visible el
+                haz sin tragarse el 20% iluminado. Pedir “subtle haze” suele ser más cinematográfico que
+                “heavy fog”.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="2-3" data-inema-topic="modulo-2-3#topico-5" data-inema-track="2" id="topico-5">
+<div class="section-mark">
+<span class="where">Sección 5 de 5</span><span>·</span><span>Exposición y vida</span>
+</div>
+<h2 class="head"><span class="num">5.</span>Exposición selectiva y luz viva</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m2-3-t5-p1">Los dos últimos principios deciden <em>dónde</em> la imagen
+              respira y si parece <em>viva</em>. Primero, la <strong>exposición selectiva</strong>: expón lo
+              que importa y deja que el resto caiga en la oscuridad —o se queme con la luz—. La cámara y la pantalla tienen un límite de
+              alcance; en vez de intentar mantener todo dentro de él, tú <em>elige</em> lo que queda perfectamente
+              expuesto y sacrifica el resto a propósito. El rostro queda bien expuesto, el fondo se hunde en la oscuridad. O la ventana queda bien expuesta, el interior se convierte en silueta. Ese sacrificio deliberado es lo que crea <strong>enfoque</strong>: la
+              mirada va a la única región con la exposición correcta, porque es la única que puede distinguir.<span class="sidenote-ref">5</span></p>
+<p data-inema-block="m2-3-t5-p2">Observa que la exposición selectiva y la regla 80/20 son primas. Ambas
+              dicen «no intentes mostrarlo todo». La regla 80/20 habla de <em>cantidad</em> de luz visible; la
+              exposición selectiva habla de <em>dónde</em> tú pones lo poco que muestras. Juntas, forman la
+              disciplina central de este módulo — una disciplina de <em>sustracción</em>. Quien empieza quiere que todo
+              aparezca; el profesional elige qué aparece y protege lo demás en la sombra. Siempre volvemos al mismo
+              principio que abrió la clase: la sombra no es lo que falta, es la herramienta.</p>
+<h3 class="sub">Luz que se mueve y luz que está muerta</h3>
+<p data-inema-block="m2-3-t5-p3">El décimo principio devuelve <em>vida</em> la escena: la luz debe
+              <strong>moverse</strong>. Fuego, antorchas, el parpadeo de una llama, el destello de un letrero, reflejos en el
+              agua: la luz dinámica redibuja la escena continuamente y crea realismo sin ningún efecto artificial.
+              La luz estática parece muerta; la luz en movimiento parece <span class="dfn"><details class="dfn"><summary>real</summary><span class="body"><b>Luz viva</b> es la luz que varía con el tiempo — el temblor de una llama, un parpadeo, un reflejo en el agua — y produce microvariaciones que el cerebro asocia con una fuente física real. Es lo opuesto a la luz plana y constante que delata lo artificial.</span></details></span>.
+              La explicación es perceptiva: en el mundo real, casi ninguna luz es perfectamente constante: titila, oscila y
+              se mueve por las sombras de la gente que pasa. El cerebro espera esa microvariación; cuando
+              falta, algo suena sintético. En IA, pedir “flickering firelight” o “moving
+              shadows” agrega ese soplo de realismo.</p>
+<p data-inema-block="m2-3-t5-p4">Resume los diez principios en una sola frase: <em>luz y emoción —
+              dirige la atención, moldea la profundidad y define el clima</em>. Y todos convergen en
+              una disciplina de contención: quita antes de añadir, justifica cada fuente, muestra el 20 % y oculta el 80 %, expón
+              solo lo que importa y deja que la luz respire. La tarea del módulo vuelve esto concreto: crear una escena
+              de 5 a 15 segundos con una atmósfera nítida y explicar <em>por qué</em> dónde está la luz, qué contraste
+              usa y qué sentimiento exacto crea, identificando las palabras del prompt responsables de ese
+              sentimiento. Cuando sabes justificar la luz, deja de ser cuestión de suerte. El siguiente módulo toma esa luz y
+              la usa para esculpir el espacio en capas de profundidad.</p>
+</div>
+<!-- figura 5: exposicao seletiva + luz viva -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · <b>Exposición selectiva</b> crea enfoque · <b>luz viva</b> devuelve realismo</figcaption>
+<svg aria-label="Diagrama: a la izquierda, una escala de exposición que muestra que solo la franja del sujeto está correctamente expuesta mientras el resto queda en negro o se quema en blanco; a la derecha, una llama con flechas de temblor que indican luz en movimiento." class="diagram" role="img" viewbox="0 0 720 200">
+<!-- esquerda: exposicao -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">EXPOSICIÓN SELECTIVA</text>
+<rect class="rule-stroke" fill="none" height="120" rx="3" stroke-width="1.2" width="280" x="40" y="44"></rect>
+<!-- faixa exposta -->
+<rect class="wash accent-stroke" height="96" stroke-width="1.4" width="60" x="150" y="56"></rect>
+<circle class="accent-stroke" cx="180" cy="92" r="9" stroke-width="1.6"></circle>
+<line class="accent-stroke" stroke-width="1.6" x1="180" x2="180" y1="101" y2="138"></line>
+<rect class="rule-stroke" fill="url(#hatch-2-3)" height="96" opacity="0.6" stroke-width="1" width="98" x="52" y="56"></rect>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="7.5" text-anchor="middle" x="100" y="108">se funde a negro</text>
+<line class="rule-stroke" opacity="0.4" stroke-width="1" x1="210" x2="308" y1="56" y2="56"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="7.5" text-anchor="middle" x="260" y="108">estalla</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="180" y="180">exponer lo que importa = enfoque</text>
+<!-- divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="164"></line>
+<!-- direita: luz viva -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">LUZ VIVA</text>
+<path class="accent-stroke" d="M540 150 C 520 120, 560 110, 540 80 C 530 100, 550 110, 540 150 Z" fill="url(#hatch-2-3)" stroke-width="1.8"></path>
+<g class="mark-stroke" stroke-width="1.3">
+<path d="M500 96 L516 90"></path><path d="M580 96 L564 90"></path><path d="M508 124 L522 120"></path><path d="M572 124 L558 120"></path>
+</g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="540" y="180">temblor, flicker = vivo</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m2-3-t5-p5">El prompt final del módulo lo reúne todo: fuente motivada, recorte que
+              separa, 80/20 por contención, contraste de color y luz en movimiento. Úsalo como modelo de la tarea — y
+              fíjate en que cada línea tiene <em>justificación</em>, que es exactamente lo que la clase te pide que sepas
+              explicar.</p>
+<div class="codeblock"><span class="c"># Receta final de luz y atmósfera — los diez principios en un plano</span>
+<span class="c"># cada elección tiene una razón; sabe justificar cada palabra</span>
+<span class="k">Sujeto:</span> a traveler resting by a small campfire on a quiet mountain at night.
+<span class="k">Motivated source:</span> firelight only, plus faint starlight — every light has a real origin.
+<span class="k">Contraluz de contorno + separación:</span> a cool moonlit rim outlines the silhouette against the dark valley.
+<span class="k">80/20:</span> only the figure and the fire are lit; 80% of the frame stays in shadow.
+<span class="k">Atmosphere:</span> una bruma ligera y brasas flotantes hacen visible la luz en el aire; profundidad en capas.
+<span class="k">Color contrast:</span> warm fire against a cool blue night — tension and life.
+<span class="k">Luz viva:</span> flickering flame, moving shadows — realism without artificial effects.
+<span class="k">Cámara:</span> slow gentle push-in; mood — peaceful, mysterious, alive.</div>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Autocomprobación" class="check">
+<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>Qué es <em>negative fill</em>, ¿y por qué “mejora” la luz al eliminarla?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>E <em>quitar</em> la luz de relleno que naturalmente iluminaría el lado de la sombra
+              (colocando algo oscuro allí). Las sombras se profundizan, el contraste aumenta y la imagen gana volumen y
+              misterio. Funciona porque el cerebro infiere la forma mediante el sombreado — la luz uniforme aplana; la sombra
+              profunda esculpe.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Por qué la «luz suave» no depende de una fuente grande</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque la suavidad viene de la <em>distancia relativa</em>, no del tamaño. Una fuente pequeña colocada muy cerca del sujeto lo envuelve en una luz suave (intimidad, calidez); la misma fuente alejada se convierte en una luz dura, con sombras definidas. Controlas la calidad con la posición, no con el equipo — una llama a ~30 cm ya humaniza.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>¿Qué dice la regla 80/20 — y por qué motivar la fuente la hace “gratis”?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Solo ~20% de la luz debe ser visible; ~80% queda oculto, y ese desequilibrio
+              crea profundidad. Una fuente motivada (vela, pantalla, linterna) ilumina físicamente solo un círculo pequeño
+              y deja el resto a oscuras, así que la proporción 80/20 se produce por sí sola. Motivar genera oscuridad <em>con
+              sentido</em>; forzar la oscuridad sin una fuente de luz parece artificial.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>¿Por qué la luz en movimiento parece más real que la luz constante?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque en el mundo real casi ninguna luz es perfectamente estable: parpadea,
+              fluctúa y la cortan sombras que pasan. El cerebro espera esa microvariación; cuando falta, la
+              imagen se percibe sintética. El fuego, el parpadeo, los reflejos en el agua y las sombras en movimiento redibujan la escena y dan
+              realismo sin efectos artificiales.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Mi recorrido</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">En este módulo</div>
+<div class="v" data-inema-meter="modulo:2-3">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En la ruta 2</div>
+<div class="v" data-inema-meter="trilha:2">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En el curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Módulo 2.4 — Profundidad y estructura espacial</div>
+</div>
+<a class="go" href="modulo-2-4.html">Siguiente →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-2-3#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Relleno negativo.</b> Quita la luz de relleno del lado de la sombra (con una superficie oscura) para profundizar
+          el contraste. Muchas veces, la buena fotografía <i>elimina</i> luz en vez de añadir.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          Diez principios de luz y atmósfera, con prompts reales en CapCut + Seedance 2.0, reescritos con un tono
+          positivo y seguro.
+          <div class="src-line">Bloque 2 · Lección 5 — Iluminación y atmósfera</div>
+</aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-2-3#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Luz de contorno (recorte).</b> Un hilo de luz en el borde del sujeto que lo separa del fondo. La mirada lo sigue
+          <i>contraste</i>, no el brillo: un pequeño trazo define la forma y la oscuridad hace el resto.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          La suavidad = distancia relativa, no tamaño. Una fuente pequeña cerca envuelve (suave); la misma fuente lejos se vuelve
+          luz dura. Una llama a ~30 cm de la geometría es precisa y cálida.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-2-3#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Luz motivada.</b> Toda luz proviene de una fuente real y creíble —el sol, una lámpara, una pantalla, una fogata. Cuando el
+          espectador cree en la fuente, cree en la escena; y la fuente ya impone color, dirección y calidad.
+        </aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Regla 80/20.</b> Solo ~20% de la luz debe ser vis­ible; ~80% queda oculta. Ese desequilibrio crea
+          profundidad, y una fuente motivada la produce por sí sola.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-2-3#topico-4"></aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          Sin partículas, un haz es invisible: solo ves dónde impacta. La bruma le da cuerpo a la luz y crea un
+          gradiente de distancia: cada plano del fondo queda más claro y difuso.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-2-3#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Exposición selectiva.</b> Exponer lo que importa y dejar que el resto caiga en negro o se queme en blanco.
+          El sacrificio deliberado crea foco: la mirada va a la única región legible.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          La frase maestra: <i>luz y emoción</i> — dirige la atención, moldea la profundidad, define el ambiente. Todo
+          converge en la contención: quitar, motivar, ocultar, mostrar poco, dejar respirar.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Módulo 2.3 — folio vii</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

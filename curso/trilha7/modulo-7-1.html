@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Modulo 7.1 — Narrativa Visual | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha7/modulo-7-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha7/modulo-7-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha7/modulo-7-1.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-7-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha7/modulo-7-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha7/modulo-7-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Pular para o conteudo</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:7-1"><span data-inema-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
+<div aria-label="Tema de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+</div>
+<div aria-label="Fonte de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamanho do texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Largura da linha" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Onde voce esta" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Trilha <b>7</b> Historia e Estrutura Cinematografica</span>
+<span class="sep">·</span>
+<span>Modulo <b>7.1</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Secao 1 de 4</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Modulo 7.1 · Trilha 7 · Historia e Estrutura Cinematografica</p>
+<h1 class="module">Narrativa <em>Visual</em></h1>
+<p class="deck">A maior distancia entre o video de IA impressionante e a historia que as pessoas lembram
+          nao e a beleza do plano: e a mudanca emocional. Uma cena que nao muda nada por dentro pode estar
+          deslumbrante — e ainda assim ser esquecivel.</p>
+<p class="read-meta">
+<span class="here">Lendo agora</span>
+<span>~15 min · modulo inteiro</span>
+<span>4 secoes</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="O que voce vai entender" class="aims">
+<h2>O que voce vai entender</h2>
+<ul>
+<li>Por que <b>historia visual e mudanca emocional</b> — e por que uma cena bonita que nao muda nada se sente vazia.</li>
+<li>O <b>teste do mudo</b>: uma boa historia visual ainda deve fazer sentido sem dialogo nenhum.</li>
+<li>O <b>arco de cinco cenas</b> que cabe num clipe curto: estabelecer, conflito, escalada, emocao, resolucao — e por que cada um existe.</li>
+<li>As <b>regras praticas</b> do instrutor: clareza cria emocao, uma acao forte por cena, aproxime a camera para a emocao, e prompte intencao, nao estetica.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
+<p class="toc-head">Sumario — quatro movimentos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Contar com a imagem: mudanca, nao beleza</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">O que a forma diz quando ninguem fala</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">O arco em cinco cenas</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Regras de quem dirige a IA</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="7-1" data-inema-topic="modulo-7-1#topico-1" data-inema-track="7" id="topico-1">
+<div class="section-mark">
+<span class="where">Secao 1 de 4</span><span>·</span><span>A tese</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Contar com a imagem: mudanca, nao beleza</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m7-1-t1-p1">Muitos videos de IA impressionam nos primeiros
+              segundos e, logo depois, desaparecem da memoria.<span class="sidenote-ref">1</span> O espectador
+              ve luz dramatica, movimento cinematografico, quadros bonitos — e ainda assim, emocionalmente,
+              a historia fica vazia. A razao e simples e dura: nada de significativo <em>aconteceu</em>. A imagem
+              mostrou algo, mas nao mudou nada. E e essa a tese que abre a trilha final: <strong>historia visual e
+              mudanca emocional</strong>. Se nada muda por dentro, a cena se sente fraca, por mais bem produzida
+              que esteja.</p>
+<p data-inema-block="m7-1-t1-p2">Repare na diferenca, porque ela e o eixo de tudo o que vem a seguir.
+              <em>Visual bonito mostra algo. Historia muda algo.</em> Um plano de um deserto ao entardecer pode
+              ser lindo — mas, se for so isso, e cartao-postal. Vira historia no instante em que esse mesmo
+              deserto passa a significar perigo, ou alivio, ou perda. O publico nao lembra do plano: lembra da
+              <em>transicao</em> de um estado emocional para outro. Beleza captura a atencao; mudanca a mantem.</p>
+<h3 class="sub">O erro mais comum do cinema de IA</h3>
+<p data-inema-block="m7-1-t1-p3">O equivoco recorrente e tratar “cinematografico” como
+              sinonimo de “bonito”. Dai nasce o video que parece um <span class="dfn"><details class="dfn"><summary>trailer de nada</summary><span class="body"><b>Trailer de nada</b> — uma sucessao de planos espetaculares sem narrativa por baixo: cada imagem promete um filme, mas nenhuma historia se cumpre. Impressiona por segundos e nao deixa rastro.</span></details></span>:
+              uma colecao de imagens espetaculares sem nenhuma pergunta sendo respondida, sem nenhuma situacao
+              avancando. A regra que organiza o resto da trilha cabe numa frase do instrutor: antes de gerar
+              qualquer cena, pergunte-se <em>o que mudou emocionalmente?</em> Se a resposta for clara, a historia
+              quase sempre fica mais forte. Se nao houver resposta, voce tem um quadro — nao uma cena.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Dois clipes de cinco segundos mostram a mesma estrada no deserto. No primeiro, um carro atravessa
+              a paisagem dourada, e nada mais acontece. No segundo, o carro atravessa — e ao fundo uma
+              tempestade de poeira avanca rapido demais. Qual deles e <em>historia</em>, e por que?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">O segundo. O primeiro e bonito, mas estatico: o estado emocional no fim e igual
+                ao do inicio — calma. O segundo <strong>muda algo</strong>: a calma vira incerteza no
+                momento em que a tempestade aparece. O publico comeca a perguntar “o que vem ai?”, e
+                e essa pergunta — essa transicao de calma para tensao — que transforma o plano em
+                narrativa.</p>
+</details>
+</div>
+<!-- figura 1: mostrar vs mudar -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · <b>Mostrar</b> mantem o estado; <b>contar</b> desloca o estado</figcaption>
+<svg aria-label="Diagrama comparando duas faixas de tempo: na de cima, o estado emocional permanece plano do inicio ao fim (mostrar); na de baixo, o estado parte da calma e se desloca para a tensao num ponto de virada (contar)." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-7-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- faixa de cima: mostrar (plano) -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="30" y="34">MOSTRAR</text>
+<line class="rule-stroke" stroke-width="1.6" x1="40" x2="680" y1="60" y2="60"></line>
+<circle class="rule-stroke" cx="40" cy="60" r="3.5"></circle>
+<circle class="rule-stroke" cx="680" cy="60" r="3.5"></circle>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="50">estado emocional identico do inicio ao fim — bonito, esquecivel</text>
+<!-- divisor -->
+<line class="rule-stroke" opacity="0.5" stroke-dasharray="2 5" stroke-width="0.8" x1="40" x2="680" y1="92" y2="92"></line>
+<!-- faixa de baixo: contar (desloca) -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="30" y="118">CONTAR</text>
+<path class="accent-stroke" d="M40 165 L320 165 C 360 165, 380 120, 440 118 L680 110" fill="none" stroke-width="2.4"></path>
+<circle class="accent" cx="40" cy="165" r="3.5"></circle>
+<circle class="accent" cx="680" cy="110" r="4"></circle>
+<circle class="accent" cx="350" cy="150" r="4.5"></circle>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="350" y="186">VIRADA</text>
+<rect class="accent-stroke" fill="url(#hatch-7-1)" height="22" rx="3" stroke-width="1" width="150" x="120" y="172"></rect>
+<text class="ink" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="195" y="187">calma</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="560" y="100">tensao</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Indo mais fundo: por que “mais drama” nao conserta uma cena vazia
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>O caminho-feliz acima ja basta. Esta camada explica um erro comum — e pode ser pulada.</p>
+<p>Quando um clipe fica vazio, o reflexo do iniciante e adicionar: mais movimento de camera, mais
+                efeito, mais acao. Quase nunca funciona, porque o problema nao e <em>falta de espetaculo</em>, e
+                <em>falta de mudanca</em>. Empilhar drama sobre uma cena que nao desloca nada apenas a torna
+                barulhenta — o estado emocional continua o mesmo do comeco ao fim, so que mais agitado. A
+                correcao certa quase sempre e a oposta: <strong>simplificar</strong>, definir um unico ponto de
+                virada e deixar a cena ir de um estado a outro com clareza. Clareza melhora a narrativa mais
+                rapido do que complexidade.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="7-1" data-inema-topic="modulo-7-1#topico-2" data-inema-track="7" id="topico-2">
+<div class="section-mark">
+<span class="where">Secao 2 de 4</span><span>·</span><span>O teste do mudo</span>
+</div>
+<h2 class="head"><span class="num">2.</span>O que a forma diz quando ninguem fala</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-1-t2-p1">Existe um teste simples para saber se uma historia
+              visual funciona: <strong>tire o som</strong>. Se, mudo, o publico ainda entende instantaneamente
+              quem e o personagem, o que esta acontecendo, o que mudou e que emocao deveria sentir — entao a
+              narrativa visual esta de pe. Se voce <em>precisa</em> do dialogo ou da trilha para a cena fazer
+              sentido, a historia esta sendo carregada pelo audio, nao pela imagem.<span class="sidenote-ref">2</span></p>
+<p data-inema-block="m7-1-t2-p2">Esse teste e exigente de proposito. Ele forca cada decisao de
+              <em>forma</em> — enquadramento, luz, movimento, gesto do personagem, ordem dos planos —
+              a carregar significado por conta propria. No cinema, a forma nao e enfeite: e a propria voz da
+              cena. Um rosto que se fecha, uma luz que esfria, uma camera que se afasta no momento errado: tudo
+              isso <em>diz</em> algo, mesmo em silencio. Quando a forma esta clara, o mudo nao perde nada
+              essencial.</p>
+<h3 class="sub">Confusao mata a emocao; clareza cria a emocao</h3>
+<p data-inema-block="m7-1-t2-p3">A maior ameaca ao teste do mudo e a confusao. Se o publico nao sabe
+              onde olhar, quem e o centro ou o que esta em jogo, nenhuma emocao chega — o cerebro gasta toda
+              a energia tentando se orientar. Por isso a regra que atravessa a aula: <em>confusao mata a emocao,
+              clareza cria a emocao</em>. Uma boa narrativa visual e quase sempre <strong>simples</strong>: o
+              espectador entende, em um instante, quem, o que mudou e por que importa. A beleza chama a atencao,
+              mas e a clareza emocional que a sustenta.</p>
+</div>
+<!-- figura 2: o teste do mudo -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · O <b>teste do mudo</b> — o que a forma precisa dizer sozinha</figcaption>
+<svg aria-label="Diagrama: um quadro central, com o som cortado, deve responder por si quatro perguntas que partem dele como setas: quem, o que muda, por que importa, qual emocao." class="diagram" role="img" viewbox="0 0 720 218">
+<!-- quadro central mudo -->
+<rect class="wash accent-stroke" height="78" rx="4" stroke-width="1.4" width="140" x="290" y="78"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="112">a cena,</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="132">sem som</text>
+<!-- icone mute -->
+<g class="accent-stroke" fill="none" stroke-width="1.6" transform="translate(300 88)">
+<path d="M0 4 L6 4 L12 -2 L12 14 L6 8 L0 8 Z"></path>
+<line x1="16" x2="22" y1="2" y2="10"></line>
+<line x1="22" x2="16" y1="2" y2="10"></line>
+</g>
+<!-- quatro perguntas -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="12">
+<line class="rule-stroke" stroke-width="1.1" x1="290" x2="150" y1="96" y2="60"></line>
+<text text-anchor="end" x="145" y="56">quem e o personagem?</text>
+<line class="rule-stroke" stroke-width="1.1" x1="290" x2="150" y1="138" y2="170"></line>
+<text text-anchor="end" x="145" y="174">o que mudou?</text>
+<line class="rule-stroke" stroke-width="1.1" x1="430" x2="570" y1="96" y2="60"></line>
+<text x="575" y="56">por que isso importa?</text>
+<line class="accent-stroke" stroke-width="1.3" x1="430" x2="570" y1="138" y2="170"></line>
+<text class="accent" x="575" y="174">qual emocao sentir?</text>
+</g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="200">SE RESPONDE AS QUATRO — A NARRATIVA VISUAL FUNCIONA</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-1-t2-p4">Vale guardar o teste do mudo como habito de revisao, nao so como
+              ideia bonita. Depois de gerar uma cena, assista sem audio. Se voce hesitar em qualquer das quatro
+              perguntas, o conserto raramente esta no som que falta — esta na forma. Talvez o ponto focal
+              nao esteja claro, talvez a mudanca emocional nao tenha sido <em>encenada</em> na acao, talvez haja
+              elementos demais competindo. Mude a forma ate o mudo bastar.</p>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="7-1" data-inema-topic="modulo-7-1#topico-3" data-inema-track="7" id="topico-3">
+<div class="section-mark">
+<span class="where">Secao 3 de 4</span><span>·</span><span>O arco</span>
+</div>
+<h2 class="head"><span class="num">3.</span>O arco em cinco cenas</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-1-t3-p1">Uma historia visual forte cabe num arco curto e repetivel,
+              de cinco movimentos: <strong>estabelecer → conflito → escalada → emocao →
+              resolucao</strong>. Cada um faz um trabalho emocional especifico, e a forca esta na <em>ordem</em>
+              — nao no quanto cada cena e bonita. Acompanhe o arco num exemplo concreto: uma viagem solitaria
+              de carro atravessando o deserto, em cinco planos de cinco segundos.</p>
+<h3 class="sub">1. Estabelecer — o mundo antes da tensao</h3>
+<p data-inema-block="m7-1-t3-p2">Toda historia forte comeca com clareza. Antes que a tensao apareca, o
+              publico precisa de orientacao: onde estamos, quem e o personagem, como e o <em>normal</em>. Um plano
+              aberto de um carro velho cruzando lentamente um deserto vazio, ao entardecer, luz quente, atmosfera
+              quieta — nada perigoso ainda aconteceu. O amplo cria contexto espacial e distancia emocional.
+              O erro classico do iniciante e abrir ja no close ou na acao dramatica: sem o normal estabelecido,
+              os momentos emocionais seguintes chegam mais fracos, porque o espectador nunca entendeu o mundo. O
+              publico sente <em>curiosidade calma</em>; entende que alguem viaja sozinho por um lugar silencioso.</p>
+<h3 class="sub">2. Conflito — algo muda</h3>
+<p data-inema-block="m7-1-t3-p3">A historia fica interessante no instante em que algo muda. O mesmo
+              carro segue, tudo ainda calmo — mas, ao longe, uma parede de poeira se move rapido demais,
+              de um jeito que nao deveria. A atmosfera emocional vira de calma para incerteza. Boa narrativa
+              introduz <em>contraste</em>: o publico imediatamente comeca a perguntar — ha algo errado? o
+              que vem ai? A curiosidade e uma das emocoes mais fortes da narrativa. A regra a guardar: cada cena
+              deve introduzir uma informacao nova. Se nada muda, a atencao cai.</p>
+<h3 class="sub">3. Escalada — a pressao cresce</h3>
+<p data-inema-block="m7-1-t3-p4">Surgido o conflito, a pressao emocional precisa <em>crescer</em>.
+              Muitos videos de IA falham aqui: os visuais mudam, mas a intensidade fica parada. Agora a tempestade
+              de poeira alcanca o carro. A visibilidade despenca, o vento sacode o veiculo, dirigir vira luta, o
+              motorista comeca a perder o controle. A cena deixa de ser incerteza e passa a ser <em>perigo</em>. A
+              pergunta-guia antes de cada plano: a situacao ficou mais dificil? Se a resposta e nao, a escalada
+              afrouxa — e sem escalada a historia fica repetitiva.<span class="sidenote-ref">3</span></p>
+<h3 class="sub">4. Emocao — o respiro depois da luta</h3>
+<p data-inema-block="m7-1-t3-p5">Depois da tensao, o publico precisa de conexao. Aqui muitos iniciantes
+              tropecam ao contrario: abrem com close emocional <em>antes</em> de qualquer contexto. Mas a emocao
+              pesa mais quando vem por progressao. A tempestade finalmente passa, o carro para, o motorista desce
+              exausto e caminha ao lado do veiculo enquanto o sol reaparece. Pela primeira vez, o espectador pausa
+              emocionalmente. O close reduz a distracao e desloca a tensao em direcao ao sentimento — e,
+              porque a luta ja aconteceu, esse instante se sente <em>conquistado</em>. A emocao costuma entrar mais
+              forte depois do esforco.</p>
+<h3 class="sub">5. Resolucao — fechar com sentido</h3>
+<p data-inema-block="m7-1-t3-p6">Cenas fortes terminam com clareza emocional — o que nao quer
+              dizer final feliz. Quer dizer que o publico entende, emocionalmente, onde o personagem chegou. O
+              carro volta a cruzar o deserto, a tempestade ficou para tras, a atmosfera fica quieta de novo —
+              mas, por dentro, algo mudou. A viagem nao parece mais tranquila: parece <em>merecida</em>. O arco
+              foi de calma a incerteza, a perigo, a sobrevivencia — e a calma que volta no fim ja nao e a
+              mesma. Esse contraste entre a abertura e o fecho e o que cria o fechamento emocional.</p>
+</div>
+<!-- figura 3: a curva do arco de cinco cenas -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · O arco emocional — <b>cinco cenas</b>, a mesma calma diferente no fim</figcaption>
+<svg aria-label="Diagrama de curva emocional em cinco marcos: estabelecer (calma baixa), conflito (sobe para incerteza), escalada (pico de perigo), emocao (cai para o respiro) e resolucao (calma, mas em nivel diferente do inicio)." class="diagram" role="img" viewbox="0 0 720 226">
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="180" y2="180"></line>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="200">CINCO CENAS →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 64)" x="14" y="64">EMOCAO</text>
+<!-- a curva -->
+<path class="accent-stroke" d="M70 162 L190 160 C 240 158, 270 120, 330 110 C 390 100, 400 46, 430 44 C 470 42, 480 110, 540 130 C 590 146, 620 150, 660 150" fill="none" stroke-width="2.4"></path>
+<!-- marcos -->
+<g class="accent"><circle cx="120" cy="161" r="3.5"></circle><circle cx="300" cy="118" r="3.5"></circle><circle cx="430" cy="44" r="4"></circle><circle cx="520" cy="124" r="3.5"></circle><circle cx="640" cy="150" r="3.5"></circle></g>
+<!-- linha de referencia: a calma do inicio -->
+<line class="rule-stroke" opacity="0.55" stroke-dasharray="2 5" stroke-width="0.8" x1="70" x2="660" y1="162" y2="162"></line>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="664" y="160">calma inicial</text>
+<!-- rotulos -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
+<text dy="-30" x="120" y="184">estabelecer</text>
+<text x="300" y="106">conflito</text>
+<text class="accent" x="430" y="34">escalada</text>
+<text x="520" y="146">emocao</text>
+<text x="640" y="170">resolucao</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-1-t3-p7">Esse arco nao e exclusivo de drama epico — o mesmo esqueleto
+              vale para um anuncio, um videoclipe ou uma cena de personagem unico. E, porque ele descreve
+              <em>intencao</em> e nao estetica, ele se traduz quase direto num prompt de IA. O prompt abaixo
+              percorre as cinco cenas do exemplo do deserto, uma por uma, descrevendo o que muda emocionalmente
+              em cada uma — e nao apenas como cada uma deveria parecer.</p>
+<div class="codeblock"><span class="c"># Arco de 5 cenas — historia visual por mudanca emocional</span>
+<span class="c"># (gere uma cena por vez no Kling; ~5s cada; deixe o texto ditar a camera)</span>
+<span class="k">Scene 1 — Establish:</span> wide, slow shot of an old car crossing an empty desert at golden hour. Warm soft light, dust, total stillness. Emotion: calm curiosity. Nothing dangerous yet.
+<span class="k">Scene 2 — Conflict:</span> the same car drives on; in the distance a wall of dust moves unnaturally fast. Atmosphere shifts from calm to unease. Emotion: worry, curiosity. Something has changed.
+<span class="k">Scene 3 — Escalation:</span> the dust storm hits the car, visibility collapses, wind shakes the vehicle, the driver fights the wheel. Emotion: danger, urgency. Success is now harder.
+<span class="k">Scene 4 — Emotion:</span> the storm passes, the car stops, the exhausted driver steps out and walks beside it as the sun returns. Tight framing on the face. Emotion: relief, connection — earned.
+<span class="k">Scene 5 — Resolution:</span> wide shot, the car continues across the quiet desert. The storm is gone, calm returns — but it feels different now. Emotion: rest and hope. The journey feels earned.
+<span class="k">Rule:</span> one strong action per scene; prompt intention and emotional change, not aesthetic buzzwords.</div>
+</div>
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Um criador gera as cinco cenas, mas troca a ordem: poe a <em>emocao</em> (o close exausto do
+              motorista) logo no comeco, antes da tempestade. Por que a cena, agora, “nao funciona”,
+              mesmo que cada plano continue lindo?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">Porque a emocao foi <strong>desconectada da progressao</strong>. O close so pesa
+                <em>depois</em> da luta — ele cobra a tensao que veio antes. Posto no inicio, o publico ve
+                um rosto exausto sem saber por que, sem contexto, sem ter sentido o perigo. A emocao precisa ser
+                <em>conquistada</em>: e a sequencia calma → conflito → escalada que da peso ao respiro.
+                Fora de ordem, vira um rosto bonito sem causa.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="7-1" data-inema-topic="modulo-7-1#topico-4" data-inema-track="7" id="topico-4">
+<div class="section-mark">
+<span class="where">Secao 4 de 4</span><span>·</span><span>Regras de direcao</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Regras de quem dirige a IA</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-1-t4-p1">Para terminar, um punhado de regras praticas que o
+              instrutor repete — o tipo de disciplina que separa a cena que <em>parece</em> intencional da
+              que parece aleatoria. Nenhuma e sobre efeito; todas sao sobre clareza e mudanca.</p>
+<h3 class="sub">Simplifique o movimento</h3>
+<p data-inema-block="m7-1-t4-p2">Quer mais realismo cinematografico? <strong>Simplifique.</strong> Um
+              dos maiores erros do iniciante e querer tudo dramatico de uma vez: acao demais, movimento excessivo,
+              camera caotica. O resultado parece artificial. Na maioria dos casos, <em>uma acao forte por cena</em>
+              funciona melhor do que a sobrecarga visual. O excesso confunde — e confusao, ja sabemos, mata
+              a emocao.<span class="sidenote-ref">4</span></p>
+<h3 class="sub">Aproxime a camera para a emocao</h3>
+<p data-inema-block="m7-1-t4-p3">Planos abertos criam escala; momentos emocionais costumam funcionar
+              melhor em plano medio ou close, porque a expressao facial fica legivel. Se o publico deve sentir
+              medo, alivio, incerteza — <em>traga a camera para perto</em>. A distancia da camera nao e
+              decoracao: ela decide se o espectador observa o mundo de fora ou entra na emocao do personagem.</p>
+<h3 class="sub">Crie progressao — evite o plano emocional</h3>
+<p data-inema-block="m7-1-t4-p4">Para parecer cinema, crie <em>progressao</em> emocional; evite manter
+              cada momento emocionalmente identico. Calma, calma, calma entedia. Dramatico, dramatico, dramatico
+              exausta. O caminho e o contraste: deixar a emocao subir e descer ao longo do arco. E essa variacao,
+              e nao a intensidade constante, que prende o publico ate o fim.</p>
+<h3 class="sub">Prompte intencao, nao estetica</h3>
+<p data-inema-block="m7-1-t4-p5">A regra que amarra tudo, e que vale para qualquer gerador: <strong>prompte
+              intencao em vez de estetica</strong>. Evite formulas vazias como “obra-prima cinematografica
+              epica”. Em vez disso, explique quem esta na cena, o que essa pessoa faz, o que mudou
+              emocionalmente e como a camera se comporta. Historias especificas quase sempre se traduzem melhor do
+              que adjetivos abstratos — o modelo executa a sua direcao; ele nao inventa a sua intencao. E,
+              ao fim de cada cena, volte a unica pergunta que governa esta trilha: <em>o que mudou
+              emocionalmente?</em> Se a resposta for clara, sua historia quase sempre ficara mais forte. A proxima
+              aula desce dessa visao geral para o nucleo da cena unica — por que ela existe.</p>
+</div>
+<!-- figura 4: intencao vs estetica no prompt -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · O prompt: <b>adjetivo vago</b> vira ruido; <b>intencao</b> vira direcao</figcaption>
+<svg aria-label="Diagrama comparando dois prompts: a esquerda, adjetivos abstratos que produzem resultado generico; a direita, descricao de quem, o que faz, o que muda e como a camera se comporta, que produz direcao." class="diagram" role="img" viewbox="0 0 720 196">
+<!-- coluna esquerda: estetica -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" x="180" y="28">ESTETICA VAGA</text>
+<rect class="rule-stroke" fill="none" height="116" rx="4" stroke-width="1.2" width="280" x="40" y="42"></rect>
+<g class="faint" font-family="Source Serif 4, serif" font-size="11.5">
+<text x="60" y="70">“epico”</text>
+<text x="60" y="92">“cinematografico”</text>
+<text x="60" y="114">“obra-prima”</text>
+</g>
+<text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="180" y="146">→ resultado generico</text>
+<!-- seta divisor -->
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="50" y2="150"></line>
+<!-- coluna direita: intencao -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" x="540" y="28">INTENCAO CLARA</text>
+<rect class="accent-stroke" fill="url(#hatch-7-1)" height="116" rx="4" stroke-width="1.4" width="280" x="400" y="42"></rect>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5">
+<text x="420" y="68">quem esta na cena</text>
+<text x="420" y="90">o que faz agora</text>
+<text x="420" y="112">o que mudou emocionalmente</text>
+<text x="420" y="134">como a camera se comporta</text>
+</g>
+<text class="accent" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="178">→ direcao executavel</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-1-t4-p6">Guarde este modulo numa frase: <em>beleza captura a atencao, mas
+              clareza emocional a sustenta — e a unica pergunta que importa nao e o que aconteceu, e o que
+              mudou.</em> Com essa lente, voce ja olha para qualquer geracao como um diretor: nao perguntando
+              “ficou bonito?”, mas “o que se deslocou aqui?”. As proximas tres aulas
+              constroem a partir disso — primeiro o proposito de uma cena, depois o encadeamento de varias,
+              e enfim a sequencia inteira como uma obra.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Auto-checagem" class="check">
+<h2>Antes de seguir: quatro checagens rapidas</h2>
+<p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>Em uma frase, o que e “historia visual”?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>E <em>mudanca emocional</em>. Visual bonito mostra algo; historia muda algo. Se o
+              estado emocional no fim e igual ao do inicio, a cena se sente vazia — por mais bonita que
+              esteja.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>O que e o “teste do mudo” e por que ele importa?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Assistir a cena sem som. Se, mudo, o publico ainda entende quem e o personagem, o
+              que muda, por que importa e que emocao sentir, a narrativa visual funciona. Forca a <em>forma</em>
+              — e nao o dialogo — a carregar o sentido.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Por que a cena de “emocao” (o close) nao pode vir no comeco do arco?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque a emocao se sente <em>conquistada</em> apenas depois da luta. O close cobra a
+              tensao que veio antes (estabelecer → conflito → escalada). Posto no inicio, vira um rosto
+              sem causa — o publico nao sentiu o perigo que justifica o respiro.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>Qual a diferenca pratica entre promptar estetica e promptar intencao?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Estetica sao adjetivos vagos (“epico”, “cinematografico”) que
+              dao resultado generico. Intencao descreve quem esta na cena, o que faz, o que mudou emocionalmente e
+              como a camera se comporta. O modelo executa direcao — nao inventa intencao — entao
+              especificidade vence.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Minha jornada</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">Neste modulo</div>
+<div class="v" data-inema-meter="modulo:7-1">
+<span data-inema-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">Na trilha 7</div>
+<div class="v" data-inema-meter="trilha:7">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">No curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Modulo 7.2 — Proposito da Cena</div>
+</div>
+<a class="go" href="modulo-7-2.html">Proximo →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-7-1#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Mudanca emocional.</b> O deslocamento de um estado de sentimento para outro ao longo da cena. E o
+          que distingue contar de mostrar — sem ela, a imagem e cartao-postal, nao historia.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fonte</div>
+          Modulo 7 do programa <i>AI Filmmaking</i> — “Visual Storytelling”. A tese central:
+          <i>a pergunta nao e o que aconteceu, e o que mudou emocionalmente</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-7-1#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Teste do mudo.</b> Assistir a cena sem audio para checar se a forma carrega o sentido sozinha. Se o
+          publico ainda entende quem, o que muda e por que importa, a narrativa visual esta de pe.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          A regra-mae da legibilidade: <i>confusao mata a emocao, clareza cria a emocao</i>. Se o cerebro gasta
+          energia se orientando, nao sobra atencao para sentir.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-7-1#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Escalada.</b> O crescimento da pressao emocional depois que o conflito aparece. Teste antes de cada
+          plano: a situacao ficou mais dificil? Se nao, a historia fica repetitiva.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          O arco de cinco cenas e o mesmo esqueleto de um anuncio ou videoclipe — muda o conteudo, nao a
+          progressao. A calma que volta no fim ja nao e a calma do inicio: o contraste e o fechamento.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-7-1#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Promptar intencao.</b> Descrever quem, o que faz, o que muda e como a camera se comporta — em
+          vez de adjetivos abstratos. O modelo executa direcao; nao inventa intencao.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Indo mais fundo</div>
+          Quatro disciplinas: simplifique o movimento (uma acao forte por cena), aproxime a camera para a emocao,
+          crie progressao em vez de intensidade constante, e prompte intencao, nao estetica.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Caderno do aluno</span>
+<span class="pg">Modulo 7.1 — folio i</span>
+<span>Composto em Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

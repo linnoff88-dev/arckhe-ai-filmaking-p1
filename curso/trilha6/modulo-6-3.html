@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Modulo 6.3 — Close-ups e Planos Emocionais | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha6/modulo-6-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha6/modulo-6-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha6/modulo-6-3.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha6/modulo-6-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha6/modulo-6-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Pular para o conteudo</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:6-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<div aria-label="Tema de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+</div>
+<div aria-label="Fonte de leitura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamanho do texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Largura da linha" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Onde voce esta" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Trilha <b>6</b> Personagem e Atuacao</span>
+<span class="sep">·</span>
+<span>Modulo <b>6.3</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Secao 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Modulo 6.3 · Trilha 6 · Personagem e Atuacao</p>
+<h1 class="module">Close-ups e Planos <em>Emocionais</em></h1>
+<p class="deck">Um personagem pode chorar, a atuacao pode convencer, o dialogo pode soar emocional —
+          e a cena ainda parecer chapada. O motivo costuma ser um so: a camera nao apoia a emocao. No cinema, a
+          emocao nao e apenas atuada; ela e enquadrada.</p>
+<p class="read-meta">
+<span class="here">Lendo agora</span>
+<span>~17 min · modulo inteiro</span>
+<span>5 secoes</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="O que voce vai entender" class="aims">
+<h2>O que voce vai entender</h2>
+<ul>
+<li>Por que <b>a emocao e enquadrada, nao so atuada</b> — e como o close torna visivel a micro-expressao que o plano amplo esconde.</li>
+<li>Como o <b>espaco negativo</b> transforma vazio em solidao, e como o <b>push-in lento</b> faz a pressao crescer sem que o publico perceba.</li>
+<li>Por que <b>distancia no quadro vira distancia emocional</b>, e como o plano sobre o ombro coloca o publico dentro da relacao.</li>
+<li>Como o <b>POV</b> faz o publico deixar de assistir e passar a experimentar a emocao — e, sobretudo, <b>quando aproximar</b>: o close como decisao, nao como reflexo.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
+<p class="toc-head">Sumario — cinco decisoes de camera</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">A emocao e enquadrada: o close</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Espaco negativo: o vazio como emocao</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">O push-in lento: movimento vira pressao</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Distancia de camera = distancia emocional</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">POV e quando aproximar</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-1" data-inema-track="6" id="topico-1">
+<div class="section-mark">
+<span class="where">Secao 1 de 5</span><span>·</span><span>O close</span>
+</div>
+<h2 class="head"><span class="num">1.</span>A emocao e enquadrada: o close</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m6-3-t1-p1">Muitos criadores acreditam que a emocao vem
+              apenas da atuacao. Na pratica, cenas emocionais falham com frequencia porque <strong>a camera nao
+              apoia a emocao.</strong> Um personagem chora, a atuacao convence, o dialogo soa emocional — e
+              a cena, ainda assim, parece plana.<span class="sidenote-ref">1</span> Por que? Porque no cinema a
+              emocao nao e <em>so</em> atuada: ela e <em>enquadrada</em>. A distancia cria intimidade, a
+              composicao cria isolamento, o movimento cria pressao, a perspectiva forma a experiencia. A camera
+              nao grava a emocao — ela <em>traduz</em> a emocao. O publico nao deveria apenas <em>ver</em>
+              a emocao; deveria <em>senti-la</em>.</p>
+<p data-inema-block="m6-3-t1-p2">O primeiro mecanismo e o <span class="dfn"><details class="dfn"><summary>close-up emocional</summary><span class="body"><b>Close-up emocional</b>: o enquadramento fechado no rosto que torna visiveis detalhes minimos — respiracao, piscar, hesitacao, micro-movimento do olhar. Quanto mais perto, mais o publico sente.</span></details></span>.
+              Quase nada acontece: um personagem escuta, a respiracao muda um pouco, o foco do olhar desliza,
+              aparece um piscar atrasado — e de repente a emocao se torna visivel. Detalhes pequenos viram
+              emocao grande, porque o ser humano le emocao instintivamente pelo rosto, e os olhos, a respiracao e
+              a hesitacao comunicam mais rapido do que o dialogo. A formula: <strong>detalhe igual a emocao.</strong>
+              A ideia-chave: quanto mais perto chegamos, mais sentimos.</p>
+<h3 class="sub">Um exemplo: a mensagem que ela nunca envia</h3>
+<p data-inema-block="m6-3-t1-p3">Uma mulher rele uma mensagem que nunca enviou. Conforme a hesitacao
+              cresce, a camera se aproxima, revelando a respiracao presa e o titubeio sutil. A mao quase aperta
+              “enviar” — e desce. Fisicamente, quase nada muda. Emocionalmente, tudo muda.<span class="sidenote-ref">2</span>
+              O close elimina a distracao e faz a emocao sutil <em>ser lida</em>: as vezes o rosto se torna a cena
+              inteira. E e por isso que o close e uma <em>decisao</em>, nao um padrao — voce aproxima quando
+              quer que o publico more dentro de um detalhe que, de longe, passaria despercebido.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>A mesma cena da mulher relendo a mensagem e filmada em plano amplo: ela aparece pequena, sentada na
+              cozinha. A atuacao e a mesma. Por que o impacto emocional cai — e o que o plano amplo
+              <em>perde</em>?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">O plano amplo perde a <strong>micro-expressao</strong>: de longe, a respiracao
+                presa, o titubeio do olhar e a mao que hesita ficam invisiveis. O close <em>elimina a distracao</em>
+                e amplia o detalhe ate ele virar a cena. Como a emocao aqui mora em sinais minimos, sem
+                aproximacao nao ha o que sentir — detalhe igual a emocao, e o amplo apaga o detalhe.</p>
+</details>
+</div>
+<!-- figura 1: escala de plano vs leitura da emocao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · Quanto mais perto, mais a <b>micro-expressao</b> se torna legivel</figcaption>
+<svg aria-label="Diagrama de tres quadros lado a lado, do plano amplo ao close: a figura cresce e os detalhes do rosto aparecem; uma seta indica que a leitura da emocao aumenta com a aproximacao." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-6-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- amplo -->
+<rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="40" y="50"></rect>
+<circle class="rule-stroke" cx="130" cy="118" fill="none" r="10" stroke-width="1.2"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="130" y="40">AMPLO</text>
+<!-- medio -->
+<rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="250" y="50"></rect>
+<circle class="rule-stroke" cx="340" cy="110" fill="none" r="26" stroke-width="1.3"></circle>
+<circle class="ink" cx="332" cy="106" r="2.4"></circle><circle class="ink" cx="348" cy="106" r="2.4"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="340" y="40">MEDIO</text>
+<!-- close -->
+<rect class="accent-stroke" fill="url(#hatch-6-3)" height="110" rx="3" stroke-width="1.4" width="180" x="460" y="50"></rect>
+<circle class="accent-stroke" cx="550" cy="118" fill="none" r="44" stroke-width="1.5"></circle>
+<ellipse class="ink" cx="536" cy="104" fill="none" rx="8" ry="5" stroke-width="1.2"></ellipse>
+<ellipse class="ink" cx="564" cy="104" fill="none" rx="8" ry="5" stroke-width="1.2"></ellipse>
+<circle class="accent" cx="539" cy="104" r="2.6"></circle><circle class="accent" cx="567" cy="104" r="2.6"></circle>
+<path class="ink" d="M538 132 q12 6 24 0" fill="none" stroke-width="1.4"></path>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="550" y="40">CLOSE</text>
+<!-- seta de leitura -->
+<path class="mark-stroke" d="M40 184 L640 184" fill="none" stroke-width="1.2"></path>
+<path class="mark-fill" d="M640 184 l-9 -5 l0 10 z"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="340" y="200">a emocao sutil fica mais legivel →</text>
+</svg>
+</figure>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-2" data-inema-track="6" id="topico-2">
+<div class="section-mark">
+<span class="where">Secao 2 de 5</span><span>·</span><span>Espaco negativo</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Espaco negativo: o vazio como emocao</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t2-p1">Se o close aproxima, o segundo mecanismo faz o oposto e
+              chega no mesmo lugar: o <strong>espaco negativo</strong>. Um personagem fica sozinho dentro do
+              quadro, encolhido por vazio. A sala parece grande demais, o silencio parece pesado demais. Nada
+              dramatico acontece — mas a solidao se torna <em>visivel</em>. O vazio cria sentimento.</p>
+<p data-inema-block="m6-3-t2-p2">Por que funciona: reagimos instintivamente ao isolamento visual. O
+              espaco vazio cria distancia emocional e reflete, em silencio, o estado interno do personagem. As
+              vezes o ambiente diz mais do que o personagem.<span class="sidenote-ref">3</span> A formula:
+              <strong>isolamento mais espaco igual a distancia emocional.</strong> O espaco vazio pode parecer
+              emocao — e essa e a chave para entender que enquadrar nao e so escolher onde fica o rosto, mas
+              quanto vazio o cerca.</p>
+<h3 class="sub">Um exemplo: o homem no estacionamento</h3>
+<p data-inema-block="m6-3-t2-p3">Um homem esta sozinho num estacionamento silencioso depois de uma
+              noticia dificil. Em vez de enquadra-lo fechado, a camera fica <em>aberta</em>. Ele quase nao se
+              move, mas o quadro comunica em silencio: ele nunca se sentiu tao sozinho. Repare na decisao: o
+              instinto pediria um close para “mostrar a emocao”, mas aqui o <em>amplo</em> e que conta
+              a verdade, porque a emocao e o isolamento — e isolamento se mostra com espaco, nao com
+              proximidade. A escolha do plano sempre responde a uma pergunta: <em>de que e feita esta emocao?</em></p>
+</div>
+<!-- figura 2: a figura encolhida pelo vazio -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · O <b>vazio</b> ao redor vira distancia emocional</figcaption>
+<svg aria-label="Diagrama: um quadro amplo com uma pequena figura deslocada para um canto, cercada por muito espaco vazio; chamadas indicam que o vazio comunica solidao." class="diagram" role="img" viewbox="0 0 720 210">
+<rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.3" width="600" x="60" y="36"></rect>
+<!-- chao -->
+<line class="rule-stroke" opacity="0.5" stroke-width="1" x1="72" x2="648" y1="150" y2="150"></line>
+<!-- pequena figura no canto -->
+<circle class="accent-stroke" cx="560" cy="132" fill="none" r="10" stroke-width="1.4"></circle>
+<line class="accent-stroke" stroke-width="1.4" x1="560" x2="560" y1="142" y2="150"></line>
+<!-- preenchimento de vazio -->
+<rect fill="url(#hatch-6-3)" height="100" opacity="0.5" width="420" x="80" y="56"></rect>
+<text class="ink-soft" font-family="Spectral, serif" font-size="16" font-style="italic" text-anchor="middle" x="280" y="100">espaco vazio</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="280" y="122">a sala parece grande demais</text>
+<line class="mark-stroke" stroke-width="1" x1="540" x2="500" y1="124" y2="96"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="end" x="496" y="90">a figura, pequena</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Indo mais fundo: close ou amplo? a emocao decide a escala
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>O caminho-feliz acima ja basta. Esta camada ajuda a escolher entre aproximar e afastar.</p>
+<p>Close e espaco negativo parecem opostos — um aperta, o outro abre — mas ambos sao
+                respostas a mesma pergunta: <em>de que e feita esta emocao?</em> Quando a emocao mora num detalhe
+                interno (hesitacao, um olhar que cede, a beira do choro), o <strong>close</strong> e a escolha:
+                ele elimina o resto do mundo e amplia o sinal. Quando a emocao <em>e</em> a relacao do personagem
+                com o mundo — solidao, abandono, perda — o <strong>amplo com espaco negativo</strong>
+                diz mais, porque o vazio se torna parte do sentimento. A pergunta certa nunca e “close fica
+                bonito?”, e sim “a emocao desta cena e interna ou e relacional?” A resposta
+                escolhe a escala.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-3" data-inema-track="6" id="topico-3">
+<div class="section-mark">
+<span class="where">Secao 3 de 5</span><span>·</span><span>Push-in lento</span>
+</div>
+<h2 class="head"><span class="num">3.</span>O push-in lento: movimento vira pressao</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t3-p1">O terceiro mecanismo e o <span class="dfn"><details class="dfn"><summary>push-in lento</summary><span class="body"><b>Push-in lento</b>: a aproximacao gradual da camera em direcao ao personagem, lenta o bastante para nao ser notada conscientemente, mas suficiente para aumentar a tensao emocional ao longo do plano.</span></details></span>:
+              um movimento de camera quase imperceptivel que, em silencio, aumenta a pressao. O publico pode nao
+              perceber o movimento de forma consciente — mas, emocionalmente, a tensao cresce. A formula:
+              <strong>movimento lento igual a emocao crescente.</strong></p>
+<p data-inema-block="m6-3-t3-p2">Um exemplo: uma mulher ouve alguem dizer que esta indo embora “por
+              bem”. No inicio, o quadro parece emocionalmente distante. Quando a realidade da frase a
+              atinge, a camera <em>puxa</em> devagar para mais perto. A expressao dela mal muda — e, ainda
+              assim, o peso emocional entra no quadro.<span class="sidenote-ref">4</span> O movimento faz o
+              trabalho que o rosto contido nao precisa fazer: ele sublinha o instante em que algo muda por dentro.</p>
+<p data-inema-block="m6-3-t3-p3">A diferenca entre um push-in que funciona e um que distrai e a
+              <em>velocidade</em> e a <em>motivacao</em>: ele tem que ser lento o bastante para passar
+              despercebido e comecar no momento emocional certo — tipicamente quando a realidade chega, nao
+              antes. Para o gerador, isso vira instrucao precisa de camera; o prompt abaixo descreve a
+              aproximacao gradual amarrada ao beat emocional.</p>
+<div class="codeblock"><span class="c"># Push-in lento — aproximacao gradual amarrada ao beat emocional</span>
+<span class="c"># (Kling / Seedance — descreva velocidade e momento do movimento)</span>
+<span class="k">Subject:</span> a woman at a kitchen table as someone tells her they are leaving.
+<span class="k">Start:</span> medium framing, camera feels emotionally distant, she is still.
+<span class="k">Trigger:</span> the moment the words land, begin a very slow push-in.
+<span class="k">Movement:</span> almost imperceptible dolly-in over the whole shot, no zoom snap.
+<span class="k">Performance:</span> her expression barely changes — restraint, a held breath.
+<span class="k">Camera:</span> eye level, shallow depth, soft window light; smooth, unhurried.
+<span class="k">Goal:</span> the audience feels the pressure grow without noticing the move.</div>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-4" data-inema-track="6" id="topico-4">
+<div class="section-mark">
+<span class="where">Secao 4 de 5</span><span>·</span><span>Distancia</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Distancia de camera = distancia emocional</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t4-p1">O quarto mecanismo e uma equacao que vale para toda cena
+              de relacao: o enquadramento muda a relacao. Duas pessoas estao na mesma sala, mas emocionalmente
+              distantes — planos amplos criam distancia; planos fechados criam intimidade. A mesma cena pode
+              parecer calorosa, fragil, vulneravel ou desconectada, dependendo do enquadramento. Lemos o espaco
+              fisico como espaco emocional: a distancia <em>dentro</em> do quadro vira a psicologia da relacao.<span class="sidenote-ref">5</span>
+              A formula: <strong>enquadramento igual a relacao.</strong></p>
+<p data-inema-block="m6-3-t4-p2">Um exemplo: um casal senta em silencio depois de uma briga. Em vez de
+              junta-los num plano fechado, a camera os deixa <em>separados</em> dentro de uma composicao ampla.
+              Ninguem fala — mas a relacao ja parece quebrada. A distancia entre os corpos no quadro conta a
+              historia antes do dialogo. Distancia dentro do quadro e distancia dentro da emocao.</p>
+<h3 class="sub">O plano sobre o ombro: o publico dentro da relacao</h3>
+<p data-inema-block="m6-3-t4-p3">O mecanismo gemeo e a <span class="dfn"><details class="dfn"><summary>tensao sobre o ombro</summary><span class="body"><b>Plano sobre o ombro</b> (over-the-shoulder): enquadramento em que um ombro do personagem em primeiro plano emoldura o outro. Coloca o publico <i>dentro</i> da relacao, e faz as reacoes minimas pesarem mais.</span></details></span>:
+              um personagem fala, o outro escuta, e a tensao se constroi em silencio entre eles. Um ombro bloqueia
+              parcialmente o quadro, o contato de olhos parece fragil, o momento soa intimo ou irresolvido. O
+              plano sobre o ombro coloca o publico <em>dentro</em> da relacao — e reacoes pequenas pesam
+              mais porque a emocao existe <em>entre</em> duas pessoas. A formula: <strong>perspectiva mais tensao
+              igual a conexao emocional.</strong> Um exemplo: dois ex-parceiros se encontram num cafe; um pergunta
+              baixinho “entao, como voce tem passado?”. A camera fica sobre o ombro; uma pequena
+              hesitacao e o desvio do olhar, de repente, parecem importantes. Nada de dramatico acontece — e
+              a tensao preenche o quadro.</p>
+</div>
+<!-- figura 3: amplo separa, OTS aproxima -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · <b>Separar</b> no amplo le como distancia; o <b>sobre-o-ombro</b> coloca o publico na relacao</figcaption>
+<svg aria-label="Diagrama de dois quadros: a esquerda, um plano amplo com dois personagens separados por espaco, marcado como distancia; a direita, um plano sobre o ombro com um ombro em primeiro plano emoldurando o outro personagem, marcado como conexao." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- amplo: separados -->
+<rect class="rule-stroke" fill="none" height="130" rx="3" stroke-width="1.2" width="290" x="40" y="44"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" text-anchor="middle" x="185" y="34">AMPLO — SEPARADOS</text>
+<circle class="rule-stroke" cx="90" cy="112" fill="none" r="16" stroke-width="1.3"></circle>
+<circle class="rule-stroke" cx="280" cy="112" fill="none" r="16" stroke-width="1.3"></circle>
+<line class="rule-stroke" opacity="0.6" stroke-dasharray="3 4" stroke-width="1" x1="112" x2="258" y1="112" y2="112"></line>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="185" y="160">a relacao parece fria</text>
+<!-- OTS -->
+<rect class="accent-stroke" fill="url(#hatch-6-3)" height="130" rx="3" stroke-width="1.4" width="320" x="360" y="44"></rect>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" text-anchor="middle" x="520" y="34">SOBRE O OMBRO</text>
+<!-- ombro em primeiro plano -->
+<path class="ink" d="M360 174 Q 392 110 444 110 Q 470 110 472 174 Z" opacity="0.18"></path>
+<path class="rule-stroke" d="M360 174 Q 392 110 444 110 Q 470 110 472 174" fill="none" stroke-width="1.3"></path>
+<!-- rosto emoldurado -->
+<circle class="accent-stroke" cx="585" cy="108" fill="none" r="30" stroke-width="1.5"></circle>
+<circle class="accent" cx="576" cy="104" r="2.6"></circle><circle class="accent" cx="594" cy="104" r="2.6"></circle>
+<path class="ink" d="M574 122 q11 6 22 0" fill="none" stroke-width="1.3"></path>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="560" y="162">o publico entra na cena</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Pare e preveja</p>
+<p>Voce quer mostrar que um casal, sentado lado a lado num sofa, ja se separou emocionalmente —
+              sem uma linha de dialogo que diga isso. Que escolha de enquadramento comunica a ruptura?</p>
+<details>
+<summary>Ver uma resposta possivel</summary>
+<p class="answer">Filmar num <strong>plano amplo que os deixa separados</strong> na composicao, com
+                espaco entre os corpos, em vez de um plano fechado que os junta. Lemos distancia no quadro como
+                distancia emocional — o vazio entre eles conta a ruptura antes de qualquer fala.
+                Enquadramento igual a relacao.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="6-3" data-inema-topic="modulo-6-3#topico-5" data-inema-track="6" id="topico-5">
+<div class="section-mark">
+<span class="where">Secao 5 de 5</span><span>·</span><span>POV &amp; decisao</span>
+</div>
+<h2 class="head"><span class="num">5.</span>POV e quando aproximar</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m6-3-t5-p1">O quinto mecanismo e o <span class="dfn"><details class="dfn"><summary>POV</summary><span class="body"><b>POV</b> (point of view): o plano filmado a partir da perspectiva do personagem, como se o publico visse pelos olhos dele. Troca a observacao pela experiencia direta da emocao.</span></details></span>:
+              o publico para de <em>assistir</em> a emocao e comeca a <em>experimenta-la</em>. Um personagem
+              entra num quarto depois de uma noticia, e o mundo parece mais quieto, mais pesado, mais distante. A
+              realidade, de repente, parece diferente. Em vez de observar o personagem, o publico vive a emocao
+              pela perspectiva dele — o medo fica mais perto, a solidao mais pessoal. A formula:
+              <strong>visao subjetiva igual a imersao emocional.</strong> A perspectiva cria empatia.</p>
+<p data-inema-block="m6-3-t5-p2">Um exemplo: um homem entra num apartamento vazio depois de um
+              rompimento; a cena comeca pela perspectiva dele, e objetos familiares parecem emocionalmente
+              diferentes. Nada de dramatico muda — mas, emocionalmente, tudo parece vazio. O POV e a forma
+              mais direta de transferir um estado interno: o publico nao deduz o que o personagem sente, ele
+              <em>sente junto</em>.</p>
+<h3 class="sub">O close como decisao, nao como reflexo</h3>
+<p data-inema-block="m6-3-t5-p3">Reunindo os cinco mecanismos — close, espaco negativo, push-in,
+              distancia, POV — a licao maior nao e “use close-ups”, e <em>decida</em> a cada
+              plano qual a emocao e que camera a serve. Aproximar e uma escolha cara: quando voce vai ao close,
+              elimina o mundo e diz ao publico “more aqui, neste detalhe”. Faca isso quando a emocao
+              for interna e couber num rosto. Quando a emocao for solidao, afaste; quando for tensao entre dois,
+              va para o sobre-o-ombro; quando quiser que o publico <em>seja</em> o personagem, use o POV.<span class="sidenote-ref">6</span>
+              A formula final reune tudo: <strong>enquadramento mais distancia mais movimento mais perspectiva
+              igual a cinema emocional</strong> — ou, mais simples, <em>como a camera sente e como o publico
+              sente.</em></p>
+</div>
+<!-- figura 4: arvore de decisao do plano emocional -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · <b>Que emocao?</b> → a pergunta escolhe o plano</figcaption>
+<svg aria-label="Diagrama de decisao: a partir da pergunta de que e feita a emocao, quatro ramos levam a close para detalhe interno, amplo para solidao, sobre-o-ombro para tensao entre dois e POV para fazer o publico ser o personagem." class="diagram" role="img" viewbox="0 0 720 214">
+<!-- no raiz -->
+<rect class="accent-stroke" fill="url(#hatch-6-3)" height="40" rx="3" stroke-width="1.4" width="180" x="270" y="20"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="45">de que e a emocao?</text>
+<!-- conectores -->
+<path class="rule-stroke" d="M300 60 L110 110" fill="none" stroke-width="1.1"></path>
+<path class="rule-stroke" d="M340 60 L300 110" fill="none" stroke-width="1.1"></path>
+<path class="rule-stroke" d="M380 60 L470 110" fill="none" stroke-width="1.1"></path>
+<path class="rule-stroke" d="M420 60 L630 110" fill="none" stroke-width="1.1"></path>
+<!-- folhas -->
+<g font-family="Source Serif 4, serif">
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="40" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="114" y="134">interna, no rosto</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="114" y="156">CLOSE</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="114" y="174">detalhe = emocao</text>
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="226" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="300" y="134">solidao</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="300" y="156">AMPLO</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="300" y="174">espaco negativo</text>
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="412" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="486" y="134">tensao entre dois</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="486" y="156">SOBRE O OMBRO</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="486" y="174">perspectiva</text>
+<rect class="rule-stroke" fill="none" height="74" rx="3" stroke-width="1.2" width="148" x="598" y="112"></rect>
+<text class="accent" font-size="11" text-anchor="middle" x="672" y="134">ser o personagem</text>
+<text class="ink" font-size="13" font-style="italic" text-anchor="middle" x="672" y="156">POV</text>
+<text class="faint" font-size="9.5" text-anchor="middle" x="672" y="174">imersao</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m6-3-t5-p4">Guarde o modulo como uma frase: <em>emocao no cinema nao e so o que o
+              personagem sente — e como a camera faz o publico senti-lo.</em> Se a plateia sente a emocao
+              <em>antes</em> de o personagem explica-la, o plano esta funcionando. Com a camera agora a servico da
+              emocao, a aula final da trilha junta tudo: como estruturar a cena de dialogo inteira — ritmo,
+              plano e contraplano, eixo — em torno do que nao se diz.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Auto-checagem" class="check">
+<h2>Antes de seguir: quatro checagens rapidas</h2>
+<p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>A atuacao convence e o dialogo e emocional, mas a cena parece chapada. O que provavelmente falta?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>A <em>camera nao apoia a emocao</em>. No cinema, a emocao nao e so atuada — e
+              enquadrada. Faltou traduzir o sentimento em escolha de plano: distancia, composicao, movimento,
+              perspectiva. A camera nao grava a emocao, ela a traduz.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>Quando o espaco negativo (plano amplo e vazio) comunica mais do que um close?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Quando a emocao <em>e</em> solidao, abandono ou isolamento — uma relacao do
+              personagem com o mundo. O vazio ao redor vira parte do sentimento. Isolamento mais espaco igual a
+              distancia emocional. Close serve a emocao interna; amplo serve a relacional.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Por que o push-in lento aumenta a tensao mesmo quando o publico nao percebe o movimento?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque o movimento gradual cria pressao emocional de forma inconsciente: a camera
+              se aproxima e sublinha o instante em que algo muda por dentro, mesmo com o rosto contido. Movimento
+              lento igual a emocao crescente — desde que comece no beat certo e seja imperceptivel.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>Qual a pergunta certa para decidir o plano de uma cena emocional?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Nao “close fica bonito?”, e sim <em>de que e feita esta emocao?</em>
+              Interna e no rosto → close; solidao → amplo com espaco negativo; tensao entre dois →
+              sobre o ombro; fazer o publico ser o personagem → POV. A emocao escolhe a camera.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Minha jornada</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">Neste modulo</div>
+<div class="v" data-inema-meter="modulo:6-3">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">Na trilha 6</div>
+<div class="v" data-inema-meter="trilha:6">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">No curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Modulo 6.4 — Estrutura de Cena de Dialogo</div>
+</div>
+<a class="go" href="modulo-6-4.html">Proximo →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Close-up emocional.</b> O enquadramento fechado que torna visivel o detalhe minimo — respiracao,
+          piscar, hesitacao. Quanto mais perto, mais o publico sente. Detalhe = emocao.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fonte</div>
+          Licao 18 do programa <i>AI Filmmaking</i> — “Close-ups and Emotional Shots”. Tese:
+          <i>a emocao nao e so atuada — ela e enquadrada</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Espaco negativo.</b> O vazio que cerca a figura no quadro. Isolamento visual vira distancia emocional;
+          o ambiente, as vezes, diz mais que o personagem. Isolamento mais espaco = distancia.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          A escala responde a uma pergunta: a emocao e <i>interna</i> (close) ou <i>relacional</i> (amplo com
+          vazio)? Nao “close fica bonito?”, mas “de que e feita esta emocao?”.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Push-in lento.</b> Aproximacao gradual da camera, imperceptivel, que faz a tensao crescer ao longo
+          do plano. Comeca no beat emocional certo. Movimento lento = emocao crescente.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>Plano sobre o ombro.</b> Um ombro em primeiro plano emoldura o outro personagem. Coloca o publico
+          dentro da relacao; reacoes minimas pesam mais. Perspectiva mais tensao = conexao.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Indo mais fundo</div>
+          Lemos espaco fisico como espaco emocional. Casal separado num plano amplo le como ruptura antes de
+          qualquer fala — a distancia dentro do quadro e a distancia dentro da emocao.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-6-3#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definicao</div>
+<b>POV.</b> O plano pela perspectiva do personagem. O publico para de assistir a emocao e passa a
+          experimenta-la. Visao subjetiva = imersao emocional; perspectiva cria empatia.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Indo mais fundo</div>
+          O close e uma escolha cara: aproximar elimina o mundo e ordena “more neste detalhe”. A
+          regra final: como a camera sente e como o publico sente.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Caderno do aluno</span>
+<span class="pg">Modulo 6.3 — folio iii</span>
+<span>Composto em Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

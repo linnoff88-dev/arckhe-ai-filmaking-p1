@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 7.4 — El arte de la secuencia cinematográfica | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha7/modulo-7-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha7/modulo-7-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha7/modulo-7-4.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:7-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>7</b> Historia y estructura cinematográfica</span>
+<span class="sep">·</span>
+<span>Módulo <b>7.4</b> / 4</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Sección 1 de 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Módulo 7.4 · Ruta 7 · Historia y estructura cinematográfica</p>
+<h1 class="module">El arte de la <em>Secuencia</em></h1>
+<p class="deck">El cierre del curso. Aquí todo se une: propósito, fórmula, cámara, ritmo y continuidad
+          dejan de ser piezas sueltas y se convierten en un método: tratar una secuencia entera, del primer
+          plano al último, como una obra. Es el punto en el que dejas de generar imágenes y empiezas a dirigir.</p>
+<p class="read-meta">
+<span class="here">Leyendo ahora</span>
+<span>~18 min · módulo completo</span>
+<span>5 secciones</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="Lo que vas a entender" class="aims">
+<h2>Lo que vas a entender</h2>
+<ul>
+<li>Cómo transformar la fórmula de seis tiempos en un <b>método de trabajo repetible</b>, del concepto al corte final.</li>
+<li>Por qué <b>planear toda la secuencia antes de generar el primer plano</b> es lo que separa una obra de una colección.</li>
+<li>Cómo mantener <b>personaje, luz y dirección consistentes</b> entre clips que la IA genera de forma independiente.</li>
+<li>Cómo el <b>ritmo en el montaje</b> finaliza la emoción — y es saber el momento en que la secuencia está <b>lista</b>.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<p class="toc-head">Resumen: cinco movimientos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">De la fórmula al método: juntarlo todo</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Planear toda la secuencia de antemano</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Consistencia entre clips</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Ritmo en el montaje: la emoción final</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">La decisión final — y el cierre del curso</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="7-4" data-inema-topic="modulo-7-4#topico-1" data-inema-track="7" id="topico-1">
+<div class="section-mark">
+<span class="where">Sección 1 de 5</span><span>·</span><span>El método</span>
+</div>
+<h2 class="head"><span class="num">1.</span>De la fórmula al método: juntarlo todo</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m7-4-t1-p1">Esta es la última lección del curso y su tarea es
+diferente a la de las otras: no introducir un concepto nuevo, sino <strong>atar</strong> los que ya
+              tienes. Sabes que la historia visual es cambio emocional (7.1), que toda escena necesita un propósito
+              (7.2) y que una secuencia es una progresión de seis tiempos con la cámara evolucionando a la par (7.3). Falta
+              el paso que transforma ese conocimiento en práctica: <em>el arte de la secuencia</em> — unir propósito, ritmo, continuidad e intención en una secuencia <strong>entera</strong>, tratada como una
+              obra, y no como una suma de planos aislados.<span class="sidenote-ref">1</span></p>
+<p data-inema-block="m7-4-t1-p2">La diferencia entre saber la fórmula y <em>dominar</em> la secuencia está
+              en cómo trabajas. Quien memorizó los seis tiempos aún puede producir una secuencia mecánica —
+              técnicamente correcta, emocionalmente fría. El dominio aparece cuando la fórmula deja de ser una
+              lista de verificación y se convierte en un <strong>método</strong>: una forma de pensar la obra de principio a fin, en la que cada
+              decisión de plano sirve a una intención que definiste antes de generar cualquier cosa. La fórmula es el
+              esqueleto; el método es cómo le das cuerpo.</p>
+<h3 class="sub">Las tres capas que vuelven, ahora juntas</h3>
+<p data-inema-block="m7-4-t1-p3">Tres capas del curso reaparecen aquí, y esta vez operan al mismo
+              tiempo en una única secuencia. La <strong>intención</strong> — la emoción que quieres que el público
+              sienta, la pregunta central de la secuencia, y lo que viene primero y lo rige todo. La <strong>ritmo</strong>
+              — la duración de los planos y la velocidad del cambio, y cómo esculpes esa intención en el
+              tiempo. La <strong>continuidad</strong> — el mismo mundo, personaje y luz — eso es lo que sostiene la ilusión de una obra única. Por separado, cada capa es una habilidad; juntas y al servicio de una intención, son <em>dirección</em>. Esta clase trata de hacer que trabajen en conjunto.</p>
+</div>
+<!-- recall ativo: pare e preveja -->
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Dos creadores usan la misma fórmula de seis tiempos para la misma historia. Uno produce una secuencia
+              que emociona; el otro, una que «está bien, pero no conmueve». Los planos tienen una calidad
+              parecida. ¿Qué probablemente marca la diferencia?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">A <strong>intención definida antes</strong> y el cuidado con el ritmo y la continuidad en
+                la unión. El primero trató la fórmula como <em>método</em>: decidió qué emoción quería, planeó toda la
+                curva, cuidó las transiciones y la consistencia. El segundo aplicó la fórmula como
+                <em>lista de verificación</em> — cada tiempo presente, pero sin una intención que rija el conjunto y con
+                las uniones sueltas. La fórmula garantiza la estructura; es la dirección del conjunto la que produce la emoción.</p>
+</details>
+</div>
+<!-- figura 1: tres camadas em servico da intencao -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · La secuencia como obra — <b>intención</b> gobierna <b>ritmo</b> e <b>continuidad</b></figcaption>
+<svg aria-label="Diagrama: la intención en la parte superior apunta hacia abajo y gobierna dos capas, ritmo y continuidad, que juntas sostienen toda la secuencia, representada por una fila de planos en la base." class="diagram" role="img" viewbox="0 0 720 214">
+<defs>
+<pattern height="6" id="hatch-7-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- intencao no topo -->
+<rect class="accent-stroke" fill="url(#hatch-7-4)" height="40" rx="5" stroke-width="1.5" width="180" x="270" y="18"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="38">intención</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="8.5" text-anchor="middle" x="360" y="52">la emoción que quieres</text>
+<!-- setas governando -->
+<g class="accent-stroke" fill="none" stroke-width="1.4">
+<path d="M320 58 L200 86"></path><path d="M400 58 L520 86"></path>
+</g>
+<!-- ritmo e continuidade -->
+<rect class="wash accent-stroke" height="38" rx="4" stroke-width="1.3" width="180" x="110" y="88"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="13" text-anchor="middle" x="200" y="112">ritmo</text>
+<rect class="wash accent-stroke" height="38" rx="4" stroke-width="1.3" width="180" x="430" y="88"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="13" text-anchor="middle" x="520" y="112">continuidad</text>
+<!-- descem para a sequencia -->
+<g class="rule-stroke" fill="none" stroke-width="1.2">
+<path d="M200 126 L240 158"></path><path d="M520 126 L480 158"></path>
+</g>
+<!-- a sequencia (base) -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="152">LA SECUENCIA COMPLETA</text>
+<g class="accent-stroke" fill="none" stroke-width="1.3">
+<rect height="34" rx="3" width="78" x="120" y="162"></rect>
+<rect fill="url(#hatch-7-4)" height="34" rx="3" width="78" x="208" y="162"></rect>
+<rect height="34" rx="3" width="78" x="296" y="162"></rect>
+<rect fill="url(#hatch-7-4)" height="34" rx="3" width="78" x="384" y="162"></rect>
+<rect height="34" rx="3" width="78" x="472" y="162"></rect>
+<rect fill="url(#hatch-7-4)" height="34" rx="3" width="78" x="560" y="162"></rect>
+</g>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: por qué la técnica vino antes y la historia al final
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>El camino recomendado de arriba ya basta. Esta capa cierra el arco del curso y puedes saltártela.</p>
+<p>El curso podría haber comenzado con la historia. Eligió terminar con ella, y hay una razón. Sin
+                técnica (luz, composición, cámara, movimiento), la intención narrativa no tiene cómo
+                <em>ejecutada</em>: sabes lo que quieres decir, pero no cómo expresarlo. Por eso las seis rutas
+                anteriores instalaron, una a una, las herramientas de ejecución. Pero la técnica sin historia produce el
+                típico video de IA: deslumbrante y vacío. Esta ruta final cierra el ciclo: ahora que
+                dominas la herramienta, te enseña a hacer que <em>significar</em>. El orden del curso es, en sí mismo, una
+                tesis: la forma viene antes que el efecto, y la intención viene al final porque solo tiene sentido cuando hay con
+                qué ejecutarla.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="7-4" data-inema-topic="modulo-7-4#topico-2" data-inema-track="7" id="topico-2">
+<div class="section-mark">
+<span class="where">Sección 2 de 5</span><span>·</span><span>El plano antes</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Planear toda la secuencia de antemano</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-4-t2-p1">La regla de oro del cierre también es la más ignorada:
+              <strong>planea toda la secuencia antes de generar el primer plano</strong>. La IA hace tentador el
+              camino opuesto: generar un plano, que te guste, generar otro, ir “descubriendo” la secuencia
+              sobre la marcha. Este proceso casi siempre produce el mismo resultado: una colección de imágenes bonitas que
+              no forman una curva. Sin un mapa de toda la emoción, cada plano se optimiza por sí mismo —y el conjunto
+              se queda sin dirección.</p>
+<p data-inema-block="m7-4-t2-p2">Planear de antemano no tiene que ser complicado. Puede ser una simple
+              <span class="dfn"><details class="dfn"><summary>lista de planes</summary><span class="body"><b>Lista de planos</b> (shot list) — el mapa escrito de la secuencia: cada línea es un plano, con su función en la curva (el tiempo), la emoción objetivo, el tipo de plano y el movimiento de cámara. Es el guion de generación antes de cualquier generación.</span></details></span>
+              de una línea por plano, donde cada línea define cuatro cosas: el <em>tiempo</em> que ocupa en la
+              fórmula (¿plantear?, ¿reaccionar?), la <em>emoción objetivo</em>, o <em>tipo de plano</em> e o <em>movimiento
+              de cámara</em>. Con esta lista lista, ves toda la curva emocional desde arriba y notas los huecos (una escalada que no escala, dos primeros planos seguidos sin respiro) <em>antes</em> de gastar una
+              generación. El plano es barato; rehacer diez clips es caro.<span class="sidenote-ref">2</span></p>
+<h3 class="sub">De la emoción a la lista — en este orden</h3>
+<p data-inema-block="m7-4-t2-p3">El método invierte el orden del principiante. Empieza por el <strong>curva
+              emocional</strong> que quieres (por ejemplo: calma → curiosidad → tensión → miedo
+              → alivio). Solo después decide qué <strong>tiempos</strong> de la fórmula logran esa curva. Solo
+              después elige el <strong>plano y la cámara</strong> de cada momento. Y solo entonces, con el mapa completo,
+              genera. Decidir primero la emoción y dejar el plano para el final es exactamente la pregunta del director de la lección
+              anterior —«¿qué emoción ahora?»— aplicada a toda la secuencia de una vez,
+              en lugar de plano por plano. El plan de tomas es esa pregunta congelada en papel.</p>
+</div>
+<!-- figura 2: o fluxo do planejamento -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · <b>De la emoción al plano</b> — planificar toda la curva antes de generar</figcaption>
+<svg aria-label="Diagrama de flujo en cuatro etapas: definir la curva emocional, elegir los tiempos de la fórmula, elegir el plano y la cámara, y solo entonces generar; debajo, una fila que representa la lista de planos lista antes de la generación." class="diagram" role="img" viewbox="0 0 720 188">
+<g class="ink" font-family="Spectral, serif" font-size="12" text-anchor="middle">
+<rect class="wash accent-stroke" height="44" rx="4" stroke-width="1.3" width="148" x="30" y="34"></rect>
+<text x="104" y="54">1. curva emocional</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="8.5" x="104" y="70">que sentir, en orden</text>
+<rect class="wash accent-stroke" height="44" rx="4" stroke-width="1.3" width="148" x="206" y="34"></rect>
+<text x="280" y="54">2. los tiempos</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="8.5" x="280" y="70">establecer... escapar</text>
+<rect class="wash accent-stroke" height="44" rx="4" stroke-width="1.3" width="148" x="382" y="34"></rect>
+<text x="456" y="54">3. plano + cámara</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="8.5" x="456" y="70">tipo y movimiento</text>
+<rect class="accent-stroke" fill="url(#hatch-7-4)" height="44" rx="4" stroke-width="1.4" width="132" x="558" y="34"></rect>
+<text font-style="italic" x="624" y="54">4. generar</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="8.5" x="624" y="70">solo ahora</text>
+</g>
+<g class="accent" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">
+<text x="192" y="60">→</text><text x="368" y="60">→</text><text x="544" y="60">→</text>
+</g>
+<!-- lista pronta -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="108">LA LISTA DE PLANOS, CERRADA ANTES DE LA PRIMERA GENERACIÓN</text>
+<g class="rule-stroke" fill="none" stroke-width="1.1">
+<rect height="52" rx="3" width="480" x="120" y="120"></rect>
+<line x1="120" x2="600" y1="137" y2="137"></line>
+<line x1="120" x2="600" y1="154" y2="154"></line>
+<line x1="240" x2="240" y1="120" y2="172"></line>
+<line x1="380" x2="380" y1="120" y2="172"></line>
+<line x1="500" x2="500" y1="120" y2="172"></line>
+</g>
+<g class="faint" font-family="Source Serif 4, serif" font-size="8.5" text-anchor="middle">
+<text x="180" y="132">tiempo</text><text x="310" y="132">emoción</text><text x="440" y="132">plano</text><text x="550" y="132">cámara</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-4-t2-p4">En la práctica, este plan se convierte en un bloque de prompts: uno por plano,
+              todos escritos antes de generar el primero y todos siguiendo la misma curva. El prompt de abajo es un
+              ejemplo de un plan de secuencia completo: una huida bajo la lluvia en cuatro planos, con la emoción, el tiempo, el
+              tipo de plano y la cámara definidos línea por línea, listos para generar en orden.</p>
+<div class="codeblock"><span class="c"># Plano secuencia — escribe la lista COMPLETA antes de generar el primer plano</span>
+<span class="c"># Curva objetivo: calma -&gt; alerta -&gt; pánico -&gt; alivio (persecución en la azotea bajo la lluvia)</span>
+<span class="k">Shot 1 — Establish / calm (wide):</span> wide aerial of a wet neon city rooftop at night, a figure standing still. Slow drift. Camera: high wide, slow push.
+<span class="k">Shot 2 — Disrupt / alert (medium):</span> plano medio, la figura gira bruscamente la cabeza hacia un sonido; una puerta estalla detrás. Cámara: plano medio con cámara en mano, reencuadre rápido.
+<span class="k">Shot 3 — React+Escape / panic (close then track):</span> primerísimo primer plano de unos ojos muy abiertos; luego, corte a una toma de seguimiento rápida que atraviesa el tejado a toda velocidad, con lluvia y desenfoque de movimiento. Cámara: de primer plano a seguimiento dinámico.
+<span class="k">Shot 4 — Resolve / relief (wide):</span> wide low-angle as the figure leaps to the next roof and lands, the chaos behind fading. Camera: wide, settling to stillness.
+<span class="k">Continuity lock:</span> same character (dark coat, short hair), same rain and neon palette, motion always left-to-right.
+<span class="k">Ritmo:</span> shots 1 and 4 long (breathe); shots 2 and 3 short (accelerate).</div>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="7-4" data-inema-topic="modulo-7-4#topico-3" data-inema-track="7" id="topico-3">
+<div class="section-mark">
+<span class="where">Sección 3 de 5</span><span>·</span><span>Consistencia</span>
+</div>
+<h2 class="head"><span class="num">3.</span>Consistencia entre clips</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-4-t3-p1">El mayor enemigo práctico de la secuencia de IA tiene nombre:
+              <strong>inconsistencia</strong>. Cada plano se genera de forma independiente, y el modelo reinventa
+              detalles en cada generación: el tono del abrigo cambia, el rostro cambia sutilmente, la luz pasa de cálida
+              a fría, la dirección del movimiento se invierte. Cada plano por separado puede ser perfecto; juntos, la
+              ruptura de continuidad delata que se montaron a ciegas, y la ilusión de una obra única
+              se desmorona.</p>
+<h3 class="sub">Qué anclar — y cómo</h3>
+<p data-inema-block="m7-4-t3-p2">La defensa consiste en anclar deliberadamente lo que debe permanecer igual.
+              <strong>Personaje:</strong> descríbelo con las <em>las mismas palabras exactas</em> en todos los prompts
+              (“abrigo oscuro, cabello corto, cicatriz en la mejilla izquierda”) y, cuando la herramienta lo permita, usa una
+              imagen o una semilla de referencia para fijar el rostro. <strong>Luz:</strong> repite la fuente, la dirección
+              y la temperatura (“cold blue moonlight from the left”) en cada plano. <strong>Paleta:</strong>
+              fija los colores dominantes de la escena. <strong>Dirección del movimiento:</strong> si el personaje huye hacia la
+              derecha, sigue yendo hacia la derecha — invertir la dirección confunde la geografía y parece
+              un error de montaje.<span class="sidenote-ref">3</span></p>
+<p data-inema-block="m7-4-t3-p3">También se aplica una regla de sentido común de las clases anteriores:
+              <em>simplifica lo que debe permanecer constante</em>. Cuantos más elementos móviles tiene una secuencia,
+              más puntos de falla de continuidad aparecen. Los escenarios y personajes más simples son más
+              fáciles de mantener coherentes a lo largo de varios planos — y la coherencia, aquí, vale más que la
+              riqueza de detalles. Una secuencia simple y consistente parece más profesional que una
+              elaborada que «parpadea» en cada corte.</p>
+</div>
+<!-- figura 3: ancoras de continuidade entre planos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · <b>Anclas de continuidad</b> — lo que se repite de forma idéntica en todos los planos</figcaption>
+<svg aria-label="Diagrama: cuatro planos en fila y cuatro líneas ancla horizontales (personaje, luz, paleta, dirección) que atraviesan todos los planos de forma idéntica, indicando los elementos que deben permanecer constantes." class="diagram" role="img" viewbox="0 0 720 196">
+<!-- quatro planos -->
+<g class="accent-stroke" fill="none" stroke-width="1.3">
+<rect height="44" rx="3" width="130" x="60" y="24"></rect>
+<rect height="44" rx="3" width="130" x="208" y="24"></rect>
+<rect height="44" rx="3" width="130" x="356" y="24"></rect>
+<rect height="44" rx="3" width="130" x="504" y="24"></rect>
+</g>
+<g class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle">
+<text x="125" y="50">plano 1</text><text x="273" y="50">plano 2</text><text x="421" y="50">plano 3</text><text x="569" y="50">plano 4</text>
+</g>
+<!-- ancoras atravessando -->
+<g font-family="Source Serif 4, serif" font-size="10.5">
+<line class="mark-stroke" stroke-width="2" x1="60" x2="634" y1="92" y2="92"></line>
+<text class="ink-soft" text-anchor="end" x="40" y="95">personaje</text>
+<line class="mark-stroke" stroke-width="2" x1="60" x2="634" y1="116" y2="116"></line>
+<text class="ink-soft" text-anchor="end" x="40" y="119">luz</text>
+<line class="mark-stroke" stroke-width="2" x1="60" x2="634" y1="140" y2="140"></line>
+<text class="ink-soft" text-anchor="end" x="40" y="143">paleta</text>
+<line class="accent-stroke" stroke-width="2" x1="60" x2="634" y1="164" y2="164"></line>
+<text class="accent" text-anchor="end" x="40" y="167">dirección →</text>
+</g>
+<!-- marcas de plano sobre as ancoras -->
+<g class="accent"><circle cx="125" cy="164" r="2.5"></circle><circle cx="273" cy="164" r="2.5"></circle><circle cx="421" cy="164" r="2.5"></circle><circle cx="569" cy="164" r="2.5"></circle></g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="360" y="188">LAS MISMAS PALABRAS, LA MISMA LUZ, LA MISMA DIRECCIÓN — EN TODO PROMPT</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-4-t3-p4">Fíjate en la línea “Continuity
+              lock” del prompt de la sección anterior: existe precisamente para eso. Incluir este bloque de anclas —idéntico—
+              en todos los planos de la secuencia es uno de los hábitos más sencillos y eficaces del cine con IA. No es
+              glamuroso, pero es lo que hace que cuatro generaciones independientes parezcan un único mundo filmado.</p>
+</div>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="7-4" data-inema-topic="modulo-7-4#topico-4" data-inema-track="7" id="topico-4">
+<div class="section-mark">
+<span class="where">Sección 4 de 5</span><span>·</span><span>Montaje</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Ritmo en el montaje: la emoción final</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-4-t4-p1">Los planos generados todavía no son la secuencia. La
+              <strong>montaje</strong> — el orden, la duración de cada corte, los puntos de entrada y salida
+              y dónde finalmente se esculpe la emoción. Dos editores con los mismos clips pueden producir
+              secuencias que se sienten completamente distintas. Aquí el ritmo que planificaste en la lista se convierte en
+              una decisión concreta: cuánto tiempo permanece cada plano en pantalla y qué tan rápido se suceden.</p>
+<h3 class="sub">Cortar donde lo pide la emoción</h3>
+<p data-inema-block="m7-4-t4-p2">El instinto correcto en el montaje es cortar a favor de la curva. En los momentos de
+              respiro —establecer, conectar, resolver— deja los planos <em>largos</em>: el público
+              necesita tiempo para asimilar la escala, crear un vínculo, asentar la emoción. En los momentos de presión
+              —perturbar, reaccionar, escapar— <em>acelera</em>: los cortes más cortos elevan el pulso y
+              crean urgencia. El pico — la revelación — gana fuerza por el contraste: impacta más
+              porque los planos que lo rodean cambiaron de ritmo. <em>Si todo tiene el mismo ritmo, no hay un pico</em> —
+              y ruido parejo.<span class="sidenote-ref">4</span></p>
+<h3 class="sub">Cortar es el acto final de la dirección</h3>
+<p data-inema-block="m7-4-t4-p3">Conviene recordar dos disciplinas que atravesaron el curso, ahora aplicadas
+              al corte. La primera: <em>no termines abruptamente justo después de la revelación</em> — el tiempo para escapar, o un plano de asentamiento, le da al público un lugar donde dejar reposar la emoción. El segundo, el
+              <strong>prueba del silencio</strong> de nuevo: mira el corte final sin sonido. Si la secuencia todavía cuenta la
+              historia — si la curva emocional llega completa a través de la imagen y el ritmo — el montaje
+              funciona. Si solo entiendes con la banda sonora encima, el corte todavía depende de una muleta. Editar es el
+              último lugar donde ocurre la dirección.</p>
+</div>
+<!-- figura 4: o ritmo dos cortes ao longo da curva -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · O <b>ritmo del corte</b> sigue la curva — respiración larga, presión corta</figcaption>
+<svg aria-label="Diagrama: en la parte de arriba, una curva emocional sube hasta la revelación y baja; abajo, bloques que representan planos, anchos en los tramos de respiro y estrechos en el tramo de presión, muestran el ritmo del montaje siguiendo la emoción." class="diagram" role="img" viewbox="0 0 720 210">
+<!-- curva emocional -->
+<path class="accent-stroke" d="M40 120 L150 118 C 220 114, 250 70, 330 56 C 400 44, 410 30, 440 30 C 480 30, 500 90, 580 110 L680 116" fill="none" stroke-width="2.2"></path>
+<circle class="accent" cx="440" cy="30" r="4"></circle>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="440" y="22">REVELACIÓN</text>
+<!-- linha base -->
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="150" y2="150"></line>
+<!-- blocos de plano: largura = duracao -->
+<g class="accent-stroke" stroke-width="1.2">
+<rect fill="none" height="32" rx="3" width="120" x="40" y="158"></rect>
+<rect fill="none" height="32" rx="3" width="96" x="166" y="158"></rect>
+<rect fill="url(#hatch-7-4)" height="32" rx="3" width="40" x="268" y="158"></rect>
+<rect fill="url(#hatch-7-4)" height="32" rx="3" width="36" x="312" y="158"></rect>
+<rect fill="url(#hatch-7-4)" height="32" rx="3" width="34" x="352" y="158"></rect>
+<rect fill="none" height="32" rx="3" width="120" x="390" y="158"></rect>
+<rect fill="none" height="32" rx="3" width="150" x="516" y="158"></rect>
+</g>
+<g class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle">
+<text x="100" y="204">largo (pausa)</text>
+<text class="accent" x="330" y="204">cortos (presión)</text>
+<text x="591" y="204">largo (se asienta)</text>
+</g>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-4-t4-p4">Por eso el ritmo aparece en la lista de planos <em>e</em> en el montaje: se
+              planifica antes (qué planos respiran, cuáles se aceleran) y se ejecuta después (la duración real de cada
+              corte). Cuando ambos dialogan — cuando la curva que dibujaste en el papel coincide con la curva que surge
+              en el corte — la secuencia deja de parecer una generación y empieza a parecer cine.</p>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="7-4" data-inema-topic="modulo-7-4#topico-5" data-inema-track="7" id="topico-5">
+<div class="section-mark">
+<span class="where">Sección 5 de 5</span><span>·</span><span>El cierre</span>
+</div>
+<h2 class="head"><span class="num">5.</span>La decisión final — y el cierre del curso</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m7-4-t5-p1">Queda la decisión más difícil de toda secuencia: saber
+              cuándo está <strong>lista</strong>. La generación con IA invita al ciclo infinito: siempre puedes
+              rehacer un plano, mejorar una transición, buscar una versión un poco más bonita. Pero el criterio para darlo por terminado no es estético, sino <em>emocional</em>: la secuencia está lista cuando la curva
+              emocional que planeaste llega completa al público. Ni antes — ni, algo importante, después.
+              Pulir más allá de ese punto rara vez añade sentido; solo retrasa la entrega.</p>
+<h3 class="sub">La lista de verificación final de la secuencia</h3>
+<p data-inema-block="m7-4-t5-p2">Antes de dar por terminada una secuencia, responde estas preguntas
+              — condensan toda la ruta. <strong>(1)</strong> La emoción <em>cambia</em> del primer
+              plano al último? (7.1) <strong>(2)</strong> Cada plano tiene un propósito: ¿podría quitarse alguno sin
+              perder nada? (7.2) <strong>(3)</strong> La cámara <em>evoluciona</em> con la emoción? (7.3) <strong>(4)</strong>
+              ¿Se mantiene la continuidad —el mismo personaje, la luz y la dirección? <strong>(5)</strong> ¿Pasa la
+              prueba del silencio? ¿Se entiende la historia sin sonido? Si las cinco respuestas son sí, la secuencia está
+              lista. Donde haya un no, ahí está el último trabajo por hacer.<span class="sidenote-ref">5</span></p>
+<h3 class="sub">Lo que te llevas del curso</h3>
+<p data-inema-block="m7-4-t5-p3">Y aquí termina el curso. Empezaste en la Trilha 1 con una tesis: la
+              herramienta no crea intención, ejecuta dirección — el impacto es control de la percepción, no
+              efecto. Recorriste la luz y la composición, montaste un pipeline de herramientas, aprendiste el lenguaje de
+              cámara, los VFX y la acción, la actuación y el diálogo. Y llegaste al núcleo: la historia. Todo esto converge
+              en una sola competencia — <strong>pensar como director</strong>. No generar imágenes bonitas, sino
+              construir <em>cambio emocional</em>: dar propósito a cada escena, progresión a cada secuencia,
+              intención a cada plano.</p>
+<p data-inema-block="m7-4-t5-p4">Lleva una sola pregunta como brújula, la misma que abrió esta ruta y
+              que ahora cierra el curso: <em>¿qué cambió emocionalmente?</em> Sirve para un plano, para una escena,
+              para una secuencia entera — y para todo lo que crees de ahora en adelante. Las herramientas van a
+              cambiar; los modelos serán más poderosos cada mes. Esa pregunta no cambia. Mientras la hagas
+              antes de generar, la herramienta — cualquier herramienta — ejecutará tu dirección, y no al
+              contrario. Ese es todo el curso en una frase. El resto es dirigir.</p>
+</div>
+<!-- figura 5: o arco do curso fechando -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · El arco del curso — de la <b>herramienta</b> a <b>intención</b>, todo converge hacia la dirección</figcaption>
+<svg aria-label="Diagrama: siete hitos de las rutas, desde la luz hasta la historia, convergen mediante líneas en un único punto etiquetado pensar como director, con la pregunta qué cambió emocionalmente debajo." class="diagram" role="img" viewbox="0 0 720 206">
+<!-- sete marcos das trilhas, em arco -->
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
+<circle class="rule-stroke" cx="60" cy="60" r="3"></circle><text x="60" y="48">luz</text>
+<circle class="rule-stroke" cx="150" cy="42" r="3"></circle><text x="150" y="30">composición</text>
+<circle class="rule-stroke" cx="250" cy="34" r="3"></circle><text x="250" y="22">pipeline</text>
+<circle class="rule-stroke" cx="360" cy="30" r="3"></circle><text x="360" y="18">cámara</text>
+<circle class="rule-stroke" cx="470" cy="34" r="3"></circle><text x="470" y="22">vfx / acción</text>
+<circle class="rule-stroke" cx="570" cy="42" r="3"></circle><text x="570" y="30">actuación</text>
+<circle class="accent" cx="660" cy="60" r="3.5"></circle><text class="accent" x="660" y="48">historia</text>
+</g>
+<!-- convergencia -->
+<g class="rule-stroke" fill="none" opacity="0.8" stroke-width="1">
+<path d="M60 64 L355 128"></path><path d="M150 46 L356 128"></path><path d="M250 38 L358 128"></path>
+<path d="M360 34 L360 128"></path><path d="M470 38 L362 128"></path><path d="M570 46 L364 128"></path>
+</g>
+<path class="accent-stroke" d="M660 64 L366 128" fill="none" stroke-width="1.4"></path>
+<!-- ponto de convergencia -->
+<rect class="accent-stroke" fill="url(#hatch-7-4)" height="42" rx="5" stroke-width="1.5" width="180" x="270" y="128"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="154">pensar como director</text>
+<!-- a pergunta -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="360" y="194">¿QUÉ CAMBIÓ EMOCIONALMENTE?</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m7-4-t5-p5">Resume este módulo —y este curso— en una frase: <em>una
+              secuencia está lista cuando el cambio emocional que planeaste llega íntegro al público; y la única
+              pregunta que lo rige todo, del plano a la obra, es qué cambió.</em> Ya no necesitas un presupuesto de
+              estudio. Necesitas una intención clara y la disciplina para ejecutarla. El curso terminó; el trabajo de
+              dirigir empieza ahora.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Autocomprobación" class="check">
+<h2>Antes de terminar: cuatro revisiones rápidas</h2>
+<p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>¿Cuál es la diferencia entre usar la fórmula como checklist y usarla como método?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Cómo <em>lista de verificación</em>, marcas cada tiempo y la secuencia queda técnicamente
+              correcta, pero fría. Como <em>método</em>, primero defines la intención, planeas toda la curva y
+              cuidas el ritmo y la continuidad — la fórmula se convierte en la dirección del conjunto, y eso es lo que produce la emoción.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>¿Por qué planificar toda la secuencia antes de generar el primer plano?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque generar plano por plano sin un mapa hace que cada plano se optimice por su cuenta y el conjunto se quede
+              sin curva: se vuelve una colección. Una lista de planos (tiempo, emoción, plano, cámara) permite ver los
+              vacíos de la curva <em>antes</em> de gastar generaciones. El plano es barato; rehacer diez clips es caro.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>¿Qué anclas mantienen la continuidad entre clips que la IA genera por separado?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Las mismas palabras exactas para el personaje (y la semilla/referencia para el rostro), la
+              misma fuente/dirección/temperatura de luz, la misma paleta y la misma dirección del movimiento. Incluir este
+              bloque idéntico en cada prompt es lo que hace que generaciones independientes parezcan un mismo mundo.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>¿Cuál es el criterio para saber que la secuencia está lista?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>No es estético, es <em>emocional</em>: está lista cuando la curva emocional planificada
+              llega completa al público. La lista final —¿cambia la emoción? ¿cada plano tiene un propósito? ¿la cámara
+              evoluciona? ¿se sostiene la continuidad? ¿pasa la prueba sin sonido?— lo confirma. Seguir puliendo solo retrasa
+              la entrega.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Mi recorrido</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">En este módulo</div>
+<div class="v" data-inema-meter="modulo:7-4">
+<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En la ruta 7</div>
+<div class="v" data-inema-meter="trilha:7">
+<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En el curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) — fim do curso -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Completaste la última ruta</div>
+<div class="t">Curso completo — vuelve al mapa para repasar cualquier recorrido</div>
+</div>
+<a class="go" href="../../index.html">Volver al índice del curso →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-7-4#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>El arte de la secuencia.</b> Unir propósito, fórmula, cámara, ritmo y continuidad en una secuencia
+          concebida como una obra completa: el paso que transforma la fórmula memorizada en dirección.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          Lección 22 del programa <i>AI Filmmaking</i> — “The Art of Cinematic Sequencing in AI”.
+          El cierre del bloque de historia y estructura — y del curso.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-7-4#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Lista de planos.</b> El mapa escrito de la secuencia: por plano, el tiempo en la fórmula, la emoción objetivo, el tipo
+          de plano y el movimiento. Cerrado antes de generar: el guion de generación.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          El orden del método invierte el del principiante: primero la emoción, el plano al final. Es la pregunta “¿qué
+          emoción ahora?” aplicada a toda la secuencia de una sola vez.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-7-4#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Bloqueo de continuidad.</b> Un bloque de anclas —personaje, luz, paleta, dirección—
+          repetido de forma idéntica en cada prompt. Hace que generaciones independientes parezcan un solo mundo filmado.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-7-4#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Ritmo de montaje.</b> La duración de cada corte. Larga durante las pausas (establecer, conectar, resolver),
+          corta bajo presión (perturbar, reaccionar, escapar). El pico gana fuerza gracias al contraste.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-7-4#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Listo.</b> Criterio emocional, no estético: la secuencia está lista cuando la curva emocional
+          prevista llega completa al público. Pulir más solo retrasa la entrega.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          La brújula que cierra el curso es la misma que abrió la ruta: <i>¿qué cambió emocionalmente?</i> Se aplica desde el
+          plan hasta la obra: las herramientas cambian, la pregunta no.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Módulo 7.4 — folio iv · fin del curso</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

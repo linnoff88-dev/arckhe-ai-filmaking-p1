@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Módulo 3.1 — Pipeline de herramientas de IA | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-1.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Saltar al contenido</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:3-1"><span data-inema-meter-frac=""><strong>0</strong> de 4</span></span> leídas</span>
+<div aria-label="Tema de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+</div>
+<div aria-label="Fuente de lectura" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+</div>
+<div aria-label="Tamaño del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Dónde estás" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Ruta <b>3</b> Flujo de trabajo de cine con IA</span>
+<span class="sep">·</span>
+<span>Módulo <b>3.1</b> / 5</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Sección 1 de 4</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Módulo 3.1 · Ruta 3 · Flujo de trabajo de cine con IA</p>
+<h1 class="module">El Pipeline de <em>Herramientas</em> de IA</h1>
+<p class="deck">La calidad de un video de IA no la decide el modelo: la decide cuánto
+          controlas la atención, la composición y la continuidad. Antes de abrir cualquier herramienta, arma el
+          mapa: imagen, movimiento, refinamiento, montaje; y aprende cuándo recurrir a cada una.</p>
+<p class="read-meta">
+<span class="here">Leyendo ahora</span>
+<span>~15 min · módulo completo</span>
+<span>4 secciones</span>
+</p>
+<!-- objetivos: o que voce vai entender -->
+<section aria-label="Lo que vas a entender" class="aims">
+<h2>Lo que vas a entender</h2>
+<ul>
+<li>Por qué la calidad cinematográfica <b>no viene de la herramienta</b> — y viene del sistema de control que construyes: atención, composición, continuidad.</li>
+<li>O <b>mapa del pipeline</b>: imagen → movimiento → refinamiento → montaje, y qué herramienta resuelve mejor cada fase.</li>
+<li>A <b>orden en que un prompt cinematográfico</b> debe escribirse, desde el tipo de plano hasta el control de estilo — y por qué ese orden importa.</li>
+<li>Un <b>criterio claro</b> para elegir: Freepik, Seedance, Kling, Luma, Runway; qué hace mejor cada una.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<p class="toc-head">Resumen: cuatro movimientos</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">La calidad es un sistema, no un modelo</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">El mapa: cuatro fases del pipeline</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">El orden del prompt cinematográfico</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Qué herramienta para cada trabajo</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="3-1" data-inema-topic="modulo-3-1#topico-1" data-inema-track="3" id="topico-1">
+<div class="section-mark">
+<span class="where">Sección 1 de 4</span><span>·</span><span>El sistema</span>
+</div>
+<h2 class="head"><span class="num">1.</span>La calidad es un sistema, no un modelo</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m3-1-t1-p1">Existe la creencia común de que basta con un modelo
+              mejor para que el video se vea cinematográfico. No es así. La calidad de un video generado por IA
+              <em>no</em> la define únicamente el modelo — la define <span class="sidenote-ref">1</span>tres
+              cosas bajo tu control: cuánto guías <strong>dónde mira el espectador</strong> dentro de un
+              único cuadro, qué tan claramente su <strong>la composición crea significado</strong> emocional, y qué tan
+              naturalmente un plan <strong>se conecta</strong> a la siguiente en el montaje. La IA no es lo que hace que la
+              película sea cinematográfica por sí sola. Es el sistema de producción que tú, como creador, aprendes a dirigir.</p>
+<p data-inema-block="m3-1-t1-p2">Esto reorganiza la forma de trabajar. En lugar de saltar de una herramienta a
+              otra con la esperanza de que alguna «acierte», montas un flujo en el que cada fase tiene un
+              propósito y cada decisión se puede justificar. El encuadre dirige la atención; la composición crea
+              significado; la edición construye el ritmo; la IA <em>apoya</em> el proceso. La frase que cierra el módulo en
+              la fuente es directa: <strong>la IA no hace que tu video sea cinematográfico: tú lo haces.</strong></p>
+<h3 class="sub">Las preguntas que guían cada plano</h3>
+<p data-inema-block="m3-1-t1-p3">Dos controles aparecen antes que cualquier otro. El primero es la
+              <em>ancla de atención</em>: todo encuadre potente comunica su prioridad al instante: el
+              espectador no debe <em>buscar</em> el sujeto, debes entenderlo de inmediato. El segundo es el
+              <em>espacio negativo</em>: el espacio vacío no es un error, es estructura emocional. Más espacio sugiere
+              libertad, escala y aislamiento; menos espacio sugiere tensión y presión.<span class="sidenote-ref">2</span>
+              Estos dos principios, heredados de las trilhas anteriores, son los que impondrás a cada herramienta del
+pipeline, y los que separan un cuadro que comunica de uno que solo es bonito.</p>
+</div>
+<!-- figura 1: modelo x sistema -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · La calidad nace del <b>control</b>, no del modelo</figcaption>
+<svg aria-label="Diagrama: a la izquierda, un modelo de IA por sí solo genera resultados inestables; a la derecha, el mismo modelo rodeado de atención, composición y continuidad genera un resultado cinematográfico." class="diagram" role="img" viewbox="0 0 720 210">
+<defs>
+<pattern height="6" id="hatch-3-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<!-- esquerda: so o modelo -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="170" y="30">SOLO EL MODELO</text>
+<circle class="rule-stroke" cx="170" cy="110" fill="none" r="30" stroke-width="1.3"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="170" y="114">IA</text>
+<path class="rule-stroke" d="M205 110 H 300" stroke-dasharray="3 4" stroke-width="1.2"></path>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="252" y="100">salida</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="252" y="128">inestable</text>
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="34" y2="186"></line>
+<!-- direita: o modelo dentro do sistema -->
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="30">EL MODELO EN EL SISTEMA</text>
+<rect class="accent-stroke" fill="url(#hatch-3-1)" height="120" rx="4" stroke-width="1.3" width="260" x="410" y="48"></rect>
+<circle class="wash accent-stroke" cx="540" cy="108" r="26" stroke-width="1.4"></circle>
+<text class="ink" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="112">IA</text>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
+<text x="540" y="66">atención</text>
+<text x="452" y="112">composición</text>
+<text x="628" y="112">continuidad</text>
+<text x="540" y="158">montaje</text>
+</g>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Detente y predice</p>
+<p>Dos creadores usan exactamente el mismo generador de video, el mismo día. Uno entrega un clip que
+              parece un tráiler; el otro, un montón de imágenes bonitas que no forman una escena. Si la herramienta es la
+              misma, ¿qué cambió?</p>
+<details>
+<summary>Ver una posible respuesta</summary>
+<p class="answer">O <strong>sistema de control</strong>, no el modelo. El primero dirigió la atención (un asunto claro por cuadro), dio significado a la composición y cuidó la continuidad entre planos. El segundo dejó que la IA decidiera — y esta devuelve textura, no dirección. La herramienta amplía lo que pones en ella; sin dirección, amplía el azar.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="3-1" data-inema-topic="modulo-3-1#topico-2" data-inema-track="3" id="topico-2">
+<div class="section-mark">
+<span class="where">Sección 2 de 4</span><span>·</span><span>El mapa</span>
+</div>
+<h2 class="head"><span class="num">2.</span>El mapa: cuatro fases del pipeline</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-1-t2-p1">Una película de IA pasa por cuatro fases, en orden, y cada
+              una tiene su propia pregunta. <strong>Imagen:</strong> ¿cuál es el fotograma? — aquí se construye la
+              composición, el personaje, el entorno (Freepik, Midjourney). <strong>Movimiento:</strong> cómo cobra vida el encuadre? — aquí entran la física y el ritmo (Seedance, Kling). <strong>Refinamiento:</strong> cómo
+              se convierte esto en cine de verdad? — movimiento de cámara realista, atmósfera, ajuste (Luma, Runway).
+              <strong>Montaje:</strong> cómo los planos se convierten en una escena? — la edición que lo une todo. Saltarse una
+              fase o abordarlas fuera de orden es el origen de la mayoría de los resultados que «casi»
+              funcionan.</p>
+<p data-inema-block="m3-1-t2-p2">El orden no es arbitrario: cada fase <em>entrega material</em> para la
+              siguiente. Sin una imagen con la composición resuelta, no hay nada que animar con intención: el
+              movimiento solo amplía lo que ya estaba en el cuadro. Sin un movimiento bien definido, el refinamiento intenta corregir
+              lo que debería haber nacido bien. Y sin planos coherentes, el montaje no puede crear fluidez. Por eso
+              esta ruta sigue exactamente esta estructura: el Módulo 3.2 cubre la <em>imagen</em>, o 3.3 o
+              <em>movimiento</em>, o 3.4 a <em>cámara</em>, o 3.5 o <em>refinamiento</em>.</p>
+<h3 class="sub">Qué conserva cada fase de la anterior</h3>
+<p data-inema-block="m3-1-t2-p3">Piensa en el pipeline como una cadena de decisiones que no se pierden. El
+              <em>emoción</em> elegida en la fase de imagen debe sobrevivir al movimiento; El <em>personaje</em>
+              definido debe permanecer igual entre planos; el <em>paleta</em> debe ser consistente desde
+              el primer hasta el último clip. La continuidad no es un detalle del montaje — es una obligación de cada
+              fase. Cuando tratas el flujo así, la herramienta deja de ser un casino y se convierte en un conjunto de
+              instrumentos con funciones claras.</p>
+</div>
+<!-- figura 2: as quatro fases -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · El pipeline en <b>cuatro fases</b> — cada una alimenta a la siguiente</figcaption>
+<svg aria-label="Diagrama de flujo con cuatro bloques encadenados: imagen, movimiento, refinamiento y montaje, con las herramientas típicas de cada fase indicadas debajo." class="diagram" role="img" viewbox="0 0 720 188">
+<g font-family="Source Serif 4, serif" font-size="12" text-anchor="middle">
+<rect class="accent-stroke" fill="url(#hatch-3-1)" height="50" rx="3" stroke-width="1.3" width="140" x="20" y="52"></rect>
+<text class="ink" x="90" y="82">imagen</text>
+<rect class="wash accent-stroke" height="50" rx="3" stroke-width="1.2" width="140" x="196" y="52"></rect>
+<text class="ink-soft" x="266" y="82">movimiento</text>
+<rect class="wash accent-stroke" height="50" rx="3" stroke-width="1.2" width="140" x="372" y="52"></rect>
+<text class="ink-soft" x="442" y="82">refinamiento</text>
+<rect class="accent-stroke" fill="url(#hatch-3-1)" height="50" rx="3" stroke-width="1.3" width="152" x="548" y="52"></rect>
+<text class="ink" x="624" y="82">montaje</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.8">
+<path d="M160 77 H 194"></path><path d="M192 77 l -7 -4 m 7 4 l -7 4"></path>
+<path d="M336 77 H 370"></path><path d="M368 77 l -7 -4 m 7 4 l -7 4"></path>
+<path d="M512 77 H 546"></path><path d="M544 77 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<g class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle">
+<text x="90" y="124">FREEPIK · MIDJOURNEY</text>
+<text x="266" y="124">SEEDANCE · KLING</text>
+<text x="442" y="124">LUMA · RUNWAY</text>
+<text x="624" y="124">CORTE · RITMO</text>
+</g>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.4" text-anchor="middle" x="360" y="36">LA EMOCIÓN, EL PERSONAJE Y LA PALETA ATRAVIESAN TODO</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="160">el encuadre detenido es el final de una fase y la materia prima de la siguiente</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-1-t2-p4">Fíjate en que la fase de <em>imagen</em> y es la base amplia: ahí es donde ocurre la mayor
+              parte de las decisiones de dirección, cuando todavía es barato cambiar. Cuanto antes resuelvas
+              — composición, punto focal, escala, paleta — menos tendrás que pedirles a las fases siguientes
+              que corrijan. El creador principiante dedica tiempo al refinamiento para intentar salvar una imagen mal compuesta; el
+              creador experimentado resuelve la composición en la imagen y usa el refinamiento solo para lo que realmente hace bien.</p>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="3-1" data-inema-topic="modulo-3-1#topico-3" data-inema-track="3" id="topico-3">
+<div class="section-mark">
+<span class="where">Sección 3 de 4</span><span>·</span><span>El prompt</span>
+</div>
+<h2 class="head"><span class="num">3.</span>El orden del prompt cinematográfico</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-1-t3-p1">El prompt es tu herramienta de control — y la
+              confiabilidad cinematográfica sigue, casi siempre, una <em>orden</em>. Primero lo que estructura la
+              escena, después lo que le da sabor. La secuencia recomendada es: <strong>tipo de plano → acción →
+              sujeto → entorno → composición → luz → color → movimiento de cámara →
+              estilo → notas de control.</strong> Empezar por la atmósfera (“cinematográfico,
+              dramático”) y dejar al sujeto para el final es el error clásico: el generador decora antes de saber
+              qué está mostrando.</p>
+<p data-inema-block="m3-1-t3-p2">Las palabras clave cinematográficas ayudan, pero solo cuando están unidas a
+              una <em>idea visual clara</em>. Términos como <em>film grain</em>, <em>rim light</em>,
+              <em>silhouette</em>, <em>contraste dramático</em>, <em>bruma atmosférica</em>, <em>restrained
+              palette</em>, <em>top light</em> o <em>anamorphic feel</em> son útiles cuando <strong>sirven a la
+              escena</strong>, y no cuando solo la adornan. Un adjetivo bonito sobre un cuadro sin tema sigue siendo un cuadro sin tema.<span class="sidenote-ref">3</span></p>
+</div>
+<!-- prompt pronto: a ordem do prompt -->
+<div class="prose">
+<p data-inema-block="m3-1-t3-p3">Este es el esqueleto del prompt en el orden correcto, listo para completar
+en cualquier generador de imagen o video del pipeline:</p>
+<div class="codeblock"><span class="c"># Esqueleto de prompt cinematográfico — completa en orden</span>
+<span class="c"># (sirve para Freepik / Midjourney en imagen; Seedance / Kling / Luma en video)</span>
+<span class="k">Shot type:</span> low-angle medium shot.
+<span class="k">Action:</span> a lone figure steps to the edge of a rooftop and stops.
+<span class="k">Sujeto:</span> a weathered detective in a long wet coat, mid 40s.
+<span class="k">Entorno:</span> rain-soaked city rooftop at night, neon glow below.
+<span class="k">Composition:</span> subject on the right third, deep negative space left.
+<span class="k">Iluminación:</span> rim light from behind, practical neon as key, top light haze.
+<span class="k">Color:</span> restrained palette — teal shadows, warm amber accents.
+<span class="k">Movimiento de cámara:</span> slow dolly-in, stable, no shake.
+<span class="k">Estilo:</span> anamorphic feel, film grain, dramatic contrast.
+<span class="k">Control notes:</span> keep the subject readable at all times; one clear focal point.</div>
+</div>
+<!-- figura 3: a ordem do prompt como pilha -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · De la <b>estructura al condimento</b> — el orden en que se lee el prompt</figcaption>
+<svg aria-label="Diagrama de pila vertical: en la base, estructura (tipo de plano, acción, sujeto, entorno); en el medio, composición, luz y color; arriba, movimiento de cámara, estilo y notas de control." class="diagram" role="img" viewbox="0 0 720 220">
+<line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="44" x2="44" y1="24" y2="196"></line>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" transform="rotate(-90 34 110)" x="34" y="110">ESTRUCTURA → CONDIMENTO</text>
+<!-- base: estrutura -->
+<rect class="accent-stroke" fill="url(#hatch-3-1)" height="54" rx="3" stroke-width="1.3" width="600" x="70" y="142"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.1" x="90" y="164">01</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="130" y="166">Estructura</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" x="380" y="166">tipo de plano · acción · sujeto · entorno</text>
+<!-- meio: campo visual -->
+<rect class="wash accent-stroke" height="54" rx="3" stroke-width="1.2" width="500" x="120" y="80"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.1" x="140" y="102">02</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="180" y="104">Campo visual</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" x="430" y="104">composición · luz · color</text>
+<!-- topo: acabamento -->
+<rect class="wash accent-stroke" height="54" rx="3" stroke-width="1.2" width="400" x="170" y="18"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.1" x="190" y="40">03</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="230" y="42">Acabado</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" x="450" y="42">cámara · estilo · notas</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Profundizando: tres pilares de la coherencia cinematográfica
+              <span class="opt">opcional</span></summary>
+<div class="inner">
+<p>Capa opcional. Útil cuando una generación queda «casi lista» y no sabes qué ajustar.</p>
+<p>La fuente señala tres pilares que, juntos, crean coherencia cinematográfica y evitan el aspecto
+                genérico: <strong>sujeto aislado</strong> (un punto focal claro, sin competencia), <strong>paleta
+                restringida</strong> (pocos colores, con intención) y <strong>movimiento de cámara predecible</strong>
+                (un crecimiento lento y estable que mantiene al sujeto legible todo el tiempo). Cuando un cuadro no
+                convence, casi siempre cedió uno de estos pilares: hay demasiados elementos compitiendo por la mirada, la
+                paleta está saturada o la cámara hace demasiados movimientos. Corrige el pilar que cedió —no
+                agregues más adjetivos.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="3-1" data-inema-topic="modulo-3-1#topico-4" data-inema-track="3" id="topico-4">
+<div class="section-mark">
+<span class="where">Sección 4 de 4</span><span>·</span><span>Las herramientas</span>
+</div>
+<h2 class="head"><span class="num">4.</span>Qué herramienta para cada trabajo</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-1-t4-p1">Con la composición, el prompt y la edición claros, queda la
+              pregunta práctica: <em>¿qué herramienta es mejor para cada tarea?</em> Ninguna lo hace todo bien, y
+              intentar usar una sola para todas las fases es lo que más tiempo desperdicia. La elección correcta parte de la
+              <strong>fase del pipeline</strong>, no de la marca de moda.</p>
+<h3 class="sub">Freepik: el centro de creación</h3>
+<p data-inema-block="m3-1-t4-p2">O <em>Freepik</em> funciona mejor como un <strong>espacio central de
+              creación</strong>, no como un único modelo. Reúne varios generadores de terceros en un mismo entorno,
+              incluidos Kling, Seedance y Runway, además de sus propios modelos. En la práctica, sirve para
+              comparar modelos de distintas generaciones sin reconstruir el flujo, generar y reunir referencias y arte
+              conceptual, gestionar variaciones creativas más rápido en una sola interfaz y encargarse de tareas finales como
+              la edición. Piensa en ello como el <em>banco de trabajo</em> donde cambias de modelo según el
+              plano.<span class="sidenote-ref">4</span></p>
+<h3 class="sub">Seedance, Kling, Luma, Runway — cada una con una fortaleza</h3>
+<p data-inema-block="m3-1-t4-p3">Las otras cuatro dividen el trabajo por especialidad. El
+              <strong>Seedance</strong> brilla en <em>continuidad</em>: gran consistencia de personajes y narrativa
+              de varios planos, ideal cuando la escena tiene una secuencia. El <strong>Kling</strong> y es eficaz en escenas
+              de <em>diálogo</em>: mantiene la identidad del personaje y sincroniza audio y video. La <strong>Luma</strong>
+              entrega <em>movimiento realista</em>, comportamiento cinematográfico de la cámara y una renderización atmosférica intensa. El <strong>Runway</strong> ofrece <em>control preciso</em>, edición de movimiento y flujos
+              de trabajo al estilo VFX. Saber esto evita el error de pedir diálogo a una herramienta de
+              atmósfera, o continuidad a una herramienta de control puntual.</p>
+</div>
+<!-- prompt pronto: roteador de ferramenta -->
+<div class="prose">
+<p data-inema-block="m3-1-t4-p4">Usa esta tarjeta de decisión como referencia rápida al armar un
+              proyecto: relaciona la necesidad con la herramienta:</p>
+<div class="codeblock"><span class="c"># Selector de herramientas — elige según la necesidad, no la marca</span>
+<span class="k">Need: central workspace, compare models, assets</span> → Freepik
+<span class="k">Need: multi-shot continuity, character consistency</span> → Seedance
+<span class="k">Need: dialogue scenes, audio + video sync, identity</span> → Kling
+<span class="k">Need: realistic motion, cinematic camera, atmosphere</span> → Luma
+<span class="k">Need: precise control, motion editing, VFX-style</span> → Runway
+<span class="c"># regla madre: la fase del pipeline decide la herramienta; el modelo no decide la calidad — tú decides.</span></div>
+</div>
+<!-- figura 4: roteador de ferramentas -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · De la <b>necesidad</b> la herramienta — un enrutador, no una clasificación</figcaption>
+<svg aria-label="Diagrama: cinco necesidades a la izquierda (espacio central, continuidad, diálogo, atmósfera, control) conectadas con cinco herramientas a la derecha (Freepik, Seedance, Kling, Luma, Runway)." class="diagram" role="img" viewbox="0 0 720 226">
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="end">
+<text x="250" y="42">espacio central</text>
+<text x="250" y="80">continuidad</text>
+<text x="250" y="118">diálogo + audio</text>
+<text x="250" y="156">atmósfera + cámara</text>
+<text x="250" y="194">control / VFX</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.4">
+<path d="M262 38 H 458"></path>
+<path d="M262 76 H 458"></path>
+<path d="M262 114 H 458"></path>
+<path d="M262 152 H 458"></path>
+<path d="M262 190 H 458"></path>
+</g>
+<g class="accent"><circle cx="262" cy="38" r="2.6"></circle><circle cx="262" cy="76" r="2.6"></circle><circle cx="262" cy="114" r="2.6"></circle><circle cx="262" cy="152" r="2.6"></circle><circle cx="262" cy="190" r="2.6"></circle></g>
+<g font-family="Spectral, serif" font-size="13" text-anchor="start">
+<rect class="accent-stroke" fill="url(#hatch-3-1)" height="28" rx="3" stroke-width="1.2" width="150" x="462" y="24"></rect>
+<text class="ink" x="476" y="43">Freepik</text>
+<rect class="wash accent-stroke" height="28" rx="3" stroke-width="1.1" width="150" x="462" y="62"></rect>
+<text class="ink" x="476" y="81">Seedance</text>
+<rect class="wash accent-stroke" height="28" rx="3" stroke-width="1.1" width="150" x="462" y="100"></rect>
+<text class="ink" x="476" y="119">Kling</text>
+<rect class="wash accent-stroke" height="28" rx="3" stroke-width="1.1" width="150" x="462" y="138"></rect>
+<text class="ink" x="476" y="157">Luma</text>
+<rect class="wash accent-stroke" height="28" rx="3" stroke-width="1.1" width="150" x="462" y="176"></rect>
+<text class="ink" x="476" y="195">Runway</text>
+</g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1.2" text-anchor="middle" x="360" y="220">LA FASE ELIGE LA HERRAMIENTA</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-1-t4-p5">Antes de terminar cualquier video, conviene hacer la revisión de la fuente:
+              ¿el tema principal queda claro en un segundo? ¿la composición es intencional? ¿se usó correctamente
+              el espacio? ¿la paleta es coherente? ¿el movimiento parece natural? ¿los planos se conectan con fluidez?
+              ¿se usó la herramienta adecuada para cada tarea? Resume el módulo en una frase: <em>la calidad
+              cinematográfica es un sistema —encuadre, composición, montaje— y la IA solo lo apoya.</em>
+              Las próximas clases profundizan en cada fase, comenzando por la construcción de la escena en Freepik.</p>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Autocomprobación" class="check">
+<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>¿Qué define la calidad de un video de IA, si no es el modelo?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>O <em>sistema de control</em>: cuánto diriges la atención dentro del encuadre, qué
+              tan claramente la composición crea significado y qué tan naturalmente se conectan los planos en el
+              montaje. La IA apoya el proceso; no lo sustituye.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>¿Cuáles son las cuatro fases del pipeline, en orden?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><em>Imagen → movimiento → refinamiento → montaje.</em> Cada fase entrega
+              material para la siguiente: la imagen resuelve la composición, el movimiento le da vida, el refinamiento la acerca al
+              cine y el montaje crea el flujo. La emoción, el personaje y la paleta están presentes en todas.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>¿Por qué empezar el prompt con la atmósfera («cinematográfico») es un error?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque el generador <em>decora antes de saber qué muestra</em>. El orden confiable va
+              de la estructura al detalle: primero, tipo de plano, acción, sujeto y entorno; después, composición, luz y color;
+              al final, cámara, estilo y notas. Un adjetivo solo sirve si va unido a una idea visual clara.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>¿Qué herramienta elegirías para una escena de diálogo con varios planos consistentes y por qué?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Para el <em>diálogo</em> con sincronía de audio e identidad, <strong>Kling</strong>;
+              para la <em>continuidad entre planos</em>, <strong>Seedance</strong>. La elección parte de la fase o tarea,
+              no de la marca: Freepik centraliza, Luma aporta atmósfera, Runway da control de VFX.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> Mi recorrido</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">En este módulo</div>
+<div class="v" data-inema-meter="modulo:3-1">
+<span data-inema-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secciones leídas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En la ruta 3</div>
+<div class="v" data-inema-meter="trilha:3">
+<span data-inema-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">En el curso</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continuar</div>
+<div class="t">Módulo 3.2 — Construcción de escena en Freepik</div>
+</div>
+<a class="go" href="modulo-3-2.html">Siguiente →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-3-1#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Ancla de atención.</b> El punto que el encuadre comunica de inmediato como prioridad. El espectador no
+          debe <i>buscar</i> el sujeto: debes entenderlo en el primer instante.
+        </aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Espacio negativo.</b> El espacio vacío del encuadre, usado como estructura emocional. Más espacio = libertad,
+          escala, aislamiento; menos espacio = tensión, presión.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Fuente</div>
+          Módulo 2 del programa <i>AI Filmmaking</i> — «AI Tools Pipeline». La tesis: <i>la IA no
+          hace que tu video sea cinematográfico: tú lo haces</i>.
+        </aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-3-1#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Fase del pipeline.</b> Una etapa con su propia pregunta: imagen, movimiento, refinamiento, montaje.
+          El resultado de una fase es el punto de partida de la siguiente; saltarse etapas o invertirlas rompe el flujo.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          La imagen es la base amplia: resuelve la composición, el foco, la escala y la paleta desde el principio, cuando aún es barato. El refinamiento
+          sirve para lo que hace bien — no para salvar un cuadro mal compuesto.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-3-1#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Orden del prompt.</b> Tipo de plano → acción → sujeto → ambiente → composición →
+          luz → color → cámara → estilo → control. De la estructura al condimento, nunca al revés.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Profundizando</div>
+          Tres pilares de coherencia: <i>sujeto aislado, paleta restringida, cámara predecible</i>. Cuando un encuadre
+          no convence, uno de ellos cedió — corrige el pilar, no añadas adjetivos.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-3-1#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definición</div>
+<b>Freepik como espacio de trabajo.</b> No es un solo modelo, sino un espacio que reúne Kling, Seedance,
+          Runway y modelos propios, para comparar generadores sin rehacer el flujo.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Profundizando</div>
+          La revisión final de la fuente: ¿tema claro en 1 s? ¿composición intencional? ¿espacio correcto? ¿paleta
+          consistente? ¿movimiento natural? ¿planos conectados? ¿herramienta adecuada para cada tarea?
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Cuaderno del estudiante</span>
+<span class="pg">Módulo 3.1 — folio ix</span>
+<span>Compuesto en Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>

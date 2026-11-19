@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- 1) ANTI-FOUC — bloqueante, PRIMEIRO. REL = "." (raiz com assets/). -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'papel': { attr: 'papel', cs: 'light' }, 'sepia': { attr: 'sepia', cs: 'light' }, 'escuro': { attr: 'escuro', cs: 'dark' } };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+      var DISP = { serif: '"Spectral", Georgia, "Times New Roman", serif', sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif', hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif' };
+      var BODY = { serif: '"Source Serif 4", Georgia, "Times New Roman", serif', sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif', hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif' };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try { document.documentElement.setAttribute('data-theme', 'papel'); document.documentElement.style.colorScheme = 'light'; } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>AI Filmmaking — Part 1 — think like a director before generating | INEMA</title>
+<!-- 3) Fontes -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) learn.css -->
+<link href="../assets/learn.css" rel="stylesheet"/>
+<!-- 5) Ajustes locais da landing (tokens existentes, sem nova cor decorativa). -->
+<style>
+    .hero { margin: var(--s7) 0 var(--s8); }
+    .hero .lede-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s5); }
+    .hero .lede-kicker::after { content: ""; flex: 1 1 auto; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+    .hero h1 { font-family: var(--font-disp); font-weight: 400; font-size: clamp(2.0rem, 1.1rem + 3.0vw, 3.2rem); line-height: 1.12; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 var(--s5); text-wrap: balance; }
+    .hero h1 em { font-style: italic; }
+    .hero .sub { font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.32rem); line-height: 1.5; color: var(--ink-soft); max-width: 56ch; margin: 0 0 var(--s6); font-family: var(--font-body); }
+    .cta-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s3) var(--s5); margin-top: var(--s5); }
+    .cta-primary { display: inline-flex; align-items: center; gap: var(--s3); font-family: var(--font-body); font-size: 1.04rem; font-weight: 600; text-decoration: none; color: var(--on-accent); background: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius, 4px); padding: 0.7rem 1.25rem; line-height: 1; transition: background 120ms ease; }
+    .cta-primary:hover { background: var(--accent-soft); border-color: var(--accent-soft); }
+    .cta-primary .arr { font-family: var(--mono); }
+    .cta-low { font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-soft); }
+    .cta-low a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .cta-note { display: block; margin-top: var(--s3); font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.04em; color: var(--ink-faint); }
+    .stand { margin: var(--s6) 0 0; padding-top: var(--s5); border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s5); }
+    .stand .lbl { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--ink-faint); }
+    .stand [data-inema-meter] { display: inline-flex; align-items: center; gap: var(--s3); }
+    .stand [data-inema-meter-frac] { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); }
+    .stand [data-inema-meter-frac] strong { color: var(--ink); font-weight: 600; }
+    .stand .progress-line { width: 120px; height: 3px; border-radius: 3px; background: var(--paper-deep, var(--border)); overflow: hidden; }
+    .stand .progress-line__fill { display: block; height: 100%; width: 0%; background: var(--accent); transition: width 200ms ease; }
+    .curriculo { margin-top: var(--s5); }
+    .curriculo .track-line { display: flex; align-items: baseline; gap: var(--s4); padding-bottom: var(--s4); margin-bottom: var(--s5); border-bottom: 1px solid var(--border); }
+    .curriculo .track-tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+    .curriculo .track-title { font-family: var(--font-disp); font-style: italic; font-weight: 400; font-size: 1.3rem; color: var(--ink); margin: 0; }
+    .curriculo .track-meta { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-faint); margin-left: auto; }
+    .curriculo .track-why { font-family: var(--font-body); color: var(--ink-soft); margin: 0 0 var(--s5); max-width: var(--measure); font-size: 0.98rem; }
+    .idx-mod { margin: 0 0 var(--s6); }
+    .idx-mod .idx-head { display: flex; align-items: baseline; gap: var(--s3); font-family: var(--font-disp); margin: 0 0 var(--s2); }
+    .idx-mod .idx-num { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.04em; white-space: nowrap; }
+    .idx-mod .idx-title { font-size: 1.18rem; font-weight: 600; color: var(--ink); text-decoration: none; line-height: 1.25; }
+    .idx-mod .idx-title:hover { color: var(--accent); }
+    .idx-mod .idx-why { font-family: var(--font-body); color: var(--ink-soft); margin: 0 0 var(--s2); max-width: var(--measure); font-size: 0.96rem; }
+    .idx-mod .idx-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); }
+    .idx-mod .idx-open { color: var(--accent); text-decoration: none; font-weight: 500; font-family: var(--font-body); font-size: 0.9rem; }
+    .idx-mod .idx-open:hover { text-decoration: underline; text-underline-offset: 2px; }
+    .idx-mod .idx-dot { color: var(--border); }
+    .origem { margin: var(--s8) 0 var(--s7); border-top: 1px solid var(--border); padding-top: var(--s6); }
+    .origem .proof-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 var(--s5); }
+    .origem p { font-family: var(--font-body); color: var(--ink-soft); max-width: var(--measure); margin: 0 0 var(--s4); }
+    .closer { margin-top: var(--s7); border-top: 1px solid var(--border); padding-top: var(--s6); }
+    .closer p { font-family: var(--font-body); color: var(--ink-soft); max-width: var(--measure); margin: 0 0 var(--s5); }
+    @media (max-width: 1080px) { .stand .progress-line { width: 90px; } }
+  </style>
+<link href="https://inematds.github.io/ai-filmaking-p1/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip" href="#reading">Skip to content</a>
+<!-- READER BAR -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="./index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="curso"><span data-inema-meter-frac=""><strong>0</strong> of 138</span></span> covered</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MASTHEAD -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><b>AI Filmmaking</b> · Part 1</span>
+<span class="sep">·</span>
+<span>7 tracks · 29 modules</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<main class="spread">
+<div class="leaf">
+<article class="reading" id="reading">
+<!-- HERO -->
+<header class="hero">
+<p class="lede-kicker">AI Filmmaking · Part 1 · a work of art, not an infoproduct</p>
+<h1>AI already gives you an image <em>beautiful</em>.<br/>It almost never gives you a <em>scene</em> — and the effect isn’t what makes the difference.</h1>
+<p class="sub">This course doesn’t promise to master AI in thirty days. It steadily builds the foundation that separates
+            a beautiful frame from a scene that controls attention, weight, and emotion — and only then gets into the tools
+            (Seedance, Kling, Runway, Luma, Freepik). First the director’s mindset; then the generate button.</p>
+<div class="cta-row">
+<a class="cta-primary" href="./curso/trilha1/modulo-1-1.html">Start with Module 0 <span class="arr">→</span></a>
+<span class="cta-low">or, with no commitment, <a href="./curso/trilha1/modulo-1-1.html#topico-1">read only the first section</a> before.</span>
+</div>
+<span class="cta-note">No signup · opens directly · your progress stays only in your browser.</span>
+<div class="stand">
+<span class="lbl">Your journey</span>
+<span data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> sections
+              <span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+</span>
+<button data-inema-journey-open="" style="font-family:var(--mono);font-size:0.74rem;background:none;border:0;color:var(--accent);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:2px;" type="button">continue where I left off</button>
+</div>
+</header>
+<!-- O PORQUE -->
+<section data-inema-module="landing" data-inema-topic="modulo-landing#topico-porque" data-inema-track="1" id="topico-porque">
+<div class="section-mark"><span class="where">Why this exists</span><span>·</span><span>Read before the index</span></div>
+<h2 class="head"><span class="num">§</span>The “wow” isn’t the explosion — it’s the control of perception</h2>
+<div class="prose">
+<p class="lede" data-inema-block="landing-porque-p1">Most of what’s taught about AI video is a race to create
+              effects: explosions, giant waves, destruction.<span class="sidenote-ref">1</span> But a scene's impact
+              doesn't come from the effect — it comes from <em>control what the viewer sees, when they see it, from what distance, and at what pace</em>.
+              AI amplifies what’s already there: if there’s structure, it amplifies the structure; if there’s chaos, it amplifies the chaos.</p>
+<p data-inema-block="landing-porque-p2">That’s why the course starts with the perceptual foundation — the three levels of
+              impact and the algorithm every strong scene follows — and only then moves on to the tools. They’re
+              <em>seven tracks</em>: from the foundations of visual language to the real production pipeline with Seedance, Kling,
+              Runway, Luma, and Freepik. No promises of shortcuts; just a clearer way to think about moving images.</p>
+</div>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why start with theory <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer—the index below is enough to get started. The technology has removed the budget barrier:
+                what once required a crew, studio, and VFX now fits on a laptop. But this shifts the competition to
+                <em>visual language</em> — when everyone has the generator, the winner is whoever understands composition, light, scale,
+                rhythm, and movement. Learning the tool without the foundation produces pretty, empty images; learning the foundation
+                turns the generator into a system.</p>
+</div>
+</details>
+</section>
+<!-- INDICE -->
+<section data-inema-module="landing" data-inema-topic="modulo-landing#topico-indice" data-inema-track="1" id="topico-indice">
+<div class="section-mark"><span class="where">The index</span><span>·</span><span>7 tracks · 29 modules</span></div>
+<h2 class="head"><span class="num">§</span>What you will study — no benefit bullets</h2>
+<div class="curriculo">
+<!-- TRILHA 1 -->
+<div class="track-line"><span class="track-tag">Track 1</span><h3 class="track-title">Fundamentals (Light)</h3><span class="track-meta">19 sections · ~52 min</span></div>
+<p class="track-why">The perceptual foundation: why a scene works, before you use any tool.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 0</span><a class="idx-title" href="./curso/trilha1/modulo-1-1.html">The Director’s Framework</a></p><p class="idx-why">The three levels of impact—sensory, structure, form—and the algorithm every strong scene follows: stability, disruption, escalation, acceleration, slow motion at the peak, impact.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha1/modulo-1-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 1.2</span><a class="idx-title" href="./curso/trilha1/modulo-1-2.html">Cinematic Spatial Control</a></p><p class="idx-why">Organize the space in the frame to guide the eye: spatial geography, hierarchy, and visual weight.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha1/modulo-1-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 1.3</span><a class="idx-title" href="./curso/trilha1/modulo-1-3.html">From the Script to the Scene</a></p><p class="idx-why">Translate a written idea into an intentional image — from text to the first frame.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha1/modulo-1-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 1.4</span><a class="idx-title" href="./curso/trilha1/modulo-1-4.html">From the Frame to Motion</a></p><p class="idx-why">When and why the image starts moving—the bridge from photo to video.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha1/modulo-1-4.html">Open →</a></p></article>
+<!-- TRILHA 2 -->
+<div class="track-line"><span class="track-tag">Track 2</span><h3 class="track-title">Cinematic Fundamentals</h3><span class="track-meta">19 sections · ~52 min</span></div>
+<p class="track-why">Visual grammar: composition, light, and depth as tools for meaning.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 1</span><a class="idx-title" href="./curso/trilha2/modulo-2-1.html">Visual Thinking</a></p><p class="idx-why">See like a director: read a scene instead of just generating it.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha2/modulo-2-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 2.2</span><a class="idx-title" href="./curso/trilha2/modulo-2-2.html">Composition for Cinema</a></p><p class="idx-why">Hierarchy, focal point, and negative space: the architecture of the frame.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha2/modulo-2-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 2.3</span><a class="idx-title" href="./curso/trilha2/modulo-2-3.html">Light and Atmosphere</a></p><p class="idx-why">How light shapes volume, depth, and the feeling of something being “high-end.”</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha2/modulo-2-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 2.4</span><a class="idx-title" href="./curso/trilha2/modulo-2-4.html">Depth and Spatial Structure</a></p><p class="idx-why">Foreground, midground, and background: build the layers that give physical presence.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha2/modulo-2-4.html">Open →</a></p></article>
+<!-- TRILHA 3 -->
+<div class="track-line"><span class="track-tag">Track 3</span><h3 class="track-title">AI Cinema Workflow</h3><span class="track-meta">24 sections · ~66 min</span></div>
+<p class="track-why">The real pipeline, tool by tool: from image to controlled motion.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 2</span><a class="idx-title" href="./curso/trilha3/modulo-3-1.html">AI Tool Pipeline</a></p><p class="idx-why">The workflow map: where each tool comes in and why.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha3/modulo-3-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 3.2</span><a class="idx-title" href="./curso/trilha3/modulo-3-2.html">Scene Construction in Freepik</a></p><p class="idx-why">Structured storyboard: script, character, and composition in a node-based workflow.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha3/modulo-3-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 3.3</span><a class="idx-title" href="./curso/trilha3/modulo-3-3.html">Motion Generation in Seedance</a></p><p class="idx-why">From a still image to a moving shot, with control over camera and action.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha3/modulo-3-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 3.4</span><a class="idx-title" href="./curso/trilha3/modulo-3-4.html">Camera Control in Kling</a></p><p class="idx-why">Precise camera movements and consistency between shots.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha3/modulo-3-4.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 3.5</span><a class="idx-title" href="./curso/trilha3/modulo-3-5.html">Luma and Runway integration</a></p><p class="idx-why">When to switch tools: each tool’s strengths in the same project.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha3/modulo-3-5.html">Open →</a></p></article>
+<!-- TRILHA 4 -->
+<div class="track-line"><span class="track-tag">Track 4</span><h3 class="track-title">Camera Language</h3><span class="track-meta">19 sections · ~52 min</span></div>
+<p class="track-why">Movement, shot, and framing as decisions about meaning — not style.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 3</span><a class="idx-title" href="./curso/trilha4/modulo-4-1.html">Cinematography</a></p><p class="idx-why">The camera vocabulary: what each choice communicates.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha4/modulo-4-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 4.2</span><a class="idx-title" href="./curso/trilha4/modulo-4-2.html">Camera Movement</a></p><p class="idx-why">Pan, tilt, dolly, push-in: why move, and when to stay still.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha4/modulo-4-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 4.3</span><a class="idx-title" href="./curso/trilha4/modulo-4-3.html">Shot Types and Framing</a></p><p class="idx-why">From wide shot to close-up: distance as emotion.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha4/modulo-4-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 4.4</span><a class="idx-title" href="./curso/trilha4/modulo-4-4.html">Cinematic Video in Seedance 2</a></p><p class="idx-why">Applying camera language in the generator, in practice.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha4/modulo-4-4.html">Open →</a></p></article>
+<!-- TRILHA 5 -->
+<div class="track-line"><span class="track-tag">Track 5</span><h3 class="track-title">VFX and Action</h3><span class="track-meta">19 sections · ~52 min</span></div>
+<p class="track-why">The effect in service of perception: slow motion, particles, and weighty action.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 4</span><a class="idx-title" href="./curso/trilha5/modulo-5-1.html">Visual Effects</a></p><p class="idx-why">When VFX adds something and when it becomes noise: effects as a decision.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha5/modulo-5-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 5.2</span><a class="idx-title" href="./curso/trilha5/modulo-5-2.html">Slow Motion</a></p><p class="idx-why">The psychology of slow motion: why it says “this matters.”</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha5/modulo-5-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 5.3</span><a class="idx-title" href="./curso/trilha5/modulo-5-3.html">Particle Systems in Cinema</a></p><p class="idx-why">Smoke, sparks, dust: texture that creates atmosphere and depth.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha5/modulo-5-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 5.4</span><a class="idx-title" href="./curso/trilha5/modulo-5-4.html">Action Scenes</a></p><p class="idx-why">Clarity in chaos: spatial legibility in fast sequences.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha5/modulo-5-4.html">Open →</a></p></article>
+<!-- TRILHA 6 -->
+<div class="track-line"><span class="track-tag">Course 6</span><h3 class="track-title">Character and Performance</h3><span class="track-meta">19 sections · ~52 min</span></div>
+<p class="track-why">Built emotion: dialogue, performance, and the close-up that holds on a face.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 5</span><a class="idx-title" href="./curso/trilha6/modulo-6-1.html">Dialogue and Performance</a></p><p class="idx-why">The dialogue scene as a dramatic unit, not a conversation.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha6/modulo-6-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 6.2</span><a class="idx-title" href="./curso/trilha6/modulo-6-2.html">Character Acting with AI</a></p><p class="idx-why">Achieve credible, consistent performance from a generated character.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha6/modulo-6-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 6.3</span><a class="idx-title" href="./curso/trilha6/modulo-6-3.html">Emotional Close-ups and Shots</a></p><p class="idx-why">The close-up as a decision: when to move in to carry the emotion.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha6/modulo-6-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 6.4</span><a class="idx-title" href="./curso/trilha6/modulo-6-4.html">Dialogue Scene Structure</a></p><p class="idx-why">The rhythm of the exchange, shot and reverse shot, and the subtext between the lines.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha6/modulo-6-4.html">Open →</a></p></article>
+<!-- TRILHA 7 -->
+<div class="track-line"><span class="track-tag">Course 7</span><h3 class="track-title">Cinematic Story and Structure</h3><span class="track-meta">19 sections · ~52 min</span></div>
+<p class="track-why">From scene to sequence: purpose, editing, and the story told by form.</p>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 7</span><a class="idx-title" href="./curso/trilha7/modulo-7-1.html">Visual Narrative</a></p><p class="idx-why">Tell the story with images: what form says when no one speaks.</p><p class="idx-foot"><span>4 sections</span><span class="idx-dot">·</span><span>~10 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha7/modulo-7-1.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 7.2</span><a class="idx-title" href="./curso/trilha7/modulo-7-2.html">Purpose of the Scene</a></p><p class="idx-why">Every scene needs a reason: what changes from beginning to end.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha7/modulo-7-2.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 7.3</span><a class="idx-title" href="./curso/trilha7/modulo-7-3.html">Building Cinematic Sequences</a></p><p class="idx-why">Linking shots into a sequence that breathes and moves forward.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha7/modulo-7-3.html">Open →</a></p></article>
+<article class="idx-mod"><p class="idx-head"><span class="idx-num">Module 7.4</span><a class="idx-title" href="./curso/trilha7/modulo-7-4.html">The Art of Cinematic Sequence</a></p><p class="idx-why">The close: bringing everything together—rhythm, continuity, and intention—in an entire sequence.</p><p class="idx-foot"><span>5 sections</span><span class="idx-dot">·</span><span>~14 min</span><span class="idx-dot">·</span><a class="idx-open" href="./curso/trilha7/modulo-7-4.html">Open →</a></p></article>
+</div>
+</section>
+<!-- ORIGEM DO MATERIAL (honesto, sem depoimento fabricado) -->
+<section aria-label="Source material" class="origem">
+<p class="proof-kicker">Where this material comes from</p>
+<p>This is a <b>study notebook</b>: an editorial adaptation of the course <i>AI Filmmaking — Part 1</i>,
+            reorganized into INEMA.CLUB’s reading format—rewritten in clear Portuguese, with illustrations and
+            ready-to-use prompts. The goal is to study and practice cinematic language applied to video generators.</p>
+<p>The content prioritizes the <i>because</i> of each visual decision; the tools mentioned (Seedance, Kling, Runway,
+            Luma, Freepik, Midjourney) evolve quickly, so treat prompts as starting points for iteration, not as
+            fixed recipes.</p>
+</section>
+<!-- FECHO -->
+<section aria-label="Start" class="closer">
+<p>The most honest approach is simply to start and see if the tone works for you. Module 0 opens on a reading page, with no sign-up—and you can stop after the first section if it’s not for you.</p>
+<div class="cta-row">
+<a class="cta-primary" href="./curso/trilha1/modulo-1-1.html">Start with Module 0 <span class="arr">→</span></a>
+<span class="cta-low">or <a href="./curso/trilha1/modulo-1-1.html#topico-1">read only the first section</a> first.</span>
+</div>
+</section>
+</article>
+<!-- MARGEM -->
+<aside aria-label="Margin: author notes and your learning dashboard" class="margin-rail">
+<aside data-inema-rail="modulo-landing#topico-porque"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Perception.</b> The “wow” happens when the brain briefly loses its ability to predict what comes
+          next — triggered by scale, acceleration, contrast in lighting, depth, and danger. Cinema is about controlling that.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Expensive scene vs. cheap scene: the expensive one has clear spatial geography, readable composition, depth, controlled lighting, and
+          rhythm. Scale without clarity is noise; clarity with scale is epic.
+        </aside>
+<aside data-inema-rail="modulo-landing#topico-indice"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">How to read</div>
+<b>Track</b> groups modules; <b>module</b> groups sections. Here there are 7 tracks, 29 modules, 138 sections. Read in
+          order or go straight to the module you're interested in.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Why the index is dense</div>
+          The density of the index is proof of its seriousness: each module includes the <i>because</i> in full, not a list of
+          benefits with green check marks.
+        </aside>
+</aside>
+</div>
+</main>
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">AI Filmmaking — Part 1 · landing page</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<script src="../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+  </script>
+</body>
+</html>

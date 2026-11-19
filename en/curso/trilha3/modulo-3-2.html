@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+<html data-theme="papel" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- ===================================================================
+       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+          data-theme + color-scheme + --measure/--leading/--fontscale +
+          data-font/--font-disp/--font-body ANTES do primeiro paint.
+          try/catch total => default papel no erro (preserva a marca INEMA).
+          (REL = "../.." — caminho ate a pasta com assets/.)
+       =================================================================== -->
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'papel', font: 'serif', fontScale: 100, lineWidth: 66, leading: 1.66 };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        }
+      } catch (e) { p = clone(DEF); }
+
+      var THEMES = {
+        'papel':  { attr: 'papel',  cs: 'light' },
+        'sepia':  { attr: 'sepia',  cs: 'light' },
+        'escuro': { attr: 'escuro', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['papel'];
+      html.setAttribute('data-theme', t.attr);
+      html.style.colorScheme = t.cs;
+
+      var font = (p.font === 'sans' || p.font === 'hyperlegible') ? p.font : 'serif';
+      html.setAttribute('data-font', font);
+
+      var s = html.style;
+
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--fontscale', scale + '%');
+      html.setAttribute('data-fontscale', String(scale));
+
+      var lw = (+p.lineWidth || 66);
+      s.setProperty('--measure', lw + 'ch');
+      html.setAttribute('data-line-width', lw <= 62 ? 'estreito' : (lw >= 70 ? 'largo' : 'medio'));
+
+      var lh = (+p.leading || 1.66);
+      s.setProperty('--leading', lh.toString());
+      html.setAttribute('data-leading', lh <= 1.66 ? 'compacto' : 'confortavel');
+
+      var DISP = {
+        serif: '"Spectral", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      var BODY = {
+        serif: '"Source Serif 4", Georgia, "Times New Roman", serif',
+        sans: 'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
+        hyperlegible: '"Atkinson Hyperlegible", system-ui, -apple-system, sans-serif'
+      };
+      s.setProperty('--font-disp', DISP[font] || DISP.serif);
+      s.setProperty('--font-body', BODY[font] || BODY.serif);
+    } catch (err) {
+      try {
+        document.documentElement.setAttribute('data-theme', 'papel');
+        document.documentElement.style.colorScheme = 'light';
+      } catch (e) {}
+    }
+  })();
+  </script>
+<!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
+<meta content="ai-filmaking-p1" name="inema-course"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "ai-filmaking-p1",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos (Luz)", "modules": [
+        { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
+        { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
+      ] },
+      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+        { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
+        { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
+      ] },
+      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+        { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
+        { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
+        { "id": "3-4", "title": "Controle de Camera no Kling", "topics": 5, "href": "curso/trilha3/modulo-3-4.html" },
+        { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
+      ] },
+      { "n": "4", "title": "Linguagem de Camera", "modules": [
+        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
+        { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
+        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+      ] },
+      { "n": "5", "title": "VFX e Acao", "modules": [
+        { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
+        { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
+      ] },
+      { "n": "6", "title": "Personagem e Atuacao", "modules": [
+        { "id": "6-1", "title": "Dialogo e Atuacao", "topics": 4, "href": "curso/trilha6/modulo-6-1.html" },
+        { "id": "6-2", "title": "Atuacao de Personagem com IA", "topics": 5, "href": "curso/trilha6/modulo-6-2.html" },
+        { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
+        { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
+      ] },
+      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+        { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
+        { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
+        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+      ] }
+    ]
+  }
+  </script>
+<title>Module 3.2 — Scene Creation in Freepik | AI Filmmaking</title>
+<!-- 3) Fontes (DEPOIS do anti-FOUC) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- SKIP LINK (primeiro focavel) -->
+<a class="skip" href="#reading">Skip to content</a>
+<!-- ===================== READER BAR — controles minimos ===================== -->
+<div class="reader-bar">
+<div class="reader-inner">
+<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-inema-appearance="">
+<span class="rc-read"><span data-inema-meter="modulo:3-2"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<div aria-label="Reading theme" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+</div>
+<div aria-label="Reading source" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+</div>
+<div aria-label="Text size" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+</div>
+<div aria-label="Line width" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================== MASTHEAD + WAYFINDING ===================== -->
+<header class="masthead">
+<nav aria-label="Where you are" class="wayfind">
+<span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
+<span class="sep">·</span>
+<span>Track <b>3</b> AI Cinema Workflow</span>
+<span class="sep">·</span>
+<span>Module <b>3.2</b> / 5</span>
+<span class="sep">·</span>
+<span data-inema-section-counter="">Section 1 of 5</span>
+<span class="sep">·</span>
+<button data-inema-journey-open="" type="button">
+        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+</button>
+</nav>
+</header>
+<!-- ===================== SPREAD: coluna de leitura + trilho de margem ===================== -->
+<main class="spread">
+<div class="leaf">
+<!-- ============================= COLUNA DE LEITURA ============================= -->
+<article class="reading" id="reading">
+<!-- abertura do modulo -->
+<p class="kicker">Module 3.2 · Track 3 · AI Filmmaking Workflow</p>
+<h1 class="module">Scene Construction in <em>Freepik</em></h1>
+<p class="deck">The node-based pre-production workshop. Here you don’t generate isolated images—you build a
+          controlled visual sequence, where every shot has a purpose, narrative logic, and rhythm. Script,
+          character, rough storyboard, and cinematic render, connected through references.</p>
+<p class="read-meta">
+<span class="here">Reading now</span>
+<span>~18 min · full module</span>
+<span>5 sections</span>
+</p>
+<!-- objetivos -->
+<section aria-label="What you will understand" class="aims">
+<h2>What you will understand</h2>
+<ul>
+<li>Why Freepik Spaces is a <b>node workflow</b> — and why this is real pre-production, not random generation.</li>
+<li>The four-step workflow: <b>script → character → rough storyboard → cinematic render</b>.</li>
+<li>How to use <b>references <span class="code-inline">@</span></b> to connect the script, character, and previous results across nodes.</li>
+<li>A <b>direction logic</b> behind a six-shot sequence: space → character → action → movement → outcome.</li>
+</ul>
+</section>
+<!-- SUMARIO -->
+<nav aria-label="Module summary" class="toc" data-inema-toc="">
+<p class="toc-head">Summary — five movements</p>
+<ol>
+<li class="current"><span class="dot-now"></span><span class="n">1</span>
+<a href="#topico-1"><span class="t">Controlled sequence, not a random image</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Script and character: the first two nodes</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">The sketched storyboard</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">The cinematic render</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">The sequence’s directing logic</span></a><span class="leader"></span></li>
+</ol>
+</nav>
+<!-- ============================= SECAO 1 ============================= -->
+<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-1" data-inema-track="3" id="topico-1">
+<div class="section-mark">
+<span class="where">Section 1 of 5</span><span>·</span><span>The workflow</span>
+</div>
+<h2 class="head"><span class="num">1.</span>Controlled sequence, not a random image</h2>
+<div class="prose">
+<p class="lede dropcap" data-inema-block="m3-2-t1-p1">What this step <em>no</em> is: generating random images
+              and hoping they fit together. What it is: building a <strong>controlled visual
+              sequence</strong>, where every shot has a purpose, narrative logic, and emotional rhythm.<span class="sidenote-ref">1</span>
+              This is how AI is used in real pre-production and visual development — not as a
+              machine for making pretty images, but as a planning table where the film is conceived before it
+              exists. The <a href="https://www.freepik.com/pikaso/spaces">Freepik Spaces</a> is the environment where this happens, through a node-based workflow.</p>
+<p data-inema-block="m3-2-t1-p2">A workflow for <em>in the</em> is a visual chain: each box handles a
+              task (writing the script, creating the character, sketching the storyboard, rendering) and passes its
+              result along. Instead of a single prompt trying to do everything, you divide the work into
+              connected stages — and can review, replace, or regenerate each stage without redoing the rest.
+              This structure is what turns “asking for an image” into “directing a scene.”</p>
+<h3 class="sub">The four steps in the workflow</h3>
+<p data-inema-block="m3-2-t1-p3">The lesson’s pipeline has four steps, and each one is a node (or a pair of
+              nodes). <strong>Step 1 — Script:</strong> break the story into shots and define the sequence.
+              <strong>Step 2 — Character:</strong> create the protagonist's visual identity in the image
+              generator. <strong>Step 3 — Sketch storyboard</strong> (in the assistant): generate rough composition
+              sketches—focus on framing, blocking, and pacing, not detail. <strong>Step 4 —
+              Cinematic render</strong> (second assistant): translating sketches into realistic, colorful frames,
+              as a previsualization stage. Three honest caveats run through it all: quality
+              depends on clear, precise prompts; you connect the nodes with references <span class="code-inline">@</span>;
+              and the first result won’t be perfect — iteration is normal.<span class="sidenote-ref">2</span></p>
+</div>
+<!-- figura 1: o grafo de nos -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 1</span> · The workflow of <b>in the</b> — each stage passes its result along</figcaption>
+<svg aria-label="Node diagram: script and character feed into the sketch storyboard node, which feeds into the cinematic render node, with @ references linking the stages." class="diagram" role="img" viewbox="0 0 720 196">
+<defs>
+<pattern height="6" id="hatch-3-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
+<line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+<g font-family="Source Serif 4, serif" font-size="11" text-anchor="middle">
+<rect class="wash rule-stroke" height="42" rx="3" stroke-width="1.2" width="120" x="20" y="30"></rect>
+<text class="ink-soft" x="80" y="56">script</text>
+<rect class="wash rule-stroke" height="42" rx="3" stroke-width="1.2" width="120" x="20" y="118"></rect>
+<text class="ink-soft" x="80" y="144">character</text>
+<rect class="accent-stroke" fill="url(#hatch-3-2)" height="48" rx="3" stroke-width="1.3" width="150" x="280" y="74"></rect>
+<text class="ink" x="355" y="94">storyboard</text>
+<text class="ink" x="355" y="110">(sketch)</text>
+<rect class="accent-stroke" fill="url(#hatch-3-2)" height="48" rx="3" stroke-width="1.3" width="140" x="560" y="74"></rect>
+<text class="ink" x="630" y="94">render</text>
+<text class="ink" x="630" y="110">cinematic</text>
+</g>
+<g class="accent-stroke" fill="none" stroke-width="1.6">
+<path d="M140 51 C 210 51, 220 92, 278 96"></path>
+<path d="M140 139 C 210 139, 220 104, 278 100"></path>
+<path d="M430 98 H 558"></path><path d="M558 98 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="210" y="30">@roteiro  @personagem</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="495" y="86">@sketch</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="180">divide the work into stages — review each one without redoing the rest</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: the complete project for this lesson
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer. The instructor provides the entire Space, with all nodes and prompts set up.</p>
+<p>The source project includes the node-by-node workflow used to build the structured cinematic storyboard
+                in Freepik — it’s worth opening and exploring the connections between nodes as you read this lesson:
+                <a href="https://www.freepik.com/pikaso/spaces/a1969068-bec9-4506-a4d7-ea1daa300519/invite?payload=eyJpdiI6IkplUEU1bmgvRlBCNXdsUXl0S0h4M3c9PSIsInZhbHVlIjoiU2F3Si84S01NM1EzWU10dW0yNDF5bjRnRDFWdmplYXBHbTNtWFlpL3p1YmdTRkx0QW1wZEpiQlo3YU0wc1pRUTE2WEsyTlJSUkQzUmh5QzcycFNFTzhTTlV5dThWbjVtMTZ2VEgrazYrQmpYTzR1K0liN0ZwWDlwQ3NkK21CblgiLCJtYWMiOiI1NjZlYTQ4MzlkZTc1ZmMzNjE0OWExNjk4YzA1MzY3MmIxOTQ0YzcwMGM2M2IxZDY5ZWM2YzY2OTNlNGVmZDkwIiwidGFnIjoiIn0%3D">Freepik Scene Building (Freepik Space)</a>.
+                The logic applies to any scene; Space is just the environment where it was assembled. Freepik is paid, but powerful precisely for node-based pipelines.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 2 ============================= -->
+<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-2" data-inema-track="3" id="topico-2">
+<div class="section-mark">
+<span class="where">Section 2 of 5</span><span>·</span><span>Script and character</span>
+</div>
+<h2 class="head"><span class="num">2.</span>Script and character: the first two nodes</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-2-t2-p1">Everything starts with the <em>script</em>, and the script here is
+              an exercise in breaking things down: take the story and divide it into shots, defining the sequence. It’s not
+              literary prose—it’s a shot list with a purpose (SHOT 1, SHOT 2, ...). This node is the backbone that
+              all the others will reference; if the sequence is clear here, the storyboard and render inherit
+              that clarity. If it’s vague, the vagueness spreads.</p>
+<p data-inema-block="m3-2-t2-p2">The second node is <em>character</em>: create the protagonist’s visual identity in the
+              image generator. As we saw in the pre-production pipeline, this is done under controlled conditions —
+              one consistent character, with a stable face and wardrobe, who can reappear in
+              every shot without drift.<span class="sidenote-ref">3</span> An ethical warning that the source makes
+              explicit: keep the character <strong>generic</strong> — do not replicate any identifiable real person.</p>
+</div>
+<!-- prompt pronto: roteiro como shot list -->
+<div class="prose">
+<p data-inema-block="m3-2-t2-p3">The script node — a clear shot list, ready for the
+              following nodes to reference:</p>
+<div class="codeblock"><span class="c"># No. 1 — script as a shot list (define the sequence, shot by shot)</span>
+<span class="k">Story:</span> a lone driver crosses an empty desert highway at dawn, searching.
+<span class="k">SHOT 1 (extreme wide):</span> the car alone on the road — space, isolation, scale.
+<span class="k">SHOT 2 (character):</span> the driver's face through the windshield — emotion, connection.
+<span class="k">SHOT 3 (close-up action):</span> hands gripping the wheel — tension through gesture.
+<span class="k">SHOT 4 (inside the car):</span> over-shoulder of the road ahead — immersion.
+<span class="k">SHOT 5 (motion):</span> wheels and dust as the car accelerates — energy.
+<span class="k">SHOT 6 (wide again):</span> the car shrinking into the horizon — closure, continuation.
+<span class="c"># rule: don't invent shots later; these six are the project's source of truth.</span></div>
+</div>
+<!-- figura 2: dois nós base alimentam o resto -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 2</span> · Script and character as <b>columns</b> — their clarity carries through</figcaption>
+<svg aria-label="Diagram: two pillars (a six-shot script and a consistent character) support the bar for the following stages; the clarity of the pillars determines the clarity of everything else." class="diagram" role="img" viewbox="0 0 720 188">
+<!-- pilar roteiro -->
+<rect class="wash rule-stroke" height="108" rx="3" stroke-width="1.2" width="150" x="60" y="40"></rect>
+<text class="ink-soft" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="135" y="60">script</text>
+<g class="faint" stroke-width="1">
+<line x1="78" x2="192" y1="74" y2="74"></line><line x1="78" x2="192" y1="88" y2="88"></line>
+<line x1="78" x2="192" y1="102" y2="102"></line><line x1="78" x2="170" y1="116" y2="116"></line>
+<line x1="78" x2="182" y1="130" y2="130"></line>
+</g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="135" y="144">SHOT 1–6</text>
+<!-- pilar personagem -->
+<rect class="wash rule-stroke" height="108" rx="3" stroke-width="1.2" width="150" x="240" y="40"></rect>
+<text class="ink-soft" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="315" y="60">character</text>
+<circle class="rule-stroke" cx="315" cy="98" fill="none" r="22" stroke-width="1.3"></circle>
+<circle class="ink" cx="315" cy="92" r="7"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="315" y="140">consistent · generic</text>
+<!-- convergência -->
+<g class="accent-stroke" fill="none" stroke-width="1.6">
+<path d="M210 94 C 420 94, 430 100, 488 100"></path>
+<path d="M390 100 H 488"></path><path d="M488 100 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<rect class="accent-stroke" fill="url(#hatch-3-2)" height="52" rx="3" stroke-width="1.4" width="180" x="498" y="74"></rect>
+<text class="ink" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="588" y="96">storyboard</text>
+<text class="ink" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="588" y="112">render</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>Why is it worth spending time making the <em>list of plans</em> e o <em>character</em> clearly defined
+              before touching the storyboard — instead of starting with the sketch and making adjustments as you go?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">Because they are the <strong>referenced columns</strong> through all the following nodes. A vague script creates a vague storyboard, which creates a vague render — the error propagates and multiplies the cost. Solving the sequence and identity at the source is what maintains consistency across all six shots.</p>
+</details>
+</div>
+</section>
+<!-- ============================= SECAO 3 ============================= -->
+<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-3" data-inema-track="3" id="topico-3">
+<div class="section-mark">
+<span class="where">Section 3 of 5</span><span>·</span><span>Storyboard</span>
+</div>
+<h2 class="head"><span class="num">3.</span>The sketched storyboard</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-2-t3-p1">The third does not use a <em>assistant</em> to generate
+              rough composition sketches—the focus is framing, blocking, and rhythm, <strong>not
+              detail</strong>. This is where you work out the scene's progression while it's still cheap: a sketch
+              in black and white, pencil style, showing each shot's readable silhouette without getting lost in micro
+              details. The instructor explicitly asks for a rigid structure — six frames in a 2x3 grid,
+              each with a horizontal cinematic aspect ratio (16:9, with letterboxing), without inventing new shots or
+              changing the order.<span class="sidenote-ref">4</span></p>
+<p data-inema-block="m3-2-t3-p2">Prompt precision matters because, left to its own devices, the generator tends to
+              create square frames, roughly six of them, or to merge shots. That’s why the rules are
+              <em>emphatic and prioritized</em>: a single image, clean grid, exactly six panels, widescreen
+              content within each panel. The more explicit the layout rule, the less the generator improvises.</p>
+</div>
+<!-- prompt pronto: storyboard em esboço (2x3) -->
+<div class="prose">
+<p data-inema-block="m3-2-t3-p3">The sketch storyboard prompt, with the layout rules that keep
+              the grid under control — ready to paste into the assistant:</p>
+<div class="codeblock"><span class="c"># No. 3 — storyboard sketch (2x3 grid, pencil sketch, no color)</span>
+<span class="k">Goal:</span> one single cinematic storyboard image, exactly 6 frames in a strict 2x3 grid.
+<span class="k">Layout:</span> top row SHOT 1-2-3, bottom row SHOT 4-5-6 — no more, no less.
+<span class="k">Critical rule:</span> each panel holds a TRUE 16:9 widescreen frame (letterboxed),
+horizontal — never square, never 1:1.
+<span class="k">Structure:</span> ONE image, clean grid, visible borders; do NOT split into
+separate images; do NOT merge shots; do NOT change the order.
+<span class="k">Source:</span> use the provided script exactly (SHOT 1-6); do NOT invent shots.
+<span class="k">Style:</span> black-and-white pencil sketch, rough storyboard lines, high contrast,
+cinematic composition, NO color.
+<span class="k">Character:</span> keep @character consistent across frames; keep it generic —
+do NOT replicate any real identifiable person.
+<span class="k">Output:</span> clear readable silhouettes, no text, no captions, no logos, no watermarks.</div>
+</div>
+<!-- figura 3: grade 2x3 letterboxed -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 3</span> · The grid <b>2x3</b> — widescreen frames with letterboxing, never square</figcaption>
+<svg aria-label="Diagram: a six-panel grid with two rows and three columns; each panel contains a horizontal widescreen strip with margins (letterboxing) above and below." class="diagram" role="img" viewbox="0 0 720 196">
+<g class="rule-stroke" fill="none" stroke-width="1.2">
+<rect height="62" rx="3" width="190" x="60" y="30"></rect>
+<rect height="62" rx="3" width="190" x="265" y="30"></rect>
+<rect height="62" rx="3" width="190" x="470" y="30"></rect>
+<rect height="62" rx="3" width="190" x="60" y="104"></rect>
+<rect height="62" rx="3" width="190" x="265" y="104"></rect>
+<rect height="62" rx="3" width="190" x="470" y="104"></rect>
+</g>
+<!-- conteúdo widescreen letterboxed dentro de cada painel -->
+<g class="accent-stroke" fill="url(#hatch-3-2)" stroke-width="1">
+<rect height="26" width="166" x="72" y="48"></rect>
+<rect height="26" width="166" x="277" y="48"></rect>
+<rect height="26" width="166" x="482" y="48"></rect>
+<rect height="26" width="166" x="72" y="122"></rect>
+<rect height="26" width="166" x="277" y="122"></rect>
+<rect height="26" width="166" x="482" y="122"></rect>
+</g>
+<g class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle">
+<text x="155" y="86">SHOT 1</text><text x="360" y="86">SHOT 2</text><text x="565" y="86">SHOT 3</text>
+<text x="155" y="160">SHOT 4</text><text x="360" y="160">SHOT 5</text><text x="565" y="160">SHOT 6</text>
+</g>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="186">the horizontal strip (with margins) is what creates the “film still” — never fill it in as a square</text>
+</svg>
+</figure>
+<details class="go-deeper">
+<summary><span class="chev">▸</span> Going deeper: why sketch before rendering
+              <span class="opt">optional</span></summary>
+<div class="inner">
+<p>Optional layer. This is the logic behind spending one step just on rough sketches.</p>
+<p>The outline settles the decisions <em>ways to change</em> — framing, blocking, pacing,
+                scale — while they still cost seconds. Black and white and low fidelity are not
+                limitations: they are the point. Without color or texture, the eye judges only the <strong>composition</strong>, which is exactly what needs to be right before the finishing touches. Rendering first and judging the composition afterward leads to rework: you end up redoing six polished images because the sequence wasn’t working from the sketch stage.</p>
+</div>
+</details>
+</section>
+<!-- ============================= SECAO 4 ============================= -->
+<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-4" data-inema-track="3" id="topico-4">
+<div class="section-mark">
+<span class="where">Section 4 of 5</span><span>·</span><span>Render</span>
+</div>
+<h2 class="head"><span class="num">4.</span>The cinematic render</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-2-t4-p1">The fourth in — a <em>second</em> assistant —
+              translates the sketches into realistic, colored, rendered frames, like a previsualization stage.
+              Here the goal changes: the result should look <strong>a real live-action film still</strong>
+              — not an illustration, not concept art, not a stylized render. It's the point where the composition
+              approved in the sketch gains light, color, and materiality.<span class="sidenote-ref">5</span></p>
+<p data-inema-block="m3-2-t4-p2">The key is in the <em>double reference</em>: the render uses
+              <span class="code-inline">@sketch</span> as a composition reference and
+              <span class="code-inline">@character</span> as the character reference. The critical goal is
+              <strong>recreate the storyboard from the sketch as faithfully as possible</strong> — preserving
+              composition, camera angles, and spatial relationships — while rendering everything in realistic
+              cinematic quality. Exactly six images are generated, one per shot, each a horizontal widescreen frame
+              (~16:9), with no grid, no contact sheet, and no multiple panels in a single image.</p>
+</div>
+<!-- prompt pronto: render cinematográfico -->
+<div class="prose">
+<p data-inema-block="m3-2-t4-p3">The render prompt, with the double reference <span class="code-inline">@sketch</span>
+              + <span class="code-inline">@character</span> — ready for the second assistant:</p>
+<div class="codeblock"><span class="c"># No. 4 — cinematic render (from sketch to realistic film still)</span>
+<span class="k">References:</span> use @sketch as composition reference and @character as character reference.
+<span class="k">Look:</span> must look like real live-action film stills — NOT illustration, NOT concept
+art, NOT stylized rendering.
+<span class="k">Critical goal:</span> recreate the storyboard from @sketch as accurately as possible —
+preserve composition, camera angles and spatial relationships — in realistic cinematic quality.
+<span class="k">Structure:</span> generate exactly 6 images, one image = one shot. Do NOT combine
+into a grid, a contact sheet, or multiple panels in one image; do NOT exceed 6 images.
+<span class="k">Format (strict):</span> all widescreen cinematic frames — horizontal composition,
+aspect ratio ~16:9.
+<span class="k">Consistency:</span> same @character identity across all 6; keep it generic.</div>
+</div>
+<!-- figura 4: esboço -> render -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 4</span> · A <b>double reference</b> — the sketch provides the composition, the character provides the identity</figcaption>
+<svg aria-label="Diagram: a pencil sketch panel and a character reference converge into a realistic rendered frame, preserving the same composition and identity." class="diagram" role="img" viewbox="0 0 720 192">
+<!-- esboço -->
+<rect class="rule-stroke" fill="none" height="92" rx="3" stroke-width="1.2" width="150" x="40" y="44"></rect>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="115" y="36">@sketch</text>
+<line class="faint" stroke-width="1" x1="56" x2="174" y1="118" y2="118"></line>
+<circle class="ink" cx="95" cy="100" r="9"></circle>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="115" y="156">composition</text>
+<!-- personagem -->
+<rect height="0" width="0" x="40" y="44"></rect>
+<circle class="rule-stroke" cx="255" cy="74" fill="none" r="22" stroke-width="1.2"></circle>
+<circle class="ink" cx="255" cy="68" r="7"></circle>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="255" y="36">@character</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="255" y="116">identity</text>
+<!-- convergência -->
+<g class="accent-stroke" fill="none" stroke-width="1.6">
+<path d="M190 90 C 330 90, 340 96, 408 96"></path>
+<path d="M278 74 C 360 74, 360 92, 408 94"></path>
+<path d="M408 95 l -7 -4 m 7 4 l -7 4"></path>
+</g>
+<rect class="accent-stroke" fill="url(#hatch-3-2)" height="92" rx="3" stroke-width="1.5" width="260" x="420" y="50"></rect>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="550" y="86">realistic film still</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="550" y="110">same composition · same identity · 16:9</text>
+</svg>
+</figure>
+<div class="prose">
+<p data-inema-block="m3-2-t4-p4">It's worth repeating the source's warning, because it's what separates expectation from
+              frustration: the first result <em>no</em> comes out perfect. The assistant may get the composition wrong,
+              change a character detail, or ignore a layout rule. <strong>Iterating is part of the craft</strong>
+              — regenerate, adjust the reference, and keep the frames that really match the sketch.</p>
+</div>
+</section>
+<!-- ============================= SECAO 5 ============================= -->
+<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-5" data-inema-track="3" id="topico-5">
+<div class="section-mark">
+<span class="where">Section 5 of 5</span><span>·</span><span>The direction</span>
+</div>
+<h2 class="head"><span class="num">5.</span>The sequence’s directing logic</h2>
+<div class="prose">
+<p class="lede" data-inema-block="m3-2-t5-p1">Why <em>this</em> does a six-shot sequence work?
+              Because each shot has a dramatic purpose, and their order forms an arc. <strong>Shot 1
+              (wide):</strong> establishes space, isolation, scale. <strong>Shot 2 (character):</strong> changes
+              to create human emotion and connection. <strong>Shot 3 (action close-up):</strong> creates tension through the gesture.
+              <strong>Shot 4 (inside the car):</strong> changes perspective, builds immersion. <strong>Shot 5
+              (movement):</strong> the action becomes movement, the energy rises. <strong>Shot 6 (wide again):</strong>
+              returns to scale, creates closure and continuation.</p>
+<p data-inema-block="m3-2-t5-p2">The narrative arc, in one line, is: <strong>space → character
+              → action → movement → outcome.</strong> Three principles support the sequence: each
+              shot has a defined purpose; varying shot scale creates rhythm; composition guides
+              attention. Together, they make the scene express — in this example — loneliness, determination, and
+              forward movement. Notice that the <em>wide shot back</em> in the end, it isn’t repetition: it’s what
+              closes the loop while leaving the door open to the next scene.</p>
+<h3 class="sub">What you have at the end — and where you go next</h3>
+<p data-inema-block="m3-2-t5-p3">By the end of the workflow, you have a shot-by-shot script, a consistent
+              character, a sketched storyboard, and six rendered cinematic frames—a
+              <strong>previsualization package</strong> of the scene. These frames aren’t the destination: they’re the
+              raw material for the next lesson. In Module 3.3, they gain movement in Seedance. Sum up the module in
+              one sentence: <em>in Freepik, you don’t generate images—you build a sequence, shot by shot,
+              referencing each stage and iterating until the scene has directorial logic.</em></p>
+</div>
+<!-- figura 5: o arco da sequência -->
+<figure class="figure">
+<figcaption><span class="fig-n">Fig. 5</span> · The sequence arc — <b>space, character, action, movement, outcome</b></figcaption>
+<svg aria-label="Diagram: six shots on a narrative curve that rises from wide (space) to the peak of movement and falls back to wide (resolution), with the shot scale changing." class="diagram" role="img" viewbox="0 0 720 200">
+<line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="160" y2="160"></line>
+<path class="accent-stroke" d="M50 150 L160 132 C 250 112, 300 92, 410 74 L470 74 C 540 92, 590 130, 680 150" fill="none" stroke-width="2.2"></path>
+<g class="accent"><circle cx="60" cy="150" r="3"></circle><circle cx="190" cy="124" r="3"></circle><circle cx="320" cy="92" r="3"></circle><circle cx="440" cy="74" r="3.5"></circle><circle cx="560" cy="118" r="3"></circle><circle cx="680" cy="150" r="3"></circle></g>
+<g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
+<text x="60" y="180">1 · wide shot</text>
+<text x="190" y="116">2 · character</text>
+<text x="320" y="84">3 · close-up</text>
+<text x="440" y="64">4–5 · immersion + movement</text>
+<text x="680" y="180">6 · wide</text>
+</g>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="36">SPACE → CHARACTER → ACTION → MOVEMENT → OUTCOME</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="60" y="196">opens</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="680" y="196">close + continue</text>
+</svg>
+</figure>
+<div class="predict">
+<p class="lbl">Stop and predict</p>
+<p>Shot 6 repeats the wide framing of shot 1. If you <em>cut</em> and ended the scene on shot 5 (the movement at its peak), what would change in how the sequence feels?</p>
+<details>
+<summary>See one possible answer</summary>
+<p class="answer">The scene would lose its <strong>closure</strong>. Ending at the peak of the movement leaves
+                the viewer suspended, with no breathing room—it can work for an abrupt cut, but sacrifices the
+                sense of a complete cycle. The wide shot on the way back restores the scale, closes the gesture, and, by returning to the
+                transformed starting point, opens the way to the next scene. Repetition with a purpose isn’t
+                redundancy: it’s punctuation.</p>
+</details>
+</div>
+</section>
+<!-- ============================= KNOWLEDGE CHECK ============================= -->
+<section aria-label="Self-check" class="check">
+<h2>Before moving on: four quick checks</h2>
+<p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
+<details class="q-item">
+<summary><span class="qn">01</span><span>What’s the difference between “generating images” and what Freepik Spaces proposes?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Freepik Spaces builds a <em>controlled visual sequence</em> into us, where every
+              shot has a purpose, narrative logic, and rhythm — real pre-production. It’s not about generating random images
+              and hoping they fit together: it’s about dividing the work into connected, controllable stages.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">02</span><span>What references are for <span class="code-inline">@</span> between the nodes?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>For <em>connect</em> script, character, and previous results. In the render, for
+              example, <span class="code-inline">@sketch</span> gives the composition and <span class="code-inline">@character</span>
+              gives it its identity — that's what keeps it consistent across all six shots.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">03</span><span>Why is the storyboard drawn as a black-and-white sketch, without detail?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>To judge only the <em>composition</em> — framing, blocking, pacing —
+              while changes are still cheap. Color and texture distract from what needs to be right before the finish.
+              Solving the progression in the sketch avoids redoing six polished images later.</p></div>
+</details>
+<details class="q-item">
+<summary><span class="qn">04</span><span>What’s the arc of the example’s six-shot sequence?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p><em>Space → character → action → movement → outcome.</em> Each
+              shot has a job (wide establishes, character connects, close-up builds tension, movement energizes,
+              returning to wide wraps up and continues). Varying the scale creates rhythm; the composition guides attention.</p></div>
+</details>
+</section>
+<!-- ============================= MINHA JORNADA ============================= -->
+<section aria-label="My journey — consolidated progress" class="journey">
+<div class="journey-top">
+<h2><span class="ico">❧</span> My journey</h2>
+<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+</div>
+<div class="journey-body">
+<div class="jstat">
+<div class="k">In this module</div>
+<div class="v" data-inema-meter="modulo:3-2">
+<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In track 3</div>
+<div class="v" data-inema-meter="trilha:3">
+<span data-inema-meter-frac=""><strong>0</strong> of 24</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+<div class="jstat">
+<div class="k">In the course</div>
+<div class="v" data-inema-meter="curso">
+<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- proxima acao (UMA clara) -->
+<div class="nextup">
+<div class="txt">
+<div class="k">Continue</div>
+<div class="t">Module 3.3 — Motion Generation in Seedance</div>
+</div>
+<a class="go" href="modulo-3-3.html">Next →</a>
+</div>
+</article>
+<!-- ============================= TRILHO DE MARGEM ============================= -->
+<aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
+<!-- ---- SECAO 1 ---- -->
+<aside data-inema-rail="modulo-3-2#topico-1"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Node workflow.</b> A visual chain of boxes, each with a task, passing the result
+          along. Lets you review or regenerate one stage without redoing the rest.
+        </aside>
+<aside class="sidenote" data-kind="fonte">
+<div class="tag">Source</div>
+          Lesson 7 of the AI Cinema Workflow block — “Freepik Scene Building.” The complete Space (nodes,
+          prompts, workflow) is linked in the “Going deeper” block in this section.
+          <div class="src-line">freepik.com · pikaso/spaces</div>
+</aside>
+<!-- ---- SECAO 2 ---- -->
+<aside data-inema-rail="modulo-3-2#topico-2"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Script as a shot list.</b> Not prose, but the story broken into numbered shots (SHOT 1–6).
+          It’s the column that all subsequent nodes refer to.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Keep the character <i>generic</i> — do not replicate an identifiable real person. Consistency comes
+          from a clean reference, reused shot by shot.
+        </aside>
+<!-- ---- SECAO 3 ---- -->
+<aside data-inema-rail="modulo-3-2#topico-3"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Letterbox.</b> The horizontal bars that frame a 16:9 image inside a panel. They’re what make the
+          sketch look like a “film still” instead of a square image.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          Black-and-white, low-fidelity sketch <i>on purpose</i>: without color and texture, the eye judges only the
+          composition — which needs to be right before the render.
+        </aside>
+<!-- ---- SECAO 4 ---- -->
+<aside data-inema-rail="modulo-3-2#topico-4"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Dual reference.</b> In the render, <span class="code-inline">@sketch</span> delivers the composition and
+          <span class="code-inline">@character</span> delivers the identity — together, they recreate the storyboard in
+          realistic quality.
+        </aside>
+<aside class="sidenote" data-kind="fundo">
+<div class="tag">Going deeper</div>
+          The render should look <i>live-action</i>, not illustration or concept art. It’s previsualization: a composition approved in the sketch, now with light, color, and materiality.
+        </aside>
+<!-- ---- SECAO 5 ---- -->
+<aside data-inema-rail="modulo-3-2#topico-5"></aside>
+<aside class="sidenote" data-kind="definicao">
+<div class="tag">Definition</div>
+<b>Sequence arc.</b> Space → character → action → movement → outcome. Each
+          shot has a purpose; varying the scale creates rhythm; returning to the wide shot closes and carries on.
+        </aside>
+<aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
+<div class="tag">Going deeper</div>
+          The result — script, character, sketch, six frames — is a previsualization package. The
+          still frames are the raw material for Module 3.3, where they come to life in Seedance.
+        </aside>
+</aside>
+</div>
+</main>
+<!-- COLOFAO -->
+<footer class="colophon">
+<span>INEMA.CLUB · Student Notebook</span>
+<span class="pg">Module 3.2 — folio x</span>
+<span>Set in Spectral &amp; Source Serif 4</span>
+</footer>
+<!-- ===================================================================
+       FIM DO <body>: carrega + inicializa learn.js (caminho RELATIVO).
+       Idempotente: chamar init() mais de uma vez nao duplica listeners.
+       =================================================================== -->
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init();
+    }
+  </script>
+</body>
+</html>
