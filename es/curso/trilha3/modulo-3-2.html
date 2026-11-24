@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,68 +118,68 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Módulo 3.2 — Construcción de escena en Freepik | AI Filmmaking</title>
+<title>MÃ³dulo 3.2 â€” ConstrucciÃ³n de escena en Freepik | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:3-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:3-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Ruta <b>3</b> Flujo de trabajo de cine con IA</span>
-<span class="sep">·</span>
-<span>Módulo <b>3.2</b> / 5</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Sección 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>MÃ³dulo <b>3.2</b> / 5</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,72 +189,72 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Módulo 3.2 · Ruta 3 · Workflow de cine con IA</p>
-<h1 class="module">Construcción de escenas en <em>Freepik</em></h1>
-<p class="deck">El taller de preproducción en nodos. Aquí no se generan imágenes sueltas — se construye una
-          secuencia visual controlada, donde cada plano tiene un propósito, lógica narrativa y ritmo. Guion,
-          personaje, storyboard en boceto y render cinematográfico, conectados por referencias.</p>
+<p class="kicker">MÃ³dulo 3.2 Â· Ruta 3 Â· Workflow de cine con IA</p>
+<h1 class="module">ConstrucciÃ³n de escenas en <em>Freepik</em></h1>
+<p class="deck">El taller de preproducciÃ³n en nodos. AquÃ­ no se generan imÃ¡genes sueltas â€” se construye una
+          secuencia visual controlada, donde cada plano tiene un propÃ³sito, lÃ³gica narrativa y ritmo. Guion,
+          personaje, storyboard en boceto y render cARCKHÉtogrÃ¡fico, conectados por referencias.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~18 min · módulo completo</span>
+<span>~18 min Â· mÃ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Por qué Freepik Spaces es un <b>flujo de trabajo de nodos</b> — y por qué esto es preproducción real, no generación aleatoria.</li>
-<li>El flujo de cuatro pasos: <b>guion → personaje → storyboard en boceto → render cinematográfico</b>.</li>
-<li>Cómo usar <b>referencias <span class="code-inline">@</span></b> para conectar el guion, el personaje y los resultados anteriores entre los nodos.</li>
-<li>A <b>lógica de dirección</b> detrás de una secuencia de seis planos: espacio → personaje → acción → movimiento → desenlace.</li>
+<li>Por quÃ© Freepik Spaces es un <b>flujo de trabajo de nodos</b> â€” y por quÃ© esto es preproducciÃ³n real, no generaciÃ³n aleatoria.</li>
+<li>El flujo de cuatro pasos: <b>guion â†’ personaje â†’ storyboard en boceto â†’ render cARCKHÉtogrÃ¡fico</b>.</li>
+<li>CÃ³mo usar <b>referencias <span class="code-inline">@</span></b> para conectar el guion, el personaje y los resultados anteriores entre los nodos.</li>
+<li>A <b>lÃ³gica de direcciÃ³n</b> detrÃ¡s de una secuencia de seis planos: espacio â†’ personaje â†’ acciÃ³n â†’ movimiento â†’ desenlace.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Secuencia controlada, no una imagen aleatoria</span></a></li>
 <li><span class="n">2</span><a href="#topico-2"><span class="t">Guion y personaje: los dos primeros nodos</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">El storyboard en boceto</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">El render cinematográfico</span></a><span class="leader"></span></li>
-<li><span class="n">5</span><a href="#topico-5"><span class="t">La lógica de dirección de la secuencia</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">El render cARCKHÉtogrÃ¡fico</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">La lÃ³gica de direcciÃ³n de la secuencia</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-1" data-inema-track="3" id="topico-1">
+<section data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-1" data-ARCKHÉ-track="3" id="topico-1">
 <div class="section-mark">
-<span class="where">Sección 1 de 5</span><span>·</span><span>El flujo de trabajo</span>
+<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>El flujo de trabajo</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Secuencia controlada, no una imagen aleatoria</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m3-2-t1-p1">Qué hace esta etapa <em>no</em> es: generar imágenes
+<p class="lede dropcap" data-ARCKHÉ-block="m3-2-t1-p1">QuÃ© hace esta etapa <em>no</em> es: generar imÃ¡genes
               aleatorias y esperar que combinen. Lo que es: construir una <strong>secuencia visual
-              controlada</strong>, en la que cada plano tiene un propósito, una lógica narrativa y un ritmo emocional.<span class="sidenote-ref">1</span>
-              Así es como se usa la IA en la preproducción y el desarrollo visual de verdad — no como una
-              máquina de imágenes bonitas, sino como una mesa de planificación donde se piensa la película antes de
+              controlada</strong>, en la que cada plano tiene un propÃ³sito, una lÃ³gica narrativa y un ritmo emocional.<span class="sidenote-ref">1</span>
+              AsÃ­ es como se usa la IA en la preproducciÃ³n y el desarrollo visual de verdad â€” no como una
+              mÃ¡quina de imÃ¡genes bonitas, sino como una mesa de planificaciÃ³n donde se piensa la pelÃ­cula antes de
               que exista. El <a href="https://www.freepik.com/pikaso/spaces">Freepik Spaces</a> y el entorno donde esto
               ocurre, mediante un workflow basado en nodos.</p>
-<p data-inema-block="m3-2-t1-p2">Un workflow de <em>en los</em> es una cadena visual: cada caja realiza una
+<p data-ARCKHÉ-block="m3-2-t1-p2">Un workflow de <em>en los</em> es una cadena visual: cada caja realiza una
               tarea (escribir el guion, crear al personaje, esbozar el storyboard, renderizar) y pasa su
-              resultado a la siguiente. En vez de un único prompt que intenta encargarse de todo, divides el trabajo en
+              resultado a la siguiente. En vez de un Ãºnico prompt que intenta encargarse de todo, divides el trabajo en
               etapas conectadas y puedes revisar, cambiar o regenerar cada etapa sin rehacer el resto.
-              Esa estructura es lo que transforma “pedir una imagen” en “dirigir una escena”.</p>
+              Esa estructura es lo que transforma â€œpedir una imagenâ€ en â€œdirigir una escenaâ€.</p>
 <h3 class="sub">Los cuatro pasos del flujo</h3>
-<p data-inema-block="m3-2-t1-p3">El pipeline de la lección tiene cuatro pasos, y cada uno es un nodo (o un par de
-              nodos). <strong>Paso 1 — Guion:</strong> dividir la historia en planos y definir la secuencia.
-              <strong>Paso 2 — Personaje:</strong> crear la identidad visual del protagonista en el generador de
-              imágenes. <strong>Paso 3 — Storyboard en boceto</strong> (en el asistente): generar bocetos rudimentarios
-              de composición — centrarse en el encuadre, el blocking y el ritmo, no en los detalles. <strong>Paso 4 —
-              Renderizado cinematográfico</strong> (segundo asistente): traducir los bocetos en cuadros realistas y
-              coloridos, como una etapa de previsualización. Tres advertencias honestas atraviesan todo: la calidad
+<p data-ARCKHÉ-block="m3-2-t1-p3">El pipeline de la lecciÃ³n tiene cuatro pasos, y cada uno es un nodo (o un par de
+              nodos). <strong>Paso 1 â€” Guion:</strong> dividir la historia en planos y definir la secuencia.
+              <strong>Paso 2 â€” Personaje:</strong> crear la identidad visual del protagonista en el generador de
+              imÃ¡genes. <strong>Paso 3 â€” Storyboard en boceto</strong> (en el asistente): generar bocetos rudimentarios
+              de composiciÃ³n â€” centrarse en el encuadre, el blocking y el ritmo, no en los detalles. <strong>Paso 4 â€”
+              Renderizado cARCKHÉtogrÃ¡fico</strong> (segundo asistente): traducir los bocetos en cuadros realistas y
+              coloridos, como una etapa de previsualizaciÃ³n. Tres advertencias honestas atraviesan todo: la calidad
               depende de prompts claros y precisos; conectas los nodos con referencias <span class="code-inline">@</span>;
               y el primer resultado no sale perfecto: iterar es normal.<span class="sidenote-ref">2</span></p>
 </div>
 <!-- figura 1: o grafo de nos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · El flujo de trabajo de <b>en los</b> — cada etapa entrega su resultado a la siguiente</figcaption>
-<svg aria-label="Diagrama de nodos: el guion y el personaje alimentan el nodo del storyboard en boceto, que alimenta el nodo del render cinematográfico, con referencias @ que enlazan las etapas." class="diagram" role="img" viewbox="0 0 720 196">
+<figcaption><span class="fig-n">Fig. 1</span> Â· El flujo de trabajo de <b>en los</b> â€” cada etapa entrega su resultado a la siguiente</figcaption>
+<svg aria-label="Diagrama de nodos: el guion y el personaje alimentan el nodo del storyboard en boceto, que alimenta el nodo del render cARCKHÉtogrÃ¡fico, con referencias @ que enlazan las etapas." class="diagram" role="img" viewbox="0 0 720 196">
 <defs>
 <pattern height="6" id="hatch-3-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
@@ -270,7 +270,7 @@
 <text class="ink" x="355" y="110">(boceto)</text>
 <rect class="accent-stroke" fill="url(#hatch-3-2)" height="48" rx="3" stroke-width="1.3" width="140" x="560" y="74"></rect>
 <text class="ink" x="630" y="94">render</text>
-<text class="ink" x="630" y="110">cinematográfico</text>
+<text class="ink" x="630" y="110">cARCKHÉtogrÃ¡fico</text>
 </g>
 <g class="accent-stroke" fill="none" stroke-width="1.6">
 <path d="M140 51 C 210 51, 220 92, 278 96"></path>
@@ -283,49 +283,49 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: el proyecto completo de esta lección
+<summary><span class="chev">â–¸</span> Profundizando: el proyecto completo de esta lecciÃ³n
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional. El instructor pone a disposición todo el Space, con todos los nodos y prompts configurados.</p>
-<p>El proyecto fuente incluye el workflow nodo por nodo utilizado para construir el storyboard cinematográfico
-                estructurado en Freepik — vale la pena abrirlo y explorar la conexión entre los nodos mientras lees esta lección:
+<p>Capa opcional. El instructor pone a disposiciÃ³n todo el Space, con todos los nodos y prompts configurados.</p>
+<p>El proyecto fuente incluye el workflow nodo por nodo utilizado para construir el storyboard cARCKHÉtogrÃ¡fico
+                estructurado en Freepik â€” vale la pena abrirlo y explorar la conexiÃ³n entre los nodos mientras lees esta lecciÃ³n:
                 <a href="https://www.freepik.com/pikaso/spaces/a1969068-bec9-4506-a4d7-ea1daa300519/invite?payload=eyJpdiI6IkplUEU1bmgvRlBCNXdsUXl0S0h4M3c9PSIsInZhbHVlIjoiU2F3Si84S01NM1EzWU10dW0yNDF5bjRnRDFWdmplYXBHbTNtWFlpL3p1YmdTRkx0QW1wZEpiQlo3YU0wc1pRUTE2WEsyTlJSUkQzUmh5QzcycFNFTzhTTlV5dThWbjVtMTZ2VEgrazYrQmpYTzR1K0liN0ZwWDlwQ3NkK21CblgiLCJtYWMiOiI1NjZlYTQ4MzlkZTc1ZmMzNjE0OWExNjk4YzA1MzY3MmIxOTQ0YzcwMGM2M2IxZDY5ZWM2YzY2OTNlNGVmZDkwIiwidGFnIjoiIn0%3D">Freepik Scene Building (Freepik Space)</a>.
-                La lógica sirve para cualquier escena; Space es solo el entorno donde se montó. Freepik es de pago,
+                La lÃ³gica sirve para cualquier escena; Space es solo el entorno donde se montÃ³. Freepik es de pago,
                 pero potente precisamente para los pipelines con nodos.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-2" data-inema-track="3" id="topico-2">
+<section data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-2" data-ARCKHÉ-track="3" id="topico-2">
 <div class="section-mark">
-<span class="where">Sección 2 de 5</span><span>·</span><span>Guion y personaje</span>
+<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>Guion y personaje</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Guion y personaje: los dos primeros nodos</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-2-t2-p1">Todo comienza por el <em>guion</em>, y el guion, aquí, consiste en desglosar: tomar la historia y dividirla en planos, definiendo la secuencia. No es prosa literaria, sino una lista de planos con un propósito (SHOT 1, SHOT 2, ...). Este nodo es la columna que todos los demás van a consultar; si la secuencia está clara aquí, el storyboard y el render heredan esa claridad. Si es vaga, la vaguedad se propaga.</p>
-<p data-inema-block="m3-2-t2-p2">El segundo nudo es el <em>personaje</em>: crear la identidad visual del
-              protagonista en el generador de imágenes. Como vimos en el pipeline de preproducción, esto se hace en condiciones
-              controladas — un personaje consistente, con rostro y vestuario estables, que pueda reaparecer en
-              todos los planos sin deriva.<span class="sidenote-ref">3</span> Una advertencia ética que la fuente deja
-              explícita: mantén al personaje <strong>genérico</strong> — no reproduzcas a ninguna persona real identificable.</p>
+<p class="lede" data-ARCKHÉ-block="m3-2-t2-p1">Todo comienza por el <em>guion</em>, y el guion, aquÃ­, consiste en desglosar: tomar la historia y dividirla en planos, definiendo la secuencia. No es prosa literaria, sino una lista de planos con un propÃ³sito (SHOT 1, SHOT 2, ...). Este nodo es la columna que todos los demÃ¡s van a consultar; si la secuencia estÃ¡ clara aquÃ­, el storyboard y el render heredan esa claridad. Si es vaga, la vaguedad se propaga.</p>
+<p data-ARCKHÉ-block="m3-2-t2-p2">El segundo nudo es el <em>personaje</em>: crear la identidad visual del
+              protagonista en el generador de imÃ¡genes. Como vimos en el pipeline de preproducciÃ³n, esto se hace en condiciones
+              controladas â€” un personaje consistente, con rostro y vestuario estables, que pueda reaparecer en
+              todos los planos sin deriva.<span class="sidenote-ref">3</span> Una advertencia Ã©tica que la fuente deja
+              explÃ­cita: mantÃ©n al personaje <strong>genÃ©rico</strong> â€” no reproduzcas a ninguna persona real identificable.</p>
 </div>
 <!-- prompt pronto: roteiro como shot list -->
 <div class="prose">
-<p data-inema-block="m3-2-t2-p3">El nodo de guion — una lista de planos clara, lista para que los
+<p data-ARCKHÉ-block="m3-2-t2-p3">El nodo de guion â€” una lista de planos clara, lista para que los
               nodos siguientes la consulten:</p>
-<div class="codeblock"><span class="c"># N.º 1 — guion como shot list (define la secuencia, plano por plano)</span>
+<div class="codeblock"><span class="c"># N.Âº 1 â€” guion como shot list (define la secuencia, plano por plano)</span>
 <span class="k">Historia:</span> a lone driver crosses an empty desert highway at dawn, searching.
 <span class="k">SHOT 1 (plano extremadamente abierto):</span> el auto solo en la carretera: espacio, aislamiento, escala.
-<span class="k">SHOT 2 (personaje):</span> el rostro del conductor a través del parabrisas: emoción, conexión.
-<span class="k">SHOT 3 (acción en primer plano):</span> hands gripping the wheel — tension through gesture.
-<span class="k">SHOT 4 (dentro del auto):</span> over-shoulder of the road ahead — immersion.
-<span class="k">SHOT 5 (movimiento):</span> wheels and dust as the car accelerates — energy.
-<span class="k">SHOT 6 (de nuevo, plano abierto):</span> el auto se pierde en el horizonte: cierre, continuación.
-<span class="c"># regla: no inventes planes después; estos seis son la verdad del proyecto.</span></div>
+<span class="k">SHOT 2 (personaje):</span> el rostro del conductor a travÃ©s del parabrisas: emociÃ³n, conexiÃ³n.
+<span class="k">SHOT 3 (acciÃ³n en primer plano):</span> hands gripping the wheel â€” tension through gesture.
+<span class="k">SHOT 4 (dentro del auto):</span> over-shoulder of the road ahead â€” immersion.
+<span class="k">SHOT 5 (movimiento):</span> wheels and dust as the car accelerates â€” energy.
+<span class="k">SHOT 6 (de nuevo, plano abierto):</span> el auto se pierde en el horizonte: cierre, continuaciÃ³n.
+<span class="c"># regla: no inventes planes despuÃ©s; estos seis son la verdad del proyecto.</span></div>
 </div>
-<!-- figura 2: dois nós base alimentam o resto -->
+<!-- figura 2: dois nÃ³s base alimentam o resto -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Guion y personaje como <b>columnas</b> — su claridad se propaga</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· Guion y personaje como <b>columnas</b> â€” su claridad se propaga</figcaption>
 <svg aria-label="Diagrama: dos pilares (guion con seis planos y personaje consistente) sostienen la barra de las etapas siguientes; la claridad de los pilares determina la claridad del resto." class="diagram" role="img" viewbox="0 0 720 188">
 <!-- pilar roteiro -->
 <rect class="wash rule-stroke" height="108" rx="3" stroke-width="1.2" width="150" x="60" y="40"></rect>
@@ -335,14 +335,14 @@
 <line x1="78" x2="192" y1="102" y2="102"></line><line x1="78" x2="170" y1="116" y2="116"></line>
 <line x1="78" x2="182" y1="130" y2="130"></line>
 </g>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="135" y="144">SHOT 1–6</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="135" y="144">SHOT 1â€“6</text>
 <!-- pilar personagem -->
 <rect class="wash rule-stroke" height="108" rx="3" stroke-width="1.2" width="150" x="240" y="40"></rect>
 <text class="ink-soft" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="315" y="60">personaje</text>
 <circle class="rule-stroke" cx="315" cy="98" fill="none" r="22" stroke-width="1.3"></circle>
 <circle class="ink" cx="315" cy="92" r="7"></circle>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="315" y="140">consistente · genérico</text>
-<!-- convergência -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="315" y="140">consistente Â· genÃ©rico</text>
+<!-- convergÃªncia -->
 <g class="accent-stroke" fill="none" stroke-width="1.6">
 <path d="M210 94 C 420 94, 430 100, 488 100"></path>
 <path d="M390 100 H 488"></path><path d="M488 100 l -7 -4 m 7 4 l -7 4"></path>
@@ -354,58 +354,58 @@
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Por qué vale la pena dedicar tiempo a dejar la <em>lista de planes</em> e o <em>personaje</em> bien definidos
-              antes de tocar el storyboard — en vez de empezar con el boceto y ajustarlo sobre la marcha?</p>
+<p>Por quÃ© vale la pena dedicar tiempo a dejar la <em>lista de planes</em> e o <em>personaje</em> bien definidos
+              antes de tocar el storyboard â€” en vez de empezar con el boceto y ajustarlo sobre la marcha?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
 <p class="answer">Porque son las <strong>columnas referenciadas</strong> por todos los siguientes
-                nodos. Un guion vago genera un storyboard vago, que genera un render vago — el error se
+                nodos. Un guion vago genera un storyboard vago, que genera un render vago â€” el error se
                 propaga y multiplica el costo. Resolver la secuencia y la identidad desde el origen es lo que mantiene
                 la consistencia a lo largo de los seis planos.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-3" data-inema-track="3" id="topico-3">
+<section data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-3" data-ARCKHÉ-track="3" id="topico-3">
 <div class="section-mark">
-<span class="where">Sección 3 de 5</span><span>·</span><span>Storyboard</span>
+<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>Storyboard</span>
 </div>
 <h2 class="head"><span class="num">3.</span>El storyboard en boceto</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-2-t3-p1">El tercero no usa un <em>asistente</em> para generar
-              bocetos rudimentarios de composición: el foco está en el encuadre, el blocking y el ritmo, <strong>no
-              detalle</strong>. Este es el lugar para resolver la progresión de la escena cuando todavía es barato: un boceto
-              en blanco y negro, a lápiz, que muestra la silueta legible de cada plano sin perderse en microdetalles
-              de acabado. El instructor pide explícitamente una estructura rígida: seis cuadros en una cuadrícula de 2x3,
-              cada uno con proporción cinematográfica horizontal (16:9, con letterbox), sin inventar planos nuevos ni
+<p class="lede" data-ARCKHÉ-block="m3-2-t3-p1">El tercero no usa un <em>asistente</em> para generar
+              bocetos rudimentarios de composiciÃ³n: el foco estÃ¡ en el encuadre, el blocking y el ritmo, <strong>no
+              detalle</strong>. Este es el lugar para resolver la progresiÃ³n de la escena cuando todavÃ­a es barato: un boceto
+              en blanco y negro, a lÃ¡piz, que muestra la silueta legible de cada plano sin perderse en microdetalles
+              de acabado. El instructor pide explÃ­citamente una estructura rÃ­gida: seis cuadros en una cuadrÃ­cula de 2x3,
+              cada uno con proporciÃ³n cARCKHÉtogrÃ¡fica horizontal (16:9, con letterbox), sin inventar planos nuevos ni
               cambiar el orden.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m3-2-t3-p2">La precisión del prompt importa porque, si lo dejas libre, el generador tiende a
-              crear encuadres cuadrados, más o menos seis, o a fusionar planos. Por eso las reglas son
-              <em>enfáticas y priorizadas</em>: una sola imagen, cuadrícula limpia, exactamente seis paneles, contenido
-              panorámico dentro de cada panel. Cuanto más explícita sea la regla de diseño, menos improvisará el generador.</p>
+<p data-ARCKHÉ-block="m3-2-t3-p2">La precisiÃ³n del prompt importa porque, si lo dejas libre, el generador tiende a
+              crear encuadres cuadrados, mÃ¡s o menos seis, o a fusionar planos. Por eso las reglas son
+              <em>enfÃ¡ticas y priorizadas</em>: una sola imagen, cuadrÃ­cula limpia, exactamente seis paneles, contenido
+              panorÃ¡mico dentro de cada panel. Cuanto mÃ¡s explÃ­cita sea la regla de diseÃ±o, menos improvisarÃ¡ el generador.</p>
 </div>
-<!-- prompt pronto: storyboard em esboço (2x3) -->
+<!-- prompt pronto: storyboard em esboÃ§o (2x3) -->
 <div class="prose">
-<p data-inema-block="m3-2-t3-p3">El prompt del storyboard en boceto, con las reglas de diseño que mantienen
-              la cuadrícula bajo control — listo para pegar en el asistente:</p>
-<div class="codeblock"><span class="c"># N.º 3 — storyboard en boceto (cuadrícula 2x3, boceto a lápiz, sin color)</span>
-<span class="k">Meta:</span> one single cinematic storyboard image, exactly 6 frames in a strict 2x3 grid.
-<span class="k">Diseño:</span> top row SHOT 1-2-3, bottom row SHOT 4-5-6 — no more, no less.
+<p data-ARCKHÉ-block="m3-2-t3-p3">El prompt del storyboard en boceto, con las reglas de diseÃ±o que mantienen
+              la cuadrÃ­cula bajo control â€” listo para pegar en el asistente:</p>
+<div class="codeblock"><span class="c"># N.Âº 3 â€” storyboard en boceto (cuadrÃ­cula 2x3, boceto a lÃ¡piz, sin color)</span>
+<span class="k">Meta:</span> one single cARCKHÉtic storyboard image, exactly 6 frames in a strict 2x3 grid.
+<span class="k">DiseÃ±o:</span> top row SHOT 1-2-3, bottom row SHOT 4-5-6 â€” no more, no less.
 <span class="k">Critical rule:</span> each panel holds a TRUE 16:9 widescreen frame (letterboxed),
-horizontal — never square, never 1:1.
-<span class="k">Estructura:</span> UNA imagen, cuadrícula limpia, bordes visibles; NO dividir en
-imágenes separadas; NO combinar tomas; NO cambiar el orden.
+horizontal â€” never square, never 1:1.
+<span class="k">Estructura:</span> UNA imagen, cuadrÃ­cula limpia, bordes visibles; NO dividir en
+imÃ¡genes separadas; NO combinar tomas; NO cambiar el orden.
 <span class="k">Fuente:</span> use the provided script exactly (SHOT 1-6); do NOT invent shots.
 <span class="k">Estilo:</span> black-and-white pencil sketch, rough storyboard lines, high contrast,
-cinematic composition, NO color.
-<span class="k">Personaje:</span> keep @character consistent across frames; keep it generic —
+cARCKHÉtic composition, NO color.
+<span class="k">Personaje:</span> keep @character consistent across frames; keep it generic â€”
 do NOT replicate any real identifiable person.
 <span class="k">Output:</span> clear readable silhouettes, no text, no captions, no logos, no watermarks.</div>
 </div>
 <!-- figura 3: grade 2x3 letterboxed -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · La cuadrícula <b>2x3</b> — encuadres panorámicos con letterbox, nunca cuadrados</figcaption>
-<svg aria-label="Diagrama: una cuadrícula de seis paneles en dos filas y tres columnas; dentro de cada panel hay una franja horizontal widescreen con márgenes (letterbox) arriba y abajo." class="diagram" role="img" viewbox="0 0 720 196">
+<figcaption><span class="fig-n">Fig. 3</span> Â· La cuadrÃ­cula <b>2x3</b> â€” encuadres panorÃ¡micos con letterbox, nunca cuadrados</figcaption>
+<svg aria-label="Diagrama: una cuadrÃ­cula de seis paneles en dos filas y tres columnas; dentro de cada panel hay una franja horizontal widescreen con mÃ¡rgenes (letterbox) arriba y abajo." class="diagram" role="img" viewbox="0 0 720 196">
 <g class="rule-stroke" fill="none" stroke-width="1.2">
 <rect height="62" rx="3" width="190" x="60" y="30"></rect>
 <rect height="62" rx="3" width="190" x="265" y="30"></rect>
@@ -414,7 +414,7 @@ do NOT replicate any real identifiable person.
 <rect height="62" rx="3" width="190" x="265" y="104"></rect>
 <rect height="62" rx="3" width="190" x="470" y="104"></rect>
 </g>
-<!-- conteúdo widescreen letterboxed dentro de cada painel -->
+<!-- conteÃºdo widescreen letterboxed dentro de cada painel -->
 <g class="accent-stroke" fill="url(#hatch-3-2)" stroke-width="1">
 <rect height="26" width="166" x="72" y="48"></rect>
 <rect height="26" width="166" x="277" y="48"></rect>
@@ -427,73 +427,73 @@ do NOT replicate any real identifiable person.
 <text x="155" y="86">SHOT 1</text><text x="360" y="86">SHOT 2</text><text x="565" y="86">SHOT 3</text>
 <text x="155" y="160">SHOT 4</text><text x="360" y="160">SHOT 5</text><text x="565" y="160">SHOT 6</text>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="186">la franja horizontal (con márgenes) es lo que crea el “film still” — nunca la rellenes como un cuadrado</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="186">la franja horizontal (con mÃ¡rgenes) es lo que crea el â€œfilm stillâ€ â€” nunca la rellenes como un cuadrado</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: por qué hacer un boceto antes de renderizar
+<summary><span class="chev">â–¸</span> Profundizando: por quÃ© hacer un boceto antes de renderizar
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional. Es la lógica que justifica dedicar un paso solo a bocetos rudimentarios.</p>
-<p>El boceto resuelve las decisiones <em>caras de cambiar</em> — encuadre, blocking, ritmo, escala — cuando todavía cuestan segundos. El blanco y negro y la baja fidelidad no son una limitación: son el objetivo. Sin color ni textura, la mirada juzga solo la <strong>composición</strong>, que es
-                exactamente lo que necesitas tener claro antes del acabado. Renderizar primero y juzgar la composición
-                después es el camino al retrabajo: terminas rehaciendo seis imágenes cuidadas porque la secuencia
+<p>Capa opcional. Es la lÃ³gica que justifica dedicar un paso solo a bocetos rudimentarios.</p>
+<p>El boceto resuelve las decisiones <em>caras de cambiar</em> â€” encuadre, blocking, ritmo, escala â€” cuando todavÃ­a cuestan segundos. El blanco y negro y la baja fidelidad no son una limitaciÃ³n: son el objetivo. Sin color ni textura, la mirada juzga solo la <strong>composiciÃ³n</strong>, que es
+                exactamente lo que necesitas tener claro antes del acabado. Renderizar primero y juzgar la composiciÃ³n
+                despuÃ©s es el camino al retrabajo: terminas rehaciendo seis imÃ¡genes cuidadas porque la secuencia
                 no funcionaba desde el boceto.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-4" data-inema-track="3" id="topico-4">
+<section data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-4" data-ARCKHÉ-track="3" id="topico-4">
 <div class="section-mark">
-<span class="where">Sección 4 de 5</span><span>·</span><span>Renderizado</span>
+<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Renderizado</span>
 </div>
-<h2 class="head"><span class="num">4.</span>El render cinematográfico</h2>
+<h2 class="head"><span class="num">4.</span>El render cARCKHÉtogrÃ¡fico</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-2-t4-p1">El cuarto en el — un <em>segundo</em> asistente —
-              traduce los bocetos en encuadres realistas, coloridos y renderizados, como una etapa de previsualización.
-              Aquí el objetivo cambia: el resultado debe parecer <strong>film still de live-action auténtico</strong>
-              — no es una ilustración, ni concept art, ni un render estilizado. Es el punto en que la composición aprobada en el boceto adquiere luz, color y materialidad.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m3-2-t4-p2">La clave está en la <em>referencia doble</em>: el render usa
-              <span class="code-inline">@sketch</span> como referencia de composición y
-              <span class="code-inline">@character</span> como referencia del personaje. El objetivo crítico es
-              <strong>recrear el storyboard del boceto con la mayor fidelidad posible</strong> — preservando
-              la composición, los ángulos de cámara y las relaciones espaciales — mientras renderiza todo con calidad
-              cinematográfica realista. Se generan exactamente seis imágenes, una por plano, cada una un encuadre
-              horizontal panorámico (~16:9), sin cuadrícula, sin hoja de contactos, sin varios paneles en una sola imagen.</p>
+<p class="lede" data-ARCKHÉ-block="m3-2-t4-p1">El cuarto en el â€” un <em>segundo</em> asistente â€”
+              traduce los bocetos en encuadres realistas, coloridos y renderizados, como una etapa de previsualizaciÃ³n.
+              AquÃ­ el objetivo cambia: el resultado debe parecer <strong>film still de live-action autÃ©ntico</strong>
+              â€” no es una ilustraciÃ³n, ni concept art, ni un render estilizado. Es el punto en que la composiciÃ³n aprobada en el boceto adquiere luz, color y materialidad.<span class="sidenote-ref">5</span></p>
+<p data-ARCKHÉ-block="m3-2-t4-p2">La clave estÃ¡ en la <em>referencia doble</em>: el render usa
+              <span class="code-inline">@sketch</span> como referencia de composiciÃ³n y
+              <span class="code-inline">@character</span> como referencia del personaje. El objetivo crÃ­tico es
+              <strong>recrear el storyboard del boceto con la mayor fidelidad posible</strong> â€” preservando
+              la composiciÃ³n, los Ã¡ngulos de cÃ¡mara y las relaciones espaciales â€” mientras renderiza todo con calidad
+              cARCKHÉtogrÃ¡fica realista. Se generan exactamente seis imÃ¡genes, una por plano, cada una un encuadre
+              horizontal panorÃ¡mico (~16:9), sin cuadrÃ­cula, sin hoja de contactos, sin varios paneles en una sola imagen.</p>
 </div>
-<!-- prompt pronto: render cinematográfico -->
+<!-- prompt pronto: render cARCKHÉtogrÃ¡fico -->
 <div class="prose">
-<p data-inema-block="m3-2-t4-p3">El prompt del render, con la referencia doble <span class="code-inline">@sketch</span>
-              + <span class="code-inline">@character</span> — listo para el segundo asistente:</p>
-<div class="codeblock"><span class="c"># N.º 4 — render cinematográfico (del boceto a un fotograma realista)</span>
+<p data-ARCKHÉ-block="m3-2-t4-p3">El prompt del render, con la referencia doble <span class="code-inline">@sketch</span>
+              + <span class="code-inline">@character</span> â€” listo para el segundo asistente:</p>
+<div class="codeblock"><span class="c"># N.Âº 4 â€” render cARCKHÉtogrÃ¡fico (del boceto a un fotograma realista)</span>
 <span class="k">References:</span> use @sketch as composition reference and @character as character reference.
-<span class="k">Estética:</span> must look like real live-action film stills — NOT illustration, NOT concept
+<span class="k">EstÃ©tica:</span> must look like real live-action film stills â€” NOT illustration, NOT concept
 art, NOT stylized rendering.
-<span class="k">Critical goal:</span> recreate the storyboard from @sketch as accurately as possible —
-preserve composition, camera angles and spatial relationships — in realistic cinematic quality.
+<span class="k">Critical goal:</span> recreate the storyboard from @sketch as accurately as possible â€”
+preserve composition, camera angles and spatial relationships â€” in realistic cARCKHÉtic quality.
 <span class="k">Estructura:</span> generate exactly 6 images, one image = one shot. Do NOT combine
 into a grid, a contact sheet, or multiple panels in one image; do NOT exceed 6 images.
-<span class="k">Format (strict):</span> all widescreen cinematic frames — horizontal composition,
+<span class="k">Format (strict):</span> all widescreen cARCKHÉtic frames â€” horizontal composition,
 aspect ratio ~16:9.
 <span class="k">Consistency:</span> same @character identity across all 6; keep it generic.</div>
 </div>
-<!-- figura 4: esboço -> render -->
+<!-- figura 4: esboÃ§o -> render -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · A <b>referencia doble</b> — el boceto aporta la composición, el personaje aporta la identidad</figcaption>
-<svg aria-label="Diagrama: un panel de boceto a lápiz y una referencia de personaje convergen en un cuadro renderizado realista, manteniendo la misma composición y la misma identidad." class="diagram" role="img" viewbox="0 0 720 192">
-<!-- esboço -->
+<figcaption><span class="fig-n">Fig. 4</span> Â· A <b>referencia doble</b> â€” el boceto aporta la composiciÃ³n, el personaje aporta la identidad</figcaption>
+<svg aria-label="Diagrama: un panel de boceto a lÃ¡piz y una referencia de personaje convergen en un cuadro renderizado realista, manteniendo la misma composiciÃ³n y la misma identidad." class="diagram" role="img" viewbox="0 0 720 192">
+<!-- esboÃ§o -->
 <rect class="rule-stroke" fill="none" height="92" rx="3" stroke-width="1.2" width="150" x="40" y="44"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="115" y="36">@sketch</text>
 <line class="faint" stroke-width="1" x1="56" x2="174" y1="118" y2="118"></line>
 <circle class="ink" cx="95" cy="100" r="9"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="115" y="156">composición</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="115" y="156">composiciÃ³n</text>
 <!-- personagem -->
 <rect height="0" width="0" x="40" y="44"></rect>
 <circle class="rule-stroke" cx="255" cy="74" fill="none" r="22" stroke-width="1.2"></circle>
 <circle class="ink" cx="255" cy="68" r="7"></circle>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="255" y="36">@character</text>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="255" y="116">identidad</text>
-<!-- convergência -->
+<!-- convergÃªncia -->
 <g class="accent-stroke" fill="none" stroke-width="1.6">
 <path d="M190 90 C 330 90, 340 96, 408 96"></path>
 <path d="M278 74 C 360 74, 360 92, 408 94"></path>
@@ -501,130 +501,130 @@ aspect ratio ~16:9.
 </g>
 <rect class="accent-stroke" fill="url(#hatch-3-2)" height="92" rx="3" stroke-width="1.5" width="260" x="420" y="50"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="550" y="86">film still realista</text>
-<text class="accent" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="550" y="110">misma composición · misma identidad · 16:9</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="550" y="110">misma composiciÃ³n Â· misma identidad Â· 16:9</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m3-2-t4-p4">Conviene repetir la advertencia de la fuente, porque es lo que separa las expectativas de
-              la frustración: el primer resultado <em>no</em> sale perfecto. El asistente puede equivocarse en la composición,
-              cambiar un detalle del personaje o ignorar una regla de composición. <strong>Iterar es parte del oficio</strong>
-              — vuelve a generar, ajusta la referencia y guarda los encuadres que realmente coincidan con el boceto.</p>
+<p data-ARCKHÉ-block="m3-2-t4-p4">Conviene repetir la advertencia de la fuente, porque es lo que separa las expectativas de
+              la frustraciÃ³n: el primer resultado <em>no</em> sale perfecto. El asistente puede equivocarse en la composiciÃ³n,
+              cambiar un detalle del personaje o ignorar una regla de composiciÃ³n. <strong>Iterar es parte del oficio</strong>
+              â€” vuelve a generar, ajusta la referencia y guarda los encuadres que realmente coincidan con el boceto.</p>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="3-2" data-inema-topic="modulo-3-2#topico-5" data-inema-track="3" id="topico-5">
+<section data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#topico-5" data-ARCKHÉ-track="3" id="topico-5">
 <div class="section-mark">
-<span class="where">Sección 5 de 5</span><span>·</span><span>La dirección</span>
+<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>La direcciÃ³n</span>
 </div>
-<h2 class="head"><span class="num">5.</span>La lógica de dirección de la secuencia</h2>
+<h2 class="head"><span class="num">5.</span>La lÃ³gica de direcciÃ³n de la secuencia</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-2-t5-p1">Por qué <em>está</em> ¿funciona una secuencia de seis planos?
-              Porque cada plano tiene un trabajo dramático y el orden de ellos forma un arco. <strong>Plano 1
+<p class="lede" data-ARCKHÉ-block="m3-2-t5-p1">Por quÃ© <em>estÃ¡</em> Â¿funciona una secuencia de seis planos?
+              Porque cada plano tiene un trabajo dramÃ¡tico y el orden de ellos forma un arco. <strong>Plano 1
               (general):</strong> establece espacio, aislamiento, escala. <strong>Plano 2 (personaje):</strong> cambia
-              a la emoción humana, crea conexión. <strong>Plano 3 (primer plano de la acción):</strong> genera tensión con el gesto.
-              <strong>Plano 4 (dentro del auto):</strong> cambia la perspectiva, construye inmersión. <strong>Plano 5
-              (movimiento):</strong> la acción se convierte en movimiento, la energía aumenta. <strong>Plano 6 (general de nuevo):</strong>
-              vuelve a la escala, crea cierre y continuación.</p>
-<p data-inema-block="m3-2-t5-p2">El arco narrativo, en una línea, es: <strong>espacio → personaje
-              → acción → movimiento → desenlace.</strong> Tres principios sustentan la secuencia: cada
-              plano tiene un propósito definido; la variación de la escala del plano crea ritmo; la composición guía la
-              atención. Juntos, hacen que la escena exprese — en el ejemplo — soledad, determinación y
-              movimiento hacia adelante. Observa que el <em>plano amplio de vuelta</em> al final no es una repetición: es lo que
+              a la emociÃ³n humana, crea conexiÃ³n. <strong>Plano 3 (primer plano de la acciÃ³n):</strong> genera tensiÃ³n con el gesto.
+              <strong>Plano 4 (dentro del auto):</strong> cambia la perspectiva, construye inmersiÃ³n. <strong>Plano 5
+              (movimiento):</strong> la acciÃ³n se convierte en movimiento, la energÃ­a aumenta. <strong>Plano 6 (general de nuevo):</strong>
+              vuelve a la escala, crea cierre y continuaciÃ³n.</p>
+<p data-ARCKHÉ-block="m3-2-t5-p2">El arco narrativo, en una lÃ­nea, es: <strong>espacio â†’ personaje
+              â†’ acciÃ³n â†’ movimiento â†’ desenlace.</strong> Tres principios sustentan la secuencia: cada
+              plano tiene un propÃ³sito definido; la variaciÃ³n de la escala del plano crea ritmo; la composiciÃ³n guÃ­a la
+              atenciÃ³n. Juntos, hacen que la escena exprese â€” en el ejemplo â€” soledad, determinaciÃ³n y
+              movimiento hacia adelante. Observa que el <em>plano amplio de vuelta</em> al final no es una repeticiÃ³n: es lo que
               cierra el ciclo y, al mismo tiempo, deja la puerta abierta a la siguiente escena.</p>
-<h3 class="sub">Lo que tienes al final — y adónde vas</h3>
-<p data-inema-block="m3-2-t5-p3">Al final del flujo tienes un guion en planos, un personaje
-              coherente, un storyboard en boceto y seis cuadros cinematográficos renderizados — un
-              <strong>paquete de previsualización</strong> de la escena. Estos cuadros no son el destino: son la
-              materia prima de la próxima lección. En el Módulo 3.3, cobran movimiento en Seedance. Resume el módulo en
-              una frase: <em>en Freepik no generas imágenes: construyes una secuencia, plano a plano,
-              haciendo referencia a cada etapa, e iteras hasta que la escena tenga lógica de dirección.</em></p>
+<h3 class="sub">Lo que tienes al final â€” y adÃ³nde vas</h3>
+<p data-ARCKHÉ-block="m3-2-t5-p3">Al final del flujo tienes un guion en planos, un personaje
+              coherente, un storyboard en boceto y seis cuadros cARCKHÉtogrÃ¡ficos renderizados â€” un
+              <strong>paquete de previsualizaciÃ³n</strong> de la escena. Estos cuadros no son el destino: son la
+              materia prima de la prÃ³xima lecciÃ³n. En el MÃ³dulo 3.3, cobran movimiento en Seedance. Resume el mÃ³dulo en
+              una frase: <em>en Freepik no generas imÃ¡genes: construyes una secuencia, plano a plano,
+              haciendo referencia a cada etapa, e iteras hasta que la escena tenga lÃ³gica de direcciÃ³n.</em></p>
 </div>
-<!-- figura 5: o arco da sequência -->
+<!-- figura 5: o arco da sequÃªncia -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · El arco de la secuencia — <b>espacio, personaje, acción, movimiento, desenlace</b></figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· El arco de la secuencia â€” <b>espacio, personaje, acciÃ³n, movimiento, desenlace</b></figcaption>
 <svg aria-label="Diagrama: seis planos en una curva narrativa que sube desde el plano general (espacio) hasta el pico de movimiento y vuelve a bajar al plano general (desenlace), con variaciones en la escala de plano." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="160" y2="160"></line>
 <path class="accent-stroke" d="M50 150 L160 132 C 250 112, 300 92, 410 74 L470 74 C 540 92, 590 130, 680 150" fill="none" stroke-width="2.2"></path>
 <g class="accent"><circle cx="60" cy="150" r="3"></circle><circle cx="190" cy="124" r="3"></circle><circle cx="320" cy="92" r="3"></circle><circle cx="440" cy="74" r="3.5"></circle><circle cx="560" cy="118" r="3"></circle><circle cx="680" cy="150" r="3"></circle></g>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
-<text x="60" y="180">1 · plano abierto</text>
-<text x="190" y="116">2 · personaje</text>
-<text x="320" y="84">3 · primer plano</text>
-<text x="440" y="64">4–5 · inmersión + movimiento</text>
-<text x="680" y="180">6 · plano amplio</text>
+<text x="60" y="180">1 Â· plano abierto</text>
+<text x="190" y="116">2 Â· personaje</text>
+<text x="320" y="84">3 Â· primer plano</text>
+<text x="440" y="64">4â€“5 Â· inmersiÃ³n + movimiento</text>
+<text x="680" y="180">6 Â· plano amplio</text>
 </g>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="36">ESPACIO → PERSONAJE → ACCIÓN → MOVIMIENTO → DESENLACE</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="36">ESPACIO â†’ PERSONAJE â†’ ACCIÃ“N â†’ MOVIMIENTO â†’ DESENLACE</text>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="60" y="196">abre</text>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="680" y="196">cierra + continúa</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="680" y="196">cierra + continÃºa</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
 <p>El plano 6 repite el encuadre amplio del plano 1. Si <em>cortara</em> el plano 6 y terminaras
-              la escena en el plano 5 (el movimiento en su punto máximo), ¿qué cambiaría en la sensación de la secuencia?</p>
+              la escena en el plano 5 (el movimiento en su punto mÃ¡ximo), Â¿quÃ© cambiarÃ­a en la sensaciÃ³n de la secuencia?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">La escena perdería el <strong>cierre</strong>. Terminar en el punto máximo del movimiento deja
-                al espectador suspendido, sin respiro — puede funcionar para un corte abrupto, pero sacrifica la
-                sensación de ciclo completo. El plano abierto de regreso devuelve la escala, cierra el gesto y, al reencontrar el
-                punto de partida transformado, abre camino para la siguiente escena. La repetición con propósito no es
-                redundancia: es puntuación.</p>
+<p class="answer">La escena perderÃ­a el <strong>cierre</strong>. Terminar en el punto mÃ¡ximo del movimiento deja
+                al espectador suspendido, sin respiro â€” puede funcionar para un corte abrupto, pero sacrifica la
+                sensaciÃ³n de ciclo completo. El plano abierto de regreso devuelve la escala, cierra el gesto y, al reencontrar el
+                punto de partida transformado, abre camino para la siguiente escena. La repeticiÃ³n con propÃ³sito no es
+                redundancia: es puntuaciÃ³n.</p>
 </details>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="Autocomprobación" class="check">
-<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<section aria-label="AutocomprobaciÃ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>¿Cuál es la diferencia entre “generar imágenes” y lo que propone Freepik Spaces?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Â¿CuÃ¡l es la diferencia entre â€œgenerar imÃ¡genesâ€ y lo que propone Freepik Spaces?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Freepik Spaces construye una <em>secuencia visual controlada</em> en nosotros, donde cada
-              plano tiene un propósito, una lógica narrativa y un ritmo: preproducción de verdad. No se trata de generar imágenes
+              plano tiene un propÃ³sito, una lÃ³gica narrativa y un ritmo: preproducciÃ³n de verdad. No se trata de generar imÃ¡genes
               aleatorias y esperar que combinen: se trata de dividir el trabajo en etapas conectadas y dirigibles.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Para qué sirven las referencias <span class="code-inline">@</span> ¿entre los nodos?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">02</span><span>Para quÃ© sirven las referencias <span class="code-inline">@</span> Â¿entre los nodos?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Para <em>conectar</em> guion, personaje y resultados anteriores. En el render, por
-              ejemplo, <span class="code-inline">@sketch</span> da la composición y <span class="code-inline">@character</span>
-              da la identidad — eso es lo que mantiene la consistencia a lo largo de los seis planos.</p></div>
+              ejemplo, <span class="code-inline">@sketch</span> da la composiciÃ³n y <span class="code-inline">@character</span>
+              da la identidad â€” eso es lo que mantiene la consistencia a lo largo de los seis planos.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>¿Por qué el storyboard se hace como un boceto en blanco y negro, sin detalles?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Para juzgar solo la <em>composición</em> — encuadre, blocking, ritmo — cuando todavía es barato cambiar. El color y la textura distraen de lo que debe estar bien antes del acabado. Resolver la progresión en el boceto evita rehacer después seis imágenes detalladas.</p></div>
+<summary><span class="qn">03</span><span>Â¿Por quÃ© el storyboard se hace como un boceto en blanco y negro, sin detalles?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Para juzgar solo la <em>composiciÃ³n</em> â€” encuadre, blocking, ritmo â€” cuando todavÃ­a es barato cambiar. El color y la textura distraen de lo que debe estar bien antes del acabado. Resolver la progresiÃ³n en el boceto evita rehacer despuÃ©s seis imÃ¡genes detalladas.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>¿Cuál es el arco de la secuencia de seis planos del ejemplo?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>Espacio → personaje → acción → movimiento → desenlace.</em> Cada
-              plano tiene una función (el plano general establece, el personaje conecta, el primer plano genera tensión, el movimiento energiza,
-              volver al plano general cierra y continúa). Variar la escala crea ritmo; la composición guía la atención.</p></div>
+<summary><span class="qn">04</span><span>Â¿CuÃ¡l es el arco de la secuencia de seis planos del ejemplo?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><em>Espacio â†’ personaje â†’ acciÃ³n â†’ movimiento â†’ desenlace.</em> Cada
+              plano tiene una funciÃ³n (el plano general establece, el personaje conecta, el primer plano genera tensiÃ³n, el movimiento energiza,
+              volver al plano general cierra y continÃºa). Variar la escala crea ritmo; la composiciÃ³n guÃ­a la atenciÃ³n.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Mi recorrido</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+<h2><span class="ico">â§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este módulo</div>
-<div class="v" data-inema-meter="modulo:3-2">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="k">En este mÃ³dulo</div>
+<div class="v" data-ARCKHÉ-meter="modulo:3-2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 3</div>
-<div class="v" data-inema-meter="trilha:3">
-<span data-inema-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -633,80 +633,80 @@ aspect ratio ~16:9.
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Módulo 3.3 — Generación de movimiento en Seedance</div>
+<div class="t">MÃ³dulo 3.3 â€” GeneraciÃ³n de movimiento en Seedance</div>
 </div>
-<a class="go" href="modulo-3-3.html">Siguiente →</a>
+<a class="go" href="modulo-3-3.html">Siguiente â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-3-2#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-2#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
+<div class="tag">DefiniciÃ³n</div>
 <b>Flujo de trabajo de nodos.</b> Una cadena visual de cajas, cada una con una tarea, que pasa el resultado
           a la siguiente. Permite revisar o regenerar una etapa sin rehacer el resto.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Lección 7 del bloque AI Cinema Workflow — “Freepik Scene Building”. El Space completo (nodos,
-          prompts, workflow) está enlazado en el bloque “Para profundizar” de esta sección.
-          <div class="src-line">freepik.com · pikaso/spaces</div>
+          LecciÃ³n 7 del bloque AI CARCKHÉ Workflow â€” â€œFreepik Scene Buildingâ€. El Space completo (nodos,
+          prompts, workflow) estÃ¡ enlazado en el bloque â€œPara profundizarâ€ de esta secciÃ³n.
+          <div class="src-line">freepik.com Â· pikaso/spaces</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-3-2#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Guion como lista de planos.</b> No es prosa, sino la historia dividida en planos numerados (SHOT 1–6).
+<div class="tag">DefiniciÃ³n</div>
+<b>Guion como lista de planos.</b> No es prosa, sino la historia dividida en planos numerados (SHOT 1â€“6).
           Es la columna que todos los nodos siguientes usan como referencia.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Mantén al personaje <i>genérico</i> — no reproduzcas a una persona real identificable. La consistencia viene de una referencia limpia, reutilizada plano a plano.
+          MantÃ©n al personaje <i>genÃ©rico</i> â€” no reproduzcas a una persona real identificable. La consistencia viene de una referencia limpia, reutilizada plano a plano.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-3-2#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Letterbox.</b> Los márgenes horizontales que enmarcan un cuadro 16:9 dentro de un panel. Es lo que hace que el
-          boceto parezca un “fotograma de película” en lugar de una imagen cuadrada.
+<div class="tag">DefiniciÃ³n</div>
+<b>Letterbox.</b> Los mÃ¡rgenes horizontales que enmarcan un cuadro 16:9 dentro de un panel. Es lo que hace que el
+          boceto parezca un â€œfotograma de pelÃ­culaâ€ en lugar de una imagen cuadrada.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Boceto en blanco y negro y de baja fidelidad <i>a propósito</i>: sin color ni textura, el ojo juzga solo la
-          composición, que es lo que debe estar bien antes del render.
+          Boceto en blanco y negro y de baja fidelidad <i>a propÃ³sito</i>: sin color ni textura, el ojo juzga solo la
+          composiciÃ³n, que es lo que debe estar bien antes del render.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-3-2#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-2#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Referencia doble.</b> En el render, <span class="code-inline">@sketch</span> entrega la composición y
-          <span class="code-inline">@character</span> entrega la identidad — juntos, recrean el storyboard en
+<div class="tag">DefiniciÃ³n</div>
+<b>Referencia doble.</b> En el render, <span class="code-inline">@sketch</span> entrega la composiciÃ³n y
+          <span class="code-inline">@character</span> entrega la identidad â€” juntos, recrean el storyboard en
           calidad realista.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          El render debe parecer <i>live-action</i>, no ilustración ni concept art. Es una previsualización: composición aprobada en el boceto, ahora con luz, color y materialidad.
+          El render debe parecer <i>live-action</i>, no ilustraciÃ³n ni concept art. Es una previsualizaciÃ³n: composiciÃ³n aprobada en el boceto, ahora con luz, color y materialidad.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-3-2#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-2#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Arco de la secuencia.</b> Espacio → personaje → acción → movimiento → desenlace. Cada
-plano tiene un propósito; variar la escala crea ritmo; volver al plano amplio cierra y continúa.
+<div class="tag">DefiniciÃ³n</div>
+<b>Arco de la secuencia.</b> Espacio â†’ personaje â†’ acciÃ³n â†’ movimiento â†’ desenlace. Cada
+plano tiene un propÃ³sito; variar la escala crea ritmo; volver al plano amplio cierra y continÃºa.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          El resultado — guion, personaje, boceto, seis cuadros — es un paquete de previsualización. Los
-          cuadros estáticos son la materia prima del Módulo 3.3, donde cobran movimiento en Seedance.
+          El resultado â€” guion, personaje, boceto, seis cuadros â€” es un paquete de previsualizaciÃ³n. Los
+          cuadros estÃ¡ticos son la materia prima del MÃ³dulo 3.3, donde cobran movimiento en Seedance.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Módulo 3.2 — folio x</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">MÃ³dulo 3.2 â€” folio x</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -715,8 +715,8 @@ plano tiene un propósito; variar la escala crea ritmo; volver al plano amplio c
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

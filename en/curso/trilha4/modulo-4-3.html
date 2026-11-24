@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Module 4.3 — Shots and Framing | AI Filmmaking</title>
+<title>Module 4.3 â€” Shots and Framing | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/modulo-4-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/modulo-4-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/modulo-4-3.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:4-3"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:4-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Track <b>4</b> Camera Language</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Module <b>4.3</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Section 1 of 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Section 1 of 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,14 +189,14 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Module 4.3 · Track 4 · Camera Language</p>
+<p class="kicker">Module 4.3 Â· Track 4 Â· Camera Language</p>
 <h1 class="module">Shot Types and Framing: distance becomes <em>emotion</em></h1>
-<p class="deck">The distance between camera and subject isn’t a technical detail—it’s an emotional
+<p class="deck">The distance between camera and subject isnâ€™t a technical detailâ€”itâ€™s an emotional
           decision. The closer you get, the harder it is for the viewer to look away. This lesson covers the full range
-          of shot sizes and the grammar that keeps space legible: eyelines and the 180° rule.</p>
+          of shot sizes and the grammar that keeps space legible: eyelines and the 180Â° rule.</p>
 <p class="read-meta">
 <span class="here">Reading now</span>
-<span>~18 min · full module</span>
+<span>~18 min Â· full module</span>
 <span>5 sections</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
@@ -204,17 +204,17 @@
 <h2>What you will understand</h2>
 <ul>
 <li>Why <b>distance and emotion</b>: the wide shot answers <em>where are we?</em>, the close-up answers
-              <em>how does it feel?</em> — same scene, opposite meanings.</li>
+              <em>how does it feel?</em> â€” same scene, opposite meanings.</li>
 <li>A <b>full range of shots</b>, of the <em>establishing</em> to the <em>extreme close-up</em>, and the
-              effect each one has on the viewer’s body.</li>
+              effect each one has on the viewerâ€™s body.</li>
 <li>A <b>golden rule</b>: start wide to establish the world, move closer to reveal emotion,
-              end on a close-up for maximum impact — one shot, one emotion.</li>
-<li>The grammar that keeps the space coherent: the <b>eyeline</b> (eyeline) and the <b>180° rule</b>, and why breaking them disorients the viewer.</li>
+              end on a close-up for maximum impact â€” one shot, one emotion.</li>
+<li>The grammar that keeps the space coherent: the <b>eyeline</b> (eyeline) and the <b>180Â° rule</b>, and why breaking them disorients the viewer.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Module summary" class="toc" data-inema-toc="">
-<p class="toc-head">Summary — five movements</p>
+<nav aria-label="Module summary" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Summary â€” five movements</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Distance is an emotional decision</span></a></li>
@@ -225,46 +225,46 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-1" data-inema-track="4" id="topico-1">
+<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-1" data-ARCKHÉ-track="4" id="topico-1">
 <div class="section-mark">
-<span class="where">Section 1 of 5</span><span>·</span><span>Principle</span>
+<span class="where">Section 1 of 5</span><span>Â·</span><span>Principle</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Distance is an emotional decision</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m4-3-t1-p1">In filmmaking, the distance between the camera and the subject
-              is never a technical detail — it’s a <em>emotional decision</em>.<span class="sidenote-ref">1</span>
-              When you move closer, you enter the character’s inner world; when you move away, you show their place in the universe. The same actor, the same line, the same position: changing the shot size changes the meaning. That’s the first thing to internalize—the framing doesn’t record the scene,
+<p class="lede dropcap" data-ARCKHÉ-block="m4-3-t1-p1">In filmmaking, the distance between the camera and the subject
+              is never a technical detail â€” itâ€™s a <em>emotional decision</em>.<span class="sidenote-ref">1</span>
+              When you move closer, you enter the characterâ€™s inner world; when you move away, you show their place in the universe. The same actor, the same line, the same position: changing the shot size changes the meaning. Thatâ€™s the first thing to internalizeâ€”the framing doesnâ€™t record the scene,
               it <em>interprets</em>.</p>
-<p data-inema-block="m4-3-t1-p2">To keep from getting lost in the list of names that follows, remember the
-              question each shot answers. <strong>Wide shots answer “where are we?”</strong>
-              — geography, weather, scale. <strong>Close-ups answer “how does it feel?”</strong>
-              — reaction, decision, emotion. And the <strong>extreme close-up reveals a detail that could change the
-              story</strong> — a finger, a key, a tear. The entire range of shot sizes lives between these
+<p data-ARCKHÉ-block="m4-3-t1-p2">To keep from getting lost in the list of names that follows, remember the
+              question each shot answers. <strong>Wide shots answer â€œwhere are we?â€</strong>
+              â€” geography, weather, scale. <strong>Close-ups answer â€œhow does it feel?â€</strong>
+              â€” reaction, decision, emotion. And the <strong>extreme close-up reveals a detail that could change the
+              story</strong> â€” a finger, a key, a tear. The entire range of shot sizes lives between these
               two poles: context and emotion.</p>
 <h3 class="sub">What shot size controls</h3>
-<p data-inema-block="m4-3-t1-p3">Three things are at stake with every choice. The first is
-              <em>context versus emotion</em>, which you’ve already seen. The second is the <em>rhythm</em>: alternating wide and close shots creates energy; staying on medium shots creates calm. The third is <em>attention</em> —
+<p data-ARCKHÉ-block="m4-3-t1-p3">Three things are at stake with every choice. The first is
+              <em>context versus emotion</em>, which youâ€™ve already seen. The second is the <em>rhythm</em>: alternating wide and close shots creates energy; staying on medium shots creates calm. The third is <em>attention</em> â€”
               and here is the most revealing rule: the tighter the shot, <strong>the less the audience can
-              look away.</strong> A wide shot lets the eye wander; a close-up holds it. That’s why directors
+              look away.</strong> A wide shot lets the eye wander; a close-up holds it. Thatâ€™s why directors
               build scenes from wide to tight: they start by letting the eye roam and end by capturing it.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Stop and predict</p>
-<p>An actor says the same line—“I knew”—in two shots. In the first, she
+<p>An actor says the same lineâ€”â€œI knewâ€â€”in two shots. In the first, she
               appears small, far away, in a vast desert. In the second, her face fills the entire screen.
               The line is identical. What changes in what the viewer feels?</p>
 <details>
 <summary>See one possible answer</summary>
-<p class="answer">Almost everything. In a wide shot, “I knew” sounds like fate, loneliness,
-                smallness before the world— <em>context</em> speaks louder. In close-up, the same sentence becomes
-                pure intimacy: we read the micro-expression, feel the <em>emotion</em>, and we couldn’t look away.
+<p class="answer">Almost everything. In a wide shot, â€œI knewâ€ sounds like fate, loneliness,
+                smallness before the worldâ€” <em>context</em> speaks louder. In close-up, the same sentence becomes
+                pure intimacy: we read the micro-expression, feel the <em>emotion</em>, and we couldnâ€™t look away.
                 The distance alone rewrote the line.</p>
 </details>
 </div>
 <!-- figura 1: o eixo contexto-emocao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · One <b>axis</b>: from context (wide) to emotion (close)</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· One <b>axis</b>: from context (wide) to emotion (close)</figcaption>
 <svg aria-label="Horizontal axis diagram: on the left, the wide shot answers where we are and provides context; on the right, the close-up answers how it feels and provides emotion; audience attention grows from left to right." class="diagram" role="img" viewbox="0 0 720 184">
 <defs>
 <pattern height="6" id="hatch-4-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -277,70 +277,70 @@
 <rect class="rule-stroke" fill="none" height="72" rx="3" stroke-width="1.3" width="120" x="60" y="60"></rect>
 <circle class="ink-soft" cx="120" cy="100" r="4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="120" y="50">wide</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="120" y="150">“where are we?”</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="120" y="150">â€œwhere are we?â€</text>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="120" y="166">CONTEXT</text>
 <!-- polo fechado -->
 <rect class="accent-stroke" fill="url(#hatch-4-3)" height="72" rx="3" stroke-width="1.4" width="120" x="540" y="60"></rect>
 <circle class="accent-stroke" cx="600" cy="96" fill="none" r="22" stroke-width="1.4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="600" y="50">closed</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="600" y="150">“how does it feel?”</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="600" y="150">â€œhow does it feel?â€</text>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="600" y="166">EMOTION</text>
 <!-- atencao crescente -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="84">AUDIENCE ATTENTION →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="84">AUDIENCE ATTENTION â†’</text>
 <path class="mark-stroke" d="M260 116 L460 116" fill="none" opacity="0.5" stroke-width="2.6"></path>
 <path class="accent-stroke" d="M260 116 L460 116" fill="none" stroke-dasharray="2 4" stroke-width="1.4"></path>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: the desert laboratory world
+<summary><span class="chev">â–¸</span> Going deeper: the desert laboratory world
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>The happy path above is enough. This layer explains the examples that will appear again—and can be skipped.</p>
+<p>The happy path above is enough. This layer explains the examples that will appear againâ€”and can be skipped.</p>
 <p>The shots in this lesson are demonstrated through a single story in the desert, filmed from several
                 distances: a crashed spacecraft in the Sahara, sandstorms, a character named Ella in a pink suit, a mysterious man with a white orchid, and the reflection of spacecraft in her eye. Use
                 <em>the same world</em> for all the shots is intentional: by keeping the setting, lighting, and characters
-                constant, it’s easy to see what <strong>only at a distance</strong> changed — and how this single
+                constant, itâ€™s easy to see what <strong>only at a distance</strong> changed â€” and how this single
                 variable alters scale, emotion, and where the eye goes. It's a controlled laboratory for shot
                 grammar.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-2" data-inema-track="4" id="topico-2">
+<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-2" data-ARCKHÉ-track="4" id="topico-2">
 <div class="section-mark">
-<span class="where">Section 2 of 5</span><span>·</span><span>The wide shot</span>
+<span class="where">Section 2 of 5</span><span>Â·</span><span>The wide shot</span>
 </div>
 <h2 class="head"><span class="num">2.</span>The wide side: establish, isolate, contextualize</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-3-t2-p1">Start at the wide end of the scale, where the world speaks louder
+<p class="lede" data-ARCKHÉ-block="m4-3-t2-p1">Start at the wide end of the scale, where the world speaks louder
               than the face. Three shots live here, and each does a distinct job, though they may seem
               similar at first glance.</p>
-<h3 class="sub">Establishing shot — the chapter’s first page</h3>
-<p data-inema-block="m4-3-t2-p2">O <strong>establishing shot</strong> (establishing shot),
+<h3 class="sub">Establishing shot â€” the chapterâ€™s first page</h3>
+<p data-ARCKHÉ-block="m4-3-t2-p2">O <strong>establishing shot</strong> (establishing shot),
               usually an extreme wide shot or aerial shot, is the first page of a chapter: it tells the audience
-              “we’re somewhere new.” It shows the geography, the weather, the time of day, and the scale of the world.
+              â€œweâ€™re somewhere new.â€ It shows the geography, the weather, the time of day, and the scale of the world.
               Without it, the viewer feels lost; with it, they relax and trust the story. Use it at the opening of
-              a scene or when changing locations—its emotional effect is awe and loneliness.</p>
-<h3 class="sub">Wide shot — subject scale</h3>
-<p data-inema-block="m4-3-t2-p3">Unlike the establishing shot, which is about <em>place</em>, o
+              a scene or when changing locationsâ€”its emotional effect is awe and loneliness.</p>
+<h3 class="sub">Wide shot â€” subject scale</h3>
+<p data-ARCKHÉ-block="m4-3-t2-p3">Unlike the establishing shot, which is about <em>place</em>, o
               <strong>wide shot</strong> (wide shot) and about <em>scale</em>: how large or small the subject is
               in relation to its surroundings. It makes the audience feel isolation, vulnerability, or
-              overwhelming power. Put the camera on the ground, at a low angle—a spaceship that fills almost the
+              overwhelming power. Put the camera on the ground, at a low angleâ€”a spaceship that fills almost the
               entire frame becomes a sleeping giant, and the low angle makes it hover. When the environment swallows the subject,
-              that’s the shot: a lone character against mountains, a monster emerging, a figure facing the
+              thatâ€™s the shot: a lone character against mountains, a monster emerging, a figure facing the
               storm.</p>
-<h3 class="sub">Medium wide / cowboy — the bridge to the character</h3>
-<p data-inema-block="m4-3-t2-p4">O <strong>medium wide shot</strong>, also called
-              <span class="dfn"><details class="dfn"><summary>cowboy shot</summary><span class="body"><b>Cowboy shot</b> is a shot framed at mid-thigh. The name comes from Westerns: it framed the subject to show the holster and gun at the waist, along with the face. It’s the distance of readiness and posture.</span></details></span>,
-              and it’s the bridge between the environment and the character. We see enough of the background to understand the context, but
-              body language—posture, movement, attitude—becomes the focus. It’s the action shot with
+<h3 class="sub">Medium wide / cowboy â€” the bridge to the character</h3>
+<p data-ARCKHÉ-block="m4-3-t2-p4">O <strong>medium wide shot</strong>, also called
+              <span class="dfn"><details class="dfn"><summary>cowboy shot</summary><span class="body"><b>Cowboy shot</b> is a shot framed at mid-thigh. The name comes from Westerns: it framed the subject to show the holster and gun at the waist, along with the face. Itâ€™s the distance of readiness and posture.</span></details></span>,
+              and itâ€™s the bridge between the environment and the character. We see enough of the background to understand the context, but
+              body languageâ€”posture, movement, attitudeâ€”becomes the focus. Itâ€™s the action shot with
               context: someone skateboarding, dancing, fighting, running. It also appears before a confrontation,
-              to show readiness. Its effect is dynamic, energetic, confident—we admire the character’s skill
+              to show readiness. Its effect is dynamic, energetic, confidentâ€”we admire the characterâ€™s skill
               while the epic world remains visible behind them.</p>
 </div>
 <!-- figura 2: tres planos amplos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Three broad distances: <b>establish</b>, <b>isolate</b>, <b>move closer to the subject</b></figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· Three broad distances: <b>establish</b>, <b>isolate</b>, <b>move closer to the subject</b></figcaption>
 <svg aria-label="Diagram with three frames: establishing shot with a tiny figure in a landscape, wide shot with the figure larger against the environment, and cowboy shot cropping the figure at mid-thigh." class="diagram" role="img" viewbox="0 0 720 190">
 <!-- establishing -->
 <rect class="rule-stroke" fill="none" height="108" rx="3" stroke-width="1.3" width="190" x="40" y="40"></rect>
@@ -368,46 +368,46 @@
 </figure>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-3" data-inema-track="4" id="topico-3">
+<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-3" data-ARCKHÉ-track="4" id="topico-3">
 <div class="section-mark">
-<span class="where">Section 3 of 5</span><span>·</span><span>The close</span>
+<span class="where">Section 3 of 5</span><span>Â·</span><span>The close</span>
 </div>
 <h2 class="head"><span class="num">3.</span>The tight side: medium shot, close-up, extreme close-up</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-3-t3-p1">Now cross over to the other end, where the face speaks louder
+<p class="lede" data-ARCKHÉ-block="m4-3-t3-p1">Now cross over to the other end, where the face speaks louder
               than the world. As the camera moves closer, the viewer loses the exit: every step forward means
               less freedom for the eye and more intimacy with the character.</p>
-<h3 class="sub">Medium shot — the neutral, realistic shot</h3>
-<p data-inema-block="m4-3-t3-p2">O <strong>medium shot</strong> (medium shot), generally from the waist
-              up, is the most neutral and realistic frame—it imitates how we see people in everyday life. Close
-              enough to read facial expressions, far enough to still see body language. It doesn’t
-              manipulate the audience; it presents the character as they are, in motion. It’s the workhorse of
-              realistic dialogue—and the rule of thumb says: if you’re lost, start with a medium shot. It
+<h3 class="sub">Medium shot â€” the neutral, realistic shot</h3>
+<p data-ARCKHÉ-block="m4-3-t3-p2">O <strong>medium shot</strong> (medium shot), generally from the waist
+              up, is the most neutral and realistic frameâ€”it imitates how we see people in everyday life. Close
+              enough to read facial expressions, far enough to still see body language. It doesnâ€™t
+              manipulate the audience; it presents the character as they are, in motion. Itâ€™s the workhorse of
+              realistic dialogueâ€”and the rule of thumb says: if youâ€™re lost, start with a medium shot. It
               rarely fails.</p>
-<h3 class="sub">Medium close-up and close-up — entering personal space</h3>
-<p data-inema-block="m4-3-t3-p3">O <strong>medium close-up</strong> (chest up) enters the
+<h3 class="sub">Medium close-up and close-up â€” entering personal space</h3>
+<p data-ARCKHÉ-block="m4-3-t3-p3">O <strong>medium close-up</strong> (chest up) enters the
               personal space: the face dominates, but we can still see the shoulders and some gestures. It's perfect for emotional
-              reactions—surprise, fear, wonder—without the full intensity of a close-up. It's the
+              reactionsâ€”surprise, fear, wonderâ€”without the full intensity of a close-up. It's the
               intimacy shot <em>before</em> of the final dive. Meanwhile, the <strong>close-up</strong> (shoulders and
               face, or just the face) captures pure emotion: when the face fills the frame, a smile becomes
-              contagious and a wave becomes a greeting from afar. It’s the strongest tool for the decisive moment—
+              contagious and a wave becomes a greeting from afar. Itâ€™s the strongest tool for the decisive momentâ€”
               joy, fear, the decision that changes a life.</p>
-<h3 class="sub">Extreme close-up—a detail turned into a monument</h3>
-<p data-inema-block="m4-3-t3-p4">O <strong>extreme close-up</strong> isolates a tiny detail and makes it monumental. An eye becomes a living mirror, reflecting not only light, but the entire world — imagine Ella’s cornea reflecting dunes and alien ships, distorted by the curvature of the eye. It’s the shot of first contact, the clue that changes the story, the climax. It pairs beautifully with a
-              <em>push-in</em> slow and with sound — a heartbeat that starts slow and speeds up —,
+<h3 class="sub">Extreme close-upâ€”a detail turned into a monument</h3>
+<p data-ARCKHÉ-block="m4-3-t3-p4">O <strong>extreme close-up</strong> isolates a tiny detail and makes it monumental. An eye becomes a living mirror, reflecting not only light, but the entire world â€” imagine Ellaâ€™s cornea reflecting dunes and alien ships, distorted by the curvature of the eye. Itâ€™s the shot of first contact, the clue that changes the story, the climax. It pairs beautifully with a
+              <em>push-in</em> slow and with sound â€” a heartbeat that starts slow and speeds up â€”,
               pushing the audience from observation into immersion. Its effect is suspense and wonder.<span class="sidenote-ref">2</span></p>
-<div class="codeblock"><span class="c"># Extreme close-up — one detail becomes the whole world</span>
+<div class="codeblock"><span class="c"># Extreme close-up â€” one detail becomes the whole world</span>
 <span class="c"># the most intimate distance on the scale; pair it with a slow push-in and sound</span>
-<span class="k">Format:</span> cinematic 16:9, macro lens, ultra-shallow depth, film grain.
+<span class="k">Format:</span> cARCKHÉtic 16:9, macro lens, ultra-shallow depth, film grain.
 <span class="k">Shot:</span> extreme close-up of a woman's eye, starting a few centimeters out, slowly pushing in until the iris fills the frame.
 <span class="k">Detail:</span> in the corneal reflection, a vast desert with dunes and several futuristic spacecraft, warped by the curve of the eye.
-<span class="k">Action:</span> the eye moves naturally — glances left, then right, then blinks softly.
+<span class="k">Action:</span> the eye moves naturally â€” glances left, then right, then blinks softly.
 <span class="k">Lighting:</span> soft natural daylight, warm catchlight, high micro-contrast on the iris.
 <span class="k">Sound:</span> low slow heartbeat that accelerates as the camera pushes closer.</div>
 </div>
 <!-- figura 3: a escala fechada -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · Moving closer: <b>medium</b> → <b>close</b> → <b>extreme close</b></figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· Moving closer: <b>medium</b> â†’ <b>close</b> â†’ <b>extreme close</b></figcaption>
 <svg aria-label="Diagram with three frames showing the same face progressively closer: medium shot showing the waist, close-up showing the face and shoulders, and extreme close-up showing only the eye." class="diagram" role="img" viewbox="0 0 720 188">
 <!-- medium -->
 <rect class="rule-stroke" fill="none" height="116" rx="3" stroke-width="1.3" width="180" x="50" y="36"></rect>
@@ -433,13 +433,13 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: lens and sound as part of the shot
+<summary><span class="chev">â–¸</span> Going deeper: lens and sound as part of the shot
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>Optional layer—two enhancements that strengthen each distance.</p>
-<p><strong>Choosing a lens is choosing a character.</strong> Wide-angle lenses (21–35mm)
-                exaggerate space and movement—they pair with wide shots and action. Telephoto lenses (85mm and above)
-                compress space and isolate the face—they pair with close-ups and intimacy. Choosing the focal
+<p>Optional layerâ€”two enhancements that strengthen each distance.</p>
+<p><strong>Choosing a lens is choosing a character.</strong> Wide-angle lenses (21â€“35mm)
+                exaggerate space and movementâ€”they pair with wide shots and action. Telephoto lenses (85mm and above)
+                compress space and isolate the faceâ€”they pair with close-ups and intimacy. Choosing the focal
                 length is, once again, choosing an emotion. <strong>And audio is half the emotion.</strong> In the prompts,
                 include diegetic sounds (wind, footsteps, the click of a lighter) and non-diegetic sounds (a low bass note,
                 a synthetic pulse). An extreme close-up with a heartbeat is worth twice as much as one without sound: the
@@ -448,35 +448,35 @@
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-4" data-inema-track="4" id="topico-4">
+<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-4" data-ARCKHÉ-track="4" id="topico-4">
 <div class="section-mark">
-<span class="where">Section 4 of 5</span><span>·</span><span>The rules</span>
+<span class="where">Section 4 of 5</span><span>Â·</span><span>The rules</span>
 </div>
 <h2 class="head"><span class="num">4.</span>The golden rule is the decision rule</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-3-t4-p1">Knowing the shots isn't enough; you need to know how to
+<p class="lede" data-ARCKHÉ-block="m4-3-t4-p1">Knowing the shots isn't enough; you need to know how to
               <em>link them</em>. Here's the golden rule, the one that never fails: <strong>start wide to
-              establish the world, move to medium for the action, then close in for the emotion—and at the crucial moment,
-              an extreme close-up on a detail.</strong><span class="sidenote-ref">3</span> It’s the
-              natural grammar of cinema: from “where we are” to “how he or she feels.”
+              establish the world, move to medium for the action, then close in for the emotionâ€”and at the crucial moment,
+              an extreme close-up on a detail.</strong><span class="sidenote-ref">3</span> Itâ€™s the
+              natural grammar of cARCKHÉ: from â€œwhere we areâ€ to â€œhow he or she feels.â€
               Start wide, end close.</p>
-<p data-inema-block="m4-3-t4-p2">This rule comes with one more discipline: <strong>one shot, one
-              emotion.</strong> Don’t try to do everything in a single frame. Wide shots provide context; close-ups provide
-              emotion—respect each one’s function. Trying to make a single shot establish the world <em>e</em>
+<p data-ARCKHÉ-block="m4-3-t4-p2">This rule comes with one more discipline: <strong>one shot, one
+              emotion.</strong> Donâ€™t try to do everything in a single frame. Wide shots provide context; close-ups provide
+              emotionâ€”respect each oneâ€™s function. Trying to make a single shot establish the world <em>e</em>
               deliver the tear and ask it to do two opposite jobs; the result does neither
               well. Assign one task per shot, and the sequence gains clarity.</p>
 <h3 class="sub">The question that chooses the shot for you</h3>
-<p data-inema-block="m4-3-t4-p3">When you’re unsure which shot to use, ask one question:
-              <em>what matters most right now — the location and action, or the face and emotion?</em> If
+<p data-ARCKHÉ-block="m4-3-t4-p3">When youâ€™re unsure which shot to use, ask one question:
+              <em>what matters most right now â€” the location and action, or the face and emotion?</em> If
               what matters is the space, scale, environment, or action, use a wide shot (establishing, wide, or
               medium wide). If what matters is the face, emotion, inner decision, or reaction, use a close shot
-              (medium to close, close-up). If it’s an ordinary conversation, without strong emotion or epic
-              circumstances, stay with a neutral medium shot. And if a small detail enters the scene and <em>becomes the plot</em> —
-              a button, a symbol, a crack, a touch—you need an extreme close-up.</p>
+              (medium to close, close-up). If itâ€™s an ordinary conversation, without strong emotion or epic
+              circumstances, stay with a neutral medium shot. And if a small detail enters the scene and <em>becomes the plot</em> â€”
+              a button, a symbol, a crack, a touchâ€”you need an extreme close-up.</p>
 </div>
 <!-- figura 4: a curva amplo->perto -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · The golden rule: the scene <b>walks</b> from wide to close-up</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· The golden rule: the scene <b>walks</b> from wide to close-up</figcaption>
 <svg aria-label="Progression diagram: five frames in sequence, from establishing shot to extreme close-up, with attention rising and the question changing from where we are to how it feels." class="diagram" role="img" viewbox="0 0 720 198">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="150" y2="150"></line>
 <!-- 5 marcos -->
@@ -501,53 +501,53 @@
 <text x="473" y="170">close</text>
 <text class="accent" x="589" y="170">ext. close</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" font-style="italic" x="120" y="32">“where are we?”</text>
-<text class="ink" font-family="Source Serif 4, serif" font-size="11" font-style="italic" text-anchor="end" x="600" y="32">“how does it feel?”</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" font-style="italic" x="120" y="32">â€œwhere are we?â€</text>
+<text class="ink" font-family="Source Serif 4, serif" font-size="11" font-style="italic" text-anchor="end" x="600" y="32">â€œhow does it feel?â€</text>
 <path class="accent-stroke" d="M70 26 L660 26" fill="none" opacity="0.7" stroke-dasharray="2 5" stroke-width="1.2"></path>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Stop and predict</p>
-<p>You’re going to generate a simple dialogue scene between two people, without big drama or an epic setting,
-              and don’t know where to start. According to the decision rule, which shot is the safest bet to open with?</p>
+<p>Youâ€™re going to generate a simple dialogue scene between two people, without big drama or an epic setting,
+              and donâ€™t know where to start. According to the decision rule, which shot is the safest bet to open with?</p>
 <details>
 <summary>See one possible answer</summary>
 <p class="answer">O <strong>medium shot</strong> neutral. For an ordinary conversation, without strong emotion
-                or epic circumstances, it’s the workhorse that “rarely fails”: close
+                or epic circumstances, itâ€™s the workhorse that â€œrarely failsâ€: close
                 enough to read the face, far enough to see the body language. Then you <em>adds</em>
                 a close-up for the strongest emotion and, if needed, a wide shot to reestablish the space.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="4-3" data-inema-topic="modulo-4-3#topico-5" data-inema-track="4" id="topico-5">
+<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-5" data-ARCKHÉ-track="4" id="topico-5">
 <div class="section-mark">
-<span class="where">Section 5 of 5</span><span>·</span><span>Continuity</span>
+<span class="where">Section 5 of 5</span><span>Â·</span><span>Continuity</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Eyeline and the 180-degree rule</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-3-t5-p1">Choosing good shots doesn’t help if, when you cut them together,
-              the viewer loses their sense of space. Two continuity rules preserve that coherence—and both
+<p class="lede" data-ARCKHÉ-block="m4-3-t5-p1">Choosing good shots doesnâ€™t help if, when you cut them together,
+              the viewer loses their sense of space. Two continuity rules preserve that coherenceâ€”and both
               matter even more with AI, because the generator has no sense of geography and needs you to
-              impose it. The first is the <span class="dfn"><details class="dfn"><summary>eyeline</summary><span class="body"><b>Eyeline</b> (eyeline) is the direction a character is looking. If they look offscreen to the right, what they see should be on the left in the next shot—so the two shots “look at each other” and the audience understands they're in the same space.</span></details></span>:
+              impose it. The first is the <span class="dfn"><details class="dfn"><summary>eyeline</summary><span class="body"><b>Eyeline</b> (eyeline) is the direction a character is looking. If they look offscreen to the right, what they see should be on the left in the next shotâ€”so the two shots â€œlook at each otherâ€ and the audience understands they're in the same space.</span></details></span>:
               the direction the character is looking.</p>
-<p data-inema-block="m4-3-t5-p2">The rule of <em>eyeline</em> is intuitive when said aloud: if a character looks to the right, off-screen, the object or person they’re watching should appear on the left in the next shot — as if the two shots were looking at each other. When the eyeline matches, the brain stitches the two frames into one space, even if they were generated separately. When it doesn’t match — both looking the same way — they seem to ignore each other, and the scene becomes disorienting. In AI prompts, explicitly saying “she looks off-screen to the right” and “he enters from the left, returning her gaze” preserves continuity.</p>
-<h3 class="sub">The 180-degree rule — an imaginary line</h3>
-<p data-inema-block="m4-3-t5-p3">A <strong>180° rule</strong> is eyeline’s geographic counterpart.
+<p data-ARCKHÉ-block="m4-3-t5-p2">The rule of <em>eyeline</em> is intuitive when said aloud: if a character looks to the right, off-screen, the object or person theyâ€™re watching should appear on the left in the next shot â€” as if the two shots were looking at each other. When the eyeline matches, the brain stitches the two frames into one space, even if they were generated separately. When it doesnâ€™t match â€” both looking the same way â€” they seem to ignore each other, and the scene becomes disorienting. In AI prompts, explicitly saying â€œshe looks off-screen to the rightâ€ and â€œhe enters from the left, returning her gazeâ€ preserves continuity.</p>
+<h3 class="sub">The 180-degree rule â€” an imaginary line</h3>
+<p data-ARCKHÉ-block="m4-3-t5-p3">A <strong>180Â° rule</strong> is eyelineâ€™s geographic counterpart.
               Imagine an invisible line connecting two characters in a scene; the camera should always remain on the
               <em>same side</em> of that line. As long as it respects this semicircle, the positions remain
               consistent: whoever was on the left stays on the left, whoever was on the right stays on the right.
               If the camera <em>crosses the line</em>, the positions reverse from one cut to the next, and the audience
-              senses—without knowing why—that something feels wrong, as if the characters had
+              sensesâ€”without knowing whyâ€”that something feels wrong, as if the characters had
               magically switched places.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m4-3-t5-p4">Capture the lesson in one sentence: <em>distance chooses the emotion, and
-              continuity—eyeline and 180°—keeps the space believable.</em> You now have the
+<p data-ARCKHÉ-block="m4-3-t5-p4">Capture the lesson in one sentence: <em>distance chooses the emotion, and
+              continuityâ€”eyeline and 180Â°â€”keeps the space believable.</em> You now have the
               three verbs of camera language: what it <strong>does</strong> (movement, 4.2), which
-              <strong>distance</strong> observes (shots, this lesson) and how to keep everything consistent. The next and final lesson in the track brings all this vocabulary together and puts it into a real generator—Seedance—with a storyboard, identity lock, and YAML structure.</p>
+              <strong>distance</strong> observes (shots, this lesson) and how to keep everything consistent. The next and final lesson in the track brings all this vocabulary together and puts it into a real generatorâ€”Seedanceâ€”with a storyboard, identity lock, and YAML structure.</p>
 </div>
 <!-- figura 5: a regra dos 180 graus -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · A <b>180-degree line</b>: stay on one side, and the space stays</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· A <b>180-degree line</b>: stay on one side, and the space stays</figcaption>
 <svg aria-label="Diagram: two characters, A and B, are connected by a line; on the permitted side, the cameras keep A on the left and B on the right; a camera that crosses the line reverses their positions and is marked as an error." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- a linha de acao -->
 <line class="rule-stroke" stroke-dasharray="5 4" stroke-width="1.3" x1="230" x2="490" y1="70" y2="70"></line>
@@ -578,56 +578,56 @@
 <p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
 <details class="q-item">
 <summary><span class="qn">01</span><span>What question does each end of the shot scale answer?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>Wide shots answer <em>“where are we?”</em> — context,
-geography, scale. Close-ups answer <em>“how does it feel?”</em> — reaction,
+<div class="ans"><p>Wide shots answer <em>â€œwhere are we?â€</em> â€” context,
+geography, scale. Close-ups answer <em>â€œhow does it feel?â€</em> â€” reaction,
               emotion, decision. And the extreme close-up reveals a detail that can change the story. Distance alone
               chooses between context and emotion.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Why does “the tighter the shot, the less the audience looks away”?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>Because the close-up <em>fills</em> the frame with the face: there’s nowhere left for the eye to wander. The wide shot lets the eye roam the setting; the close-up holds its attention. That’s why the scene moves from wide (releasing the gaze) to close-up (capturing it) at the decisive moment.</p></div>
+<summary><span class="qn">02</span><span>Why does â€œthe tighter the shot, the less the audience looks awayâ€?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Because the close-up <em>fills</em> the frame with the face: thereâ€™s nowhere left for the eye to wander. The wide shot lets the eye roam the setting; the close-up holds its attention. Thatâ€™s why the scene moves from wide (releasing the gaze) to close-up (capturing it) at the decisive moment.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>What’s the golden rule for connecting shots?</span><span class="reveal">Reveal</span></summary>
+<summary><span class="qn">03</span><span>Whatâ€™s the golden rule for connecting shots?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>Start wide to establish the world, move to a medium shot for the action, then close in on the
-              emotion—and at the crucial moment, use an extreme close-up on a detail. From the <em>where we are</em> to the
+              emotionâ€”and at the crucial moment, use an extreme close-up on a detail. From the <em>where we are</em> to the
               <em>how it feels</em>. One emotion per shot: wide shots provide context, close-ups show emotion; don't ask both
               of the same frame.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>What does the 180° rule protect, and what happens if the camera crosses the line?</span><span class="reveal">Reveal</span></summary>
+<summary><span class="qn">04</span><span>What does the 180Â° rule protect, and what happens if the camera crosses the line?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>Protects the <em>geography</em> of the scene: an imaginary line connects two characters, and
               the camera always stays on the same side of it, keeping whoever is on the left on the left. If you cross the line,
-              the positions reverse from one cut to the next — the audience feels that something is wrong, as
+              the positions reverse from one cut to the next â€” the audience feels that something is wrong, as
               if the characters had swapped places. Eyeline is the gaze-based version of that same continuity.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="My journey — consolidated progress" class="journey">
+<section aria-label="My journey â€” consolidated progress" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> My journey</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+<h2><span class="ico">â§</span> My journey</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Open notebook â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">In this module</div>
-<div class="v" data-inema-meter="modulo:4-3">
-<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:4-3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In track 4</div>
-<div class="v" data-inema-meter="trilha:4">
-<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In the course</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -636,27 +636,27 @@ geography, scale. Close-ups answer <em>“how does it feel?”</em> — reaction
 <div class="nextup">
 <div class="txt">
 <div class="k">Continue</div>
-<div class="t">Module 4.4 — Cinematic Video in Seedance 2</div>
+<div class="t">Module 4.4 â€” CARCKHÉtic Video in Seedance 2</div>
 </div>
-<a class="go" href="modulo-4-4.html">Next →</a>
+<a class="go" href="modulo-4-4.html">Next â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-4-3#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-3#topico-1"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
-          Lesson 12 — <i>Shot Sizes and Framing</i> (Block 4). The thesis: <i>“Shot size is not just
-          camera distance. It is an emotional and narrative decision.”</i>
+          Lesson 12 â€” <i>Shot Sizes and Framing</i> (Block 4). The thesis: <i>â€œShot size is not just
+          camera distance. It is an emotional and narrative decision.â€</i>
 </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Shot size.</b> The apparent distance between camera and subject. It controls three things:
-          context or emotion, rhythm, and attention—the tighter the shot, the less the eye can wander.
+          contextÂ orÂ emotion, rhythm, and attentionâ€”the tighter the shot, the less the eye can wander.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-4-3#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Establishing vs. wide.</b> The establishing shot is about <i>place</i> (geography, weather, scale of the world);
@@ -664,51 +664,51 @@ geography, scale. Close-ups answer <em>“how does it feel?”</em> — reaction
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          The low angle in the wide shot isn’t a detail: it makes the ship “hover like a sleeping giant.” With no human in the frame, the object itself becomes the character—a force of nature.
+          The low angle in the wide shot isnâ€™t a detail: it makes the ship â€œhover like a sleeping giant.â€ With no human in the frame, the object itself becomes the characterâ€”a force of nature.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-4-3#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Medium shot.</b> From the waist up, the most neutral shot — it imitates how we see people in everyday
-          life. The rescue rule: <i>if you’re lost, start with a medium shot. It rarely fails.</i>
+<b>Medium shot.</b> From the waist up, the most neutral shot â€” it imitates how we see people in everyday
+          life. The rescue rule: <i>if youâ€™re lost, start with a medium shot. It rarely fails.</i>
 </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          Ella’s extreme close-up of the eye reflects dunes and alien ships, distorted by the cornea: the tiny detail carries the entire world. This is where the sound (a speeding heartbeat) becomes half the emotion.
+          Ellaâ€™s extreme close-up of the eye reflects dunes and alien ships, distorted by the cornea: the tiny detail carries the entire world. This is where the sound (a speeding heartbeat) becomes half the emotion.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-4-3#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>One shot, one emotion.</b> Each shot has a job: a wide shot gives context, a close-up conveys emotion. Asking for
-          both in the same frame means asking it to do opposite things—and neither comes out well.
+          both in the same frame means asking it to do opposite thingsâ€”and neither comes out well.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          The compass question: <i>what matters more right now — location/action or face/emotion?</i>
-          Location → wide. Emotion → close-up. Casual conversation → medium. Detail that becomes a plot point
-          → extreme close-up.
+          The compass question: <i>what matters more right now â€” location/action or face/emotion?</i>
+          Location â†’ wide. Emotion â†’ close-up. Casual conversation â†’ medium. Detail that becomes a plot point
+          â†’ extreme close-up.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-4-3#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-3#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Eyeline.</b> The direction a character is looking. If they look right, what they see appears on the left
-          in the next shot—the shots “look at” each other and connect the space.
+          in the next shotâ€”the shots â€œlook atâ€ each other and connect the space.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Going deeper</div>
-          In AI, eyeline and the 180° rule need to be <i>sayings</i> in the prompt—the generator has no
-          sense of geography of its own. “She looks to the right; he enters from the left” preserves continuity.
+          In AI, eyeline and the 180Â° rule need to be <i>sayings</i> in the promptâ€”the generator has no
+          sense of geography of its own. â€œShe looks to the right; he enters from the leftâ€ preserves continuity.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Module 4.3 — folio iii</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Module 4.3 â€” folio iii</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -717,8 +717,8 @@ geography, scale. Close-ups answer <em>“how does it feel?”</em> — reaction
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

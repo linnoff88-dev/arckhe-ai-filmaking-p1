@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Trilha 2 — Fundamentos Cinematograficos | AI Filmmaking</title>
+<title>Trilha 2 â€” Fundamentos CARCKHÉtograficos | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="trilha:2"><span data-inema-meter-frac=""><strong>0</strong> de 19</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="trilha:2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,13 +171,13 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Trilha <b>2</b> Fundamentos Cinematograficos</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Trilha <b>2</b> Fundamentos CARCKHÉtograficos</span>
+<span class="sep">Â·</span>
 <span>Indice da trilha</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -187,125 +187,125 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura editorial da trilha -->
-<p class="kicker">Trilha 2 · Fundamentos Cinematograficos</p>
-<h1 class="module">A gramatica que faz uma imagem virar <em>cinema</em></h1>
+<p class="kicker">Trilha 2 Â· Fundamentos CARCKHÉtograficos</p>
+<h1 class="module">A gramatica que faz uma imagem virar <em>cARCKHÉ</em></h1>
 <p class="deck">Quatro modulos sobre as quatro linguagens que organizam toda imagem forte: o pensamento
           visual do diretor, a composicao que dirige o olhar, a luz que carrega a emocao e a profundidade que
           transforma um quadro chapado em espaco habitavel.</p>
 <!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
-<p class="read-meta" data-inema-meter="trilha:2">
-<span class="here" data-inema-meter-frac=""><strong>0</strong> de 19</span>
+<p class="read-meta" data-ARCKHÉ-meter="trilha:2">
+<span class="here" data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span>
 <span>secoes lidas nesta trilha</span>
-<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+<span class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></span>
 </p>
 <!-- o "porque" da trilha -->
 <div class="prose">
-<p class="lede" data-inema-block="t2-porque-p1">A Trilha 1 instalou a mentalidade: o impacto e
-            <em>controle da percepcao</em>, e a ferramenta executa direcao em vez de inventa-la. Esta trilha —
-            o bloco dos <em>Fundamentos Cinematograficos</em> — pega essa mentalidade e a quebra em quatro
-            vocabularios concretos, os mesmos que um cinematografo usa num set fisico. O Modulo 2.1 ensina a
+<p class="lede" data-ARCKHÉ-block="t2-porque-p1">A Trilha 1 instalou a mentalidade: o impacto e
+            <em>controle da percepcao</em>, e a ferramenta executa direcao em vez de inventa-la. Esta trilha â€”
+            o bloco dos <em>Fundamentos CARCKHÉtograficos</em> â€” pega essa mentalidade e a quebra em quatro
+            vocabularios concretos, os mesmos que um cARCKHÉtografo usa num set fisico. O Modulo 2.1 ensina a
             <strong>ler uma cena antes de gera-la</strong>: por que um prompt profissional nao descreve, ele
             controla a percepcao ao longo do tempo. O 2.2 trata da <strong>composicao</strong> como hierarquia
-            visual — diagonal, linhas-guia, regra dos tercos, espaco negativo, simetria, escala — e de
+            visual â€” diagonal, linhas-guia, regra dos tercos, espaco negativo, simetria, escala â€” e de
             por que cada plano de uma sequencia resolve uma tarefa diferente. O 2.3 mostra que <strong>luz e
             emocao</strong>, nao iluminacao: subtrair sombra, motivar a fonte, suavizar pela distancia, esconder
             80% do que existe. E o 2.4 ensina a construir <strong>profundidade</strong> em tres camadas, separando
             primeiro plano, meio e fundo para que o quadro deixe de ser uma estampa e vire um espaco onde a camera
-            pode entrar. Nada aqui depende de orcamento — depende de saber o que olhar.</p>
+            pode entrar. Nada aqui depende de orcamento â€” depende de saber o que olhar.</p>
 </div>
 <!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
-<p class="toc-head" style="margin-top:var(--s7)">O percurso — quatro modulos, na ordem</p>
+<p class="toc-head" style="margin-top:var(--s7)">O percurso â€” quatro modulos, na ordem</p>
 <!-- ---- ENTRADA / MODULO 2.1 ---- -->
-<section data-inema-module="2-1" data-inema-topic="modulo-2-1#indice" data-inema-track="2" id="topico-1">
+<section data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#indice" data-ARCKHÉ-track="2" id="topico-1">
 <div class="section-mark">
-<span class="where">Modulo 2.1</span><span>·</span><span>4 secoes · ~15 min</span>
+<span class="where">Modulo 2.1</span><span>Â·</span><span>4 secoes Â· ~15 min</span>
 </div>
 <h2 class="head"><span class="num">2.1</span>Pensamento Visual</h2>
 <div class="prose">
-<p data-inema-block="t2-m2-1-p1">A abertura do bloco. Antes de aprender qualquer regra de composicao ou
-              luz, voce aprende a <em>ler</em> — a olhar uma imagem como um diretor olha, decompondo-a em
+<p data-ARCKHÉ-block="t2-m2-1-p1">A abertura do bloco. Antes de aprender qualquer regra de composicao ou
+              luz, voce aprende a <em>ler</em> â€” a olhar uma imagem como um diretor olha, decompondo-a em
               decisoes. Um prompt profissional, mostra a aula, nao e uma descricao bonita: e um sistema com cinco
-              camadas — formato (o comportamento da camera), ambiente (a historia sem palavras), luz (a
+              camadas â€” formato (o comportamento da camera), ambiente (a historia sem palavras), luz (a
               emocao), personagem (a contradicao) e estrutura de cena (a sequencia). O objetivo final nao e
               produzir uma imagem, e <em>criar uma pergunta na mente do espectador</em>.</p>
-<p data-inema-block="t2-m2-1-p2">
-<a class="entry-link" href="modulo-2-1.html">Ler o Modulo 2.1 →</a>
+<p data-ARCKHÉ-block="t2-m2-1-p2">
+<a class="entry-link" href="modulo-2-1.html">Ler o Modulo 2.1 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 2.2 ---- -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#indice" data-inema-track="2" id="topico-2">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#indice" data-ARCKHÉ-track="2" id="topico-2">
 <div class="section-mark">
-<span class="where">Modulo 2.2</span><span>·</span><span>5 secoes · ~18 min</span>
+<span class="where">Modulo 2.2</span><span>Â·</span><span>5 secoes Â· ~18 min</span>
 </div>
-<h2 class="head"><span class="num">2.2</span>Composicao para Cinema</h2>
+<h2 class="head"><span class="num">2.2</span>Composicao para CARCKHÉ</h2>
 <div class="prose">
-<p data-inema-block="t2-m2-2-p1">Composicao como hierarquia visual, nao como decoracao. A aula parte de
+<p data-ARCKHÉ-block="t2-m2-2-p1">Composicao como hierarquia visual, nao como decoracao. A aula parte de
               uma constatacao pratica: por mais que voce escreva um unico prompt, o gerador devolve uma
-              <em>sequencia</em> de planos — e cada plano pede uma composicao propria, com uma tarefa
-              propria. Voce vai estudar a caixa de ferramentas inteira — diagonal para energia, linhas-guia
+              <em>sequencia</em> de planos â€” e cada plano pede uma composicao propria, com uma tarefa
+              propria. Voce vai estudar a caixa de ferramentas inteira â€” diagonal para energia, linhas-guia
               para conduzir o olho, regra dos tercos para equilibrio, espaco negativo para isolar, simetria para
-              controle, macro para o detalhe, plano amplo para a escala — e, sobretudo, aprender a usar
+              controle, macro para o detalhe, plano amplo para a escala â€” e, sobretudo, aprender a usar
               <em>a composicao certa no momento certo</em>.</p>
-<p data-inema-block="t2-m2-2-p2">
-<a class="entry-link" href="modulo-2-2.html">Ler o Modulo 2.2 →</a>
+<p data-ARCKHÉ-block="t2-m2-2-p2">
+<a class="entry-link" href="modulo-2-2.html">Ler o Modulo 2.2 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 2.3 ---- -->
-<section data-inema-module="2-3" data-inema-topic="modulo-2-3#indice" data-inema-track="2" id="topico-3">
+<section data-ARCKHÉ-module="2-3" data-ARCKHÉ-topic="modulo-2-3#indice" data-ARCKHÉ-track="2" id="topico-3">
 <div class="section-mark">
-<span class="where">Modulo 2.3</span><span>·</span><span>5 secoes · ~18 min</span>
+<span class="where">Modulo 2.3</span><span>Â·</span><span>5 secoes Â· ~18 min</span>
 </div>
 <h2 class="head"><span class="num">2.3</span>Luz e Atmosfera</h2>
 <div class="prose">
-<p data-inema-block="t2-m2-3-p1">A aula que reposiciona a luz: no cinema, luz nao e visibilidade —
-              e sentimento. Voce vai ver que a grande cinematografia muitas vezes <em>remove</em> luz em vez de
+<p data-ARCKHÉ-block="t2-m2-3-p1">A aula que reposiciona a luz: no cARCKHÉ, luz nao e visibilidade â€”
+              e sentimento. Voce vai ver que a grande cARCKHÉtografia muitas vezes <em>remove</em> luz em vez de
               adicionar (o negative fill que aprofunda a sombra), que um fio fino de recorte basta para definir um
-              sujeito, que a suavidade vem da distancia, que toda luz precisa de uma fonte cri­vel, e que apenas
-              cerca de 20% da luz deve ser vis­ivel — os 80% escondidos sao o que cria profundidade.
+              sujeito, que a suavidade vem da distancia, que toda luz precisa de uma fonte criÂ­vel, e que apenas
+              cerca de 20% da luz deve ser visÂ­ivel â€” os 80% escondidos sao o que cria profundidade.
               Atmosfera, contraste de cor quente/fria e luz em movimento fecham o repertorio.</p>
-<p data-inema-block="t2-m2-3-p2">
-<a class="entry-link" href="modulo-2-3.html">Ler o Modulo 2.3 →</a>
+<p data-ARCKHÉ-block="t2-m2-3-p2">
+<a class="entry-link" href="modulo-2-3.html">Ler o Modulo 2.3 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 2.4 ---- -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#indice" data-inema-track="2" id="topico-4">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#indice" data-ARCKHÉ-track="2" id="topico-4">
 <div class="section-mark">
-<span class="where">Modulo 2.4</span><span>·</span><span>5 secoes · ~18 min</span>
+<span class="where">Modulo 2.4</span><span>Â·</span><span>5 secoes Â· ~18 min</span>
 </div>
 <h2 class="head"><span class="num">2.4</span>Profundidade e Estrutura Espacial</h2>
 <div class="prose">
-<p data-inema-block="t2-m2-4-p1">O fecho do bloco: como transformar imagens chapadas em espacos
-              imersivos. Profundidade e a ilusao de tres dimensoes, construida ao organizar tres planos —
+<p data-ARCKHÉ-block="t2-m2-4-p1">O fecho do bloco: como transformar imagens chapadas em espacos
+              imersivos. Profundidade e a ilusao de tres dimensoes, construida ao organizar tres planos â€”
               primeiro plano (onde o espectador esta), meio (onde esta o sujeito) e fundo (onde mora o contexto).
               Voce vai estudar a regra das tres camadas, a separacao por foco/luz/cor, a profundidade de campo, a
               atmosfera que empurra elementos para longe, a escolha de lente que expande ou comprime o espaco e o
               parallax que revela profundidade pelo movimento. E, no centro, a ideia de que <em>distancia e
               emocao</em>.</p>
-<p data-inema-block="t2-m2-4-p2">
-<a class="entry-link" href="modulo-2-4.html">Ler o Modulo 2.4 →</a>
+<p data-ARCKHÉ-block="t2-m2-4-p2">
+<a class="entry-link" href="modulo-2-4.html">Ler o Modulo 2.4 â†’</a>
 </p>
 </div>
 </section>
 <!-- indo mais fundo: divulgacao progressiva (opcional) -->
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que estes quatro fundamentos, nesta ordem
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que estes quatro fundamentos, nesta ordem
             <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz e linear: 2.1, 2.2, 2.3, 2.4. Esta camada explica a ordem — e pode ser
+<p>O caminho-feliz e linear: 2.1, 2.2, 2.3, 2.4. Esta camada explica a ordem â€” e pode ser
               pulada sem perda.</p>
 <p>A sequencia reproduz como uma imagem se forma na cabeca de um diretor. Primeiro vem o
               <em>pensamento</em> (2.1): aprender a ler a cena como sistema de decisoes, porque sem isso as regras
               seguintes viram receita morta. Depois a <em>composicao</em> (2.2): onde cada coisa fica no quadro e
-              para onde o olho vai — a arquitetura bidimensional. Em seguida a <em>luz</em> (2.3): o que se
+              para onde o olho vai â€” a arquitetura bidimensional. Em seguida a <em>luz</em> (2.3): o que se
               ve e o que se esconde, de onde vem o brilho, qual e a temperatura emocional. E por fim a
               <em>profundidade</em> (2.4): a terceira dimensao, que pega composicao e luz e as organiza em camadas
-              de espaco. Composicao posiciona, luz revela, profundidade aprofunda — e os tres so funcionam
+              de espaco. Composicao posiciona, luz revela, profundidade aprofunda â€” e os tres so funcionam
               quando o pensamento do 2.1 esta no comando.</p>
-<p>Este e o bloco dos <em>Fundamentos Cinematograficos</em>: o vocabulario. As trilhas seguintes
-              — pipeline de ferramentas, linguagem de camera, VFX, atuacao, estrutura narrativa —
+<p>Este e o bloco dos <em>Fundamentos CARCKHÉtograficos</em>: o vocabulario. As trilhas seguintes
+              â€” pipeline de ferramentas, linguagem de camera, VFX, atuacao, estrutura narrativa â€”
               assumem que voce ja sabe nomear o que ve numa imagem e por que ela funciona.</p>
 </div>
 </details>
@@ -313,19 +313,19 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Comecar pelo pensamento</div>
-<div class="t">Modulo 2.1 — Pensamento Visual</div>
+<div class="t">Modulo 2.1 â€” Pensamento Visual</div>
 </div>
-<a class="go" href="modulo-2-1.html">Ler o primeiro →</a>
+<a class="go" href="modulo-2-1.html">Ler o primeiro â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor e seu painel de aprendizado" class="margin-rail">
 <!-- ---- MODULO 2.1 ---- -->
-<aside data-inema-rail="modulo-2-1#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-1#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Pensamento visual.</b> A capacidade de olhar uma imagem e enxergar as <i>decisoes</i> que a compoem
-          — formato, ambiente, luz, personagem, sequencia — em vez de so reagir ao “bonito”.
+          â€” formato, ambiente, luz, personagem, sequencia â€” em vez de so reagir ao â€œbonitoâ€.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
@@ -333,34 +333,34 @@
           o <i>como se sente</i> (luz) e 2.4 e o <i>espaco</i> (profundidade).
         </aside>
 <!-- ---- MODULO 2.2 ---- -->
-<aside data-inema-rail="modulo-2-2#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Composicao.</b> A organizacao dos elementos dentro do quadro para dirigir a atencao. Cada plano de uma
-          sequencia resolve uma tarefa diferente — e pede uma composicao diferente.
+          sequencia resolve uma tarefa diferente â€” e pede uma composicao diferente.
         </aside>
 <!-- ---- MODULO 2.3 ---- -->
-<aside data-inema-rail="modulo-2-3#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-3#indice"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
           Os dez principios de luz da aula sao demonstrados com prompts reais feitos em CapCut + Seedance 2.0,
           projetados para geradores de video de IA.
-          <div class="src-line">Bloco 2 · Licao 5 — Lighting and Atmosphere</div>
+          <div class="src-line">Bloco 2 Â· Licao 5 â€” Lighting and Atmosphere</div>
 </aside>
 <!-- ---- MODULO 2.4 ---- -->
-<aside data-inema-rail="modulo-2-4#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#indice"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
           A regra de ouro do 2.4: <i>todo quadro precisa de primeiro plano, meio e fundo</i>. Sem as tres camadas a
-          imagem fica chapada — com elas, a camera tem por onde entrar.
+          imagem fica chapada â€” com elas, a camera tem por onde entrar.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Trilha 2 — indice</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Trilha 2 â€” indice</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -369,8 +369,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

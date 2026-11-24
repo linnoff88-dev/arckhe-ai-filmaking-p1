@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 2.2 — Composicao para Cinema | AI Filmmaking</title>
+<title>Modulo 2.2 â€” Composicao para CARCKHÉ | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:2-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:2-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Trilha <b>2</b> Fundamentos Cinematograficos</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Trilha <b>2</b> Fundamentos CARCKHÉtograficos</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>2.2</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,33 +189,33 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 2.2 · Trilha 2 · Fundamentos Cinematograficos</p>
-<h1 class="module">Composicao para <em>Cinema</em></h1>
-<p class="deck">Composicao nao e decorar o quadro — e dizer ao olho para onde ir. E como nenhum
+<p class="kicker">Modulo 2.2 Â· Trilha 2 Â· Fundamentos CARCKHÉtograficos</p>
+<h1 class="module">Composicao para <em>CARCKHÉ</em></h1>
+<p class="deck">Composicao nao e decorar o quadro â€” e dizer ao olho para onde ir. E como nenhum
           prompt gera um plano so, mas uma sequencia de planos, cada composicao resolve uma tarefa diferente: a
           cena evolui, nao se repete.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~18 min · modulo inteiro</span>
+<span>~18 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que composicao e <b>hierarquia visual</b> — um ponto focal que domina e apoios que o
-              sustentam — e nao um arranjo “bonito” de elementos.</li>
+<li>Por que composicao e <b>hierarquia visual</b> â€” um ponto focal que domina e apoios que o
+              sustentam â€” e nao um arranjo â€œbonitoâ€ de elementos.</li>
 <li>A caixa de ferramentas: <b>diagonal, linhas-guia, regra dos tercos, espaco negativo, simetria,
-              macro e plano amplo</b> — e que tarefa cada uma resolve.</li>
+              macro e plano amplo</b> â€” e que tarefa cada uma resolve.</li>
 <li>Como o <b>peso visual</b> e as <b>mudancas de escala</b> (detalhe contra amplo) controlam atencao,
               ritmo e a sensacao de realismo.</li>
-<li>Por que um prompt vira uma <b>sequencia de composicoes no tempo</b> — e por que isso separa
-              um video bonito de uma sequencia cinematografica.</li>
+<li>Por que um prompt vira uma <b>sequencia de composicoes no tempo</b> â€” e por que isso separa
+              um video bonito de uma sequencia cARCKHÉtografica.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Composicao e hierarquia, nao decoracao</span></a></li>
@@ -226,38 +226,38 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-1" data-inema-track="2" id="topico-1">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>Hierarquia</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>Hierarquia</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Composicao e hierarquia, nao decoracao</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m2-2-t1-p1">Quase todo mundo aprende composicao como uma lista
-              de regras a obedecer — ponha o sujeito na linha dos tercos, evite o centro, deixe ar na frente
+<p class="lede dropcap" data-ARCKHÉ-block="m2-2-t1-p1">Quase todo mundo aprende composicao como uma lista
+              de regras a obedecer â€” ponha o sujeito na linha dos tercos, evite o centro, deixe ar na frente
               do olhar. Util, mas e o sintoma, nao a doenca. Composicao, no fundo, e uma so coisa:
-              <strong>hierarquia visual</strong> — a ordem em que o olho percorre o quadro. Voce decide o que
+              <strong>hierarquia visual</strong> â€” a ordem em que o olho percorre o quadro. Voce decide o que
               o espectador ve <em>primeiro</em>, o que ve <em>depois</em> e o que <span class="sidenote-ref">1</span>nunca
-              chega a notar. Tudo que chamamos de “boa composicao” e uma maneira de impor essa ordem; e
-              tudo que chamamos de “quadro confuso” e a ausencia dela.</p>
-<p data-inema-block="m2-2-t1-p2">A peca central dessa hierarquia e o <em>ponto focal</em>: o lugar onde
+              chega a notar. Tudo que chamamos de â€œboa composicaoâ€ e uma maneira de impor essa ordem; e
+              tudo que chamamos de â€œquadro confusoâ€ e a ausencia dela.</p>
+<p data-ARCKHÉ-block="m2-2-t1-p2">A peca central dessa hierarquia e o <em>ponto focal</em>: o lugar onde
               o olho pousa antes de qualquer outro. Um quadro sem ponto focal claro e democratico no pior sentido
-              — tudo tem o mesmo peso, entao nada importa, e o olho vagueia sem saber onde descansar. Um
-              quadro cinematografico e <strong>hierarquico</strong>: ha um elemento dominante, alguns apoios que o
+              â€” tudo tem o mesmo peso, entao nada importa, e o olho vagueia sem saber onde descansar. Um
+              quadro cARCKHÉtografico e <strong>hierarquico</strong>: ha um elemento dominante, alguns apoios que o
               sustentam e muito espaco que existe so para destaca-lo. A pergunta de ouro, diante de qualquer
               composicao, e brutalmente simples: <em>para onde meu olho vai primeiro?</em> Se a resposta nao for
               imediata, a composicao ainda nao esta pronta.</p>
 <h3 class="sub">Como se cria um ponto focal</h3>
-<p data-inema-block="m2-2-t1-p3">O olho e atraido por <em>contraste</em> e por <em>isolamento</em>. Um
+<p data-ARCKHÉ-block="m2-2-t1-p3">O olho e atraido por <em>contraste</em> e por <em>isolamento</em>. Um
               elemento iluminado contra um fundo escuro vira foco. Um objeto cercado de vazio vira foco. Algo nitido
               contra um fundo desfocado vira foco. Uma cor saturada num campo dessaturado vira foco. Repare que
-              nenhum desses depende de posicao — eles dependem de <strong>diferenca</strong>. A aula traz um
+              nenhum desses depende de posicao â€” eles dependem de <strong>diferenca</strong>. A aula traz um
               exemplo direto: um carro isolado pela luz contra uma superficie escura, com composicao diagonal. A
               diagonal cria energia; a isolacao diz ao espectador, sem ambiguidade, exatamente onde olhar. Posicao
               ajuda, mas e a diferenca de luz, foco, cor e espaco que <em>fabrica</em> o ponto focal.<span class="sidenote-ref">2</span></p>
 </div>
 <!-- figura 1: democratico vs hierarquico -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · Quadro <b>democratico</b> (tudo compete) contra quadro <b>hierarquico</b> (um foco)</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· Quadro <b>democratico</b> (tudo compete) contra quadro <b>hierarquico</b> (um foco)</figcaption>
 <svg aria-label="Diagrama comparando dois quadros: a esquerda varios elementos do mesmo tamanho sem hierarquia, o olho vagueia; a direita um ponto focal dominante isolado por luz e espaco, com setas convergindo nele." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-2-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -271,7 +271,7 @@
 <circle cx="92" cy="88" r="19"></circle><circle cx="160" cy="120" r="20"></circle><circle cx="232" cy="82" r="18"></circle>
 <circle cx="262" cy="142" r="20"></circle><circle cx="118" cy="156" r="17"></circle>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">o olho vagueia — nada domina</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">o olho vagueia â€” nada domina</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="184"></line>
 <!-- direita -->
@@ -291,64 +291,64 @@
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Voce gerou um plano lindo: bela paisagem, bela luz, um personagem, um veiculo, um animal, tudo
-              nitido e bem iluminado. Mesmo assim parece “chapado” e ninguem sabe dizer do que se trata.
+              nitido e bem iluminado. Mesmo assim parece â€œchapadoâ€ e ninguem sabe dizer do que se trata.
               Em termos de hierarquia, o que provavelmente esta faltando?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">Falta um <strong>ponto focal</strong>. Quando tudo esta igualmente nitido e
-                iluminado, tudo compete — e competir e o oposto de hierarquia. O conserto nao e adicionar, e
+                iluminado, tudo compete â€” e competir e o oposto de hierarquia. O conserto nao e adicionar, e
                 <em>subtrair</em>: desfoque o fundo, escureca os apoios, deixe so um elemento na luz. A diferenca e
                 que cria o foco; sem ela, o olho nao tem onde pousar e a imagem parece vazia apesar de cheia.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: as regras sao atalhos para a hierarquia
+<summary><span class="chev">â–¸</span> Indo mais fundo: as regras sao atalhos para a hierarquia
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada explica de onde vem as “regras” — e
+<p>O caminho-feliz acima ja basta. Esta camada explica de onde vem as â€œregrasâ€ â€” e
                 pode ser pulada.</p>
-<p>Regra dos tercos, linhas-guia, espaco negativo, simetria — nenhuma delas e sagrada. Sao
+<p>Regra dos tercos, linhas-guia, espaco negativo, simetria â€” nenhuma delas e sagrada. Sao
                 <strong>atalhos</strong> testados para produzir hierarquia rapido. A regra dos tercos posiciona o
                 foco fora do centro morto, onde o olho ja tende a ir. As linhas-guia usam a geometria do cenario
                 para empurrar o olho ate o foco. O espaco negativo isola por subtracao. A simetria cria uma
-                hierarquia de outro tipo — a do centro absoluto. Conhecer o <em>porque</em> (sempre a
+                hierarquia de outro tipo â€” a do centro absoluto. Conhecer o <em>porque</em> (sempre a
                 hierarquia) liberta voce da obediencia cega: voce quebra a regra quando ela atrapalha a ordem que
                 quer impor, e a segue quando ela ajuda. Tecnica a servico da intencao, nunca o contrario.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-2" data-inema-track="2" id="topico-2">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>Linhas</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>Linhas</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Tercos, diagonais e linhas-guia</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t2-p1">Tres ferramentas da caixa lidam com <em>direcao</em> e
+<p class="lede" data-ARCKHÉ-block="m2-2-t2-p1">Tres ferramentas da caixa lidam com <em>direcao</em> e
               <em>equilibrio</em>: a regra dos tercos, a composicao diagonal e as linhas-guia. A <strong>regra dos
               tercos</strong> divide o quadro em nove partes com duas linhas horizontais e duas verticais. Colocar o
-              ponto focal sobre uma dessas linhas — ou, melhor, sobre um dos quatro cruzamentos — cria
+              ponto focal sobre uma dessas linhas â€” ou, melhor, sobre um dos quatro cruzamentos â€” cria
               equilibrio e direcao ao mesmo tempo: a imagem nao fica estatica como no centro morto, nem
               desconfortavel como na borda. E o jeito mais rapido de dar ao quadro uma tensao calma e legivel.</p>
 <h3 class="sub">Diagonal: energia e movimento imediatos</h3>
-<p data-inema-block="m2-2-t2-p2">A <strong>composicao diagonal</strong> faz o oposto da calma: ela
-              injeta energia. Uma horizontal e estavel, uma vertical e firme — mas uma diagonal e
+<p data-ARCKHÉ-block="m2-2-t2-p2">A <strong>composicao diagonal</strong> faz o oposto da calma: ela
+              injeta energia. Uma horizontal e estavel, uma vertical e firme â€” mas uma diagonal e
               <em>instavel</em>, e o olho le instabilidade como movimento. Por isso a aula abre justamente com uma
               diagonal: ela introduz a acao depressa, faz a cena parecer ja em andamento. Use diagonal quando quiser
               que o plano pareca dinamico, em transito, prestes a mudar; evite quando quiser serenidade. O angulo
-              da camera muitas vezes ja basta para criar a diagonal — um plano levemente picado ou contra-picado
+              da camera muitas vezes ja basta para criar a diagonal â€” um plano levemente picado ou contra-picado
               inclina as linhas do mundo e produz energia sem nenhum movimento real.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m2-2-t2-p3">As <strong>linhas-guia</strong> sao talvez a ferramenta mais elegante:
-              elas usam elementos reais do cenario — uma estrada, um corrimao, uma fileira de postes, um feixe
-              de luz — para <em>conduzir o olho</em> ate o ponto focal. O espectador nao percebe que esta
+<p data-ARCKHÉ-block="m2-2-t2-p3">As <strong>linhas-guia</strong> sao talvez a ferramenta mais elegante:
+              elas usam elementos reais do cenario â€” uma estrada, um corrimao, uma fileira de postes, um feixe
+              de luz â€” para <em>conduzir o olho</em> ate o ponto focal. O espectador nao percebe que esta
               sendo guiado; ele simplesmente segue a linha, como segue uma seta. Linhas que convergem criam, de
               quebra, a sensacao de profundidade (e o tema do Modulo 2.4). A combinacao mais forte e tambem a mais
-              comum no cinema: linhas-guia que <em>desembocam</em> num ponto focal posicionado sobre um cruzamento
-              dos tercos — direcao e equilibrio trabalhando juntos.</p>
+              comum no cARCKHÉ: linhas-guia que <em>desembocam</em> num ponto focal posicionado sobre um cruzamento
+              dos tercos â€” direcao e equilibrio trabalhando juntos.</p>
 </div>
 <!-- figura 2: grade dos tercos + linhas-guia -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · A grade dos <b>tercos</b> e as <b>linhas-guia</b> que desembocam no foco</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· A grade dos <b>tercos</b> e as <b>linhas-guia</b> que desembocam no foco</figcaption>
 <svg aria-label="Diagrama de um quadro com a grade de tercos (duas linhas verticais e duas horizontais) e linhas-guia convergindo de baixo ate um ponto focal posicionado sobre um cruzamento superior direito." class="diagram" role="img" viewbox="0 0 720 220">
 <rect class="rule-stroke" fill="none" height="172" rx="3" stroke-width="1.3" width="560" x="80" y="24"></rect>
 <!-- grade dos tercos -->
@@ -369,12 +369,12 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-2-t2-p4">No prompt, voce nomeia a composicao em linguagem de cinema — o
+<p data-ARCKHÉ-block="m2-2-t2-p4">No prompt, voce nomeia a composicao em linguagem de cARCKHÉ â€” o
               gerador entende termos como <em>rule of thirds</em>, <em>diagonal composition</em> e <em>leading
               lines</em>. O exemplo abaixo e uma <em>receita de composicao</em> para um unico plano de entrada:
               diagonal para energia, linhas-guia para conduzir, foco sobre o terco. Repare que nao ha adjetivos de
-              qualidade — so decisoes de onde o olho vai.</p>
-<div class="codeblock"><span class="c"># Receita de composicao — plano de entrada com energia e direcao</span>
+              qualidade â€” so decisoes de onde o olho vai.</p>
+<div class="codeblock"><span class="c"># Receita de composicao â€” plano de entrada com energia e direcao</span>
 <span class="c"># nomeie a composicao; o gerador (Seedance / Kling / Freepik) entende</span>
 <span class="k">Shot:</span> a lone car arriving on a wet road at night, introducing the action.
 <span class="k">Composition:</span> strong diagonal composition for energy; leading lines from the road guide the eye.
@@ -383,12 +383,12 @@
 <span class="k">Negative:</span> avoid a centered, flat, symmetric frame.</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que a diagonal “parece” movimento
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que a diagonal â€œpareceâ€ movimento
               <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>Camada opcional sobre a leitura perceptiva das linhas.</p>
 <p>O olho aprendeu, na fisica do mundo, que coisas inclinadas estao caindo, escorregando ou em
-                trajetoria — uma arvore tombada, uma ladeira, um corpo em queda. Horizontais e verticais, ao
+                trajetoria â€” uma arvore tombada, uma ladeira, um corpo em queda. Horizontais e verticais, ao
                 contrario, sao o estado de repouso: o horizonte, a parede, a pessoa de pe. Quando voce inclina as
                 linhas de um quadro (por composicao diagonal ou por um leve dutch tilt na camera), o cerebro importa
                 essa associacao e <em>sente</em> instabilidade, mesmo numa imagem parada. E por isso que cenas de
@@ -398,40 +398,40 @@
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-3" data-inema-track="2" id="topico-3">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>Vazio e centro</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>Vazio e centro</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Espaco negativo e simetria</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t3-p1">Duas ferramentas trabalham por <em>subtracao</em> e por
+<p class="lede" data-ARCKHÉ-block="m2-2-t3-p1">Duas ferramentas trabalham por <em>subtracao</em> e por
               <em>ordem absoluta</em>: o espaco negativo e a simetria. O <strong>espaco negativo</strong> e a area
-              vazia ao redor do sujeito — e e tudo menos vazia de funcao. Cercar um elemento de vazio o
+              vazia ao redor do sujeito â€” e e tudo menos vazia de funcao. Cercar um elemento de vazio o
               isola, e o cerebro se fixa em objetos isolados, sobretudo quando eles estao em movimento. Um sujeito
-              pequeno num campo amplo de nada nao se perde — ele <em>grita</em>, porque nada disputa a
+              pequeno num campo amplo de nada nao se perde â€” ele <em>grita</em>, porque nada disputa a
               atencao. A aula usa exatamente essa ideia para os momentos importantes: o sujeito cercado de espaco
-              vazio, sem distracao, funcionando como um respiro — um <span class="sidenote-ref">4</span>clima
+              vazio, sem distracao, funcionando como um respiro â€” um <span class="sidenote-ref">4</span>clima
               antes da virada.</p>
-<p data-inema-block="m2-2-t3-p2">O espaco negativo tambem carrega emocao por conta propria. Muito vazio
+<p data-ARCKHÉ-block="m2-2-t3-p2">O espaco negativo tambem carrega emocao por conta propria. Muito vazio
               em volta de uma figura sugere solidao, escala, insignificancia diante do mundo. Vazio na direcao do
-              olhar (o tal “ar” a frente do rosto) da a sensacao de que ha futuro, caminho, expectativa.
-              Vazio <em>atras</em> do olhar — figura encostada na borda olhando para a parede do quadro
-              — cria desconforto e aprisionamento. O vazio nunca e neutro: ele e uma escolha tao expressiva
+              olhar (o tal â€œarâ€ a frente do rosto) da a sensacao de que ha futuro, caminho, expectativa.
+              Vazio <em>atras</em> do olhar â€” figura encostada na borda olhando para a parede do quadro
+              â€” cria desconforto e aprisionamento. O vazio nunca e neutro: ele e uma escolha tao expressiva
               quanto o que voce coloca no quadro. Em IA, pedir explicitamente <em>negative space</em> e uma das
               instrucoes que mais elevam a sensacao de intencao.</p>
 <h3 class="sub">Simetria: controle, estabilidade, formalidade</h3>
-<p data-inema-block="m2-2-t3-p3">A <strong>simetria</strong> — e seu caso extremo, a composicao
-              central — e a ferramenta da ordem e do poder. Um quadro perfeitamente simetrico, com o sujeito
+<p data-ARCKHÉ-block="m2-2-t3-p3">A <strong>simetria</strong> â€” e seu caso extremo, a composicao
+              central â€” e a ferramenta da ordem e do poder. Um quadro perfeitamente simetrico, com o sujeito
               no centro absoluto, comunica controle, estabilidade, formalidade, as vezes confronto direto com o
               espectador. E o oposto da diagonal: onde a diagonal agita, a simetria <em>assenta</em>. Diretores a
               usam para cenas de autoridade, de ritual, de calma inquietante. O risco e que simetria mal motivada
-              pareca rigida ou artificial — ela funciona quando o <em>conteudo</em> pede ordem (um trono, um
+              pareca rigida ou artificial â€” ela funciona quando o <em>conteudo</em> pede ordem (um trono, um
               corredor, um rosto em confronto), nao como enfeite. Diagonal, tercos e simetria nao competem: sao
               registros emocionais diferentes, e o oficio e escolher o certo para cada plano.</p>
 </div>
 <!-- figura 3: espaco negativo vs simetria -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · <b>Espaco negativo</b> (isolar por vazio) contra <b>simetria</b> (ordenar pelo centro)</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· <b>Espaco negativo</b> (isolar por vazio) contra <b>simetria</b> (ordenar pelo centro)</figcaption>
 <svg aria-label="Diagrama: a esquerda um sujeito pequeno num grande campo vazio, isolado pelo espaco negativo; a direita um sujeito no centro absoluto de um quadro simetrico com eixo vertical." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- esquerda: espaco negativo -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">ESPACO NEGATIVO</text>
@@ -455,157 +455,157 @@
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Voce precisa de um plano que comunique “esta personagem esta completamente sozinha e perdida
-              num lugar imenso”. Entre um close apertado no rosto dela e um plano amplo com ela pequena num
-              canto e muito vazio, qual cumpre melhor a tarefa — e por que?</p>
+<p>Voce precisa de um plano que comunique â€œesta personagem esta completamente sozinha e perdida
+              num lugar imensoâ€. Entre um close apertado no rosto dela e um plano amplo com ela pequena num
+              canto e muito vazio, qual cumpre melhor a tarefa â€” e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">O plano amplo com muito <strong>espaco negativo</strong>. O close apertado transmite
-                intimidade e emocao interna, mas <em>elimina</em> a relacao da figura com o espaco —
+                intimidade e emocao interna, mas <em>elimina</em> a relacao da figura com o espaco â€”
                 justamente o que voce precisa comunicar. A solidao e a escala sao relacoes entre a figura e o vazio
                 ao redor: so um plano que mostra esse vazio consegue dize-las. A composicao deve servir a ideia, e a
-                ideia aqui e “pequena num lugar imenso”.</p>
+                ideia aqui e â€œpequena num lugar imensoâ€.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-4" data-inema-track="2" id="topico-4">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>Peso e escala</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>Peso e escala</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Peso visual e mudanca de escala</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t4-p1">Ate aqui falamos de <em>onde</em> as coisas ficam. Falta
-              o <em>quanto pesam</em>. <strong>Peso visual</strong> e a forca com que um elemento puxa o olho —
+<p class="lede" data-ARCKHÉ-block="m2-2-t4-p1">Ate aqui falamos de <em>onde</em> as coisas ficam. Falta
+              o <em>quanto pesam</em>. <strong>Peso visual</strong> e a forca com que um elemento puxa o olho â€”
               e ele nao tem a ver com tamanho real, mas com contraste, cor, nitidez, complexidade e isolamento. Um
               ponto vermelho pequeno pesa mais que uma area cinza enorme. Um rosto nitido pesa mais que uma
               paisagem desfocada. Compor e, em boa parte, <em>equilibrar pesos</em>: distribuir os elementos de modo
-              que o dominante vença, mas o quadro nao tombe para um lado. Quando uma imagem parece “torta”
-              sem motivo, quase sempre e desequilibrio de peso — um canto carregado, o oposto vazio.</p>
+              que o dominante venÃ§a, mas o quadro nao tombe para um lado. Quando uma imagem parece â€œtortaâ€
+              sem motivo, quase sempre e desequilibrio de peso â€” um canto carregado, o oposto vazio.</p>
 <h3 class="sub">Macro e amplo: a escala como pontuacao</h3>
-<p data-inema-block="m2-2-t4-p2">A <strong>mudanca de escala</strong> e o que da ritmo a uma sequencia.
-              O <em>plano macro</em> — foco fechado em detalhe e textura — faz a acao parecer real e
+<p data-ARCKHÉ-block="m2-2-t4-p2">A <strong>mudanca de escala</strong> e o que da ritmo a uma sequencia.
+              O <em>plano macro</em> â€” foco fechado em detalhe e textura â€” faz a acao parecer real e
               fisica: na aula, e o esmagamento de um pneu, a deformacao no contato, o que prova que algo de fato
               aconteceu. Vem depois de uma acao maior para mostrar consequencia e peso. O <em>plano amplo</em>, no
-              extremo oposto, entrega atmosfera, escala e o lugar de tudo no espaco. Alternar entre os dois —
-              detalhe contra amplo — e como a pontuacao de um texto: o amplo e o paragrafo, o macro e a
+              extremo oposto, entrega atmosfera, escala e o lugar de tudo no espaco. Alternar entre os dois â€”
+              detalhe contra amplo â€” e como a pontuacao de um texto: o amplo e o paragrafo, o macro e a
               palavra sublinhada. Uma sequencia toda no mesmo tamanho de plano e monotona; a variacao de escala e
               que cria pulso.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m2-2-t4-p3">Repare como peso e escala conversam. Um plano amplo distribui o peso por
+<p data-ARCKHÉ-block="m2-2-t4-p3">Repare como peso e escala conversam. Um plano amplo distribui o peso por
               muitos elementos pequenos; um macro concentra todo o peso num so, gigante, que preenche a tela. Cortar
-              do amplo para o macro e, em termos de peso, um soco — o olho sai de uma distribuicao difusa para
-              um unico ponto esmagador. E exatamente esse contraste que faz o detalhe “aterrissar”. Por
+              do amplo para o macro e, em termos de peso, um soco â€” o olho sai de uma distribuicao difusa para
+              um unico ponto esmagador. E exatamente esse contraste que faz o detalhe â€œaterrissarâ€. Por
               isso o macro funciona melhor logo apos um plano aberto: sem o amplo antes, o macro nao tem de onde
-              cair. Escala nao e so “mais perto ou mais longe”; e gestao de peso ao longo do tempo.</p>
+              cair. Escala nao e so â€œmais perto ou mais longeâ€; e gestao de peso ao longo do tempo.</p>
 </div>
 <!-- figura 4: escala como pontuacao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Escala</b> como pontuacao — do amplo (atmosfera) ao macro (o soco do detalhe)</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Escala</b> como pontuacao â€” do amplo (atmosfera) ao macro (o soco do detalhe)</figcaption>
 <svg aria-label="Diagrama de tres quadros: plano amplo com peso distribuido, plano medio com o sujeito, plano macro com um unico detalhe preenchendo a tela; uma barra mostra a concentracao de peso aumentando." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- amplo -->
 <rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="40" y="40"></rect>
 <line class="rule-stroke" opacity="0.6" stroke-width="1" x1="52" x2="208" y1="120" y2="120"></line>
 <g class="rule-stroke" fill="none" opacity="0.7" stroke-width="1"><rect height="20" width="12" x="66" y="100"></rect><rect height="28" width="10" x="92" y="92"></rect><circle cx="150" cy="110" r="5"></circle><rect height="16" width="14" x="180" y="104"></rect></g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="130" y="168">amplo — atmosfera</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="130" y="168">amplo â€” atmosfera</text>
 <!-- medio -->
 <rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="262" y="40"></rect>
 <circle class="rule-stroke" cx="352" cy="84" r="11" stroke-width="1.4"></circle>
 <line class="rule-stroke" stroke-width="1.4" x1="352" x2="352" y1="95" y2="132"></line>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="352" y="168">medio — o sujeito</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="352" y="168">medio â€” o sujeito</text>
 <!-- macro -->
 <rect class="accent-stroke" fill="none" height="110" rx="3" stroke-width="1.3" width="180" x="484" y="40"></rect>
 <circle class="accent-stroke" cx="574" cy="95" fill="url(#hatch-2-2)" r="44" stroke-width="1.6"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="574" y="100">detalhe</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="574" y="168">macro — o soco</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="574" y="168">macro â€” o soco</text>
 <!-- barra de concentracao -->
 <line class="rule-stroke" stroke-width="1" x1="40" x2="664" y1="190" y2="190"></line>
 <path class="accent-stroke" d="M40 190 L664 190" stroke-width="0"></path>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" x="60" y="204">PESO DIFUSO</text>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="end" x="664" y="204">PESO CONCENTRADO →</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="end" x="664" y="204">PESO CONCENTRADO â†’</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: composicao certa, momento errado
+<summary><span class="chev">â–¸</span> Indo mais fundo: composicao certa, momento errado
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional — uma armadilha sutil que a aula aponta de passagem.</p>
+<p>Camada opcional â€” uma armadilha sutil que a aula aponta de passagem.</p>
 <p>A aula faz uma observacao facil de perder: na sequencia analisada, o plano diagonal de entrada
-                “parece cedo demais”, como se ja estivessemos no meio da cena. A licao e que uma
+                â€œparece cedo demaisâ€, como se ja estivessemos no meio da cena. A licao e que uma
                 composicao pode estar tecnicamente impecavel e ainda assim <em>errada para aquele instante</em>.
                 Abrir uma sequencia com a composicao de maior energia gasta a carga cedo e nao deixa para onde
                 crescer; comecar com toda a tensao do espaco negativo rouba o respiro que deveria preparar a virada.
-                Composicao nao se julga isolada — se julga pela posicao dela na <em>sequencia</em>. E
+                Composicao nao se julga isolada â€” se julga pela posicao dela na <em>sequencia</em>. E
                 justamente a ponte para a ultima secao: a composicao certa, no momento certo.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-5" data-inema-track="2" id="topico-5">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Sequencia</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Sequencia</span>
 </div>
 <h2 class="head"><span class="num">5.</span>A sequencia de composicoes no tempo</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t5-p1">Aqui esta a virada conceitual do modulo, e ela vale para
+<p class="lede" data-ARCKHÉ-block="m2-2-t5-p1">Aqui esta a virada conceitual do modulo, e ela vale para
               todo o curso: por mais que voce escreva <em>um</em> prompt estruturado, o resultado final e sempre uma
-              <strong>cadeia de planos separados</strong>. O gerador nao produz uma ideia continua — produz
+              <strong>cadeia de planos separados</strong>. O gerador nao produz uma ideia continua â€” produz
               uma sequencia. E cada plano dessa cadeia tem a sua propria composicao, o seu proprio proposito, o seu
-              proprio papel. Compor para cinema, portanto, nao e desenhar um quadro bonito; e <em>projetar uma
+              proprio papel. Compor para cARCKHÉ, portanto, nao e desenhar um quadro bonito; e <em>projetar uma
               sequencia de composicoes ao longo do tempo</em>, em que cada uma resolve uma tarefa diferente e a cena
               evolui em vez de se repetir.</p>
-<p data-inema-block="m2-2-t5-p2">Foi exatamente o que a aula demonstrou, plano a plano, com uma cena de
-              carro. <em>Entrada</em>: plano alto com composicao diagonal e foco isolado pela luz — introduz a
+<p data-ARCKHÉ-block="m2-2-t5-p2">Foi exatamente o que a aula demonstrou, plano a plano, com uma cena de
+              carro. <em>Entrada</em>: plano alto com composicao diagonal e foco isolado pela luz â€” introduz a
               acao rapido. <em>Perigo se aproximando</em>: outra composicao, outra tarefa. <em>Momento importante</em>:
-              o sujeito cercado de espaco negativo, funcionando como clima. <em>Impacto</em>: macro no detalhe —
+              o sujeito cercado de espaco negativo, funcionando como clima. <em>Impacto</em>: macro no detalhe â€”
               o pneu esmagando, o contato fisico que prova o peso. <em>Acao final</em>: um drift circular de cima
               para baixo. Cinco planos, cinco composicoes, cada uma escolhida para o que <em>aquele</em> instante
-              precisa. Nenhuma e “a melhor composicao” em abstrato — cada uma e a certa para o seu
+              precisa. Nenhuma e â€œa melhor composicaoâ€ em abstrato â€” cada uma e a certa para o seu
               momento.</p>
-<h3 class="sub">O que faz a sequencia parecer cinema</h3>
-<p data-inema-block="m2-2-t5-p3">A sensacao cinematografica vem da soma de cinco coisas: <strong>composicao
+<h3 class="sub">O que faz a sequencia parecer cARCKHÉ</h3>
+<p data-ARCKHÉ-block="m2-2-t5-p3">A sensacao cARCKHÉtografica vem da soma de cinco coisas: <strong>composicao
               por plano</strong> (cada um resolve uma tarefa), <strong>mudancas de escala</strong> (detalhe contra
               amplo), <strong>movimento continuo</strong>, <strong>hierarquia visual clara</strong> em cada quadro e
-              <strong>tempo controlado</strong> — a composicao usada no momento certo. E essa, em uma frase, a
-              diferenca entre um video que apenas <em>parece bom</em> e uma sequencia que e <em>cinematografica</em>:
-              o primeiro repete a mesma boa composicao; o segundo faz a composicao <span class="dfn"><details class="dfn"><summary>evoluir</summary><span class="body"><b>Sequencia que evolui</b> e aquela em que cada plano muda a composicao, a escala ou o foco para cumprir uma nova funcao narrativa — em oposicao a uma sequencia que repete o mesmo enquadramento e por isso estagna.</span></details></span>
+              <strong>tempo controlado</strong> â€” a composicao usada no momento certo. E essa, em uma frase, a
+              diferenca entre um video que apenas <em>parece bom</em> e uma sequencia que e <em>cARCKHÉtografica</em>:
+              o primeiro repete a mesma boa composicao; o segundo faz a composicao <span class="dfn"><details class="dfn"><summary>evoluir</summary><span class="body"><b>Sequencia que evolui</b> e aquela em que cada plano muda a composicao, a escala ou o foco para cumprir uma nova funcao narrativa â€” em oposicao a uma sequencia que repete o mesmo enquadramento e por isso estagna.</span></details></span>
               a cada plano para servir a narrativa.</p>
-<p data-inema-block="m2-2-t5-p4">A pratica que fecha o modulo torna isso concreto: pegue um sujeito
-              simples, construa cinco a sete planos, use ao menos tres composicoes diferentes — centro, regra
-              dos tercos, espaco negativo — e, em cada plano, verifique <em>para onde vai o seu olho</em>. O
+<p data-ARCKHÉ-block="m2-2-t5-p4">A pratica que fecha o modulo torna isso concreto: pegue um sujeito
+              simples, construa cinco a sete planos, use ao menos tres composicoes diferentes â€” centro, regra
+              dos tercos, espaco negativo â€” e, em cada plano, verifique <em>para onde vai o seu olho</em>. O
               objetivo nao e so controlar o visual, e controlar <em>atencao, ritmo e tempo</em>. Quando voce planeja
-              a sequencia de composicoes antes de gerar, deixa de torcer para que os planos “combinem” e
-              passa a dirigir como eles se encadeiam — que e o que o proximo modulo fara com a luz, e o
+              a sequencia de composicoes antes de gerar, deixa de torcer para que os planos â€œcombinemâ€ e
+              passa a dirigir como eles se encadeiam â€” que e o que o proximo modulo fara com a luz, e o
               seguinte com a profundidade.</p>
 </div>
 <!-- figura 5: a sequencia de cinco composicoes -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · Uma <b>cena</b> = cinco planos, cinco composicoes, cinco tarefas</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· Uma <b>cena</b> = cinco planos, cinco composicoes, cinco tarefas</figcaption>
 <svg aria-label="Diagrama de cinco quadros em sequencia: entrada diagonal, perigo, espaco negativo como clima, macro de impacto, drift circular final; cada quadro mostra um esquema diferente de composicao." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="150" y2="150"></line>
 <!-- 1 diagonal -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="30" y="44"></rect>
 <path class="accent-stroke" d="M40 116 L138 56" stroke-width="1.6"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="89" y="140">1 · diagonal</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="89" y="140">1 Â· diagonal</text>
 <!-- 2 perigo -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="164" y="44"></rect>
 <path class="rule-stroke" d="M174 60 L272 60" stroke-width="1.3"></path>
 <circle class="accent-stroke" cx="248" cy="96" r="8" stroke-width="1.5"></circle>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="223" y="140">2 · perigo</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="223" y="140">2 Â· perigo</text>
 <!-- 3 espaco negativo -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="298" y="44"></rect>
 <circle class="accent-stroke" cx="392" cy="104" r="5" stroke-width="1.6"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="357" y="140">3 · vazio</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="357" y="140">3 Â· vazio</text>
 <!-- 4 macro -->
 <rect class="accent-stroke" fill="none" height="80" rx="3" stroke-width="1.3" width="118" x="432" y="44"></rect>
 <circle class="accent-stroke" cx="491" cy="84" fill="url(#hatch-2-2)" r="30" stroke-width="1.5"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="491" y="140">4 · macro</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="491" y="140">4 Â· macro</text>
 <!-- 5 drift -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="566" y="44"></rect>
 <path class="accent-stroke" d="M625 84 m -22 0 a 22 22 0 1 0 44 0 a 22 22 0 1 0 -44 0" fill="none" stroke-width="1.5"></path>
 <path class="accent-stroke" d="M647 70 L654 62 L644 60" fill="none" stroke-width="1.5"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="625" y="140">5 · drift</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="625" y="140">5 Â· drift</text>
 <!-- linha de evolucao -->
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="186">A CENA EVOLUI — NAO SE REPETE →</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="186">A CENA EVOLUI â€” NAO SE REPETE â†’</text>
 </svg>
 </figure>
 </section>
@@ -614,14 +614,14 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Qual e a pergunta de ouro que voce faz diante de qualquer composicao — e por que ela revela a hierarquia?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>“<em>Para onde meu olho vai primeiro?</em>” Se a resposta nao for
-              imediata, falta hierarquia — o quadro esta democratico, tudo competindo, nada dominando. Boa
+<summary><span class="qn">01</span><span>Qual e a pergunta de ouro que voce faz diante de qualquer composicao â€” e por que ela revela a hierarquia?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>â€œ<em>Para onde meu olho vai primeiro?</em>â€ Se a resposta nao for
+              imediata, falta hierarquia â€” o quadro esta democratico, tudo competindo, nada dominando. Boa
               composicao impoe uma ordem de leitura; o ponto focal e onde o olho pousa antes de tudo.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Diagonal e simetria geram emocoes opostas. Quais — e quando usar cada uma?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>A <em>diagonal</em> e instavel e o olho a le como movimento e energia — boa para
+<summary><span class="qn">02</span><span>Diagonal e simetria geram emocoes opostas. Quais â€” e quando usar cada uma?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>A <em>diagonal</em> e instavel e o olho a le como movimento e energia â€” boa para
               introduzir acao, dar dinamismo. A <em>simetria</em> (centro absoluto) assenta: comunica controle,
               poder, formalidade, confronto. Use diagonal quando quer agitacao; simetria quando o conteudo pede
               ordem (trono, corredor, ritual).</p></div>
@@ -630,43 +630,43 @@
 <summary><span class="qn">03</span><span>Por que o plano macro funciona melhor logo depois de um plano amplo?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Por contraste de <em>peso</em>. O amplo distribui o peso por muitos elementos
               pequenos; o macro concentra tudo num so, preenchendo a tela. Cortar de um para o outro e um soco
-              visual — o detalhe “aterrissa”. Sem o amplo antes, o macro nao tem de onde cair, e
+              visual â€” o detalhe â€œaterrissaâ€. Sem o amplo antes, o macro nao tem de onde cair, e
               mostra consequencia/peso depois de uma acao maior.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Por que “a melhor composicao” nao existe em abstrato?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Por que â€œa melhor composicaoâ€ nao existe em abstrato?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque um prompt vira sempre uma <em>sequencia</em> de planos, e cada plano tem uma
               tarefa diferente. A composicao se julga pela posicao dela na sequencia, nao isolada: a mesma diagonal
-              impecavel pode estar “cedo demais”. Compor para cinema e projetar composicoes <em>ao longo
-              do tempo</em> — a composicao certa no momento certo, fazendo a cena evoluir.</p></div>
+              impecavel pode estar â€œcedo demaisâ€. Compor para cARCKHÉ e projetar composicoes <em>ao longo
+              do tempo</em> â€” a composicao certa no momento certo, fazendo a cena evoluir.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:2-2">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:2-2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 2</div>
-<div class="v" data-inema-meter="trilha:2">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -675,27 +675,27 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 2.3 — Luz e Atmosfera</div>
+<div class="t">Modulo 2.3 â€” Luz e Atmosfera</div>
 </div>
-<a class="go" href="modulo-2-3.html">Proximo →</a>
+<a class="go" href="modulo-2-3.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Hierarquia visual.</b> A ordem em que o olho percorre o quadro — o que se ve primeiro, depois e
+<b>Hierarquia visual.</b> A ordem em que o olho percorre o quadro â€” o que se ve primeiro, depois e
           nunca. Composicao e impor essa ordem; quadro confuso e a ausencia dela.
         </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Ponto focal.</b> O lugar onde o olho pousa antes de tudo. Nasce de <i>diferenca</i> — contraste de
-          luz, foco, cor ou isolamento — nao de posicao.
+<b>Ponto focal.</b> O lugar onde o olho pousa antes de tudo. Nasce de <i>diferenca</i> â€” contraste de
+          luz, foco, cor ou isolamento â€” nao de posicao.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Linhas-guia.</b> Elementos reais do cenario (estrada, corrimao, feixe de luz) que conduzem o olho ate o
@@ -703,43 +703,43 @@
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          A diagonal “parece” movimento porque o olho aprendeu que coisas inclinadas estao caindo ou em
+          A diagonal â€œpareceâ€ movimento porque o olho aprendeu que coisas inclinadas estao caindo ou em
           trajetoria. Um leve dutch tilt importa essa instabilidade para uma imagem parada.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Espaco negativo.</b> A area vazia ao redor do sujeito. Isola por subtracao — o cerebro se fixa no
+<b>Espaco negativo.</b> A area vazia ao redor do sujeito. Isola por subtracao â€” o cerebro se fixa no
           que esta sozinho. Vazio sugere solidao, escala, expectativa: nunca e neutro.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          A aula demonstra a caixa de ferramentas plano a plano numa cena montada em CapCut + Seedance 2.0 —
+          A aula demonstra a caixa de ferramentas plano a plano numa cena montada em CapCut + Seedance 2.0 â€”
           composicao, escala e tempo controlados.
-          <div class="src-line">Bloco 2 · Licao 4 — Composition for Cinema</div>
+          <div class="src-line">Bloco 2 Â· Licao 4 â€” Composition for CARCKHÉ</div>
 </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Peso visual.</b> A forca com que um elemento puxa o olho — vem de contraste, cor, nitidez e
+<b>Peso visual.</b> A forca com que um elemento puxa o olho â€” vem de contraste, cor, nitidez e
           isolamento, nao do tamanho real. Um ponto vermelho pesa mais que uma area cinza enorme.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-5"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
-          Um prompt sempre vira uma <i>cadeia de planos</i>. Compor para cinema e projetar a sequencia de composicoes
-          no tempo — cada plano com uma tarefa, a cena evoluindo em vez de se repetir.
+          Um prompt sempre vira uma <i>cadeia de planos</i>. Compor para cARCKHÉ e projetar a sequencia de composicoes
+          no tempo â€” cada plano com uma tarefa, a cena evoluindo em vez de se repetir.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 2.2 — folio vi</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 2.2 â€” folio vi</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -748,8 +748,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

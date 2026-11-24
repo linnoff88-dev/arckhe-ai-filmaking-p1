@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,68 +118,68 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Módulo 5.2 — Cámara lenta | AI Filmmaking</title>
+<title>MÃ³dulo 5.2 â€” CÃ¡mara lenta | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha5/modulo-5-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha5/modulo-5-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha5/modulo-5-2.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:5-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:5-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Ruta <b>5</b> VFX y acción</span>
-<span class="sep">·</span>
-<span>Módulo <b>5.2</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Sección 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>Ruta <b>5</b> VFX y acciÃ³n</span>
+<span class="sep">Â·</span>
+<span>MÃ³dulo <b>5.2</b> / 4</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,80 +189,80 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Módulo 5.2 · Ruta 5 · VFX y acción</p>
-<h1 class="module">Cámara <em>Lenta</em></h1>
-<p class="deck">Cuando el tiempo se ralentiza, el cerebro entiende una sola cosa: <em>esto importa</em>. La cámara
-          lenta no es estética: es una frase que le dices al espectador. Y, como toda frase, miente cuando no hay
+<p class="kicker">MÃ³dulo 5.2 Â· Ruta 5 Â· VFX y acciÃ³n</p>
+<h1 class="module">CÃ¡mara <em>Lenta</em></h1>
+<p class="deck">Cuando el tiempo se ralentiza, el cerebro entiende una sola cosa: <em>esto importa</em>. La cÃ¡mara
+          lenta no es estÃ©tica: es una frase que le dices al espectador. Y, como toda frase, miente cuando no hay
           nada que decir.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~17 min · módulo completo</span>
+<span>~17 min Â· mÃ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Qué es <b>overcranking</b> de verdad — 120/240fps reproducidos a 24fps — y por qué eso
+<li>QuÃ© es <b>overcranking</b> de verdad â€” 120/240fps reproducidos a 24fps â€” y por quÃ© eso
               revela detalles que el ojo no percibe.</li>
-<li>A <b>psicología</b> del slow-mo: por qué ralentizar le dice al cerebro «esto es importante,
-              heroico, peligroso, inolvidable».</li>
-<li>El secreto del contraste — la curva <b>rápido → lento → rápido</b> — y por qué la cámara lenta no funciona sin una aceleración previa.</li>
-<li>Cómo <b>dirigir slow-mo en Seedance 2.0</b>: especificar FPS, cambiar de plano cada ~2s,
-              continuidad de la luz y microactuación para evitar las “caras muertas”.</li>
+<li>A <b>psicologÃ­a</b> del slow-mo: por quÃ© ralentizar le dice al cerebro Â«esto es importante,
+              heroico, peligroso, inolvidableÂ».</li>
+<li>El secreto del contraste â€” la curva <b>rÃ¡pido â†’ lento â†’ rÃ¡pido</b> â€” y por quÃ© la cÃ¡mara lenta no funciona sin una aceleraciÃ³n previa.</li>
+<li>CÃ³mo <b>dirigir slow-mo en Seedance 2.0</b>: especificar FPS, cambiar de plano cada ~2s,
+              continuidad de la luz y microactuaciÃ³n para evitar las â€œcaras muertasâ€.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">Qué hace la cámara lenta con el tiempo</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">La psicología: «esto importa»</span></a><span class="leader"></span></li>
+<a href="#topico-1"><span class="t">QuÃ© hace la cÃ¡mara lenta con el tiempo</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">La psicologÃ­a: Â«esto importaÂ»</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">El secreto es el contraste</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Dirigir slow-mo en Seedance</span></a><span class="leader"></span></li>
-<li><span class="n">5</span><a href="#topico-5"><span class="t">Continuidad y microactuación</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Continuidad y microactuaciÃ³n</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="5-2" data-inema-topic="modulo-5-2#topico-1" data-inema-track="5" id="topico-1">
+<section data-ARCKHÉ-module="5-2" data-ARCKHÉ-topic="modulo-5-2#topico-1" data-ARCKHÉ-track="5" id="topico-1">
 <div class="section-mark">
-<span class="where">Sección 1 de 5</span><span>·</span><span>El tiempo</span>
+<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>El tiempo</span>
 </div>
-<h2 class="head"><span class="num">1.</span>Qué hace la cámara lenta con el tiempo</h2>
+<h2 class="head"><span class="num">1.</span>QuÃ© hace la cÃ¡mara lenta con el tiempo</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m5-2-t1-p1">Técnicamente, la cámara lenta — slow-mo, o
-              <span class="dfn"><details class="dfn"><summary>overcranking</summary><span class="body"><b>Overcranking</b> es el término de rodaje para filmar a una velocidad de cuadros más alta que la de reproducción. El nombre viene de las antiguas cámaras de manivela: girarla más rápido (over-crank) registraba más cuadros por segundo. Al reproducirlos a velocidad normal, esos cuadros extra «estiran» el tiempo.</span></details></span> —
+<p class="lede dropcap" data-ARCKHÉ-block="m5-2-t1-p1">TÃ©cnicamente, la cÃ¡mara lenta â€” slow-mo, o
+              <span class="dfn"><details class="dfn"><summary>overcranking</summary><span class="body"><b>Overcranking</b> es el tÃ©rmino de rodaje para filmar a una velocidad de cuadros mÃ¡s alta que la de reproducciÃ³n. El nombre viene de las antiguas cÃ¡maras de manivela: girarla mÃ¡s rÃ¡pido (over-crank) registraba mÃ¡s cuadros por segundo. Al reproducirlos a velocidad normal, esos cuadros extra Â«estiranÂ» el tiempo.</span></details></span> â€”
               y es sencillo de describir: grabas a una velocidad de fotogramas alta, como <strong>120fps</strong> o
               <strong>240fps</strong>, y muestra la <strong>24fps</strong>.<span class="sidenote-ref">1</span> Cada
-              segundo capturado se extiende a lo largo de varios segundos en pantalla. El movimiento que ocurrió demasiado rápido
-              para el ojo pasa a caber dentro de la percepción. Ahí está la primera razón de ser de la cámara lenta: no
+              segundo capturado se extiende a lo largo de varios segundos en pantalla. El movimiento que ocurriÃ³ demasiado rÃ¡pido
+              para el ojo pasa a caber dentro de la percepciÃ³n. AhÃ­ estÃ¡ la primera razÃ³n de ser de la cÃ¡mara lenta: no
               solo ralentiza, sino que <em>revela</em>.</p>
-<p data-inema-block="m5-2-t1-p2">A velocidad real, el ojo humano pierde los microdetalles: el brillo
-              que recorre la hoja, la gota de agua que se desprende, la expresión que cruza el rostro en una
-              fracción de segundo, la física exacta de un impacto. La cámara lenta recupera todo eso. Lo que era un borrón
-              se convierte en escultura. Por eso la cámara lenta aparece en los momentos en que el cine quiere que tú <em>míralo
-              tú mismo</em>: el punto máximo de una acción, la entrada dramática, la victoria, la revelación. Es la lente de aumento
+<p data-ARCKHÉ-block="m5-2-t1-p2">A velocidad real, el ojo humano pierde los microdetalles: el brillo
+              que recorre la hoja, la gota de agua que se desprende, la expresiÃ³n que cruza el rostro en una
+              fracciÃ³n de segundo, la fÃ­sica exacta de un impacto. La cÃ¡mara lenta recupera todo eso. Lo que era un borrÃ³n
+              se convierte en escultura. Por eso la cÃ¡mara lenta aparece en los momentos en que el cine quiere que tÃº <em>mÃ­ralo
+              tÃº mismo</em>: el punto mÃ¡ximo de una acciÃ³n, la entrada dramÃ¡tica, la victoria, la revelaciÃ³n. Es la lente de aumento
               del tiempo.</p>
-<h3 class="sub">Dónde suele aparecer la cámara lenta</h3>
-<p data-inema-block="m5-2-t1-p3">La clase enumera los territorios naturales: clímax de acción, momentos
-              emocionales, explosiones, victorias, colisiones, impactos deportivos. Fíjate en lo que tienen en común:
-              todos son <em>puntos máximos</em>. Ninguna cámara lenta profesional dura toda la escena; se posa en
-              el instante de mayor intensidad y lo estira. Intenta recordar una escena memorable en cámara lenta: casi seguro
-              que duraba pocos segundos, rodeada de movimiento normal. Esa proporción no es casualidad, es el tema
-              de la Sección 3.</p>
+<h3 class="sub">DÃ³nde suele aparecer la cÃ¡mara lenta</h3>
+<p data-ARCKHÉ-block="m5-2-t1-p3">La clase enumera los territorios naturales: clÃ­max de acciÃ³n, momentos
+              emocionales, explosiones, victorias, colisiones, impactos deportivos. FÃ­jate en lo que tienen en comÃºn:
+              todos son <em>puntos mÃ¡ximos</em>. Ninguna cÃ¡mara lenta profesional dura toda la escena; se posa en
+              el instante de mayor intensidad y lo estira. Intenta recordar una escena memorable en cÃ¡mara lenta: casi seguro
+              que duraba pocos segundos, rodeada de movimiento normal. Esa proporciÃ³n no es casualidad, es el tema
+              de la SecciÃ³n 3.</p>
 </div>
 <!-- figura 1: 120fps -> 24fps -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · <b>Overcranking</b>: capturar en denso, mostrar extendido</figcaption>
-<svg aria-label="Diagrama: una franja densa de cuadros capturados a 120fps se redistribuye en una franja de reproducción a 24fps, extendiendo un segundo de captura a cinco segundos en pantalla." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 1</span> Â· <b>Overcranking</b>: capturar en denso, mostrar extendido</figcaption>
+<svg aria-label="Diagrama: una franja densa de cuadros capturados a 120fps se redistribuye en una franja de reproducciÃ³n a 24fps, extendiendo un segundo de captura a cinco segundos en pantalla." class="diagram" role="img" viewbox="0 0 720 200">
 <defs>
 <pattern height="6" id="hatch-5-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
 </pattern>
 </defs>
 <!-- captura densa -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="60" y="34">CAPTURA — 120fps (1 segundo)</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="60" y="34">CAPTURA â€” 120fps (1 segundo)</text>
 <g class="accent-stroke" fill="none" stroke-width="1.1">
 <rect height="30" width="9" x="60" y="44"></rect><rect height="30" width="9" x="72" y="44"></rect><rect height="30" width="9" x="84" y="44"></rect><rect height="30" width="9" x="96" y="44"></rect><rect height="30" width="9" x="108" y="44"></rect><rect height="30" width="9" x="120" y="44"></rect><rect height="30" width="9" x="132" y="44"></rect><rect height="30" width="9" x="144" y="44"></rect><rect height="30" width="9" x="156" y="44"></rect><rect height="30" width="9" x="168" y="44"></rect><rect height="30" width="9" x="180" y="44"></rect><rect height="30" width="9" x="192" y="44"></rect><rect height="30" width="9" x="204" y="44"></rect><rect height="30" width="9" x="216" y="44"></rect><rect height="30" width="9" x="228" y="44"></rect>
 </g>
@@ -271,7 +271,7 @@
 <path class="mark-stroke" d="M150 86 L150 116" stroke-width="1.4"></path>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" x="160" y="106">redistribuye</text>
 <!-- exibicao esticada -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="60" y="142">EXHIBICIÓN — 24fps (5 segundos = 5x slow)</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="60" y="142">EXHIBICIÃ“N â€” 24fps (5 segundos = 5x slow)</text>
 <g class="accent-stroke" fill="url(#hatch-5-2)" stroke-width="1.3">
 <rect height="30" width="34" x="60" y="152"></rect><rect height="30" width="34" x="100" y="152"></rect><rect height="30" width="34" x="140" y="152"></rect><rect height="30" width="34" x="180" y="152"></rect><rect height="30" width="34" x="220" y="152"></rect>
 </g>
@@ -281,63 +281,63 @@
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Un director pide una escena entera de dos minutos en cámara lenta: todo a 24fps estirado, desde
-              el principio hasta el final. La intención es «hacerla épica». ¿Qué le sucede probablemente al
+<p>Un director pide una escena entera de dos minutos en cÃ¡mara lenta: todo a 24fps estirado, desde
+              el principio hasta el final. La intenciÃ³n es Â«hacerla Ã©picaÂ». Â¿QuÃ© le sucede probablemente al
               espectador?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
 <p class="answer">Se aburre. Sin una velocidad normal cerca, el cerebro <em>se acostumbra</em> la
-                lentitud — y lo que es constante deja de tener significado. La cámara lenta todo el tiempo equivale a ninguna cámara lenta: la frase «esto importa» pierde sentido cuando se dice sobre cada instante. El
-                impacto depende del contraste, nunca de la duración.</p>
+                lentitud â€” y lo que es constante deja de tener significado. La cÃ¡mara lenta todo el tiempo equivale a ninguna cÃ¡mara lenta: la frase Â«esto importaÂ» pierde sentido cuando se dice sobre cada instante. El
+                impacto depende del contraste, nunca de la duraciÃ³n.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: por qué 120 y 240, y no números redondos
+<summary><span class="chev">â–¸</span> Profundizando: por quÃ© 120 y 240, y no nÃºmeros redondos
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa técnica opcional: útil si quieres entender de dónde viene el «5x».</p>
-<p>El factor de lentitud es solo la división: capturar a 120fps y mostrar a 24fps da <strong>5x</strong> de
-                cámara lenta (120 / 24); 240fps da <strong>10x</strong>. Por eso la lección siempre indica escribir la
-                relación de forma explícita — «120fps → 24fps» y «5x slow motion». Para la
-                IA, estos números no activan una cámara física, claro; pero funcionan como <em>vocabulario de
-                intensidad</em> que el generador asocia con el overcranking cinematográfico real. Pedir “cámara
-                lenta” es impreciso; pedir “120fps to 24fps, 5x slow motion” obliga al modelo a simular el
-                aspecto de la cámara lenta real, con el arrastre y la suavidad que la caracterizan.</p>
+<p>Capa tÃ©cnica opcional: Ãºtil si quieres entender de dÃ³nde viene el Â«5xÂ».</p>
+<p>El factor de lentitud es solo la divisiÃ³n: capturar a 120fps y mostrar a 24fps da <strong>5x</strong> de
+                cÃ¡mara lenta (120 / 24); 240fps da <strong>10x</strong>. Por eso la lecciÃ³n siempre indica escribir la
+                relaciÃ³n de forma explÃ­cita â€” Â«120fps â†’ 24fpsÂ» y Â«5x slow motionÂ». Para la
+                IA, estos nÃºmeros no activan una cÃ¡mara fÃ­sica, claro; pero funcionan como <em>vocabulario de
+                intensidad</em> que el generador asocia con el overcranking cARCKHÉtogrÃ¡fico real. Pedir â€œcÃ¡mara
+                lentaâ€ es impreciso; pedir â€œ120fps to 24fps, 5x slow motionâ€ obliga al modelo a simular el
+                aspecto de la cÃ¡mara lenta real, con el arrastre y la suavidad que la caracterizan.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="5-2" data-inema-topic="modulo-5-2#topico-2" data-inema-track="5" id="topico-2">
+<section data-ARCKHÉ-module="5-2" data-ARCKHÉ-topic="modulo-5-2#topico-2" data-ARCKHÉ-track="5" id="topico-2">
 <div class="section-mark">
-<span class="where">Sección 2 de 5</span><span>·</span><span>Psicología</span>
+<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>PsicologÃ­a</span>
 </div>
-<h2 class="head"><span class="num">2.</span>La psicología: «esto importa»</h2>
+<h2 class="head"><span class="num">2.</span>La psicologÃ­a: Â«esto importaÂ»</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-2-t2-p1">Aquí está el corazón de la clase y la razón por la que la cámara lenta
-              merece un módulo entero. Cuando el tiempo se ralentiza en pantalla, el espectador <em>subconscientemente</em>
-              siente que ese momento es emocionalmente significativo — heroico, peligroso, bello, onírico,
-              inolvidable.<span class="sidenote-ref">2</span> La cámara lenta no describe la emoción; la
-              <strong>instruye</strong> el cerebro la percibe. Es una especie de gesto: al estirar el instante, la película
-              dice, sin palabras: «mira esto, esto importa».</p>
-<p data-inema-block="m5-2-t2-p2">Este es el punto que conecta la lección con la tesis del curso. En la Trilha 1, vimos
-que el impacto es <em>control de la percepción</em>, y que la curva de toda escena potente termina con cámara
-              lenta en el pico, seguida del impacto. Ahora entendemos por qué existe ese momento de la curva: el slow-mo es
-              el mecanismo que marca el pico <em>cómo</em> punto máximo. Crea un recuerdo emocional más fuerte porque el
-              cerebro registra con más profundidad aquello que percibe durante más tiempo. Alargar el instante es
+<p class="lede" data-ARCKHÉ-block="m5-2-t2-p1">AquÃ­ estÃ¡ el corazÃ³n de la clase y la razÃ³n por la que la cÃ¡mara lenta
+              merece un mÃ³dulo entero. Cuando el tiempo se ralentiza en pantalla, el espectador <em>subconscientemente</em>
+              siente que ese momento es emocionalmente significativo â€” heroico, peligroso, bello, onÃ­rico,
+              inolvidable.<span class="sidenote-ref">2</span> La cÃ¡mara lenta no describe la emociÃ³n; la
+              <strong>instruye</strong> el cerebro la percibe. Es una especie de gesto: al estirar el instante, la pelÃ­cula
+              dice, sin palabras: Â«mira esto, esto importaÂ».</p>
+<p data-ARCKHÉ-block="m5-2-t2-p2">Este es el punto que conecta la lecciÃ³n con la tesis del curso. En la Trilha 1, vimos
+que el impacto es <em>control de la percepciÃ³n</em>, y que la curva de toda escena potente termina con cÃ¡mara
+              lenta en el pico, seguida del impacto. Ahora entendemos por quÃ© existe ese momento de la curva: el slow-mo es
+              el mecanismo que marca el pico <em>cÃ³mo</em> punto mÃ¡ximo. Crea un recuerdo emocional mÃ¡s fuerte porque el
+              cerebro registra con mÃ¡s profundidad aquello que percibe durante mÃ¡s tiempo. Alargar el instante es
               alargar el recuerdo.</p>
-<h3 class="sub">La misma frase, distintos géneros</h3>
-<p data-inema-block="m5-2-t2-p3">Por ser una <em>frase</em> — “esto importa” —
-              la cámara lenta sirve para cualquier género, siempre que de verdad haya algo importante. En una película de acción, marca el golpe decisivo. En el deporte, el punto de la victoria. En un anuncio, el instante en que el producto toca
-              la mano o se revela la transformación: el momento que la marca quiere grabar en la memoria. En un videoclip, el
-              clímax emocional del estribillo. El contenido cambia; la función es idéntica: decirle al espectador dónde mirar con el
+<h3 class="sub">La misma frase, distintos gÃ©neros</h3>
+<p data-ARCKHÉ-block="m5-2-t2-p3">Por ser una <em>frase</em> â€” â€œesto importaâ€ â€”
+              la cÃ¡mara lenta sirve para cualquier gÃ©nero, siempre que de verdad haya algo importante. En una pelÃ­cula de acciÃ³n, marca el golpe decisivo. En el deporte, el punto de la victoria. En un anuncio, el instante en que el producto toca
+              la mano o se revela la transformaciÃ³n: el momento que la marca quiere grabar en la memoria. En un videoclip, el
+              clÃ­max emocional del estribillo. El contenido cambia; la funciÃ³n es idÃ©ntica: decirle al espectador dÃ³nde mirar con el
               cuerpo, no solo con los ojos.</p>
 </div>
 <!-- figura 2: o slow-mo como sinal de importancia -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · La cámara lenta es un <b>señal</b>: le dice al cerebro dónde está el peso</figcaption>
-<svg aria-label="Diagrama: una línea temporal de eventos a velocidad normal, con un único tramo extendido marcado como el momento importante, y una flecha que indica una memoria emocional más fuerte en ese punto." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 2</span> Â· La cÃ¡mara lenta es un <b>seÃ±al</b>: le dice al cerebro dÃ³nde estÃ¡ el peso</figcaption>
+<svg aria-label="Diagrama: una lÃ­nea temporal de eventos a velocidad normal, con un Ãºnico tramo extendido marcado como el momento importante, y una flecha que indica una memoria emocional mÃ¡s fuerte en ese punto." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="120" y2="120"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="40" y="150">TIEMPO →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="40" y="150">TIEMPO â†’</text>
 <!-- eventos rapidos -->
 <g class="rule-stroke" stroke-width="1.4">
 <line x1="80" x2="80" y1="112" y2="128"></line><line x1="120" x2="120" y1="112" y2="128"></line><line x1="160" x2="160" y1="112" y2="128"></line><line x1="200" x2="200" y1="112" y2="128"></line>
@@ -350,206 +350,206 @@ que el impacto es <em>control de la percepción</em>, y que la curva de toda esc
 <g class="accent" stroke-width="1.8">
 <line x1="278" x2="278" y1="100" y2="140"></line><line x1="330" x2="330" y1="100" y2="140"></line><line x1="382" x2="382" y1="100" y2="140"></line><line x1="434" x2="434" y1="100" y2="140"></line>
 </g>
-<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="84">“esto importa”</text>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="84">â€œesto importaâ€</text>
 <!-- seta para memoria -->
 <path class="mark-stroke" d="M360 148 L360 170" stroke-width="1.4"></path>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.8" text-anchor="middle" x="360" y="186">MEMORIA EMOCIONAL MÁS FUERTE</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.8" text-anchor="middle" x="360" y="186">MEMORIA EMOCIONAL MÃS FUERTE</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: el ejemplo del jeep que escapa
+<summary><span class="chev">â–¸</span> Profundizando: el ejemplo del jeep que escapa
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional: una lectura paso a paso de por qué funciona una cámara lenta específica.</p>
-<p>La clase analiza una escena de escape: un vehículo acelera hacia las puertas, la percusión se acelera, la
-                energía cinética aumenta: <strong>todo rápido</strong>. En el instante en que el auto salta por el aire,
-                la transición repentina a cámara lenta <em>estira el impacto emocional de la libertad y el triunfo</em>.
-                Polvo flotando, piedras suspendidas, rayos de sol, partículas a la deriva: la cámara lenta revela una riqueza
-                visual que el ojo jamás captaría en tiempo real. La luz del atardecer, consistente en cada plano,
-                mantiene unificada la escena; la cámara orbitando alrededor del vehículo en vuelo aporta escala. La música
-                acompaña: la percusión va creciendo antes del salto, y el diseño de sonido se estira y se vuelve atmosférico. Y el
-                <strong>corte seco de vuelta a velocidad real</strong> después del aterrizaje restaura la energía y
-                el ritmo. Ese es el slow-mo haciendo su trabajo: no “hacerlo lento”, sino transformar un
+<p>Capa opcional: una lectura paso a paso de por quÃ© funciona una cÃ¡mara lenta especÃ­fica.</p>
+<p>La clase analiza una escena de escape: un vehÃ­culo acelera hacia las puertas, la percusiÃ³n se acelera, la
+                energÃ­a cinÃ©tica aumenta: <strong>todo rÃ¡pido</strong>. En el instante en que el auto salta por el aire,
+                la transiciÃ³n repentina a cÃ¡mara lenta <em>estira el impacto emocional de la libertad y el triunfo</em>.
+                Polvo flotando, piedras suspendidas, rayos de sol, partÃ­culas a la deriva: la cÃ¡mara lenta revela una riqueza
+                visual que el ojo jamÃ¡s captarÃ­a en tiempo real. La luz del atardecer, consistente en cada plano,
+                mantiene unificada la escena; la cÃ¡mara orbitando alrededor del vehÃ­culo en vuelo aporta escala. La mÃºsica
+                acompaÃ±a: la percusiÃ³n va creciendo antes del salto, y el diseÃ±o de sonido se estira y se vuelve atmosfÃ©rico. Y el
+                <strong>corte seco de vuelta a velocidad real</strong> despuÃ©s del aterrizaje restaura la energÃ­a y
+                el ritmo. Ese es el slow-mo haciendo su trabajo: no â€œhacerlo lentoâ€, sino transformar un
                 segundo en un momento inolvidable.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="5-2" data-inema-topic="modulo-5-2#topico-3" data-inema-track="5" id="topico-3">
+<section data-ARCKHÉ-module="5-2" data-ARCKHÉ-topic="modulo-5-2#topico-3" data-ARCKHÉ-track="5" id="topico-3">
 <div class="section-mark">
-<span class="where">Sección 3 de 5</span><span>·</span><span>Contraste</span>
+<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>Contraste</span>
 </div>
 <h2 class="head"><span class="num">3.</span>El secreto es el contraste</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-2-t3-p1">Si hay una sola regla que tatuarse en esta clase, es esta:
-              <strong>rápido → lento → rápido.</strong> El poder emocional de la cámara lenta no viene de la lentitud
-              en sí — viene de <em>interrumpir</em> la velocidad con un estiramiento dramático del tiempo. Sin lo
-              rápido de antes, no hay nada que interrumpir; sin lo rápido de después, no hay un retorno que devuelva energía. La
-              cámara lenta es una ruptura, y solo existe una ruptura frente a un patrón.</p>
-<p data-inema-block="m5-2-t3-p2">La consecuencia es dura y contraintuitiva: <em>si todo es lento, nada es
-              cinematográfico.</em><span class="sidenote-ref">3</span> El principiante, fascinado por el efecto, aplica
-              slow-mo en toda la escena y se frustra con el resultado apagado. El cerebro se adapta: lo que debía ser
-              extraordinario se convierte en la nueva normalidad, y lo normal no emociona. La cámara lenta es como el silencio en la
-              música: es poderosa porque es poco frecuente, pero pierde fuerza cuando es constante. Esta regla, fíjate,
-              es la misma de la Ruta 1: el slow-mo sin aceleración previa no funciona; solo impacta como contraste con lo que venía
-              rápido.</p>
+<p class="lede" data-ARCKHÉ-block="m5-2-t3-p1">Si hay una sola regla que tatuarse en esta clase, es esta:
+              <strong>rÃ¡pido â†’ lento â†’ rÃ¡pido.</strong> El poder emocional de la cÃ¡mara lenta no viene de la lentitud
+              en sÃ­ â€” viene de <em>interrumpir</em> la velocidad con un estiramiento dramÃ¡tico del tiempo. Sin lo
+              rÃ¡pido de antes, no hay nada que interrumpir; sin lo rÃ¡pido de despuÃ©s, no hay un retorno que devuelva energÃ­a. La
+              cÃ¡mara lenta es una ruptura, y solo existe una ruptura frente a un patrÃ³n.</p>
+<p data-ARCKHÉ-block="m5-2-t3-p2">La consecuencia es dura y contraintuitiva: <em>si todo es lento, nada es
+              cARCKHÉtogrÃ¡fico.</em><span class="sidenote-ref">3</span> El principiante, fascinado por el efecto, aplica
+              slow-mo en toda la escena y se frustra con el resultado apagado. El cerebro se adapta: lo que debÃ­a ser
+              extraordinario se convierte en la nueva normalidad, y lo normal no emociona. La cÃ¡mara lenta es como el silencio en la
+              mÃºsica: es poderosa porque es poco frecuente, pero pierde fuerza cuando es constante. Esta regla, fÃ­jate,
+              es la misma de la Ruta 1: el slow-mo sin aceleraciÃ³n previa no funciona; solo impacta como contraste con lo que venÃ­a
+              rÃ¡pido.</p>
 <h3 class="sub">La curva, en tres tiempos</h3>
-<p data-inema-block="m5-2-t3-p3">Piensa en la estructura como una respiración en tres fases. El <strong>rápido</strong>
-              inicial construye tensión y energía cinética: es la carrera hasta el portón, la percusión que va en aumento. El
-              <strong>lento</strong> se posa en el pico exacto, en el instante en que se rompe la predicción, y lo prolonga para que el
-              espectador lo sienta por completo. El <strong>rápido</strong> final — un corte seco, nunca una
-              desaceleración gradual de vuelta — restaura el ritmo y hace que el tramo lento parezca, en retrospectiva,
-              aún más poderoso. Quitar cualquiera de las tres fases vacía las otras dos.</p>
+<p data-ARCKHÉ-block="m5-2-t3-p3">Piensa en la estructura como una respiraciÃ³n en tres fases. El <strong>rÃ¡pido</strong>
+              inicial construye tensiÃ³n y energÃ­a cinÃ©tica: es la carrera hasta el portÃ³n, la percusiÃ³n que va en aumento. El
+              <strong>lento</strong> se posa en el pico exacto, en el instante en que se rompe la predicciÃ³n, y lo prolonga para que el
+              espectador lo sienta por completo. El <strong>rÃ¡pido</strong> final â€” un corte seco, nunca una
+              desaceleraciÃ³n gradual de vuelta â€” restaura el ritmo y hace que el tramo lento parezca, en retrospectiva,
+              aÃºn mÃ¡s poderoso. Quitar cualquiera de las tres fases vacÃ­a las otras dos.</p>
 </div>
 <!-- figura 3: a curva rapido-lento-rapido -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · La curva de velocidad — <b>rápido, lento, rápido</b></figcaption>
-<svg aria-label="Diagrama de curva de velocidad: la línea sube rápido, cae a un nivel bajo de cámara lenta en el pico de tensión y vuelve a la velocidad rápida con un corte seco vertical." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 3</span> Â· La curva de velocidad â€” <b>rÃ¡pido, lento, rÃ¡pido</b></figcaption>
+<svg aria-label="Diagrama de curva de velocidad: la lÃ­nea sube rÃ¡pido, cae a un nivel bajo de cÃ¡mara lenta en el pico de tensiÃ³n y vuelve a la velocidad rÃ¡pida con un corte seco vertical." class="diagram" role="img" viewbox="0 0 720 210">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="175" y2="175"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="194">TIEMPO →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="194">TIEMPO â†’</text>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 70)" x="14" y="70">VELOCIDAD</text>
 <!-- rapido inicial: linha alta e densa -->
 <path class="accent-stroke" d="M40 60 L120 58 L200 62 L250 60" fill="none" stroke-width="2.4"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="140" y="44">rápido — crea tensión</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="140" y="44">rÃ¡pido â€” crea tensiÃ³n</text>
 <!-- mergulho para o slow -->
 <path class="accent-stroke" d="M250 60 C 290 70, 300 140, 340 145 L460 145 C 500 140, 510 70, 550 60" fill="none" stroke-width="2.4"></path>
 <!-- patamar do slow -->
 <line class="mark-stroke" stroke-width="3" x1="340" x2="460" y1="145" y2="145"></line>
 <rect class="accent-stroke" fill="url(#hatch-5-2)" height="48" rx="3" stroke-width="1.2" width="120" x="340" y="120"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="400" y="113">lento — el clímax</text>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="400" y="162">120fps → 24fps</text>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="400" y="113">lento â€” el clÃ­max</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="400" y="162">120fps â†’ 24fps</text>
 <!-- rapido final: corte seco vertical -->
 <path class="accent-stroke" d="M550 60 L630 58 L690 62" fill="none" stroke-width="2.4"></path>
 <line class="accent" x1="550" x2="550" y1="60" y2="60"></line>
 <path class="mark-stroke" d="M548 60 L548 145" stroke-dasharray="2 3" stroke-width="1.4"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="620" y="44">rápido — corte seco</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="620" y="44">rÃ¡pido â€” corte seco</text>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" x="556" y="120">CORTE DIRECTO</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Una escena de pelea logra una buena cámara lenta en el golpe final, pero el instructor dice que le falta impacto. Te das cuenta
-              de que, antes del golpe, la escena ya tenía un ritmo lento y contemplativo. ¿Qué probablemente
-              falta — y cómo corregirlo con un solo cambio?</p>
+<p>Una escena de pelea logra una buena cÃ¡mara lenta en el golpe final, pero el instructor dice que le falta impacto. Te das cuenta
+              de que, antes del golpe, la escena ya tenÃ­a un ritmo lento y contemplativo. Â¿QuÃ© probablemente
+              falta â€” y cÃ³mo corregirlo con un solo cambio?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Falta el <strong>rápido antes</strong>. Sin una aceleración previa, la cámara lenta no tiene
-                contraste — solo es más lentitud dentro de una escena ya lenta. La corrección es acelerar el
-                fragmento que precede al golpe (movimiento, corte, sonido en aumento), para que la dilatación del tiempo
+<p class="answer">Falta el <strong>rÃ¡pido antes</strong>. Sin una aceleraciÃ³n previa, la cÃ¡mara lenta no tiene
+                contraste â€” solo es mÃ¡s lentitud dentro de una escena ya lenta. La correcciÃ³n es acelerar el
+                fragmento que precede al golpe (movimiento, corte, sonido en aumento), para que la dilataciÃ³n del tiempo
                 <em>divide</em> la velocidad en vez de continuarla.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="5-2" data-inema-topic="modulo-5-2#topico-4" data-inema-track="5" id="topico-4">
+<section data-ARCKHÉ-module="5-2" data-ARCKHÉ-topic="modulo-5-2#topico-4" data-ARCKHÉ-track="5" id="topico-4">
 <div class="section-mark">
-<span class="where">Sección 4 de 5</span><span>·</span><span>Seedance</span>
+<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Seedance</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Dirigir slow-mo en Seedance</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-2-t4-p1">Una vez entendida la regla, viene la ejecución en el generador. Para
-              cámara lenta cinematográfica en <strong>Seedance 2.0</strong>, el prompt debe incluir algunas instrucciones que la mayoría de las personas olvida: cambios claros de plano, movimiento dinámico de cámara, actuación emocional, continuidad de la luz y diseño de sonido cinematográfico.<span class="sidenote-ref">4</span>
-              Y, sobre todo, la especificación explícita de FPS — sin ella, el generador entrega una cámara lenta
-              genérica, sin el arrastre del overcranking real.</p>
-<p data-inema-block="m5-2-t4-p2">Vale la pena destacar dos disciplinas para escribir prompts. La primera: siempre
-              escribe la relación entre los encuadres: <em>120fps → 24fps</em>, <em>5x cámara lenta</em>. Esto
-              obliga a la IA a simular el sobrecranking cinematográfico real. La segunda: <strong>cambia de plano cada
-              ~2 segundos</strong>. Alternar entre plano abierto, plano medio, primer plano, cámara en mano y órbita crea
-              ritmo de montaje y evita el resultado plano y estático típico de la IA. El prompt de abajo aplica la curva
-              rápido → lento → rápido con cambios de plano y FPS explícitos.</p>
-<div class="codeblock"><span class="c"># Cámara lenta cinematográfica — Seedance 2.0</span>
-<span class="c"># curva FAST -&gt; SLOW -&gt; FAST, cambio de plano cada ~2s, FPS explícito</span>
+<p class="lede" data-ARCKHÉ-block="m5-2-t4-p1">Una vez entendida la regla, viene la ejecuciÃ³n en el generador. Para
+              cÃ¡mara lenta cARCKHÉtogrÃ¡fica en <strong>Seedance 2.0</strong>, el prompt debe incluir algunas instrucciones que la mayorÃ­a de las personas olvida: cambios claros de plano, movimiento dinÃ¡mico de cÃ¡mara, actuaciÃ³n emocional, continuidad de la luz y diseÃ±o de sonido cARCKHÉtogrÃ¡fico.<span class="sidenote-ref">4</span>
+              Y, sobre todo, la especificaciÃ³n explÃ­cita de FPS â€” sin ella, el generador entrega una cÃ¡mara lenta
+              genÃ©rica, sin el arrastre del overcranking real.</p>
+<p data-ARCKHÉ-block="m5-2-t4-p2">Vale la pena destacar dos disciplinas para escribir prompts. La primera: siempre
+              escribe la relaciÃ³n entre los encuadres: <em>120fps â†’ 24fps</em>, <em>5x cÃ¡mara lenta</em>. Esto
+              obliga a la IA a simular el sobrecranking cARCKHÉtogrÃ¡fico real. La segunda: <strong>cambia de plano cada
+              ~2 segundos</strong>. Alternar entre plano abierto, plano medio, primer plano, cÃ¡mara en mano y Ã³rbita crea
+              ritmo de montaje y evita el resultado plano y estÃ¡tico tÃ­pico de la IA. El prompt de abajo aplica la curva
+              rÃ¡pido â†’ lento â†’ rÃ¡pido con cambios de plano y FPS explÃ­citos.</p>
+<div class="codeblock"><span class="c"># CÃ¡mara lenta cARCKHÉtogrÃ¡fica â€” Seedance 2.0</span>
+<span class="c"># curva FAST -&gt; SLOW -&gt; FAST, cambio de plano cada ~2s, FPS explÃ­cito</span>
 <span class="k">escena:</span> a lone rider racing toward collapsing gates at golden hour, then leaping.
-<span class="k">shot_1 (wide, fast):</span> normal speed — rider sprints in, dust and kinetic energy build, drums rising.
+<span class="k">shot_1 (wide, fast):</span> normal speed â€” rider sprints in, dust and kinetic energy build, drums rising.
 <span class="k">shot_2 (medium, fast):</span> tracking alongside, pace accelerates into the launch.
-<span class="k">slow_motion (close + orbit):</span> 120fps -&gt; 24fps, 5x slow motion — the leap; suspended dust, drifting particles, sun rays.
-<span class="k">shot_4 (wide, fast):</span> Corte directo de vuelta al tiempo real al aterrizar — se recuperan la energía y el ritmo.
+<span class="k">slow_motion (close + orbit):</span> 120fps -&gt; 24fps, 5x slow motion â€” the leap; suspended dust, drifting particles, sun rays.
+<span class="k">shot_4 (wide, fast):</span> Corte directo de vuelta al tiempo real al aterrizar â€” se recuperan la energÃ­a y el ritmo.
 <span class="k">lighting:</span> consistent golden-hour sun, same direction and color across all shots.
-<span class="k">sound:</span> fast percussion before, stretched cinematic sound design during slow-mo.
-<span class="k">estilo:</span> cinematic, shallow depth, high contrast, photoreal.</div>
-<h3 class="sub">Por qué cambiar de plano cada dos segundos</h3>
-<p data-inema-block="m5-2-t4-p3">El cambio frecuente de plano no es un manierismo: resuelve un problema concreto de la IA. Los generadores tienden a perder coherencia y a “aplanar” el movimiento cuando un plano se prolonga demasiado; la morfología empieza a derretirse y la composición pierde el foco. Cortar cada ~2 segundos, alternando el tamaño del plano, devuelve el ritmo cinematográfico y oculta la fragilidad del modelo en planos largos. Es el mismo principio de las partículas que veremos en la próxima clase: usar la
-              <em>lenguaje del cine</em> para cubrir los límites de la herramienta.</p>
+<span class="k">sound:</span> fast percussion before, stretched cARCKHÉtic sound design during slow-mo.
+<span class="k">estilo:</span> cARCKHÉtic, shallow depth, high contrast, photoreal.</div>
+<h3 class="sub">Por quÃ© cambiar de plano cada dos segundos</h3>
+<p data-ARCKHÉ-block="m5-2-t4-p3">El cambio frecuente de plano no es un manierismo: resuelve un problema concreto de la IA. Los generadores tienden a perder coherencia y a â€œaplanarâ€ el movimiento cuando un plano se prolonga demasiado; la morfologÃ­a empieza a derretirse y la composiciÃ³n pierde el foco. Cortar cada ~2 segundos, alternando el tamaÃ±o del plano, devuelve el ritmo cARCKHÉtogrÃ¡fico y oculta la fragilidad del modelo en planos largos. Es el mismo principio de las partÃ­culas que veremos en la prÃ³xima clase: usar la
+              <em>lenguaje del cine</em> para cubrir los lÃ­mites de la herramienta.</p>
 </div>
 <!-- figura 4: troca de planos a cada 2s -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · Cambiar de plano cada <b>~2s</b> crea ritmo y oculta los límites de la IA</figcaption>
-<svg aria-label="Diagrama: una línea de tiempo dividida en segmentos de dos segundos, cada uno con un tipo de plano diferente — general, medio, close-slow, general — que forman el ritmo del montaje." class="diagram" role="img" viewbox="0 0 720 180">
+<figcaption><span class="fig-n">Fig. 4</span> Â· Cambiar de plano cada <b>~2s</b> crea ritmo y oculta los lÃ­mites de la IA</figcaption>
+<svg aria-label="Diagrama: una lÃ­nea de tiempo dividida en segmentos de dos segundos, cada uno con un tipo de plano diferente â€” general, medio, close-slow, general â€” que forman el ritmo del montaje." class="diagram" role="img" viewbox="0 0 720 180">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="130" y2="130"></line>
 <!-- segmentos -->
 <g>
 <rect class="wash accent-stroke" height="60" rx="3" stroke-width="1.2" width="150" x="50" y="56"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="125" y="80">abierto</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="125" y="100">~2s · fast</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="125" y="100">~2s Â· fast</text>
 </g>
 <g>
 <rect class="wash accent-stroke" height="60" rx="3" stroke-width="1.2" width="150" x="206" y="56"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="281" y="80">medio</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="281" y="100">~2s · fast</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="281" y="100">~2s Â· fast</text>
 </g>
 <g>
 <rect class="accent-stroke" fill="url(#hatch-5-2)" height="60" rx="3" stroke-width="1.6" width="150" x="362" y="56"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="437" y="80">plano cercano + órbita</text>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="437" y="100">CÁMARA LENTA · 5x</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="437" y="80">plano cercano + Ã³rbita</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="437" y="100">CÃMARA LENTA Â· 5x</text>
 </g>
 <g>
 <rect class="wash accent-stroke" height="60" rx="3" stroke-width="1.2" width="150" x="518" y="56"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="593" y="80">abierto</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="593" y="100">~2s · hard cut</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="593" y="100">~2s Â· hard cut</text>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="156">variar el tamaño del plano = ritmo de montaje; un plano demasiado largo = la IA se derrite</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="156">variar el tamaÃ±o del plano = ritmo de montaje; un plano demasiado largo = la IA se derrite</text>
 </svg>
 </figure>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="5-2" data-inema-topic="modulo-5-2#topico-5" data-inema-track="5" id="topico-5">
+<section data-ARCKHÉ-module="5-2" data-ARCKHÉ-topic="modulo-5-2#topico-5" data-ARCKHÉ-track="5" id="topico-5">
 <div class="section-mark">
-<span class="where">Sección 5 de 5</span><span>·</span><span>Vida</span>
+<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>Vida</span>
 </div>
-<h2 class="head"><span class="num">5.</span>Continuidad y microactuación</h2>
+<h2 class="head"><span class="num">5.</span>Continuidad y microactuaciÃ³n</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-2-t5-p1">Dos requisitos finales distinguen la cámara lenta que parece
-              cine de la cámara lenta que parece una prueba de IA, y ambos tienen que ver con <em>vida</em>. La primera es la
-              continuidad de la luz. Como la cámara lenta suele encadenar varios planos, cada uno debe mantener la misma
-              dirección del sol, la misma temperatura de color, la misma atmósfera y las mismas sombras.<span class="sidenote-ref">5</span>
-              Sin esto, los planos parecen pertenecer a escenas diferentes — la IA, sin control, cambia la luz en
-              cada generación, y el resultado se deshace en fragmentos desconectados.</p>
-<p data-inema-block="m5-2-t5-p2">La segunda es la microactuación. La cámara lenta amplía todo, incluida la
-              falta de vida en el rostro, y nada delata más a la IA que una <em>“rostro inexpresivo”</em>
-              estirada durante varios segundos. El antídoto es describir, en el prompt, los micromovimientos de la emoción: el
-              parpadeo, la respiración, el movimiento de los ojos, el esbozo de una sonrisa, la tensión en el hombro, la leve
-              dilatación de la pupila. Son detalles diminutos, pero es precisamente lo que la cámara lenta expone — y lo que
+<p class="lede" data-ARCKHÉ-block="m5-2-t5-p1">Dos requisitos finales distinguen la cÃ¡mara lenta que parece
+              cine de la cÃ¡mara lenta que parece una prueba de IA, y ambos tienen que ver con <em>vida</em>. La primera es la
+              continuidad de la luz. Como la cÃ¡mara lenta suele encadenar varios planos, cada uno debe mantener la misma
+              direcciÃ³n del sol, la misma temperatura de color, la misma atmÃ³sfera y las mismas sombras.<span class="sidenote-ref">5</span>
+              Sin esto, los planos parecen pertenecer a escenas diferentes â€” la IA, sin control, cambia la luz en
+              cada generaciÃ³n, y el resultado se deshace en fragmentos desconectados.</p>
+<p data-ARCKHÉ-block="m5-2-t5-p2">La segunda es la microactuaciÃ³n. La cÃ¡mara lenta amplÃ­a todo, incluida la
+              falta de vida en el rostro, y nada delata mÃ¡s a la IA que una <em>â€œrostro inexpresivoâ€</em>
+              estirada durante varios segundos. El antÃ­doto es describir, en el prompt, los micromovimientos de la emociÃ³n: el
+              parpadeo, la respiraciÃ³n, el movimiento de los ojos, el esbozo de una sonrisa, la tensiÃ³n en el hombro, la leve
+              dilataciÃ³n de la pupila. Son detalles diminutos, pero es precisamente lo que la cÃ¡mara lenta expone â€” y lo que
               hace que un personaje parezca vivo en vez de una escultura inanimada.</p>
-<h3 class="sub">Por qué esto importa más en cámara lenta</h3>
-<p data-inema-block="m5-2-t5-p3">A velocidad normal, los errores de continuidad o un rostro inexpresivo
-              pasan desapercibidos: nadie tiene tiempo de notarlos. La cámara lenta elimina ese disfraz. Al alargar el
+<h3 class="sub">Por quÃ© esto importa mÃ¡s en cÃ¡mara lenta</h3>
+<p data-ARCKHÉ-block="m5-2-t5-p3">A velocidad normal, los errores de continuidad o un rostro inexpresivo
+              pasan desapercibidos: nadie tiene tiempo de notarlos. La cÃ¡mara lenta elimina ese disfraz. Al alargar el
               instante, convierte cada microdetalle en protagonista: la luz que no encaja se vuelve obvia, el rostro
-              inmóvil resulta perturbador, el movimiento que tiembla es imposible de ignorar. Por eso la cámara lenta es, al
-              mismo tiempo, la técnica más poderosa y la más implacable: recompensa el cuidado y castiga el descuido,
-              ambos a cámara lenta.</p>
-<p data-inema-block="m5-2-t5-p4">Resume el módulo en esta frase: <em>la cámara lenta no consiste en hacerlo lento —
-              es decir «esto importa», y solo funciona como contraste.</em> La tarea del instructor es la
-              prueba exacta: crea una escena de 5 a 10 segundos en Seedance 2.0 con acción dinámica, tres planos
-              diferentes, un momento de cámara lenta (120fps → 24fps), luz cinematográfica y ritmo rápido →
-              lento → rápido. El objetivo no es generar una imagen lenta, sino crear emoción e impacto. La próxima clase
-              aborda la capa que les da atmósfera a estos planos: los sistemas de partículas.</p>
+              inmÃ³vil resulta perturbador, el movimiento que tiembla es imposible de ignorar. Por eso la cÃ¡mara lenta es, al
+              mismo tiempo, la tÃ©cnica mÃ¡s poderosa y la mÃ¡s implacable: recompensa el cuidado y castiga el descuido,
+              ambos a cÃ¡mara lenta.</p>
+<p data-ARCKHÉ-block="m5-2-t5-p4">Resume el mÃ³dulo en esta frase: <em>la cÃ¡mara lenta no consiste en hacerlo lento â€”
+              es decir Â«esto importaÂ», y solo funciona como contraste.</em> La tarea del instructor es la
+              prueba exacta: crea una escena de 5 a 10 segundos en Seedance 2.0 con acciÃ³n dinÃ¡mica, tres planos
+              diferentes, un momento de cÃ¡mara lenta (120fps â†’ 24fps), luz cARCKHÉtogrÃ¡fica y ritmo rÃ¡pido â†’
+              lento â†’ rÃ¡pido. El objetivo no es generar una imagen lenta, sino crear emociÃ³n e impacto. La prÃ³xima clase
+              aborda la capa que les da atmÃ³sfera a estos planos: los sistemas de partÃ­culas.</p>
 </div>
 <!-- figura 5: micro-atuacao revelada pelo slow-mo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · La cámara lenta deja el rostro al descubierto — <b>microactuación</b> contra la “cara muerta”</figcaption>
-<svg aria-label="Diagrama: a la izquierda, un rostro inexpresivo rotulado rostro muerto; a la derecha, el mismo rostro con indicadores de parpadeo, respiración, mirada y tensión, rotulado vivo." class="diagram" role="img" viewbox="0 0 720 180">
+<figcaption><span class="fig-n">Fig. 5</span> Â· La cÃ¡mara lenta deja el rostro al descubierto â€” <b>microactuaciÃ³n</b> contra la â€œcara muertaâ€</figcaption>
+<svg aria-label="Diagrama: a la izquierda, un rostro inexpresivo rotulado rostro muerto; a la derecha, el mismo rostro con indicadores de parpadeo, respiraciÃ³n, mirada y tensiÃ³n, rotulado vivo." class="diagram" role="img" viewbox="0 0 720 180">
 <!-- face morta -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">SIN MICROACTUACIÓN</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">SIN MICROACTUACIÃ“N</text>
 <rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="90" y="40"></rect>
 <circle class="rule-stroke" cx="180" cy="90" fill="none" r="38" stroke-width="1.3"></circle>
 <line class="rule-stroke" stroke-width="1.6" x1="162" x2="172" y1="82" y2="82"></line>
 <line class="rule-stroke" stroke-width="1.6" x1="188" x2="198" y1="82" y2="82"></line>
 <line class="rule-stroke" stroke-width="1.4" x1="168" x2="192" y1="106" y2="106"></line>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="166">cara muerta — estirada, perturba</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="166">cara muerta â€” estirada, perturba</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="150"></line>
 <!-- face viva -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">CON MICROACTUACIÓN</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">CON MICROACTUACIÃ“N</text>
 <rect class="accent-stroke" fill="url(#hatch-5-2)" height="110" rx="3" stroke-width="1.3" width="180" x="450" y="40"></rect>
 <circle class="accent-stroke" cx="540" cy="90" fill="none" r="38" stroke-width="1.4"></circle>
 <path class="accent-stroke" d="M520 80 Q 526 75 532 80" fill="none" stroke-width="1.6"></path>
@@ -560,67 +560,67 @@ que el impacto es <em>control de la percepción</em>, y que la curva de toda esc
 <text x="592" y="92">mirada</text>
 <text x="592" y="114">respiro</text>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="166">parpadear, respirar, tensión — vivo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="166">parpadear, respirar, tensiÃ³n â€” vivo</text>
 </svg>
 </figure>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="Autocomprobación" class="check">
-<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<section aria-label="AutocomprobaciÃ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>¿Qué es el overcranking, en cifras — y qué hace la cámara lenta además de desacelerar?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Filmar a alta velocidad (120/240fps) y reproducir a 24fps. Además de ralentizar,
-              <em>revela</em> microdetalles que el ojo no percibe en tiempo real — el brillo en la hoja, la gota, la
-              expresión fugaz, la física del impacto. Por eso se detiene en los picos de la escena.</p></div>
+<summary><span class="qn">01</span><span>Â¿QuÃ© es el overcranking, en cifras â€” y quÃ© hace la cÃ¡mara lenta ademÃ¡s de desacelerar?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Filmar a alta velocidad (120/240fps) y reproducir a 24fps. AdemÃ¡s de ralentizar,
+              <em>revela</em> microdetalles que el ojo no percibe en tiempo real â€” el brillo en la hoja, la gota, la
+              expresiÃ³n fugaz, la fÃ­sica del impacto. Por eso se detiene en los picos de la escena.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>En una frase: ¿qué comunica la cámara lenta al cerebro del espectador?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>“Esto importa.” Desacelerar indica, en el subconsciente, que el momento es
-              significativo: heroico, peligroso, hermoso, inolvidable. La cámara lenta no describe la emoción, sino que
-              le indica al cerebro que la sienta, creando un recuerdo emocional más fuerte.</p></div>
+<summary><span class="qn">02</span><span>En una frase: Â¿quÃ© comunica la cÃ¡mara lenta al cerebro del espectador?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>â€œEsto importa.â€ Desacelerar indica, en el subconsciente, que el momento es
+              significativo: heroico, peligroso, hermoso, inolvidable. La cÃ¡mara lenta no describe la emociÃ³n, sino que
+              le indica al cerebro que la sienta, creando un recuerdo emocional mÃ¡s fuerte.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>¿Cuál es la regla del contraste y por qué no funciona usar cámara lenta en toda la escena?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><strong>Rápido → lento → rápido.</strong> El impacto viene de interrumpir la
-              velocidad, no de la lentitud en sí. Si todo es lento, el cerebro se acostumbra y nada parece especial:
-              el slow-mo constante equivale a no tener slow-mo. La cámara lenta es una ruptura, y para que haya una ruptura hace falta un
-              patrón rápido que sirva de contraste.</p></div>
+<summary><span class="qn">03</span><span>Â¿CuÃ¡l es la regla del contraste y por quÃ© no funciona usar cÃ¡mara lenta en toda la escena?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><strong>RÃ¡pido â†’ lento â†’ rÃ¡pido.</strong> El impacto viene de interrumpir la
+              velocidad, no de la lentitud en sÃ­. Si todo es lento, el cerebro se acostumbra y nada parece especial:
+              el slow-mo constante equivale a no tener slow-mo. La cÃ¡mara lenta es una ruptura, y para que haya una ruptura hace falta un
+              patrÃ³n rÃ¡pido que sirva de contraste.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>¿Por qué la continuidad de la luz y la microactuación importan más en cámara lenta que a velocidad normal?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque la cámara lenta lo amplifica todo. A velocidad normal, una luz que no coincide y un rostro inmóvil
+<summary><span class="qn">04</span><span>Â¿Por quÃ© la continuidad de la luz y la microactuaciÃ³n importan mÃ¡s en cÃ¡mara lenta que a velocidad normal?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque la cÃ¡mara lenta lo amplifica todo. A velocidad normal, una luz que no coincide y un rostro inmÃ³vil
               pasan desapercibidos; al alargarse durante segundos, se vuelven obvios e inquietantes. Mantener la misma luz en todos los
-              planos y describir el parpadeo, la respiración y la tensión del rostro es lo que mantiene la escena unida y viva, y
-              evita las «caras muertas» de la IA.</p></div>
+              planos y describir el parpadeo, la respiraciÃ³n y la tensiÃ³n del rostro es lo que mantiene la escena unida y viva, y
+              evita las Â«caras muertasÂ» de la IA.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Mi recorrido</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+<h2><span class="ico">â§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este módulo</div>
-<div class="v" data-inema-meter="modulo:5-2">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="k">En este mÃ³dulo</div>
+<div class="v" data-ARCKHÉ-meter="modulo:5-2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 5</div>
-<div class="v" data-inema-meter="trilha:5">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:5">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -629,72 +629,72 @@ que el impacto es <em>control de la percepción</em>, y que la curva de toda esc
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Módulo 5.3 — Sistemas de partículas en el cine</div>
+<div class="t">MÃ³dulo 5.3 â€” Sistemas de partÃ­culas en el cine</div>
 </div>
-<a class="go" href="modulo-5-3.html">Siguiente →</a>
+<a class="go" href="modulo-5-3.html">Siguiente â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-5-2#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-2#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>120fps → 24fps.</b> Grabar a 120 cuadros por segundo y reproducir a 24 da 5x de cámara lenta (120/24).
-          A 240fps da 10x. Escribir la relación explícitamente obliga a la IA a simular el overcranking real.
+<div class="tag">DefiniciÃ³n</div>
+<b>120fps â†’ 24fps.</b> Grabar a 120 cuadros por segundo y reproducir a 24 da 5x de cÃ¡mara lenta (120/24).
+          A 240fps da 10x. Escribir la relaciÃ³n explÃ­citamente obliga a la IA a simular el overcranking real.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Lección 14 del programa <i>AI Filmmaking</i> — “Slow Motion”. La cámara lenta revela lo que el ojo
+          LecciÃ³n 14 del programa <i>AI Filmmaking</i> â€” â€œSlow Motionâ€. La cÃ¡mara lenta revela lo que el ojo
           pierde en tiempo real y marca los picos emocionales de la escena.
-          <div class="src-line">Bloque 5 · VFX &amp; Action</div>
+          <div class="src-line">Bloque 5 Â· VFX &amp; Action</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-5-2#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Memoria emocional.</b> El cerebro graba con más profundidad lo que percibe durante más tiempo. Alargar el
-          instante en cámara lenta y alargar el recuerdo: por eso el momento culminante se vuelve inolvidable.
+<div class="tag">DefiniciÃ³n</div>
+<b>Memoria emocional.</b> El cerebro graba con mÃ¡s profundidad lo que percibe durante mÃ¡s tiempo. Alargar el
+          instante en cÃ¡mara lenta y alargar el recuerdo: por eso el momento culminante se vuelve inolvidable.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-5-2#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Rápido → lento → rápido.</b> La curva de velocidad de la cámara lenta. El impacto viene de interrumpir la
-          velocidad, no de la lentitud. Sin la rapidez previa y el corte seco posterior, la cámara lenta pierde su efecto.
+<div class="tag">DefiniciÃ³n</div>
+<b>RÃ¡pido â†’ lento â†’ rÃ¡pido.</b> La curva de velocidad de la cÃ¡mara lenta. El impacto viene de interrumpir la
+          velocidad, no de la lentitud. Sin la rapidez previa y el corte seco posterior, la cÃ¡mara lenta pierde su efecto.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Es la misma regla de la Trilha 1: la cámara lenta es el quinto tiempo de la curva de tensión (estabilidad, ruptura,
-          escalada, aceleración, <i>cámara lenta en el clímax</i>, impacto). Sin aceleración antes, no funciona.
+          Es la misma regla de la Trilha 1: la cÃ¡mara lenta es el quinto tiempo de la curva de tensiÃ³n (estabilidad, ruptura,
+          escalada, aceleraciÃ³n, <i>cÃ¡mara lenta en el clÃ­max</i>, impacto). Sin aceleraciÃ³n antes, no funciona.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-5-2#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-2#topico-4"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          En Seedance 2.0, el prompt debe incluir cambios de plano, movimiento de cámara, FPS explícitos, actuación
-          emocional, continuidad de luz y diseño de sonido, y cortar de plano cada ~2 segundos.
-          <div class="src-line">seedance · v2.0</div>
+          En Seedance 2.0, el prompt debe incluir cambios de plano, movimiento de cÃ¡mara, FPS explÃ­citos, actuaciÃ³n
+          emocional, continuidad de luz y diseÃ±o de sonido, y cortar de plano cada ~2 segundos.
+          <div class="src-line">seedance Â· v2.0</div>
 </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-5-2#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-2#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Microactuación.</b> Las pequeñas señales de vida en el rostro: parpadear, respirar, mover la mirada,
-          esbozar una sonrisa, tensar el hombro. La cámara lenta amplifica su ausencia: es el antídoto contra la “cara muerta”.
+<div class="tag">DefiniciÃ³n</div>
+<b>MicroactuaciÃ³n.</b> Las pequeÃ±as seÃ±ales de vida en el rostro: parpadear, respirar, mover la mirada,
+          esbozar una sonrisa, tensar el hombro. La cÃ¡mara lenta amplifica su ausencia: es el antÃ­doto contra la â€œcara muertaâ€.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          La cámara lenta recompensa el cuidado y castiga el descuido, ambos en cámara lenta: una luz que no coincide se vuelve evidente; un rostro
-          inmóvil resulta perturbador. La técnica más poderosa también es la más implacable.
+          La cÃ¡mara lenta recompensa el cuidado y castiga el descuido, ambos en cÃ¡mara lenta: una luz que no coincide se vuelve evidente; un rostro
+          inmÃ³vil resulta perturbador. La tÃ©cnica mÃ¡s poderosa tambiÃ©n es la mÃ¡s implacable.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Módulo 5.2 — folio ii</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">MÃ³dulo 5.2 â€” folio ii</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -703,8 +703,8 @@ que el impacto es <em>control de la percepción</em>, y que la curva de toda esc
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Module 6.4 — Dialogue Scene Structure | AI Filmmaking</title>
+<title>Module 6.4 â€” Dialogue Scene Structure | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha6/modulo-6-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha6/modulo-6-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha6/modulo-6-4.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:6-4"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:6-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Track <b>6</b> Character and Performance</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Module <b>6.4</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Section 1 of 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Section 1 of 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,29 +189,29 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Module 6.4 · Track 6 · Character and Acting</p>
+<p class="kicker">Module 6.4 Â· Track 6 Â· Character and Acting</p>
 <h1 class="module">Scene Structure for <em>Dialogue</em></h1>
-<p class="deck">Two characters exchange information—a question, an answer, everything clear, everything
+<p class="deck">Two characters exchange informationâ€”a question, an answer, everything clear, everything
           logical. And somehow, the scene still feels dead. The emotion beneath the words is missing. This lesson
           builds the dialogue scene shot by shot around it.</p>
 <p class="read-meta">
 <span class="here">Reading now</span>
-<span>~18 min · full module</span>
+<span>~18 min Â· full module</span>
 <span>5 sections</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="What you will understand" class="aims">
 <h2>What you will understand</h2>
 <ul>
-<li>Why a dialogue scene is a <b>emotional negotiation</b>, not a conversation—and how the <b>conflict</b> built in creates pressure before anyone speaks.</li>
-<li>How the <b>subtext</b> lets the audience discover the emotion instead of explaining it — with pairs of weak and strong dialogue.</li>
+<li>Why a dialogue scene is a <b>emotional negotiation</b>, not a conversationâ€”and how the <b>conflict</b> built in creates pressure before anyone speaks.</li>
+<li>How the <b>subtext</b> lets the audience discover the emotion instead of explaining it â€” with pairs of weak and strong dialogue.</li>
 <li>How the <b>silence</b>, o <b>rhythm</b> e a <b>power dynamics</b> make the exchange of lines emotionally alive.</li>
 <li>Why does every scene need a <b>emotional turn</b>, and how <b>shot and reverse shot</b> about the <b>axis</b> the right one shape what goes unsaid.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Module summary" class="toc" data-inema-toc="">
-<p class="toc-head">Summary — five scene elements</p>
+<nav aria-label="Module summary" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Summary â€” five scene elements</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Emotional negotiation: embedded conflict</span></a></li>
@@ -222,44 +222,44 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="6-4" data-inema-topic="modulo-6-4#topico-1" data-inema-track="6" id="topico-1">
+<section data-ARCKHÉ-module="6-4" data-ARCKHÉ-topic="modulo-6-4#topico-1" data-ARCKHÉ-track="6" id="topico-1">
 <div class="section-mark">
-<span class="where">Section 1 of 5</span><span>·</span><span>Conflict</span>
+<span class="where">Section 1 of 5</span><span>Â·</span><span>Conflict</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Emotional negotiation: embedded conflict</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m6-4-t1-p1">Two characters are talking. One asks a question, the other
-              answers. Everything seems clear, everything seems logical—and yet the scene feels <em>dead</em>.<span class="sidenote-ref">1</span>
-              Why? Because cinematic dialogue isn’t built with words alone: it’s built with
-              <strong>emotional tension</strong>. Great dialogue scenes are rarely conversations—they’re
-              <span class="dfn"><details class="dfn"><summary>emotional negotiations</summary><span class="body"><b>Emotional negotiation</b>: a scene where each character secretly wants something from the other — recognition, honesty, distance — and the dialogue is only the surface of an underlying conflict.</span></details></span>.
-              One person wants recognition while the other avoids vulnerability; one seeks honesty while the other quietly protects their own guilt. The audience should never feel that they’re just listening to people talk—they should feel something moving beneath the conversation.</p>
-<p data-inema-block="m6-4-t1-p2">So the first piece is the <strong>conflict within the dialogue</strong>.
-              Most weak scenes fail for one simple reason: there’s no resistance. One person asks, the other answers, and the emotional problem gets resolved too quickly. Strong dialogue works the other way around: tension begins the moment two emotional goals collide. One person wants closeness while the other creates distance; one wants honesty while the other avoids blame.<span class="sidenote-ref">2</span>
+<p class="lede dropcap" data-ARCKHÉ-block="m6-4-t1-p1">Two characters are talking. One asks a question, the other
+              answers. Everything seems clear, everything seems logicalâ€”and yet the scene feels <em>dead</em>.<span class="sidenote-ref">1</span>
+              Why? Because cARCKHÉtic dialogue isnâ€™t built with words alone: itâ€™s built with
+              <strong>emotional tension</strong>. Great dialogue scenes are rarely conversationsâ€”theyâ€™re
+              <span class="dfn"><details class="dfn"><summary>emotional negotiations</summary><span class="body"><b>Emotional negotiation</b>: a scene where each character secretly wants something from the other â€” recognition, honesty, distance â€” and the dialogue is only the surface of an underlying conflict.</span></details></span>.
+              One person wants recognition while the other avoids vulnerability; one seeks honesty while the other quietly protects their own guilt. The audience should never feel that theyâ€™re just listening to people talkâ€”they should feel something moving beneath the conversation.</p>
+<p data-ARCKHÉ-block="m6-4-t1-p2">So the first piece is the <strong>conflict within the dialogue</strong>.
+              Most weak scenes fail for one simple reason: thereâ€™s no resistance. One person asks, the other answers, and the emotional problem gets resolved too quickly. Strong dialogue works the other way around: tension begins the moment two emotional goals collide. One person wants closeness while the other creates distance; one wants honesty while the other avoids blame.<span class="sidenote-ref">2</span>
               Friction is the engine.</p>
 <h3 class="sub">The same theme, two outcomes</h3>
-<p data-inema-block="m6-4-t1-p3">Compare. <em>Weak version</em> — “Why didn’t you
-              come?” / “I was afraid of disappointing you.” Everything becomes emotionally clear too quickly;
-              the scene resolves before it creates pressure. <em>Strong version</em> — “Why didn’t you
-              come?” / [pause] / “I had work.” Suddenly the conversation is no longer about
-              showing up: the real question becomes <em>did I import it for you?</em> The conflict already exists before anyone speaks—and that’s what you set up first, including when generating the scene’s reference frame.</p>
+<p data-ARCKHÉ-block="m6-4-t1-p3">Compare. <em>Weak version</em> â€” â€œWhy didnâ€™t you
+              come?â€ / â€œI was afraid of disappointing you.â€ Everything becomes emotionally clear too quickly;
+              the scene resolves before it creates pressure. <em>Strong version</em> â€” â€œWhy didnâ€™t you
+              come?â€ / [pause] / â€œI had work.â€ Suddenly the conversation is no longer about
+              showing up: the real question becomes <em>did I import it for you?</em> The conflict already exists before anyone speaksâ€”and thatâ€™s what you set up first, including when generating the sceneâ€™s reference frame.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Stop and predict</p>
 <p>A reunion scene between two friends resolves all the hurt in the first exchange: one apologizes, the
-              other forgives, and that’s it. Even well written, the scene doesn’t hold your attention. What’s probably missing—and why?</p>
+              other forgives, and thatâ€™s it. Even well written, the scene doesnâ€™t hold your attention. Whatâ€™s probably missingâ€”and why?</p>
 <details>
 <summary>See one possible answer</summary>
 <p class="answer">Missing <strong>resistance</strong>: the emotional problem gets resolved too quickly.
-                Without two clashing goals (one wants to reconnect, the other protects their hurt), there’s no tension
-                to sustain the scene. Strong dialogue delays resolution—the pressure comes from clashing
+                Without two clashing goals (one wants to reconnect, the other protects their hurt), thereâ€™s no tension
+                to sustain the scene. Strong dialogue delays resolutionâ€”the pressure comes from clashing
                 desires, not an immediate agreement.</p>
 </details>
 </div>
 <!-- figura 1: a curva da cena de dialogo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · The weak scene <b>resolve early</b>; the strong one delays resolution and creates pressure</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· The weak scene <b>resolve early</b>; the strong one delays resolution and creates pressure</figcaption>
 <svg aria-label="Diagram with two tension curves across the scene: the weak curve rises slightly and falls quickly (resolves early); the strong curve rises, sustains the tension, and only turns at the end." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-6-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -267,93 +267,93 @@
 </pattern>
 </defs>
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="172" y2="172"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="30" y="192">SCENE DURATION →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="30" y="192">SCENE DURATION â†’</text>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" transform="rotate(-90 14 60)" x="14" y="60">TENSION</text>
 <!-- fraca -->
 <path class="rule-stroke" d="M40 150 C 120 130, 150 120, 200 130 C 260 142, 340 160, 680 162" fill="none" stroke-width="1.6"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" x="250" y="150">weak — resolves too early</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" x="250" y="150">weak â€” resolves too early</text>
 <!-- forte -->
 <path class="accent-stroke" d="M40 150 C 160 140, 240 90, 360 78 C 480 66, 560 60, 600 52 L640 96" fill="none" stroke-width="2.4"></path>
-<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" x="430" y="62">strong — sustained tension</text>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" x="430" y="62">strong â€” sustained tension</text>
 <rect class="accent-stroke" fill="url(#hatch-6-4)" height="26" rx="3" stroke-width="1.2" width="120" x="560" y="34"></rect>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.6" text-anchor="middle" x="620" y="52">TURN AT THE END</text>
 </svg>
 </figure>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="6-4" data-inema-topic="modulo-6-4#topico-2" data-inema-track="6" id="topico-2">
+<section data-ARCKHÉ-module="6-4" data-ARCKHÉ-topic="modulo-6-4#topico-2" data-ARCKHÉ-track="6" id="topico-2">
 <div class="section-mark">
-<span class="where">Section 2 of 5</span><span>·</span><span>Subtext</span>
+<span class="where">Section 2 of 5</span><span>Â·</span><span>Subtext</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Subtext over direct dialogue</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-4-t2-p1">The second piece: people rarely say what they mean.
+<p class="lede" data-ARCKHÉ-block="m6-4-t2-p1">The second piece: people rarely say what they mean.
               One of the fastest ways to make dialogue sound artificial is to have characters
-              explain their emotions directly. “I still love you.” “I feel abandoned.”
+              explain their emotions directly. â€œI still love you.â€ â€œI feel abandoned.â€
               Technically, the audience understands everything; emotionally, the scene feels obvious. Real people rarely
-              speak with complete honesty in painful moments—they soften the truth, avoid
-              vulnerability, and hide emotion inside everyday language. That’s subtext: the dialogue says
+              speak with complete honesty in painful momentsâ€”they soften the truth, avoid
+              vulnerability, and hide emotion inside everyday language. Thatâ€™s subtext: the dialogue says
               one thing, the emotion says another.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m6-4-t2-p2">The practical rule: weak dialogue <em>explains</em> the emotion; strong dialogue leaves the audience <em>discover it</em>. Compare. <em>Weak</em> — “I still miss
-              you.” <em>Strong</em> — “You still buy the same coffee.” Nothing
+<p data-ARCKHÉ-block="m6-4-t2-p2">The practical rule: weak dialogue <em>explains</em> the emotion; strong dialogue leaves the audience <em>discover it</em>. Compare. <em>Weak</em> â€” â€œI still miss
+              you.â€ <em>Strong</em> â€” â€œYou still buy the same coffee.â€ Nothing
               emotional is said directly, but suddenly the history between them becomes visible, and the audience
-              understands: there’s still something there. The viewer feels the unspoken story before the dialogue
+              understands: thereâ€™s still something there. The viewer feels the unspoken story before the dialogue
               begins to explain it.</p>
-<p data-inema-block="m6-4-t2-p3">In our pipeline, there’s a useful division of labor — and it’s the one
+<p data-ARCKHÉ-block="m6-4-t2-p3">In our pipeline, thereâ€™s a useful division of labor â€” and itâ€™s the one
               the instructor recommends as homework: use ChatGPT to build the <em>visual foundation</em>
-              (the emotional tension, the atmosphere, the first cinematic frame in 16:9) and <strong>write the
+              (the emotional tension, the atmosphere, the first cARCKHÉtic frame in 16:9) and <strong>write the
               dialogue yourself</strong>. The first frame should already tell the emotional truth of the scene. Before
               writing a single line, ask the question that organizes everything: <em>what are these characters emotionally unable to say?</em></p>
-<div class="codeblock"><span class="c"># Reference frame for the dialogue scene — the image tells the emotional truth</span>
+<div class="codeblock"><span class="c"># Reference frame for the dialogue scene â€” the image tells the emotional truth</span>
 <span class="c"># (ChatGPT/image generator: generate the first frame; write the dialogue later)</span>
-<span class="k">Format:</span> single cinematic 16:9 reference frame, photographic, shallow depth.
+<span class="k">Format:</span> single cARCKHÉtic 16:9 reference frame, photographic, shallow depth.
 <span class="k">Two characters:</span> across a small table, one leaning in, one turned slightly away.
-<span class="k">Emotional tension:</span> unspoken — what they cannot say is heavier than what they will.
+<span class="k">Emotional tension:</span> unspoken â€” what they cannot say is heavier than what they will.
 <span class="k">Body language:</span> a guarded posture, eyes that avoid contact, one hand near a coffee mug.
 <span class="k">Atmosphere:</span> quiet cafe at dusk, soft window light, muted palette.
 <span class="k">Goal:</span> the frame alone should make the viewer feel the subtext before any line is spoken.</div>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="6-4" data-inema-topic="modulo-6-4#topico-3" data-inema-track="6" id="topico-3">
+<section data-ARCKHÉ-module="6-4" data-ARCKHÉ-topic="modulo-6-4#topico-3" data-ARCKHÉ-track="6" id="topico-3">
 <div class="section-mark">
-<span class="where">Section 3 of 5</span><span>·</span><span>Silence &amp; power</span>
+<span class="where">Section 3 of 5</span><span>Â·</span><span>Silence &amp; power</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Silence, rhythm, and power dynamics</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-4-t3-p1">The third piece brings together three forces that govern <em>how</em>
+<p class="lede" data-ARCKHÉ-block="m6-4-t3-p1">The third piece brings together three forces that govern <em>how</em>
               the lines follow one another. The first is the <strong>silence</strong>: emotion needs time. One of the
-              biggest beginner mistakes is rushing the emotion—a difficult question comes up, the answer comes
+              biggest beginner mistakes is rushing the emotionâ€”a difficult question comes up, the answer comes
               right away, the scene moves too fast. Real people hesitate, pause, avoid difficult feelings. Weak scenes
-              rush; strong scenes trust the silence. “We need to talk.” / “Okay. What about?” resolves things too quickly; but “We need to talk.” / [pause] /
-              “Did something happen?” builds tension before the real conversation even begins.<span class="sidenote-ref">4</span></p>
+              rush; strong scenes trust the silence. â€œWe need to talk.â€ / â€œOkay. What about?â€ resolves things too quickly; but â€œWe need to talk.â€ / [pause] /
+              â€œDid something happen?â€ builds tension before the real conversation even begins.<span class="sidenote-ref">4</span></p>
 <h3 class="sub">Rhythm: the unstable exchange</h3>
-<p data-inema-block="m6-4-t3-p2">The second force is the <strong>rhythm</strong>. Many scenes feel fake
+<p data-ARCKHÉ-block="m6-4-t3-p2">The second force is the <strong>rhythm</strong>. Many scenes feel fake
               because the cadence never changes: everyone responds right away, no one hesitates, no one interrupts, no one
-              looks away. Rhythm shapes tension—a pause can hurt, a short answer can sound cold, a
-              silence can feel awkward. Compare. <em>Weak</em> — “Are you angry?” /
-              “Yes, because you forgot our anniversary.” <em>Strong</em> — “Are you
-              angry?” / [pause] / “No.” / [another pause] / “You forgot again.”
+              looks away. Rhythm shapes tensionâ€”a pause can hurt, a short answer can sound cold, a
+              silence can feel awkward. Compare. <em>Weak</em> â€” â€œAre you angry?â€ /
+              â€œYes, because you forgot our anniversary.â€ <em>Strong</em> â€” â€œAre you
+              angry?â€ / [pause] / â€œNo.â€ / [another pause] / â€œYou forgot again.â€
               Suddenly, the exchange becomes unstable and emotionally alive.</p>
 <h3 class="sub">Power dynamics: someone controls the scene</h3>
-<p data-inema-block="m6-4-t3-p3">The third force is the <span class="dfn"><details class="dfn"><summary>power dynamics</summary><span class="body"><b>Power dynamics</b>: the emotional imbalance in which one character silently controls the pace of the scene—through confidence, hidden information, or simply by staying calm under pressure.</span></details></span>.
-              In many scenes, someone has more power—and it doesn’t always come from status. It comes from confidence, emotional control, hidden information, or staying calm under pressure. Strong dialogue creates tension through imbalance: one person pushes while the other reacts, one controls the pace while the other tries to recover. “Why did you lie to me?” / “I wanted to protect you” equalizes everything too quickly; “Why did you lie to me?” / [pause] / “What exactly do you think I lied about?” shifts the power and keeps the scene tense.<span class="sidenote-ref">5</span></p>
+<p data-ARCKHÉ-block="m6-4-t3-p3">The third force is the <span class="dfn"><details class="dfn"><summary>power dynamics</summary><span class="body"><b>Power dynamics</b>: the emotional imbalance in which one character silently controls the pace of the sceneâ€”through confidence, hidden information, or simply by staying calm under pressure.</span></details></span>.
+              In many scenes, someone has more powerâ€”and it doesnâ€™t always come from status. It comes from confidence, emotional control, hidden information, or staying calm under pressure. Strong dialogue creates tension through imbalance: one person pushes while the other reacts, one controls the pace while the other tries to recover. â€œWhy did you lie to me?â€ / â€œI wanted to protect youâ€ equalizes everything too quickly; â€œWhy did you lie to me?â€ / [pause] / â€œWhat exactly do you think I lied about?â€ shifts the power and keeps the scene tense.<span class="sidenote-ref">5</span></p>
 </div>
 <!-- figura 2: o ritmo irregular da troca -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · The exchange <b>regular</b> sounds dead; the <b>irregular</b>, with pauses, stays alive</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· The exchange <b>regular</b> sounds dead; the <b>irregular</b>, with pauses, stays alive</figcaption>
 <svg aria-label="Diagram with two lines of dialogue exchanges shown as alternating A and B blocks: above, regular, equal blocks labeled dead; below, different-sized blocks separated by pauses, labeled alive." class="diagram" role="img" viewbox="0 0 720 214">
 <!-- regular -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="40" y="44">REGULAR — NO PAUSE</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="40" y="44">REGULAR â€” NO PAUSE</text>
 <g>
 <rect class="rule-stroke" fill="none" height="26" rx="3" stroke-width="1.2" width="92" x="40" y="54"></rect><text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="86" y="72">A</text>
 <rect class="rule-stroke" fill="none" height="26" rx="3" stroke-width="1.2" width="92" x="138" y="54"></rect><text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="184" y="72">B</text>
 <rect class="rule-stroke" fill="none" height="26" rx="3" stroke-width="1.2" width="92" x="236" y="54"></rect><text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="282" y="72">A</text>
 <rect class="rule-stroke" fill="none" height="26" rx="3" stroke-width="1.2" width="92" x="334" y="54"></rect><text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="380" y="72">B</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="470" y="72">→ predictable, with no tension</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="470" y="72">â†’ predictable, with no tension</text>
 <!-- irregular -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="40" y="124">IRREGULAR — WITH PAUSES</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="40" y="124">IRREGULAR â€” WITH PAUSES</text>
 <g>
 <rect class="accent-stroke" fill="url(#hatch-6-4)" height="26" rx="3" stroke-width="1.3" width="120" x="40" y="134"></rect><text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="100" y="152">A</text>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" x="174" y="152">[pause]</text>
@@ -361,46 +361,46 @@
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" x="284" y="152">[pause]</text>
 <rect class="accent-stroke" fill="url(#hatch-6-4)" height="26" rx="3" stroke-width="1.3" width="150" x="336" y="134"></rect><text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="411" y="152">A</text>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" x="40" y="194">pauses + lines of different lengths → emotionally alive</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" x="40" y="194">pauses + lines of different lengths â†’ emotionally alive</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Stop and predict</p>
-<p>In an interrogation, you want the detective — not the suspect — to control the scene, without
-              saying, “I’m in charge here.” How the <em>rhythm</em> of the lines can show who has the power?</p>
+<p>In an interrogation, you want the detective â€” not the suspect â€” to control the scene, without
+              saying, â€œIâ€™m in charge here.â€ How the <em>rhythm</em> of the lines can show who has the power?</p>
 <details>
 <summary>See one possible answer</summary>
 <p class="answer">Giving the detective <strong>pauses and short responses</strong>, and to the suspect, haste and excessive talking.
-                Whoever controls the pace—who can stay silent, wait, ask the question back—holds
+                Whoever controls the paceâ€”who can stay silent, wait, ask the question backâ€”holds
                 the power. The imbalance in pace (one pushes, the other regains composure) shows
                 the dynamic without a single explicit line.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="6-4" data-inema-topic="modulo-6-4#topico-4" data-inema-track="6" id="topico-4">
+<section data-ARCKHÉ-module="6-4" data-ARCKHÉ-topic="modulo-6-4#topico-4" data-ARCKHÉ-track="6" id="topico-4">
 <div class="section-mark">
-<span class="where">Section 4 of 5</span><span>·</span><span>Turn</span>
+<span class="where">Section 4 of 5</span><span>Â·</span><span>Turn</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Scene objective and emotional turn</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-4-t4-p1">The fourth piece of the structure: every dialogue scene should
-              <em>change</em> something. Strong scenes create movement—distance becomes closeness,
+<p class="lede" data-ARCKHÉ-block="m6-4-t4-p1">The fourth piece of the structure: every dialogue scene should
+              <em>change</em> something. Strong scenes create movementâ€”distance becomes closeness,
               trust becomes vulnerability, anger becomes sadness. A dialogue scene should never end
               emotionally where it began; something needs to change.<span class="sidenote-ref">6</span> This is called
-              <span class="dfn"><details class="dfn"><summary>emotional turn</summary><span class="body"><b>Emotional turn</b>: the change in state the scene produces from beginning to end — someone comes in one way and leaves another. Without a turn, the scene has no objective; it’s an exchange of information, not drama.</span></details></span>:
+              <span class="dfn"><details class="dfn"><summary>emotional turn</summary><span class="body"><b>Emotional turn</b>: the change in state the scene produces from beginning to end â€” someone comes in one way and leaves another. Without a turn, the scene has no objective; itâ€™s an exchange of information, not drama.</span></details></span>:
               the difference between the emotional state at the beginning and at the end.</p>
-<p data-inema-block="m6-4-t4-p2">An example: two brothers argue after a wedding. The scene
-              <em>starts</em> in resentment; in the middle, one admits, desperately, something they’d been hiding; and the
-              emotional dynamic <em>becomes</em>. The audience feels this movement, even without naming it, as it arrives—
-              and it’s what makes the scene feel like it “went somewhere.” Before writing, define the emotional starting point and ending point; the dialogue is just the path between them.</p>
+<p data-ARCKHÉ-block="m6-4-t4-p2">An example: two brothers argue after a wedding. The scene
+              <em>starts</em> in resentment; in the middle, one admits, desperately, something theyâ€™d been hiding; and the
+              emotional dynamic <em>becomes</em>. The audience feels this movement, even without naming it, as it arrivesâ€”
+              and itâ€™s what makes the scene feel like it â€œwent somewhere.â€ Before writing, define the emotional starting point and ending point; the dialogue is just the path between them.</p>
 <h3 class="sub">The question that organizes the writing</h3>
-<p data-inema-block="m6-4-t4-p3">Bringing together the four elements we've covered—conflict, subtext, silence/rhythm/power, and the turn—strong cinematic dialogue is rarely about words. Conflict creates pressure, subtext creates depth, silence creates weight, power dynamics create tension, rhythm shapes emotion, and the turn creates movement. In great scenes, the most important thing is often <em>the one no one says</em>. That’s why the starting question is always the same: <em>what are these characters emotionally unable to say?</em> — and the answer governs every
+<p data-ARCKHÉ-block="m6-4-t4-p3">Bringing together the four elements we've coveredâ€”conflict, subtext, silence/rhythm/power, and the turnâ€”strong cARCKHÉtic dialogue is rarely about words. Conflict creates pressure, subtext creates depth, silence creates weight, power dynamics create tension, rhythm shapes emotion, and the turn creates movement. In great scenes, the most important thing is often <em>the one no one says</em>. Thatâ€™s why the starting question is always the same: <em>what are these characters emotionally unable to say?</em> â€” and the answer governs every
               choice, from speech to plan.</p>
 </div>
 <!-- figura 3: estado inicial -> virada -> estado final -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · The scene has a goal when the <b>emotional state changes</b> from beginning to end</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· The scene has a goal when the <b>emotional state changes</b> from beginning to end</figcaption>
 <svg aria-label="Diagram of three stages: initial state (resentment), turning point (admission), final state (closeness), linked by arrows showing the emotional change." class="diagram" role="img" viewbox="0 0 720 190">
 <rect class="rule-stroke" fill="none" height="56" rx="3" stroke-width="1.2" width="180" x="40" y="64"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.8" text-anchor="middle" x="130" y="90">START</text>
@@ -417,55 +417,55 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: the twist in an ad or music video, not just in drama
+<summary><span class="chev">â–¸</span> Going deeper: the twist in an ad or music video, not just in drama
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>The happy path above is enough. This layer extends the idea beyond narrative cinema—and can be skipped.</p>
-<p>The emotional turn isn’t exclusive to drama scenes. In a <strong>announcement</strong>, the “dialogue” scene is often one person speaking to the camera—and it also
+<p>The happy path above is enough. This layer extends the idea beyond narrative cARCKHÉâ€”and can be skipped.</p>
+<p>The emotional turn isnâ€™t exclusive to drama scenes. In a <strong>announcement</strong>, the â€œdialogueâ€ scene is often one person speaking to the cameraâ€”and it also
                 needs to turn: skepticism becomes desire, a problem becomes relief, hesitation becomes a decision. In a
-                <strong>music video</strong> narrative, the exchange between two characters carries the song’s emotional build,
+                <strong>music video</strong> narrative, the exchange between two characters carries the songâ€™s emotional build,
                 and the turning point is where the relationship breaks or reconciles in the chorus. Even a
                 <strong>testimony</strong> works best when it starts with a doubt and ends with a conviction. The
                 principle is the same as always: define the initial and final states, and build the path between them.
-                Without a change of state, any scene—with or without fiction—is just information
+                Without a change of state, any sceneâ€”with or without fictionâ€”is just information
                 presented, not an experience that moves the viewer.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="6-4" data-inema-topic="modulo-6-4#topico-5" data-inema-track="6" id="topico-5">
+<section data-ARCKHÉ-module="6-4" data-ARCKHÉ-topic="modulo-6-4#topico-5" data-ARCKHÉ-track="6" id="topico-5">
 <div class="section-mark">
-<span class="where">Section 5 of 5</span><span>·</span><span>Shot/reverse shot</span>
+<span class="where">Section 5 of 5</span><span>Â·</span><span>Shot/reverse shot</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Shot, reverse shot, and the axis</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-4-t5-p1">The fifth piece is the camera. The same dialogue feels
-              completely different depending on how it’s filmed — a wide shot creates distance, a close-up creates
+<p class="lede" data-ARCKHÉ-block="m6-4-t5-p1">The fifth piece is the camera. The same dialogue feels
+              completely different depending on how itâ€™s filmed â€” a wide shot creates distance, a close-up creates
               vulnerability, an over-the-shoulder angle creates tension. Camera distance shapes emotion
               in silence. A couple sitting in silence after a fight: in a wide shot, the emotional distance
               feels cold; in a close shot, the smallest reactions seem intimate and vulnerable. The dialogue stays the
               same; the experience changes. The framing starts telling the emotional story before the words
               arrive.</p>
 <h3 class="sub">The grammar of the exchange: shot and reverse shot</h3>
-<p data-inema-block="m6-4-t5-p2">The most common way to film dialogue is alternating between
-              <strong>shot</strong> (who’s speaking) and <strong>reverse shot</strong> (who’s listening)—usually,
+<p data-ARCKHÉ-block="m6-4-t5-p2">The most common way to film dialogue is alternating between
+              <strong>shot</strong> (whoâ€™s speaking) and <strong>reverse shot</strong> (whoâ€™s listening)â€”usually,
               two mirrored over-the-shoulder shots. But, as we saw in the previous lesson, the listener is often more
               important than the speaker: the structure comes alive when you linger on the <em>reverse shot</em>, letting
-              the reaction breathe instead of always cutting to whoever is speaking. Editing pace—longer shots
-              for tension, sharper cuts for friction—is part of the dialogue just as much as
+              the reaction breathe instead of always cutting to whoever is speaking. Editing paceâ€”longer shots
+              for tension, sharper cuts for frictionâ€”is part of the dialogue just as much as
               the words.</p>
-<p data-inema-block="m6-4-t5-p3">For this alternation to make sense, it needs to respect the
-              <span class="dfn"><details class="dfn"><summary>axis</summary><span class="body"><b>Axis</b> (180° line): the imaginary line between the two characters. Keeping the camera on the same side of it, each one keeps their side of the screen and their <i>eyeline</i>; crossing it reverses the positions and disorients the audience.</span></details></span>:
+<p data-ARCKHÉ-block="m6-4-t5-p3">For this alternation to make sense, it needs to respect the
+              <span class="dfn"><details class="dfn"><summary>axis</summary><span class="body"><b>Axis</b> (180Â° line): the imaginary line between the two characters. Keeping the camera on the same side of it, each one keeps their side of the screen and their <i>eyeline</i>; crossing it reverses the positions and disorients the audience.</span></details></span>:
               the imaginary line between the two characters. By always filming from the same side of this line, each one
               keeps their side of the screen and their eyeline (the <em>eyeline</em>) hits from one shot to the next
-              — A looks right, B looks left, and their eyelines meet at the cut. Crossing the
+              â€” A looks right, B looks left, and their eyelines meet at the cut. Crossing the
               axis without a reason reverses the positions and confuses the viewer.<span class="sidenote-ref">7</span> In the
               generator, this becomes an explicit instruction for the position and direction of the gaze in each shot.</p>
-<div class="codeblock"><span class="c"># Dialogue scene — shot + reverse shot respecting the axis (180-degree line)</span>
+<div class="codeblock"><span class="c"># Dialogue scene â€” shot + reverse shot respecting the axis (180-degree line)</span>
 <span class="c"># (generate each shot separately; keep the camera on the SAME side of the axis)</span>
 <span class="c"># --- SHOT A: over-the-shoulder on B (we feel with B) ---</span>
 <span class="k">Frame:</span> A in foreground over right shoulder, B facing camera, looking frame-LEFT.
-<span class="k">Beat:</span> B asks quietly, then holds a pause — guarded, eyes drop.
+<span class="k">Beat:</span> B asks quietly, then holds a pause â€” guarded, eyes drop.
 <span class="c"># --- SHOT B: reverse over-the-shoulder on A ---</span>
 <span class="k">Frame:</span> B in foreground over left shoulder, A facing camera, looking frame-RIGHT.
 <span class="k">Eyeline:</span> A looks frame-RIGHT so the two gazes meet across the cut.
@@ -475,7 +475,7 @@
 </div>
 <!-- figura 4: a linha dos 180 graus -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · A <b>180-degree line</b>: always film from the same side so the eyelines match</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· A <b>180-degree line</b>: always film from the same side so the eyelines match</figcaption>
 <svg aria-label="Overhead diagram: two characters, A and B, connected by an axis line; on the permitted side, two cameras frame each character with their eyelines crossing; on the other side, a camera marked as forbidden that would reverse their positions." class="diagram" role="img" viewbox="0 0 720 214">
 <!-- personagens -->
 <circle class="rule-stroke" cx="250" cy="150" fill="none" r="20" stroke-width="1.4"></circle>
@@ -484,7 +484,7 @@
 <text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="470" y="155">B</text>
 <!-- eixo -->
 <line class="accent-stroke" stroke-dasharray="5 4" stroke-width="1.6" x1="270" x2="450" y1="150" y2="150"></line>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.8" text-anchor="middle" x="360" y="142">AXIS — 180° LINE</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.8" text-anchor="middle" x="360" y="142">AXIS â€” 180Â° LINE</text>
 <!-- lado permitido (acima) -->
 <path class="rule-stroke" d="M250 150 L210 84" fill="none" stroke-width="1"></path>
 <path class="rule-stroke" d="M470 150 L510 84" fill="none" stroke-width="1"></path>
@@ -492,20 +492,20 @@
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="210" y="79">CAM 1</text>
 <rect class="accent-stroke" fill="url(#hatch-6-4)" height="22" rx="2" stroke-width="1.2" width="48" x="486" y="64"></rect>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="510" y="79">CAM 2</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="40">same side → their gazes meet on the cut</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="40">same side â†’ their gazes meet on the cut</text>
 <!-- lado proibido (abaixo) -->
 <rect class="rule-stroke" fill="none" height="22" rx="2" stroke-dasharray="3 3" stroke-width="1.2" width="48" x="336" y="190"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="360" y="205">CAM X</text>
 <line class="rule-stroke" stroke-dasharray="2 3" stroke-width="1" x1="360" x2="360" y1="190" y2="170"></line>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="396" y="205">crosses the axis — reverses and confuses</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" x="396" y="205">crosses the axis â€” reverses and confuses</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m6-4-t5-p4">Capture the entire track in one sentence: <em>in a dialogue scene,
-              what matters most is almost always what no one says—and your job is to create, through writing,
+<p data-ARCKHÉ-block="m6-4-t5-p4">Capture the entire track in one sentence: <em>in a dialogue scene,
+              what matters most is almost always what no one saysâ€”and your job is to create, through writing,
               acting, and camera work, the space for the audience to feel it.</em> Conflict, subtext, silence, rhythm,
               power, a turning point, and the grammar of shot and reverse shot across the axis: these are the elements that turn a
-              conversation into cinema. The next track moves up a level — from the scene to the <em>story</em>: how
+              conversation into cARCKHÉ. The next track moves up a level â€” from the scene to the <em>story</em>: how
               each scene serves a purpose and how they connect into sequences that tell a larger story.</p>
 </div>
 </section>
@@ -514,54 +514,54 @@
 <h2>Before moving on: four quick checks</h2>
 <p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>A dialogue scene is clear and logical, but feels lifeless. What’s the structural diagnosis?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>Missing <em>emotional tension</em> — there is probably no conflict (resistance),
+<summary><span class="qn">01</span><span>A dialogue scene is clear and logical, but feels lifeless. Whatâ€™s the structural diagnosis?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Missing <em>emotional tension</em> â€” there is probably no conflict (resistance),
               and the problem gets resolved too early. Strong dialogue is a <em>emotional negotiation</em>: two
               clashing objectives create pressure before anyone speaks. Without friction, the scene has no engine.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Why is “You still buy the same coffee” stronger than “I still miss you”?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>Why <em>subtext</em>. The second line explains the emotion and closes it off; the first says nothing emotional directly, but makes the story between the two visible—and the audience discovers it. Weak dialogue explains the emotion; strong dialogue lets the audience discover it.</p></div>
+<summary><span class="qn">02</span><span>Why is â€œYou still buy the same coffeeâ€ stronger than â€œI still miss youâ€?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>Why <em>subtext</em>. The second line explains the emotion and closes it off; the first says nothing emotional directly, but makes the story between the two visibleâ€”and the audience discovers it. Weak dialogue explains the emotion; strong dialogue lets the audience discover it.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>What needs to happen, from beginning to end, for a dialogue scene to have an objective?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>A <em>emotional turn</em>: the state changes—distance becomes closeness,
+<div class="ans"><p>A <em>emotional turn</em>: the state changesâ€”distance becomes closeness,
               anger becomes sadness, confidence becomes vulnerability. The scene should never end emotionally
               where it began. Define the initial and final states; the dialogue is the path between them.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Why does respecting the axis (the 180° line) matter in shot/reverse shot?</span><span class="reveal">Reveal</span></summary>
+<summary><span class="qn">04</span><span>Why does respecting the axis (the 180Â° line) matter in shot/reverse shot?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>So each character keeps their side of the screen and their eyeline
-              (<em>eyeline</em>) hits from one shot to the next—the eyelines meet at the cut. Always filming from the same side of the axis preserves the geography; crossing it without a reason reverses the positions and confuses
+              (<em>eyeline</em>) hits from one shot to the nextâ€”the eyelines meet at the cut. Always filming from the same side of the axis preserves the geography; crossing it without a reason reverses the positions and confuses
               the audience.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="My journey — consolidated progress" class="journey">
+<section aria-label="My journey â€” consolidated progress" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> My journey</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+<h2><span class="ico">â§</span> My journey</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Open notebook â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">In this module</div>
-<div class="v" data-inema-meter="modulo:6-4">
-<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:6-4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In track 6</div>
-<div class="v" data-inema-meter="trilha:6">
-<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:6">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In the course</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -569,31 +569,31 @@
 <!-- proxima acao (UMA clara) -->
 <div class="nextup">
 <div class="txt">
-<div class="k">Continue — next track</div>
-<div class="t">Module 7.1 — Visual Narrative</div>
+<div class="k">Continue â€” next track</div>
+<div class="t">Module 7.1 â€” Visual Narrative</div>
 </div>
-<a class="go" href="../trilha7/modulo-7-1.html">Next →</a>
+<a class="go" href="../trilha7/modulo-7-1.html">Next â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-6-4#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-4#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Emotional negotiation.</b> The scene in which each person secretly seeks something from the other — recognition,
+<b>Emotional negotiation.</b> The scene in which each person secretly seeks something from the other â€” recognition,
           honesty, distance. The dialogue is only the surface of the conflict running underneath.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
-          Lesson 19 of the program <i>AI Filmmaking</i> — “Dialogue Scene Structure”. Thesis:
-          <i>the emotion beneath the words is what’s missing from lifeless scenes</i>.
+          Lesson 19 of the program <i>AI Filmmaking</i> â€” â€œDialogue Scene Structureâ€. Thesis:
+          <i>the emotion beneath the words is whatâ€™s missing from lifeless scenes</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-6-4#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Subtext.</b> The dialogue says one thing; the emotion says another. Weak <i>explains</i> the emotion; leaves the audience strong <i>discover it</i>. “You still buy the same coffee.”
+<b>Subtext.</b> The dialogue says one thing; the emotion says another. Weak <i>explains</i> the emotion; leaves the audience strong <i>discover it</i>. â€œYou still buy the same coffee.â€
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
@@ -601,24 +601,24 @@
           <div class="src-line">chat.openai.com</div>
 </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-6-4#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-4#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Power dynamics.</b> The imbalance in which one person silently controls the scene’s rhythm—through confidence, hidden information, or calm under pressure. Whoever controls the rhythm holds the power.
+<b>Power dynamics.</b> The imbalance in which one person silently controls the sceneâ€™s rhythmâ€”through confidence, hidden information, or calm under pressure. Whoever controls the rhythm holds the power.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
           Rhythm shapes emotion: a painful pause, a short reply that cools things down, an awkward silence. Regular cuts feel dead; uneven cuts, with pauses, feel alive.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-6-4#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Emotional turn.</b> The change of state the scene produces—someone enters one way and leaves
-          another. Without a turning point, it’s an exchange of information, not drama. The scene never ends where it began.
+<b>Emotional turn.</b> The change of state the scene producesâ€”someone enters one way and leaves
+          another. Without a turning point, itâ€™s an exchange of information, not drama. The scene never ends where it began.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-6-4#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Axis (180-degree line).</b> The imaginary line between the two. Film from the same side: each person keeps
@@ -634,8 +634,8 @@
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Module 6.4 — folio iv</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Module 6.4 â€” folio iv</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -644,8 +644,8 @@
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

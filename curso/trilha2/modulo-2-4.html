@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 2.4 — Profundidade e Estrutura Espacial | AI Filmmaking</title>
+<title>Modulo 2.4 â€” Profundidade e Estrutura Espacial | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-4.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:2-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:2-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Trilha <b>2</b> Fundamentos Cinematograficos</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Trilha <b>2</b> Fundamentos CARCKHÉtograficos</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>2.4</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,21 +189,21 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 2.4 · Trilha 2 · Fundamentos Cinematograficos</p>
+<p class="kicker">Modulo 2.4 Â· Trilha 2 Â· Fundamentos CARCKHÉtograficos</p>
 <h1 class="module">Profundidade e Estrutura <em>Espacial</em></h1>
-<p class="deck">Profundidade e a ilusao de tres dimensoes — e ela se constroi organizando o quadro em
+<p class="deck">Profundidade e a ilusao de tres dimensoes â€” e ela se constroi organizando o quadro em
           camadas: primeiro plano onde o espectador esta, meio onde vive o sujeito, fundo onde mora o contexto. Sem
           camadas, a imagem e uma estampa; com elas, e um espaco onde a camera entra.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~18 min · modulo inteiro</span>
+<span>~18 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>A <b>regra das tres camadas</b> — por que todo quadro precisa de primeiro plano, meio e
+<li>A <b>regra das tres camadas</b> â€” por que todo quadro precisa de primeiro plano, meio e
               fundo para deixar de ser chapado.</li>
 <li>Como <b>separar</b> as camadas por foco, luz e cor, e como a <b>profundidade de campo</b> dirige a
               atencao decidindo o que esta nitido.</li>
@@ -214,8 +214,8 @@
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">A regra das tres camadas</span></a></li>
@@ -226,39 +226,39 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-1" data-inema-track="2" id="topico-1">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>Tres camadas</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>Tres camadas</span>
 </div>
 <h2 class="head"><span class="num">1.</span>A regra das tres camadas</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m2-4-t1-p1">A tela e plana. O mundo nao e. Toda a arte deste
+<p class="lede dropcap" data-ARCKHÉ-block="m2-4-t1-p1">A tela e plana. O mundo nao e. Toda a arte deste
               modulo esta em criar, numa superficie bidimensional, a <strong>ilusao de espaco tridimensional</strong>
-              — e essa ilusao tem uma regra de ouro tao simples que cabe numa linha: todo quadro precisa de
+              â€” e essa ilusao tem uma regra de ouro tao simples que cabe numa linha: todo quadro precisa de
               <em>primeiro plano</em>, <em>meio</em> e <em>fundo</em>. Sao tres camadas com papeis distintos. O
-              primeiro plano e <span class="sidenote-ref">1</span>onde o espectador esta — o que esta perto da
-              camera, a moldura por onde olhamos. O meio e onde o sujeito vive — o centro da acao. O fundo e
-              onde mora o contexto — o mundo que explica a cena. Falte uma dessas camadas, e a imagem perde a
+              primeiro plano e <span class="sidenote-ref">1</span>onde o espectador esta â€” o que esta perto da
+              camera, a moldura por onde olhamos. O meio e onde o sujeito vive â€” o centro da acao. O fundo e
+              onde mora o contexto â€” o mundo que explica a cena. Falte uma dessas camadas, e a imagem perde a
               terceira dimensao.</p>
-<p data-inema-block="m2-4-t1-p2">Por que isso funciona? Porque o cerebro reconstroi profundidade pelas
+<p data-ARCKHÉ-block="m2-4-t1-p2">Por que isso funciona? Porque o cerebro reconstroi profundidade pelas
               <em>relacoes entre objetos a distancias diferentes</em>. Quando ha algo perto, algo no meio e algo
-              longe, o olho compara seus tamanhos, suas posicoes, suas sobreposicoes — e deduz espaco. Um
+              longe, o olho compara seus tamanhos, suas posicoes, suas sobreposicoes â€” e deduz espaco. Um
               quadro com tudo na mesma distancia nao da ao cerebro nada para comparar, e ele le a cena como
-              <em>chapada</em>, uma estampa colada. E o defeito que a Trilha 1 chamava de “parece barato”:
+              <em>chapada</em>, uma estampa colada. E o defeito que a Trilha 1 chamava de â€œparece baratoâ€:
               nao falta resolucao, falta <strong>profundidade</strong>. A regra das tres camadas e o antidoto mais
-              direto, e tambem o mais barato — basta colocar algo no primeiro plano.</p>
+              direto, e tambem o mais barato â€” basta colocar algo no primeiro plano.</p>
 <h3 class="sub">O primeiro plano e o que mais falta</h3>
-<p data-inema-block="m2-4-t1-p3">Na pratica, a maioria das imagens fracas tem meio e fundo, mas
+<p data-ARCKHÉ-block="m2-4-t1-p3">Na pratica, a maioria das imagens fracas tem meio e fundo, mas
               <em>esquece</em> o primeiro plano. O resultado e um sujeito sobre um cenario, sem nada entre ele e a
-              camera — e e justamente esse vazio na frente que achata. Adicionar uma camada de primeiro plano
-              — galhos fora de foco, a beira de uma mesa, a silhueta de um ombro, uma moldura de porta —
+              camera â€” e e justamente esse vazio na frente que achata. Adicionar uma camada de primeiro plano
+              â€” galhos fora de foco, a beira de uma mesa, a silhueta de um ombro, uma moldura de porta â€”
               transforma a imagem instantaneamente: de repente a camera esta <em>dentro</em> do espaco, nao olhando
               para um cartao-postal. Em IA, pedir explicitamente <em>foreground element</em> e uma das instrucoes
               que mais elevam a sensacao de profundidade, e quase ninguem usa.<span class="sidenote-ref">2</span></p>
 </div>
 <!-- figura 1: tres camadas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · A <b>regra das tres camadas</b> — primeiro plano, meio e fundo, cada um com seu papel</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· A <b>regra das tres camadas</b> â€” primeiro plano, meio e fundo, cada um com seu papel</figcaption>
 <svg aria-label="Diagrama em corte lateral mostrando tres camadas de profundidade: primeiro plano perto da camera, meio com o sujeito, fundo com o contexto; setas indicam as distancias crescentes a partir da lente." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-2-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -286,34 +286,34 @@
 <text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="600" y="200">o contexto</text>
 <!-- eixo de distancia -->
 <path class="mark-stroke" d="M70 168 L680 168" stroke-dasharray="2 4" stroke-width="1.2"></path>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="160">DISTANCIA CRESCENTE →</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="160">DISTANCIA CRESCENTE â†’</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Voce gera um plano de um personagem numa rua. A iluminacao esta boa, a pose esta boa, mas a imagem
-              parece “colada”, como se o personagem fosse um adesivo sobre um fundo. Sem mudar
-              personagem nem cenario, qual adicao tende a consertar a sensacao — e por que?</p>
+              parece â€œcoladaâ€, como se o personagem fosse um adesivo sobre um fundo. Sem mudar
+              personagem nem cenario, qual adicao tende a consertar a sensacao â€” e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">Adicionar um <strong>primeiro plano</strong>. A sensacao de “adesivo”
+<p class="answer">Adicionar um <strong>primeiro plano</strong>. A sensacao de â€œadesivoâ€
                 quase sempre vem de um quadro com so duas camadas (sujeito + fundo) e nada perto da camera. Colocar
-                algo no primeiro plano — um galho desfocado, a quina de um muro, a silhueta de alguem de costas
-                — cria a terceira camada que faltava. O cerebro passa a ter algo perto para comparar com o
+                algo no primeiro plano â€” um galho desfocado, a quina de um muro, a silhueta de alguem de costas
+                â€” cria a terceira camada que faltava. O cerebro passa a ter algo perto para comparar com o
                 longe, e a camera parece estar <em>dentro</em> da rua, nao em frente a um poster.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: as pistas de profundidade que voce empilha
+<summary><span class="chev">â–¸</span> Indo mais fundo: as pistas de profundidade que voce empilha
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada lista o repertorio completo — e pode ser pulada.</p>
+<p>O caminho-feliz acima ja basta. Esta camada lista o repertorio completo â€” e pode ser pulada.</p>
 <p>A regra das tres camadas e a estrutura; dentro dela, varias <em>pistas de profundidade</em> se
-                somam. <strong>Sobreposicao:</strong> o que tapa outra coisa esta na frente — a mais primitiva e
+                somam. <strong>Sobreposicao:</strong> o que tapa outra coisa esta na frente â€” a mais primitiva e
                 forte das pistas. <strong>Tamanho relativo:</strong> objetos iguais parecem menores quando mais longe.
                 <strong>Convergencia:</strong> linhas paralelas se aproximam ao fundo (as linhas-guia do Modulo 2.2).
                 <strong>Gradiente de textura:</strong> superficies ficam mais lisas com a distancia. <strong>Foco e
-                atmosfera</strong> entram nas proximas secoes. Cada pista que voce empilha reforca a ilusao — e
+                atmosfera</strong> entram nas proximas secoes. Cada pista que voce empilha reforca a ilusao â€” e
                 e por isso que um quadro com tres camadas, sobreposicao, convergencia e bruma parece tao mais
                 tridimensional que um sujeito plano sobre um fundo plano. Profundidade e a soma de pistas, nao um
                 truque unico.</p>
@@ -321,13 +321,13 @@
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-2" data-inema-track="2" id="topico-2">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>Separacao</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>Separacao</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Separacao e profundidade de campo</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t2-p1">Ter tres camadas nao basta — elas precisam estar
+<p class="lede" data-ARCKHÉ-block="m2-4-t2-p1">Ter tres camadas nao basta â€” elas precisam estar
               <strong>visualmente separadas</strong>. Se primeiro plano, meio e fundo tem a mesma cor, o mesmo brilho
               e a mesma nitidez, eles se fundem numa mancha so e a profundidade some, mesmo que os objetos estejam a
               distancias diferentes. A aula nomeia tres ferramentas de separacao: <em>foco</em>, <em>luz</em> e
@@ -335,24 +335,24 @@
               a outra escura, ou uma quente e a outra fria. Cada diferenca empurra uma camada para frente e a outra
               para tras. Separacao e o que faz as tres camadas <em>lerem</em> como tres distancias.</p>
 <h3 class="sub">A luz que separa: contraluz e contraste</h3>
-<p data-inema-block="m2-4-t2-p2">A luz e a ferramenta de separacao mais cinematografica — e aqui o
+<p data-ARCKHÉ-block="m2-4-t2-p2">A luz e a ferramenta de separacao mais cARCKHÉtografica â€” e aqui o
               Modulo 2.3 se conecta diretamente a este. Um <em>contraluz</em> (backlight) que recorta o contorno do
               sujeito o destaca do fundo: aquele fio de rim light cria uma fronteira luminosa entre a camada do meio e
-              a do fundo. Da mesma forma, um sujeito claro sobre um fundo escuro — ou o inverso — usa o
+              a do fundo. Da mesma forma, um sujeito claro sobre um fundo escuro â€” ou o inverso â€” usa o
               <em>contraste</em> para separar planos. A bruma da Licao 5 tambem reaparece: ela clareia
               progressivamente as camadas mais distantes, separando-as por densidade. Luz nao so revela; ela
               <strong>organiza o espaco em camadas</strong>.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m2-4-t2-p3">A ferramenta mais poderosa de separacao, porem, e a <strong>profundidade
+<p data-ARCKHÉ-block="m2-4-t2-p3">A ferramenta mais poderosa de separacao, porem, e a <strong>profundidade
               de campo</strong>: o controle sobre o que esta nitido. Com profundidade de campo rasa (shallow depth of
-              field), apenas uma faixa estreita do espaco fica em foco — o sujeito no meio fica cristalino,
+              field), apenas uma faixa estreita do espaco fica em foco â€” o sujeito no meio fica cristalino,
               enquanto primeiro plano e fundo derretem num desfoque suave. Isso faz duas coisas ao mesmo tempo:
               <em>separa</em> as camadas de forma inequivoca e <em>dirige a atencao</em>, porque o olho vai
               irresistivelmente para a unica regiao nitida. Profundidade de campo e, ao mesmo tempo, uma ferramenta de
-              espaco e uma ferramenta de hierarquia — ela isola a camada que importa do mundo borrado ao redor.</p>
+              espaco e uma ferramenta de hierarquia â€” ela isola a camada que importa do mundo borrado ao redor.</p>
 </div>
 <!-- figura 2: profundidade de campo rasa -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · <b>Profundidade de campo rasa</b> — so o meio fica nitido; o resto derrete e isola o sujeito</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· <b>Profundidade de campo rasa</b> â€” so o meio fica nitido; o resto derrete e isola o sujeito</figcaption>
 <svg aria-label="Diagrama: tres camadas em que primeiro plano e fundo aparecem borrados e a camada do meio aparece nitida; uma faixa marca a zona de foco estreita que isola o sujeito." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="168" y2="168"></line>
 <!-- primeiro plano borrado -->
@@ -374,44 +374,44 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-4-t2-p4">No prompt, voce nomeia as tres camadas <em>e</em> a separacao entre
-              elas — e o gerador responde bem a isso. O exemplo abaixo e uma <em>receita de profundidade</em>:
+<p data-ARCKHÉ-block="m2-4-t2-p4">No prompt, voce nomeia as tres camadas <em>e</em> a separacao entre
+              elas â€” e o gerador responde bem a isso. O exemplo abaixo e uma <em>receita de profundidade</em>:
               primeiro plano, meio e fundo declarados, separados por foco, luz e cor. Repare como cada camada recebe
               um papel e uma diferenca explicita.</p>
-<div class="codeblock"><span class="c"># Receita de profundidade — tres camadas separadas por foco, luz e cor</span>
+<div class="codeblock"><span class="c"># Receita de profundidade â€” tres camadas separadas por foco, luz e cor</span>
 <span class="c"># declare as camadas e a separacao; o gerador (Freepik / Seedance) entende</span>
 <span class="k">Foreground:</span> out-of-focus leaves framing the bottom-left, dark, close to camera.
-<span class="k">Midground:</span> the subject in sharp focus, lit by a warm key — the only crisp element.
+<span class="k">Midground:</span> the subject in sharp focus, lit by a warm key â€” the only crisp element.
 <span class="k">Background:</span> a distant cool-blue cityscape, soft and hazy, pushed far by atmosphere.
 <span class="k">Separation:</span> shallow depth of field; backlight rim on the subject; warm subject vs cool background.
 <span class="k">Lens:</span> 85mm look, shallow focus, strong subject isolation.</div>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-3" data-inema-track="2" id="topico-3">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>Atmosfera e lente</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>Atmosfera e lente</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Atmosfera e escolha de lente</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t3-p1">Duas ferramentas controlam a <em>escala</em> do espaco: a
-              atmosfera e a lente. A <strong>atmosfera</strong> — bruma, neblina, fumaca, ate neve —
+<p class="lede" data-ARCKHÉ-block="m2-4-t3-p1">Duas ferramentas controlam a <em>escala</em> do espaco: a
+              atmosfera e a lente. A <strong>atmosfera</strong> â€” bruma, neblina, fumaca, ate neve â€”
               empurra elementos para a distancia. Ela funciona porque imita o que o ar realmente faz: quanto mais
               longe um objeto, mais ar existe entre ele e o olho, e esse ar o deixa progressivamente mais claro, mais
-              azulado e menos contrastado. Esse efeito tem nome — <em>perspectiva atmosferica</em> — e e
+              azulado e menos contrastado. Esse efeito tem nome â€” <em>perspectiva atmosferica</em> â€” e e
               uma das pistas de profundidade mais fortes que existem. Uma montanha nitida parece perto; a mesma
               montanha esmaecida pela bruma parece a quilometros. Voce controla a profundidade percebida apenas
               dosando a atmosfera entre as camadas.<span class="sidenote-ref">4</span></p>
 <h3 class="sub">A lente decide se o espaco se abre ou se comprime</h3>
-<p data-inema-block="m2-4-t3-p2">A escolha de <strong>lente</strong> muda a distancia percebida de forma
+<p data-ARCKHÉ-block="m2-4-t3-p2">A escolha de <strong>lente</strong> muda a distancia percebida de forma
               dramatica. Uma lente <em>ampla</em> (grande-angular) <strong>expande o espaco</strong>: ela exagera a
               distancia entre as camadas, faz o primeiro plano saltar e o fundo recuar, e da aquela sensacao de
               vastidao, de mundo grande em torno de um sujeito pequeno. Uma lente <em>teleobjetiva</em>, ao contrario,
               <strong>comprime o espaco</strong>: ela achata as camadas umas contra as outras, fazendo o fundo
-              parecer colado nas costas do sujeito — util para isolar, para criar densidade, para a sensacao de
+              parecer colado nas costas do sujeito â€” util para isolar, para criar densidade, para a sensacao de
               que nao ha para onde fugir. Mesma cena, lentes diferentes, espacos emocionalmente opostos.</p>
-<p data-inema-block="m2-4-t3-p3">A ligacao entre lente e emocao e direta, e a aula a explicita: a lente
-              ampla <em>exagera</em> a separacao — fisica e emocional — enquanto a tele a <em>colapsa</em>.
+<p data-ARCKHÉ-block="m2-4-t3-p3">A ligacao entre lente e emocao e direta, e a aula a explicita: a lente
+              ampla <em>exagera</em> a separacao â€” fisica e emocional â€” enquanto a tele a <em>colapsa</em>.
               Quer mostrar um personagem isolado, perdido na imensidao? Grande-angular, primeiro plano forte, fundo
               distante. Quer dois personagens presos numa tensao sufocante, sem escapatoria? Teleobjetiva, planos
               comprimidos, fundo grudado. A lente nao e uma decisao tecnica neutra; ela <strong>esculpe a relacao
@@ -421,10 +421,10 @@
 </div>
 <!-- figura 3: lente ampla vs tele -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · A <b>lente</b> decide o espaco — ampla expande (isolamento), tele comprime (tensao)</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· A <b>lente</b> decide o espaco â€” ampla expande (isolamento), tele comprime (tensao)</figcaption>
 <svg aria-label="Diagrama comparando duas lentes: a esquerda uma grande-angular afasta o fundo e exagera a distancia, sujeito pequeno num mundo amplo; a direita uma teleobjetiva comprime e cola o fundo nas costas do sujeito." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- esquerda: ampla -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">AMPLA — EXPANDE</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">AMPLA â€” EXPANDE</text>
 <rect class="rule-stroke" fill="none" height="150" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
 <!-- linhas divergentes -->
 <path class="rule-stroke" d="M180 188 L60 60 M180 188 L300 60" opacity="0.6" stroke-width="1.1"></path>
@@ -434,7 +434,7 @@
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="190"></line>
 <!-- direita: tele -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TELE — COMPRIME</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TELE â€” COMPRIME</text>
 <rect class="accent-stroke" fill="none" height="150" rx="3" stroke-width="1.3" width="280" x="400" y="40"></rect>
 <!-- camadas coladas -->
 <rect class="rule-stroke" fill="url(#hatch-2-4)" height="100" opacity="0.5" stroke-width="1" width="140" x="470" y="70"></rect>
@@ -445,151 +445,151 @@
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Voce quer um plano que comunique “dois rivais frente a frente, a tensao sufocante, sem saida”.
+<p>Voce quer um plano que comunique â€œdois rivais frente a frente, a tensao sufocante, sem saidaâ€.
               Entre uma grande-angular que mostra o salao inteiro em volta deles e uma teleobjetiva que cola o fundo
-              atras dos dois, qual serve melhor a ideia — e por que?</p>
+              atras dos dois, qual serve melhor a ideia â€” e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">A <strong>teleobjetiva</strong>. Ela comprime o espaco, achatando as camadas e
-                colando o fundo nas costas dos personagens — e essa compressao produz exatamente a sensacao de
-                “sem saida”, de mundo fechando em torno deles. A grande-angular faria o oposto: abriria o
+                colando o fundo nas costas dos personagens â€” e essa compressao produz exatamente a sensacao de
+                â€œsem saidaâ€, de mundo fechando em torno deles. A grande-angular faria o oposto: abriria o
                 salao, daria ar, mostraria rotas de fuga, diluindo a tensao na vastidao. A lente esculpe a relacao
                 com o espaco, e a ideia aqui pede aperto, nao amplitude.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que a tele “cola” o fundo
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que a tele â€œcolaâ€ o fundo
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional sobre a fisica da compressao — pode ser pulada.</p>
+<p>Camada opcional sobre a fisica da compressao â€” pode ser pulada.</p>
 <p>A compressao da teleobjetiva nao e magica: ela e consequencia da <em>distancia da camera</em>. Para
                 enquadrar o mesmo sujeito com uma tele, voce precisa estar bem mais longe dele. E quando a camera esta
-                longe, a diferenca <em>proporcional</em> de distancia entre o sujeito e o fundo encolhe — se voce
-                esta a cem metros, o fundo a cento e dez metros esta “quase a mesma distancia”, entao
+                longe, a diferenca <em>proporcional</em> de distancia entre o sujeito e o fundo encolhe â€” se voce
+                esta a cem metros, o fundo a cento e dez metros esta â€œquase a mesma distanciaâ€, entao
                 parece do mesmo tamanho e cola atras. Com a grande-angular voce chega muito perto do sujeito, e ai a
                 diferenca proporcional explode: o fundo, so um pouco mais longe, parece muito menor e distante. Por
-                isso lente e distancia andam juntas — escolher a lente e, na verdade, escolher de onde a camera
+                isso lente e distancia andam juntas â€” escolher a lente e, na verdade, escolher de onde a camera
                 ve o espaco.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-4" data-inema-track="2" id="topico-4">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>Movimento</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>Movimento</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Movimento, parallax e escala</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t4-p1">Ate agora, construimos profundidade num quadro parado.
+<p class="lede" data-ARCKHÉ-block="m2-4-t4-p1">Ate agora, construimos profundidade num quadro parado.
               Quando a camera se move, surge a pista mais poderosa de todas: o <strong>parallax</strong>. A regra e
-              simples e o olho a conhece desde sempre — quando voce se desloca, as <em>camadas se movem em
+              simples e o olho a conhece desde sempre â€” quando voce se desloca, as <em>camadas se movem em
               velocidades diferentes</em>. O que esta perto cruza o quadro depressa; o que esta longe quase nao se
               mexe. Olhe pela janela de um carro: o poste ao lado passa voando, a casa no meio desliza, a montanha no
               horizonte praticamente acompanha voce. E essa diferenca de velocidade que o cerebro le, instantaneamente
-              e sem erro, como <em>profundidade real</em>. Por isso um simples movimento de camera — um dolly,
-              um tracking lateral — faz uma cena ganhar tridimensionalidade que nenhuma imagem parada
+              e sem erro, como <em>profundidade real</em>. Por isso um simples movimento de camera â€” um dolly,
+              um tracking lateral â€” faz uma cena ganhar tridimensionalidade que nenhuma imagem parada
               alcanca.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m2-4-t4-p2">O parallax e a razao pela qual a aula insiste que <em>movimento revela
+<p data-ARCKHÉ-block="m2-4-t4-p2">O parallax e a razao pela qual a aula insiste que <em>movimento revela
               profundidade</em>. Um dolly-in atravessando um primeiro plano (passar a camera por tras de uma coluna,
               por entre folhagens) ativa o parallax de forma explicita: a camada da frente varre o quadro enquanto o
               fundo permanece, e o espaco se torna inegavel. Esse e tambem o motivo de o primeiro plano (a Secao 1)
               ser tao importante em video: parado, ele ja ajuda; em movimento, ele <em>dispara</em> o parallax e
               multiplica a profundidade. Camera em movimento sem nada no primeiro plano desperdica a pista mais forte
               que voce tem.</p>
-<h3 class="sub">Movimento tambem separa personagens — fisica e emocionalmente</h3>
-<p data-inema-block="m2-4-t4-p3">Ha uma camada extra na ideia de movimento que a aula faz questao de
+<h3 class="sub">Movimento tambem separa personagens â€” fisica e emocionalmente</h3>
+<p data-ARCKHÉ-block="m2-4-t4-p3">Ha uma camada extra na ideia de movimento que a aula faz questao de
               marcar: o deslocamento <strong>separa personagens</strong>, e nao so no espaco. Quando a camera se move
-              e revela que dois personagens estao em camadas diferentes — um perto, um longe —, ela conta
+              e revela que dois personagens estao em camadas diferentes â€” um perto, um longe â€”, ela conta
               a relacao entre eles sem uma palavra. A distancia que se abre ou se fecha pelo movimento <em>e</em> a
               dinamica emocional. Um personagem que entra no primeiro plano enquanto o outro permanece pequeno ao
               fundo estabelece dominancia; dois que se aproximam de camadas distintas ate dividirem o mesmo plano
-              encenam uma reconciliacao. Movimento e profundidade narrando juntos — o que nos leva diretamente a
+              encenam uma reconciliacao. Movimento e profundidade narrando juntos â€” o que nos leva diretamente a
               ideia central do modulo.</p>
 </div>
 <!-- figura 4: parallax -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Parallax</b> — ao mover a camera, as camadas correm em velocidades diferentes</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Parallax</b> â€” ao mover a camera, as camadas correm em velocidades diferentes</figcaption>
 <svg aria-label="Diagrama: tres camadas com vetores de velocidade de tamanhos diferentes, o primeiro plano com vetor longo, o meio medio, o fundo curto, indicando que objetos proximos cruzam o quadro mais rapido quando a camera se desloca." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="168" y2="168"></line>
 <!-- primeiro plano: vetor longo -->
 <rect class="accent-stroke" fill="url(#hatch-2-4)" height="98" stroke-width="1.5" width="34" x="90" y="70"></rect>
 <path class="accent-stroke" d="M132 56 L236 56" stroke-width="2.4"></path>
 <path class="accent" d="M236 56 l-12 -5 l0 10 z"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="107" y="186">perto — rapido</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="107" y="186">perto â€” rapido</text>
 <!-- meio: vetor medio -->
 <circle class="accent-stroke" cx="360" cy="118" r="14" stroke-width="1.8"></circle>
 <line class="accent-stroke" stroke-width="1.8" x1="360" x2="360" y1="132" y2="168"></line>
 <path class="mark-stroke" d="M380 100 L440 100" stroke-width="2"></path>
 <path class="mark-fill" d="M440 100 l-10 -4 l0 8 z"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="186">meio — medio</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="186">meio â€” medio</text>
 <!-- fundo: vetor curto -->
 <g class="rule-stroke" fill="none" opacity="0.55" stroke-width="1.1">
 <rect height="42" width="20" x="560" y="118"></rect><rect height="54" width="16" x="588" y="106"></rect>
 </g>
 <path class="rule-stroke" d="M610 92 L632 92" stroke-width="1.6"></path>
 <path class="faint" d="M632 92 l-8 -3 l0 6 z"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="186">longe — quase parado</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="186">longe â€” quase parado</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-4-t4-p4">No prompt de video, voce pede o parallax descrevendo um movimento de
+<p data-ARCKHÉ-block="m2-4-t4-p4">No prompt de video, voce pede o parallax descrevendo um movimento de
               camera <em>atraves</em> de camadas. O exemplo abaixo e uma <em>receita de parallax</em>: um movimento
               lateral com primeiro plano forte, que faz o espaco se revelar. Note que e o primeiro plano + o
-              movimento que produzem o efeito — nenhum dos dois sozinho.</p>
-<div class="codeblock"><span class="c"># Receita de parallax — movimento que revela profundidade real</span>
+              movimento que produzem o efeito â€” nenhum dos dois sozinho.</p>
+<div class="codeblock"><span class="c"># Receita de parallax â€” movimento que revela profundidade real</span>
 <span class="c"># para video (Seedance / Kling / Luma / Runway): camera + camadas</span>
 <span class="k">Layers:</span> tall grass in the foreground, a walking figure in the midground, mountains far in the background.
 <span class="k">Camera move:</span> slow lateral tracking (dolly) from left to right, low to the ground.
 <span class="k">Parallax:</span> the foreground grass sweeps fast across the frame; the figure drifts; the mountains barely move.
-<span class="k">Why:</span> the different layer speeds read as true 3D depth — impossible in a still.
+<span class="k">Why:</span> the different layer speeds read as true 3D depth â€” impossible in a still.
 <span class="k">Mood:</span> immersive, calm, expansive.</div>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-5" data-inema-track="2" id="topico-5">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Emocao e sistema</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Emocao e sistema</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Profundidade e emocao: tudo como sistema</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t5-p1">Chegamos ao coracao do modulo, e ele e uma so frase:
-              <strong>profundidade nao e so visual — e emocional</strong>. As camadas que voce construiu nao
+<p class="lede" data-ARCKHÉ-block="m2-4-t5-p1">Chegamos ao coracao do modulo, e ele e uma so frase:
+              <strong>profundidade nao e so visual â€” e emocional</strong>. As camadas que voce construiu nao
               servem apenas para a imagem parecer tridimensional; elas <em>significam</em>. Distancia curta entre a
               camera e o sujeito cria <em>intimidade</em>. Distancia longa cria <em>isolamento</em>. O
               <em>movimento</em> entre camadas significa mudanca; a <em>imobilidade</em> de uma figura distante e
               fixa significa tensao, espera. Profundidade e, no fundo, um vocabulario de <em>distancia
-              emocional</em>: onde voce coloca alguem no eixo perto–longe diz o que aquela pessoa sente, ou o
+              emocional</em>: onde voce coloca alguem no eixo pertoâ€“longe diz o que aquela pessoa sente, ou o
               que voce sente por ela.<span class="sidenote-ref">6</span></p>
-<p data-inema-block="m2-4-t5-p2">A consequencia pratica e poderosa: ao posicionar personagens em
+<p data-ARCKHÉ-block="m2-4-t5-p2">A consequencia pratica e poderosa: ao posicionar personagens em
               <em>camadas diferentes</em>, voce conta a relacao entre eles <strong>sem dialogo</strong>. Um
-              personagem no primeiro plano, grande e dominante, e outro pequeno e desfocado ao fundo — isso e
-              poder, vigilancia, ameaca, dependendo do contexto. Dois personagens lado a lado na mesma camada —
-              isso e igualdade, parceria. Um que se afasta para o fundo enquanto o outro permanece — isso e
-              perda, despedida. A geometria do espaco <span class="dfn"><details class="dfn"><summary>encena</summary><span class="body"><b>Encenar pela profundidade</b> e usar a posicao dos personagens nas camadas (perto/longe) e o foco para comunicar relacoes de poder, intimidade ou conflito — uma forma de direcao que dispensa fala e acao.</span></details></span>
-              o drama. E exatamente isso que a tarefa do modulo pede — tres cenas, dois personagens em camadas
+              personagem no primeiro plano, grande e dominante, e outro pequeno e desfocado ao fundo â€” isso e
+              poder, vigilancia, ameaca, dependendo do contexto. Dois personagens lado a lado na mesma camada â€”
+              isso e igualdade, parceria. Um que se afasta para o fundo enquanto o outro permanece â€” isso e
+              perda, despedida. A geometria do espaco <span class="dfn"><details class="dfn"><summary>encena</summary><span class="body"><b>Encenar pela profundidade</b> e usar a posicao dos personagens nas camadas (perto/longe) e o foco para comunicar relacoes de poder, intimidade ou conflito â€” uma forma de direcao que dispensa fala e acao.</span></details></span>
+              o drama. E exatamente isso que a tarefa do modulo pede â€” tres cenas, dois personagens em camadas
               diferentes, emocao apenas pela posicao e pelo olhar, sem dialogo e sem acao.</p>
 <h3 class="sub">Tudo trabalha como um sistema</h3>
-<p data-inema-block="m2-4-t5-p3">A aula fecha o Bloco 2 com a sintese que costura os quatro modulos: um
-              plano verdadeiramente cinematografico nao e composicao <em>ou</em> luz <em>ou</em> profundidade —
+<p data-ARCKHÉ-block="m2-4-t5-p3">A aula fecha o Bloco 2 com a sintese que costura os quatro modulos: um
+              plano verdadeiramente cARCKHÉtografico nao e composicao <em>ou</em> luz <em>ou</em> profundidade â€”
               e <strong>tudo ao mesmo tempo, funcionando como um sistema</strong>. Composicao decide onde o olho vai;
               luz decide o que se revela e o que se esconde; lente e profundidade decidem como o espaco se organiza em
               camadas; movimento e posicionamento de personagem decidem a relacao e a emocao. Nenhum desses elementos
-              salva sozinho uma cena fraca, e nenhum, isolado, faz a cena. E a <em>combinacao deliberada</em> —
-              cada peca escolhida para reforcar as outras — que produz aquela densidade que reconhecemos como
-              cinema.</p>
-<p data-inema-block="m2-4-t5-p4">E esse o salto que encerra a Trilha 2: voce sai de <em>criar imagens</em>
-              para <em>dirigir cenas</em> — moldando o espaco, controlando a atencao, contando historia atraves
-              da profundidade. Os quatro fundamentos — pensamento visual, composicao, luz e profundidade —
+              salva sozinho uma cena fraca, e nenhum, isolado, faz a cena. E a <em>combinacao deliberada</em> â€”
+              cada peca escolhida para reforcar as outras â€” que produz aquela densidade que reconhecemos como
+              cARCKHÉ.</p>
+<p data-ARCKHÉ-block="m2-4-t5-p4">E esse o salto que encerra a Trilha 2: voce sai de <em>criar imagens</em>
+              para <em>dirigir cenas</em> â€” moldando o espaco, controlando a atencao, contando historia atraves
+              da profundidade. Os quatro fundamentos â€” pensamento visual, composicao, luz e profundidade â€”
               agora formam um unico vocabulario com que voce le e constroi qualquer quadro. As proximas trilhas
               colocam esse vocabulario em movimento: o pipeline de ferramentas que executa essas decisoes, a linguagem
               de camera que as anima, os efeitos e a atuacao que as habitam. Mas a fundacao esta posta. Voce ja nao
-              olha uma imagem e pensa “que bonita” — olha e ve as camadas, a luz, a hierarquia e o
+              olha uma imagem e pensa â€œque bonitaâ€ â€” olha e ve as camadas, a luz, a hierarquia e o
               espaco, e sabe por que ela funciona.</p>
 </div>
 <!-- figura 5: profundidade como emocao + sistema -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · <b>Distancia e emocao</b> — e o plano cinematografico e a soma de todos os fundamentos</figcaption>
-<svg aria-label="Diagrama em duas partes: a esquerda um eixo perto-longe associando intimidade ao perto e isolamento ao longe, com dois personagens em camadas; a direita quatro engrenagens rotuladas composicao, luz, profundidade e movimento convergindo num plano cinematografico." class="diagram" role="img" viewbox="0 0 720 220">
+<figcaption><span class="fig-n">Fig. 5</span> Â· <b>Distancia e emocao</b> â€” e o plano cARCKHÉtografico e a soma de todos os fundamentos</figcaption>
+<svg aria-label="Diagrama em duas partes: a esquerda um eixo perto-longe associando intimidade ao perto e isolamento ao longe, com dois personagens em camadas; a direita quatro engrenagens rotuladas composicao, luz, profundidade e movimento convergindo num plano cARCKHÉtografico." class="diagram" role="img" viewbox="0 0 720 220">
 <!-- esquerda: eixo emocional -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">DISTANCIA = EMOCAO</text>
 <line class="rule-stroke" stroke-width="1.2" x1="60" x2="320" y1="150" y2="150"></line>
@@ -619,7 +619,7 @@
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Voce precisa mostrar “um pai e um filho que se afastaram ao longo dos anos” num unico plano,
+<p>Voce precisa mostrar â€œum pai e um filho que se afastaram ao longo dos anosâ€ num unico plano,
               sem dialogo e sem acao. Usando so o que este modulo ensinou, como voce encenaria isso pela
               profundidade?</p>
 <details>
@@ -629,7 +629,7 @@
                 o outro no fundo, menor, levemente desfocado, talvez separado por um batente de porta ou por bruma.
                 A profundidade de campo rasa isola um do outro; a distancia entre as camadas <em>e</em> o
                 afastamento. Se houver movimento, deixe a camera ou um dos dois ampliar a distancia. A geometria do
-                espaco diz “eles estao longe” sem uma palavra — que e a tese do modulo: distancia e
+                espaco diz â€œeles estao longeâ€ sem uma palavra â€” que e a tese do modulo: distancia e
                 emocao.</p>
 </details>
 </div>
@@ -639,7 +639,7 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Qual e a regra das tres camadas — e por que sua ausencia faz a imagem parecer “chapada”?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Qual e a regra das tres camadas â€” e por que sua ausencia faz a imagem parecer â€œchapadaâ€?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Todo quadro precisa de <em>primeiro plano</em> (onde voce esta), <em>meio</em> (o
               sujeito) e <em>fundo</em> (o contexto). O cerebro reconstroi profundidade comparando objetos a
               distancias diferentes; com tudo na mesma distancia, nao ha o que comparar e a cena vira estampa. O que
@@ -652,46 +652,46 @@
               irresistivelmente para a unica regiao nitida. Separa o espaco e isola o que importa numa tacada so.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Lente ampla e teleobjetiva fazem o que com o espaco — e que emocao cada uma serve?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">03</span><span>Lente ampla e teleobjetiva fazem o que com o espaco â€” e que emocao cada uma serve?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>A <em>ampla</em> expande: exagera a distancia entre camadas, sujeito pequeno num mundo
-              vasto — isolamento, amplitude. A <em>tele</em> comprime: achata as camadas e cola o fundo nas
-              costas do sujeito — tensao, densidade, “sem saida”. A lente esculpe a relacao entre o
+              vasto â€” isolamento, amplitude. A <em>tele</em> comprime: achata as camadas e cola o fundo nas
+              costas do sujeito â€” tensao, densidade, â€œsem saidaâ€. A lente esculpe a relacao entre o
               sujeito e o espaco, e essa relacao e emocao.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Por que “movimento revela profundidade”, e por que distancia e emocao?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Por que â€œmovimento revela profundidadeâ€, e por que distancia e emocao?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Pelo <em>parallax</em>: ao mover a camera, camadas proximas cruzam o quadro depressa e
-              as distantes quase nao se movem — o cerebro le essa diferenca de velocidade como 3D real. E
+              as distantes quase nao se movem â€” o cerebro le essa diferenca de velocidade como 3D real. E
               distancia e emocao porque perto = intimidade, longe = isolamento, movimento = mudanca: posicionar
               personagens em camadas conta a relacao entre eles sem dialogo. Tudo funciona como um sistema.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:2-4">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:2-4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 2</div>
-<div class="v" data-inema-meter="trilha:2">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -700,39 +700,39 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Comecar a proxima trilha</div>
-<div class="t">Modulo 3.1 — Pipeline de Ferramentas de IA</div>
+<div class="t">Modulo 3.1 â€” Pipeline de Ferramentas de IA</div>
 </div>
-<a class="go" href="../trilha3/modulo-3-1.html">Proximo →</a>
+<a class="go" href="../trilha3/modulo-3-1.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Regra das tres camadas.</b> Todo quadro precisa de primeiro plano (onde voce esta), meio (o sujeito) e
-          fundo (o contexto). Sem as tres, a imagem fica chapada — uma estampa.
+          fundo (o contexto). Sem as tres, a imagem fica chapada â€” uma estampa.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Dez blocos profissionais sobre como construir e controlar profundidade numa cena — o fecho do Bloco 2.
-          <div class="src-line">Bloco 2 · Licao 6 — Depth and Spatial Structure</div>
+          Dez blocos profissionais sobre como construir e controlar profundidade numa cena â€” o fecho do Bloco 2.
+          <div class="src-line">Bloco 2 Â· Licao 6 â€” Depth and Spatial Structure</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Separacao.</b> Distinguir as camadas por foco, luz ou cor para que leiam como tres distancias. Camadas
-          iguais se fundem numa mancha — a diferenca e que cria a profundidade.
+          iguais se fundem numa mancha â€” a diferenca e que cria a profundidade.
         </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Profundidade de campo.</b> O controle sobre o que esta nitido. Rasa = so uma faixa em foco — isola
+<b>Profundidade de campo.</b> O controle sobre o que esta nitido. Rasa = so uma faixa em foco â€” isola
           o sujeito e dirige o olho. Ao mesmo tempo ferramenta de espaco e de hierarquia.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-3"></aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Perspectiva atmosferica: quanto mais ar entre o olho e o objeto, mais claro, azulado e difuso ele fica. A
@@ -744,14 +744,14 @@
           (fundo colado, sem saida, tensao). A lente esculpe a relacao entre sujeito e espaco.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Parallax.</b> Ao mover a camera, camadas proximas cruzam o quadro depressa e as distantes quase nao se
-          movem. O cerebro le essa diferenca como 3D real — profundidade que a imagem parada nao tem.
+          movem. O cerebro le essa diferenca como 3D real â€” profundidade que a imagem parada nao tem.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Distancia emocional.</b> Perto = intimidade, longe = isolamento, movimento = mudanca. Posicionar
@@ -760,15 +760,15 @@
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
           O fecho do Bloco 2: composicao, luz, profundidade e movimento funcionam <i>como um sistema</i>. Voce sai de
-          criar imagens para dirigir cenas — moldar espaco, controlar atencao, narrar pela profundidade.
+          criar imagens para dirigir cenas â€” moldar espaco, controlar atencao, narrar pela profundidade.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 2.4 — folio viii</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 2.4 â€” folio viii</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -777,8 +777,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 3.3 — Geracao de Movimento no Seedance | AI Filmmaking</title>
+<title>Modulo 3.3 â€” Geracao de Movimento no Seedance | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:3-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:3-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Trilha <b>3</b> Workflow de Cinema com IA</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Trilha <b>3</b> Workflow de CARCKHÉ com IA</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>3.3</b> / 5</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,29 +189,29 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 3.3 · Trilha 3 · Workflow de Cinema com IA</p>
+<p class="kicker">Modulo 3.3 Â· Trilha 3 Â· Workflow de CARCKHÉ com IA</p>
 <h1 class="module">Geracao de Movimento no <em>Seedance</em></h1>
-<p class="deck">O quadro parado ganha vida — com fisica, nao com adjetivos. O Seedance entende
+<p class="deck">O quadro parado ganha vida â€” com fisica, nao com adjetivos. O Seedance entende
           forca, tempo e peso. Pensar o movimento como um diretor (que observa, mede, sequencia e testa) e o que
           separa o clipe que parece real do que parece animacao barata.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~18 min · modulo inteiro</span>
+<span>~18 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que o Seedance entende <b>fisica, nao adjetivos</b> — e o que isso muda na forma de escrever o prompt.</li>
+<li>Por que o Seedance entende <b>fisica, nao adjetivos</b> â€” e o que isso muda na forma de escrever o prompt.</li>
 <li>O sistema de quatro pecas para construir uma cena: <b>forca, sequencia, camera e reacao humana</b>.</li>
-<li>A regra do <b>encadeamento fisico</b> — grande → pequeno → particulas — e o papel do movimento secundario.</li>
+<li>A regra do <b>encadeamento fisico</b> â€” grande â†’ pequeno â†’ particulas â€” e o papel do movimento secundario.</li>
 <li>Como <b>mostrar emocao pelo corpo</b> e controlar o tempo (real, 30% slow motion, duracoes precisas) em vez de nomear sentimentos.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Fisica, nao adjetivos</span></a></li>
@@ -222,36 +222,36 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-1" data-inema-track="3" id="topico-1">
+<section data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-1" data-ARCKHÉ-track="3" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>Fisica</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>Fisica</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Fisica, nao adjetivos</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m3-3-t1-p1">Um diretor nao <em>adivinha</em> o movimento —
+<p class="lede dropcap" data-ARCKHÉ-block="m3-3-t1-p1">Um diretor nao <em>adivinha</em> o movimento â€”
               ele observa, mede, sequencia e testa. Essa frase resume a aula inteira. O Seedance, o gerador de
               video desta etapa, foi pensado para responder a <strong>fisica, nao a adjetivos</strong>: ele entende
-              forca, tempo e peso muito melhor do que entende palavras como “epico” ou
-              “dramatico”.<span class="sidenote-ref">1</span> Pedir “um movimento incrivel”
+              forca, tempo e peso muito melhor do que entende palavras como â€œepicoâ€ ou
+              â€œdramaticoâ€.<span class="sidenote-ref">1</span> Pedir â€œum movimento incrivelâ€
               devolve algo generico; descrever <em>o que se move, com que forca, em que ordem e em quanto tempo</em>
               devolve movimento real.</p>
-<p data-inema-block="m3-3-t1-p2">Todo movimento se apoia em tres elementos. <strong>Forca</strong> —
-              o que dirige a acao (impacto, gravidade, empurrao, salto). <strong>Tempo</strong> — quanto cada
-              acao dura. <strong>Peso</strong> — como os objetos se comportam fisicamente. Quando voce
+<p data-ARCKHÉ-block="m3-3-t1-p2">Todo movimento se apoia em tres elementos. <strong>Forca</strong> â€”
+              o que dirige a acao (impacto, gravidade, empurrao, salto). <strong>Tempo</strong> â€” quanto cada
+              acao dura. <strong>Peso</strong> â€” como os objetos se comportam fisicamente. Quando voce
               fornece esses tres, o gerador tem o que precisa para produzir algo que o olho aceita como verdadeiro.
-              Quando voce fornece adjetivos, ele preenche os buracos por conta propria — e o resultado
+              Quando voce fornece adjetivos, ele preenche os buracos por conta propria â€” e o resultado
               flutua, escorrega, perde peso.</p>
 <h3 class="sub">Antes de escrever: cinco perguntas de diretor</h3>
-<p data-inema-block="m3-3-t1-p3">Antes de escrever uma cena, a fonte sugere definir cinco coisas:
+<p data-ARCKHÉ-block="m3-3-t1-p3">Antes de escrever uma cena, a fonte sugere definir cinco coisas:
               <strong>camera</strong> (onde esta, como se move), <strong>forca</strong> (explosao, gravidade,
-              empurrao, salto), <strong>sequencia</strong> (o que acontece primeiro → por ultimo),
+              empurrao, salto), <strong>sequencia</strong> (o que acontece primeiro â†’ por ultimo),
               <strong>atrasos</strong> (defasagens de tempo entre acoes) e <strong>percepcao</strong> (o que o
               espectador experimenta). A sintese e simples e poderosa: <em>movimento e uma sequencia controlada de
-              eventos.</em> Nao um efeito unico — uma cadeia ordenada no tempo.</p>
+              eventos.</em> Nao um efeito unico â€” uma cadeia ordenada no tempo.</p>
 </div>
-<!-- figura 1: adjetivo x física -->
+<!-- figura 1: adjetivo x fÃ­sica -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · O Seedance le <b>fisica</b>, nao adjetivo</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· O Seedance le <b>fisica</b>, nao adjetivo</figcaption>
 <svg aria-label="Diagrama: a esquerda, a palavra epico entra e sai como movimento vago e flutuante; a direita, forca, tempo e peso entram e saem como movimento solido e crivel." class="diagram" role="img" viewbox="0 0 720 206">
 <defs>
 <pattern height="6" id="hatch-3-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -261,13 +261,13 @@
 <!-- esquerda: adjetivo -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="175" y="28">ADJETIVO</text>
 <rect class="rule-stroke" fill="none" height="34" rx="3" stroke-width="1.2" width="120" x="60" y="44"></rect>
-<text class="ink-soft" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="120" y="66">“epico”</text>
+<text class="ink-soft" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="120" y="66">â€œepicoâ€</text>
 <path class="rule-stroke" d="M120 78 V 110" stroke-dasharray="3 4" stroke-width="1.2"></path>
 <path class="faint" d="M70 150 q 30 -22 60 0 t 60 0" fill="none" stroke-width="1.4"></path>
 <path class="faint" d="M70 168 q 30 -16 60 0 t 60 0" fill="none" stroke-width="1.2"></path>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="175" y="194">movimento vago, flutuante</text>
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="34" y2="190"></line>
-<!-- direita: física -->
+<!-- direita: fÃ­sica -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="545" y="28">FISICA</text>
 <g font-family="Source Serif 4, serif" font-size="11" text-anchor="middle">
 <rect class="wash accent-stroke" height="30" rx="3" stroke-width="1.1" width="86" x="408" y="44"></rect>
@@ -285,59 +285,59 @@
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Voce pede ao Seedance “uma explosao epica e dramatica” e recebe algo vago e sem peso.
+<p>Voce pede ao Seedance â€œuma explosao epica e dramaticaâ€ e recebe algo vago e sem peso.
               Como reescrever o pedido para o gerador produzir uma explosao que o olho aceita como real?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">Troque o adjetivo por <strong>fisica e sequencia</strong>: o que inicia (uma carga
                 detona), a ordem (a onda de choque primeiro, depois os destrocos, depois a poeira), o tempo (a
                 detonacao em tempo real, a poeira subindo ao longo de ~2s) e o peso (destrocos pesados caem rapido,
-                fumaca leve paira). Descreva o evento, nao a impressao — o “epico” nasce da
+                fumaca leve paira). Descreva o evento, nao a impressao â€” o â€œepicoâ€ nasce da
                 fisica certa, nao da palavra.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-2" data-inema-track="3" id="topico-2">
+<section data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-2" data-ARCKHÉ-track="3" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>Forca e sequencia</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>Forca e sequencia</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Forca e sequencia: a ordem dos eventos</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-3-t2-p1">Todo prompt forte comeca pela <em>forca</em>: o que
+<p class="lede" data-ARCKHÉ-block="m3-3-t2-p1">Todo prompt forte comeca pela <em>forca</em>: o que
               inicia o movimento? Pode ser um <strong>impacto</strong>, uma <strong>aceleracao</strong>, a
-              <strong>gravidade</strong> ou uma <strong>interacao</strong>. A forca e o gatilho — sem ela, a
+              <strong>gravidade</strong> ou uma <strong>interacao</strong>. A forca e o gatilho â€” sem ela, a
               cena nao tem causa, e movimento sem causa parece flutuacao. Definir a forca primeiro e o que ancora
               tudo o que vem depois.</p>
-<p data-inema-block="m3-3-t2-p2">Em seguida vem a <em>sequencia</em>: a ordem dos eventos no tempo.
+<p data-ARCKHÉ-block="m3-3-t2-p2">Em seguida vem a <em>sequencia</em>: a ordem dos eventos no tempo.
               <strong>Acao principal primeiro</strong>, movimento secundario depois, efeitos residuais por ultimo.
               A regra de ouro da fonte e curta e vale para quase tudo que explode, cai ou colide:
-              <strong>grande → pequeno → particulas</strong> (poeira, fumaca, destrocos). Essa ordem nao
-              e estetica — e fisica. No mundo real, a massa grande se move primeiro e empurra as menores; as
+              <strong>grande â†’ pequeno â†’ particulas</strong> (poeira, fumaca, destrocos). Essa ordem nao
+              e estetica â€” e fisica. No mundo real, a massa grande se move primeiro e empurra as menores; as
               particulas sao o ultimo elo da cadeia. Inverter isso (a poeira antes do impacto) e o que faz uma cena
-              parecer “errada” sem que se saiba dizer por que.<span class="sidenote-ref">2</span></p>
+              parecer â€œerradaâ€ sem que se saiba dizer por que.<span class="sidenote-ref">2</span></p>
 </div>
-<!-- prompt pronto: força + sequência -->
+<!-- prompt pronto: forÃ§a + sequÃªncia -->
 <div class="prose">
-<p data-inema-block="m3-3-t2-p3">Um prompt de movimento construido por forca e sequencia, pronto para
-              o Seedance — note como cada acao tem ordem e tempo:</p>
-<div class="codeblock"><span class="c"># Seedance — movimento por forca + sequencia (grande -&gt; pequeno -&gt; particulas)</span>
+<p data-ARCKHÉ-block="m3-3-t2-p3">Um prompt de movimento construido por forca e sequencia, pronto para
+              o Seedance â€” note como cada acao tem ordem e tempo:</p>
+<div class="codeblock"><span class="c"># Seedance â€” movimento por forca + sequencia (grande -&gt; pequeno -&gt; particulas)</span>
 <span class="k">Scene:</span> a heavy steel door is kicked open into a dusty warehouse.
 <span class="k">Force:</span> a hard impact from the right drives the door inward.
 <span class="k">Sequence:</span>
   1. the door swings open fast (main action, ~0.4s)
   2. loose papers and dust lift off the floor (secondary, ~0.3s delay)
   3. fine dust drifts and settles in the light shaft (residual, lingers ~2s)
-<span class="k">Weight:</span> the door is heavy — it swings with momentum, not a flick.
+<span class="k">Weight:</span> the door is heavy â€” it swings with momentum, not a flick.
 <span class="k">Camera:</span> static low-angle wide, stable, no shake.
 <span class="c"># rule: large mass first, then small elements, then particles.</span></div>
 </div>
-<!-- figura 2: a cadeia grande -> pequeno -> partículas -->
+<!-- figura 2: a cadeia grande -> pequeno -> partÃ­culas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · A cadeia fisica — <b>grande, pequeno, particulas</b>, nessa ordem</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· A cadeia fisica â€” <b>grande, pequeno, particulas</b>, nessa ordem</figcaption>
 <svg aria-label="Diagrama de tres elos no tempo: a massa grande se move primeiro, depois os elementos pequenos, depois as particulas (poeira, fumaca), com atraso crescente entre eles." class="diagram" role="img" viewbox="0 0 720 180">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="120" y2="120"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="40" y="140">TEMPO →</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="40" y="140">TEMPO â†’</text>
 <!-- elo 1: grande -->
 <circle class="accent-stroke" cx="140" cy="80" fill="url(#hatch-3-3)" r="30" stroke-width="1.4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="140" y="84">grande</text>
@@ -346,9 +346,9 @@
 <circle class="wash accent-stroke" cx="360" cy="86" r="18" stroke-width="1.3"></circle>
 <text class="ink-soft" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="360" y="90">pequeno</text>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="150">secundario</text>
-<!-- elo 3: partículas -->
+<!-- elo 3: partÃ­culas -->
 <g class="accent"><circle cx="560" cy="92" r="2.5"></circle><circle cx="580" cy="84" r="2"></circle><circle cx="600" cy="96" r="2.2"></circle><circle cx="585" cy="100" r="1.8"></circle><circle cx="565" cy="80" r="1.6"></circle></g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="585" y="150">particulas · residual</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="585" y="150">particulas Â· residual</text>
 <!-- setas com atraso -->
 <g class="accent-stroke" fill="none" stroke-width="1.4">
 <path d="M172 84 H 338"></path><path d="M338 84 l -7 -4 m 7 4 l -7 4"></path>
@@ -359,45 +359,45 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: exemplos da cadeia em diferentes cenas
+<summary><span class="chev">â–¸</span> Indo mais fundo: exemplos da cadeia em diferentes cenas
               <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>Camada opcional. A mesma regra aplicada a varios tipos de evento.</p>
-<p>A fonte da dois encadeamentos exemplares que valem como gabarito: <strong>destrocos → poeira
-                → fumaca</strong> (uma demolicao) e <strong>respingo → gotas → neblina</strong> (um
+<p>A fonte da dois encadeamentos exemplares que valem como gabarito: <strong>destrocos â†’ poeira
+                â†’ fumaca</strong> (uma demolicao) e <strong>respingo â†’ gotas â†’ neblina</strong> (um
                 impacto na agua). Em ambos, a massa maior se move primeiro e gera as camadas menores em cascata. O
                 que aprender daqui e o <em>habito de pensar em camadas</em>: nunca um efeito unico, sempre uma
-                cadeia — principal, secundario, residual. Quando voce escreve o prompt assim, o gerador tem
+                cadeia â€” principal, secundario, residual. Quando voce escreve o prompt assim, o gerador tem
                 a estrutura temporal que falta na maioria dos pedidos vagos.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-3" data-inema-track="3" id="topico-3">
+<section data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-3" data-ARCKHÉ-track="3" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>Camera + corpo</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>Camera + corpo</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Camera e reacao humana</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-3-t3-p1">A <em>camera</em> define a percepcao — ela decide
+<p class="lede" data-ARCKHÉ-block="m3-3-t3-p1">A <em>camera</em> define a percepcao â€” ela decide
               <strong>o que</strong> o espectador experimenta do evento. Tres controles: <strong>posicao</strong>
               (baixa, ampla, close-up), <strong>movimento</strong> (pan, tilt, dolly, orbita, tremor) e
               <strong>comportamento</strong> (estavel vs. handheld). Nos exemplos da aula aparecem camera no
               capacete (<em>helmet cam</em>), planos de acompanhamento (<em>tracking</em>), seguimento de drone,
-              orbita continua e recuo constante — cada um colocando o espectador num lugar diferente em
+              orbita continua e recuo constante â€” cada um colocando o espectador num lugar diferente em
               relacao a acao.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m3-3-t3-p2">A <em>reacao humana</em> e o quarto pilar, e talvez o mais sutil. A
+<p data-ARCKHÉ-block="m3-3-t3-p2">A <em>reacao humana</em> e o quarto pilar, e talvez o mais sutil. A
               emocao se mostra <strong>fisicamente</strong>: respiracao, micro-movimentos, foco do olhar, tensao
-              do corpo. A regra e taxativa: <strong>nunca diga a emocao — mostre-a pelo movimento.</strong>
-              Em vez de pedir “ele esta com medo”, descreva os dedos escorregando, os olhos se
-              arregalando, a respiracao mudando. O gerador nao sabe interpretar “medo”; ele sabe animar
+              do corpo. A regra e taxativa: <strong>nunca diga a emocao â€” mostre-a pelo movimento.</strong>
+              Em vez de pedir â€œele esta com medoâ€, descreva os dedos escorregando, os olhos se
+              arregalando, a respiracao mudando. O gerador nao sabe interpretar â€œmedoâ€; ele sabe animar
               dedos que escorregam. Traduzir sentimento em corpo e o que torna a atuacao crivel.</p>
 </div>
-<!-- prompt pronto: câmera + reação humana -->
+<!-- prompt pronto: cÃ¢mera + reaÃ§Ã£o humana -->
 <div class="prose">
-<p data-inema-block="m3-3-t3-p3">Um prompt que combina comportamento de camera e reacao humana —
+<p data-ARCKHÉ-block="m3-3-t3-p3">Um prompt que combina comportamento de camera e reacao humana â€”
               a emocao aparece so pelo corpo, nunca nomeada:</p>
-<div class="codeblock"><span class="c"># Seedance — camera + reacao humana (mostre a emocao pelo corpo)</span>
+<div class="codeblock"><span class="c"># Seedance â€” camera + reacao humana (mostre a emocao pelo corpo)</span>
 <span class="k">Scene:</span> a climber clings to a cliff edge as a gust hits.
 <span class="k">Camera:</span> close-up, slight handheld sway, then a slow pull-back to reveal the drop.
 <span class="k">Force:</span> a sudden side gust pushes the body; gravity pulls at the legs.
@@ -407,15 +407,15 @@
   - chest rises with a sharp, shallow breath
   - shoulder muscles tense, jaw clenches
 <span class="k">Timing:</span> real-time grip, then 30% slow motion on the slip.
-<span class="c"># never write "he is scared" — write the body.</span></div>
+<span class="c"># never write "he is scared" â€” write the body.</span></div>
 </div>
 <!-- figura 3: do sentimento ao corpo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · <b>Nunca nomeie</b> a emocao — traduza em sinais do corpo</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· <b>Nunca nomeie</b> a emocao â€” traduza em sinais do corpo</figcaption>
 <svg aria-label="Diagrama: a palavra medo, riscada a esquerda, e substituida a direita por quatro sinais corporais observaveis: dedos escorregando, olhos arregalando, respiracao mudando, corpo tenso." class="diagram" role="img" viewbox="0 0 720 188">
-<!-- esquerda: o que não fazer -->
+<!-- esquerda: o que nÃ£o fazer -->
 <rect class="rule-stroke" fill="none" height="50" rx="3" stroke-width="1.2" width="150" x="50" y="68"></rect>
-<text class="ink-soft" font-family="Spectral, serif" font-size="16" font-style="italic" text-anchor="middle" x="125" y="98">“ele tem medo”</text>
+<text class="ink-soft" font-family="Spectral, serif" font-size="16" font-style="italic" text-anchor="middle" x="125" y="98">â€œele tem medoâ€</text>
 <line class="accent-stroke" stroke-width="1.6" x1="60" x2="190" y1="93" y2="93"></line>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="125" y="138">O GERADOR NAO ANIMA ISSO</text>
 <!-- seta -->
@@ -436,42 +436,42 @@
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Duas tomadas do mesmo personagem em perigo. Uma traz o prompt “ele esta apavorado”; a
+<p>Duas tomadas do mesmo personagem em perigo. Uma traz o prompt â€œele esta apavoradoâ€; a
               outra descreve respiracao curta, maos tremendo e olhar fixo. Qual deve gerar uma atuacao mais
-              crivel — e por que?</p>
+              crivel â€” e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">A segunda. O gerador anima <strong>movimento observavel</strong>, nao conceitos: ele
-                sabe fazer maos tremerem, nao sabe interpretar “apavorado”. Ao descrever os sinais do
-                corpo, voce entrega exatamente o que a fisica do modelo consegue executar — e o espectador
+                sabe fazer maos tremerem, nao sabe interpretar â€œapavoradoâ€. Ao descrever os sinais do
+                corpo, voce entrega exatamente o que a fisica do modelo consegue executar â€” e o espectador
                 <em>infere</em> o medo, que e sempre mais forte do que o medo declarado.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-4" data-inema-track="3" id="topico-4">
+<section data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-4" data-ARCKHÉ-track="3" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>Tempo e peso</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>Tempo e peso</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Tempo, peso e movimento secundario</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-3-t4-p1">O <em>tempo</em> e o que cria realismo. A fonte e
+<p class="lede" data-ARCKHÉ-block="m3-3-t4-p1">O <em>tempo</em> e o que cria realismo. A fonte e
               especifica: pense em <strong>acao em tempo real</strong>, em <strong>30% de camera lenta</strong>
-              quando um instante precisa de peso, e em <strong>duracoes precisas</strong> — 0,3s, 1,2s —
-              em vez de “rapido” ou “devagar”. Numeros dao ao gerador um alvo; adjetivos de
+              quando um instante precisa de peso, e em <strong>duracoes precisas</strong> â€” 0,3s, 1,2s â€”
+              em vez de â€œrapidoâ€ ou â€œdevagarâ€. Numeros dao ao gerador um alvo; adjetivos de
               tempo deixam tudo a deriva. Medir o tempo e tratar movimento como engenharia, nao como torcida.</p>
-<p data-inema-block="m3-3-t4-p2">O <em>movimento secundario</em> e o que separa o amador do profissional.
+<p data-ARCKHÉ-block="m3-3-t4-p2">O <em>movimento secundario</em> e o que separa o amador do profissional.
               Tudo continua <strong>depois</strong> da acao principal: a poeira persiste, a fumaca deixa rastro, a
-              agua paira no ar antes de cair. Essas camadas residuais criam profundidade e realismo — sao a
+              agua paira no ar antes de cair. Essas camadas residuais criam profundidade e realismo â€” sao a
               prova de que o mundo tem inercia. Uma explosao que termina seca, sem nada continuando, parece um
               corte; uma que deixa poeira baixando por dois segundos parece real. O segredo, de novo, e
               <em>camadas no tempo</em>: principal, secundario, residual.<span class="sidenote-ref">4</span></p>
 </div>
-<!-- prompt pronto: timing + secundário -->
+<!-- prompt pronto: timing + secundÃ¡rio -->
 <div class="prose">
-<p data-inema-block="m3-3-t4-p3">Um prompt focado em controle de tempo e movimento secundario, com
-              duracoes medidas — pronto para o Seedance:</p>
-<div class="codeblock"><span class="c"># Seedance — controle de tempo + movimento secundario (duracoes medidas)</span>
+<p data-ARCKHÉ-block="m3-3-t4-p3">Um prompt focado em controle de tempo e movimento secundario, com
+              duracoes medidas â€” pronto para o Seedance:</p>
+<div class="codeblock"><span class="c"># Seedance â€” controle de tempo + movimento secundario (duracoes medidas)</span>
 <span class="k">Scene:</span> a runner leaps over a puddle on a wet street at night.
 <span class="k">Force:</span> push-off from the right foot; gravity arcs the body.
 <span class="k">Timing:</span>
@@ -483,15 +483,15 @@
   - shoe spray scatters, ripples spread on the puddle
   - coat tail trails and settles
 <span class="k">Camera:</span> tracking shot alongside, stable, slight low angle.
-<span class="c"># precise durations create realism — never just "fast" or "slow".</span></div>
+<span class="c"># precise durations create realism â€” never just "fast" or "slow".</span></div>
 </div>
 <!-- figura 4: linha do tempo com slow-mo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Tempo medido</b> — tempo real, 30% de camera lenta no pico, e o residual que persiste</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Tempo medido</b> â€” tempo real, 30% de camera lenta no pico, e o residual que persiste</figcaption>
 <svg aria-label="Diagrama de linha do tempo: aproximacao em tempo real, um patamar de camera lenta no pico do salto, pouso em tempo real, e um rastro residual de particulas que continua depois." class="diagram" role="img" viewbox="0 0 720 184">
 <line class="rule-stroke" stroke-width="1" x1="30" x2="700" y1="120" y2="120"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" x="30" y="140">TEMPO →</text>
-<!-- aproximação -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" x="30" y="140">TEMPO â†’</text>
+<!-- aproximaÃ§Ã£o -->
 <path class="accent-stroke" d="M50 120 L180 120" stroke-width="2.2"></path>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="115" y="108">real ~1.0s</text>
 <!-- pico slow-mo -->
@@ -507,42 +507,42 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m3-3-t4-p4">As regras-chave da fonte fecham a ideia: sem descricoes vagas; use
+<p data-ARCKHÉ-block="m3-3-t4-p4">As regras-chave da fonte fecham a ideia: sem descricoes vagas; use
               detalhes mensuraveis (tempo, distancia, angulo); foque em acoes observaveis; pense sempre em
               sequencias; defina sempre o comportamento da camera. Em uma frase: <em>movimento crivel e medido,
-              encadeado e mostrado — nunca adjetivado.</em></p>
+              encadeado e mostrado â€” nunca adjetivado.</em></p>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="3-3" data-inema-topic="modulo-3-3#topico-5" data-inema-track="3" id="topico-5">
+<section data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#topico-5" data-ARCKHÉ-track="3" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Sintese</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Sintese</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Emocao atraves do movimento</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-3-t5-p1">A licao final amarra tudo: voce nao precisa descrever
-              cada detalhe da cena. Precisa apenas de <strong>quatro pecas</strong> — forca, sequencia,
-              camera e reacao humana — e o Seedance converte isso em movimento. O resto e ruido. Esse e o
+<p class="lede" data-ARCKHÉ-block="m3-3-t5-p1">A licao final amarra tudo: voce nao precisa descrever
+              cada detalhe da cena. Precisa apenas de <strong>quatro pecas</strong> â€” forca, sequencia,
+              camera e reacao humana â€” e o Seedance converte isso em movimento. O resto e ruido. Esse e o
               alivio pratico do metodo: em vez de tentar prever cada quadro, voce define as quatro alavancas e
               deixa a fisica do modelo preencher o intervalo entre elas.</p>
-<p data-inema-block="m3-3-t5-p2">A emocao, nessa moldura, nunca e dita — e <em>encenada pelo
-              movimento e pelo tempo</em>. Um personagem nao “esta exausto”: seus ombros caem, o passo
-              arrasta, a respiracao demora. A camera nao “e tensa”: ela treme de leve e se aproxima
-              devagar. O tempo nao e “dramatico”: ele desacelera 30% no instante que importa. Quando
-              voce dirige nessas alavancas, a emocao emerge da fisica — e o espectador a sente sem que voce
+<p data-ARCKHÉ-block="m3-3-t5-p2">A emocao, nessa moldura, nunca e dita â€” e <em>encenada pelo
+              movimento e pelo tempo</em>. Um personagem nao â€œesta exaustoâ€: seus ombros caem, o passo
+              arrasta, a respiracao demora. A camera nao â€œe tensaâ€: ela treme de leve e se aproxima
+              devagar. O tempo nao e â€œdramaticoâ€: ele desacelera 30% no instante que importa. Quando
+              voce dirige nessas alavancas, a emocao emerge da fisica â€” e o espectador a sente sem que voce
               precise nomea-la.</p>
-<h3 class="sub">A tarefa — e a ponte para a proxima aula</h3>
-<p data-inema-block="m3-3-t5-p3">A tarefa da fonte e direta: monte uma cena propria usando o metodo,
-              incluindo forca, sequencia, camera e reacao humana — e depois explique por que aquela
+<h3 class="sub">A tarefa â€” e a ponte para a proxima aula</h3>
+<p data-ARCKHÉ-block="m3-3-t5-p3">A tarefa da fonte e direta: monte uma cena propria usando o metodo,
+              incluindo forca, sequencia, camera e reacao humana â€” e depois explique por que aquela
               velocidade, por que aquela camera, e o que o espectador sente (sem nomear emocoes). Mostre tudo pelo
-              movimento e pelo tempo. Guarde o modulo em uma frase: <em>o Seedance le fisica, nao adjetivos —
+              movimento e pelo tempo. Guarde o modulo em uma frase: <em>o Seedance le fisica, nao adjetivos â€”
               de forca, sequencia, camera e corpo, com tempo medido, nasce o movimento que parece real.</em> Na
               proxima aula, mudamos o foco da fisica do movimento para a <strong>camera</strong>: o controle fino
               de como ela se move, no Kling.</p>
 </div>
-<!-- figura 5: as quatro peças -->
+<!-- figura 5: as quatro peÃ§as -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · As <b>quatro pecas</b> — o Seedance preenche o resto</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· As <b>quatro pecas</b> â€” o Seedance preenche o resto</figcaption>
 <svg aria-label="Diagrama em quatro quadrantes (forca, sequencia, camera, reacao humana) convergindo para um centro rotulado movimento, com a indicacao de que o gerador completa o intervalo entre as pecas." class="diagram" role="img" viewbox="0 0 720 200">
 <g font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle">
 <rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.2" width="180" x="80" y="34"></rect>
@@ -566,10 +566,10 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m3-3-t5-p4">Repare como o metodo dialoga com o algoritmo da cena que voce viu no
+<p data-ARCKHÉ-block="m3-3-t5-p4">Repare como o metodo dialoga com o algoritmo da cena que voce viu no
               comeco do curso: forca e o gatilho da ruptura, a sequencia controla a escalada, o tempo (com o
               slow-mo de 30%) marca o pico, e a reacao humana e o que faz o impacto importar. As ferramentas mudam;
-              a gramatica do momento forte permanece a mesma — voce so esta, agora, escrevendo-a numa
+              a gramatica do momento forte permanece a mesma â€” voce so esta, agora, escrevendo-a numa
               linguagem que o gerador de movimento entende.</p>
 </div>
 </section>
@@ -578,56 +578,56 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>O que significa dizer que o Seedance entende “fisica, nao adjetivos”?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Que ele responde a <em>forca, tempo e peso</em> — nao a palavras como
-              “epico”. Descreva o que se move, com que forca, em que ordem e em quanto tempo, e o
+<summary><span class="qn">01</span><span>O que significa dizer que o Seedance entende â€œfisica, nao adjetivosâ€?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Que ele responde a <em>forca, tempo e peso</em> â€” nao a palavras como
+              â€œepicoâ€. Descreva o que se move, com que forca, em que ordem e em quanto tempo, e o
               movimento sai crivel. Adjetivos deixam o gerador preencher os buracos, e o resultado flutua.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Qual e a regra de ordem da fisica numa cena de impacto?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>Grande → pequeno → particulas.</em> A massa maior se move primeiro e
-              gera as camadas menores em cascata (destrocos → poeira → fumaca). Inverter a ordem —
-              poeira antes do impacto — e o que faz a cena parecer “errada”.</p></div>
+<div class="ans"><p><em>Grande â†’ pequeno â†’ particulas.</em> A massa maior se move primeiro e
+              gera as camadas menores em cascata (destrocos â†’ poeira â†’ fumaca). Inverter a ordem â€”
+              poeira antes do impacto â€” e o que faz a cena parecer â€œerradaâ€.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Por que descrever o corpo em vez de nomear a emocao?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque o gerador anima <em>movimento observavel</em> — dedos escorregando,
-              olhos arregalando, respiracao mudando — e nao interpreta conceitos como “medo”.
+<div class="ans"><p>Porque o gerador anima <em>movimento observavel</em> â€” dedos escorregando,
+              olhos arregalando, respiracao mudando â€” e nao interpreta conceitos como â€œmedoâ€.
               Mostrar pelo corpo entrega o que a fisica do modelo executa, e o espectador infere o sentimento.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">04</span><span>Por que o movimento secundario (poeira que paira, agua que cai depois) importa?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque ele prova que o mundo tem <em>inercia</em>. As camadas residuais —
-              principal, secundario, residual — criam profundidade e realismo. Uma explosao que termina seca
+<div class="ans"><p>Porque ele prova que o mundo tem <em>inercia</em>. As camadas residuais â€”
+              principal, secundario, residual â€” criam profundidade e realismo. Uma explosao que termina seca
               parece corte; uma com poeira baixando por dois segundos parece real.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:3-3">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:3-3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 3</div>
-<div class="v" data-inema-meter="trilha:3">
-<span data-inema-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -636,67 +636,67 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 3.4 — Controle de Camera no Kling</div>
+<div class="t">Modulo 3.4 â€” Controle de Camera no Kling</div>
 </div>
-<a class="go" href="modulo-3-4.html">Proximo →</a>
+<a class="go" href="modulo-3-4.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-3-3#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-3#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Fisica, nao adjetivos.</b> O Seedance responde a forca, tempo e peso. Descreva o evento (o que se
-          move, com que forca, em que ordem, em quanto tempo) — nao a impressao (“epico”).
+          move, com que forca, em que ordem, em quanto tempo) â€” nao a impressao (â€œepicoâ€).
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Licao 8 do bloco AI Cinema Workflow — “Seedance Motion Generation”. A tese: <i>um
-          diretor nao adivinha — observa, mede, sequencia e testa</i>.
+          Licao 8 do bloco AI CARCKHÉ Workflow â€” â€œSeedance Motion Generationâ€. A tese: <i>um
+          diretor nao adivinha â€” observa, mede, sequencia e testa</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-3-3#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Forca.</b> O que inicia o movimento: impacto, aceleracao, gravidade, interacao. E o gatilho —
+<b>Forca.</b> O que inicia o movimento: impacto, aceleracao, gravidade, interacao. E o gatilho â€”
           movimento sem causa parece flutuacao.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          A cadeia <i>grande → pequeno → particulas</i> e fisica, nao estetica: a massa maior se move
-          primeiro e gera as menores. Destrocos → poeira → fumaca; respingo → gotas → neblina.
+          A cadeia <i>grande â†’ pequeno â†’ particulas</i> e fisica, nao estetica: a massa maior se move
+          primeiro e gera as menores. Destrocos â†’ poeira â†’ fumaca; respingo â†’ gotas â†’ neblina.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-3-3#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Reacao humana.</b> A emocao mostrada pelo corpo — respiracao, micro-movimentos, foco do olhar,
+<b>Reacao humana.</b> A emocao mostrada pelo corpo â€” respiracao, micro-movimentos, foco do olhar,
           tensao. Regra: nunca diga a emocao; mostre-a pelo movimento.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          O gerador anima dedos que escorregam, nao “medo”. Traduzir sentimento em sinais observaveis
-          do corpo e o que torna a atuacao crivel — e o espectador infere o resto.
+          O gerador anima dedos que escorregam, nao â€œmedoâ€. Traduzir sentimento em sinais observaveis
+          do corpo e o que torna a atuacao crivel â€” e o espectador infere o resto.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-3-3#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Movimento secundario.</b> O que continua depois da acao principal — poeira que persiste, fumaca
+<b>Movimento secundario.</b> O que continua depois da acao principal â€” poeira que persiste, fumaca
           que deixa rastro, agua que paira. As camadas residuais criam profundidade e provam a inercia do mundo.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Tempo medido em vez de adjetivado: tempo real, 30% de camera lenta no pico, duracoes precisas (0.3s,
-          1.2s). Numero da alvo ao gerador; “rapido” deixa a deriva.
+          1.2s). Numero da alvo ao gerador; â€œrapidoâ€ deixa a deriva.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-3-3#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-3#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>As quatro pecas.</b> Forca, sequencia, camera, reacao humana. Defina as quatro e o Seedance preenche
-          o intervalo — voce nao precisa descrever cada detalhe.
+          o intervalo â€” voce nao precisa descrever cada detalhe.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
@@ -708,8 +708,8 @@
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 3.3 — folio xi</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 3.3 â€” folio xi</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -718,8 +718,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

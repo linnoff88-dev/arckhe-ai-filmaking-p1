@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,68 +118,68 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Módulo 1.3 — Del guion a la escena | AI Filmmaking</title>
+<title>MÃ³dulo 1.3 â€” Del guion a la escena | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha1/modulo-1-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha1/modulo-1-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha1/modulo-1-3.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:1-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:1-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Ruta <b>1</b> Fundamentos (Luz)</span>
-<span class="sep">·</span>
-<span>Módulo <b>1.3</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Sección 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>MÃ³dulo <b>1.3</b> / 4</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,68 +189,68 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Módulo 1.3 · Ruta 1 · Fundamentos (Luz)</p>
+<p class="kicker">MÃ³dulo 1.3 Â· Ruta 1 Â· Fundamentos (Luz)</p>
 <h1 class="module">Del guion a la <em>Escena</em></h1>
-<p class="deck">La primera producción de principio a fin. Desde un fragmento de guion —un samurái
-          solo en un puente bajo la lluvia— hasta un paquete completo de preproducción, recorriendo el mismo
+<p class="deck">La primera producciÃ³n de principio a fin. Desde un fragmento de guion â€”un samurÃ¡i
+          solo en un puente bajo la lluviaâ€” hasta un paquete completo de preproducciÃ³n, recorriendo el mismo
           pipeline de un set profesional, ahora operado por una sola persona con IA.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~17 min · módulo completo</span>
+<span>~17 min Â· mÃ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Cómo <b>interpretar un guion como director</b>: identificar la emoción de la escena antes de generar cualquier imagen.</li>
-<li>Cómo transformar la idea en un <b>storyboard</b> de seis cuadros que define el encuadre, el ritmo y la escalada.</li>
-<li>Por qué <b>personaje, vestuario y ambiente</b> se construyen por separado: la lógica del pipeline de VFX.</li>
-<li>Cómo cerrar la <b>lista de planes</b> y generar los cuadros finales, listos para convertirse en video.</li>
+<li>CÃ³mo <b>interpretar un guion como director</b>: identificar la emociÃ³n de la escena antes de generar cualquier imagen.</li>
+<li>CÃ³mo transformar la idea en un <b>storyboard</b> de seis cuadros que define el encuadre, el ritmo y la escalada.</li>
+<li>Por quÃ© <b>personaje, vestuario y ambiente</b> se construyen por separado: la lÃ³gica del pipeline de VFX.</li>
+<li>CÃ³mo cerrar la <b>lista de planes</b> y generar los cuadros finales, listos para convertirse en video.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">El pipeline y la emoción de la escena</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">Storyboard: el primer lenguaje de dirección</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">Personaje, vestuario y utilería</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">Entorno: escala y tensión</span></a><span class="leader"></span></li>
+<a href="#topico-1"><span class="t">El pipeline y la emociÃ³n de la escena</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Storyboard: el primer lenguaje de direcciÃ³n</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Personaje, vestuario y utilerÃ­a</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Entorno: escala y tensiÃ³n</span></a><span class="leader"></span></li>
 <li><span class="n">5</span><a href="#topico-5"><span class="t">Lista de planos y cuadros finales</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-1" data-inema-track="1" id="topico-1">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-1" data-ARCKHÉ-track="1" id="topico-1">
 <div class="section-mark">
-<span class="where">Sección 1 de 5</span><span>·</span><span>Pipeline</span>
+<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>Pipeline</span>
 </div>
-<h2 class="head"><span class="num">1.</span>El pipeline y la emoción de la escena</h2>
+<h2 class="head"><span class="num">1.</span>El pipeline y la emociÃ³n de la escena</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m1-3-t1-p1">En el cine profesional, cada escena comienza mucho
-              antes de que la cámara empiece a grabar. El director, el director de fotografía, el diseñador de producción y los artistas de concepto
+<p class="lede dropcap" data-ARCKHÉ-block="m1-3-t1-p1">En el cine profesional, cada escena comienza mucho
+              antes de que la cÃ¡mara empiece a grabar. El director, el director de fotografÃ­a, el diseÃ±ador de producciÃ³n y los artistas de concepto
               colaboran para convertir una idea escrita en un plan visual. En esta clase replicamos ese flujo con
-              herramientas de IA, y el objetivo no es «generar imágenes», sino <em>simular una producción
-              cinematográfica real</em>, de la interpretación del guion a los cuadros finales.<span class="sidenote-ref">1</span>
-              Al final, verás cómo un solo creador hace el trabajo de todo un equipo de preproducción.</p>
-<p data-inema-block="m1-3-t1-p2">La producción siempre sigue un proceso estructurado, y es lo que elimina el
-              azar y lo reemplaza por <em>intención cinematográfica</em>: <strong>guion → storyboard →
-              personaje → vestuario → entorno → lista de planos → cuadros finales.</strong>
+              herramientas de IA, y el objetivo no es Â«generar imÃ¡genesÂ», sino <em>simular una producciÃ³n
+              cARCKHÉtogrÃ¡fica real</em>, de la interpretaciÃ³n del guion a los cuadros finales.<span class="sidenote-ref">1</span>
+              Al final, verÃ¡s cÃ³mo un solo creador hace el trabajo de todo un equipo de preproducciÃ³n.</p>
+<p data-ARCKHÉ-block="m1-3-t1-p2">La producciÃ³n siempre sigue un proceso estructurado, y es lo que elimina el
+              azar y lo reemplaza por <em>intenciÃ³n cARCKHÉtogrÃ¡fica</em>: <strong>guion â†’ storyboard â†’
+              personaje â†’ vestuario â†’ entorno â†’ lista de planos â†’ cuadros finales.</strong>
               Cada etapa alimenta la siguiente. Seguiremos esa misma secuencia en Freepik Spaces, comenzando por
-              crear un <em>en el de texto</em> con la descripción de la escena.</p>
+              crear un <em>en el de texto</em> con la descripciÃ³n de la escena.</p>
 <h3 class="sub">La pregunta que va antes de cualquier imagen</h3>
-<p data-inema-block="m1-3-t1-p3">Antes de crear cualquier elemento visual, un director siempre se hace una pregunta
-              fundamental: <strong>¿qué debe sentir el público en este momento?</strong> En nuestro ejemplo —un
-              samurái de unos treinta años cruza un largo puente colgante entre dos montañas, bajo la niebla
-              y la lluvia, con la katana en la mano, sintiendo que algo lo observa—, las emociones son <em>aislamiento,
-              tensión y anticipación del enfrentamiento</em>. Son ellas las que determinarán los ángulos de cámara, la luz y la
-              composición. Toda escena se puede desglosar en cuatro elementos coherentes: el <em>personaje</em>, o
-              <em>ambiente</em>, a <em>atmósfera</em> e a <em>tensión narrativa</em>.</p>
+<p data-ARCKHÉ-block="m1-3-t1-p3">Antes de crear cualquier elemento visual, un director siempre se hace una pregunta
+              fundamental: <strong>Â¿quÃ© debe sentir el pÃºblico en este momento?</strong> En nuestro ejemplo â€”un
+              samurÃ¡i de unos treinta aÃ±os cruza un largo puente colgante entre dos montaÃ±as, bajo la niebla
+              y la lluvia, con la katana en la mano, sintiendo que algo lo observaâ€”, las emociones son <em>aislamiento,
+              tensiÃ³n y anticipaciÃ³n del enfrentamiento</em>. Son ellas las que determinarÃ¡n los Ã¡ngulos de cÃ¡mara, la luz y la
+              composiciÃ³n. Toda escena se puede desglosar en cuatro elementos coherentes: el <em>personaje</em>, o
+              <em>ambiente</em>, a <em>atmÃ³sfera</em> e a <em>tensiÃ³n narrativa</em>.</p>
 </div>
 <!-- figura 1: o pipeline -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · El pipeline de preproducción — <b>cada etapa alimenta la siguiente</b></figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· El pipeline de preproducciÃ³n â€” <b>cada etapa alimenta la siguiente</b></figcaption>
 <svg aria-label="Diagrama de flujo con siete bloques encadenados: guion, storyboard, personaje, vestuario, entorno, lista de planos y cuadros finales." class="diagram" role="img" viewbox="0 0 720 176">
 <defs>
 <pattern height="6" id="hatch-1-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -276,70 +276,70 @@
 <g class="accent-stroke" fill="none" stroke-width="1.6">
 <path d="M102 82 H 116"></path><path d="M204 82 H 218"></path><path d="M306 82 H 320"></path><path d="M408 82 H 422"></path><path d="M510 82 H 524"></path><path d="M612 82 H 626"></path>
 </g>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.4" text-anchor="middle" x="360" y="40">INTENCIÓN EN LUGAR DEL AZAR</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="138">la emoción decidida al inicio guía todas las etapas siguientes</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.4" text-anchor="middle" x="360" y="40">INTENCIÃ“N EN LUGAR DEL AZAR</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="138">la emociÃ³n decidida al inicio guÃ­a todas las etapas siguientes</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m1-3-t1-p4">Fíjate en que la emoción definida al comienzo no queda atrás: atraviesa
-              todo el pipeline. “Aislamiento” se convierte en espacio negativo en el cielo; “tensión”
-              se convierte en un puente estrecho; “anticipación” se convierte en la katana lista y la mirada alerta. Definir
-              primero el sentimiento es lo que une todas las etapas en una escena coherente, en vez de una colección de
-              imágenes bonitas y desconectadas.</p>
+<p data-ARCKHÉ-block="m1-3-t1-p4">FÃ­jate en que la emociÃ³n definida al comienzo no queda atrÃ¡s: atraviesa
+              todo el pipeline. â€œAislamientoâ€ se convierte en espacio negativo en el cielo; â€œtensiÃ³nâ€
+              se convierte en un puente estrecho; â€œanticipaciÃ³nâ€ se convierte en la katana lista y la mirada alerta. Definir
+              primero el sentimiento es lo que une todas las etapas en una escena coherente, en vez de una colecciÃ³n de
+              imÃ¡genes bonitas y desconectadas.</p>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: el proyecto completo de esta lección
+<summary><span class="chev">â–¸</span> Profundizando: el proyecto completo de esta lecciÃ³n
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional. El instructor pone a disposición el Space completo que usó en la clase.</p>
-<p>El proyecto fuente incluye todos los nodos, prompts y el workflow montados paso a paso — vale la pena abrirlo y
-                explorar la estructura nodo por nodo mientras lees esta lección:
+<p>Capa opcional. El instructor pone a disposiciÃ³n el Space completo que usÃ³ en la clase.</p>
+<p>El proyecto fuente incluye todos los nodos, prompts y el workflow montados paso a paso â€” vale la pena abrirlo y
+                explorar la estructura nodo por nodo mientras lees esta lecciÃ³n:
                 <a href="https://www.freepik.com/pikaso/spaces/a14a336f-4e41-41b3-8a53-bde9b0c89e31/invite?payload=eyJpdiI6IkNGUUVXaDVjTWpjbVhMK1ZDL2RZREE9PSIsInZhbHVlIjoiOUp4cy9nZDZFRVg5QVpVTjl3WTFVdkVMV0NmcjQrdHF0S1ZuYU5VR2MxUXRQTmVuRzlzVTkxNzcvWTZ1OE02ZCs2OS9EUlVXblRNUEx0czdZV2pVRWxMMGhlaTY3QnRzaHE1a2pYQWtFVDNRWkR6MEpLVW5oUmNOQTh1K2IvejYiLCJtYWMiOiIwYjQ0OGIxMTY5NDk0M2I2MDk3ZjZhN2VlNjVmY2JiMDJiZGE1ZWE5OWQwZTFmNTFjNGU2ZDJlMDY1ZmE0MWI1IiwidGFnIjoiIn0%3D">Complete Production Pipeline (Freepik Space)</a>.
-                La lógica que aprendes aquí sirve para cualquier escena; Space es solo el entorno donde se
-                montó.</p>
+                La lÃ³gica que aprendes aquÃ­ sirve para cualquier escena; Space es solo el entorno donde se
+                montÃ³.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-2" data-inema-track="1" id="topico-2">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-2" data-ARCKHÉ-track="1" id="topico-2">
 <div class="section-mark">
-<span class="where">Sección 2 de 5</span><span>·</span><span>Storyboard</span>
+<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>Storyboard</span>
 </div>
-<h2 class="head"><span class="num">2.</span>Storyboard: el primer lenguaje de dirección</h2>
+<h2 class="head"><span class="num">2.</span>Storyboard: el primer lenguaje de direcciÃ³n</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t2-p1">El storyboard es la <em>primer lenguaje de dirección</em>.
-              Define el encuadre, la perspectiva de cámara, el ritmo visual y el aumento de la tensión,
+<p class="lede" data-ARCKHÉ-block="m1-3-t2-p1">El storyboard es la <em>primer lenguaje de direcciÃ³n</em>.
+              Define el encuadre, la perspectiva de cÃ¡mara, el ritmo visual y el aumento de la tensiÃ³n,
               antes de que exista cualquier imagen detallada. Hasta los grandes cineastas usan storyboards para entender
-              cómo se mueve la cámara, dónde aparece la tensión y cómo se desarrolla la escena. En nuestro flujo, usamos uno
-              en el <em>asistente</em> para convertir el guion en un boceto de seis cuadros que muestra la progresión
-              cinematográfica del momento.<span class="sidenote-ref">2</span></p>
-<p data-inema-block="m1-3-t2-p2">La instrucción que le das al asistente importa: pídele que <em>actuar como un
-              storyboard artist profesional</em>, analizar la escena y crear seis paneles que visualizan la progresión
-              del momento: cada panel es un plano diferente, siguiendo la escala cinematográfica y manteniendo el
-              mismo lugar y ambiente, con foco en el encuadre, la composición y la tensión. Después, generamos las imágenes de los
-              paneles (en el ejemplo, con el modelo Nano Banana Pro). Una observación sincera sobre el oficio: el generador
-              rara vez acierta todo a la primera — <em>itera</em>, vuelve a generar y ve guardando los paneles que mejor
-              sigan la progresión deseada.</p>
+              cÃ³mo se mueve la cÃ¡mara, dÃ³nde aparece la tensiÃ³n y cÃ³mo se desarrolla la escena. En nuestro flujo, usamos uno
+              en el <em>asistente</em> para convertir el guion en un boceto de seis cuadros que muestra la progresiÃ³n
+              cARCKHÉtogrÃ¡fica del momento.<span class="sidenote-ref">2</span></p>
+<p data-ARCKHÉ-block="m1-3-t2-p2">La instrucciÃ³n que le das al asistente importa: pÃ­dele que <em>actuar como un
+              storyboard artist profesional</em>, analizar la escena y crear seis paneles que visualizan la progresiÃ³n
+              del momento: cada panel es un plano diferente, siguiendo la escala cARCKHÉtogrÃ¡fica y manteniendo el
+              mismo lugar y ambiente, con foco en el encuadre, la composiciÃ³n y la tensiÃ³n. DespuÃ©s, generamos las imÃ¡genes de los
+              paneles (en el ejemplo, con el modelo Nano Banana Pro). Una observaciÃ³n sincera sobre el oficio: el generador
+              rara vez acierta todo a la primera â€” <em>itera</em>, vuelve a generar y ve guardando los paneles que mejor
+              sigan la progresiÃ³n deseada.</p>
 </div>
 <!-- prompt pronto do storyboard -->
 <div class="prose">
-<p data-inema-block="m1-3-t2-p3">Este es el prompt del storyboard, listo para adaptar a tu propia escena:</p>
-<div class="codeblock"><span class="c"># Prompt de storyboard — asistente como artista de storyboard</span>
+<p data-ARCKHÉ-block="m1-3-t2-p3">Este es el prompt del storyboard, listo para adaptar a tu propia escena:</p>
+<div class="codeblock"><span class="c"># Prompt de storyboard â€” asistente como artista de storyboard</span>
 <span class="k">Rol:</span> act as a professional storyboard artist.
 <span class="k">Tarea:</span> analyze the given scene and create a 6-panel storyboard sketch
-that visualizes the cinematic progression of the moment.
+that visualizes the cARCKHÉtic progression of the moment.
 <span class="k">Reglas:</span>
-- cada panel = un plano distinto que sigue la escala cinematográfica
-- mantén la misma ubicación y el mismo entorno en todos los paneles
-- enfócate en el encuadre de cámara, la composición y la tensión creciente
+- cada panel = un plano distinto que sigue la escala cARCKHÉtogrÃ¡fica
+- mantÃ©n la misma ubicaciÃ³n y el mismo entorno en todos los paneles
+- enfÃ³cate en el encuadre de cÃ¡mara, la composiciÃ³n y la tensiÃ³n creciente
 <span class="k">Escena:</span> a lone samurai (~30) crosses a long suspension bridge between
 two mountains; heavy fog and rain fill the canyon; katana in hand; he senses
 a hidden threat and scans cautiously.</div>
 </div>
 <!-- figura 2: seis paineis escalando -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Seis paneles que <b>escalan la tensión</b>, del plano general al primer plano</figcaption>
-<svg aria-label="Diagrama con seis cuadros de storyboard en secuencia: del plano general del puente al close-up de la mirada del samurái, con una tensión creciente." class="diagram" role="img" viewbox="0 0 720 188">
+<figcaption><span class="fig-n">Fig. 2</span> Â· Seis paneles que <b>escalan la tensiÃ³n</b>, del plano general al primer plano</figcaption>
+<svg aria-label="Diagrama con seis cuadros de storyboard en secuencia: del plano general del puente al close-up de la mirada del samurÃ¡i, con una tensiÃ³n creciente." class="diagram" role="img" viewbox="0 0 720 188">
 <g class="rule-stroke" fill="none" stroke-width="1.2">
 <rect height="68" rx="3" width="104" x="20" y="44"></rect>
 <rect height="68" rx="3" width="104" x="138" y="44"></rect>
@@ -356,65 +356,65 @@ a hidden threat and scans cautiously.</div>
 <circle class="ink" cx="544" cy="82" r="16"></circle>
 <circle class="ink" cx="655" cy="80" r="20"></circle>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
-<text x="72" y="128">1 · plano abierto</text>
-<text x="190" y="128">2 · puente</text>
-<text x="308" y="128">3 · plano medio</text>
-<text x="426" y="128">4 · aproximación</text>
-<text x="544" y="128">5 · primer plano</text>
-<text class="accent" x="655" y="128">6 · mirada</text>
+<text x="72" y="128">1 Â· plano abierto</text>
+<text x="190" y="128">2 Â· puente</text>
+<text x="308" y="128">3 Â· plano medio</text>
+<text x="426" y="128">4 Â· aproximaciÃ³n</text>
+<text x="544" y="128">5 Â· primer plano</text>
+<text class="accent" x="655" y="128">6 Â· mirada</text>
 </g>
 <path class="mark-stroke" d="M40 158 C 300 144, 480 144, 690 158" fill="none" stroke-dasharray="4 4" stroke-width="1.3"></path>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="180">LA TENSIÓN AUMENTA PANEL A PANEL</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="180">LA TENSIÃ“N AUMENTA PANEL A PANEL</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Por qué vale la pena generar un storyboard rudimentario de seis cuadros <em>antes</em> de pasar a las imágenes
-              cuidadas de cada plano — en vez de generar directamente la imagen final?</p>
+<p>Por quÃ© vale la pena generar un storyboard rudimentario de seis cuadros <em>antes</em> de pasar a las imÃ¡genes
+              cuidadas de cada plano â€” en vez de generar directamente la imagen final?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Porque el storyboard resuelve la <strong>progresión</strong> — encuadre, ritmo y escalada — cuando todavía es barato cambiar. Equivocarse en la secuencia en un boceto cuesta segundos; equivocarse después de generar seis imágenes finales cuesta tiempo y créditos. El storyboard es el lugar para tomar las decisiones de dirección antes del acabado.</p>
+<p class="answer">Porque el storyboard resuelve la <strong>progresiÃ³n</strong> â€” encuadre, ritmo y escalada â€” cuando todavÃ­a es barato cambiar. Equivocarse en la secuencia en un boceto cuesta segundos; equivocarse despuÃ©s de generar seis imÃ¡genes finales cuesta tiempo y crÃ©ditos. El storyboard es el lugar para tomar las decisiones de direcciÃ³n antes del acabado.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-3" data-inema-track="1" id="topico-3">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-3" data-ARCKHÉ-track="1" id="topico-3">
 <div class="section-mark">
-<span class="where">Sección 3 de 5</span><span>·</span><span>Personaje</span>
+<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>Personaje</span>
 </div>
-<h2 class="head"><span class="num">3.</span>Personaje, vestuario y utilería</h2>
+<h2 class="head"><span class="num">3.</span>Personaje, vestuario y utilerÃ­a</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t3-p1">En la producción tradicional, esta etapa pertenece a los
+<p class="lede" data-ARCKHÉ-block="m1-3-t3-p1">En la producciÃ³n tradicional, esta etapa pertenece a los
               departamentos de <em>casting</em> es arte conceptual. En nuestro flujo, la IA asume ese papel. El
-              principio clave: el personaje debe crearse en un <strong>ambiente de estudio neutro</strong>, para aislar el diseño. El foco está en proporciones realistas, una base de vestuario plausible, luz natural y pose neutra. Eso crea una <em>referencia limpia</em> del personaje, que después puede vestirse y
+              principio clave: el personaje debe crearse en un <strong>ambiente de estudio neutro</strong>, para aislar el diseÃ±o. El foco estÃ¡ en proporciones realistas, una base de vestuario plausible, luz natural y pose neutra. Eso crea una <em>referencia limpia</em> del personaje, que despuÃ©s puede vestirse y
               colocarse en el entorno.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m1-3-t3-p2">El personaje es el centro de la escena, y por eso vale la pena insistir en un
-              rostro creíble, proporciones naturales y un vestuario convincente: <strong>si el público cree en el
+<p data-ARCKHÉ-block="m1-3-t3-p2">El personaje es el centro de la escena, y por eso vale la pena insistir en un
+              rostro creÃ­ble, proporciones naturales y un vestuario convincente: <strong>si el pÃºblico cree en el
               personaje, empieza a creer en la escena.</strong> Luego vestimos a ese personaje. En el cine,
-              esto es trabajo de los departamentos de vestuario y utilería; en nuestro pipeline, generamos la ropa y las
-              armas como <em>objetos de referencia de estudio separados</em> — en el ejemplo del samurái: la vestimenta tradicional, el sombrero kasa y la katana, cada uno renderizado con luz de estudio para después combinarlo con el personaje.</p>
-<h3 class="sub">Por qué separar todo</h3>
-<p data-inema-block="m1-3-t3-p3">La separación no es burocrática: es la lógica estándar de los flujos de trabajo
-              profesionales de visualización. Construir el personaje, el vestuario y los accesorios como piezas aisladas es lo que
+              esto es trabajo de los departamentos de vestuario y utilerÃ­a; en nuestro pipeline, generamos la ropa y las
+              armas como <em>objetos de referencia de estudio separados</em> â€” en el ejemplo del samurÃ¡i: la vestimenta tradicional, el sombrero kasa y la katana, cada uno renderizado con luz de estudio para despuÃ©s combinarlo con el personaje.</p>
+<h3 class="sub">Por quÃ© separar todo</h3>
+<p data-ARCKHÉ-block="m1-3-t3-p3">La separaciÃ³n no es burocrÃ¡tica: es la lÃ³gica estÃ¡ndar de los flujos de trabajo
+              profesionales de visualizaciÃ³n. Construir el personaje, el vestuario y los accesorios como piezas aisladas es lo que
               garantiza <em>consistencia</em>: el mismo rostro, la misma ropa y la misma katana pueden reaparecer en los seis
-              planos sin desviaciones. Después conectamos los nodos de personaje y vestuario al generador de imágenes,
-              con una instrucción explícita para mantener la identidad y las proporciones del mismo personaje.</p>
+              planos sin desviaciones. DespuÃ©s conectamos los nodos de personaje y vestuario al generador de imÃ¡genes,
+              con una instrucciÃ³n explÃ­cita para mantener la identidad y las proporciones del mismo personaje.</p>
 </div>
-<!-- prompt pronto de integração de figurino -->
+<!-- prompt pronto de integraÃ§Ã£o de figurino -->
 <div class="prose">
-<p data-inema-block="m1-3-t3-p4">El prompt de integración del vestuario, manteniendo la consistencia:</p>
-<div class="codeblock"><span class="c"># Integración del vestuario — viste al personaje manteniendo su identidad</span>
+<p data-ARCKHÉ-block="m1-3-t3-p4">El prompt de integraciÃ³n del vestuario, manteniendo la consistencia:</p>
+<div class="codeblock"><span class="c"># IntegraciÃ³n del vestuario â€” viste al personaje manteniendo su identidad</span>
 <span class="k">Tarea:</span> viste al personaje proporcionado con los elementos de referencia adjuntos.
 <span class="k">Elementos:</span> use the samurai robe, the kasa hat and the katana exactly
 as referenced.
-<span class="k">Consistency:</span> keep the SAME character — identity, face and proportions
+<span class="k">Consistency:</span> keep the SAME character â€” identity, face and proportions
 unchanged.
-<span class="k">Meta:</span> a cinematic look suitable for a film scene; studio-neutral
+<span class="k">Meta:</span> a cARCKHÉtic look suitable for a film scene; studio-neutral
 lighting so it can be composited into the environment later.</div>
 </div>
-<!-- figura 3: peças separadas que combinam -->
+<!-- figura 3: peÃ§as separadas que combinam -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · Piezas de estudio <b>separadas</b> — combinadas sin perder su identidad</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· Piezas de estudio <b>separadas</b> â€” combinadas sin perder su identidad</figcaption>
 <svg aria-label="Diagrama: tres referencias de estudio aisladas (personaje neutro, vestuario, katana) convergen en un personaje final ensamblado y consistente." class="diagram" role="img" viewbox="0 0 720 196">
 <g font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
 <rect class="wash rule-stroke" height="40" rx="3" stroke-width="1.2" width="120" x="30" y="40"></rect>
@@ -437,54 +437,54 @@ lighting so it can be composited into the environment later.</div>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: la regla de referenciar componentes
+<summary><span class="chev">â–¸</span> Profundizando: la regla de referenciar componentes
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional, pero es el detalle que determina la consistencia en la práctica.</p>
+<p>Capa opcional, pero es el detalle que determina la consistencia en la prÃ¡ctica.</p>
 <p>Cuando armas el prompt en el nodo del asistente, hace falta <em>referenciar</em> cada componente
-                explícitamente — usando las menciones del sistema — para que estructure la solicitud
-                correctamente. El instructor da una analogía útil: piensa en los componentes (personaje, entorno,
+                explÃ­citamente â€” usando las menciones del sistema â€” para que estructure la solicitud
+                correctamente. El instructor da una analogÃ­a Ãºtil: piensa en los componentes (personaje, entorno,
                 storyboard) como <em>ingredientes para un chef</em>. Juntos y bien referenciados, permiten
-                generar resultados que de verdad siguen el diseño original. Sin esa referencia, el generador recombina
-                todo desde cero y se pierde la consistencia. Y recuerda: ningún modelo acierta a la primera; la
-                regeneración es parte del oficio.</p>
+                generar resultados que de verdad siguen el diseÃ±o original. Sin esa referencia, el generador recombina
+                todo desde cero y se pierde la consistencia. Y recuerda: ningÃºn modelo acierta a la primera; la
+                regeneraciÃ³n es parte del oficio.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-4" data-inema-track="1" id="topico-4">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-4" data-ARCKHÉ-track="1" id="topico-4">
 <div class="section-mark">
-<span class="where">Sección 4 de 5</span><span>·</span><span>Entorno</span>
+<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Entorno</span>
 </div>
-<h2 class="head"><span class="num">4.</span>Entorno: escala y tensión</h2>
+<h2 class="head"><span class="num">4.</span>Entorno: escala y tensiÃ³n</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t4-p1">En los pipelines profesionales de VFX, <em>los personajes y los ambientes se crean por separado</em> — práctica habitual en la visualización profesional. Seguimos
+<p class="lede" data-ARCKHÉ-block="m1-3-t4-p1">En los pipelines profesionales de VFX, <em>los personajes y los ambientes se crean por separado</em> â€” prÃ¡ctica habitual en la visualizaciÃ³n profesional. Seguimos
               el mismo principio: generamos el entorno como una pieza propia. En el ejemplo, se convierte en un puente
-              colgante de madera oscura entre acantilados, sobre un cañón profundo, con lluvia intensa, viento
+              colgante de madera oscura entre acantilados, sobre un caÃ±Ã³n profundo, con lluvia intensa, viento
               fuerte y niebla que se mueve por el abismo.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m1-3-t4-p2">El entorno <strong>define la escala y la tensión dramática</strong> de la
-              escena, y cada elemento tira hacia un lado. Un puente <em>se estrecha</em> crea vulnerabilidad — no
-              hay adónde huir. Un cañón <em>inmenso</em> crea escala cinematográfica — el personaje queda
-              pequeño frente al mundo. La niebla introduce incertidumbre — no se ve lo que viene. Juntos, estos
-              elementos amplifican el impacto dramático. Fíjate en cómo el entorno <em>encarna</em> la emoción decidida
-              en la Sección 1: el aislamiento y la tensión dejan de ser palabras y se convierten en geografía.</p>
+<p data-ARCKHÉ-block="m1-3-t4-p2">El entorno <strong>define la escala y la tensiÃ³n dramÃ¡tica</strong> de la
+              escena, y cada elemento tira hacia un lado. Un puente <em>se estrecha</em> crea vulnerabilidad â€” no
+              hay adÃ³nde huir. Un caÃ±Ã³n <em>inmenso</em> crea escala cARCKHÉtogrÃ¡fica â€” el personaje queda
+              pequeÃ±o frente al mundo. La niebla introduce incertidumbre â€” no se ve lo que viene. Juntos, estos
+              elementos amplifican el impacto dramÃ¡tico. FÃ­jate en cÃ³mo el entorno <em>encarna</em> la emociÃ³n decidida
+              en la SecciÃ³n 1: el aislamiento y la tensiÃ³n dejan de ser palabras y se convierten en geografÃ­a.</p>
 </div>
 <!-- prompt pronto de ambiente -->
 <div class="prose">
-<p data-inema-block="m1-3-t4-p3">El prompt de ambientación, derivado del guion y del storyboard:</p>
-<div class="codeblock"><span class="c"># Ambiente — generado a partir del guion y el storyboard</span>
-<span class="k">Tarea:</span> create a cinematic environment based on the script and storyboard.
-<span class="k">Ubicación:</span> a dark-wood suspension bridge between two cliffs, above a
+<p data-ARCKHÉ-block="m1-3-t4-p3">El prompt de ambientaciÃ³n, derivado del guion y del storyboard:</p>
+<div class="codeblock"><span class="c"># Ambiente â€” generado a partir del guion y el storyboard</span>
+<span class="k">Tarea:</span> create a cARCKHÉtic environment based on the script and storyboard.
+<span class="k">UbicaciÃ³n:</span> a dark-wood suspension bridge between two cliffs, above a
 deep canyon.
-<span class="k">Atmosphere:</span> lluvia intensa, viento fuerte, niebla que se desliza por el cañón.
-<span class="k">Intent:</span> a dramatic, cinematic environment suitable for a film scene —
+<span class="k">Atmosphere:</span> lluvia intensa, viento fuerte, niebla que se desliza por el caÃ±Ã³n.
+<span class="k">Intent:</span> a dramatic, cARCKHÉtic environment suitable for a film scene â€”
 narrow bridge for vulnerability, vast canyon for scale.
-<span class="k">Estilo:</span> moody cinematic lighting, deep atmospheric perspective.</div>
+<span class="k">Estilo:</span> moody cARCKHÉtic lighting, deep atmospheric perspective.</div>
 </div>
-<!-- figura 4: escala — pequeno x imenso -->
+<!-- figura 4: escala â€” pequeno x imenso -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · El ambiente <b>encarna la emoción</b> — estrecho y vulnerable, vasto y épico</figcaption>
-<svg aria-label="Diagrama: un puente estrecho atraviesa un cañón inmenso; la figura diminuta en el centro muestra vulnerabilidad, mientras que las paredes y la profundidad muestran la escala." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 4</span> Â· El ambiente <b>encarna la emociÃ³n</b> â€” estrecho y vulnerable, vasto y Ã©pico</figcaption>
+<svg aria-label="Diagrama: un puente estrecho atraviesa un caÃ±Ã³n inmenso; la figura diminuta en el centro muestra vulnerabilidad, mientras que las paredes y la profundidad muestran la escala." class="diagram" role="img" viewbox="0 0 720 200">
 <rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.1" width="640" x="40" y="34"></rect>
 <!-- paredes do canyon -->
 <path class="accent-stroke" d="M40 174 L40 80 L150 110 L150 174 Z" fill="url(#hatch-1-3)" stroke-width="1.1"></path>
@@ -494,75 +494,75 @@ narrow bridge for vulnerability, vast canyon for scale.
 <!-- ponte estreita -->
 <line class="ink" stroke-width="1.6" x1="150" x2="570" y1="104" y2="104"></line>
 <line class="faint" stroke-width="1" x1="150" x2="570" y1="110" y2="110"></line>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="96">puente estrecho — vulnerabilidad</text>
-<!-- figura minúscula -->
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="96">puente estrecho â€” vulnerabilidad</text>
+<!-- figura minÃºscula -->
 <circle class="accent" cx="360" cy="100" r="3.5"></circle>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="360" y="84">samurai</text>
 <!-- neblina -->
 <path class="faint" d="M180 140 q 40 -10 80 0 t 80 0 t 80 0 t 80 0" fill="none" stroke-width="1.2"></path>
 <path class="faint" d="M200 152 q 40 -10 80 0 t 80 0 t 80 0" fill="none" stroke-width="1.2"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="190">cañón vasto + neblina — escala e incertidumbre</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="190">caÃ±Ã³n vasto + neblina â€” escala e incertidumbre</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Supón que, en vez de un puente estrecho sobre un cañón, la misma escena ocurriera en un campo abierto
-              y plano. ¿Qué perderías en términos de tensión y por qué?</p>
+<p>SupÃ³n que, en vez de un puente estrecho sobre un caÃ±Ã³n, la misma escena ocurriera en un campo abierto
+              y plano. Â¿QuÃ© perderÃ­as en tÃ©rminos de tensiÃ³n y por quÃ©?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Se perdería casi toda la tensión espacial. El espacio abierto ofrece <em>salidas</em> en
+<p class="answer">Se perderÃ­a casi toda la tensiÃ³n espacial. El espacio abierto ofrece <em>salidas</em> en
                 todas las direcciones (sin vulnerabilidad) y no tiene escala vertical (sin grandeza). El puente funciona
-                precisamente porque <strong>restringe</strong>: un camino único, una caída a ambos lados, el abismo
+                precisamente porque <strong>restringe</strong>: un camino Ãºnico, una caÃ­da a ambos lados, el abismo
                 amplificando el riesgo. El entorno no es un escenario, sino dramaturgia.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-5" data-inema-track="1" id="topico-5">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-5" data-ARCKHÉ-track="1" id="topico-5">
 <div class="section-mark">
-<span class="where">Sección 5 de 5</span><span>·</span><span>Planos finales</span>
+<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>Planos finales</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Lista de planos y cuadros finales</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t5-p1">Con la escena entendida, convertimos el storyboard en un
-              <em>plano cinematográfico</em> — la lista de planos. Define, para cada plano: el tipo de
-              plano, la posición de la cámara, el movimiento de la cámara y el propósito dramático. En este momento, la IA actúa
-              al mismo tiempo como <strong>la directora y la directora de fotografía</strong>, ayudando a definir cómo
-              vivirá el público la escena. Una lista de planos es, en la práctica, un documento de producción: determina
-              dónde aparece la tensión y cómo se manifiesta visualmente la historia.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m1-3-t5-p2">Para generarla, nos conectamos al nodo del asistente <em>todos</em> los elementos
-              ya creados —personaje, entorno, storyboard— y pedimos una lista realista de seis
-              planos basada en la escena, haciendo referencia a cada componente con las menciones del sistema. Después viene el
-              <strong>separación de los encuadres</strong>: desglosamos la lista en imágenes individuales, un plano a la vez. Aquí,
+<p class="lede" data-ARCKHÉ-block="m1-3-t5-p1">Con la escena entendida, convertimos el storyboard en un
+              <em>plano cARCKHÉtogrÃ¡fico</em> â€” la lista de planos. Define, para cada plano: el tipo de
+              plano, la posiciÃ³n de la cÃ¡mara, el movimiento de la cÃ¡mara y el propÃ³sito dramÃ¡tico. En este momento, la IA actÃºa
+              al mismo tiempo como <strong>la directora y la directora de fotografÃ­a</strong>, ayudando a definir cÃ³mo
+              vivirÃ¡ el pÃºblico la escena. Una lista de planos es, en la prÃ¡ctica, un documento de producciÃ³n: determina
+              dÃ³nde aparece la tensiÃ³n y cÃ³mo se manifiesta visualmente la historia.<span class="sidenote-ref">5</span></p>
+<p data-ARCKHÉ-block="m1-3-t5-p2">Para generarla, nos conectamos al nodo del asistente <em>todos</em> los elementos
+              ya creados â€”personaje, entorno, storyboardâ€” y pedimos una lista realista de seis
+              planos basada en la escena, haciendo referencia a cada componente con las menciones del sistema. DespuÃ©s viene el
+              <strong>separaciÃ³n de los encuadres</strong>: desglosamos la lista en imÃ¡genes individuales, un plano a la vez. AquÃ­,
               de nuevo, la honestidad del oficio: el generador no acierta todos los planos a la primera:
-              <em>itera</em>, vuelve a generar y ve recopilando las imágenes que mejor coincidan con el diseño original,
-              prestando atención a la composición y al diseño de cámara, hasta completar el conjunto.</p>
+              <em>itera</em>, vuelve a generar y ve recopilando las imÃ¡genes que mejor coincidan con el diseÃ±o original,
+              prestando atenciÃ³n a la composiciÃ³n y al diseÃ±o de cÃ¡mara, hasta completar el conjunto.</p>
 <h3 class="sub">Lo que tienes al final</h3>
-<p data-inema-block="m1-3-t5-p3">Al final del flujo tienes un guion, un storyboard, un personaje
+<p data-ARCKHÉ-block="m1-3-t5-p3">Al final del flujo tienes un guion, un storyboard, un personaje
               dibujado, vestuario y accesorios, un entorno, una lista de planos y los cuadros finales; en otras
-              palabras, un <strong>paquete completo de preproducción</strong> de una escena. Estos cuadros no son el
-              destino: son la materia prima de la próxima lección. Sirven para generar video con IA, animación,
-              previsualización de películas y presentaciones de pitch. Ahora, el cuadro estático está listo para cobrar
+              palabras, un <strong>paquete completo de preproducciÃ³n</strong> de una escena. Estos cuadros no son el
+              destino: son la materia prima de la prÃ³xima lecciÃ³n. Sirven para generar video con IA, animaciÃ³n,
+              previsualizaciÃ³n de pelÃ­culas y presentaciones de pitch. Ahora, el cuadro estÃ¡tico estÃ¡ listo para cobrar
               movimiento.</p>
 </div>
 <!-- prompt pronto de lista de planos -->
 <div class="prose">
-<p data-inema-block="m1-3-t5-p4">El prompt de la lista de planos, con la IA en el papel de director y DoP:</p>
-<div class="codeblock"><span class="c"># Lista de tomas — la IA como directora + directora de fotografía</span>
-<span class="k">Rol:</span> act as both director and cinematographer.
-<span class="k">Tarea:</span> produce a realistic 6-shot cinematography shot list for the scene.
+<p data-ARCKHÉ-block="m1-3-t5-p4">El prompt de la lista de planos, con la IA en el papel de director y DoP:</p>
+<div class="codeblock"><span class="c"># Lista de tomas â€” la IA como directora + directora de fotografÃ­a</span>
+<span class="k">Rol:</span> act as both director and cARCKHÉtographer.
+<span class="k">Tarea:</span> produce a realistic 6-shot cARCKHÉtography shot list for the scene.
 <span class="k">Reference (use mentions):</span> el personaje, el entorno, el storyboard.
 <span class="k">For each shot, define:</span>
 - tipo de plano (abierto / medio / primer plano / detalle)
-- posición y ángulo de cámara (a la altura de los ojos, bajo, alto)
-- movimiento de cámara (estática, travelling de acercamiento, seguimiento, órbita)
-- propósito dramático (qué debería sentir el público aquí)
-<span class="k">Mantener:</span> el mismo personaje y entorno; la tensión aumenta a lo largo de los seis.</div>
+- posiciÃ³n y Ã¡ngulo de cÃ¡mara (a la altura de los ojos, bajo, alto)
+- movimiento de cÃ¡mara (estÃ¡tica, travelling de acercamiento, seguimiento, Ã³rbita)
+- propÃ³sito dramÃ¡tico (quÃ© deberÃ­a sentir el pÃºblico aquÃ­)
+<span class="k">Mantener:</span> el mismo personaje y entorno; la tensiÃ³n aumenta a lo largo de los seis.</div>
 </div>
 <!-- figura 5: storyboard vira lista de planos vira quadros -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · Del storyboard a la lista de planos a los <b>fotogramas finales</b></figcaption>
-<svg aria-label="Diagrama: el storyboard alimenta la lista de planos (tipo, cámara, movimiento, propósito), que se separa en cuadros finales listos para video." class="diagram" role="img" viewbox="0 0 720 184">
+<figcaption><span class="fig-n">Fig. 5</span> Â· Del storyboard a la lista de planos a los <b>fotogramas finales</b></figcaption>
+<svg aria-label="Diagrama: el storyboard alimenta la lista de planos (tipo, cÃ¡mara, movimiento, propÃ³sito), que se separa en cuadros finales listos para video." class="diagram" role="img" viewbox="0 0 720 184">
 <rect class="wash rule-stroke" height="56" rx="3" stroke-width="1.2" width="150" x="30" y="56"></rect>
 <text class="ink-soft" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="105" y="80">storyboard</text>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="105" y="98">6 paneles</text>
@@ -570,81 +570,81 @@ narrow bridge for vulnerability, vast canyon for scale.
 <rect class="accent-stroke" fill="url(#hatch-1-3)" height="88" rx="3" stroke-width="1.3" width="200" x="230" y="40"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="330" y="60">lista de planes</text>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
-<text x="330" y="78">tipo · cámara</text>
+<text x="330" y="78">tipo Â· cÃ¡mara</text>
 <text x="330" y="92">movimiento</text>
-<text x="330" y="106">propósito dramático</text>
+<text x="330" y="106">propÃ³sito dramÃ¡tico</text>
 </g>
 <path class="accent-stroke" d="M430 84 H 480" stroke-width="1.8"></path><path class="accent-stroke" d="M480 84 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
 <g class="rule-stroke" fill="none" stroke-width="1.2">
 <rect height="40" rx="2" width="58" x="490" y="50"></rect><rect height="40" rx="2" width="58" x="556" y="50"></rect><rect height="40" rx="2" width="58" x="622" y="50"></rect>
 <rect height="34" rx="2" width="58" x="490" y="96"></rect><rect height="34" rx="2" width="58" x="556" y="96"></rect><rect height="34" rx="2" width="58" x="622" y="96"></rect>
 </g>
-<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="585" y="150">fotogramas finales — listos para video</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="585" y="150">fotogramas finales â€” listos para video</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m1-3-t5-p5">Resume el módulo en una frase: <em>una persona, con IA y un pipeline
-              estructurado, hace el trabajo de todo un equipo de preproducción — siempre que decida primero la emoción
+<p data-ARCKHÉ-block="m1-3-t5-p5">Resume el mÃ³dulo en una frase: <em>una persona, con IA y un pipeline
+              estructurado, hace el trabajo de todo un equipo de preproducciÃ³n â€” siempre que decida primero la emociÃ³n
               y repita el proceso sin prisa.</em> La tarea de la clase (formato de escuela de cine) es justamente esta:
-              arma tu propia escena corta con este flujo de trabajo y experimenta con la composición y el diseño de cámara. En la
-              próxima clase, llevaremos estos encuadres al movimiento.</p>
+              arma tu propia escena corta con este flujo de trabajo y experimenta con la composiciÃ³n y el diseÃ±o de cÃ¡mara. En la
+              prÃ³xima clase, llevaremos estos encuadres al movimiento.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="Autocomprobación" class="check">
-<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<section aria-label="AutocomprobaciÃ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>¿Cuál es la pregunta que hace el director antes de generar cualquier imagen?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>“¿Qué debe sentir el público en este momento?” La emoción definida al inicio
-              (aislamiento, tensión, anticipación) es lo que determina los ángulos, la luz y la composición — y conecta todas
+<summary><span class="qn">01</span><span>Â¿CuÃ¡l es la pregunta que hace el director antes de generar cualquier imagen?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>â€œÂ¿QuÃ© debe sentir el pÃºblico en este momento?â€ La emociÃ³n definida al inicio
+              (aislamiento, tensiÃ³n, anticipaciÃ³n) es lo que determina los Ã¡ngulos, la luz y la composiciÃ³n â€” y conecta todas
               las etapas del pipeline en una escena coherente.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>¿Por qué se generan el personaje y el entorno por separado?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Es la lógica estándar de los pipelines de VFX y lo que garantiza <em>consistencia</em>: crear
-              cada pieza por separado (personaje neutro, vestuario, entorno) permite recombinarlas sin deriva — el
+<summary><span class="qn">02</span><span>Â¿Por quÃ© se generan el personaje y el entorno por separado?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Es la lÃ³gica estÃ¡ndar de los pipelines de VFX y lo que garantiza <em>consistencia</em>: crear
+              cada pieza por separado (personaje neutro, vestuario, entorno) permite recombinarlas sin deriva â€” el
               mismo rostro y la misma ropa reaparecen en todos los planos.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>¿Qué define una lista de planos y qué papel asume la IA en ella?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Define, por plano: tipo de plano, posición y ángulo de cámara, movimiento y propósito
-              dramático. La IA actúa como <em>la directora y la directora de fotografía</em> — la lista se convierte en un
-              documento de producción sobre cómo experimenta el público la escena.</p></div>
+<summary><span class="qn">03</span><span>Â¿QuÃ© define una lista de planos y quÃ© papel asume la IA en ella?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Define, por plano: tipo de plano, posiciÃ³n y Ã¡ngulo de cÃ¡mara, movimiento y propÃ³sito
+              dramÃ¡tico. La IA actÃºa como <em>la directora y la directora de fotografÃ­a</em> â€” la lista se convierte en un
+              documento de producciÃ³n sobre cÃ³mo experimenta el pÃºblico la escena.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>¿Qué expectativa realista debes tener sobre la primera generación de cada encuadre?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Â¿QuÃ© expectativa realista debes tener sobre la primera generaciÃ³n de cada encuadre?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Que ella <em>no</em> sale bien a la primera. Regenerar es parte del oficio: itera y
-              recopila las imágenes que mejor siguen el storyboard y el diseño de cámara, hasta que el conjunto completo
-              coincida con la composición deseada.</p></div>
+              recopila las imÃ¡genes que mejor siguen el storyboard y el diseÃ±o de cÃ¡mara, hasta que el conjunto completo
+              coincida con la composiciÃ³n deseada.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Mi recorrido</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+<h2><span class="ico">â§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este módulo</div>
-<div class="v" data-inema-meter="modulo:1-3">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="k">En este mÃ³dulo</div>
+<div class="v" data-ARCKHÉ-meter="modulo:1-3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 1</div>
-<div class="v" data-inema-meter="trilha:1">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:1">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -653,43 +653,43 @@ narrow bridge for vulnerability, vast canyon for scale.
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Módulo 1.4 — Del encuadre al movimiento</div>
+<div class="t">MÃ³dulo 1.4 â€” Del encuadre al movimiento</div>
 </div>
-<a class="go" href="modulo-1-4.html">Siguiente →</a>
+<a class="go" href="modulo-1-4.html">Siguiente â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Preproducción.</b> Todo lo que sucede antes de «rodar»: guion, storyboard, personaje,
-          vestuario, entorno, lista de planos. Aquí se decide la intención de la escena, y este es el foco de la clase.
+<div class="tag">DefiniciÃ³n</div>
+<b>PreproducciÃ³n.</b> Todo lo que sucede antes de Â«rodarÂ»: guion, storyboard, personaje,
+          vestuario, entorno, lista de planos. AquÃ­ se decide la intenciÃ³n de la escena, y este es el foco de la clase.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Lección 2 del bloque Luz — “Del guion a la escena”, demostrada en Freepik Spaces. El Space
-          completo (nodos, prompts, workflow) está enlazado en el bloque “Para profundizar” de esta sección.
-          <div class="src-line">freepik.com · pikaso/spaces</div>
+          LecciÃ³n 2 del bloque Luz â€” â€œDel guion a la escenaâ€, demostrada en Freepik Spaces. El Space
+          completo (nodos, prompts, workflow) estÃ¡ enlazado en el bloque â€œPara profundizarâ€ de esta secciÃ³n.
+          <div class="src-line">freepik.com Â· pikaso/spaces</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Storyboard.</b> La secuencia de encuadres que planifica la escena antes de las imágenes finales:
-          encuadre, perspectiva, ritmo y escalada. El primer lenguaje de dirección.
+<div class="tag">DefiniciÃ³n</div>
+<b>Storyboard.</b> La secuencia de encuadres que planifica la escena antes de las imÃ¡genes finales:
+          encuadre, perspectiva, ritmo y escalada. El primer lenguaje de direcciÃ³n.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Resuelve la progresión en el boceto, cuando todavía es barato. Equivocarse en la secuencia en un borrador cuesta segundos;
-          equivocarse después de las imágenes finales cuesta tiempo y créditos.
+          Resuelve la progresiÃ³n en el boceto, cuando todavÃ­a es barato. Equivocarse en la secuencia en un borrador cuesta segundos;
+          equivocarse despuÃ©s de las imÃ¡genes finales cuesta tiempo y crÃ©ditos.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Referencia de estudio.</b> Personaje u objeto generado sobre un fondo neutro y con luz controlada, aislado para que vuelva a aparecer de manera consistente en varios planos. Personaje creíble = el público cree en la escena.
+<div class="tag">DefiniciÃ³n</div>
+<b>Referencia de estudio.</b> Personaje u objeto generado sobre un fondo neutro y con luz controlada, aislado para que vuelva a aparecer de manera consistente en varios planos. Personaje creÃ­ble = el pÃºblico cree en la escena.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
@@ -697,36 +697,36 @@ narrow bridge for vulnerability, vast canyon for scale.
           sistema para que el generador estructure el pedido y mantenga la identidad.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>El entorno como dramaturgia.</b> El escenario no solo ubica: también encarna la emoción. Puente estrecho =
-          vulnerabilidad; cañón vasto = escala; niebla = incertidumbre.
+<div class="tag">DefiniciÃ³n</div>
+<b>El entorno como dramaturgia.</b> El escenario no solo ubica: tambiÃ©n encarna la emociÃ³n. Puente estrecho =
+          vulnerabilidad; caÃ±Ã³n vasto = escala; niebla = incertidumbre.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Práctica estándar de VFX: <i>los personajes y los ambientes se crean por separado</i>. La separación es lo que
+          PrÃ¡ctica estÃ¡ndar de VFX: <i>los personajes y los ambientes se crean por separado</i>. La separaciÃ³n es lo que
           permite componer la escena con control, plano por plano.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Lista de planos (shot list).</b> Documento de producción que define, plano por plano, el tipo, la posición y
-          el movimiento de cámara, así como el propósito dramático. Aquí la IA es directora <i>e</i> director de fotografía.
+<div class="tag">DefiniciÃ³n</div>
+<b>Lista de planos (shot list).</b> Documento de producciÃ³n que define, plano por plano, el tipo, la posiciÃ³n y
+          el movimiento de cÃ¡mara, asÃ­ como el propÃ³sito dramÃ¡tico. AquÃ­ la IA es directora <i>e</i> director de fotografÃ­a.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          El resultado final — guion, storyboard, personaje, vestuario, entorno, lista, cuadros — es
-          un paquete de preproducción. Los cuadros estáticos son la materia prima del Módulo 1.4.
+          El resultado final â€” guion, storyboard, personaje, vestuario, entorno, lista, cuadros â€” es
+          un paquete de preproducciÃ³n. Los cuadros estÃ¡ticos son la materia prima del MÃ³dulo 1.4.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Módulo 1.3 — folio iii</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">MÃ³dulo 1.3 â€” folio iii</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -735,8 +735,8 @@ narrow bridge for vulnerability, vast canyon for scale.
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

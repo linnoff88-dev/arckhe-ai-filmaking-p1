@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 4.2 — Movimento de Camera | AI Filmmaking</title>
+<title>Modulo 4.2 â€” Movimento de Camera | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/modulo-4-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/modulo-4-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/modulo-4-2.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:4-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:4-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Trilha <b>4</b> Linguagem de Camera</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>4.2</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,14 +189,14 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 4.2 · Trilha 4 · Linguagem de Camera</p>
+<p class="kicker">Modulo 4.2 Â· Trilha 4 Â· Linguagem de Camera</p>
 <h1 class="module">Movimento de Camera: quando a camera vira <em>verbo</em></h1>
 <p class="deck">Cada deslocamento da camera e uma frase dita ao espectador. Esta aula mapeia os
-          movimentos fundamentais — girar, viajar, orbitar — e o principio que governa todos eles:
+          movimentos fundamentais â€” girar, viajar, orbitar â€” e o principio que governa todos eles:
           mover sem motivo e ruido; e, as vezes, a escolha mais forte e nao mover.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~17 min · modulo inteiro</span>
+<span>~17 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
@@ -204,18 +204,18 @@
 <h2>O que voce vai entender</h2>
 <ul>
 <li>A diferenca entre <b>girar no eixo</b> (pan, tilt) e <b>viajar pelo espaco</b> (dolly, push-in,
-              tracking) — e por que confundi-las gera prompts ambiguos.</li>
+              tracking) â€” e por que confundi-las gera prompts ambiguos.</li>
 <li>O que cada movimento <b>diz ao espectador</b>: um push-in pede atencao, uma orbita revela, um
               tremor de mao tensiona, um tripe imovel convida a observar.</li>
-<li>Por que <b>movimento precisa de motivacao</b> — e como mover a camera sem razao quebra a
+<li>Por que <b>movimento precisa de motivacao</b> â€” e como mover a camera sem razao quebra a
               cena em vez de eleva-la.</li>
 <li>A coragem de <b>manter a camera parada</b>, e por que empilhar movimentos num so plano e o erro
               mais comum em video de IA.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">A camera como verbo</span></a></li>
@@ -226,32 +226,32 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="4-2" data-inema-topic="modulo-4-2#topico-1" data-inema-track="4" id="topico-1">
+<section data-ARCKHÉ-module="4-2" data-ARCKHÉ-topic="modulo-4-2#topico-1" data-ARCKHÉ-track="4" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>Principio</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>Principio</span>
 </div>
 <h2 class="head"><span class="num">1.</span>A camera como verbo</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m4-2-t1-p1">Se o enquadramento e o substantivo — o que
-              esta no quadro —, o movimento e o <em>verbo</em>: ele diz o que a camera <strong>faz</strong>.
+<p class="lede dropcap" data-ARCKHÉ-block="m4-2-t1-p1">Se o enquadramento e o substantivo â€” o que
+              esta no quadro â€”, o movimento e o <em>verbo</em>: ele diz o que a camera <strong>faz</strong>.
               E, como todo verbo, ele carrega intencao. Uma camera que se aproxima nao mostra a mesma coisa que
               uma camera parada; ela <em>afirma</em> algo. O espectador nao percebe isso conscientemente, mas o
-              corpo dele responde — tensiona, relaxa, presta atencao — conforme a camera se desloca.
+              corpo dele responde â€” tensiona, relaxa, presta atencao â€” conforme a camera se desloca.
               Esta aula e sobre escolher esses verbos com a mesma precisao com que voce escolheria as palavras de
               uma frase.</p>
-<p data-inema-block="m4-2-t1-p2">A regra que atravessa o modulo inteiro e simples e quase nunca
+<p data-ARCKHÉ-block="m4-2-t1-p2">A regra que atravessa o modulo inteiro e simples e quase nunca
               respeitada por iniciantes: <strong>nunca mova a camera sem uma razao.</strong><span class="sidenote-ref">1</span>
-              Um <em>push-in</em> diz “preste atencao a isto”. Um tremor de mao diz
-              “nervoso”, “urgente”, “real”. Um tripe estatico diz
-              “observe com calma”. Se voce nao sabe dizer o que o movimento <em>significa</em>, ele
-              esta ali por engano — e o espectador sente a falta de proposito mesmo sem nomea-la.</p>
+              Um <em>push-in</em> diz â€œpreste atencao a istoâ€. Um tremor de mao diz
+              â€œnervosoâ€, â€œurgenteâ€, â€œrealâ€. Um tripe estatico diz
+              â€œobserve com calmaâ€. Se voce nao sabe dizer o que o movimento <em>significa</em>, ele
+              esta ali por engano â€” e o espectador sente a falta de proposito mesmo sem nomea-la.</p>
 <h3 class="sub">Dois eixos para organizar todos os movimentos</h3>
-<p data-inema-block="m4-2-t1-p3">Para nao decorar uma lista solta, organize todo movimento em duas
-              familias. A primeira: a camera <em>gira no proprio eixo</em>, sem sair do lugar — e o pan
+<p data-ARCKHÉ-block="m4-2-t1-p3">Para nao decorar uma lista solta, organize todo movimento em duas
+              familias. A primeira: a camera <em>gira no proprio eixo</em>, sem sair do lugar â€” e o pan
               (horizontal) e o tilt (vertical). A segunda: a camera <em>viaja pelo espaco</em>, muda de posicao
-              fisica — e o dolly, o push-in, o tracking e a orbita. Essa distincao nao e academica: ela
-              decide como voce escreve o prompt, porque “girar para ver mais” e “andar para
-              chegar perto” sao instrucoes diferentes para o gerador.</p>
+              fisica â€” e o dolly, o push-in, o tracking e a orbita. Essa distincao nao e academica: ela
+              decide como voce escreve o prompt, porque â€œgirar para ver maisâ€ e â€œandar para
+              chegar pertoâ€ sao instrucoes diferentes para o gerador.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
@@ -261,7 +261,7 @@
               parece errado. O que provavelmente falta?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">A <strong>motivacao</strong>. Um push-in diz “preste atencao” —
+<p class="answer">A <strong>motivacao</strong>. Um push-in diz â€œpreste atencaoâ€ â€”
                 mas atencao a que? Se nao ha uma reacao, uma decisao ou uma revelacao naquele rosto, o movimento
                 promete um significado que a cena nao entrega. O olho sente a promessa vazia. Movimento sem razao
                 nao e neutro: ele <em>desorienta</em>.</p>
@@ -269,7 +269,7 @@
 </div>
 <!-- figura 1: dois eixos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · Duas familias: <b>girar no eixo</b> ou <b>viajar no espaco</b></figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· Duas familias: <b>girar no eixo</b> ou <b>viajar no espaco</b></figcaption>
 <svg aria-label="Diagrama com duas metades: a esquerda, uma camera fixa que gira (pan e tilt indicados por arcos); a direita, uma camera que se desloca por uma trilha em direcao ao sujeito." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-4-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -305,58 +305,58 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que esta aula vem antes dos planos
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que esta aula vem antes dos planos
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada explica a ordem da trilha — e pode ser pulada.</p>
+<p>O caminho-feliz acima ja basta. Esta camada explica a ordem da trilha â€” e pode ser pulada.</p>
 <p>Movimento e enquadramento (proxima aula) sao duas faces da mesma moeda, mas o movimento vem
                 primeiro por um motivo: ele e o erro numero um do video de IA. A maioria dos clipes fracos nao
-                falha na ideia nem no plano — falha porque a camera se mexe de um jeito que ninguem pediu, ou
+                falha na ideia nem no plano â€” falha porque a camera se mexe de um jeito que ninguem pediu, ou
                 empilha tres movimentos ao mesmo tempo e gera nausea. Dominar <em>quando</em> e <em>por que</em>
-                mover, antes de afinar a distancia do plano, resolve a maior fonte de resultados “com cara
-                de IA”.</p>
+                mover, antes de afinar a distancia do plano, resolve a maior fonte de resultados â€œcom cara
+                de IAâ€.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="4-2" data-inema-topic="modulo-4-2#topico-2" data-inema-track="4" id="topico-2">
+<section data-ARCKHÉ-module="4-2" data-ARCKHÉ-topic="modulo-4-2#topico-2" data-ARCKHÉ-track="4" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>No eixo</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>No eixo</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Girar no eixo: pan e tilt</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-2-t2-p1">O <em>pan</em> e a camera girando na horizontal, como uma
+<p class="lede" data-ARCKHÉ-block="m4-2-t2-p1">O <em>pan</em> e a camera girando na horizontal, como uma
               cabeca que vira de um lado para o outro sem o corpo sair do lugar. O <em>tilt</em> e o mesmo gesto na
               vertical: a cabeca que se inclina para cima ou para baixo. Sao os movimentos mais economicos do
-              cinema — a camera nao viaja, so muda para onde olha — e por isso os mais faceis de
+              cARCKHÉ â€” a camera nao viaja, so muda para onde olha â€” e por isso os mais faceis de
               controlar num gerador.</p>
 <h3 class="sub">O que cada um diz</h3>
-<p data-inema-block="m4-2-t2-p2">Um <strong>pan</strong> costuma <em>revelar</em>: a camera segue um
-              personagem que anda, ou desliza de um elemento a outro para mostrar uma relacao entre eles —
-              “isto, e tambem aquilo”. Um <strong>tilt para cima</strong> quase sempre comunica
+<p data-ARCKHÉ-block="m4-2-t2-p2">Um <strong>pan</strong> costuma <em>revelar</em>: a camera segue um
+              personagem que anda, ou desliza de um elemento a outro para mostrar uma relacao entre eles â€”
+              â€œisto, e tambem aquiloâ€. Um <strong>tilt para cima</strong> quase sempre comunica
               grandeza ou ameaca: descobrimos a altura de algo (uma nave, uma montanha, um predio) de baixo para
               cima, e a escala cresce diante de nos. Um <strong>tilt para baixo</strong> revela vulnerabilidade ou
-              um detalhe no chao — o olhar que desce a um corpo, a uma pegada, a uma carta caida.</p>
-<p data-inema-block="m4-2-t2-p3">A armadilha do pan e a velocidade. Um pan lento e elegante e legivel;
-              um pan rapido demais vira o <em>whip pan</em> — um borrao proposital que serve para
+              um detalhe no chao â€” o olhar que desce a um corpo, a uma pegada, a uma carta caida.</p>
+<p data-ARCKHÉ-block="m4-2-t2-p3">A armadilha do pan e a velocidade. Um pan lento e elegante e legivel;
+              um pan rapido demais vira o <em>whip pan</em> â€” um borrao proposital que serve para
               <em>esconder</em> um corte, nao para mostrar. Os dois sao validos, mas dizem coisas opostas: um
               convida o olho a acompanhar, o outro o atravessa de um espaco a outro. No prompt, isso precisa
-              ficar explicito: “slow pan” e “fast whip pan” geram resultados muito
+              ficar explicito: â€œslow panâ€ e â€œfast whip panâ€ geram resultados muito
               diferentes.</p>
-<div class="codeblock"><span class="c"># Pan e tilt — girar no eixo, com motivo</span>
+<div class="codeblock"><span class="c"># Pan e tilt â€” girar no eixo, com motivo</span>
 <span class="c"># um movimento por plano; descreva velocidade e direcao</span>
-<span class="k">Format:</span> cinematic 16:9, anamorphic, film grain.
-<span class="k">Shot A — slow pan:</span> camera fixed on a tripod, slowly pans left to right following a lone figure walking across a desert ridge, revealing a wrecked spaceship at the end of the move.
-<span class="k">Shot B — tilt up:</span> camera at ground level tilts upward along the hull of the towering spaceship, making it loom like a sleeping giant; sense of scale and dread.
+<span class="k">Format:</span> cARCKHÉtic 16:9, anamorphic, film grain.
+<span class="k">Shot A â€” slow pan:</span> camera fixed on a tripod, slowly pans left to right following a lone figure walking across a desert ridge, revealing a wrecked spaceship at the end of the move.
+<span class="k">Shot B â€” tilt up:</span> camera at ground level tilts upward along the hull of the towering spaceship, making it loom like a sleeping giant; sense of scale and dread.
 <span class="k">Lighting:</span> warm low side light, long shadows, drifting dust.
-<span class="k">Constraint:</span> no dolly, no zoom — rotation only, smooth and deliberate.</div>
+<span class="k">Constraint:</span> no dolly, no zoom â€” rotation only, smooth and deliberate.</div>
 </div>
 <!-- figura 2: pan e tilt -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · <b>Pan</b> revela na horizontal; <b>tilt</b> mede a escala na vertical</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· <b>Pan</b> revela na horizontal; <b>tilt</b> mede a escala na vertical</figcaption>
 <svg aria-label="Diagrama: a esquerda, uma camera que faz pan horizontal revelando um objeto ao fim do arco; a direita, uma camera que faz tilt para cima ao longo de uma estrutura alta." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- pan -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="180" y="28">PAN — REVELA</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="180" y="28">PAN â€” REVELA</text>
 <rect class="wash rule-stroke" height="26" rx="3" stroke-width="1.3" width="36" x="60" y="120"></rect>
 <path class="accent-stroke" d="M96 133 C 160 90, 240 90, 300 110" fill="none" stroke-width="1.8"></path>
 <polygon class="mark-fill" points="296,104 308,110 295,114"></polygon>
@@ -365,7 +365,7 @@
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="370" x2="370" y1="28" y2="180"></line>
 <!-- tilt -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TILT — MEDE ESCALA</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TILT â€” MEDE ESCALA</text>
 <rect class="wash rule-stroke" height="110" rx="3" stroke-width="1.3" width="60" x="560" y="60"></rect>
 <text class="ink-soft" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="590" y="120">estrutura</text>
 <rect class="rule-stroke" fill="none" height="24" rx="3" stroke-width="1.3" width="34" x="440" y="150"></rect>
@@ -376,42 +376,42 @@
 </figure>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="4-2" data-inema-topic="modulo-4-2#topico-3" data-inema-track="4" id="topico-3">
+<section data-ARCKHÉ-module="4-2" data-ARCKHÉ-topic="modulo-4-2#topico-3" data-ARCKHÉ-track="4" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>No espaco</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>No espaco</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Viajar no espaco: dolly, push-in, tracking</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-2-t3-p1">Quando a camera <em>sai do lugar</em>, o efeito sobre o
+<p class="lede" data-ARCKHÉ-block="m4-2-t3-p1">Quando a camera <em>sai do lugar</em>, o efeito sobre o
               espectador muda de natureza. Girar no eixo mostra um espaco; viajar por ele <em>nos coloca dentro
-              dele</em>. O <span class="dfn"><details class="dfn"><summary>dolly</summary><span class="body"><b>Dolly</b> e o deslocamento fisico da camera sobre um eixo — para a frente, para tras ou para o lado. Difere do zoom: o dolly muda a <i>perspectiva</i> (o fundo se reorganiza), enquanto o zoom so amplia a mesma imagem.</span></details></span>
+              dele</em>. O <span class="dfn"><details class="dfn"><summary>dolly</summary><span class="body"><b>Dolly</b> e o deslocamento fisico da camera sobre um eixo â€” para a frente, para tras ou para o lado. Difere do zoom: o dolly muda a <i>perspectiva</i> (o fundo se reorganiza), enquanto o zoom so amplia a mesma imagem.</span></details></span>
               e o nome geral desse deslocamento: a camera anda. Quando ela anda <em>para a frente</em>, em direcao
               ao sujeito, chamamos de <strong>push-in</strong>; quando recua, de <strong>pull-out</strong>.</p>
-<h3 class="sub">Push-in — o verbo “aproxime-se”</h3>
-<p data-inema-block="m4-2-t3-p2">O push-in e talvez o movimento mais emocional do cinema. Conforme a
-              camera se aproxima, o mundo ao redor se estreita e o sujeito ganha peso — e o equivalente
+<h3 class="sub">Push-in â€” o verbo â€œaproxime-seâ€</h3>
+<p data-ARCKHÉ-block="m4-2-t3-p2">O push-in e talvez o movimento mais emocional do cARCKHÉ. Conforme a
+              camera se aproxima, o mundo ao redor se estreita e o sujeito ganha peso â€” e o equivalente
               visual de inclinar-se para ouvir alguem. Por isso ele dispara no momento de uma decisao, de uma
               percepcao, de uma virada interna. Um push-in lento e quase imperceptivel ao consciente, mas o corpo
               registra a intensificacao. E aqui mora o cuidado: o push-in promete significado, entao so deve
               acontecer quando ha significado a entregar.<span class="sidenote-ref">2</span></p>
-<h3 class="sub">Tracking — a camera que acompanha</h3>
-<p data-inema-block="m4-2-t3-p3">O <strong>tracking</strong> (ou traveling lateral) e a camera que
+<h3 class="sub">Tracking â€” a camera que acompanha</h3>
+<p data-ARCKHÉ-block="m4-2-t3-p3">O <strong>tracking</strong> (ou traveling lateral) e a camera que
               viaja <em>junto</em> com o sujeito, mantendo-o no quadro enquanto ele se move. E o movimento da
-              acao: corre com quem corre, anda ao lado de quem anda. Ele cria energia e cumplicidade —
+              acao: corre com quem corre, anda ao lado de quem anda. Ele cria energia e cumplicidade â€”
               estamos com o personagem, na velocidade dele. Diferente do push-in, que aproxima, o tracking
               <em>acompanha</em>: a distancia se mantem, o que muda e o cenario passando por tras.</p>
 <h3 class="sub">A distincao que mais confunde o gerador: dolly versus zoom</h3>
-<p data-inema-block="m4-2-t3-p4">Push-in (dolly para a frente) e zoom <em>parecem</em> a mesma coisa —
-              o sujeito fica maior —, mas sao opostos. No <strong>dolly</strong>, a camera anda: a
+<p data-ARCKHÉ-block="m4-2-t3-p4">Push-in (dolly para a frente) e zoom <em>parecem</em> a mesma coisa â€”
+              o sujeito fica maior â€”, mas sao opostos. No <strong>dolly</strong>, a camera anda: a
               perspectiva muda, o fundo se reorganiza, sentimos profundidade. No <strong>zoom</strong>, a camera
-              fica parada e so amplia a imagem: a perspectiva nao muda, e o resultado parece “achatado”
-              e, muitas vezes, barato. No prompt, dizer “dolly in” ou “push in” produz
-              cinema; dizer “zoom in” costuma produzir aquela sensacao de video caseiro. Escolha a
+              fica parada e so amplia a imagem: a perspectiva nao muda, e o resultado parece â€œachatadoâ€
+              e, muitas vezes, barato. No prompt, dizer â€œdolly inâ€ ou â€œpush inâ€ produz
+              cARCKHÉ; dizer â€œzoom inâ€ costuma produzir aquela sensacao de video caseiro. Escolha a
               palavra com intencao.</p>
 </div>
 <!-- figura 3: dolly x zoom -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · <b>Dolly</b> muda a perspectiva; <b>zoom</b> so amplia o mesmo quadro</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· <b>Dolly</b> muda a perspectiva; <b>zoom</b> so amplia o mesmo quadro</figcaption>
 <svg aria-label="Diagrama comparando dolly e zoom: no dolly a camera anda e o fundo se reorganiza; no zoom a camera fica parada e a imagem so e ampliada, achatando a profundidade." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- dolly -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">DOLLY / PUSH-IN</text>
@@ -423,7 +423,7 @@
 <circle class="rule-stroke" cx="300" cy="108" fill="none" r="16" stroke-width="1.4"></circle>
 <line class="rule-stroke" opacity="0.7" stroke-width="1" x1="280" x2="330" y1="150" y2="150"></line>
 <line class="rule-stroke" opacity="0.45" stroke-width="1" x1="288" x2="322" y1="70" y2="70"></line>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">camera anda — fundo vivo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">camera anda â€” fundo vivo</text>
 <text class="ink" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="180" y="194">profundidade</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="370" x2="370" y1="28" y2="196"></line>
@@ -434,62 +434,62 @@
 <path class="rule-stroke" d="M464 100 L640 70" fill="none" opacity="0.6" stroke-width="1"></path>
 <path class="rule-stroke" d="M464 116 L640 146" fill="none" opacity="0.6" stroke-width="1"></path>
 <rect class="rule-stroke" fill="none" height="44" rx="3" stroke-width="1.4" width="40" x="600" y="86"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="178">camera parada — so amplia</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="178">camera parada â€” so amplia</text>
 <text class="faint" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="540" y="194">achatado</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: o “dolly zoom” e por que ele perturba
+<summary><span class="chev">â–¸</span> Indo mais fundo: o â€œdolly zoomâ€ e por que ele perturba
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional — um caso extremo que mostra a diferenca entre dolly e zoom na pratica.</p>
+<p>Camada opcional â€” um caso extremo que mostra a diferenca entre dolly e zoom na pratica.</p>
 <p>Existe um movimento que faz dolly e zoom <em>ao mesmo tempo, em direcoes opostas</em>: a camera
                 recua enquanto a lente amplia (ou o contrario). O sujeito fica do mesmo tamanho, mas o fundo
                 <em>estica</em> ou <em>comprime</em> de forma vertiginosa. E o famoso efeito de Vertigo (tambem
                 chamado de dolly zoom ou efeito Hitchcock), usado para traduzir vertigem, choque ou uma realidade
                 que se desfaz. Em geradores ele e dificil de obter de forma limpa, mas saber que ele existe ajuda
-                a entender que dolly e zoom sao parametros <em>independentes</em> — e que e a relacao entre
+                a entender que dolly e zoom sao parametros <em>independentes</em> â€” e que e a relacao entre
                 os dois que cria a sensacao.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="4-2" data-inema-topic="modulo-4-2#topico-4" data-inema-track="4" id="topico-4">
+<section data-ARCKHÉ-module="4-2" data-ARCKHÉ-topic="modulo-4-2#topico-4" data-ARCKHÉ-track="4" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>Orbita</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>Orbita</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Orbita e o movimento que revela</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-2-t4-p1">A <em>orbita</em> e a camera que circula em torno do
+<p class="lede" data-ARCKHÉ-block="m4-2-t4-p1">A <em>orbita</em> e a camera que circula em torno do
               sujeito, mantendo-o no centro enquanto o fundo gira ao redor. E um dos movimentos mais sedutores do
-              cinema contemporaneo — e um dos mais abusados. Quando tem motivo, a orbita <strong>revela
+              cARCKHÉ contemporaneo â€” e um dos mais abusados. Quando tem motivo, a orbita <strong>revela
               dimensao</strong>: ela mostra um objeto ou um personagem por todos os lados, afirma a presenca dele
               no espaco, sugere que ele e importante o bastante para merecer uma volta inteira.</p>
-<p data-inema-block="m4-2-t4-p2">O problema e que a orbita e tao vistosa que vira tentacao. Aplicada
-              sem razao — em todo plano, em torno de tudo —, ela cansa rapido e denuncia o amador,
+<p data-ARCKHÉ-block="m4-2-t4-p2">O problema e que a orbita e tao vistosa que vira tentacao. Aplicada
+              sem razao â€” em todo plano, em torno de tudo â€”, ela cansa rapido e denuncia o amador,
               porque o espectador percebe que o movimento existe para impressionar, nao para significar. A
               orbita boa costuma ser <em>lenta</em>, <em>parcial</em> (nem sempre 360 graus) e <em>motivada</em>:
               acompanha um momento de contemplacao, uma revelacao, um instante em que faz sentido olhar o sujeito
               de varios angulos. Meia-volta com proposito vale mais do que tres voltas gratuitas.</p>
 <h3 class="sub">Empilhar movimentos: o erro que quebra o gerador</h3>
-<p data-inema-block="m4-2-t4-p3">Aqui esta o ponto pratico mais importante da aula, e ele vale ouro com
+<p data-ARCKHÉ-block="m4-2-t4-p3">Aqui esta o ponto pratico mais importante da aula, e ele vale ouro com
               IA: <strong>um plano, um movimento.</strong><span class="sidenote-ref">3</span> A tentacao do
-              iniciante e somar tudo — orbita + dolly + pan + zoom no mesmo plano — achando que mais
-              movimento e mais cinema. O resultado e o oposto: o gerador, que ja aproxima em vez de executar com
+              iniciante e somar tudo â€” orbita + dolly + pan + zoom no mesmo plano â€” achando que mais
+              movimento e mais cARCKHÉ. O resultado e o oposto: o gerador, que ja aproxima em vez de executar com
               precisao, perde o controle, e o video sai instavel, com deriva, deformacao e enjoo. Um unico
-              movimento intencional por plano ja parece cinema; movimentos empilhados parecem um erro.</p>
-<div class="codeblock"><span class="c"># Orbita motivada — UM movimento por plano</span>
+              movimento intencional por plano ja parece cARCKHÉ; movimentos empilhados parecem um erro.</p>
+<div class="codeblock"><span class="c"># Orbita motivada â€” UM movimento por plano</span>
 <span class="c"># lenta, parcial, com razao narrativa; nada empilhado</span>
-<span class="k">Format:</span> cinematic 16:9, shallow depth of field, film grain.
+<span class="k">Format:</span> cARCKHÉtic 16:9, shallow depth of field, film grain.
 <span class="k">Subject:</span> a lone astronaut standing before a crashed alien craft at dusk.
 <span class="k">Camera:</span> slow 120-degree orbit around the astronaut, craft revealing its scale behind her as the camera arcs; she stays centered and still.
-<span class="k">Motivation:</span> the orbit lets us feel the craft from multiple sides — a moment of awe before she steps inside.
+<span class="k">Motivation:</span> the orbit lets us feel the craft from multiple sides â€” a moment of awe before she steps inside.
 <span class="k">Lighting:</span> cold blue ambient, warm rim light on her suit, volumetric haze.
-<span class="k">Constraint:</span> orbit only — no zoom, no push-in, no pan stacked on top. One move, clean.</div>
+<span class="k">Constraint:</span> orbit only â€” no zoom, no push-in, no pan stacked on top. One move, clean.</div>
 </div>
 <!-- figura 4: orbita + um plano um movimento -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Orbita</b> motivada — e a regra: um plano, <b>um</b> movimento</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Orbita</b> motivada â€” e a regra: um plano, <b>um</b> movimento</figcaption>
 <svg aria-label="Diagrama: a esquerda, uma camera orbitando um sujeito central por um arco parcial; a direita, comparacao entre um plano com um movimento limpo e um plano com movimentos empilhados que se embaralham." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- orbita -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="170" y="28">ORBITA PARCIAL</text>
@@ -519,39 +519,39 @@
 </figure>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="4-2" data-inema-topic="modulo-4-2#topico-5" data-inema-track="4" id="topico-5">
+<section data-ARCKHÉ-module="4-2" data-ARCKHÉ-topic="modulo-4-2#topico-5" data-ARCKHÉ-track="4" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Imobilidade</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Imobilidade</span>
 </div>
 <h2 class="head"><span class="num">5.</span>A coragem de nao mover</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-2-t5-p1">Depois de aprender a mover a camera, a licao mais
-              dificil e a oposta: <em>quando deixa-la parada.</em> Um tripe estatico nao e ausencia de escolha —
-              e uma escolha forte. Ele diz “observe”. A camera imovel entrega o quadro ao espectador
-              e confia que o que esta dentro dele — a atuacao, a luz, a composicao — basta. Muitos
-              dos planos mais memoraveis do cinema sao absolutamente parados; a forca esta no que acontece dentro
+<p class="lede" data-ARCKHÉ-block="m4-2-t5-p1">Depois de aprender a mover a camera, a licao mais
+              dificil e a oposta: <em>quando deixa-la parada.</em> Um tripe estatico nao e ausencia de escolha â€”
+              e uma escolha forte. Ele diz â€œobserveâ€. A camera imovel entrega o quadro ao espectador
+              e confia que o que esta dentro dele â€” a atuacao, a luz, a composicao â€” basta. Muitos
+              dos planos mais memoraveis do cARCKHÉ sao absolutamente parados; a forca esta no que acontece dentro
               do quadro, nao na camera.</p>
-<p data-inema-block="m4-2-t5-p2">Com IA, a camera parada tem um bonus pratico enorme: ela e
+<p data-ARCKHÉ-block="m4-2-t5-p2">Com IA, a camera parada tem um bonus pratico enorme: ela e
               <strong>estavel</strong>. Geradores erram menos quando nao precisam simular um deslocamento complexo.
               Um plano fixo, bem composto, com um movimento sutil <em>dentro</em> da cena (a poeira que sopra, o
-              personagem que respira, a fumaca que sobe) costuma sair mais limpo e mais cinematografico do que um
-              plano cheio de camera nervosa. Quando estiver em duvida, fique parado — e deixe a cena se
+              personagem que respira, a fumaca que sobe) costuma sair mais limpo e mais cARCKHÉtografico do que um
+              plano cheio de camera nervosa. Quando estiver em duvida, fique parado â€” e deixe a cena se
               mover, nao a camera.</p>
 <h3 class="sub">A pergunta que decide cada plano</h3>
-<p data-inema-block="m4-2-t5-p3">Para nao errar, faca a si mesmo uma unica pergunta antes de escrever
+<p data-ARCKHÉ-block="m4-2-t5-p3">Para nao errar, faca a si mesmo uma unica pergunta antes de escrever
               o movimento de cada plano: <em>o que este movimento diz que o quadro parado nao diria?</em> Se voce
-              tem uma resposta clara — “o push-in marca a decisao dela”, “o tracking nos
-              poe na corrida” —, mova. Se a resposta e “fica mais legal”, nao mova. A
+              tem uma resposta clara â€” â€œo push-in marca a decisao delaâ€, â€œo tracking nos
+              poe na corridaâ€ â€”, mova. Se a resposta e â€œfica mais legalâ€, nao mova. A
               camera lenta da Trilha 5, os planos da proxima aula, tudo isso assenta sobre este principio:
               movimento e linguagem, e linguagem sem conteudo e so barulho.</p>
-<p data-inema-block="m4-2-t5-p4">Resuma o modulo numa frase: <em>a camera e um verbo — mova-a
+<p data-ARCKHÉ-block="m4-2-t5-p4">Resuma o modulo numa frase: <em>a camera e um verbo â€” mova-a
               quando tiver algo a dizer, e tenha a coragem de para-la quando nao tiver.</em> A proxima aula
               completa o par: se aqui voce aprendeu o que a camera <strong>faz</strong>, la voce aprende
-              <strong>de que distancia</strong> ela observa — e como essa distancia, sozinha, vira emocao.</p>
+              <strong>de que distancia</strong> ela observa â€” e como essa distancia, sozinha, vira emocao.</p>
 </div>
 <!-- figura 5: mover x parar -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · A decisao: o movimento <b>diz algo</b> que o quadro parado nao diria?</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· A decisao: o movimento <b>diz algo</b> que o quadro parado nao diria?</figcaption>
 <svg aria-label="Diagrama de decisao: uma pergunta no centro se ramifica em mover (quando ha resposta clara) ou ficar parado (quando a resposta e apenas estetica), com a camera estatica marcada como mais estavel." class="diagram" role="img" viewbox="0 0 720 184">
 <!-- pergunta central -->
 <rect class="wash accent-stroke" height="40" rx="4" stroke-width="1.3" width="220" x="250" y="20"></rect>
@@ -566,7 +566,7 @@
 <!-- ramo parar -->
 <path class="rule-stroke" d="M420 60 L520 100" fill="none" stroke-width="1.6"></path>
 <polygon class="mark-fill" points="516,94 524,104 510,103"></polygon>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="540" y="120">SO “FICA LEGAL”</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="540" y="120">SO â€œFICA LEGALâ€</text>
 <rect class="rule-stroke" fill="none" height="34" rx="3" stroke-width="1.3" width="120" x="480" y="128"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="540" y="146">fique parado</text>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="7.5" letter-spacing="0.6" text-anchor="middle" x="540" y="159">+ ESTAVEL NA IA</text>
@@ -578,59 +578,59 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Qual a diferenca entre “girar no eixo” e “viajar no espaco”?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Qual a diferenca entre â€œgirar no eixoâ€ e â€œviajar no espacoâ€?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Girar no eixo (<em>pan</em> horizontal, <em>tilt</em> vertical) e a camera que muda
-              para onde olha sem sair do lugar — a posicao nao muda. Viajar (<em>dolly</em>, <em>push-in</em>,
+              para onde olha sem sair do lugar â€” a posicao nao muda. Viajar (<em>dolly</em>, <em>push-in</em>,
               <em>tracking</em>, <em>orbita</em>) e a camera que muda de posicao fisica. A primeira mostra o
               espaco; a segunda nos coloca dentro dele.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Por que “push-in” gera cinema e “zoom in” costuma parecer barato?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">02</span><span>Por que â€œpush-inâ€ gera cARCKHÉ e â€œzoom inâ€ costuma parecer barato?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>No <em>push-in</em> (dolly para a frente) a camera anda: a perspectiva muda, o fundo
               se reorganiza, ha profundidade. No <em>zoom</em> a camera fica parada e so amplia a imagem: a
               perspectiva nao muda e o resultado parece achatado. Mesma direcao aparente, efeitos opostos.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Por que “um plano, um movimento” importa tanto com IA?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">03</span><span>Por que â€œum plano, um movimentoâ€ importa tanto com IA?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque o gerador <em>aproxima</em> em vez de executar com precisao. Empilhar
               movimentos (orbita + dolly + pan + zoom) faz ele perder o controle: o video sai com deriva,
-              deformacao e instabilidade. Um unico movimento intencional ja parece cinema; varios juntos parecem
+              deformacao e instabilidade. Um unico movimento intencional ja parece cARCKHÉ; varios juntos parecem
               erro.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">04</span><span>Quando manter a camera parada e a escolha mais forte?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Quando o que importa esta <em>dentro</em> do quadro — atuacao, luz,
-              composicao — e o movimento nao acrescentaria significado. O tripe imovel diz “observe”,
+<div class="ans"><p>Quando o que importa esta <em>dentro</em> do quadro â€” atuacao, luz,
+              composicao â€” e o movimento nao acrescentaria significado. O tripe imovel diz â€œobserveâ€,
               e na IA tem o bonus de ser mais estavel. A pergunta-guia: <em>o movimento diz algo que o quadro
               parado nao diria?</em> Se nao, fique parado.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:4-2">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:4-2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 4</div>
-<div class="v" data-inema-meter="trilha:4">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -639,20 +639,20 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 4.3 — Planos e Enquadramento</div>
+<div class="t">Modulo 4.3 â€” Planos e Enquadramento</div>
 </div>
-<a class="go" href="modulo-4-3.html">Proximo →</a>
+<a class="go" href="modulo-4-3.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-4-2#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-2#topico-1"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Bloco 4 — Camera Language. A regra-mae desta aula vem do guia de planos: <i>“Movement must
+          Bloco 4 â€” Camera Language. A regra-mae desta aula vem do guia de planos: <i>â€œMovement must
           have meaning. A dolly push says pay attention. A handheld shake says nervous. A static tripod says
-          observe. Never move the camera without a reason.”</i>
+          observe. Never move the camera without a reason.â€</i>
 </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
@@ -660,61 +660,61 @@
           enquadramento muda de sentido conforme o movimento. Por isso movimento vem antes de plano na trilha.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-4-2#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Pan / tilt.</b> A camera gira no proprio eixo — pan na horizontal, tilt na vertical —
+<b>Pan / tilt.</b> A camera gira no proprio eixo â€” pan na horizontal, tilt na vertical â€”
           sem mudar de posicao. Sao os movimentos mais economicos e os mais faceis de controlar num gerador.
         </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Whip pan.</b> Um pan tao rapido que vira borrao. Nao serve para revelar, e sim para <i>esconder</i>
-          um corte e conectar acoes em alta energia. No prompt, distinga “slow pan” de “whip pan”.
+          um corte e conectar acoes em alta energia. No prompt, distinga â€œslow panâ€ de â€œwhip panâ€.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-4-2#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Push-in.</b> Dolly para a frente, em direcao ao sujeito. O verbo “aproxime-se”: marca
+<b>Push-in.</b> Dolly para a frente, em direcao ao sujeito. O verbo â€œaproxime-seâ€: marca
           decisao, percepcao, virada interna. So o use quando houver significado a entregar.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          A confusao dolly x zoom e a fonte mais comum de planos “baratos”: o zoom achata
-          a perspectiva, o dolly a preserva. A palavra no prompt — “dolly in” vs “zoom
-          in” — muda tudo.
+          A confusao dollyÂ xÂ zoom e a fonte mais comum de planos â€œbaratosâ€: o zoom achata
+          a perspectiva, o dolly a preserva. A palavra no prompt â€” â€œdolly inâ€ vs â€œzoom
+          inâ€ â€” muda tudo.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-4-2#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-2#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Orbita.</b> A camera circula em torno do sujeito, que fica no centro. Revela dimensao e presenca —
+<b>Orbita.</b> A camera circula em torno do sujeito, que fica no centro. Revela dimensao e presenca â€”
           mas, sem motivo, vira exibicionismo. Prefira lenta, parcial e motivada.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           A regra de ouro do 1.4 reaparece aqui com forca: <i>um plano = uma ideia clara</i>. Empilhar orbita +
-          dolly + pan + zoom gera video instavel; um movimento por plano ja parece cinema.
+          dolly + pan + zoom gera video instavel; um movimento por plano ja parece cARCKHÉ.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-4-2#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-2#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Plano fixo (locked-off).</b> Camera imovel sobre tripe. Diz “observe” e entrega o peso
-          a atuacao, luz e composicao. Na IA, e o plano mais estavel — deixe a cena se mover, nao a camera.
+<b>Plano fixo (locked-off).</b> Camera imovel sobre tripe. Diz â€œobserveâ€ e entrega o peso
+          a atuacao, luz e composicao. Na IA, e o plano mais estavel â€” deixe a cena se mover, nao a camera.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
           A pergunta que filtra todo movimento: <i>o que ele diz que o quadro parado nao diria?</i> Resposta
-          clara → mova. Resposta “fica legal” → nao mova.
+          clara â†’ mova. Resposta â€œfica legalâ€ â†’ nao mova.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 4.2 — folio ii</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 4.2 â€” folio ii</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -723,8 +723,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

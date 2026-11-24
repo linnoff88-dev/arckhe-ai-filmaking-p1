@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Track 3 — AI Filmmaking Workflow | AI Filmmaking</title>
+<title>Track 3 â€” AI Filmmaking Workflow | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="trilha:3"><span data-inema-meter-frac=""><strong>0</strong> of 24</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="trilha:3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 24</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,13 +171,13 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Track <b>3</b> AI Cinema Workflow</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Track <b>3</b> AI CARCKHÉ Workflow</span>
+<span class="sep">Â·</span>
 <span>Track index</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -187,180 +187,180 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura editorial da trilha -->
-<p class="kicker">Track 3 · AI Filmmaking Workflow</p>
+<p class="kicker">Track 3 Â· AI Filmmaking Workflow</p>
 <h1 class="module">The tools, and where to <em>each</em> one</h1>
 <p class="deck">Five modules to move from theory to running the workshop: the pipeline map, followed by one
-          tool per lesson — Freepik to build the scene, Seedance for movement, Kling for the
+          tool per lesson â€” Freepik to build the scene, Seedance for movement, Kling for the
           camera, Luma and Runway for finishing. Each lesson comes with prompts ready to copy.</p>
 <!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
-<p class="read-meta" data-inema-meter="trilha:3">
-<span class="here" data-inema-meter-frac=""><strong>0</strong> of 24</span>
+<p class="read-meta" data-ARCKHÉ-meter="trilha:3">
+<span class="here" data-ARCKHÉ-meter-frac=""><strong>0</strong> of 24</span>
 <span>sections read in this track</span>
-<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+<span class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></span>
 </p>
 <!-- o "porque" da trilha -->
 <div class="prose">
-<p class="lede" data-inema-block="t3-porque-p1">The first two courses established the <em>mindset</em>:
+<p class="lede" data-ARCKHÉ-block="t3-porque-p1">The first two courses established the <em>mindset</em>:
             why a scene makes an impact, how space guides the eye, how light and depth build meaning.
             This track takes that foundation and puts it to work in the <em>machines</em>. Here you build the workflow from
-            start to finish—from the still image to the finished clip—and learn to choose the right tool
-            for each stage, because none of them does everything well. Module 3.1 is the map: image → motion → refinement
-            → editing, and when to call on each one. Module 3.2 builds the scene in nodes in <strong>Freepik</strong>. Section
+            start to finishâ€”from the still image to the finished clipâ€”and learn to choose the right tool
+            for each stage, because none of them does everything well. Module 3.1 is the map: image â†’ motion â†’ refinement
+            â†’ editing, and when to call on each one. Module 3.2 builds the scene in nodes in <strong>Freepik</strong>. Section
             3.3 brings the frame to life with the physics of <strong>Seedance</strong>. Section 3.4 directs the camera in
             <strong>Kling</strong>, with twenty-five cataloged movements. And 3.5 closes with
-            <strong>Luma and Runway</strong>, where you direct by talking instead of writing commands. The rule that runs through everything remains: the tool executes your direction—it doesn’t invent it.</p>
+            <strong>Luma and Runway</strong>, where you direct by talking instead of writing commands. The rule that runs through everything remains: the tool executes your directionâ€”it doesnâ€™t invent it.</p>
 </div>
 <!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
-<p class="toc-head" style="margin-top:var(--s7)">The journey — five modules, in order</p>
+<p class="toc-head" style="margin-top:var(--s7)">The journey â€” five modules, in order</p>
 <!-- ---- ENTRADA / MODULO 3.1 ---- -->
-<section data-inema-module="3-1" data-inema-topic="modulo-3-1#indice" data-inema-track="3" id="topico-1">
+<section data-ARCKHÉ-module="3-1" data-ARCKHÉ-topic="modulo-3-1#indice" data-ARCKHÉ-track="3" id="topico-1">
 <div class="section-mark">
-<span class="where">Module 3.1</span><span>·</span><span>4 sections · ~15 min</span>
+<span class="where">Module 3.1</span><span>Â·</span><span>4 sections Â· ~15 min</span>
 </div>
 <h2 class="head"><span class="num">3.1</span>AI Tool Pipeline</h2>
 <div class="prose">
-<p data-inema-block="t3-m3-1-p1">The map before the workshop. Why the quality of an AI video doesn't come from the model, but from how well you control attention, composition, and continuity between shots. You'll see the full pipeline—image (Freepik, Midjourney), motion (Seedance, Kling), refinement (Luma, Runway), editing—and gain a clear sense of when to use each tool, as well as the order in which a cinematic prompt should be written.</p>
-<p data-inema-block="t3-m3-1-p2">
-<a class="entry-link" href="modulo-3-1.html">Read Module 3.1 →</a>
+<p data-ARCKHÉ-block="t3-m3-1-p1">The map before the workshop. Why the quality of an AI video doesn't come from the model, but from how well you control attention, composition, and continuity between shots. You'll see the full pipelineâ€”image (Freepik, Midjourney), motion (Seedance, Kling), refinement (Luma, Runway), editingâ€”and gain a clear sense of when to use each tool, as well as the order in which a cARCKHÉtic prompt should be written.</p>
+<p data-ARCKHÉ-block="t3-m3-1-p2">
+<a class="entry-link" href="modulo-3-1.html">Read Module 3.1 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 3.2 ---- -->
-<section data-inema-module="3-2" data-inema-topic="modulo-3-2#indice" data-inema-track="3" id="topico-2">
+<section data-ARCKHÉ-module="3-2" data-ARCKHÉ-topic="modulo-3-2#indice" data-ARCKHÉ-track="3" id="topico-2">
 <div class="section-mark">
-<span class="where">Module 3.2</span><span>·</span><span>5 sections · ~18 min</span>
+<span class="where">Module 3.2</span><span>Â·</span><span>5 sections Â· ~18 min</span>
 </div>
 <h2 class="head"><span class="num">3.2</span>Scene Construction in Freepik</h2>
 <div class="prose">
-<p data-inema-block="t3-m3-2-p1">The node-based pre-production workshop. In <em>Freepik Spaces</em> you don't
-              generate disconnected images — you build a controlled visual sequence, where every shot has a purpose,
-              narrative logic, and emotional rhythm. The workflow: script → character → storyboard in sketches
-              → cinematic render, connecting the nodes with references <span class="code-inline">@</span>.
+<p data-ARCKHÉ-block="t3-m3-2-p1">The node-based pre-production workshop. In <em>Freepik Spaces</em> you don't
+              generate disconnected images â€” you build a controlled visual sequence, where every shot has a purpose,
+              narrative logic, and emotional rhythm. The workflow: script â†’ character â†’ storyboard in sketches
+              â†’ cARCKHÉtic render, connecting the nodes with references <span class="code-inline">@</span>.
               The lesson includes the complete storyboard and realistic-render prompts, ready to reuse.</p>
-<p data-inema-block="t3-m3-2-p2">
-<a class="entry-link" href="modulo-3-2.html">Read Module 3.2 →</a>
+<p data-ARCKHÉ-block="t3-m3-2-p2">
+<a class="entry-link" href="modulo-3-2.html">Read Module 3.2 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 3.3 ---- -->
-<section data-inema-module="3-3" data-inema-topic="modulo-3-3#indice" data-inema-track="3" id="topico-3">
+<section data-ARCKHÉ-module="3-3" data-ARCKHÉ-topic="modulo-3-3#indice" data-ARCKHÉ-track="3" id="topico-3">
 <div class="section-mark">
-<span class="where">Module 3.3</span><span>·</span><span>5 sections · ~18 min</span>
+<span class="where">Module 3.3</span><span>Â·</span><span>5 sections Â· ~18 min</span>
 </div>
 <h2 class="head"><span class="num">3.3</span>Motion Generation in Seedance</h2>
 <div class="prose">
-<p data-inema-block="t3-m3-3-p1">The frame comes alive — with physics, not adjectives. The
+<p data-ARCKHÉ-block="t3-m3-3-p1">The frame comes alive â€” with physics, not adjectives. The
               <em>Seedance</em> understands force, timing, and weight, and the lesson teaches you to think like a director: define the
-              <strong>force</strong> that initiates the movement, the <strong>sequence</strong> of events (large →
-              small → particles), the <strong>camera</strong> e a <strong>human reaction</strong> —
+              <strong>force</strong> that initiates the movement, the <strong>sequence</strong> of events (large â†’
+              small â†’ particles), the <strong>camera</strong> e a <strong>human reaction</strong> â€”
               always showing the emotion through the body, never naming it. With ready-to-use motion prompts, measured in
               seconds and layers.</p>
-<p data-inema-block="t3-m3-3-p2">
-<a class="entry-link" href="modulo-3-3.html">Read Module 3.3 →</a>
+<p data-ARCKHÉ-block="t3-m3-3-p2">
+<a class="entry-link" href="modulo-3-3.html">Read Module 3.3 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 3.4 ---- -->
-<section data-inema-module="3-4" data-inema-topic="modulo-3-4#indice" data-inema-track="3" id="topico-4">
+<section data-ARCKHÉ-module="3-4" data-ARCKHÉ-topic="modulo-3-4#indice" data-ARCKHÉ-track="3" id="topico-4">
 <div class="section-mark">
-<span class="where">Module 3.4</span><span>·</span><span>5 sections · ~18 min</span>
+<span class="where">Module 3.4</span><span>Â·</span><span>5 sections Â· ~18 min</span>
 </div>
 <h2 class="head"><span class="num">3.4</span>Camera Control in Kling</h2>
 <div class="prose">
-<p data-inema-block="t3-m3-4-p1">The camera as an instrument of emotion. In <em>Kling</em>, you learn the technical—and, more importantly, narrative—difference between <strong>dolly</strong>,
+<p data-ARCKHÉ-block="t3-m3-4-p1">The camera as an instrument of emotion. In <em>Kling</em>, you learn the technicalâ€”and, more importantly, narrativeâ€”difference between <strong>dolly</strong>,
               <strong>zoom</strong> e <strong>dolly zoom</strong>, and a catalog of more than twenty-five movements, each with its own intention: moving closer for intimacy, pulling back for isolation, a Dutch angle for tension, a crane shot for scale. It also covers parallax and the distinction between moving the camera and moving the lens.</p>
-<p data-inema-block="t3-m3-4-p2">
-<a class="entry-link" href="modulo-3-4.html">Read Module 3.4 →</a>
+<p data-ARCKHÉ-block="t3-m3-4-p2">
+<a class="entry-link" href="modulo-3-4.html">Read Module 3.4 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 3.5 ---- -->
-<section data-inema-module="3-5" data-inema-topic="modulo-3-5#indice" data-inema-track="3" id="topico-5">
+<section data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#indice" data-ARCKHÉ-track="3" id="topico-5">
 <div class="section-mark">
-<span class="where">Module 3.5</span><span>·</span><span>5 sections · ~18 min</span>
+<span class="where">Module 3.5</span><span>Â·</span><span>5 sections Â· ~18 min</span>
 </div>
 <h2 class="head"><span class="num">3.5</span>Luma and Runway integration</h2>
 <div class="prose">
-<p data-inema-block="t3-m3-5-p1">The finishing touch, directed through conversation. A <em>Luma</em> (with Uni-1)
+<p data-ARCKHÉ-block="t3-m3-5-p1">The finishing touch, directed through conversation. A <em>Luma</em> (with Uni-1)
               is a filmmaking environment where you talk as you would with a human collaborator instead of writing commands:
               the system remembers the project context, so character, light, and tone stay consistent across
-              shots. The three-step workflow — create the character, direct the shot, animate — and
+              shots. The three-step workflow â€” create the character, direct the shot, animate â€” and
               the ability to compare outputs (Kling, Ray) and choose the one that serves your vision. This wraps up the track's
               workshop.</p>
-<p data-inema-block="t3-m3-5-p2">
-<a class="entry-link" href="modulo-3-5.html">Read Module 3.5 →</a>
+<p data-ARCKHÉ-block="t3-m3-5-p2">
+<a class="entry-link" href="modulo-3-5.html">Read Module 3.5 â†’</a>
 </p>
 </div>
 </section>
 <!-- indo mais fundo: divulgacao progressiva (opcional) -->
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: why one tool per lesson
+<summary><span class="chev">â–¸</span> Going deeper: why one tool per lesson
             <span class="opt">optional</span></summary>
 <div class="inner">
-<p>The happy path is linear: 3.1, 3.2, 3.3, 3.4, 3.5. This layer explains the learning path’s design—and can be skipped.</p>
-<p>The course is organized by <em>pipeline phase</em>, not by brand. Module 3.1 gives you the map; each following lesson explores one phase in depth using the tool that best represents it. That doesn’t mean you need them all: the logic you learn in each one—building the scene in nodes, directing movement through physics, choosing camera movement based on intent, refining through conversation—applies to any equivalent generator. Tools change names every few months; the
+<p>The happy path is linear: 3.1, 3.2, 3.3, 3.4, 3.5. This layer explains the learning pathâ€™s designâ€”and can be skipped.</p>
+<p>The course is organized by <em>pipeline phase</em>, not by brand. Module 3.1 gives you the map; each following lesson explores one phase in depth using the tool that best represents it. That doesnâ€™t mean you need them all: the logic you learn in each oneâ€”building the scene in nodes, directing movement through physics, choosing camera movement based on intent, refining through conversationâ€”applies to any equivalent generator. Tools change names every few months; the
               <em>judgment</em> of direction, not.</p>
-<p>That’s why Track 3 is the course’s turning point: it’s where the mindset from Tracks 1 and 2 becomes concrete practice, with prompts you can copy, adapt, and iterate on. The following tracks — camera language, VFX, performance, narrative structure — assume you already know how to work in the workshop.</p>
+<p>Thatâ€™s why Track 3 is the courseâ€™s turning point: itâ€™s where the mindset from Tracks 1 and 2 becomes concrete practice, with prompts you can copy, adapt, and iterate on. The following tracks â€” camera language, VFX, performance, narrative structure â€” assume you already know how to work in the workshop.</p>
 </div>
 </details>
 <!-- proxima acao (UMA clara) -->
 <div class="nextup">
 <div class="txt">
 <div class="k">Start with the map</div>
-<div class="t">Module 3.1 — AI Tool Pipeline</div>
+<div class="t">Module 3.1 â€” AI Tool Pipeline</div>
 </div>
-<a class="go" href="modulo-3-1.html">Read the first one →</a>
+<a class="go" href="modulo-3-1.html">Read the first one â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes and your learning dashboard" class="margin-rail">
 <!-- ---- MODULO 3.1 ---- -->
-<aside data-inema-rail="modulo-3-1#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-1#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Pipeline.</b> The chain of stages that takes you from idea to final clip: image → motion →
-          refinement → editing. Each stage has the tool best suited to it — none does everything well.
+<b>Pipeline.</b> The chain of stages that takes you from idea to final clip: image â†’ motion â†’
+          refinement â†’ editing. Each stage has the tool best suited to it â€” none does everything well.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          The track’s thesis: <i>quality doesn’t come from the model; it comes from control</i>. The same generator produces garbage or
-          cinema, depending on how much direction you provide before pressing the button.
+          The trackâ€™s thesis: <i>quality doesnâ€™t come from the model; it comes from control</i>. The same generator produces garbage or
+          cARCKHÉ, depending on how much direction you provide before pressing the button.
         </aside>
 <!-- ---- MODULO 3.2 ---- -->
-<aside data-inema-rail="modulo-3-2#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-2#indice"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
           Scene construction is demonstrated in <i>Freepik Spaces</i>, in a node-based workflow. The complete project for the lesson (script, character, storyboard, render) is linked within Module 3.2 itself.
-          <div class="src-line">freepik.com · pikaso/spaces</div>
+          <div class="src-line">freepik.com Â· pikaso/spaces</div>
 </aside>
 <!-- ---- MODULO 3.3 ---- -->
-<aside data-inema-rail="modulo-3-3#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-3#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Physics, not adjectives.</b> Seedance responds to force, timing, and weight — not words like
-          “epic.” Describe what moves, in what order, and over how much time, and the movement will appear.
+<b>Physics, not adjectives.</b> Seedance responds to force, timing, and weight â€” not words like
+          â€œepic.â€ Describe what moves, in what order, and over how much time, and the movement will appear.
         </aside>
 <!-- ---- MODULO 3.4 ---- -->
-<aside data-inema-rail="modulo-3-4#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-4#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Dolly vs. zoom.</b> A dolly moves the camera through space (creating parallax and depth); a zoom changes the lens
-          (flattening the image). Confusing the two is the most common reason AI video “looks fake.”
+          (flattening the image). Confusing the two is the most common reason AI video â€œlooks fake.â€
         </aside>
 <!-- ---- MODULO 3.5 ---- -->
-<aside data-inema-rail="modulo-3-5#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-5#indice"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Going deeper</div>
           The 3.5 shift: <i>you don't write commands, you direct</i>. Speaking in natural language lets AI
-          understand intent, remember context between steps, and keep you in the director’s seat.
+          understand intent, remember context between steps, and keep you in the directorâ€™s seat.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Track 3 — index</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Track 3 â€” index</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -369,8 +369,8 @@
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,68 +118,68 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Módulo 6.2 — Actuación de personajes con IA | AI Filmmaking</title>
+<title>MÃ³dulo 6.2 â€” ActuaciÃ³n de personajes con IA | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:6-2"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:6-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Ruta <b>6</b> Personaje y actuación</span>
-<span class="sep">·</span>
-<span>Módulo <b>6.2</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Sección 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>Ruta <b>6</b> Personaje y actuaciÃ³n</span>
+<span class="sep">Â·</span>
+<span>MÃ³dulo <b>6.2</b> / 4</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,79 +189,79 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Módulo 6.2 · Ruta 6 · Personaje y actuación</p>
-<h1 class="module">Actuación de personajes con <em>IA</em></h1>
+<p class="kicker">MÃ³dulo 6.2 Â· Ruta 6 Â· Personaje y actuaciÃ³n</p>
+<h1 class="module">ActuaciÃ³n de personajes con <em>IA</em></h1>
 <p class="deck">Un personaje generado puede parecer realista, moverse correctamente y vivir en un
-          encuadre bonito — y aun así sonar artificial. El motivo es siempre el mismo: movimiento no es
-          actuación. Emoción es actuación.</p>
+          encuadre bonito â€” y aun asÃ­ sonar artificial. El motivo es siempre el mismo: movimiento no es
+          actuaciÃ³n. EmociÃ³n es actuaciÃ³n.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~17 min · módulo completo</span>
+<span>~17 min Â· mÃ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Por qué <b>el movimiento por sí solo no es una actuación</b> — y cómo la motivación debe venir antes del gesto para que un personaje parezca vivo.</li>
-<li>Cómo la <b>microactuación</b> e a <b>desempeño de los ojos</b> dicen más que cualquier diálogo: el detalle mínimo que transmite la emoción.</li>
-<li>Por qué la emoción real <b>lleva tiempo</b>: la pausa, la demora y el procesamiento que separan lo creíble de lo mecánico.</li>
-<li>Cómo la <b>lenguaje corporal</b> revela la psicología y cómo el <b>ritmo</b> (quietud → movimiento → quietud) crea tensión — y cómo mantener la <b>identidad del personaje coherente</b> entre planos.</li>
+<li>Por quÃ© <b>el movimiento por sÃ­ solo no es una actuaciÃ³n</b> â€” y cÃ³mo la motivaciÃ³n debe venir antes del gesto para que un personaje parezca vivo.</li>
+<li>CÃ³mo la <b>microactuaciÃ³n</b> e a <b>desempeÃ±o de los ojos</b> dicen mÃ¡s que cualquier diÃ¡logo: el detalle mÃ­nimo que transmite la emociÃ³n.</li>
+<li>Por quÃ© la emociÃ³n real <b>lleva tiempo</b>: la pausa, la demora y el procesamiento que separan lo creÃ­ble de lo mecÃ¡nico.</li>
+<li>CÃ³mo la <b>lenguaje corporal</b> revela la psicologÃ­a y cÃ³mo el <b>ritmo</b> (quietud â†’ movimiento â†’ quietud) crea tensiÃ³n â€” y cÃ³mo mantener la <b>identidad del personaje coherente</b> entre planos.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
 <p class="toc-head">Resumen: cinco mecanismos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">Motivación antes del movimiento</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">Microactuación y los ojos</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">Timing emocional: la emoción lleva tiempo</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">Lenguaje corporal y ritmo de actuación</span></a><span class="leader"></span></li>
+<a href="#topico-1"><span class="t">MotivaciÃ³n antes del movimiento</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">MicroactuaciÃ³n y los ojos</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Timing emocional: la emociÃ³n lleva tiempo</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Lenguaje corporal y ritmo de actuaciÃ³n</span></a><span class="leader"></span></li>
 <li><span class="n">5</span><a href="#topico-5"><span class="t">Identidad consistente entre planos</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="6-2" data-inema-topic="modulo-6-2#topico-1" data-inema-track="6" id="topico-1">
+<section data-ARCKHÉ-module="6-2" data-ARCKHÉ-topic="modulo-6-2#topico-1" data-ARCKHÉ-track="6" id="topico-1">
 <div class="section-mark">
-<span class="where">Sección 1 de 5</span><span>·</span><span>Motivación</span>
+<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>MotivaciÃ³n</span>
 </div>
-<h2 class="head"><span class="num">1.</span>Motivación antes del movimiento</h2>
+<h2 class="head"><span class="num">1.</span>MotivaciÃ³n antes del movimiento</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m6-2-t1-p1">Muchos creadores creen que un personaje de
-              IA creíble nace de gráficos realistas, animación fluida o iluminación cinematográfica. En la práctica, la mayoría
-              falla por un motivo mucho más sencillo: <strong>la interpretación suena emocionalmente vacía.</strong><span class="sidenote-ref">1</span>
-              El personaje parece real, se mueve correctamente, está en un encuadre bonito — y aun así
-              suena artificial. ¿Por qué? Porque el movimiento por sí solo no es interpretación. En el cine, <em>el movimiento no es
-              actuación — la emoción es actuación.</em></p>
-<p data-inema-block="m6-2-t1-p2">Cada vez que el público ve a un personaje, se hace una pregunta
-              inconsciente: <em>¿esa persona parece viva?</em> Si la respuesta vacila, la inmersión emocional desaparece. Y lo
-              que hace que un personaje cobre vida no es el píxel: es la emoción, la intención, la reacción, el ritmo y el comportamiento. Un
-              parpadeo se convierte en emoción, una pausa se convierte en pensamiento, la respiración crea tensión, la atención revela la verdad.
-              El primer mecanismo de todos es, por eso, el más básico y el más ignorado: la <span class="dfn"><details class="dfn"><summary>motivación antes del movimiento</summary><span class="body"><b>Motivación antes del movimiento</b>: todo gesto creíble empieza por una razón emocional. El miedo genera vacilación; la confianza genera determinación; la curiosidad genera observación. El movimiento sin motivo parece mecánico.</span></details></span>.</p>
-<h3 class="sub">Por qué funciona esto</h3>
-<p data-inema-block="m6-2-t1-p3">Las personas reales nunca se mueven al azar. El miedo genera vacilación; la confianza, movimiento directo; la ansiedad, incertidumbre; la curiosidad, observación. El comportamiento humano siempre responde a una intención emocional, incluso en los gestos mínimos. Compara: un personaje entra en una habitación, duda en la puerta, recorre el entorno con la mirada y ajusta sutilmente la postura antes de entrar; el movimiento convence porque parece tener una motivación emocional. La versión débil de la IA hace que el personaje camine hacia delante con una animación técnicamente correcta, pero sin una razón emocional detrás: todo parece correcto y, aun así, desconectado.<span class="sidenote-ref">2</span> La
-              fórmula: <strong>emoción más intención igual a movimiento.</strong></p>
+<p class="lede dropcap" data-ARCKHÉ-block="m6-2-t1-p1">Muchos creadores creen que un personaje de
+              IA creÃ­ble nace de grÃ¡ficos realistas, animaciÃ³n fluida o iluminaciÃ³n cARCKHÉtogrÃ¡fica. En la prÃ¡ctica, la mayorÃ­a
+              falla por un motivo mucho mÃ¡s sencillo: <strong>la interpretaciÃ³n suena emocionalmente vacÃ­a.</strong><span class="sidenote-ref">1</span>
+              El personaje parece real, se mueve correctamente, estÃ¡ en un encuadre bonito â€” y aun asÃ­
+              suena artificial. Â¿Por quÃ©? Porque el movimiento por sÃ­ solo no es interpretaciÃ³n. En el cine, <em>el movimiento no es
+              actuaciÃ³n â€” la emociÃ³n es actuaciÃ³n.</em></p>
+<p data-ARCKHÉ-block="m6-2-t1-p2">Cada vez que el pÃºblico ve a un personaje, se hace una pregunta
+              inconsciente: <em>Â¿esa persona parece viva?</em> Si la respuesta vacila, la inmersiÃ³n emocional desaparece. Y lo
+              que hace que un personaje cobre vida no es el pÃ­xel: es la emociÃ³n, la intenciÃ³n, la reacciÃ³n, el ritmo y el comportamiento. Un
+              parpadeo se convierte en emociÃ³n, una pausa se convierte en pensamiento, la respiraciÃ³n crea tensiÃ³n, la atenciÃ³n revela la verdad.
+              El primer mecanismo de todos es, por eso, el mÃ¡s bÃ¡sico y el mÃ¡s ignorado: la <span class="dfn"><details class="dfn"><summary>motivaciÃ³n antes del movimiento</summary><span class="body"><b>MotivaciÃ³n antes del movimiento</b>: todo gesto creÃ­ble empieza por una razÃ³n emocional. El miedo genera vacilaciÃ³n; la confianza genera determinaciÃ³n; la curiosidad genera observaciÃ³n. El movimiento sin motivo parece mecÃ¡nico.</span></details></span>.</p>
+<h3 class="sub">Por quÃ© funciona esto</h3>
+<p data-ARCKHÉ-block="m6-2-t1-p3">Las personas reales nunca se mueven al azar. El miedo genera vacilaciÃ³n; la confianza, movimiento directo; la ansiedad, incertidumbre; la curiosidad, observaciÃ³n. El comportamiento humano siempre responde a una intenciÃ³n emocional, incluso en los gestos mÃ­nimos. Compara: un personaje entra en una habitaciÃ³n, duda en la puerta, recorre el entorno con la mirada y ajusta sutilmente la postura antes de entrar; el movimiento convence porque parece tener una motivaciÃ³n emocional. La versiÃ³n dÃ©bil de la IA hace que el personaje camine hacia delante con una animaciÃ³n tÃ©cnicamente correcta, pero sin una razÃ³n emocional detrÃ¡s: todo parece correcto y, aun asÃ­, desconectado.<span class="sidenote-ref">2</span> La
+              fÃ³rmula: <strong>emociÃ³n mÃ¡s intenciÃ³n igual a movimiento.</strong></p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Dos clips muestran a un personaje cruzando la misma habitación. En el primero, solo camina en línea
-              recta, con una animación perfecta. En el segundo, se detiene en la puerta, mira a su alrededor y solo entonces avanza. ¿Por qué el
-              segundo parece «más humano», aunque la animación sea técnicamente igual?</p>
+<p>Dos clips muestran a un personaje cruzando la misma habitaciÃ³n. En el primero, solo camina en lÃ­nea
+              recta, con una animaciÃ³n perfecta. En el segundo, se detiene en la puerta, mira a su alrededor y solo entonces avanza. Â¿Por quÃ© el
+              segundo parece Â«mÃ¡s humanoÂ», aunque la animaciÃ³n sea tÃ©cnicamente igual?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Porque el segundo tiene <strong>motivación antes del movimiento</strong>. La vacilación en la
-                puerta señala una razón emocional (cautela, duda, lectura del espacio), y el cerebro del
-                público, que pregunta “¿por qué se mueve así esta persona?”, recibe una respuesta. El
-                primero tiene desplazamiento sin intención: técnicamente correcto, emocionalmente mudo. El movimiento sin
-                razón se percibe como artificial.</p>
+<p class="answer">Porque el segundo tiene <strong>motivaciÃ³n antes del movimiento</strong>. La vacilaciÃ³n en la
+                puerta seÃ±ala una razÃ³n emocional (cautela, duda, lectura del espacio), y el cerebro del
+                pÃºblico, que pregunta â€œÂ¿por quÃ© se mueve asÃ­ esta persona?â€, recibe una respuesta. El
+                primero tiene desplazamiento sin intenciÃ³n: tÃ©cnicamente correcto, emocionalmente mudo. El movimiento sin
+                razÃ³n se percibe como artificial.</p>
 </details>
 </div>
 <!-- figura 1: emocao -> intencao -> movimento -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · El orden que hace creíble el gesto: <b>emoción → intención → movimiento</b></figcaption>
-<svg aria-label="Diagrama de tres cajas conectadas por flechas: la emoción lleva a la intención, que lleva al movimiento; abajo, la vía débil muestra movimiento sin emoción ni intención, marcado como mecánico." class="diagram" role="img" viewbox="0 0 720 196">
+<figcaption><span class="fig-n">Fig. 1</span> Â· El orden que hace creÃ­ble el gesto: <b>emociÃ³n â†’ intenciÃ³n â†’ movimiento</b></figcaption>
+<svg aria-label="Diagrama de tres cajas conectadas por flechas: la emociÃ³n lleva a la intenciÃ³n, que lleva al movimiento; abajo, la vÃ­a dÃ©bil muestra movimiento sin emociÃ³n ni intenciÃ³n, marcado como mecÃ¡nico." class="diagram" role="img" viewbox="0 0 720 196">
 <defs>
 <pattern height="6" id="hatch-6-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
@@ -269,17 +269,17 @@
 </defs>
 <!-- via certa -->
 <rect class="accent-stroke" fill="url(#hatch-6-2)" height="48" rx="3" stroke-width="1.3" width="160" x="40" y="40"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="120" y="69">emoción</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="120" y="69">emociÃ³n</text>
 <path class="accent-stroke" d="M204 64 L268 64" fill="none" stroke-width="2"></path><path class="accent" d="M268 64 l-9 -5 l0 10 z"></path>
 <rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.3" width="160" x="272" y="40"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="352" y="69">intención</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="352" y="69">intenciÃ³n</text>
 <path class="accent-stroke" d="M436 64 L500 64" fill="none" stroke-width="2"></path><path class="accent" d="M500 64 l-9 -5 l0 10 z"></path>
 <rect class="wash accent-stroke" height="48" rx="3" stroke-width="1.3" width="160" x="504" y="40"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="584" y="69">movimiento</text>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="352" y="24">CRIVEL</text>
 <!-- via fraca -->
 <rect class="rule-stroke" fill="none" height="44" rx="3" stroke-dasharray="4 4" stroke-width="1.2" width="160" x="272" y="128"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="12" text-anchor="middle" x="352" y="155">(vacío)</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="12" text-anchor="middle" x="352" y="155">(vacÃ­o)</text>
 <path class="rule-stroke" d="M436 150 L500 150" fill="none" stroke-width="1.4"></path><path class="rule-stroke" d="M500 150 l-9 -5 l0 10 z"></path>
 <rect class="rule-stroke" fill="none" height="44" rx="3" stroke-width="1.2" width="160" x="504" y="128"></rect>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" text-anchor="middle" x="584" y="155">movimiento</text>
@@ -287,47 +287,47 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m6-2-t1-p4">Para el generador, esto se convierte en una instrucción: describe la <em>razón</em> antes
-              de la acción. El prompt de abajo no pide “el personaje entra en la sala”; pide la vacilación, el
+<p data-ARCKHÉ-block="m6-2-t1-p4">Para el generador, esto se convierte en una instrucciÃ³n: describe la <em>razÃ³n</em> antes
+              de la acciÃ³n. El prompt de abajo no pide â€œel personaje entra en la salaâ€; pide la vacilaciÃ³n, el
               recorrido de la mirada y el cambio de postura que dan sentido al movimiento.</p>
-<div class="codeblock"><span class="c"># La motivación antes del movimiento — la razón emocional guía el gesto</span>
-<span class="c"># (Seedance / Kling — describe la intención, no solo la acción)</span>
+<div class="codeblock"><span class="c"># La motivaciÃ³n antes del movimiento â€” la razÃ³n emocional guÃ­a el gesto</span>
+<span class="c"># (Seedance / Kling â€” describe la intenciÃ³n, no solo la acciÃ³n)</span>
 <span class="k">Sujeto:</span> a woman entering a dim apartment she has not been to in years.
-<span class="k">La emoción primero:</span> quiet apprehension — she is not sure she should be here.
+<span class="k">La emociÃ³n primero:</span> quiet apprehension â€” she is not sure she should be here.
 <span class="k">Ritmo:</span> she pauses at the threshold, scans the room, a small shift of weight before stepping in.
 <span class="k">Micro behavior:</span> shallow breath, eyes moving first, hand hovering near the doorframe.
-<span class="k">Cámara:</span> slow, patient framing at eye level, shallow depth of field.
+<span class="k">CÃ¡mara:</span> slow, patient framing at eye level, shallow depth of field.
 <span class="k">Avoid:</span> walking straight in with no hesitation; constant, purposeless motion.</div>
 </div>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="6-2" data-inema-topic="modulo-6-2#topico-2" data-inema-track="6" id="topico-2">
+<section data-ARCKHÉ-module="6-2" data-ARCKHÉ-topic="modulo-6-2#topico-2" data-ARCKHÉ-track="6" id="topico-2">
 <div class="section-mark">
-<span class="where">Sección 2 de 5</span><span>·</span><span>Micro y ojos</span>
+<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>Micro y ojos</span>
 </div>
-<h2 class="head"><span class="num">2.</span>Microactuación y los ojos</h2>
+<h2 class="head"><span class="num">2.</span>MicroactuaciÃ³n y los ojos</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-2-t2-p1">El segundo mecanismo es la <strong>microactuación</strong>:
-              los pequeños detalles crean la verdad emocional. El contacto visual, el ritmo del parpadeo, la tensión en la mandíbula,
-              la respiración, la vacilación: un comportamiento mínimo suele decir más que una página de diálogo.
-              Un personaje dice «estoy bien», pero el detalle lo delata: la mirada que se desvía medio segundo, el
-              trago en seco. La fórmula es directa: <strong>movimiento pequeño igual a emoción grande.</strong></p>
+<p class="lede" data-ARCKHÉ-block="m6-2-t2-p1">El segundo mecanismo es la <strong>microactuaciÃ³n</strong>:
+              los pequeÃ±os detalles crean la verdad emocional. El contacto visual, el ritmo del parpadeo, la tensiÃ³n en la mandÃ­bula,
+              la respiraciÃ³n, la vacilaciÃ³n: un comportamiento mÃ­nimo suele decir mÃ¡s que una pÃ¡gina de diÃ¡logo.
+              Un personaje dice Â«estoy bienÂ», pero el detalle lo delata: la mirada que se desvÃ­a medio segundo, el
+              trago en seco. La fÃ³rmula es directa: <strong>movimiento pequeÃ±o igual a emociÃ³n grande.</strong></p>
 <h3 class="sub">Los ojos crean humanidad</h3>
-<p data-inema-block="m6-2-t2-p2">El mecanismo gemelo es la <strong>desempeño de los ojos</strong>. Casi
-              nada ocurre físicamente: un personaje solo escucha, pero algo parece emocionalmente vivo. El foco
-              cambia sutilmente, la atención se mueve con naturalidad, aparece una pequeña vacilación en la mirada —
-              y de repente el público siente que <em>esa persona está pensando</em>, presente, viva. La versión débil de la IA entrega un rostro realista con ojos emocionalmente vacíos: ningún pensamiento interno, ningún foco, ninguna intención psicológica detrás de la expresión — y la ilusión se rompe.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m6-2-t2-p3">Por qué funciona: buscamos instintivamente los ojos en busca de la
-              verdad emocional, porque los ojos revelan atención, la atención revela pensamiento y el pensamiento crea
-              la sensación de vida interior. Miramos el rostro preguntándonos: ¿qué siente? ¿Qué oculta?
-              ¿Qué piensa? Incluso un movimiento ocular sutil puede hacer creíble a un personaje; una mirada muerta parece
-              artificial de inmediato. <em>Cuando los ojos parecen vivos, el personaje parece vivo.</em> La fórmula:
+<p data-ARCKHÉ-block="m6-2-t2-p2">El mecanismo gemelo es la <strong>desempeÃ±o de los ojos</strong>. Casi
+              nada ocurre fÃ­sicamente: un personaje solo escucha, pero algo parece emocionalmente vivo. El foco
+              cambia sutilmente, la atenciÃ³n se mueve con naturalidad, aparece una pequeÃ±a vacilaciÃ³n en la mirada â€”
+              y de repente el pÃºblico siente que <em>esa persona estÃ¡ pensando</em>, presente, viva. La versiÃ³n dÃ©bil de la IA entrega un rostro realista con ojos emocionalmente vacÃ­os: ningÃºn pensamiento interno, ningÃºn foco, ninguna intenciÃ³n psicolÃ³gica detrÃ¡s de la expresiÃ³n â€” y la ilusiÃ³n se rompe.<span class="sidenote-ref">3</span></p>
+<p data-ARCKHÉ-block="m6-2-t2-p3">Por quÃ© funciona: buscamos instintivamente los ojos en busca de la
+              verdad emocional, porque los ojos revelan atenciÃ³n, la atenciÃ³n revela pensamiento y el pensamiento crea
+              la sensaciÃ³n de vida interior. Miramos el rostro preguntÃ¡ndonos: Â¿quÃ© siente? Â¿QuÃ© oculta?
+              Â¿QuÃ© piensa? Incluso un movimiento ocular sutil puede hacer creÃ­ble a un personaje; una mirada muerta parece
+              artificial de inmediato. <em>Cuando los ojos parecen vivos, el personaje parece vivo.</em> La fÃ³rmula:
               <strong>ojos = pensamiento interior.</strong></p>
 </div>
 <!-- figura 2: micro-sinais do rosto -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · El detalle mínimo lleva la emoción — <b>microseñales</b> del rostro</figcaption>
-<svg aria-label="Diagrama de un rostro esquemático con indicaciones de microseñales: desviación de la mirada, ritmo del parpadeo, tensión en la mandíbula y respiración; al lado, la nota de que un movimiento pequeño genera una emoción grande." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 2</span> Â· El detalle mÃ­nimo lleva la emociÃ³n â€” <b>microseÃ±ales</b> del rostro</figcaption>
+<svg aria-label="Diagrama de un rostro esquemÃ¡tico con indicaciones de microseÃ±ales: desviaciÃ³n de la mirada, ritmo del parpadeo, tensiÃ³n en la mandÃ­bula y respiraciÃ³n; al lado, la nota de que un movimiento pequeÃ±o genera una emociÃ³n grande." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- rosto -->
 <circle class="rule-stroke" cx="220" cy="108" fill="none" r="74" stroke-width="1.4"></circle>
 <!-- olhos -->
@@ -339,114 +339,114 @@
 <path class="accent-stroke" d="M188 150 q32 22 64 0" fill="none" stroke-width="1.6"></path>
 <!-- chamadas -->
 <line class="mark-stroke" stroke-width="1" x1="252" x2="360" y1="90" y2="64"></line>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" x="368" y="60">desvío de la mirada</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="368" y="74">la atención revela el pensamiento</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" x="368" y="60">desvÃ­o de la mirada</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="368" y="74">la atenciÃ³n revela el pensamiento</text>
 <line class="mark-stroke" stroke-width="1" x1="244" x2="360" y1="100" y2="112"></line>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" x="368" y="108">ritmo del parpadeo</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="368" y="122">vacilación = vida interior</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="368" y="122">vacilaciÃ³n = vida interior</text>
 <line class="mark-stroke" stroke-width="1" x1="248" x2="360" y1="150" y2="160"></line>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" x="368" y="156">tensión en la mandíbula</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="368" y="170">el cuerpo guarda la emoción</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9.5" x="368" y="156">tensiÃ³n en la mandÃ­bula</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" x="368" y="170">el cuerpo guarda la emociÃ³n</text>
 <!-- selo -->
 <rect class="accent-stroke" fill="url(#hatch-6-2)" height="34" rx="3" stroke-width="1.2" width="150" x="540" y="44"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="615" y="65">pequeño = grande</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="615" y="65">pequeÃ±o = grande</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: por qué el exceso de gestos debilita la interpretación
+<summary><span class="chev">â–¸</span> Profundizando: por quÃ© el exceso de gestos debilita la interpretaciÃ³n
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>El camino recomendado de arriba ya basta. Esta capa es una advertencia útil sobre el error inverso.</p>
-<p>Si la microactuación falla por <em>falta</em> de detalle (ojos sin vida, rostro neutro), el error
-                opuesto es igual de común: la interpretación de la IA suele usar <strong>demasiado movimiento</strong>.
-                Demasiados gestos hacen que la actuación parezca exagerada y emocionalmente confusa: el personaje
-                gesticula todo el tiempo y el público no sabe dónde mirar. El comportamiento cinematográfico real es
-                <em>controlado, intencional y emocionalmente específico</em>. Se aplica la regla de menos: un detalle
-                acertado (una sola mirada que se desvía) comunica más que diez gestos genéricos. Al escribir el prompt,
-                pide <em>un</em> una señal clara por beat, no una coreografía de tics.</p>
+<p>El camino recomendado de arriba ya basta. Esta capa es una advertencia Ãºtil sobre el error inverso.</p>
+<p>Si la microactuaciÃ³n falla por <em>falta</em> de detalle (ojos sin vida, rostro neutro), el error
+                opuesto es igual de comÃºn: la interpretaciÃ³n de la IA suele usar <strong>demasiado movimiento</strong>.
+                Demasiados gestos hacen que la actuaciÃ³n parezca exagerada y emocionalmente confusa: el personaje
+                gesticula todo el tiempo y el pÃºblico no sabe dÃ³nde mirar. El comportamiento cARCKHÉtogrÃ¡fico real es
+                <em>controlado, intencional y emocionalmente especÃ­fico</em>. Se aplica la regla de menos: un detalle
+                acertado (una sola mirada que se desvÃ­a) comunica mÃ¡s que diez gestos genÃ©ricos. Al escribir el prompt,
+                pide <em>un</em> una seÃ±al clara por beat, no una coreografÃ­a de tics.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="6-2" data-inema-topic="modulo-6-2#topico-3" data-inema-track="6" id="topico-3">
+<section data-ARCKHÉ-module="6-2" data-ARCKHÉ-topic="modulo-6-2#topico-3" data-ARCKHÉ-track="6" id="topico-3">
 <div class="section-mark">
-<span class="where">Sección 3 de 5</span><span>·</span><span>Timing</span>
+<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>Timing</span>
 </div>
-<h2 class="head"><span class="num">3.</span>Timing emocional: la emoción lleva tiempo</h2>
+<h2 class="head"><span class="num">3.</span>Timing emocional: la emociÃ³n lleva tiempo</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-2-t3-p1">El tercer mecanismo y el <strong>sincronización emocional</strong>,
-              y quizá sea lo que más separa lo creíble de lo mecánico. La emoción real lleva tiempo. Un personaje recibe
-              una noticia terrible: la actuación débil de la IA reacciona <em>en el momento</em>: tristeza inmediata,
-              conmoción inmediata, llanto inmediato. Técnicamente, la emoción existe; emocionalmente, el momento suena falso.</p>
-<p data-inema-block="m6-2-t3-p2">La actuación cinematográfica funciona de otra manera. El personaje
-              <em>se congela</em>. La respiración cambia. Surge un silencio. Parpadea, desvía la mirada. La emoción entra
-              <em>poco a poco</em>, en vez de llegar instantáneamente, y de repente el público siente algo
-              real. La interpretación convence porque la emoción parece <span class="dfn"><details class="dfn"><summary>procesada</summary><span class="body"><b>Emoción procesada</b>: la reacción que atraviesa al personaje antes de expresarse — quedarse inmóvil, la demora, el silencio. Lo opuesto a la emoción «activada con un interruptor», que aparece lista en el primer cuadro.</span></details></span>,
+<p class="lede" data-ARCKHÉ-block="m6-2-t3-p1">El tercer mecanismo y el <strong>sincronizaciÃ³n emocional</strong>,
+              y quizÃ¡ sea lo que mÃ¡s separa lo creÃ­ble de lo mecÃ¡nico. La emociÃ³n real lleva tiempo. Un personaje recibe
+              una noticia terrible: la actuaciÃ³n dÃ©bil de la IA reacciona <em>en el momento</em>: tristeza inmediata,
+              conmociÃ³n inmediata, llanto inmediato. TÃ©cnicamente, la emociÃ³n existe; emocionalmente, el momento suena falso.</p>
+<p data-ARCKHÉ-block="m6-2-t3-p2">La actuaciÃ³n cARCKHÉtogrÃ¡fica funciona de otra manera. El personaje
+              <em>se congela</em>. La respiraciÃ³n cambia. Surge un silencio. Parpadea, desvÃ­a la mirada. La emociÃ³n entra
+              <em>poco a poco</em>, en vez de llegar instantÃ¡neamente, y de repente el pÃºblico siente algo
+              real. La interpretaciÃ³n convence porque la emociÃ³n parece <span class="dfn"><details class="dfn"><summary>procesada</summary><span class="body"><b>EmociÃ³n procesada</b>: la reacciÃ³n que atraviesa al personaje antes de expresarse â€” quedarse inmÃ³vil, la demora, el silencio. Lo opuesto a la emociÃ³n Â«activada con un interruptorÂ», que aparece lista en el primer cuadro.</span></details></span>,
               no representada.<span class="sidenote-ref">4</span> Las personas procesan el impacto antes de
-              expresarlo: el miedo genera vacilación, el dolor suele generar silencio. El realismo emocional viene, muchas
+              expresarlo: el miedo genera vacilaciÃ³n, el dolor suele generar silencio. El realismo emocional viene, muchas
               veces, del <em>retraso</em>.</p>
-<p data-inema-block="m6-2-t3-p3">A veces la pausa emocional se vuelve más poderosa que la propia
-              reacción, porque el público llena el silencio con su imaginación. En el cine, <em>procesar la emoción
-              se convierte en la emoción</em>. La fórmula: <strong>pausa más retraso igual a desempeño humano.</strong> Para el
-              generador, esto significa pedir explícitamente los beats del tiempo: la congelación, la respiración que
-              cambia, la demora antes de la reacción, en vez de pedir «ella llora».</p>
-<div class="codeblock"><span class="c"># Timing emocional — la emoción aparece poco a poco, no de golpe</span>
-<span class="c"># (Seedance / Kling — describe el retraso y la pausa como beats)</span>
+<p data-ARCKHÉ-block="m6-2-t3-p3">A veces la pausa emocional se vuelve mÃ¡s poderosa que la propia
+              reacciÃ³n, porque el pÃºblico llena el silencio con su imaginaciÃ³n. En el cine, <em>procesar la emociÃ³n
+              se convierte en la emociÃ³n</em>. La fÃ³rmula: <strong>pausa mÃ¡s retraso igual a desempeÃ±o humano.</strong> Para el
+              generador, esto significa pedir explÃ­citamente los beats del tiempo: la congelaciÃ³n, la respiraciÃ³n que
+              cambia, la demora antes de la reacciÃ³n, en vez de pedir Â«ella lloraÂ».</p>
+<div class="codeblock"><span class="c"># Timing emocional â€” la emociÃ³n aparece poco a poco, no de golpe</span>
+<span class="c"># (Seedance / Kling â€” describe el retraso y la pausa como beats)</span>
 <span class="k">Sujeto:</span> a man receiving hard news on the phone, close framing.
-<span class="k">Beat 1 (freeze):</span> on hearing it, he goes still — no reaction yet.
-<span class="k">Beat 2 (breath):</span> su respiración cambia: una inhalación lenta, la mirada desenfocada.
+<span class="k">Beat 1 (freeze):</span> on hearing it, he goes still â€” no reaction yet.
+<span class="k">Beat 2 (breath):</span> su respiraciÃ³n cambia: una inhalaciÃ³n lenta, la mirada desenfocada.
 <span class="k">Beat 3 (delay):</span> un largo silencio; aparta la mirada, procesa antes de sentir.
-<span class="k">Ritmo 4 (liberación):</span> la emoción llega poco a poco: una pequeña fisura, no una explosión.
-<span class="k">Cámara:</span> mantén la imagen fija, no cortes; deja que la pausa sostenga el momento.
-<span class="k">Avoid:</span> llanto instantáneo; una emoción que está plenamente presente desde el primer fotograma.</div>
+<span class="k">Ritmo 4 (liberaciÃ³n):</span> la emociÃ³n llega poco a poco: una pequeÃ±a fisura, no una explosiÃ³n.
+<span class="k">CÃ¡mara:</span> mantÃ©n la imagen fija, no cortes; deja que la pausa sostenga el momento.
+<span class="k">Avoid:</span> llanto instantÃ¡neo; una emociÃ³n que estÃ¡ plenamente presente desde el primer fotograma.</div>
 </div>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Generas una escena de duelo y el personaje se derrumba en lágrimas desde el primer fotograma. El resultado, aunque
-              realista, parece «demasiado actuado». ¿Qué ajuste de <em>sincronización</em> ¿tiende a salvar la escena?</p>
+<p>Generas una escena de duelo y el personaje se derrumba en lÃ¡grimas desde el primer fotograma. El resultado, aunque
+              realista, parece Â«demasiado actuadoÂ». Â¿QuÃ© ajuste de <em>sincronizaciÃ³n</em> Â¿tiende a salvar la escena?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Insertar el <strong>retraso</strong>: dejar la emoción <em>entrar poco a poco</em>. Un
-                beat de congelamiento, un cambio en la respiración, un silencio antes de la reacción — emoción procesada,
-                no instantánea. La pausa suele comunicar más que el llanto en sí, porque el público completa el
-                silencio. Pausa más demora equivale a una interpretación humana.</p>
+<p class="answer">Insertar el <strong>retraso</strong>: dejar la emociÃ³n <em>entrar poco a poco</em>. Un
+                beat de congelamiento, un cambio en la respiraciÃ³n, un silencio antes de la reacciÃ³n â€” emociÃ³n procesada,
+                no instantÃ¡nea. La pausa suele comunicar mÃ¡s que el llanto en sÃ­, porque el pÃºblico completa el
+                silencio. Pausa mÃ¡s demora equivale a una interpretaciÃ³n humana.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="6-2" data-inema-topic="modulo-6-2#topico-4" data-inema-track="6" id="topico-4">
+<section data-ARCKHÉ-module="6-2" data-ARCKHÉ-topic="modulo-6-2#topico-4" data-ARCKHÉ-track="6" id="topico-4">
 <div class="section-mark">
-<span class="where">Sección 4 de 5</span><span>·</span><span>Cuerpo y ritmo</span>
+<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Cuerpo y ritmo</span>
 </div>
-<h2 class="head"><span class="num">4.</span>Lenguaje corporal y ritmo de actuación</h2>
+<h2 class="head"><span class="num">4.</span>Lenguaje corporal y ritmo de actuaciÃ³n</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-2-t4-p1">El cuarto mecanismo: el cuerpo revela la psicología. Un
-              personaje dice “qué bueno verte”, pero el lenguaje corporal lo cambia todo. La persona segura
+<p class="lede" data-ARCKHÉ-block="m6-2-t4-p1">El cuarto mecanismo: el cuerpo revela la psicologÃ­a. Un
+              personaje dice â€œquÃ© bueno verteâ€, pero el lenguaje corporal lo cambia todo. La persona segura
               se sienta inclinada hacia delante, con la espalda relajada y una postura firme. La nerviosa evita el contacto visual
-              y cambia sutilmente el peso de un pie al otro. La angustiada casi no se mueve, pero la tensión se nota en las manos y los
-              hombros. La persona con el corazón roto se mueve más despacio, con la espalda ligeramente encorvada bajo el peso emocional.
-              El diálogo sigue idéntico; la emoción cambia por completo.<span class="sidenote-ref">5</span> Las palabras
-              pueden mentir; la postura no. La fórmula: <strong>postura igual a psicología.</strong></p>
-<h3 class="sub">La quietud crea poder: el ritmo de la interpretación</h3>
-<p data-inema-block="m6-2-t4-p2">El quinto mecanismo es el <strong>ritmo de interpretación</strong>, y corrige el error más visible de las escenas de IA: el movimiento constante. Muchos clips de principiantes
-              <em>nunca se detienen</em> — los personajes caminan, gesticulan, reaccionan y hablan sin pausa, todo activo
+              y cambia sutilmente el peso de un pie al otro. La angustiada casi no se mueve, pero la tensiÃ³n se nota en las manos y los
+              hombros. La persona con el corazÃ³n roto se mueve mÃ¡s despacio, con la espalda ligeramente encorvada bajo el peso emocional.
+              El diÃ¡logo sigue idÃ©ntico; la emociÃ³n cambia por completo.<span class="sidenote-ref">5</span> Las palabras
+              pueden mentir; la postura no. La fÃ³rmula: <strong>postura igual a psicologÃ­a.</strong></p>
+<h3 class="sub">La quietud crea poder: el ritmo de la interpretaciÃ³n</h3>
+<p data-ARCKHÉ-block="m6-2-t4-p2">El quinto mecanismo es el <strong>ritmo de interpretaciÃ³n</strong>, y corrige el error mÃ¡s visible de las escenas de IA: el movimiento constante. Muchos clips de principiantes
+              <em>nunca se detienen</em> â€” los personajes caminan, gesticulan, reaccionan y hablan sin pausa, todo activo
               todo el tiempo. El resultado es ruidoso, porque el movimiento ininterrumpido destruye el foco emocional. La
-              actuación cinematográfica sigue el ritmo: la quietud crea atención, y el movimiento gana significado
+              actuaciÃ³n cARCKHÉtogrÃ¡fica sigue el ritmo: la quietud crea atenciÃ³n, y el movimiento gana significado
               precisamente porque <em>interrumpe</em> la quietud.</p>
-<p data-inema-block="m6-2-t4-p3">Las pausas emocionales crean presión; de repente, las reacciones pequeñas
-              parecen importantes. Un personaje peligroso puede moverse poco; uno seguro de sí mismo suele quedarse quieto;
-              uno nervioso se agita sutilmente. El ritmo emocional cambia cómo el público interpreta el comportamiento. La
-              fórmula que completa el mecanismo: <strong>quietud más movimiento más quietud igual a ritmo
-              cinematográfico.</strong> El significado no viene de moverse todo el tiempo, sino de moverse <em>en el momento
+<p data-ARCKHÉ-block="m6-2-t4-p3">Las pausas emocionales crean presiÃ³n; de repente, las reacciones pequeÃ±as
+              parecen importantes. Un personaje peligroso puede moverse poco; uno seguro de sÃ­ mismo suele quedarse quieto;
+              uno nervioso se agita sutilmente. El ritmo emocional cambia cÃ³mo el pÃºblico interpreta el comportamiento. La
+              fÃ³rmula que completa el mecanismo: <strong>quietud mÃ¡s movimiento mÃ¡s quietud igual a ritmo
+              cARCKHÉtogrÃ¡fico.</strong> El significado no viene de moverse todo el tiempo, sino de moverse <em>en el momento
               adecuado</em>.</p>
 </div>
 <!-- figura 3: ritmo quietude-movimento-quietude -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · El movimiento gana peso porque <b>interrumpe la quietud</b></figcaption>
-<svg aria-label="Diagrama de una línea de tiempo de la actuación: dos tramos planos de quietud enmarcan un pico de movimiento; se compara con una línea de movimiento constante que se vuelve ruidosa y pierde el foco." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 3</span> Â· El movimiento gana peso porque <b>interrumpe la quietud</b></figcaption>
+<svg aria-label="Diagrama de una lÃ­nea de tiempo de la actuaciÃ³n: dos tramos planos de quietud enmarcan un pico de movimiento; se compara con una lÃ­nea de movimiento constante que se vuelve ruidosa y pierde el foco." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="120" y2="120"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="30" y="140">TIEMPO →</text>
-<!-- linha cinematografica -->
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" x="30" y="140">TIEMPO â†’</text>
+<!-- linha cARCKHÉtografica -->
 <path class="accent-stroke" d="M40 96 L220 96 C 280 96, 300 36, 360 36 C 420 36, 440 96, 500 96 L680 96" fill="none" stroke-width="2.4"></path>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="130" y="86">quietud</text>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="360" y="28">movimiento</text>
@@ -455,65 +455,65 @@
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.6" text-anchor="middle" x="360" y="58">SIGNIFICADO</text>
 <!-- linha ruidosa (constante) -->
 <path class="rule-stroke" d="M40 168 L70 156 L100 172 L130 154 L160 170 L190 156 L220 172 L250 154 L280 170 L310 156 L340 172 L370 156 L400 170 L430 156 L460 170 L490 156 L520 170 L550 156 L580 170 L610 156 L640 170 L670 158" fill="none" opacity="0.8" stroke-width="1.3"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="355" y="190">movimiento constante — ruidoso, sin enfoque</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="355" y="190">movimiento constante â€” ruidoso, sin enfoque</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m6-2-t4-p4">Al reunir los cinco: <em>emoción más microactuación más sincronización más
-              lenguaje corporal más expresión de los ojos igual a personaje creíble.</em> O, todavía
-              más simple: <strong>si el personaje siente algo, el público siente algo.</strong> La actuación cinematográfica no se trata del movimiento; se trata de la emoción interior que se hace visible a través del comportamiento. Sin embargo, falta un problema propio de la IA que ninguna de las cinco reglas resuelve por sí sola: mantener el <em>mismo</em> personaje entre planos.</p>
+<p data-ARCKHÉ-block="m6-2-t4-p4">Al reunir los cinco: <em>emociÃ³n mÃ¡s microactuaciÃ³n mÃ¡s sincronizaciÃ³n mÃ¡s
+              lenguaje corporal mÃ¡s expresiÃ³n de los ojos igual a personaje creÃ­ble.</em> O, todavÃ­a
+              mÃ¡s simple: <strong>si el personaje siente algo, el pÃºblico siente algo.</strong> La actuaciÃ³n cARCKHÉtogrÃ¡fica no se trata del movimiento; se trata de la emociÃ³n interior que se hace visible a travÃ©s del comportamiento. Sin embargo, falta un problema propio de la IA que ninguna de las cinco reglas resuelve por sÃ­ sola: mantener el <em>mismo</em> personaje entre planos.</p>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="6-2" data-inema-topic="modulo-6-2#topico-5" data-inema-track="6" id="topico-5">
+<section data-ARCKHÉ-module="6-2" data-ARCKHÉ-topic="modulo-6-2#topico-5" data-ARCKHÉ-track="6" id="topico-5">
 <div class="section-mark">
-<span class="where">Sección 5 de 5</span><span>·</span><span>Consistencia</span>
+<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>Consistencia</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Identidad consistente entre planos</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-2-t5-p1">Una actuación creíble en un solo clip no basta: el
-              cine ocurre en varios planos, y el público necesita reconocer que es la <em>misma</em> persona de un
-              corte al siguiente. Aquí está la fragilidad típica de la IA: la <span class="dfn"><details class="dfn"><summary>deriva de identidad</summary><span class="body"><b>Deriva de identidad</b> (identity drift): la tendencia del generador a cambiar el rostro, la edad, el color del cabello, el vestuario o los rasgos entre una generación y otra, rompiendo la sensación de que se trata del mismo personaje.</span></details></span>:
-              el rostro cambia sutilmente, la edad se desliza, la ropa cambia de color y la ilusión de continuidad se rompe.
-              Un personaje que parece otra persona en cada plano destruye la escena de diálogo antes incluso de que la actuación
+<p class="lede" data-ARCKHÉ-block="m6-2-t5-p1">Una actuaciÃ³n creÃ­ble en un solo clip no basta: el
+              cine ocurre en varios planos, y el pÃºblico necesita reconocer que es la <em>misma</em> persona de un
+              corte al siguiente. AquÃ­ estÃ¡ la fragilidad tÃ­pica de la IA: la <span class="dfn"><details class="dfn"><summary>deriva de identidad</summary><span class="body"><b>Deriva de identidad</b> (identity drift): la tendencia del generador a cambiar el rostro, la edad, el color del cabello, el vestuario o los rasgos entre una generaciÃ³n y otra, rompiendo la sensaciÃ³n de que se trata del mismo personaje.</span></details></span>:
+              el rostro cambia sutilmente, la edad se desliza, la ropa cambia de color y la ilusiÃ³n de continuidad se rompe.
+              Un personaje que parece otra persona en cada plano destruye la escena de diÃ¡logo antes incluso de que la actuaciÃ³n
               importe.</p>
-<h3 class="sub">Ancla la identidad antes de la emoción</h3>
-<p data-inema-block="m6-2-t5-p2">La disciplina consiste en tratar la identidad como una constante que acompaña al
+<h3 class="sub">Ancla la identidad antes de la emociÃ³n</h3>
+<p data-ARCKHÉ-block="m6-2-t5-p2">La disciplina consiste en tratar la identidad como una constante que acompaÃ±a al
               personaje en todos los planos. Fija un <strong>retrato de referencia</strong> y describe los mismos
-              rasgos invariables en cada prompt — edad, forma del rostro, color y corte de cabello, tono de
-              piel, marcas, vestuario, paleta — y deja variar solo lo que <em>debe</em> variar: la emoción, la
+              rasgos invariables en cada prompt â€” edad, forma del rostro, color y corte de cabello, tono de
+              piel, marcas, vestuario, paleta â€” y deja variar solo lo que <em>debe</em> variar: la emociÃ³n, la
               pose, el encuadre, la luz de la escena. Cuando la herramienta lo permita, usa <em>image reference</em> o
-              <em>referencia de personaje</em> a partir del mismo retrato; mantén una «character sheet»
-              textual y pega el mismo bloque de identidad al inicio de cada generación.<span class="sidenote-ref">6</span></p>
-<p data-inema-block="m6-2-t5-p3">La regla práctica: <em>lo que define quién es el personaje nunca cambia
-              entre planos; lo único que cambia es lo que siente y cómo lo ve la cámara.</em> El prompt de abajo separa
-              esas dos capas a propósito — un bloque fijo de identidad, reutilizado en cada plano, y
-              un bloque variable de interpretación y cámara.</p>
-<div class="codeblock"><span class="c"># Consistencia del personaje entre tomas — bloque FIJO + bloque VARIABLE</span>
-<span class="c"># (pega el bloque FIJO idéntico en cada toma; cambia solo el VARIABLE)</span>
-<span class="c"># --- IDENTIDAD (fija, idéntica en cada toma) ---</span>
+              <em>referencia de personaje</em> a partir del mismo retrato; mantÃ©n una Â«character sheetÂ»
+              textual y pega el mismo bloque de identidad al inicio de cada generaciÃ³n.<span class="sidenote-ref">6</span></p>
+<p data-ARCKHÉ-block="m6-2-t5-p3">La regla prÃ¡ctica: <em>lo que define quiÃ©n es el personaje nunca cambia
+              entre planos; lo Ãºnico que cambia es lo que siente y cÃ³mo lo ve la cÃ¡mara.</em> El prompt de abajo separa
+              esas dos capas a propÃ³sito â€” un bloque fijo de identidad, reutilizado en cada plano, y
+              un bloque variable de interpretaciÃ³n y cÃ¡mara.</p>
+<div class="codeblock"><span class="c"># Consistencia del personaje entre tomas â€” bloque FIJO + bloque VARIABLE</span>
+<span class="c"># (pega el bloque FIJO idÃ©ntico en cada toma; cambia solo el VARIABLE)</span>
+<span class="c"># --- IDENTIDAD (fija, idÃ©ntica en cada toma) ---</span>
 <span class="k">Personaje:</span> Mara, 34, oval face, warm olive skin, dark brown shoulder-length hair, small scar above left brow.
-<span class="k">Vestuario:</span> abrigo de lana color carbón, anillo fino de plata, sin otras joyas.
+<span class="k">Vestuario:</span> abrigo de lana color carbÃ³n, anillo fino de plata, sin otras joyas.
 <span class="k">Reference:</span> use the same portrait as image/character reference for every shot.
 <span class="c"># --- VARIABLE (cambia en cada toma) ---</span>
-<span class="k">Shot 2 — emotion:</span> guarded apprehension; she holds her breath, eyes drop.
-<span class="k">Shot 2 — framing:</span> over-the-shoulder, shallow depth, soft lamp light from frame-left.
-<span class="k">Mantener constante:</span> face, age, hair, skin tone, scar, wardrobe — never let them drift.</div>
+<span class="k">Shot 2 â€” emotion:</span> guarded apprehension; she holds her breath, eyes drop.
+<span class="k">Shot 2 â€” framing:</span> over-the-shoulder, shallow depth, soft lamp light from frame-left.
+<span class="k">Mantener constante:</span> face, age, hair, skin tone, scar, wardrobe â€” never let them drift.</div>
 </div>
 <!-- figura 4: identidade fixa, performance variavel -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · Identidad <b>fijada</b>, actuación y cámara <b>libres</b> — por plano</figcaption>
-<svg aria-label="Diagrama: una franja superior de identidad bloqueada (rostro, edad, cabello, vestuario) atraviesa tres planos idénticos; debajo, cada plano varía la emoción y el encuadre." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 4</span> Â· Identidad <b>fijada</b>, actuaciÃ³n y cÃ¡mara <b>libres</b> â€” por plano</figcaption>
+<svg aria-label="Diagrama: una franja superior de identidad bloqueada (rostro, edad, cabello, vestuario) atraviesa tres planos idÃ©nticos; debajo, cada plano varÃ­a la emociÃ³n y el encuadre." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- faixa identidade travada -->
 <rect class="accent-stroke" fill="url(#hatch-6-2)" height="42" rx="3" stroke-width="1.3" width="640" x="40" y="34"></rect>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="60" y="60">IDENTIDAD BLOQUEADA</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="420" y="60">rostro · edad · cabello · tono de piel · vestuario</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="420" y="60">rostro Â· edad Â· cabello Â· tono de piel Â· vestuario</text>
 <!-- tres planos -->
 <g>
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="170" x="60" y="104"></rect>
 <circle class="rule-stroke" cx="100" cy="140" fill="none" r="18" stroke-width="1.3"></circle>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" x="145" y="130">PLANO 1</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="145" y="148">neutro · amplio</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="145" y="148">neutro Â· amplio</text>
 </g>
 <g>
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="170" x="275" y="104"></rect>
@@ -521,82 +521,82 @@
 <line class="ink" stroke-width="1.8" x1="309" x2="313" y1="136" y2="136"></line>
 <line class="ink" stroke-width="1.8" x1="319" x2="323" y1="136" y2="136"></line>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" x="360" y="130">PLANO 2</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="360" y="148">tenso · OTS</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="360" y="148">tenso Â· OTS</text>
 </g>
 <g>
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="170" x="490" y="104"></rect>
 <circle class="rule-stroke" cx="530" cy="140" fill="none" r="18" stroke-width="1.3"></circle>
 <path class="ink" d="M522 146 q8 5 16 0" fill="none" stroke-width="1.4"></path>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" x="575" y="130">PLANO 3</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="575" y="148">ruptura · close</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" x="575" y="148">ruptura Â· close</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="200">cambia solo la emoción y el encuadre — nunca la identidad</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="200">cambia solo la emociÃ³n y el encuadre â€” nunca la identidad</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m6-2-t5-p4">Resume el módulo en una frase: <em>un personaje de IA convence
-              cuando siente antes de moverse, muestra la emoción en el detalle, deja que el tiempo actúe — y sigue siendo el
-              mismo de un plano a otro.</em> Con la interpretación y la consistencia en su lugar, la próxima clase
-              acerca la cámara: cómo el primer plano y los planos emocionales transforman esa actuación sutil en algo que el
-              público no solo ve, sino que siente.</p>
+<p data-ARCKHÉ-block="m6-2-t5-p4">Resume el mÃ³dulo en una frase: <em>un personaje de IA convence
+              cuando siente antes de moverse, muestra la emociÃ³n en el detalle, deja que el tiempo actÃºe â€” y sigue siendo el
+              mismo de un plano a otro.</em> Con la interpretaciÃ³n y la consistencia en su lugar, la prÃ³xima clase
+              acerca la cÃ¡mara: cÃ³mo el primer plano y los planos emocionales transforman esa actuaciÃ³n sutil en algo que el
+              pÃºblico no solo ve, sino que siente.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="Autocomprobación" class="check">
-<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<section aria-label="AutocomprobaciÃ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Un personaje de IA parece realista y se mueve bien, pero suena artificial. ¿Cuál es el diagnóstico más probable?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>La actuación está <em>emocionalmente vacía</em>. El movimiento por sí solo no es
-              una actuación: faltan emoción, intención, reacción, ritmo. Probablemente hay movimiento sin
-              <em>motivación antes del movimiento</em>, y/o ojos sin pensamiento interior.</p></div>
+<summary><span class="qn">01</span><span>Un personaje de IA parece realista y se mueve bien, pero suena artificial. Â¿CuÃ¡l es el diagnÃ³stico mÃ¡s probable?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>La actuaciÃ³n estÃ¡ <em>emocionalmente vacÃ­a</em>. El movimiento por sÃ­ solo no es
+              una actuaciÃ³n: faltan emociÃ³n, intenciÃ³n, reacciÃ³n, ritmo. Probablemente hay movimiento sin
+              <em>motivaciÃ³n antes del movimiento</em>, y/o ojos sin pensamiento interior.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>¿Por qué una reacción instantánea ante una noticia terrible parece falsa, incluso con un buen render?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque la emoción real <em>lleva tiempo</em>: las personas procesan el impacto antes de
-              expresarlo. Falta el timing — quedarse inmóvil, la respiración que cambia, la demora. La emoción debe
-              <em>entrar poco a poco</em>. Pausa más retraso equivale a una actuación humana.</p></div>
+<summary><span class="qn">02</span><span>Â¿Por quÃ© una reacciÃ³n instantÃ¡nea ante una noticia terrible parece falsa, incluso con un buen render?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque la emociÃ³n real <em>lleva tiempo</em>: las personas procesan el impacto antes de
+              expresarlo. Falta el timing â€” quedarse inmÃ³vil, la respiraciÃ³n que cambia, la demora. La emociÃ³n debe
+              <em>entrar poco a poco</em>. Pausa mÃ¡s retraso equivale a una actuaciÃ³n humana.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Por qué «moverse todo el tiempo» debilita una interpretación</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">03</span><span>Por quÃ© Â«moverse todo el tiempoÂ» debilita una interpretaciÃ³n</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque el movimiento constante destruye el foco emocional: genera ruido. El
-              significado viene del <em>ritmo</em>: la quietud crea atención, y el movimiento pesa porque interrumpe la
-              quietud. Quietud más movimiento más quietud igual a ritmo cinematográfico.</p></div>
+              significado viene del <em>ritmo</em>: la quietud crea atenciÃ³n, y el movimiento pesa porque interrumpe la
+              quietud. Quietud mÃ¡s movimiento mÃ¡s quietud igual a ritmo cARCKHÉtogrÃ¡fico.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>¿Cuál es la disciplina para mantener al mismo personaje a lo largo de varios planos?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Â¿CuÃ¡l es la disciplina para mantener al mismo personaje a lo largo de varios planos?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Bloquear la <em>identidad</em> en un bloque fijo (rostro, edad, cabello, tono de piel,
-              vestuario) reutilizado en cada prompt, con un retrato de referencia, y dejar que varíe solo lo que debe:
-              emoción, pose, encuadre, luz. Lo que define quién es el personaje nunca cambia; solo cambia lo que
-              siente y cómo lo ve la cámara.</p></div>
+              vestuario) reutilizado en cada prompt, con un retrato de referencia, y dejar que varÃ­e solo lo que debe:
+              emociÃ³n, pose, encuadre, luz. Lo que define quiÃ©n es el personaje nunca cambia; solo cambia lo que
+              siente y cÃ³mo lo ve la cÃ¡mara.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Mi recorrido</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+<h2><span class="ico">â§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este módulo</div>
-<div class="v" data-inema-meter="modulo:6-2">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="k">En este mÃ³dulo</div>
+<div class="v" data-ARCKHÉ-meter="modulo:6-2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 6</div>
-<div class="v" data-inema-meter="trilha:6">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:6">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -605,75 +605,75 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Módulo 6.3 — Primeros planos y planos emocionales</div>
+<div class="t">MÃ³dulo 6.3 â€” Primeros planos y planos emocionales</div>
 </div>
-<a class="go" href="modulo-6-3.html">Siguiente →</a>
+<a class="go" href="modulo-6-3.html">Siguiente â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-6-2#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-2#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Motivación antes del movimiento.</b> Todo gesto creíble empieza por una razón emocional. El miedo genera
-          vacilación; la confianza, dirección; la curiosidad, observación. El movimiento sin motivo parece mecánico.
+<div class="tag">DefiniciÃ³n</div>
+<b>MotivaciÃ³n antes del movimiento.</b> Todo gesto creÃ­ble empieza por una razÃ³n emocional. El miedo genera
+          vacilaciÃ³n; la confianza, direcciÃ³n; la curiosidad, observaciÃ³n. El movimiento sin motivo parece mecÃ¡nico.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Lección 17 del programa <i>AI Filmmaking</i> — «AI Character Performance». Tesis:
-          <i>en el cine, el movimiento no es actuación; la emoción sí es actuación</i>.
+          LecciÃ³n 17 del programa <i>AI Filmmaking</i> â€” Â«AI Character PerformanceÂ». Tesis:
+          <i>en el cine, el movimiento no es actuaciÃ³n; la emociÃ³n sÃ­ es actuaciÃ³n</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-6-2#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Microactuación.</b> La señal mínima — una mirada que se desvía, el ritmo del parpadeo, la tensión en la
-          mandíbula — que transmite la emoción. Poco movimiento, mucha emoción.
+<div class="tag">DefiniciÃ³n</div>
+<b>MicroactuaciÃ³n.</b> La seÃ±al mÃ­nima â€” una mirada que se desvÃ­a, el ritmo del parpadeo, la tensiÃ³n en la
+          mandÃ­bula â€” que transmite la emociÃ³n. Poco movimiento, mucha emociÃ³n.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Buscamos los ojos por instinto: los ojos revelan atención, la atención revela pensamiento, el pensamiento crea la
-          sensación de vida interior. Los ojos sin vida rompen la ilusión de inmediato.
+          Buscamos los ojos por instinto: los ojos revelan atenciÃ³n, la atenciÃ³n revela pensamiento, el pensamiento crea la
+          sensaciÃ³n de vida interior. Los ojos sin vida rompen la ilusiÃ³n de inmediato.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-6-2#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Timing emocional.</b> La emoción aparece poco a poco —congelarse, respirar, retrasarse— en lugar
-          de llegar de golpe. Procesar la emoción se convierte en la emoción. Pausa más retraso = actuación humana.
+<div class="tag">DefiniciÃ³n</div>
+<b>Timing emocional.</b> La emociÃ³n aparece poco a poco â€”congelarse, respirar, retrasarseâ€” en lugar
+          de llegar de golpe. Procesar la emociÃ³n se convierte en la emociÃ³n. Pausa mÃ¡s retraso = actuaciÃ³n humana.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-6-2#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-2#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Ritmo de actuación.</b> Quietud → movimiento → quietud. El movimiento tiene peso porque
+<div class="tag">DefiniciÃ³n</div>
+<b>Ritmo de actuaciÃ³n.</b> Quietud â†’ movimiento â†’ quietud. El movimiento tiene peso porque
           interrumpe la calma; moverse siempre se vuelve ruido y mata el foco emocional.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          El cuerpo contradice las palabras: el mismo diálogo cambia de sentido según la postura. Quien tiene confianza se inclina hacia
-          adelante; quien está nervioso cambia el peso de un pie al otro; quien está destrozado encorva la espalda. La postura = psicología.
+          El cuerpo contradice las palabras: el mismo diÃ¡logo cambia de sentido segÃºn la postura. Quien tiene confianza se inclina hacia
+          adelante; quien estÃ¡ nervioso cambia el peso de un pie al otro; quien estÃ¡ destrozado encorva la espalda. La postura = psicologÃ­a.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-6-2#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-2#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
+<div class="tag">DefiniciÃ³n</div>
 <b>Deriva de identidad.</b> La tendencia del generador a cambiar el rostro, la edad, el cabello o el vestuario entre
-          planos. Fija un bloque de identidad y reutilízalo en cada prompt.
+          planos. Fija un bloque de identidad y reutilÃ­zalo en cada prompt.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          Regla de oro del plano a plano: lo que define <i>quién</i> el personaje nunca cambia; solo cambia lo que
-          siente y cómo lo ve la cámara. Usa <i>image/character reference</i> del mismo retrato.
+          Regla de oro del plano a plano: lo que define <i>quiÃ©n</i> el personaje nunca cambia; solo cambia lo que
+          siente y cÃ³mo lo ve la cÃ¡mara. Usa <i>image/character reference</i> del mismo retrato.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Módulo 6.2 — folio ii</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">MÃ³dulo 6.2 â€” folio ii</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -682,8 +682,8 @@
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

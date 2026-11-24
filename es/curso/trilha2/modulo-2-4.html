@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,68 +118,68 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Módulo 2.4 — Profundidad y estructura espacial | AI Filmmaking</title>
+<title>MÃ³dulo 2.4 â€” Profundidad y estructura espacial | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-4.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:2-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:2-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Ruta <b>2</b> Fundamentos cinematográficos</span>
-<span class="sep">·</span>
-<span>Módulo <b>2.4</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Sección 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>Ruta <b>2</b> Fundamentos cARCKHÉtogrÃ¡ficos</span>
+<span class="sep">Â·</span>
+<span>MÃ³dulo <b>2.4</b> / 4</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,76 +189,76 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Módulo 2.4 · Ruta 2 · Fundamentos cinematográficos</p>
+<p class="kicker">MÃ³dulo 2.4 Â· Ruta 2 Â· Fundamentos cARCKHÉtogrÃ¡ficos</p>
 <h1 class="module">Profundidad y estructura <em>Espacial</em></h1>
-<p class="deck">La profundidad es la ilusión de tres dimensiones, y se construye organizando el encuadre en
-          capas: primer plano, donde está el espectador; plano medio, donde vive el sujeto; fondo, donde habita el contexto. Sin
-          capas, la imagen es una estampa; con ellas, es un espacio al que entra la cámara.</p>
+<p class="deck">La profundidad es la ilusiÃ³n de tres dimensiones, y se construye organizando el encuadre en
+          capas: primer plano, donde estÃ¡ el espectador; plano medio, donde vive el sujeto; fondo, donde habita el contexto. Sin
+          capas, la imagen es una estampa; con ellas, es un espacio al que entra la cÃ¡mara.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~18 min · módulo completo</span>
+<span>~18 min Â· mÃ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>A <b>regla de las tres capas</b> — por qué cada encuadre necesita primer plano, plano medio y fondo para dejar de ser plano.</li>
-<li>Cómo <b>separar</b> las capas mediante el enfoque, la luz y el color, y cómo la <b>profundidad de campo</b> dirige la
-              atención al decidir qué está enfocado.</li>
-<li>Cómo la <b>atmósfera</b> aleja elementos y es la forma de elegir <b>lente</b> (amplia contra
+<li>A <b>regla de las tres capas</b> â€” por quÃ© cada encuadre necesita primer plano, plano medio y fondo para dejar de ser plano.</li>
+<li>CÃ³mo <b>separar</b> las capas mediante el enfoque, la luz y el color, y cÃ³mo la <b>profundidad de campo</b> dirige la
+              atenciÃ³n al decidir quÃ© estÃ¡ enfocado.</li>
+<li>CÃ³mo la <b>atmÃ³sfera</b> aleja elementos y es la forma de elegir <b>lente</b> (amplia contra
               tele) expande o comprime el espacio.</li>
-<li>Por qué el <b>el movimiento revela profundidad</b> (parallax) y por qué <b>distancia y emoción</b>:
-              colocar a los personajes en capas cuenta relaciones sin diálogo.</li>
+<li>Por quÃ© el <b>el movimiento revela profundidad</b> (parallax) y por quÃ© <b>distancia y emociÃ³n</b>:
+              colocar a los personajes en capas cuenta relaciones sin diÃ¡logo.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">La regla de las tres capas</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">Separación y profundidad de campo</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">Atmósfera y elección de lente</span></a><span class="leader"></span></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">SeparaciÃ³n y profundidad de campo</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">AtmÃ³sfera y elecciÃ³n de lente</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Movimiento, paralaje y escala</span></a><span class="leader"></span></li>
-<li><span class="n">5</span><a href="#topico-5"><span class="t">Profundidad y emoción: todo como sistema</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Profundidad y emociÃ³n: todo como sistema</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-1" data-inema-track="2" id="topico-1">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="section-mark">
-<span class="where">Sección 1 de 5</span><span>·</span><span>Tres capas</span>
+<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>Tres capas</span>
 </div>
 <h2 class="head"><span class="num">1.</span>La regla de las tres capas</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m2-4-t1-p1">La pantalla es plana. El mundo no. Todo el arte de este
-              módulo consiste en crear, sobre una superficie bidimensional, la <strong>ilusión de espacio tridimensional</strong>
-              — y esta ilusión tiene una regla de oro tan simple que cabe en una línea: cada cuadro necesita
+<p class="lede dropcap" data-ARCKHÉ-block="m2-4-t1-p1">La pantalla es plana. El mundo no. Todo el arte de este
+              mÃ³dulo consiste en crear, sobre una superficie bidimensional, la <strong>ilusiÃ³n de espacio tridimensional</strong>
+              â€” y esta ilusiÃ³n tiene una regla de oro tan simple que cabe en una lÃ­nea: cada cuadro necesita
               <em>primer plano</em>, <em>medio</em> e <em>fondo</em>. Son tres capas con funciones distintas. El
-              primer plano es <span class="sidenote-ref">1</span>dónde está el espectador — qué hay cerca de la
-              cámara, el marco a través del que miramos. El plano medio es donde vive el sujeto — el centro de la acción. El fondo es
-              donde habita el contexto — el mundo que explica la escena. Si falta una de estas capas, la imagen pierde
-              su tercera dimensión.</p>
-<p data-inema-block="m2-4-t1-p2">¿Por qué funciona esto? Porque el cerebro reconstruye la profundidad a partir de las
+              primer plano es <span class="sidenote-ref">1</span>dÃ³nde estÃ¡ el espectador â€” quÃ© hay cerca de la
+              cÃ¡mara, el marco a travÃ©s del que miramos. El plano medio es donde vive el sujeto â€” el centro de la acciÃ³n. El fondo es
+              donde habita el contexto â€” el mundo que explica la escena. Si falta una de estas capas, la imagen pierde
+              su tercera dimensiÃ³n.</p>
+<p data-ARCKHÉ-block="m2-4-t1-p2">Â¿Por quÃ© funciona esto? Porque el cerebro reconstruye la profundidad a partir de las
               <em>relaciones entre objetos a diferentes distancias</em>. Cuando hay algo cerca, algo en el medio y algo
-              lejos, el ojo compara sus tamaños, sus posiciones, sus superposiciones — y deduce el espacio. Un
+              lejos, el ojo compara sus tamaÃ±os, sus posiciones, sus superposiciones â€” y deduce el espacio. Un
               encuadre con todo a la misma distancia no le da nada que comparar al cerebro, y este lee la escena como
-              <em>plana</em>, un estampado pegado. Es el defecto que la Ruta 1 llamaba “parece barato”:
-              no falta resolución, falta <strong>profundidad</strong>. La regla de las tres capas es el antídoto más
-              directo y también el más barato: basta con poner algo en primer plano.</p>
-<h3 class="sub">El primer plano es lo que más falta</h3>
-<p data-inema-block="m2-4-t1-p3">En la práctica, la mayoría de las imágenes débiles tienen medio y fondo, pero
-              <em>olvida</em> el primer plano. El resultado es un sujeto sobre un escenario, sin nada entre él y la
-              cámara — y es precisamente ese vacío al frente lo que aplana la imagen. Añadir una capa en primer plano
-              — ramas desenfocadas, el borde de una mesa, la silueta de un hombro, el marco de una puerta —
-              transforma la imagen al instante: de repente la cámara está <em>dentro</em> del espacio, sin mirar
-              una postal. En IA, pedir explícitamente <em>foreground element</em> es una de las instrucciones
-              que más elevan la sensación de profundidad, y casi nadie la usa.<span class="sidenote-ref">2</span></p>
+              <em>plana</em>, un estampado pegado. Es el defecto que la Ruta 1 llamaba â€œparece baratoâ€:
+              no falta resoluciÃ³n, falta <strong>profundidad</strong>. La regla de las tres capas es el antÃ­doto mÃ¡s
+              directo y tambiÃ©n el mÃ¡s barato: basta con poner algo en primer plano.</p>
+<h3 class="sub">El primer plano es lo que mÃ¡s falta</h3>
+<p data-ARCKHÉ-block="m2-4-t1-p3">En la prÃ¡ctica, la mayorÃ­a de las imÃ¡genes dÃ©biles tienen medio y fondo, pero
+              <em>olvida</em> el primer plano. El resultado es un sujeto sobre un escenario, sin nada entre Ã©l y la
+              cÃ¡mara â€” y es precisamente ese vacÃ­o al frente lo que aplana la imagen. AÃ±adir una capa en primer plano
+              â€” ramas desenfocadas, el borde de una mesa, la silueta de un hombro, el marco de una puerta â€”
+              transforma la imagen al instante: de repente la cÃ¡mara estÃ¡ <em>dentro</em> del espacio, sin mirar
+              una postal. En IA, pedir explÃ­citamente <em>foreground element</em> es una de las instrucciones
+              que mÃ¡s elevan la sensaciÃ³n de profundidad, y casi nadie la usa.<span class="sidenote-ref">2</span></p>
 </div>
 <!-- figura 1: tres camadas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · A <b>regla de las tres capas</b> — primer plano, plano medio y fondo, cada uno con su función</figcaption>
-<svg aria-label="Diagrama en corte lateral que muestra tres capas de profundidad: primer plano cerca de la cámara, plano medio con el sujeto, fondo con el contexto; las flechas indican las distancias crecientes desde la lente." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 1</span> Â· A <b>regla de las tres capas</b> â€” primer plano, plano medio y fondo, cada uno con su funciÃ³n</figcaption>
+<svg aria-label="Diagrama en corte lateral que muestra tres capas de profundidad: primer plano cerca de la cÃ¡mara, plano medio con el sujeto, fondo con el contexto; las flechas indican las distancias crecientes desde la lente." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-2-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
@@ -267,11 +267,11 @@
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="178" y2="178"></line>
 <!-- camera -->
 <path class="accent-stroke" d="M44 150 l-18 -10 l0 20 z" fill="none" stroke-width="1.4"></path>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" x="40" y="196">cámara</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" x="40" y="196">cÃ¡mara</text>
 <!-- primeiro plano -->
 <rect class="accent-stroke" fill="url(#hatch-2-4)" height="114" stroke-width="1.5" width="40" x="110" y="64"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="130" y="56">primer plano</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="130" y="200">dónde estás</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="130" y="200">dÃ³nde estÃ¡s</text>
 <!-- meio -->
 <circle class="accent-stroke" cx="360" cy="120" r="14" stroke-width="1.8"></circle>
 <line class="accent-stroke" stroke-width="1.8" x1="360" x2="360" y1="134" y2="178"></line>
@@ -285,72 +285,72 @@
 <text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="600" y="200">el contexto</text>
 <!-- eixo de distancia -->
 <path class="mark-stroke" d="M70 168 L680 168" stroke-dasharray="2 4" stroke-width="1.2"></path>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="160">DISTANCIA CRECIENTE →</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="160">DISTANCIA CRECIENTE â†’</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Generas un plano de un personaje en una calle. La iluminación está bien, la pose está bien, pero la imagen
-              parece «pegada», como si el personaje fuera una calcomanía sobre un fondo. Sin cambiar
-              el personaje ni el escenario, ¿qué elemento añadido suele corregir esa sensación y por qué?</p>
+<p>Generas un plano de un personaje en una calle. La iluminaciÃ³n estÃ¡ bien, la pose estÃ¡ bien, pero la imagen
+              parece Â«pegadaÂ», como si el personaje fuera una calcomanÃ­a sobre un fondo. Sin cambiar
+              el personaje ni el escenario, Â¿quÃ© elemento aÃ±adido suele corregir esa sensaciÃ³n y por quÃ©?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Agregar un <strong>primer plano</strong>. La sensación de “calcomanía”
-                casi siempre viene de un encuadre con solo dos capas (sujeto + fondo) y nada cerca de la cámara. Poner
-                algo en primer plano —una rama desenfocada, la esquina de un muro, la silueta de alguien de espaldas
-                — crea la tercera capa que faltaba. El cerebro ahora tiene algo cercano para comparar con lo
-                lejano, y la cámara parece estar <em>dentro</em> de la calle, no frente a un póster.</p>
+<p class="answer">Agregar un <strong>primer plano</strong>. La sensaciÃ³n de â€œcalcomanÃ­aâ€
+                casi siempre viene de un encuadre con solo dos capas (sujeto + fondo) y nada cerca de la cÃ¡mara. Poner
+                algo en primer plano â€”una rama desenfocada, la esquina de un muro, la silueta de alguien de espaldas
+                â€” crea la tercera capa que faltaba. El cerebro ahora tiene algo cercano para comparar con lo
+                lejano, y la cÃ¡mara parece estar <em>dentro</em> de la calle, no frente a un pÃ³ster.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: las pistas de profundidad que apilas
+<summary><span class="chev">â–¸</span> Profundizando: las pistas de profundidad que apilas
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>El camino recomendado de arriba ya basta. Esta capa enumera el repertorio completo y puedes saltártela.</p>
+<p>El camino recomendado de arriba ya basta. Esta capa enumera el repertorio completo y puedes saltÃ¡rtela.</p>
 <p>La regla de las tres capas es la estructura; dentro de ella, varias <em>indicios de profundidad</em> se
-                suman. <strong>Superposición:</strong> lo que tapa otra cosa está delante — es la pista más primitiva y
-                poderosa. <strong>Tamaño relativo:</strong> los objetos iguales parecen más pequeños cuando están más lejos.
-                <strong>Convergencia:</strong> las líneas paralelas se acercan en el fondo (las líneas guía del Módulo 2.2).
-                <strong>Gradiente de textura:</strong> las superficies se vuelven más lisas con la distancia. <strong>Enfoque y
-                atmósfera</strong> entran en las próximas secciones. Cada pista que apilas refuerza la ilusión, y
-                por eso un encuadre con tres capas, superposición, convergencia y bruma parece mucho más
+                suman. <strong>SuperposiciÃ³n:</strong> lo que tapa otra cosa estÃ¡ delante â€” es la pista mÃ¡s primitiva y
+                poderosa. <strong>TamaÃ±o relativo:</strong> los objetos iguales parecen mÃ¡s pequeÃ±os cuando estÃ¡n mÃ¡s lejos.
+                <strong>Convergencia:</strong> las lÃ­neas paralelas se acercan en el fondo (las lÃ­neas guÃ­a del MÃ³dulo 2.2).
+                <strong>Gradiente de textura:</strong> las superficies se vuelven mÃ¡s lisas con la distancia. <strong>Enfoque y
+                atmÃ³sfera</strong> entran en las prÃ³ximas secciones. Cada pista que apilas refuerza la ilusiÃ³n, y
+                por eso un encuadre con tres capas, superposiciÃ³n, convergencia y bruma parece mucho mÃ¡s
                 tridimensional que un sujeto plano sobre un fondo plano. La profundidad es la suma de pistas, no un
-                único truco.</p>
+                Ãºnico truco.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-2" data-inema-track="2" id="topico-2">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="section-mark">
-<span class="where">Sección 2 de 5</span><span>·</span><span>Separación</span>
+<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>SeparaciÃ³n</span>
 </div>
-<h2 class="head"><span class="num">2.</span>Separación y profundidad de campo</h2>
+<h2 class="head"><span class="num">2.</span>SeparaciÃ³n y profundidad de campo</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t2-p1">Tener tres capas no basta — necesitan estar
+<p class="lede" data-ARCKHÉ-block="m2-4-t2-p1">Tener tres capas no basta â€” necesitan estar
               <strong>visualmente separadas</strong>. Si el primer plano, el plano medio y el fondo tienen el mismo color, el mismo brillo
-              y la misma nitidez, se funden en una sola mancha y la profundidad desaparece, aunque los objetos estén a
-              distintas distancias. La lección nombra tres herramientas de separación: <em>enfoque</em>, <em>luz</em> e
-              <em>color</em>. Distingues una capa de la otra dejando una nítida y la otra desenfocada, o una clara y
-              la otra oscura, o una cálida y la otra fría. Cada diferencia empuja una capa hacia delante y la otra
-              hacia atrás. La separación es lo que hace que las tres capas <em>leen</em> como tres distancias.</p>
+              y la misma nitidez, se funden en una sola mancha y la profundidad desaparece, aunque los objetos estÃ©n a
+              distintas distancias. La lecciÃ³n nombra tres herramientas de separaciÃ³n: <em>enfoque</em>, <em>luz</em> e
+              <em>color</em>. Distingues una capa de la otra dejando una nÃ­tida y la otra desenfocada, o una clara y
+              la otra oscura, o una cÃ¡lida y la otra frÃ­a. Cada diferencia empuja una capa hacia delante y la otra
+              hacia atrÃ¡s. La separaciÃ³n es lo que hace que las tres capas <em>leen</em> como tres distancias.</p>
 <h3 class="sub">La luz que separa: contraluz y contraste</h3>
-<p data-inema-block="m2-4-t2-p2">La luz es la herramienta de separación más cinematográfica — y aquí el
-              Módulo 2.3 se conecta directamente con este. Un <em>contraluz</em> (contraluz) que recorta el contorno del
+<p data-ARCKHÉ-block="m2-4-t2-p2">La luz es la herramienta de separaciÃ³n mÃ¡s cARCKHÉtogrÃ¡fica â€” y aquÃ­ el
+              MÃ³dulo 2.3 se conecta directamente con este. Un <em>contraluz</em> (contraluz) que recorta el contorno del
               sujeto lo destaca del fondo: ese hilo de rim light crea una frontera luminosa entre la capa intermedia y
-              la del fondo. De la misma manera, un sujeto claro sobre un fondo oscuro — o a la inversa — usa el
-              <em>contraste</em> para separar planos. La bruma de la Lección 5 también reaparece: aclara
-              progresivamente las capas más distantes y las separa por densidad. La luz no solo revela; también
+              la del fondo. De la misma manera, un sujeto claro sobre un fondo oscuro â€” o a la inversa â€” usa el
+              <em>contraste</em> para separar planos. La bruma de la LecciÃ³n 5 tambiÃ©n reaparece: aclara
+              progresivamente las capas mÃ¡s distantes y las separa por densidad. La luz no solo revela; tambiÃ©n
               <strong>organiza el espacio en capas</strong>.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m2-4-t2-p3">La herramienta de separación más potente, sin embargo, es la <strong>profundidad
-              de campo</strong>: el control sobre lo que está enfocado. Con una profundidad de campo reducida (shallow depth of
-              field), solo una franja estrecha del espacio queda enfocada: el sujeto del medio queda nítido,
+<p data-ARCKHÉ-block="m2-4-t2-p3">La herramienta de separaciÃ³n mÃ¡s potente, sin embargo, es la <strong>profundidad
+              de campo</strong>: el control sobre lo que estÃ¡ enfocado. Con una profundidad de campo reducida (shallow depth of
+              field), solo una franja estrecha del espacio queda enfocada: el sujeto del medio queda nÃ­tido,
               mientras que el primer plano y el fondo se funden en un desenfoque suave. Esto hace dos cosas a la vez:
-              <em>separa</em> las capas de forma inequívoca y <em>dirige la atención</em>, porque el ojo va irresistiblemente a la única región nítida. La profundidad de campo es, al mismo tiempo, una herramienta espacial y una herramienta de jerarquía — aísla la capa que importa del mundo desenfocado que la rodea.</p>
+              <em>separa</em> las capas de forma inequÃ­voca y <em>dirige la atenciÃ³n</em>, porque el ojo va irresistiblemente a la Ãºnica regiÃ³n nÃ­tida. La profundidad de campo es, al mismo tiempo, una herramienta espacial y una herramienta de jerarquÃ­a â€” aÃ­sla la capa que importa del mundo desenfocado que la rodea.</p>
 </div>
 <!-- figura 2: profundidade de campo rasa -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · <b>Profundidad de campo reducida</b> — solo el plano medio queda nítido; el resto se derrite y aísla al sujeto</figcaption>
-<svg aria-label="Diagrama: tres capas en las que el primer plano y el fondo aparecen desenfocados y la capa del medio aparece nítida; una franja marca la estrecha zona de enfoque que aísla al sujeto." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 2</span> Â· <b>Profundidad de campo reducida</b> â€” solo el plano medio queda nÃ­tido; el resto se derrite y aÃ­sla al sujeto</figcaption>
+<svg aria-label="Diagrama: tres capas en las que el primer plano y el fondo aparecen desenfocados y la capa del medio aparece nÃ­tida; una franja marca la estrecha zona de enfoque que aÃ­sla al sujeto." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="168" y2="168"></line>
 <!-- primeiro plano borrado -->
 <circle class="rule-stroke" cx="120" cy="100" fill="none" opacity="0.35" r="30" stroke-width="3"></circle>
@@ -361,77 +361,77 @@
 <!-- meio nitido -->
 <circle class="accent-stroke" cx="360" cy="98" r="15" stroke-width="2"></circle>
 <line class="accent-stroke" stroke-width="2" x1="360" x2="360" y1="113" y2="168"></line>
-<text class="ink" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="156">nítido</text>
+<text class="ink" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="156">nÃ­tido</text>
 <!-- fundo borrado -->
 <g class="rule-stroke" fill="none" opacity="0.28" stroke-width="4">
 <rect height="52" width="22" x="560" y="92"></rect><rect height="64" width="18" x="590" y="80"></rect><rect height="44" width="24" x="616" y="100"></rect>
 </g>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="600" y="156">borroso</text>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="192">SEPARA Y DIRIGE LA ATENCIÓN AL MISMO TIEMPO</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="375" y="192">SEPARA Y DIRIGE LA ATENCIÃ“N AL MISMO TIEMPO</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-4-t2-p4">En el prompt, nombras las tres capas <em>e</em> la separación entre
-              ellas —y el generador responde bien a eso. El ejemplo de abajo es una <em>receta de profundidad</em>:
-              primer plano, plano medio y fondo declarados, separados por el enfoque, la luz y el color. Observa cómo cada capa recibe
-              un papel y una diferencia explícita.</p>
-<div class="codeblock"><span class="c"># Receta de profundidad — tres capas separadas por el enfoque, la luz y el color</span>
-<span class="c"># declara las capas y la separación; el generador (Freepik / Seedance) lo entiende</span>
+<p data-ARCKHÉ-block="m2-4-t2-p4">En el prompt, nombras las tres capas <em>e</em> la separaciÃ³n entre
+              ellas â€”y el generador responde bien a eso. El ejemplo de abajo es una <em>receta de profundidad</em>:
+              primer plano, plano medio y fondo declarados, separados por el enfoque, la luz y el color. Observa cÃ³mo cada capa recibe
+              un papel y una diferencia explÃ­cita.</p>
+<div class="codeblock"><span class="c"># Receta de profundidad â€” tres capas separadas por el enfoque, la luz y el color</span>
+<span class="c"># declara las capas y la separaciÃ³n; el generador (Freepik / Seedance) lo entiende</span>
 <span class="k">Foreground:</span> out-of-focus leaves framing the bottom-left, dark, close to camera.
-<span class="k">Midground:</span> el sujeto enfocado con nitidez, iluminado por una luz principal cálida: el único elemento nítido.
+<span class="k">Midground:</span> el sujeto enfocado con nitidez, iluminado por una luz principal cÃ¡lida: el Ãºnico elemento nÃ­tido.
 <span class="k">Background:</span> a distant cool-blue cityscape, soft and hazy, pushed far by atmosphere.
 <span class="k">Separation:</span> shallow depth of field; backlight rim on the subject; warm subject vs cool background.
 <span class="k">Lente:</span> 85mm look, shallow focus, strong subject isolation.</div>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-3" data-inema-track="2" id="topico-3">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="section-mark">
-<span class="where">Sección 3 de 5</span><span>·</span><span>Atmósfera y lente</span>
+<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>AtmÃ³sfera y lente</span>
 </div>
-<h2 class="head"><span class="num">3.</span>Atmósfera y elección de lente</h2>
+<h2 class="head"><span class="num">3.</span>AtmÃ³sfera y elecciÃ³n de lente</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t3-p1">Dos herramientas controlan la <em>escala</em> del espacio: la
-              atmósfera y el lente. A <strong>atmósfera</strong> — la bruma, la niebla, el humo, incluso la nieve,
-              empujan los elementos hacia la distancia. Funcionan porque imitan lo que realmente hace el aire: cuanto más
-              lejos está un objeto, más aire hay entre él y el ojo, y ese aire lo vuelve progresivamente más claro, más
-              azulado y menos contrastado. Este efecto tiene un nombre: <em>perspectiva atmosférica</em> — y es
-              una de las pistas de profundidad más fuertes que existen. Una montaña nítida parece cercana; la misma
-              montaña desvanecida por la bruma parece estar a kilómetros. Controlas la profundidad percibida simplemente
-              dosificando la atmósfera entre las capas.<span class="sidenote-ref">4</span></p>
+<p class="lede" data-ARCKHÉ-block="m2-4-t3-p1">Dos herramientas controlan la <em>escala</em> del espacio: la
+              atmÃ³sfera y el lente. A <strong>atmÃ³sfera</strong> â€” la bruma, la niebla, el humo, incluso la nieve,
+              empujan los elementos hacia la distancia. Funcionan porque imitan lo que realmente hace el aire: cuanto mÃ¡s
+              lejos estÃ¡ un objeto, mÃ¡s aire hay entre Ã©l y el ojo, y ese aire lo vuelve progresivamente mÃ¡s claro, mÃ¡s
+              azulado y menos contrastado. Este efecto tiene un nombre: <em>perspectiva atmosfÃ©rica</em> â€” y es
+              una de las pistas de profundidad mÃ¡s fuertes que existen. Una montaÃ±a nÃ­tida parece cercana; la misma
+              montaÃ±a desvanecida por la bruma parece estar a kilÃ³metros. Controlas la profundidad percibida simplemente
+              dosificando la atmÃ³sfera entre las capas.<span class="sidenote-ref">4</span></p>
 <h3 class="sub">El lente decide si el espacio se abre o se comprime</h3>
-<p data-inema-block="m2-4-t3-p2">La elección de <strong>lente</strong> cambia la distancia percibida de forma
-              dramática. Un lente <em>amplia</em> (gran angular) <strong>expande el espacio</strong>: exagera la
-              distancia entre las capas, hace que el primer plano destaque y el fondo retroceda, y da esa sensación de
-              vastedad, de un mundo grande alrededor de un sujeto pequeño. Un lente <em>teleobjetivo</em>, al contrario,
-              <strong>comprime el espacio</strong>: aplana las capas entre sí, haciendo que el fondo
-              parezca pegado a la espalda del sujeto — útil para aislar, crear densidad y dar la sensación de
-              que no hay adónde escapar. La misma escena, lentes diferentes, espacios emocionalmente opuestos.</p>
-<p data-inema-block="m2-4-t3-p3">La conexión entre el lente y la emoción es directa, y la clase la explica: el lente
-              gran angular <em>exagera</em> la separación —física y emocional— mientras la cámara teleobjetivo la <em>colapsa</em>.
-              ¿Quieres mostrar a un personaje aislado, perdido en la inmensidad? Gran angular, primer plano potente, fondo
-              distante. ¿Quieres mostrar a dos personajes atrapados en una tensión asfixiante, sin escapatoria? Teleobjetivo, planos
-              comprimidos, fondo muy cerca. El lente no es una decisión técnica neutral: <strong>esculpe la relación
-              entre el sujeto y el espacio</strong>, y esa relación es pura emoción. En IA, términos como <em>wide-angle</em>,
+<p data-ARCKHÉ-block="m2-4-t3-p2">La elecciÃ³n de <strong>lente</strong> cambia la distancia percibida de forma
+              dramÃ¡tica. Un lente <em>amplia</em> (gran angular) <strong>expande el espacio</strong>: exagera la
+              distancia entre las capas, hace que el primer plano destaque y el fondo retroceda, y da esa sensaciÃ³n de
+              vastedad, de un mundo grande alrededor de un sujeto pequeÃ±o. Un lente <em>teleobjetivo</em>, al contrario,
+              <strong>comprime el espacio</strong>: aplana las capas entre sÃ­, haciendo que el fondo
+              parezca pegado a la espalda del sujeto â€” Ãºtil para aislar, crear densidad y dar la sensaciÃ³n de
+              que no hay adÃ³nde escapar. La misma escena, lentes diferentes, espacios emocionalmente opuestos.</p>
+<p data-ARCKHÉ-block="m2-4-t3-p3">La conexiÃ³n entre el lente y la emociÃ³n es directa, y la clase la explica: el lente
+              gran angular <em>exagera</em> la separaciÃ³n â€”fÃ­sica y emocionalâ€” mientras la cÃ¡mara teleobjetivo la <em>colapsa</em>.
+              Â¿Quieres mostrar a un personaje aislado, perdido en la inmensidad? Gran angular, primer plano potente, fondo
+              distante. Â¿Quieres mostrar a dos personajes atrapados en una tensiÃ³n asfixiante, sin escapatoria? Teleobjetivo, planos
+              comprimidos, fondo muy cerca. El lente no es una decisiÃ³n tÃ©cnica neutral: <strong>esculpe la relaciÃ³n
+              entre el sujeto y el espacio</strong>, y esa relaciÃ³n es pura emociÃ³n. En IA, tÃ©rminos como <em>wide-angle</em>,
               <em>24mm</em>, <em>telephoto</em>, <em>85mm</em>, <em>compressed background</em> cambian radicalmente la
               lectura espacial del encuadre.</p>
 </div>
 <!-- figura 3: lente ampla vs tele -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · A <b>lente</b> decide el espacio — gran angular lo expande (aislamiento), teleobjetivo lo comprime (tensión)</figcaption>
-<svg aria-label="Diagrama que compara dos lentes: a la izquierda, un gran angular aleja el fondo y exagera la distancia: el sujeto es pequeño en un mundo amplio; a la derecha, un teleobjetivo comprime y pega el fondo a la espalda del sujeto." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 3</span> Â· A <b>lente</b> decide el espacio â€” gran angular lo expande (aislamiento), teleobjetivo lo comprime (tensiÃ³n)</figcaption>
+<svg aria-label="Diagrama que compara dos lentes: a la izquierda, un gran angular aleja el fondo y exagera la distancia: el sujeto es pequeÃ±o en un mundo amplio; a la derecha, un teleobjetivo comprime y pega el fondo a la espalda del sujeto." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- esquerda: ampla -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">AMPLIA — SE EXPANDE</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">AMPLIA â€” SE EXPANDE</text>
 <rect class="rule-stroke" fill="none" height="150" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
 <!-- linhas divergentes -->
 <path class="rule-stroke" d="M180 188 L60 60 M180 188 L300 60" opacity="0.6" stroke-width="1.1"></path>
 <circle class="accent-stroke" cx="180" cy="150" r="12" stroke-width="1.8"></circle>
 <g class="rule-stroke" fill="none" opacity="0.5" stroke-width="1"><rect height="22" width="12" x="120" y="70"></rect><rect height="20" width="12" x="232" y="72"></rect></g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="206">sujeto pequeño, mundo amplio</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="206">sujeto pequeÃ±o, mundo amplio</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="190"></line>
 <!-- direita: tele -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TELE — COMPRIME</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TELE â€” COMPRIME</text>
 <rect class="accent-stroke" fill="none" height="150" rx="3" stroke-width="1.3" width="280" x="400" y="40"></rect>
 <!-- camadas coladas -->
 <rect class="rule-stroke" fill="url(#hatch-2-4)" height="100" opacity="0.5" stroke-width="1" width="140" x="470" y="70"></rect>
@@ -442,142 +442,142 @@
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Quieres un plano que comunique «dos rivales frente a frente, una tensión asfixiante, sin salida».
-              Entre un gran angular que muestra todo el salón a su alrededor y un teleobjetivo que comprime el fondo
-              detrás de ambos, ¿cuál funciona mejor para la idea y por qué?</p>
+<p>Quieres un plano que comunique Â«dos rivales frente a frente, una tensiÃ³n asfixiante, sin salidaÂ».
+              Entre un gran angular que muestra todo el salÃ³n a su alrededor y un teleobjetivo que comprime el fondo
+              detrÃ¡s de ambos, Â¿cuÃ¡l funciona mejor para la idea y por quÃ©?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
 <p class="answer">A <strong>teleobjetivo</strong>. Comprime el espacio, aplana las capas y
-                pega el fondo a las espaldas de los personajes; esa compresión produce exactamente la sensación de
-                “no hay salida”, de un mundo que se cierra a su alrededor. El gran angular haría lo contrario: abriría el
-                salón, daría aire, mostraría rutas de escape y diluiría la tensión en la inmensidad. El lente esculpe la relación
-                con el espacio, y la idea aquí pide estrechez, no amplitud.</p>
+                pega el fondo a las espaldas de los personajes; esa compresiÃ³n produce exactamente la sensaciÃ³n de
+                â€œno hay salidaâ€, de un mundo que se cierra a su alrededor. El gran angular harÃ­a lo contrario: abrirÃ­a el
+                salÃ³n, darÃ­a aire, mostrarÃ­a rutas de escape y diluirÃ­a la tensiÃ³n en la inmensidad. El lente esculpe la relaciÃ³n
+                con el espacio, y la idea aquÃ­ pide estrechez, no amplitud.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: por qué el teleobjetivo “acerca” el fondo
+<summary><span class="chev">â–¸</span> Profundizando: por quÃ© el teleobjetivo â€œacercaâ€ el fondo
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional sobre la física de la compresión; puedes omitirla.</p>
-<p>La compresión del teleobjetivo no es mágica: es consecuencia de la <em>distancia de la cámara</em>. Para
-                encuadrar al mismo sujeto con un teleobjetivo, tienes que estar mucho más lejos de él. Y cuando la cámara está
+<p>Capa opcional sobre la fÃ­sica de la compresiÃ³n; puedes omitirla.</p>
+<p>La compresiÃ³n del teleobjetivo no es mÃ¡gica: es consecuencia de la <em>distancia de la cÃ¡mara</em>. Para
+                encuadrar al mismo sujeto con un teleobjetivo, tienes que estar mucho mÃ¡s lejos de Ã©l. Y cuando la cÃ¡mara estÃ¡
                 lejos, la diferencia <em>proporcional</em> de distancia entre el sujeto y el fondo se reduce: si
-                estás a cien metros, el fondo a ciento diez metros está «casi a la misma distancia», así que
-                parece del mismo tamaño y se pega detrás. Con el gran angular te acercas mucho al sujeto, y entonces la
-                diferencia proporcional se dispara: el fondo, que está solo un poco más lejos, parece mucho más pequeño y distante. Por
-                eso la lente y la distancia van juntas: elegir la lente es, en realidad, elegir desde dónde la cámara
+                estÃ¡s a cien metros, el fondo a ciento diez metros estÃ¡ Â«casi a la misma distanciaÂ», asÃ­ que
+                parece del mismo tamaÃ±o y se pega detrÃ¡s. Con el gran angular te acercas mucho al sujeto, y entonces la
+                diferencia proporcional se dispara: el fondo, que estÃ¡ solo un poco mÃ¡s lejos, parece mucho mÃ¡s pequeÃ±o y distante. Por
+                eso la lente y la distancia van juntas: elegir la lente es, en realidad, elegir desde dÃ³nde la cÃ¡mara
                 ve el espacio.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-4" data-inema-track="2" id="topico-4">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="section-mark">
-<span class="where">Sección 4 de 5</span><span>·</span><span>Movimiento</span>
+<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Movimiento</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Movimiento, paralaje y escala</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t4-p1">Hasta ahora, construimos profundidad en un plano fijo.
-              Cuando la cámara se mueve, aparece la pista más poderosa de todas: el <strong>parallax</strong>. La regla es
+<p class="lede" data-ARCKHÉ-block="m2-4-t4-p1">Hasta ahora, construimos profundidad en un plano fijo.
+              Cuando la cÃ¡mara se mueve, aparece la pista mÃ¡s poderosa de todas: el <strong>parallax</strong>. La regla es
               simple y el ojo la conoce desde siempre: cuando te desplazas, las <em>las capas se mueven a
-              diferentes velocidades</em>. Lo que está cerca cruza el encuadre rápidamente; lo que está lejos casi no se
-              mueve. Mira por la ventana de un auto: el poste de al lado pasa volando, la casa a media distancia se desliza, la montaña en el
-              horizonte prácticamente te acompaña. El cerebro interpreta esa diferencia de velocidad, de forma instantánea
-              y sin error, como <em>profundidad real</em>. Por eso un simple movimiento de cámara — un dolly,
-              un tracking lateral — hace que una escena gane una tridimensionalidad que ninguna imagen fija
+              diferentes velocidades</em>. Lo que estÃ¡ cerca cruza el encuadre rÃ¡pidamente; lo que estÃ¡ lejos casi no se
+              mueve. Mira por la ventana de un auto: el poste de al lado pasa volando, la casa a media distancia se desliza, la montaÃ±a en el
+              horizonte prÃ¡cticamente te acompaÃ±a. El cerebro interpreta esa diferencia de velocidad, de forma instantÃ¡nea
+              y sin error, como <em>profundidad real</em>. Por eso un simple movimiento de cÃ¡mara â€” un dolly,
+              un tracking lateral â€” hace que una escena gane una tridimensionalidad que ninguna imagen fija
               alcanza.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m2-4-t4-p2">El parallax es la razón por la que la lección insiste en que <em>el movimiento revela
-              profundidad</em>. Un dolly-in que atraviesa un primer plano (pasar la cámara detrás de una columna,
-              entre el follaje) activa el paralaje de forma explícita: la capa del frente barre el encuadre mientras el
-              fondo permanece, y el espacio se vuelve innegable. Esta también es la razón por la que el primer plano (la Sección 1)
+<p data-ARCKHÉ-block="m2-4-t4-p2">El parallax es la razÃ³n por la que la lecciÃ³n insiste en que <em>el movimiento revela
+              profundidad</em>. Un dolly-in que atraviesa un primer plano (pasar la cÃ¡mara detrÃ¡s de una columna,
+              entre el follaje) activa el paralaje de forma explÃ­cita: la capa del frente barre el encuadre mientras el
+              fondo permanece, y el espacio se vuelve innegable. Esta tambiÃ©n es la razÃ³n por la que el primer plano (la SecciÃ³n 1)
               es tan importante en video: quieto, ya ayuda; en movimiento, <em>dispara</em> el paralaje
-              multiplica la profundidad. La cámara en movimiento sin nada en primer plano desperdicia la pista más fuerte
+              multiplica la profundidad. La cÃ¡mara en movimiento sin nada en primer plano desperdicia la pista mÃ¡s fuerte
               que tienes.</p>
-<h3 class="sub">El movimiento también separa a los personajes, física y emocionalmente</h3>
-<p data-inema-block="m2-4-t4-p3">Hay una capa adicional en la idea de movimiento que la lección se asegura de
-              destacar: el desplazamiento <strong>separa personajes</strong>, y no solo en el espacio. Cuando la cámara se mueve y revela que dos personajes están en capas diferentes —uno cerca, otro lejos—, cuenta la relación entre ellos sin una palabra. La distancia que se abre o se cierra con el movimiento <em>e</em> la
-              dinámica emocional. Un personaje que entra en primer plano mientras el otro permanece pequeño al
+<h3 class="sub">El movimiento tambiÃ©n separa a los personajes, fÃ­sica y emocionalmente</h3>
+<p data-ARCKHÉ-block="m2-4-t4-p3">Hay una capa adicional en la idea de movimiento que la lecciÃ³n se asegura de
+              destacar: el desplazamiento <strong>separa personajes</strong>, y no solo en el espacio. Cuando la cÃ¡mara se mueve y revela que dos personajes estÃ¡n en capas diferentes â€”uno cerca, otro lejosâ€”, cuenta la relaciÃ³n entre ellos sin una palabra. La distancia que se abre o se cierra con el movimiento <em>e</em> la
+              dinÃ¡mica emocional. Un personaje que entra en primer plano mientras el otro permanece pequeÃ±o al
               fondo establece dominancia; dos personajes que se acercan desde distintas capas hasta compartir el mismo plano
-              representan una reconciliación. El movimiento y la profundidad narran juntos, lo que nos lleva directamente a
-              la idea central del módulo.</p>
+              representan una reconciliaciÃ³n. El movimiento y la profundidad narran juntos, lo que nos lleva directamente a
+              la idea central del mÃ³dulo.</p>
 </div>
 <!-- figura 4: parallax -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Parallax</b> — al mover la cámara, las capas se desplazan a distintas velocidades</figcaption>
-<svg aria-label="Diagrama: tres capas con vectores de velocidad de distintos tamaños: el primer plano tiene un vector largo, el plano medio uno mediano y el fondo uno corto, lo que indica que los objetos cercanos cruzan el encuadre más rápido cuando la cámara se desplaza." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Parallax</b> â€” al mover la cÃ¡mara, las capas se desplazan a distintas velocidades</figcaption>
+<svg aria-label="Diagrama: tres capas con vectores de velocidad de distintos tamaÃ±os: el primer plano tiene un vector largo, el plano medio uno mediano y el fondo uno corto, lo que indica que los objetos cercanos cruzan el encuadre mÃ¡s rÃ¡pido cuando la cÃ¡mara se desplaza." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="168" y2="168"></line>
 <!-- primeiro plano: vetor longo -->
 <rect class="accent-stroke" fill="url(#hatch-2-4)" height="98" stroke-width="1.5" width="34" x="90" y="70"></rect>
 <path class="accent-stroke" d="M132 56 L236 56" stroke-width="2.4"></path>
 <path class="accent" d="M236 56 l-12 -5 l0 10 z"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="107" y="186">cerca — rápido</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="107" y="186">cerca â€” rÃ¡pido</text>
 <!-- meio: vetor medio -->
 <circle class="accent-stroke" cx="360" cy="118" r="14" stroke-width="1.8"></circle>
 <line class="accent-stroke" stroke-width="1.8" x1="360" x2="360" y1="132" y2="168"></line>
 <path class="mark-stroke" d="M380 100 L440 100" stroke-width="2"></path>
 <path class="mark-fill" d="M440 100 l-10 -4 l0 8 z"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="186">medio — medio</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="360" y="186">medio â€” medio</text>
 <!-- fundo: vetor curto -->
 <g class="rule-stroke" fill="none" opacity="0.55" stroke-width="1.1">
 <rect height="42" width="20" x="560" y="118"></rect><rect height="54" width="16" x="588" y="106"></rect>
 </g>
 <path class="rule-stroke" d="M610 92 L632 92" stroke-width="1.6"></path>
 <path class="faint" d="M632 92 l-8 -3 l0 6 z"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="186">lejos — casi inmóvil</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="600" y="186">lejos â€” casi inmÃ³vil</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-4-t4-p4">En el prompt de video, pides el paralaje describiendo un movimiento de
-              cámara <em>a través</em> de capas. El ejemplo de abajo es una <em>receta de parallax</em>: un movimiento
+<p data-ARCKHÉ-block="m2-4-t4-p4">En el prompt de video, pides el paralaje describiendo un movimiento de
+              cÃ¡mara <em>a travÃ©s</em> de capas. El ejemplo de abajo es una <em>receta de parallax</em>: un movimiento
               lateral con un primer plano marcado, que hace que el espacio se revele. Observa que son el primer plano y el
-              movimiento los que producen el efecto; ninguno de los dos lo logra por sí solo.</p>
-<div class="codeblock"><span class="c"># Receta de parallax — movimiento que revela profundidad real</span>
-<span class="c"># para video (Seedance / Kling / Luma / Runway): cámara + capas</span>
+              movimiento los que producen el efecto; ninguno de los dos lo logra por sÃ­ solo.</p>
+<div class="codeblock"><span class="c"># Receta de parallax â€” movimiento que revela profundidad real</span>
+<span class="c"># para video (Seedance / Kling / Luma / Runway): cÃ¡mara + capas</span>
 <span class="k">Capas:</span> tall grass in the foreground, a walking figure in the midground, mountains far in the background.
-<span class="k">Movimiento de cámara:</span> slow lateral tracking (dolly) from left to right, low to the ground.
-<span class="k">Parallax:</span> el pasto del primer plano cruza rápidamente el encuadre; la figura se desplaza; las montañas apenas se mueven.
-<span class="k">Por qué:</span> las distintas velocidades de las capas se perciben como una verdadera profundidad 3D, imposible en una imagen fija.
+<span class="k">Movimiento de cÃ¡mara:</span> slow lateral tracking (dolly) from left to right, low to the ground.
+<span class="k">Parallax:</span> el pasto del primer plano cruza rÃ¡pidamente el encuadre; la figura se desplaza; las montaÃ±as apenas se mueven.
+<span class="k">Por quÃ©:</span> las distintas velocidades de las capas se perciben como una verdadera profundidad 3D, imposible en una imagen fija.
 <span class="k">Mood:</span> inmersivo, tranquilo, expansivo.</div>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="2-4" data-inema-topic="modulo-2-4#topico-5" data-inema-track="2" id="topico-5">
+<section data-ARCKHÉ-module="2-4" data-ARCKHÉ-topic="modulo-2-4#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="section-mark">
-<span class="where">Sección 5 de 5</span><span>·</span><span>Emoción y sistema</span>
+<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>EmociÃ³n y sistema</span>
 </div>
-<h2 class="head"><span class="num">5.</span>Profundidad y emoción: todo como sistema</h2>
+<h2 class="head"><span class="num">5.</span>Profundidad y emociÃ³n: todo como sistema</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-4-t5-p1">Llegamos al corazón del módulo, y es una sola frase:
-              <strong>la profundidad no es solo visual: también es emocional</strong>. Las capas que construiste no
-              sirven solo para que la imagen parezca tridimensional; también <em>significan</em>. Una distancia corta entre la
-              cámara y el sujeto crea <em>intimidad</em>. Una distancia larga crea <em>aislamiento</em>. O
+<p class="lede" data-ARCKHÉ-block="m2-4-t5-p1">Llegamos al corazÃ³n del mÃ³dulo, y es una sola frase:
+              <strong>la profundidad no es solo visual: tambiÃ©n es emocional</strong>. Las capas que construiste no
+              sirven solo para que la imagen parezca tridimensional; tambiÃ©n <em>significan</em>. Una distancia corta entre la
+              cÃ¡mara y el sujeto crea <em>intimidad</em>. Una distancia larga crea <em>aislamiento</em>. O
               <em>movimiento</em> entre capas significa cambio; la <em>inmovilidad</em> de una figura distante y
-              fija significa tensión, espera. La profundidad es, en el fondo, un vocabulario de <em>distancia
-              emocional</em>: dónde colocas a alguien en el eje cerca–lejos dice lo que siente esa persona, o lo
+              fija significa tensiÃ³n, espera. La profundidad es, en el fondo, un vocabulario de <em>distancia
+              emocional</em>: dÃ³nde colocas a alguien en el eje cercaâ€“lejos dice lo que siente esa persona, o lo
               que sientes por ella.<span class="sidenote-ref">6</span></p>
-<p data-inema-block="m2-4-t5-p2">La consecuencia práctica es poderosa: al ubicar personajes en
-              <em>capas diferentes</em>, cuentas la relación entre ellos <strong>sin diálogo</strong>. Un
-              personaje en primer plano, grande y dominante, y otro pequeño y desenfocado al fondo — eso es
-              poder, vigilancia, amenaza, según el contexto. Dos personajes uno al lado del otro en la misma capa —
-              eso es igualdad, compañerismo. Uno que se aleja hacia el fondo mientras el otro permanece — eso es
-              pérdida, despedida. La geometría del espacio <span class="dfn"><details class="dfn"><summary>escenifica</summary><span class="body"><b>Poner en escena a través de la profundidad</b> es usar la posición de los personajes en las capas (cerca/lejos) y el foco para comunicar relaciones de poder, intimidad o conflicto: una forma de dirección que prescinde del diálogo y la acción.</span></details></span>
-              el drama. Eso es exactamente lo que pide la tarea del módulo: tres escenas, dos personajes en capas
-              diferentes, emoción solo mediante la posición y la mirada, sin diálogo ni acción.</p>
+<p data-ARCKHÉ-block="m2-4-t5-p2">La consecuencia prÃ¡ctica es poderosa: al ubicar personajes en
+              <em>capas diferentes</em>, cuentas la relaciÃ³n entre ellos <strong>sin diÃ¡logo</strong>. Un
+              personaje en primer plano, grande y dominante, y otro pequeÃ±o y desenfocado al fondo â€” eso es
+              poder, vigilancia, amenaza, segÃºn el contexto. Dos personajes uno al lado del otro en la misma capa â€”
+              eso es igualdad, compaÃ±erismo. Uno que se aleja hacia el fondo mientras el otro permanece â€” eso es
+              pÃ©rdida, despedida. La geometrÃ­a del espacio <span class="dfn"><details class="dfn"><summary>escenifica</summary><span class="body"><b>Poner en escena a travÃ©s de la profundidad</b> es usar la posiciÃ³n de los personajes en las capas (cerca/lejos) y el foco para comunicar relaciones de poder, intimidad o conflicto: una forma de direcciÃ³n que prescinde del diÃ¡logo y la acciÃ³n.</span></details></span>
+              el drama. Eso es exactamente lo que pide la tarea del mÃ³dulo: tres escenas, dos personajes en capas
+              diferentes, emociÃ³n solo mediante la posiciÃ³n y la mirada, sin diÃ¡logo ni acciÃ³n.</p>
 <h3 class="sub">Todo funciona como un sistema</h3>
-<p data-inema-block="m2-4-t5-p3">La clase cierra el Bloque 2 con la síntesis que conecta los cuatro módulos: un
-              plano verdaderamente cinematográfico no es composición <em>o</em> luz <em>o</em> profundidad —
-              y <strong>todo al mismo tiempo, funcionando como un sistema</strong>. La composición decide adónde va la mirada; la luz decide qué se revela y qué se oculta; el lente y la profundidad deciden cómo se organiza el espacio en capas; el movimiento y la posición del personaje deciden la relación y la emoción. Ninguno de estos elementos puede salvar por sí solo una escena débil y ninguno, de forma aislada, hace la escena. Es la <em>combinación deliberada</em> —
-              cada pieza elegida para reforzar a las demás — que produce esa densidad que reconocemos como
+<p data-ARCKHÉ-block="m2-4-t5-p3">La clase cierra el Bloque 2 con la sÃ­ntesis que conecta los cuatro mÃ³dulos: un
+              plano verdaderamente cARCKHÉtogrÃ¡fico no es composiciÃ³n <em>o</em> luz <em>o</em> profundidad â€”
+              y <strong>todo al mismo tiempo, funcionando como un sistema</strong>. La composiciÃ³n decide adÃ³nde va la mirada; la luz decide quÃ© se revela y quÃ© se oculta; el lente y la profundidad deciden cÃ³mo se organiza el espacio en capas; el movimiento y la posiciÃ³n del personaje deciden la relaciÃ³n y la emociÃ³n. Ninguno de estos elementos puede salvar por sÃ­ solo una escena dÃ©bil y ninguno, de forma aislada, hace la escena. Es la <em>combinaciÃ³n deliberada</em> â€”
+              cada pieza elegida para reforzar a las demÃ¡s â€” que produce esa densidad que reconocemos como
               cine.</p>
-<p data-inema-block="m2-4-t5-p4">Este es el salto que cierra la Trilha 2: pasas de <em>crear imágenes</em>
-              para <em>dirigir escenas</em> — moldeando el espacio, controlando la atención, contando historias a través de la profundidad. Los cuatro fundamentos — pensamiento visual, composición, luz y profundidad — ahora forman un solo vocabulario con el que lees y construyes cualquier cuadro. Las próximas rutas ponen este vocabulario en movimiento: el pipeline de herramientas que ejecuta estas decisiones, el lenguaje de cámara que las anima, los efectos y la actuación que les dan vida. Pero los cimientos ya están puestos. Ya no miras una imagen y piensas «qué bonita»: la miras y ves las capas, la luz, la jerarquía y el espacio, y sabes por qué funciona.</p>
+<p data-ARCKHÉ-block="m2-4-t5-p4">Este es el salto que cierra la Trilha 2: pasas de <em>crear imÃ¡genes</em>
+              para <em>dirigir escenas</em> â€” moldeando el espacio, controlando la atenciÃ³n, contando historias a travÃ©s de la profundidad. Los cuatro fundamentos â€” pensamiento visual, composiciÃ³n, luz y profundidad â€” ahora forman un solo vocabulario con el que lees y construyes cualquier cuadro. Las prÃ³ximas rutas ponen este vocabulario en movimiento: el pipeline de herramientas que ejecuta estas decisiones, el lenguaje de cÃ¡mara que las anima, los efectos y la actuaciÃ³n que les dan vida. Pero los cimientos ya estÃ¡n puestos. Ya no miras una imagen y piensas Â«quÃ© bonitaÂ»: la miras y ves las capas, la luz, la jerarquÃ­a y el espacio, y sabes por quÃ© funciona.</p>
 </div>
 <!-- figura 5: profundidade como emocao + sistema -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · <b>Distancia y emoción</b> — y el plano cinematográfico es la suma de todos los fundamentos</figcaption>
-<svg aria-label="Diagrama en dos partes: a la izquierda, un eje de cerca-lejos que asocia la intimidad con la cercanía y el aislamiento con la distancia, con dos personajes en capas; a la derecha, cuatro engranajes rotulados composición, luz, profundidad y movimiento que convergen en un plano cinematográfico." class="diagram" role="img" viewbox="0 0 720 220">
+<figcaption><span class="fig-n">Fig. 5</span> Â· <b>Distancia y emociÃ³n</b> â€” y el plano cARCKHÉtogrÃ¡fico es la suma de todos los fundamentos</figcaption>
+<svg aria-label="Diagrama en dos partes: a la izquierda, un eje de cerca-lejos que asocia la intimidad con la cercanÃ­a y el aislamiento con la distancia, con dos personajes en capas; a la derecha, cuatro engranajes rotulados composiciÃ³n, luz, profundidad y movimiento que convergen en un plano cARCKHÉtogrÃ¡fico." class="diagram" role="img" viewbox="0 0 720 220">
 <!-- esquerda: eixo emocional -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">DISTANCIA = EMOCIÓN</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">DISTANCIA = EMOCIÃ“N</text>
 <line class="rule-stroke" stroke-width="1.2" x1="60" x2="320" y1="150" y2="150"></line>
 <text class="ink" font-family="Source Serif 4, serif" font-size="10.5" x="70" y="170">cerca = intimidad</text>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="end" x="310" y="170">lejos = aislamiento</text>
@@ -585,13 +585,13 @@
 <line class="accent-stroke" stroke-width="2" x1="96" x2="96" y1="136" y2="150"></line>
 <circle class="rule-stroke" cx="286" cy="132" opacity="0.7" r="7" stroke-width="1.4"></circle>
 <line class="rule-stroke" opacity="0.7" stroke-width="1.4" x1="286" x2="286" y1="139" y2="150"></line>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="180" y="206">las capas cuentan una relación sin diálogo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="180" y="206">las capas cuentan una relaciÃ³n sin diÃ¡logo</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="200"></line>
 <!-- direita: o sistema -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TODO COMO SISTEMA</text>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
-<circle class="wash accent-stroke" cx="460" cy="74" r="26" stroke-width="1.3"></circle><text x="460" y="78">composición</text>
+<circle class="wash accent-stroke" cx="460" cy="74" r="26" stroke-width="1.3"></circle><text x="460" y="78">composiciÃ³n</text>
 <circle class="wash accent-stroke" cx="620" cy="74" r="26" stroke-width="1.3"></circle><text x="620" y="78">luz</text>
 <circle class="wash accent-stroke" cx="460" cy="150" r="26" stroke-width="1.3"></circle><text x="460" y="148">profun-</text><text x="460" y="160">didad</text>
 <circle class="wash accent-stroke" cx="620" cy="150" r="26" stroke-width="1.3"></circle><text x="620" y="154">movimiento</text>
@@ -605,78 +605,78 @@
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Necesitas mostrar «un padre y un hijo que se han distanciado con los años» en un solo plano,
-              sin diálogo ni acción. Usando solo lo que enseñó este módulo, ¿cómo lo pondrías en escena a través de la
+<p>Necesitas mostrar Â«un padre y un hijo que se han distanciado con los aÃ±osÂ» en un solo plano,
+              sin diÃ¡logo ni acciÃ³n. Usando solo lo que enseÃ±Ã³ este mÃ³dulo, Â¿cÃ³mo lo pondrÃ­as en escena a travÃ©s de la
               profundidad?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Pon los dos en <strong>capas diferentes</strong> y usa la separación para
-                marcar la distancia emocional. Por ejemplo: uno de ellos en primer plano, nítido, de espaldas o de perfil;
-                el otro al fondo, más pequeño, ligeramente desenfocado, quizá separado por el marco de una puerta o por la bruma.
-                La poca profundidad de campo los aísla; la distancia entre las capas <em>e</em> el
-                alejamiento. Si hay movimiento, deja que la cámara o uno de los dos aumente la distancia. La geometría del
-                espacio dice «están lejos» sin una palabra: esa es la tesis del módulo: la distancia es
-                emoción.</p>
+<p class="answer">Pon los dos en <strong>capas diferentes</strong> y usa la separaciÃ³n para
+                marcar la distancia emocional. Por ejemplo: uno de ellos en primer plano, nÃ­tido, de espaldas o de perfil;
+                el otro al fondo, mÃ¡s pequeÃ±o, ligeramente desenfocado, quizÃ¡ separado por el marco de una puerta o por la bruma.
+                La poca profundidad de campo los aÃ­sla; la distancia entre las capas <em>e</em> el
+                alejamiento. Si hay movimiento, deja que la cÃ¡mara o uno de los dos aumente la distancia. La geometrÃ­a del
+                espacio dice Â«estÃ¡n lejosÂ» sin una palabra: esa es la tesis del mÃ³dulo: la distancia es
+                emociÃ³n.</p>
 </details>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="Autocomprobación" class="check">
-<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<section aria-label="AutocomprobaciÃ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>¿Cuál es la regla de las tres capas y por qué su ausencia hace que la imagen parezca “plana”?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Todo plano necesita un <em>primer plano</em> (dónde estás), <em>medio</em> (el
+<summary><span class="qn">01</span><span>Â¿CuÃ¡l es la regla de las tres capas y por quÃ© su ausencia hace que la imagen parezca â€œplanaâ€?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Todo plano necesita un <em>primer plano</em> (dÃ³nde estÃ¡s), <em>medio</em> (el
               sujeto) y <em>fondo</em> (el contexto). El cerebro reconstruye la profundidad comparando objetos a
-              distintas distancias; si todo está a la misma distancia, no hay nada que comparar y la escena se vuelve una estampa. Lo que
-              más les falta a las imágenes débiles es el primer plano.</p></div>
+              distintas distancias; si todo estÃ¡ a la misma distancia, no hay nada que comparar y la escena se vuelve una estampa. Lo que
+              mÃ¡s les falta a las imÃ¡genes dÃ©biles es el primer plano.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>¿Por qué la poca profundidad de campo es, al mismo tiempo, una herramienta espacial y jerárquica?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">02</span><span>Â¿Por quÃ© la poca profundidad de campo es, al mismo tiempo, una herramienta espacial y jerÃ¡rquica?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque deja solo una franja estrecha enfocada. Eso <em>separa</em> las capas de
-              forma inequívoca (sujeto nítido, frente y fondo borrosos) y <em>dirige la atención</em>, porque el ojo va irresistiblemente a la única región nítida. Separa el espacio y aísla lo que importa de una sola vez.</p></div>
+              forma inequÃ­voca (sujeto nÃ­tido, frente y fondo borrosos) y <em>dirige la atenciÃ³n</em>, porque el ojo va irresistiblemente a la Ãºnica regiÃ³n nÃ­tida. Separa el espacio y aÃ­sla lo que importa de una sola vez.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>¿Qué hacen los lentes gran angular y teleobjetivo con el espacio, y qué emoción transmite cada uno?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>A <em>amplia</em> expande: exagera la distancia entre capas, sujeto pequeño en un mundo
-              vasto — aislamiento, amplitud. A <em>tele</em> comprime: aplana las capas y pega el fondo a la
-              espalda del sujeto — tensión, densidad, «sin salida». El lente esculpe la relación entre el
-              sujeto y el espacio, y esa relación es emoción.</p></div>
+<summary><span class="qn">03</span><span>Â¿QuÃ© hacen los lentes gran angular y teleobjetivo con el espacio, y quÃ© emociÃ³n transmite cada uno?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>A <em>amplia</em> expande: exagera la distancia entre capas, sujeto pequeÃ±o en un mundo
+              vasto â€” aislamiento, amplitud. A <em>tele</em> comprime: aplana las capas y pega el fondo a la
+              espalda del sujeto â€” tensiÃ³n, densidad, Â«sin salidaÂ». El lente esculpe la relaciÃ³n entre el
+              sujeto y el espacio, y esa relaciÃ³n es emociÃ³n.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Por qué «el movimiento revela profundidad» y por qué la distancia es emoción</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Por el <em>parallax</em>: al mover la cámara, las capas cercanas cruzan el cuadro rápido y
-              las lejanas casi no se mueven — el cerebro interpreta esa diferencia de velocidad como 3D real. Y
-              la distancia es emoción porque cerca = intimidad, lejos = aislamiento, movimiento = cambio: ubicar
-              personajes en capas cuenta la relación entre ellos sin diálogo. Todo funciona como un sistema.</p></div>
+<summary><span class="qn">04</span><span>Por quÃ© Â«el movimiento revela profundidadÂ» y por quÃ© la distancia es emociÃ³n</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Por el <em>parallax</em>: al mover la cÃ¡mara, las capas cercanas cruzan el cuadro rÃ¡pido y
+              las lejanas casi no se mueven â€” el cerebro interpreta esa diferencia de velocidad como 3D real. Y
+              la distancia es emociÃ³n porque cerca = intimidad, lejos = aislamiento, movimiento = cambio: ubicar
+              personajes en capas cuenta la relaciÃ³n entre ellos sin diÃ¡logo. Todo funciona como un sistema.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Mi recorrido</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+<h2><span class="ico">â§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este módulo</div>
-<div class="v" data-inema-meter="modulo:2-4">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="k">En este mÃ³dulo</div>
+<div class="v" data-ARCKHÉ-meter="modulo:2-4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 2</div>
-<div class="v" data-inema-meter="trilha:2">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -684,74 +684,74 @@
 <!-- proxima acao (UMA clara) -->
 <div class="nextup">
 <div class="txt">
-<div class="k">Empezar la próxima trilha</div>
-<div class="t">Módulo 3.1 — Pipeline de herramientas de IA</div>
+<div class="k">Empezar la prÃ³xima trilha</div>
+<div class="t">MÃ³dulo 3.1 â€” Pipeline de herramientas de IA</div>
 </div>
-<a class="go" href="../trilha3/modulo-3-1.html">Siguiente →</a>
+<a class="go" href="../trilha3/modulo-3-1.html">Siguiente â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Regla de las tres capas.</b> Todo plano necesita primer plano (donde estás), plano medio (el sujeto) y
-          fondo (el contexto). Sin los tres, la imagen queda plana — como una estampa.
+<div class="tag">DefiniciÃ³n</div>
+<b>Regla de las tres capas.</b> Todo plano necesita primer plano (donde estÃ¡s), plano medio (el sujeto) y
+          fondo (el contexto). Sin los tres, la imagen queda plana â€” como una estampa.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Diez bloques profesionales sobre cómo construir y controlar la profundidad en una escena: el cierre del Bloque 2.
-          <div class="src-line">Bloque 2 · Lección 6 — Profundidad y estructura espacial</div>
+          Diez bloques profesionales sobre cÃ³mo construir y controlar la profundidad en una escena: el cierre del Bloque 2.
+          <div class="src-line">Bloque 2 Â· LecciÃ³n 6 â€” Profundidad y estructura espacial</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Separación.</b> Distingue las capas mediante el foco, la luz o el color para que se perciban como tres distancias. Las capas
+<div class="tag">DefiniciÃ³n</div>
+<b>SeparaciÃ³n.</b> Distingue las capas mediante el foco, la luz o el color para que se perciban como tres distancias. Las capas
           iguales se funden en una mancha: la diferencia es lo que crea profundidad.
         </aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Profundidad de campo.</b> El control sobre lo que está enfocado. Poca profundidad de campo = solo una franja enfocada; aísla
-          al sujeto y dirige la mirada. A la vez, es una herramienta para crear espacio y jerarquía.
+<div class="tag">DefiniciÃ³n</div>
+<b>Profundidad de campo.</b> El control sobre lo que estÃ¡ enfocado. Poca profundidad de campo = solo una franja enfocada; aÃ­sla
+          al sujeto y dirige la mirada. A la vez, es una herramienta para crear espacio y jerarquÃ­a.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-3"></aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Perspectiva atmosférica: cuanto más aire hay entre el ojo y el objeto, más claro, azulado y difuso se ve. La bruma simula este efecto y es una de las pistas de profundidad más fuertes.
+          Perspectiva atmosfÃ©rica: cuanto mÃ¡s aire hay entre el ojo y el objeto, mÃ¡s claro, azulado y difuso se ve. La bruma simula este efecto y es una de las pistas de profundidad mÃ¡s fuertes.
         </aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Lente y espacio.</b> Amplia <i>expande</i> (sujeto pequeño, mundo vasto, aislamiento); tele <i>comprime</i>
-          (fondo pegado, sin salida, tensión). El lente esculpe la relación entre el sujeto y el espacio.
+<div class="tag">DefiniciÃ³n</div>
+<b>Lente y espacio.</b> Amplia <i>expande</i> (sujeto pequeÃ±o, mundo vasto, aislamiento); tele <i>comprime</i>
+          (fondo pegado, sin salida, tensiÃ³n). El lente esculpe la relaciÃ³n entre el sujeto y el espacio.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Parallax.</b> Al mover la cámara, las capas cercanas cruzan el cuadro rápidamente y las lejanas casi no se
+<div class="tag">DefiniciÃ³n</div>
+<b>Parallax.</b> Al mover la cÃ¡mara, las capas cercanas cruzan el cuadro rÃ¡pidamente y las lejanas casi no se
           mueven. El cerebro interpreta esa diferencia como 3D real: una profundidad que la imagen fija no tiene.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-2-4#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Distancia emocional.</b> Cerca = intimidad, lejos = aislamiento, movimiento = cambio. Ubicar a los personajes en capas cuenta la relación entre ellos sin diálogo ni acción.
+<div class="tag">DefiniciÃ³n</div>
+<b>Distancia emocional.</b> Cerca = intimidad, lejos = aislamiento, movimiento = cambio. Ubicar a los personajes en capas cuenta la relaciÃ³n entre ellos sin diÃ¡logo ni acciÃ³n.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          El cierre del Bloque 2: composición, luz, profundidad y movimiento funcionan <i>como un sistema</i>. Pasas de
-          crear imágenes a dirigir escenas — moldear el espacio, controlar la atención, narrar con profundidad.
+          El cierre del Bloque 2: composiciÃ³n, luz, profundidad y movimiento funcionan <i>como un sistema</i>. Pasas de
+          crear imÃ¡genes a dirigir escenas â€” moldear el espacio, controlar la atenciÃ³n, narrar con profundidad.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Módulo 2.4 — folio viii</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">MÃ³dulo 2.4 â€” folio viii</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -760,8 +760,8 @@
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

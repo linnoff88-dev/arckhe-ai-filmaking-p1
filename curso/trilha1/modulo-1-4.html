@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 1.4 — Do Quadro ao Movimento | AI Filmmaking</title>
+<title>Modulo 1.4 â€” Do Quadro ao Movimento | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha1/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha1/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha1/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:1-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:1-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Trilha <b>1</b> Fundamentos (Luz)</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>1.4</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,29 +189,29 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 1.4 · Trilha 1 · Fundamentos (Luz)</p>
+<p class="kicker">Modulo 1.4 Â· Trilha 1 Â· Fundamentos (Luz)</p>
 <h1 class="module">Do Quadro ao <em>Movimento</em></h1>
 <p class="deck">O ponto em que o projeto deixa de ser uma serie de imagens e comeca a parecer um filme.
-          A IA nao “deixa cinematografico” sozinha — ela executa o que voce descreve. E quase
+          A IA nao â€œdeixa cARCKHÉtograficoâ€ sozinha â€” ela executa o que voce descreve. E quase
           todo resultado fraco vem de direcao de camera pouco clara, nao de ideia ruim.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~17 min · modulo inteiro</span>
+<span>~17 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que <b>sequenciar primeiro</b> — ordenar os planos na logica narrativa antes de animar qualquer coisa.</li>
+<li>Por que <b>sequenciar primeiro</b> â€” ordenar os planos na logica narrativa antes de animar qualquer coisa.</li>
 <li>Como escrever <b>um prompt de animacao por plano</b> e por que prompts melhores produzem video melhor.</li>
-<li>O guia pratico de <b>movimento de camera</b>: onde a camera esta, como se move, o que o sujeito faz — e a estrutura de prompt que sempre funciona.</li>
-<li>Como <b>gerar, iterar, revisar e montar</b> — e por que a montagem final pede um editor de verdade.</li>
+<li>O guia pratico de <b>movimento de camera</b>: onde a camera esta, como se move, o que o sujeito faz â€” e a estrutura de prompt que sempre funciona.</li>
+<li>Como <b>gerar, iterar, revisar e montar</b> â€” e por que a montagem final pede um editor de verdade.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Sequenciar primeiro: a ordem e a historia</span></a></li>
@@ -222,28 +222,28 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="1-4" data-inema-topic="modulo-1-4#topico-1" data-inema-track="1" id="topico-1">
+<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-1" data-ARCKHÉ-track="1" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>Sequencia</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>Sequencia</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Sequenciar primeiro: a ordem e a historia</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m1-4-t1-p1">Voce nao esta gerando clipes aleatorios. Esta
+<p class="lede dropcap" data-ARCKHÉ-block="m1-4-t1-p1">Voce nao esta gerando clipes aleatorios. Esta
               construindo uma <em>sequencia controlada</em>, onde cada plano se conecta, flui e sustenta a historia
-              — e e aqui que o projeto comeca, de fato, a parecer um filme.<span class="sidenote-ref">1</span>
+              â€” e e aqui que o projeto comeca, de fato, a parecer um filme.<span class="sidenote-ref">1</span>
               Antes de animar qualquer coisa, voltamos ao storyboard e organizamos todos os planos na <strong>ordem
               narrativa correta</strong>. E essa ordem que define o fluxo. Se a sequencia esta errada, o video
-              inteiro vai parecer desconexo — por melhor que cada clipe seja isoladamente.</p>
-<p data-inema-block="m1-4-t1-p2">Neste ponto voce ja tem tres coisas prontas do Modulo 1.3: uma
+              inteiro vai parecer desconexo â€” por melhor que cada clipe seja isoladamente.</p>
+<p data-ARCKHÉ-block="m1-4-t1-p2">Neste ponto voce ja tem tres coisas prontas do Modulo 1.3: uma
               sequencia de planos, prompts estruturados e um pipeline funcionando. Agora tudo se resume a uma so
               questao: <strong>o quao claramente voce descreve o movimento.</strong> A maioria dos resultados
-              fracos nao vem de ideias ruins — vem de direcao de camera pouco clara. A IA nao torna as coisas
-              cinematograficas por conta propria; ela <em>executa</em> o que voce diz. Por isso esta aula gasta
-              tempo com a gramatica do movimento antes de apertar “gerar”.</p>
+              fracos nao vem de ideias ruins â€” vem de direcao de camera pouco clara. A IA nao torna as coisas
+              cARCKHÉtograficas por conta propria; ela <em>executa</em> o que voce diz. Por isso esta aula gasta
+              tempo com a gramatica do movimento antes de apertar â€œgerarâ€.</p>
 </div>
 <!-- figura 1: ordem certa x errada -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · A <b>ordem narrativa</b> define o fluxo — a mesma materia, dois resultados</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· A <b>ordem narrativa</b> define o fluxo â€” a mesma materia, dois resultados</figcaption>
 <svg aria-label="Diagrama: em cima, planos fora de ordem geram uma sequencia desconexa; embaixo, os mesmos planos na ordem narrativa geram fluxo coerente." class="diagram" role="img" viewbox="0 0 720 196">
 <defs>
 <pattern height="6" id="hatch-1-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -259,7 +259,7 @@
 <rect class="rule-stroke" height="38" rx="2" stroke-width="1.2" width="48" x="232" y="42"></rect><text x="256" y="66">2</text>
 <rect class="rule-stroke" height="38" rx="2" stroke-width="1.2" width="48" x="296" y="42"></rect><text x="320" y="66">4</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="392" y="66">→ sequencia desconexa</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="392" y="66">â†’ sequencia desconexa</text>
 <!-- fileira ordenada -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="40" y="116">ORDEM NARRATIVA</text>
 <g class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle">
@@ -272,16 +272,16 @@
 <g class="accent-stroke" fill="none" stroke-width="1.4">
 <path d="M88 143 H 104"></path><path d="M152 143 H 168"></path><path d="M216 143 H 232"></path><path d="M280 143 H 296"></path>
 </g>
-<text class="accent" font-family="Source Serif 4, serif" font-size="11" x="392" y="148">→ fluxo coerente</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="11" x="392" y="148">â†’ fluxo coerente</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Voce gerou cinco clipes lindos isoladamente, mas a sequencia montada parece “estranha”
+<p>Voce gerou cinco clipes lindos isoladamente, mas a sequencia montada parece â€œestranhaâ€
               e dificil de seguir. Antes de regenerar qualquer clipe: o que voce checa primeiro?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">A <strong>ordem</strong>. Clipes bonitos na sequencia errada parecem desconexos —
+<p class="answer">A <strong>ordem</strong>. Clipes bonitos na sequencia errada parecem desconexos â€”
                 o problema costuma ser de montagem, nao de geracao. Volte ao storyboard, confirme a logica narrativa
                 e so depois questione clipes individuais. Regenerar antes de ordenar e gastar creditos no lugar
                 errado.</p>
@@ -289,21 +289,21 @@
 </div>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="1-4" data-inema-topic="modulo-1-4#topico-2" data-inema-track="1" id="topico-2">
+<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-2" data-ARCKHÉ-track="1" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>Prompt por plano</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>Prompt por plano</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Um prompt de animacao por plano</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-4-t2-p1">Com a sequencia no lugar, adicionamos um no
+<p class="lede" data-ARCKHÉ-block="m1-4-t2-p1">Com a sequencia no lugar, adicionamos um no
               <em>assistente</em> para gerar os prompts de video a partir do roteiro, e depois um <em>list node</em>
               que cria um prompt de animacao <strong>separado para cada plano</strong>. Esta e a etapa mais critica
               do pipeline: a qualidade total do video final depende de quao detalhados e bem feitos sao esses
-              prompts. A regra e crua e verdadeira — <strong>prompts melhores, video melhor.</strong> Voce
+              prompts. A regra e crua e verdadeira â€” <strong>prompts melhores, video melhor.</strong> Voce
               pode gerar os prompts num assistente externo ou dentro do proprio no; escolha o que funcionar para
               voce.<span class="sidenote-ref">2</span></p>
-<p data-inema-block="m1-4-t2-p2">A estrutura simples de um bom prompt de animacao — que a proxima
-              secao detalha — e <strong>sujeito + ambiente + movimento de camera + estilo</strong>. Pense em
+<p data-ARCKHÉ-block="m1-4-t2-p2">A estrutura simples de um bom prompt de animacao â€” que a proxima
+              secao detalha â€” e <strong>sujeito + ambiente + movimento de camera + estilo</strong>. Pense em
               cada plano como uma combinacao de apenas tres coisas: <em>onde a camera esta</em>, <em>como ela se
               move</em> e <em>o que o sujeito faz</em>. Se essas tres estao claras, o resultado funciona. A
               tentacao do iniciante e empilhar adjetivos e movimentos; o profissional descreve <em>uma</em>
@@ -311,66 +311,66 @@
 </div>
 <!-- prompt pronto: estrutura por plano -->
 <div class="prose">
-<p data-inema-block="m1-4-t2-p3">Um prompt de animacao pronto, na estrutura que sempre funciona:</p>
-<div class="codeblock"><span class="c"># Prompt de animacao por plano — sujeito + ambiente + camera + estilo</span>
+<p data-ARCKHÉ-block="m1-4-t2-p3">Um prompt de animacao pronto, na estrutura que sempre funciona:</p>
+<div class="codeblock"><span class="c"># Prompt de animacao por plano â€” sujeito + ambiente + camera + estilo</span>
 lone samurai walking across a rainy suspension bridge,
 <span class="c"># ambiente</span>
 heavy fog drifting through the canyon, wind moving his robe,
 <span class="c"># camera (UM movimento claro)</span>
 slow tracking shot following him from the side,
 <span class="c"># estilo (UM estilo)</span>
-steadycam, cinematic lighting, shallow depth of field</div>
+steadycam, cARCKHÉtic lighting, shallow depth of field</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que o prompt carrega tanto peso aqui
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que o prompt carrega tanto peso aqui
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional — o “porque” de a etapa de prompt ser a mais critica.</p>
+<p>Camada opcional â€” o â€œporqueâ€ de a etapa de prompt ser a mais critica.</p>
 <p>Na geracao de imagem parada, o modelo tem so um quadro para acertar. No video, ele precisa decidir
-                <em>como tudo evolui no tempo</em> — para onde a camera vai, como o sujeito se desloca, o que
+                <em>como tudo evolui no tempo</em> â€” para onde a camera vai, como o sujeito se desloca, o que
                 acontece com a luz e a atmosfera a cada frame. Cada ambiguidade no prompt vira uma decisao que o
                 modelo toma <em>por voce</em>, e raramente do jeito que voce imaginava. Por isso um prompt vago
                 produz movimento errante e instavel: nao porque o modelo e ruim, mas porque voce deixou as escolhas
-                em aberto. Descrever o movimento com precisao e, literalmente, dirigir — e e a diferenca entre
+                em aberto. Descrever o movimento com precisao e, literalmente, dirigir â€” e e a diferenca entre
                 um clipe que parece intencional e um que parece sorteado.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="1-4" data-inema-topic="modulo-1-4#topico-3" data-inema-track="1" id="topico-3">
+<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-3" data-ARCKHÉ-track="1" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>Camera</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>Camera</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Movimento de camera: o guia pratico</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-4-t3-p1">Voce nao precisa de prompts complexos — precisa de
-              <em>direcao clara</em>. Se o movimento de camera e intencional, o video ja parece cinematografico.
+<p class="lede" data-ARCKHÉ-block="m1-4-t3-p1">Voce nao precisa de prompts complexos â€” precisa de
+              <em>direcao clara</em>. Se o movimento de camera e intencional, o video ja parece cARCKHÉtografico.
               O movimento de camera e o principal motor do prompt, e a regra de ouro e usar <strong>um movimento
               claro por plano</strong>. Os quatro essenciais: o <em>dolly in</em> empurra a camera para dentro do
               sujeito e adiciona tensao; o <em>tracking</em> segue o movimento e cria fluxo; a <em>orbita</em>
               circula o sujeito e adiciona profundidade; <em>pan/tilt</em> e um deslocamento direcional simples.
-              Comece com tres — <strong>dolly in, tracking, orbita</strong> — e voce ja cobre a maioria
-              dos planos cinematograficos.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m1-4-t3-p2">A <strong>distancia</strong> define o quao perto o espectador esta:
+              Comece com tres â€” <strong>dolly in, tracking, orbita</strong> â€” e voce ja cobre a maioria
+              dos planos cARCKHÉtograficos.<span class="sidenote-ref">3</span></p>
+<p data-ARCKHÉ-block="m1-4-t3-p2">A <strong>distancia</strong> define o quao perto o espectador esta:
               close-up para emocao e detalhe, plano medio para foco no personagem, plano amplo para ambiente e
-              escala — e a pergunta-guia continua sendo “o que o espectador deve sentir neste
-              momento?”. A <strong>profundidade</strong> e o que faz o plano parecer real: primeiro plano
+              escala â€” e a pergunta-guia continua sendo â€œo que o espectador deve sentir neste
+              momento?â€. A <strong>profundidade</strong> e o que faz o plano parecer real: primeiro plano
               (objetos, cabos, elementos), fundo (neblina, distancia, luz) e o paralaxe (camadas se movendo em
-              velocidades diferentes) — e movimentos como tracking e orbita reforcam essa profundidade
+              velocidades diferentes) â€” e movimentos como tracking e orbita reforcam essa profundidade
               naturalmente. O <strong>estilo de movimento</strong> define a sensacao: <em>steadycam</em> e suave e
               controlado, <em>handheld</em> e cru e instavel, <em>camera lenta</em> e pesada e dramatica. Mantenha
-              simples — um estilo por plano basta.</p>
-<h3 class="sub">O erro mais comum — e a estrutura que o evita</h3>
-<p data-inema-block="m1-4-t3-p3">O erro classico e empilhar movimentos num unico prompt: orbita + dolly
-              + pan + zoom. O resultado e video instavel e caotico — o modelo tenta conciliar comandos que
+              simples â€” um estilo por plano basta.</p>
+<h3 class="sub">O erro mais comum â€” e a estrutura que o evita</h3>
+<p data-ARCKHÉ-block="m1-4-t3-p3">O erro classico e empilhar movimentos num unico prompt: orbita + dolly
+              + pan + zoom. O resultado e video instavel e caotico â€” o modelo tenta conciliar comandos que
               competem e nenhum sai limpo. A abordagem melhor e a mesma regra do Modulo 1.1, agora aplicada a
               camera: <strong>um plano = uma ideia clara.</strong> A estrutura de prompt que sempre funciona,
               entao, e <em>sujeito + ambiente + movimento de camera + estilo</em>, com <em>um</em> movimento e
               <em>um</em> estilo de cada vez.<span class="sidenote-ref">4</span></p>
 </div>
-<!-- figura 3: três movimentos essenciais -->
+<!-- figura 3: trÃªs movimentos essenciais -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · Os <b>tres movimentos</b> para comecar — e o que cada um faz sentir</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· Os <b>tres movimentos</b> para comecar â€” e o que cada um faz sentir</figcaption>
 <svg aria-label="Diagrama com tres esquemas de movimento de camera: dolly in empurrando para o sujeito (tensao), tracking seguindo lateral (fluxo) e orbita circulando o sujeito (profundidade)." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- dolly in -->
 <rect class="ink-soft" height="22" rx="2" width="32" x="20" y="36"></rect>
@@ -401,24 +401,24 @@ steadycam, cinematic lighting, shallow depth of field</div>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m1-4-t3-p4">Veja a diferenca entre empilhar movimentos e dar uma direcao limpa —
+<p data-ARCKHÉ-block="m1-4-t3-p4">Veja a diferenca entre empilhar movimentos e dar uma direcao limpa â€”
               o mesmo plano, dois resultados:</p>
-<div class="codeblock"><span class="c"># Errado — movimentos empilhados, resultado caotico</span>
+<div class="codeblock"><span class="c"># Errado â€” movimentos empilhados, resultado caotico</span>
 samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 
-<span class="c"># Certo — um movimento, um estilo, intencao clara</span>
+<span class="c"># Certo â€” um movimento, um estilo, intencao clara</span>
 <span class="k">Subject:</span> lone samurai bracing against the wind on a rainy bridge.
 <span class="k">Environment:</span> fog in the canyon, rain, swaying cables in foreground.
 <span class="k">Camera:</span> slow dolly in toward his face (building tension).
-<span class="k">Style:</span> steadycam, cinematic lighting, shallow depth of field.</div>
+<span class="k">Style:</span> steadycam, cARCKHÉtic lighting, shallow depth of field.</div>
 </div>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Voce quer um plano que cresca a tensao a medida que se aproxima do rosto do samurai. Qual dos tres
-              movimentos essenciais escolhe — e por que <em>nao</em> combinar com uma orbita ao mesmo tempo?</p>
+              movimentos essenciais escolhe â€” e por que <em>nao</em> combinar com uma orbita ao mesmo tempo?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">O <strong>dolly in</strong> — empurrar para dentro do sujeito e o movimento
+<p class="answer">O <strong>dolly in</strong> â€” empurrar para dentro do sujeito e o movimento
                 que adiciona tensao. Combinar com orbita ao mesmo tempo dilui a intencao: a orbita puxa o olho para
                 a profundidade lateral enquanto o dolly puxa para frente, e o modelo tenta conciliar os dois,
                 gerando movimento instavel. <em>Um plano = uma ideia clara.</em></p>
@@ -426,37 +426,37 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="1-4" data-inema-topic="modulo-1-4#topico-4" data-inema-track="1" id="topico-4">
+<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-4" data-ARCKHÉ-track="1" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>Gerar e iterar</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>Gerar e iterar</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Gerar e iterar com o gerador de video</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-4-t4-p1">Conectamos tudo — a sequencia de planos e os prompts
-              do list node — ao no <em>gerador de video</em>. Dentro dele, escolhemos o modelo de animacao
+<p class="lede" data-ARCKHÉ-block="m1-4-t4-p1">Conectamos tudo â€” a sequencia de planos e os prompts
+              do list node â€” ao no <em>gerador de video</em>. Dentro dele, escolhemos o modelo de animacao
               (nesta aula, <strong>Kling 3.0</strong>), definimos a resolucao e a duracao, e geramos a sequencia. O
               sistema produz os clipes em sequencia automaticamente.<span class="sidenote-ref">5</span> Uma nota
               honesta sobre as ferramentas no momento: os melhores resultados visuais hoje viriam do Seedance 2.0,
-              mas ele ainda nao esta disponivel no Freepik — por isso o fluxo usa o Kling. As trilhas
+              mas ele ainda nao esta disponivel no Freepik â€” por isso o fluxo usa o Kling. As trilhas
               adiante exploram cada gerador (Seedance, Kling, Runway, Luma) em detalhe.</p>
-<p data-inema-block="m1-4-t4-p2">O primeiro resultado <strong>nao</strong> vai ser perfeito — e
+<p data-ARCKHÉ-block="m1-4-t4-p2">O primeiro resultado <strong>nao</strong> vai ser perfeito â€” e
               isso e completamente normal. A iteracao e parte essencial do processo, e voce deve esperar passar por
               varias versoes antes de chegar a qualidade desejada. Quando um clipe nao satisfaz, regenere (pela
               opcao de refresh) ou refine o prompt no list node e tente de novo. Lembre-se do laco do Modulo 1.1: o
-              defeito do clipe aponta a peca vaga do prompt — movimento errante pede direcao de camera mais
+              defeito do clipe aponta a peca vaga do prompt â€” movimento errante pede direcao de camera mais
               clara; sujeito deformado pede descricao mais firme. Mude uma coisa de cada vez.</p>
 <h3 class="sub">Duas limitacoes que valem registrar</h3>
-<p data-inema-block="m1-4-t4-p3">Dois pontos praticos para nao te pegarem de surpresa. Primeiro: o
-              <strong>design de som</strong> nao sai daqui — ele deve ser tratado numa ferramenta separada;
+<p data-ARCKHÉ-block="m1-4-t4-p3">Dois pontos praticos para nao te pegarem de surpresa. Primeiro: o
+              <strong>design de som</strong> nao sai daqui â€” ele deve ser tratado numa ferramenta separada;
               o gerador de video entrega imagem em movimento, nao trilha. Segundo: gerar resultados de alta
-              qualidade pode exigir <strong>multiplas tentativas</strong>, e cada tentativa consome creditos —
+              qualidade pode exigir <strong>multiplas tentativas</strong>, e cada tentativa consome creditos â€”
               entao tenha cuidado com o volume de regeneracoes e priorize refinar o prompt antes de sair gerando no
               automatico. Este workflow e <em>um</em> padrao, nao o unico; voce pode customiza-lo e expandi-lo
               conforme a sua necessidade criativa.</p>
 </div>
-<!-- figura 4: o laço de geração -->
+<!-- figura 4: o laÃ§o de geraÃ§Ã£o -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · O laco de geracao — <b>o defeito do clipe aponta a peca do prompt</b></figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· O laco de geracao â€” <b>o defeito do clipe aponta a peca do prompt</b></figcaption>
 <svg aria-label="Diagrama em laco: o prompt do plano alimenta o gerador de video; o clipe resultante e avaliado; o defeito indica o que ajustar no prompt; o ciclo repete ate estabilizar." class="diagram" role="img" viewbox="0 0 720 200">
 <rect class="accent-stroke" fill="url(#hatch-1-4)" height="48" rx="3" stroke-width="1.3" width="130" x="40" y="78"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="105" y="100">prompt</text>
@@ -475,48 +475,48 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: gastar creditos com cabeca
+<summary><span class="chev">â–¸</span> Indo mais fundo: gastar creditos com cabeca
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional — economia pratica de creditos e tempo.</p>
+<p>Camada opcional â€” economia pratica de creditos e tempo.</p>
 <p>Como cada geracao custa, vale tratar a iteracao como experimento, nao como loteria. Antes de
-                regenerar, leia o clipe e nomeie <em>o</em> defeito dominante — um so. Ajuste a peca
+                regenerar, leia o clipe e nomeie <em>o</em> defeito dominante â€” um so. Ajuste a peca
                 correspondente no prompt (o movimento, a descricao do sujeito, o estilo) e gere de novo. Mudar tres
                 coisas ao mesmo tempo e ver melhorar nao te diz qual funcionou, e voce acaba gerando muito mais para
-                aprender muito menos. Priorize sempre refinar o prompt sobre apertar “refresh” no
+                aprender muito menos. Priorize sempre refinar o prompt sobre apertar â€œrefreshâ€ no
                 automatico: o prompt e barato; a geracao, nao.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="1-4" data-inema-topic="modulo-1-4#topico-5" data-inema-track="1" id="topico-5">
+<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-5" data-ARCKHÉ-track="1" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Montagem</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Montagem</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Revisar e montar como um filme</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-4-t5-p1">Com os clipes prontos, baixe e <strong>revise cada um</strong>:
-              guarde os planos fortes, descarte os fracos. Esse filtro e direcao — nem todo clipe gerado
+<p class="lede" data-ARCKHÉ-block="m1-4-t5-p1">Com os clipes prontos, baixe e <strong>revise cada um</strong>:
+              guarde os planos fortes, descarte os fracos. Esse filtro e direcao â€” nem todo clipe gerado
               merece entrar no corte final, e saber dizer nao e parte do oficio. Quando todos os planos
               aprovados estiverem reunidos, vem o ultimo passo: junta-los.<span class="sidenote-ref">6</span></p>
-<p data-inema-block="m1-4-t5-p2">Existe um no “combinador” para uma solucao rapida, mas ele
-              tende a produzir algo que parece uma <em>sequencia de clipes solta</em>, sem fluxo cinematografico de
+<p data-ARCKHÉ-block="m1-4-t5-p2">Existe um no â€œcombinadorâ€ para uma solucao rapida, mas ele
+              tende a produzir algo que parece uma <em>sequencia de clipes solta</em>, sem fluxo cARCKHÉtografico de
               verdade. Para um acabamento profissional, a recomendacao e clara: revise, selecione e refine
-              manualmente, e entao monte com intencao — de preferencia num editor de video como o
+              manualmente, e entao monte com intencao â€” de preferencia num editor de video como o
               <strong>Adobe Premiere Pro</strong>, onde voce controla o tempo de cada plano, as transicoes e a
               duracao total. <strong>E aqui que a sequencia vira um filme.</strong> A montagem nao e detalhe
               tecnico: e a ultima camada de direcao, onde o ritmo do Modulo 1.1 finalmente se concretiza.</p>
 <h3 class="sub">O ciclo se fecha</h3>
-<p data-inema-block="m1-4-t5-p3">Olhe para tras: voce instalou a mentalidade do diretor (1.1),
+<p data-ARCKHÉ-block="m1-4-t5-p3">Olhe para tras: voce instalou a mentalidade do diretor (1.1),
               aprendeu a ler o espaco (1.2), produziu uma cena inteira do roteiro aos quadros (1.3) e agora levou
-              esses quadros ao movimento e a montagem (1.4). O bloco da Luz esta completo — voce tem a
+              esses quadros ao movimento e a montagem (1.4). O bloco da Luz esta completo â€” voce tem a
               fundacao que nenhum modelo entrega sozinho. A tarefa da aula sela isso: anime seu storyboard com este
-              pipeline, focando em continuidade, movimento e fluxo cinematografico. A proxima trilha aprofunda os
-              fundamentos cinematograficos — comecando pelo pensamento visual.</p>
+              pipeline, focando em continuidade, movimento e fluxo cARCKHÉtografico. A proxima trilha aprofunda os
+              fundamentos cARCKHÉtograficos â€” comecando pelo pensamento visual.</p>
 </div>
-<!-- figura 5: do clipe à linha de montagem -->
+<!-- figura 5: do clipe Ã  linha de montagem -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · Revisar, selecionar e <b>montar com intencao</b> — onde vira filme</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· Revisar, selecionar e <b>montar com intencao</b> â€” onde vira filme</figcaption>
 <svg aria-label="Diagrama: varios clipes brutos passam por um filtro que descarta os fracos; os aprovados entram numa linha de montagem com tempos e transicoes controlados." class="diagram" role="img" viewbox="0 0 720 196">
 <!-- clipes brutos -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="80" y="30">CLIPES BRUTOS</text>
@@ -539,18 +539,18 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 <rect height="22" rx="2" width="70" x="280" y="80"></rect><rect height="22" rx="2" width="92" x="360" y="80"></rect>
 <rect height="22" rx="2" width="60" x="462" y="80"></rect><rect height="22" rx="2" width="138" x="532" y="80"></rect>
 </g>
-<!-- transições -->
+<!-- transiÃ§Ãµes -->
 <g class="mark-stroke" stroke-width="1.3">
 <path d="M355 91 l 5 -5 m -5 5 l 5 5"></path><path d="M457 91 l 5 -5 m -5 5 l 5 5"></path><path d="M527 91 l 5 -5 m -5 5 l 5 5"></path>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="470" y="132">tempos e transicoes controlados — ritmo do filme</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="470" y="132">tempos e transicoes controlados â€” ritmo do filme</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m1-4-t5-p4">Guarde o modulo em uma frase: <em>a IA executa a direcao que voce
-              descreve — sequencie primeiro, dirija a camera com uma ideia clara por plano, itere sem
+<p data-ARCKHÉ-block="m1-4-t5-p4">Guarde o modulo em uma frase: <em>a IA executa a direcao que voce
+              descreve â€” sequencie primeiro, dirija a camera com uma ideia clara por plano, itere sem
               desperdicio e monte com intencao; e ai que a serie de imagens vira filme.</em> Voce concluiu a Trilha
-              1 — a fundacao da Luz. Hora de aprofundar os fundamentos cinematograficos na proxima trilha.</p>
+              1 â€” a fundacao da Luz. Hora de aprofundar os fundamentos cARCKHÉtograficos na proxima trilha.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
@@ -558,73 +558,73 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Por que “sequenciar primeiro” vem antes de animar qualquer plano?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Por que â€œsequenciar primeiroâ€ vem antes de animar qualquer plano?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque a ordem define o fluxo narrativo. Se a sequencia esta errada, o video inteiro
-              parece desconexo — por melhor que cada clipe seja. Resolver a ordem no storyboard evita gastar
+              parece desconexo â€” por melhor que cada clipe seja. Resolver a ordem no storyboard evita gastar
               geracao consertando o que e, na verdade, problema de montagem.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Qual e a estrutura de prompt de animacao que sempre funciona?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>Sujeito + ambiente + movimento de camera + estilo</em> — com <strong>um</strong>
+<div class="ans"><p><em>Sujeito + ambiente + movimento de camera + estilo</em> â€” com <strong>um</strong>
               movimento e <strong>um</strong> estilo por plano. Pense em cada plano como onde a camera esta, como ela
               se move e o que o sujeito faz.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Qual e o erro mais comum no movimento de camera, e como evita-lo?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Empilhar movimentos (orbita + dolly + pan + zoom), o que gera video instavel e
-              caotico. A regra que evita: <em>um plano = uma ideia clara</em>. Comece com tres movimentos —
-              dolly in, tracking, orbita — um de cada vez.</p></div>
+              caotico. A regra que evita: <em>um plano = uma ideia clara</em>. Comece com tres movimentos â€”
+              dolly in, tracking, orbita â€” um de cada vez.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">04</span><span>Por que a montagem final pede um editor de verdade, e nao so o no combinador?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>O combinador rapido produz uma sequencia solta, sem fluxo. Num editor como o Premiere
-              voce controla tempo de cada plano, transicoes e duracao total — a ultima camada de direcao, onde
+              voce controla tempo de cada plano, transicoes e duracao total â€” a ultima camada de direcao, onde
               o ritmo se concretiza e a serie de clipes vira filme.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:1-4">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:1-4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 1</div>
-<div class="v" data-inema-meter="trilha:1">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:1">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
 </section>
-<!-- proxima acao (UMA clara) — virada de trilha -->
+<!-- proxima acao (UMA clara) â€” virada de trilha -->
 <div class="nextup">
 <div class="txt">
 <div class="k">Proxima trilha</div>
-<div class="t">Trilha 2 · Modulo 2.1 — Pensamento Visual</div>
+<div class="t">Trilha 2 Â· Modulo 2.1 â€” Pensamento Visual</div>
 </div>
-<a class="go" href="../trilha2/modulo-2-1.html">Avancar →</a>
+<a class="go" href="../trilha2/modulo-2-1.html">Avancar â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-1-4#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-4#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Sequencia.</b> Os planos na ordem narrativa que cria o fluxo. A ordem e a historia: clipes bonitos
@@ -632,12 +632,12 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Licao 3 do bloco Luz — “Do Quadro ao Movimento”. Tese: <i>a IA nao deixa cinematografico
-          sozinha — ela executa o que voce diz</i>. O Space do projeto esta linkado na aula.
-          <div class="src-line">magnific.com · spaces</div>
+          Licao 3 do bloco Luz â€” â€œDo Quadro ao Movimentoâ€. Tese: <i>a IA nao deixa cARCKHÉtografico
+          sozinha â€” ela executa o que voce diz</i>. O Space do projeto esta linkado na aula.
+          <div class="src-line">magnific.com Â· spaces</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-1-4#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Prompt por plano.</b> Uma descricao de animacao separada para cada plano, no list node. Etapa mais
@@ -645,11 +645,11 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          No video, cada ambiguidade vira uma decisao que o modelo toma por voce — e raramente como voce
+          No video, cada ambiguidade vira uma decisao que o modelo toma por voce â€” e raramente como voce
           imaginou. Precisao no prompt e, literalmente, direcao.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-1-4#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-4#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Dolly in / tracking / orbita.</b> Empurrar para o sujeito (tensao), seguir lateral (fluxo), circular
@@ -658,30 +658,30 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Estrutura que sempre funciona: <i>sujeito + ambiente + movimento de camera + estilo</i>. Um movimento, um
-          estilo. O erro classico e empilhar — orbita + dolly + pan + zoom = caos.
+          estilo. O erro classico e empilhar â€” orbita + dolly + pan + zoom = caos.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-1-4#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Iteracao.</b> Gerar, ler o defeito, refinar a peca vaga do prompt, gerar de novo. O primeiro resultado
-          nunca e perfeito — e isso e normal.
+          nunca e perfeito â€” e isso e normal.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
           A aula usa Kling 3.0 no Freepik. Limitacoes registradas: o som sai em ferramenta separada; alta qualidade
-          pode exigir varias tentativas — e creditos.
+          pode exigir varias tentativas â€” e creditos.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-1-4#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Montagem com intencao.</b> Revisar, selecionar e cortar num editor (Premiere), controlando tempo,
-          transicoes e duracao. E a ultima camada de direcao — onde a sequencia vira filme.
+          transicoes e duracao. E a ultima camada de direcao â€” onde a sequencia vira filme.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
-          O no combinador e rapido, mas entrega clipes soltos. O acabamento profissional mora no corte manual —
+          O no combinador e rapido, mas entrega clipes soltos. O acabamento profissional mora no corte manual â€”
           onde o ritmo do Modulo 1.1 finalmente se concretiza.
         </aside>
 </aside>
@@ -689,8 +689,8 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 1.4 — folio iv</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 1.4 â€” folio iv</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -699,8 +699,8 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Course 7 — Story and Cinematic Structure | AI Filmmaking</title>
+<title>Course 7 â€” Story and CARCKHÉtic Structure | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha7/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha7/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha7/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha7/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha7/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="trilha:7"><span data-inema-meter-frac=""><strong>0</strong> of 19</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="trilha:7"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,13 +171,13 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Track <b>7</b> Cinematic Story and Structure</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Track <b>7</b> CARCKHÉtic Story and Structure</span>
+<span class="sep">Â·</span>
 <span>Track index</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -187,118 +187,118 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura editorial da trilha -->
-<p class="kicker">Course 7 · Story and Cinematic Structure</p>
+<p class="kicker">Course 7 Â· Story and CARCKHÉtic Structure</p>
 <h1 class="module">What makes the audience <em>remember</em></h1>
 <p class="deck">The final course. Four modules about the one thing that separates forgettable AI video
-          from a story that stays with you: not the beauty of the shot, but the <em>emotional change</em> — and how to link
+          from a story that stays with you: not the beauty of the shot, but the <em>emotional change</em> â€” and how to link
           shots into a sequence that breathes, moves forward, and ends with meaning.</p>
 <!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
-<p class="read-meta" data-inema-meter="trilha:7">
-<span class="here" data-inema-meter-frac=""><strong>0</strong> of 19</span>
+<p class="read-meta" data-ARCKHÉ-meter="trilha:7">
+<span class="here" data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span>
 <span>sections read in this track</span>
-<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+<span class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></span>
 </p>
 <!-- o "porque" da trilha -->
 <div class="prose">
-<p class="lede" data-inema-block="t7-porque-p1">We’ve reached the end of the course, and its core. Everything
-            you’ve put in place so far — lighting, composition, pipeline, camera language, VFX, performance —
+<p class="lede" data-ARCKHÉ-block="t7-porque-p1">Weâ€™ve reached the end of the course, and its core. Everything
+            youâ€™ve put in place so far â€” lighting, composition, pipeline, camera language, VFX, performance â€”
             served one purpose: <em>count</em>. But most AI videos fail at exactly this
             point. They open with dramatic lighting and beautiful movement, then become forgettable within seconds because nothing
             <em>changes</em>. This series is about the difference between an image that <em>shows</em> something is a scene that
             <em>transforms</em> something. Module 7.1 establishes the thesis: visual storytelling is emotional change, and a
-            good scene makes sense without sound. 7.2 gets into the purpose of the scene—why it exists, what the
+            good scene makes sense without sound. 7.2 gets into the purpose of the sceneâ€”why it exists, what the
             character wants, what gets in the way, and what changes from beginning to end. 7.3 teaches you to link shots into a
             sequence where tension builds and the camera evolves with the emotion. And 7.4 ties the whole course together: take
-            rhythm, continuity, and intention and build a complete, cinematic sequence from the first shot
-            to the last. There's no trick here—there's a question that reorganizes everything: <em>what changed emotionally?</em></p>
+            rhythm, continuity, and intention and build a complete, cARCKHÉtic sequence from the first shot
+            to the last. There's no trick hereâ€”there's a question that reorganizes everything: <em>what changed emotionally?</em></p>
 </div>
 <!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
-<p class="toc-head" style="margin-top:var(--s7)">The journey — four modules, in order</p>
+<p class="toc-head" style="margin-top:var(--s7)">The journey â€” four modules, in order</p>
 <!-- ---- ENTRADA / MODULO 7.1 ---- -->
-<section data-inema-module="7-1" data-inema-topic="modulo-7-1#indice" data-inema-track="7" id="topico-1">
+<section data-ARCKHÉ-module="7-1" data-ARCKHÉ-topic="modulo-7-1#indice" data-ARCKHÉ-track="7" id="topico-1">
 <div class="section-mark">
-<span class="where">Module 7.1</span><span>·</span><span>4 sections · ~15 min</span>
+<span class="where">Module 7.1</span><span>Â·</span><span>4 sections Â· ~15 min</span>
 </div>
 <h2 class="head"><span class="num">7.1</span>Visual Narrative</h2>
 <div class="prose">
-<p data-inema-block="t7-m7-1-p1">The track’s thesis. Why so many AI videos impress for three
-              seconds and then fade from memory: because they show, but don’t change. You’ll understand that visual storytelling is
-              <em>emotional change</em> — that a scene should make sense without dialogue — and will
+<p data-ARCKHÉ-block="t7-m7-1-p1">The trackâ€™s thesis. Why so many AI videos impress for three
+              seconds and then fade from memory: because they show, but donâ€™t change. Youâ€™ll understand that visual storytelling is
+              <em>emotional change</em> â€” that a scene should make sense without dialogue â€” and will
               walk through a five-scene arc, shot by shot, inside Kling: establish the world, introduce
-              the conflict, escalate the pressure, make room for emotion, and close with meaning. You’ll also learn the
+              the conflict, escalate the pressure, make room for emotion, and close with meaning. Youâ€™ll also learn the
               rules the instructor keeps hammering home: clarity creates emotion, one strong action per scene, bring the camera
               closer when the face matters, and prompt for intent instead of empty aesthetics.</p>
-<p data-inema-block="t7-m7-1-p2">
-<a class="entry-link" href="modulo-7-1.html">Read Module 7.1 →</a>
+<p data-ARCKHÉ-block="t7-m7-1-p2">
+<a class="entry-link" href="modulo-7-1.html">Read Module 7.1 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 7.2 ---- -->
-<section data-inema-module="7-2" data-inema-topic="modulo-7-2#indice" data-inema-track="7" id="topico-2">
+<section data-ARCKHÉ-module="7-2" data-ARCKHÉ-topic="modulo-7-2#indice" data-ARCKHÉ-track="7" id="topico-2">
 <div class="section-mark">
-<span class="where">Module 7.2</span><span>·</span><span>5 sections · ~17 min</span>
+<span class="where">Module 7.2</span><span>Â·</span><span>5 sections Â· ~17 min</span>
 </div>
 <h2 class="head"><span class="num">7.2</span>Purpose of the Scene</h2>
 <div class="prose">
-<p data-inema-block="t7-m7-2-p1">The single-scene zoom. Every scene needs to justify its own
-              existence—if you remove it and nothing in the story changes, it shouldn't be there. You'll
-              work on the formula that makes a scene work: <em>purpose → objective → conflict
-              → emotional change</em>. Each element gets its own section: why the scene exists, what the character
+<p data-ARCKHÉ-block="t7-m7-2-p1">The single-scene zoom. Every scene needs to justify its own
+              existenceâ€”if you remove it and nothing in the story changes, it shouldn't be there. You'll
+              work on the formula that makes a scene work: <em>purpose â†’ objective â†’ conflict
+              â†’ emotional change</em>. Each element gets its own section: why the scene exists, what the character
               wants right now, what makes success difficult (external and internal conflict), and what shifts
               emotionally between the first and last image. It ends with the definitive test: remove the dialogue
-              —can you feel the change through the action alone?</p>
-<p data-inema-block="t7-m7-2-p2">
-<a class="entry-link" href="modulo-7-2.html">Read Module 7.2 →</a>
+              â€”can you feel the change through the action alone?</p>
+<p data-ARCKHÉ-block="t7-m7-2-p2">
+<a class="entry-link" href="modulo-7-2.html">Read Module 7.2 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 7.3 ---- -->
-<section data-inema-module="7-3" data-inema-topic="modulo-7-3#indice" data-inema-track="7" id="topico-3">
+<section data-ARCKHÉ-module="7-3" data-ARCKHÉ-topic="modulo-7-3#indice" data-ARCKHÉ-track="7" id="topico-3">
 <div class="section-mark">
-<span class="where">Module 7.3</span><span>·</span><span>5 sections · ~17 min</span>
+<span class="where">Module 7.3</span><span>Â·</span><span>5 sections Â· ~17 min</span>
 </div>
-<h2 class="head"><span class="num">7.3</span>Building Cinematic Sequences</h2>
+<h2 class="head"><span class="num">7.3</span>Building CARCKHÉtic Sequences</h2>
 <div class="prose">
-<p data-inema-block="t7-m7-3-p1">From a single scene to a sequence. Cinema isn’t a good shot: it’s
-              <em>progression</em>. Most AI videos suffer from the same problem—each shot is beautiful, but there's no connective tissue between them. You'll learn the question a director asks before generating any shot (“what emotion should the audience feel <em>now</em>?”) and the six-beat formula — <em>establish, connect, disrupt, react, reveal, escape</em> — where the
+<p data-ARCKHÉ-block="t7-m7-3-p1">From a single scene to a sequence. CARCKHÉ isnâ€™t a good shot: itâ€™s
+              <em>progression</em>. Most AI videos suffer from the same problemâ€”each shot is beautiful, but there's no connective tissue between them. You'll learn the question a director asks before generating any shot (â€œwhat emotion should the audience feel <em>now</em>?â€) and the six-beat formula â€” <em>establish, connect, disrupt, react, reveal, escape</em> â€” where the
               camera language evolves along with the emotion. It covers the rule of reaction before revelation,
               transitions that connect, rhythm, and continuity.</p>
-<p data-inema-block="t7-m7-3-p2">
-<a class="entry-link" href="modulo-7-3.html">Read Module 7.3 →</a>
+<p data-ARCKHÉ-block="t7-m7-3-p2">
+<a class="entry-link" href="modulo-7-3.html">Read Module 7.3 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 7.4 ---- -->
-<section data-inema-module="7-4" data-inema-topic="modulo-7-4#indice" data-inema-track="7" id="topico-4">
+<section data-ARCKHÉ-module="7-4" data-ARCKHÉ-topic="modulo-7-4#indice" data-ARCKHÉ-track="7" id="topico-4">
 <div class="section-mark">
-<span class="where">Module 7.4</span><span>·</span><span>5 sections · ~18 min</span>
+<span class="where">Module 7.4</span><span>Â·</span><span>5 sections Â· ~18 min</span>
 </div>
-<h2 class="head"><span class="num">7.4</span>The Art of Cinematic Sequence</h2>
+<h2 class="head"><span class="num">7.4</span>The Art of CARCKHÉtic Sequence</h2>
 <div class="prose">
-<p data-inema-block="t7-m7-4-p1">The close of the course. Here everything comes together: rhythm, continuity, and intention stop being loose concepts and become a <em>entire sequence</em>, from the first shot to the last.
-              You’ll consolidate the formula into a repeatable workflow, plan the entire sequence before
+<p data-ARCKHÉ-block="t7-m7-4-p1">The close of the course. Here everything comes together: rhythm, continuity, and intention stop being loose concepts and become a <em>entire sequence</em>, from the first shot to the last.
+              Youâ€™ll consolidate the formula into a repeatable workflow, plan the entire sequence before
               generating a single shot, keep the character and lighting consistent across clips, control the pace in
-              the edit, and make the final call—when the sequence is ready. This module weaves together
-              everything the course taught and puts you in the director’s seat, not the image generator’s.</p>
-<p data-inema-block="t7-m7-4-p2">
-<a class="entry-link" href="modulo-7-4.html">Read Module 7.4 →</a>
+              the edit, and make the final callâ€”when the sequence is ready. This module weaves together
+              everything the course taught and puts you in the directorâ€™s seat, not the image generatorâ€™s.</p>
+<p data-ARCKHÉ-block="t7-m7-4-p2">
+<a class="entry-link" href="modulo-7-4.html">Read Module 7.4 â†’</a>
 </p>
 </div>
 </section>
 <!-- indo mais fundo: divulgacao progressiva (opcional) -->
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: why the story wraps up the course
+<summary><span class="chev">â–¸</span> Going deeper: why the story wraps up the course
             <span class="opt">optional</span></summary>
 <div class="inner">
-<p>The happy path is linear: 7.1, 7.2, 7.3, 7.4. This layer explains the order—and can be skipped without missing anything.</p>
+<p>The happy path is linear: 7.1, 7.2, 7.3, 7.4. This layer explains the orderâ€”and can be skipped without missing anything.</p>
 <p>The story comes last on purpose. Technique without storytelling produces the typical AI video: beautiful and
-              empty. But storytelling without technique doesn’t hold up—you need light, camera, and movement
-              to <em>execute</em> the emotional change. That’s why the course installs the tool first and the
+              empty. But storytelling without technique doesnâ€™t hold upâ€”you need light, camera, and movement
+              to <em>execute</em> the emotional change. Thatâ€™s why the course installs the tool first and the
               intention last: now that you know how to build a plan, this track teaches you how to make them
               <em>to mean</em> something together. It goes from micro to macro: 7.1 presents the thesis (emotional change), 7.2
               focuses on a single scene (purpose), 7.3 links scenes (sequence), and 7.4 ties the entire sequence together as
               a work.</p>
-<p>Capture the sentence that runs through the entire track, from the first module to the last: the question isn’t
+<p>Capture the sentence that runs through the entire track, from the first module to the last: the question isnâ€™t
               <em>what happened</em>, e <em>what changed emotionally</em>. This one question improves
               every scene you generate from now on.</p>
 </div>
@@ -307,19 +307,19 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Start with the thesis</div>
-<div class="t">Module 7.1 — Visual Narrative</div>
+<div class="t">Module 7.1 â€” Visual Narrative</div>
 </div>
-<a class="go" href="modulo-7-1.html">Read the first one →</a>
+<a class="go" href="modulo-7-1.html">Read the first one â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes and your learning dashboard" class="margin-rail">
 <!-- ---- MODULO 7.1 ---- -->
-<aside data-inema-rail="modulo-7-1#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-7-1#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Visual storytelling.</b> The emotional change produced by a moving image. If nothing changes
-          emotionally from beginning to end, it isn’t a story—it’s just a beautiful shot.
+          emotionally from beginning to end, it isnâ€™t a storyâ€”itâ€™s just a beautiful shot.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
@@ -327,21 +327,21 @@
           <i>sequence</i> (sequence) and 7.4 <i>ties</i> the entire sequence as a work of art.
         </aside>
 <!-- ---- MODULO 7.2 ---- -->
-<aside data-inema-rail="modulo-7-2#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-7-2#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Purpose of the scene.</b> The specific job a scene does in the story: move the plot forward, build
           emotion, raise tension, or reveal character. Without that job, the scene is expendable.
         </aside>
 <!-- ---- MODULO 7.3 ---- -->
-<aside data-inema-rail="modulo-7-3#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-7-3#indice"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
-          The six-beat formula—establish, connect, disrupt, react, reveal, escape—is
+          The six-beat formulaâ€”establish, connect, disrupt, react, reveal, escapeâ€”is
           the backbone of lessons 21 and 22 of the program <i>AI Filmmaking</i>, demonstrated for generating sequences in Kling.
         </aside>
 <!-- ---- MODULO 7.4 ---- -->
-<aside data-inema-rail="modulo-7-4#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-7-4#indice"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Going deeper</div>
           The golden rule of the ending: <i>plan the entire sequence before generating the first shot</i>. Generating
@@ -352,8 +352,8 @@
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Course 7 — index</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Course 7 â€” index</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -362,8 +362,8 @@
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

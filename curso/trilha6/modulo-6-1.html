@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 6.1 — Dialogo e Atuacao | AI Filmmaking</title>
+<title>Modulo 6.1 â€” Dialogo e Atuacao | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha6/modulo-6-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha6/modulo-6-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha6/modulo-6-1.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha6/modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha6/modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha6/modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha6/modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:6-1"><span data-inema-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:6-1"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Trilha <b>6</b> Personagem e Atuacao</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>6.1</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 4</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 4</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,29 +189,29 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 6.1 · Trilha 6 · Personagem e Atuacao</p>
+<p class="kicker">Modulo 6.1 Â· Trilha 6 Â· Personagem e Atuacao</p>
 <h1 class="module">Dialogo e <em>Atuacao</em></h1>
 <p class="deck">Uma cena de dialogo forte quase nunca e uma conversa. E uma negociacao emocional sob as
-          palavras — e o publico deveria sentir algo se movendo embaixo da fala, mesmo quando muito pouco
+          palavras â€” e o publico deveria sentir algo se movendo embaixo da fala, mesmo quando muito pouco
           esta sendo dito.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~15 min · modulo inteiro</span>
+<span>~15 min Â· modulo inteiro</span>
 <span>4 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que <b>o que se diz quase nunca e o que se sente</b> — e como o subtexto cria significado escondido que o publico le nas entrelinhas.</li>
+<li>Por que <b>o que se diz quase nunca e o que se sente</b> â€” e como o subtexto cria significado escondido que o publico le nas entrelinhas.</li>
 <li>Por que a <b>reacao</b> de quem ouve costuma ser mais forte que a fala de quem diz, e como o <b>silencio</b> vira pressao.</li>
-<li>Que toda cena de dialogo viva carrega um <b>conflito</b> — dois desejos que colidem — mesmo quando a superficie e educada.</li>
+<li>Que toda cena de dialogo viva carrega um <b>conflito</b> â€” dois desejos que colidem â€” mesmo quando a superficie e educada.</li>
 <li>Como a <b>atuacao verdadeira</b> nasce do objetivo do personagem, e como o <b>enquadramento</b> muda por completo o sentido emocional da mesma fala.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — quatro movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” quatro movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">A cena de dialogo nao e conversa</span></a></li>
@@ -221,53 +221,53 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="6-1" data-inema-topic="modulo-6-1#topico-1" data-inema-track="6" id="topico-1">
+<section data-ARCKHÉ-module="6-1" data-ARCKHÉ-topic="modulo-6-1#topico-1" data-ARCKHÉ-track="6" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 4</span><span>·</span><span>Subtexto</span>
+<span class="where">Secao 1 de 4</span><span>Â·</span><span>Subtexto</span>
 </div>
 <h2 class="head"><span class="num">1.</span>A cena de dialogo nao e conversa</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m6-1-t1-p1">No cinema, as pessoas raramente dizem exatamente
+<p class="lede dropcap" data-ARCKHÉ-block="m6-1-t1-p1">No cARCKHÉ, as pessoas raramente dizem exatamente
               o que sentem. <span class="sidenote-ref">1</span>Uma cena de dialogo que funciona nunca e a troca
-              limpa de informacao — pergunta, resposta, tudo claro, tudo logico. Quando ela e <em>so</em>
+              limpa de informacao â€” pergunta, resposta, tudo claro, tudo logico. Quando ela e <em>so</em>
               isso, soa morta, por mais bem escrita que esteja. O que mantem uma cena viva e a <strong>emocao por
               baixo das palavras</strong>: o desejo, o medo, a culpa que o personagem carrega e nao consegue
               nomear. Esta aula nao e sobre escrever <em>mais</em> dialogo. E sobre criar emocao por meio de
               comportamento, silencio, subtexto e conflito.</p>
-<p data-inema-block="m6-1-t1-p2">O instrumento central chama-se <span class="dfn"><details class="dfn"><summary>subtexto</summary><span class="body"><b>Subtexto</b> e a distancia entre o que a fala diz e o que a emocao sente. A linha de superficie e ordinaria; o significado real vive embaixo, e o publico o monta sozinho.</span></details></span>:
-              o que e dito e o que e sentido sao coisas diferentes. Em vez de “estou com fome de afeto, me
-              sinto abandonado”, um personagem diz apenas <em>“voce chegou tarde de novo”</em>.
-              A frase e banal — mas embaixo dela moram frustracao, magoa, ressentimento, a sensacao de nao
+<p data-ARCKHÉ-block="m6-1-t1-p2">O instrumento central chama-se <span class="dfn"><details class="dfn"><summary>subtexto</summary><span class="body"><b>Subtexto</b> e a distancia entre o que a fala diz e o que a emocao sente. A linha de superficie e ordinaria; o significado real vive embaixo, e o publico o monta sozinho.</span></details></span>:
+              o que e dito e o que e sentido sao coisas diferentes. Em vez de â€œestou com fome de afeto, me
+              sinto abandonadoâ€, um personagem diz apenas <em>â€œvoce chegou tarde de novoâ€</em>.
+              A frase e banal â€” mas embaixo dela moram frustracao, magoa, ressentimento, a sensacao de nao
               ser prioridade. O publico entende a emocao sem ouvi-la nomeada. Esse e o ponto: medo vira evasao,
               raiva vira polidez, dor vira distancia. As pessoas escondem a vulnerabilidade, e quem assiste
               <em>gosta</em> de ler o sentido nas entrelinhas.</p>
 <h3 class="sub">A pergunta que a cena planta na cabeca do publico</h3>
-<p data-inema-block="m6-1-t1-p3">Uma cena de dialogo poderosa instala uma pergunta na mente de quem
+<p data-ARCKHÉ-block="m6-1-t1-p3">Uma cena de dialogo poderosa instala uma pergunta na mente de quem
               assiste: <em>o que esta pessoa realmente esta sentindo?</em> Enquanto essa pergunta segue aberta,
-              o espectador deixa de apenas ouvir e passa a <em>interpretar comportamento</em> — e e essa
+              o espectador deixa de apenas ouvir e passa a <em>interpretar comportamento</em> â€” e e essa
               participacao que cria engajamento.<span class="sidenote-ref">2</span> Por isso as melhores cenas de
               dialogo parecem ao mesmo tempo claras e tensas, mesmo quando quase nada acontece fisicamente: no
-              cinema, uma pausa pode ser pressao, o silencio pode ser conflito, e um olhar pode ser uma
+              cARCKHÉ, uma pausa pode ser pressao, o silencio pode ser conflito, e um olhar pode ser uma
               confrontacao.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Duas versoes da mesma cena. Na primeira, o personagem diz: “Eu me sinto sozinho desde que
-              voce saiu.” Na segunda, ele olha a cozinha e diz: “Voce ainda compra o mesmo cafe.”
-              Qual delas mexe mais com o publico — e por que?</p>
+<p>Duas versoes da mesma cena. Na primeira, o personagem diz: â€œEu me sinto sozinho desde que
+              voce saiu.â€ Na segunda, ele olha a cozinha e diz: â€œVoce ainda compra o mesmo cafe.â€
+              Qual delas mexe mais com o publico â€” e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">A segunda. A primeira <strong>explica</strong> a emocao e a encerra — nao
+<p class="answer">A segunda. A primeira <strong>explica</strong> a emocao e a encerra â€” nao
                 sobra nada para descobrir. A segunda usa <strong>subtexto</strong>: nada emocional e dito
                 diretamente, mas de repente toda a historia entre os dois fica visivel. O publico monta o
-                sentido (“ainda existe algo aqui”) e, ao montar, se envolve. Dialogo fraco explica a
+                sentido (â€œainda existe algo aquiâ€) e, ao montar, se envolve. Dialogo fraco explica a
                 emocao; dialogo forte deixa o publico <em>descobri-la</em>.</p>
 </details>
 </div>
 <!-- figura 1: a distancia entre fala e emocao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · O <b>subtexto</b> e a distancia entre a fala dita e a emocao sentida</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· O <b>subtexto</b> e a distancia entre a fala dita e a emocao sentida</figcaption>
 <svg aria-label="Diagrama em duas faixas: na faixa de cima, a fala literal e neutra; na faixa de baixo, a emocao real; uma seta de distancia liga as duas, e essa distancia e o subtexto." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-6-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -277,11 +277,11 @@
 <!-- faixa: o que e dito -->
 <rect class="rule-stroke" fill="none" height="48" rx="3" stroke-width="1.2" width="600" x="60" y="34"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="80" y="54">O QUE E DITO</text>
-<text class="ink-soft" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="370" y="64">“voce chegou tarde de novo”</text>
+<text class="ink-soft" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="370" y="64">â€œvoce chegou tarde de novoâ€</text>
 <!-- faixa: o que e sentido -->
 <rect class="accent-stroke" fill="url(#hatch-6-1)" height="48" rx="3" stroke-width="1.3" width="600" x="60" y="128"></rect>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="80" y="148">O QUE E SENTIDO</text>
-<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="370" y="158">“eu nao me sinto prioridade”</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="370" y="158">â€œeu nao me sinto prioridadeâ€</text>
 <!-- a distancia (subtexto) -->
 <line class="mark-stroke" stroke-dasharray="3 3" stroke-width="1.4" x1="370" x2="370" y1="82" y2="128"></line>
 <path class="mark-fill" d="M370 122 l-4 -8 l8 0 z"></path>
@@ -289,14 +289,14 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que o publico prefere descobrir a ser informado
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que o publico prefere descobrir a ser informado
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada explica o mecanismo cognitivo — e pode ser pulada.</p>
+<p>O caminho-feliz acima ja basta. Esta camada explica o mecanismo cognitivo â€” e pode ser pulada.</p>
 <p>Quando a cena <em>explica</em> a emocao, ela faz o trabalho que o cerebro do espectador queria
                 fazer. O prazer de assistir a um bom dialogo e parecido com o de resolver um enigma: voce recebe
                 pistas de comportamento (um olhar que desvia, uma frase curta demais, uma pausa antes da resposta)
-                e <em>infere</em> o que se passa. Essa inferencia e ativa — exige atencao — e atencao
+                e <em>infere</em> o que se passa. Essa inferencia e ativa â€” exige atencao â€” e atencao
                 ativa e o que chamamos de envolvimento. Por isso a regra pratica e quase contraintuitiva: quanto
                 menos o personagem explica, mais o publico participa. O roteiro forte nao entrega a emocao
                 embrulhada; ele deixa rastros e confia que quem assiste sabe segui-los.</p>
@@ -304,28 +304,28 @@
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="6-1" data-inema-topic="modulo-6-1#topico-2" data-inema-track="6" id="topico-2">
+<section data-ARCKHÉ-module="6-1" data-ARCKHÉ-topic="modulo-6-1#topico-2" data-ARCKHÉ-track="6" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 4</span><span>·</span><span>Reacao &amp; silencio</span>
+<span class="where">Secao 2 de 4</span><span>Â·</span><span>Reacao &amp; silencio</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Reacao e silencio: o peso do nao-dito</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-1-t2-p1">Ha um reflexo de iniciante que custa caro: filmar sempre
-              quem fala. Mas, no cinema, o momento emocional mais forte costuma acontecer no rosto de quem
+<p class="lede" data-ARCKHÉ-block="m6-1-t2-p1">Ha um reflexo de iniciante que custa caro: filmar sempre
+              quem fala. Mas, no cARCKHÉ, o momento emocional mais forte costuma acontecer no rosto de quem
               <em>ouve</em>, nao de quem diz. A fala explica a informacao; a <strong>reacao comunica a
               emocao</strong>. Quando alguem recebe uma noticia dura, o que nos diz como sentir nao e a frase
-              — e o queixo que trava, o olhar que cai, a respiracao que muda em quem escuta. A reacao e mais
+              â€” e o queixo que trava, o olhar que cai, a respiracao que muda em quem escuta. A reacao e mais
               forte do que as palavras.</p>
 <h3 class="sub">O silencio como pressao</h3>
-<p data-inema-block="m6-1-t2-p2">O segundo instrumento e o silencio. Imagine duas pessoas dentro de um
-              carro parado. Ninguem fala. Uma quase diz algo, hesita, olha pela janela — e o silencio
+<p data-ARCKHÉ-block="m6-1-t2-p2">O segundo instrumento e o silencio. Imagine duas pessoas dentro de um
+              carro parado. Ninguem fala. Uma quase diz algo, hesita, olha pela janela â€” e o silencio
               continua. O publico <em>espera</em>, porque todos sentem que algo precisa ser dito. Mas nada
               acontece. Essa ausencia cria antecipacao: o ser humano busca resolucao emocional, e uma tensao que
-              nao se resolve vira pressao.<span class="sidenote-ref">3</span> A plateia comeca a perguntar —
-              <em>o que eles estao escondendo?</em> — e essa pergunta e ouro. O que permanece nao-dito pode
+              nao se resolve vira pressao.<span class="sidenote-ref">3</span> A plateia comeca a perguntar â€”
+              <em>o que eles estao escondendo?</em> â€” e essa pergunta e ouro. O que permanece nao-dito pode
               pesar mais do que qualquer fala.</p>
-<p data-inema-block="m6-1-t2-p3">Ha uma condicao, porem: o silencio so funciona quando parece
-              <em>intencional</em>. Um vazio sem proposito le como erro de ritmo, ou como um clipe travado —
+<p data-ARCKHÉ-block="m6-1-t2-p3">Ha uma condicao, porem: o silencio so funciona quando parece
+              <em>intencional</em>. Um vazio sem proposito le como erro de ritmo, ou como um clipe travado â€”
               o problema cronico de quem gera video sem dirigir a pausa. A diferenca entre um silencio carregado e
               um silencio morto e a <em>expectativa</em>: o primeiro foi armado (alguem ia falar e nao falou); o
               segundo apenas demorou. Por isso a formula util e simples: <strong>silencio mais expectativa cria
@@ -333,11 +333,11 @@
 </div>
 <!-- figura 2: a troca de plano para a reacao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · A emocao mora no <b>contraplano</b> — corte para quem ouve</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· A emocao mora no <b>contraplano</b> â€” corte para quem ouve</figcaption>
 <svg aria-label="Diagrama: a esquerda, um quadro com quem fala emitindo a fala; ao centro, uma seta de corte; a direita, o quadro de reacao com quem ouve, marcado como o momento emocional." class="diagram" role="img" viewbox="0 0 720 214">
 <!-- quadro A: quem fala -->
 <rect class="rule-stroke" fill="none" height="132" rx="3" stroke-width="1.3" width="244" x="44" y="44"></rect>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="166" y="34">PLANO — QUEM FALA</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="166" y="34">PLANO â€” QUEM FALA</text>
 <circle class="rule-stroke" cx="120" cy="104" fill="none" r="26" stroke-width="1.4"></circle>
 <path class="rule-stroke" d="M150 100 q34 6 60 -2" fill="none" stroke-width="1.2"></path>
 <text class="faint" font-family="Spectral, serif" font-size="12" font-style="italic" x="210" y="118">a fala</text>
@@ -348,7 +348,7 @@
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="100">CORTE</text>
 <!-- quadro B: quem ouve (reacao) -->
 <rect class="accent-stroke" fill="url(#hatch-6-1)" height="132" rx="3" stroke-width="1.6" width="244" x="432" y="44"></rect>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="554" y="34">CONTRAPLANO — QUEM OUVE</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="554" y="34">CONTRAPLANO â€” QUEM OUVE</text>
 <circle class="accent-stroke" cx="554" cy="104" fill="none" r="30" stroke-width="1.6"></circle>
 <line class="ink" stroke-width="2" x1="544" x2="550" y1="98" y2="98"></line>
 <line class="ink" stroke-width="2" x1="560" x2="566" y1="98" y2="98"></line>
@@ -362,7 +362,7 @@
               fica nele o tempo todo. A cena, mesmo bem atuada, soa fria. O que provavelmente esta faltando?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">O <strong>contraplano</strong> — e, com ele, o silencio. Sem cortar para o
+<p class="answer">O <strong>contraplano</strong> â€” e, com ele, o silencio. Sem cortar para o
                 rosto de quem ouve, o publico nao tem onde <em>sentir</em> o golpe; recebe a informacao, mas nao
                 a reacao que diz como senti-la. Um discurso ininterrupto tambem sufoca a pausa: sem respiro, nao
                 ha expectativa, e sem expectativa o silencio nunca chega a virar pressao.</p>
@@ -370,36 +370,36 @@
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="6-1" data-inema-topic="modulo-6-1#topico-3" data-inema-track="6" id="topico-3">
+<section data-ARCKHÉ-module="6-1" data-ARCKHÉ-topic="modulo-6-1#topico-3" data-ARCKHÉ-track="6" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 4</span><span>·</span><span>Conflito</span>
+<span class="where">Secao 3 de 4</span><span>Â·</span><span>Conflito</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Conflito e objetivo: o motor da cena</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-1-t3-p1">Toda cena de dialogo forte esconde uma batalha. Duas
+<p class="lede" data-ARCKHÉ-block="m6-1-t3-p1">Toda cena de dialogo forte esconde uma batalha. Duas
               pessoas conversam, mas em segredo querem coisas opostas: uma busca honestidade, a outra evita a
-              verdade; uma quer aproximacao, a outra cria distancia. A superficie pode ser calma — ate um
+              verdade; uma quer aproximacao, a outra cria distancia. A superficie pode ser calma â€” ate um
               dialogo educado pode ser uma <em>luta invisivel</em> por controle, confianca ou vulnerabilidade.
               Sem esse atrito, a cena fica chapada. Personagens nao falam apenas para trocar informacao: falam
-              para <strong>conseguir algo</strong> — aprovacao, amor, controle, perdao, distancia,
+              para <strong>conseguir algo</strong> â€” aprovacao, amor, controle, perdao, distancia,
               protecao.</p>
-<p data-inema-block="m6-1-t3-p2">Dai as duas perguntas que toda cena de dialogo deveria responder, e
+<p data-ARCKHÉ-block="m6-1-t3-p2">Dai as duas perguntas que toda cena de dialogo deveria responder, e
               que valem como ferramenta de diagnostico: <em>o que este personagem quer?</em> e <em>o que o impede
               de conseguir?</em><span class="sidenote-ref">4</span> O desejo da direcao; o obstaculo da tensao.
               Quando os dois existem, a cena tem movimento emocional; quando faltam, ela perde drama. Repare que
-              o obstaculo nem sempre e o outro personagem — pode ser o orgulho, a culpa, o medo da propria
+              o obstaculo nem sempre e o outro personagem â€” pode ser o orgulho, a culpa, o medo da propria
               vulnerabilidade. A formula curta: <strong>um desejo mais um obstaculo cria drama.</strong></p>
 <h3 class="sub">A atuacao nasce do objetivo, nao do sentimento</h3>
-<p data-inema-block="m6-1-t3-p3">Isso muda o jeito de pensar a atuacao — e, no nosso caso, o
-              jeito de escrever o prompt. Emocao verdadeira nao vem de “representar” um sentimento,
+<p data-ARCKHÉ-block="m6-1-t3-p3">Isso muda o jeito de pensar a atuacao â€” e, no nosso caso, o
+              jeito de escrever o prompt. Emocao verdadeira nao vem de â€œrepresentarâ€ um sentimento,
               mas de um personagem <em>perseguindo um objetivo</em> sob uma circunstancia que o pressiona. Nao se
-              dirige “fique triste”; dirige-se “ele quer que ela fique, mas nao consegue pedir”.
+              dirige â€œfique tristeâ€; dirige-se â€œele quer que ela fique, mas nao consegue pedirâ€.
               A tristeza aparece como consequencia. A formula que guia tanto o ator quanto o gerador e:
               <strong>objetivo mais circunstancia cria emocao real.</strong></p>
 </div>
 <!-- figura 3: dois objetivos que colidem -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · A cena tem motor quando <b>dois objetivos colidem</b></figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· A cena tem motor quando <b>dois objetivos colidem</b></figcaption>
 <svg aria-label="Diagrama: a esquerda, o personagem A quer aproximacao, com uma seta apontando para a direita; a direita, o personagem B quer distancia, com uma seta apontando para a esquerda; no centro, a colisao das setas e marcada como tensao." class="diagram" role="img" viewbox="0 0 720 206">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="176" y2="176"></line>
 <!-- A -->
@@ -421,53 +421,53 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m6-1-t3-p4">Na pratica do nosso pipeline, isso vira instrucao. Em vez de pedir ao
-              gerador “duas pessoas conversando numa mesa”, voce descreve os <em>objetivos opostos</em>
+<p data-ARCKHÉ-block="m6-1-t3-p4">Na pratica do nosso pipeline, isso vira instrucao. Em vez de pedir ao
+              gerador â€œduas pessoas conversando numa mesaâ€, voce descreve os <em>objetivos opostos</em>
               e deixa o conflito governar a postura, o olhar e o ritmo. O prompt abaixo arma uma cena de dialogo
-              com tensao ja embutida na descricao — nele, ninguem “atua triste”: cada um persegue
+              com tensao ja embutida na descricao â€” nele, ninguem â€œatua tristeâ€: cada um persegue
               um objetivo, e a emocao surge do choque.</p>
-<div class="codeblock"><span class="c"># Cena de dialogo com conflito embutido — gere o frame/clipe primeiro</span>
-<span class="c"># (Seedance / Kling / Runway — descreva objetivos opostos, nao sentimentos)</span>
+<div class="codeblock"><span class="c"># Cena de dialogo com conflito embutido â€” gere o frame/clipe primeiro</span>
+<span class="c"># (Seedance / Kling / Runway â€” descreva objetivos opostos, nao sentimentos)</span>
 <span class="k">Scene:</span> a kitchen at night, two people across a small table, one mug between them.
 <span class="k">Character A (wants closeness):</span> leans slightly forward, searching the other's eyes, ready to speak.
 <span class="k">Character B (avoids the truth):</span> looks down at the mug, shoulders turned a few degrees away, guarded.
-<span class="k">Subtext:</span> they are not arguing about being late — they are asking "did I matter to you?"
+<span class="k">Subtext:</span> they are not arguing about being late â€” they are asking "did I matter to you?"
 <span class="k">Behavior over words:</span> a held breath, a glance that drops, one hand that almost reaches and stops.
 <span class="k">Camera:</span> quiet two-shot, shallow depth, soft practical light from a single lamp.
-<span class="k">Mood:</span> intimate, unresolved, restrained — emotion under the surface.</div>
+<span class="k">Mood:</span> intimate, unresolved, restrained â€” emotion under the surface.</div>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="6-1" data-inema-topic="modulo-6-1#topico-4" data-inema-track="6" id="topico-4">
+<section data-ARCKHÉ-module="6-1" data-ARCKHÉ-topic="modulo-6-1#topico-4" data-ARCKHÉ-track="6" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 4</span><span>·</span><span>Corpo &amp; enquadramento</span>
+<span class="where">Secao 4 de 4</span><span>Â·</span><span>Corpo &amp; enquadramento</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Atuacao verdadeira e enquadramento</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m6-1-t4-p1">No cinema, o corpo diz a verdade. Um personagem afirma
-              “estou bem” — mas a voz baixa, o contato de olhos some, a respiracao muda, os
+<p class="lede" data-ARCKHÉ-block="m6-1-t4-p1">No cARCKHÉ, o corpo diz a verdade. Um personagem afirma
+              â€œestou bemâ€ â€” mas a voz baixa, o contato de olhos some, a respiracao muda, os
               ombros cedem. As palavras comunicam uma coisa; o corpo, outra. E o publico confia mais no
               comportamento do que na fala, porque sabe que as pessoas mentem com palavras e que a emocao escapa
               pelo corpo antes de chegar a lingua.<span class="sidenote-ref">5</span> A boa atuacao, muitas vezes,
               e quase invisivel: nao parece atuacao, parece verdade. A formula: <strong>as palavras podem mentir;
               o comportamento revela a emocao.</strong></p>
 <h3 class="sub">O mesmo dialogo, sentidos opostos: o enquadramento</h3>
-<p data-inema-block="m6-1-t4-p2">A ultima camada e a camera. Cenas de dialogo sao <em>visuais</em>, e
+<p data-ARCKHÉ-block="m6-1-t4-p2">A ultima camada e a camera. Cenas de dialogo sao <em>visuais</em>, e
               o lugar da camera muda o significado emocional. A mesma conversa pode parecer intima, ameacadora,
               distante ou vulneravel, dependendo de como e filmada. Se os personagens estao emocionalmente
-              desconectados, <em>separe-os no quadro</em> — a distancia fisica vira distancia emocional. Se
+              desconectados, <em>separe-os no quadro</em> â€” a distancia fisica vira distancia emocional. Se
               estao proximos, junte-os no mesmo enquadramento, e o publico sente a conexao sem que o dialogo
               precise explica-la.</p>
-<p data-inema-block="m6-1-t4-p3">O poder tambem se mostra na geometria da camera. Um angulo
+<p data-ARCKHÉ-block="m6-1-t4-p3">O poder tambem se mostra na geometria da camera. Um angulo
               <em>baixo</em>, olhando para cima, da forca a quem e enquadrado; um angulo <em>alto</em>, olhando
               para baixo, cria vulnerabilidade. Ate um movimento sutil muda o sentido: uma aproximacao lenta
-              aperta a tensao sem que ninguem perceba conscientemente. A regra que fecha o modulo e curta —
-              <strong>o enquadramento cria emocao</strong> — e ela e o elo direto com a proxima aula, em que
+              aperta a tensao sem que ninguem perceba conscientemente. A regra que fecha o modulo e curta â€”
+              <strong>o enquadramento cria emocao</strong> â€” e ela e o elo direto com a proxima aula, em que
               o close e os planos emocionais viram decisao deliberada.</p>
 </div>
 <!-- figura 4: enquadramento muda a relacao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · A mesma fala, <b>tres relacoes</b> — a geometria da camera decide</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· A mesma fala, <b>tres relacoes</b> â€” a geometria da camera decide</figcaption>
 <svg aria-label="Diagrama em tres paineis: no primeiro, dois personagens proximos no quadro, marcados como conexao; no segundo, separados em quadro amplo, marcados como distancia; no terceiro, um filmado em angulo baixo e outro em angulo alto, marcados como poder." class="diagram" role="img" viewbox="0 0 720 214">
 <!-- painel 1: proximos -->
 <rect class="accent-stroke" fill="none" height="120" rx="3" stroke-width="1.3" width="196" x="36" y="48"></rect>
@@ -494,11 +494,11 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m6-1-t4-p4">Guarde o modulo como uma frase: <em>dialogo forte raramente e sobre
-              palavras — e sobre a emocao escondida dentro delas.</em> Emocao mais subtexto mais reacao mais
-              conflito: e essa combinacao, e nao a quantidade de fala, que faz uma cena de conversa virar cinema.
-              Quando o publico pensa “eu entendo o que essa pessoa sente, mesmo que ela nunca tenha
-              dito”, a cena esta funcionando. As proximas tres aulas detalham as pecas: como dar a um
+<p data-ARCKHÉ-block="m6-1-t4-p4">Guarde o modulo como uma frase: <em>dialogo forte raramente e sobre
+              palavras â€” e sobre a emocao escondida dentro delas.</em> Emocao mais subtexto mais reacao mais
+              conflito: e essa combinacao, e nao a quantidade de fala, que faz uma cena de conversa virar cARCKHÉ.
+              Quando o publico pensa â€œeu entendo o que essa pessoa sente, mesmo que ela nunca tenha
+              ditoâ€, a cena esta funcionando. As proximas tres aulas detalham as pecas: como dar a um
               personagem de IA uma <em>performance</em> crivel, como o <em>close</em> molda a emocao, e como
               estruturar a cena de dialogo plano a plano.</p>
 </div>
@@ -508,57 +508,57 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Por que uma cena de dialogo “clara e logica” pode soar morta?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Por que uma cena de dialogo â€œclara e logicaâ€ pode soar morta?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque falta a <em>emocao por baixo das palavras</em>. Se a fala apenas troca
-              informacao e explica tudo, nao sobra subtexto para o publico interpretar — e a cena, sem essa
-              pergunta aberta (“o que essa pessoa realmente sente?”), perde tensao.</p></div>
+              informacao e explica tudo, nao sobra subtexto para o publico interpretar â€” e a cena, sem essa
+              pergunta aberta (â€œo que essa pessoa realmente sente?â€), perde tensao.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Por que a reacao de quem ouve costuma ser mais forte que a fala de quem diz?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque a fala <em>explica a informacao</em>, mas a reacao <em>comunica a
-              emocao</em> — ela diz ao publico como sentir. Cortar para o rosto de quem escuta (o
+              emocao</em> â€” ela diz ao publico como sentir. Cortar para o rosto de quem escuta (o
               contraplano) e onde o golpe emocional realmente acontece.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>O que torna um silencio em cena uma pressao, e nao um buraco morto?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>A <em>expectativa</em>. O silencio so vira tensao quando parece intencional —
+<div class="ans"><p>A <em>expectativa</em>. O silencio so vira tensao quando parece intencional â€”
               alguem ia falar e nao falou. Sem expectativa armada, a pausa le como erro de ritmo. Formula:
               silencio mais expectativa cria tensao.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Por que dirigir/descrever um “objetivo” funciona melhor que pedir um “sentimento”?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Por que dirigir/descrever um â€œobjetivoâ€ funciona melhor que pedir um â€œsentimentoâ€?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque emocao verdadeira nasce de um personagem <em>perseguindo um objetivo</em>
-              sob uma circunstancia que o pressiona — a emocao aparece como consequencia. “Ele quer
-              que ela fique mas nao consegue pedir” gera mais verdade que “fique triste”.
+              sob uma circunstancia que o pressiona â€” a emocao aparece como consequencia. â€œEle quer
+              que ela fique mas nao consegue pedirâ€ gera mais verdade que â€œfique tristeâ€.
               Objetivo mais circunstancia cria emocao real.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:6-1">
-<span data-inema-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:6-1">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 6</div>
-<div class="v" data-inema-meter="trilha:6">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:6">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -567,32 +567,32 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 6.2 — Atuacao de Personagem com IA</div>
+<div class="t">Modulo 6.2 â€” Atuacao de Personagem com IA</div>
 </div>
-<a class="go" href="modulo-6-2.html">Proximo →</a>
+<a class="go" href="modulo-6-2.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-6-1#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-1#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Subtexto.</b> A distancia entre o que a fala diz e o que a emocao sente. A linha de superficie e
-          ordinaria; o sentido real vive embaixo — e o publico o monta sozinho.
+          ordinaria; o sentido real vive embaixo â€” e o publico o monta sozinho.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Ler emocao nas entrelinhas e um ato <i>ativo</i>: exige atencao. Por isso quanto menos o personagem
-          explica, mais o publico participa — e participacao e envolvimento.
+          explica, mais o publico participa â€” e participacao e envolvimento.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Modulo 5 do programa <i>AI Filmmaking</i> — “Dialogue and Acting”. Tese central:
+          Modulo 5 do programa <i>AI Filmmaking</i> â€” â€œDialogue and Actingâ€. Tese central:
           <i>se os personagens explicam tudo o que sentem, a cena perde toda a tensao</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-6-1#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-1#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Plano de reacao.</b> O corte para o rosto de quem ouve. A fala explica a informacao; a reacao diz ao
@@ -600,11 +600,11 @@
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          O ser humano busca resolucao emocional. Uma tensao que nao se resolve vira pressao — por isso o
+          O ser humano busca resolucao emocional. Uma tensao que nao se resolve vira pressao â€” por isso o
           silencio <i>intencional</i> (alguem ia falar e parou) pesa mais que qualquer fala.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-6-1#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-1#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Objetivo de cena.</b> O que o personagem quer <i>nesta</i> cena. O desejo da direcao; o obstaculo
@@ -616,7 +616,7 @@
           Conflito cria movimento emocional; sem resistencia, a cena perde tensao dramatica.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-6-1#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-6-1#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Enquadramento como relacao.</b> Juntar dois personagens no quadro le como conexao; separa-los, como
@@ -625,15 +625,15 @@
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
           O corpo escapa antes da fala: o publico confia mais no comportamento do que nas palavras. A boa atuacao
-          parece invisivel — nao parece atuacao, parece verdade.
+          parece invisivel â€” nao parece atuacao, parece verdade.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 6.1 — folio i</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 6.1 â€” folio i</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -642,8 +642,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

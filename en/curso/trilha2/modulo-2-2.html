@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Module 2.2 — Composition for Cinema | AI Filmmaking</title>
+<title>Module 2.2 â€” Composition for CARCKHÉ | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:2-2"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:2-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Track <b>2</b> Cinematic Fundamentals</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Track <b>2</b> CARCKHÉtic Fundamentals</span>
+<span class="sep">Â·</span>
 <span>Module <b>2.2</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Section 1 of 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Section 1 of 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,33 +189,33 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Module 2.2 · Track 2 · Cinematic Fundamentals</p>
-<h1 class="module">Composition for <em>Cinema</em></h1>
-<p class="deck">Composition isn’t about decorating the frame—it’s about telling the eye where to go. And since no
+<p class="kicker">Module 2.2 Â· Track 2 Â· CARCKHÉtic Fundamentals</p>
+<h1 class="module">Composition for <em>CARCKHÉ</em></h1>
+<p class="deck">Composition isnâ€™t about decorating the frameâ€”itâ€™s about telling the eye where to go. And since no
           prompt generates just one shot, but a sequence of shots, each composition solves a different task: the
           scene evolves instead of repeating.</p>
 <p class="read-meta">
 <span class="here">Reading now</span>
-<span>~18 min · full module</span>
+<span>~18 min Â· full module</span>
 <span>5 sections</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="What you will understand" class="aims">
 <h2>What you will understand</h2>
 <ul>
-<li>Why composition and <b>visual hierarchy</b> — a focal point that dominates and supporting elements that
-              reinforce it — not a “pretty” arrangement of elements.</li>
+<li>Why composition and <b>visual hierarchy</b> â€” a focal point that dominates and supporting elements that
+              reinforce it â€” not a â€œprettyâ€ arrangement of elements.</li>
 <li>The toolbox: <b>diagonal, leading lines, rule of thirds, negative space, symmetry,
-              close-up and wide shot</b> — and what task each one handles.</li>
+              close-up and wide shot</b> â€” and what task each one handles.</li>
 <li>How the <b>visual weight</b> and the <b>changes in scale</b> (detail versus wide) control attention,
               pacing, and the sense of realism.</li>
-<li>Why does a prompt become a <b>sequence of compositions over time</b> — and why this separates
-              a beautiful video from a cinematic sequence.</li>
+<li>Why does a prompt become a <b>sequence of compositions over time</b> â€” and why this separates
+              a beautiful video from a cARCKHÉtic sequence.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Module summary" class="toc" data-inema-toc="">
-<p class="toc-head">Summary — five movements</p>
+<nav aria-label="Module summary" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Summary â€” five movements</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Composition is hierarchy, not decoration</span></a></li>
@@ -226,35 +226,35 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-1" data-inema-track="2" id="topico-1">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="section-mark">
-<span class="where">Section 1 of 5</span><span>·</span><span>Hierarchy</span>
+<span class="where">Section 1 of 5</span><span>Â·</span><span>Hierarchy</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Composition is hierarchy, not decoration</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m2-2-t1-p1">Almost everyone learns composition as a list
-              of rules to follow—place the subject on a rule-of-thirds line, avoid the center, leave space in front
-              of the gaze. Useful, but that’s the symptom, not the disease. Composition, at its core, is one thing:
-              <strong>visual hierarchy</strong> — the order in which the eye moves across the frame. You decide what
+<p class="lede dropcap" data-ARCKHÉ-block="m2-2-t1-p1">Almost everyone learns composition as a list
+              of rules to followâ€”place the subject on a rule-of-thirds line, avoid the center, leave space in front
+              of the gaze. Useful, but thatâ€™s the symptom, not the disease. Composition, at its core, is one thing:
+              <strong>visual hierarchy</strong> â€” the order in which the eye moves across the frame. You decide what
 the viewer sees <em>first</em>, what it sees <em>after</em> is what <span class="sidenote-ref">1</span>never
-              even notices. Everything we call “good composition” is a way of imposing that order; and
-              everything we call a “confusing frame” is its absence.</p>
-<p data-inema-block="m2-2-t1-p2">The centerpiece of this hierarchy is the <em>focal point</em>: the place where
+              even notices. Everything we call â€œgood compositionâ€ is a way of imposing that order; and
+              everything we call a â€œconfusing frameâ€ is its absence.</p>
+<p data-ARCKHÉ-block="m2-2-t1-p2">The centerpiece of this hierarchy is the <em>focal point</em>: the place where
               the eye lands before anywhere else. A frame without a clear focal point is democratic in the worst sense
-              —everything has equal weight, so nothing matters, and the eye wanders without knowing where to rest. A
-              cinematic frame has <strong>hierarchical</strong>: there is one dominant element, a few supporting elements that
+              â€”everything has equal weight, so nothing matters, and the eye wanders without knowing where to rest. A
+              cARCKHÉtic frame has <strong>hierarchical</strong>: there is one dominant element, a few supporting elements that
               reinforce it, and plenty of space that exists only to make it stand out. The golden question, for any
-              composition, is brutally simple: <em>where does my eye go first?</em> If the answer isn’t
-              immediate, the composition isn’t ready yet.</p>
+              composition, is brutally simple: <em>where does my eye go first?</em> If the answer isnâ€™t
+              immediate, the composition isnâ€™t ready yet.</p>
 <h3 class="sub">How to create a focal point</h3>
-<p data-inema-block="m2-2-t1-p3">The eye is drawn to <em>contrast</em> by <em>isolation</em>. An
+<p data-ARCKHÉ-block="m2-2-t1-p3">The eye is drawn to <em>contrast</em> by <em>isolation</em>. An
               element lit against a dark background becomes the focus. An object surrounded by empty space becomes the focus. Something sharp
               against a blurred background becomes the focus. A saturated color in a desaturated field becomes the focus. Notice that
-              none of these depend on position—they depend on <strong>difference</strong>. The lesson offers a direct example: a car isolated by light against a dark surface, with diagonal composition. The diagonal creates energy; the isolation tells the viewer, unambiguously, exactly where to look. Position helps, but it's the difference in light, focus, color, and space that <em>factory</em> the focal point.<span class="sidenote-ref">2</span></p>
+              none of these depend on positionâ€”they depend on <strong>difference</strong>. The lesson offers a direct example: a car isolated by light against a dark surface, with diagonal composition. The diagonal creates energy; the isolation tells the viewer, unambiguously, exactly where to look. Position helps, but it's the difference in light, focus, color, and space that <em>factory</em> the focal point.<span class="sidenote-ref">2</span></p>
 </div>
 <!-- figura 1: democratico vs hierarquico -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · Frame <b>democratic</b> (everything competes) against the frame <b>hierarchical</b> (one focal point)</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· Frame <b>democratic</b> (everything competes) against the frame <b>hierarchical</b> (one focal point)</figcaption>
 <svg aria-label="Diagram comparing two frames: on the left, several equally sized elements with no hierarchy make the eye wander; on the right, a dominant focal point is isolated by light and space, with arrows converging on it." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-2-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -268,7 +268,7 @@ the viewer sees <em>first</em>, what it sees <em>after</em> is what <span class=
 <circle cx="92" cy="88" r="19"></circle><circle cx="160" cy="120" r="20"></circle><circle cx="232" cy="82" r="18"></circle>
 <circle cx="262" cy="142" r="20"></circle><circle cx="118" cy="156" r="17"></circle>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">the eye wanders—nothing dominates</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">the eye wandersâ€”nothing dominates</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="184"></line>
 <!-- direita -->
@@ -288,61 +288,61 @@ the viewer sees <em>first</em>, what it sees <em>after</em> is what <span class=
 <div class="predict">
 <p class="lbl">Stop and predict</p>
 <p>You generated a beautiful shot: beautiful landscape, beautiful light, a character, a vehicle, an animal, everything
-              sharp and well lit. Even so, it feels “flat,” and no one can tell what it’s about.
+              sharp and well lit. Even so, it feels â€œflat,â€ and no one can tell what itâ€™s about.
               In terms of hierarchy, what is probably missing?</p>
 <details>
 <summary>See one possible answer</summary>
 <p class="answer">Missing one <strong>focal point</strong>. When everything is equally sharp and
-                lit, everything competes—and competition is the opposite of hierarchy. The fix isn’t to add; it’s to
+                lit, everything competesâ€”and competition is the opposite of hierarchy. The fix isnâ€™t to add; itâ€™s to
                 <em>subtract</em>: blur the background, darken the supports, and leave only one element in the light. Contrast
                 creates focus; without it, the eye has nowhere to rest and the image looks empty despite being full.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: rules are shortcuts to hierarchy
+<summary><span class="chev">â–¸</span> Going deeper: rules are shortcuts to hierarchy
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>The happy path above is enough. This layer explains where the “rules” come from—and can be skipped.</p>
-<p>The rule of thirds, leading lines, negative space, symmetry—none of them is sacred. They are
+<p>The happy path above is enough. This layer explains where the â€œrulesâ€ come fromâ€”and can be skipped.</p>
+<p>The rule of thirds, leading lines, negative space, symmetryâ€”none of them is sacred. They are
                 <strong>shortcuts</strong> tested to produce hierarchy quickly. The rule of thirds places the
                 focus off the dead center, where the eye tends to go anyway. Leading lines use the scene's geometry
                 to draw the eye to the focus. Negative space isolates by subtraction. Symmetry creates a
-                different kind of hierarchy — that of the absolute center. Knowing the <em>because</em> (the hierarchy, always) frees you from blind obedience: you break the rule when it gets in the way of the order
+                different kind of hierarchy â€” that of the absolute center. Knowing the <em>because</em> (the hierarchy, always) frees you from blind obedience: you break the rule when it gets in the way of the order
                 you want to impose, and follow it when it helps. Technique serves intention, never the other way around.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-2" data-inema-track="2" id="topico-2">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="section-mark">
-<span class="where">Section 2 of 5</span><span>·</span><span>Lines</span>
+<span class="where">Section 2 of 5</span><span>Â·</span><span>Lines</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Rule of thirds, diagonals, and leading lines</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t2-p1">Three tools in the toolbox address <em>direction</em> e
+<p class="lede" data-ARCKHÉ-block="m2-2-t2-p1">Three tools in the toolbox address <em>direction</em> e
               <em>balance</em>: the rule of thirds, diagonal composition, and leading lines. A <strong>rule of thirds</strong> divides the frame into nine parts with two horizontal and two vertical lines. Placing the
-              focal point on one of these lines — or, better yet, at one of the four intersections — creates
+              focal point on one of these lines â€” or, better yet, at one of the four intersections â€” creates
               balance and direction at the same time: the image doesn't feel static like it does at the dead center, or
               uncomfortable like it does at the edge. It's the fastest way to give the frame calm, readable tension.</p>
 <h3 class="sub">Diagonal: immediate energy and movement</h3>
-<p data-inema-block="m2-2-t2-p2">A <strong>diagonal composition</strong> does the opposite of calm: it
-              injects energy. A horizontal line is stable, a vertical line is firm — but a diagonal is
-              <em>unstable</em>, and the eye reads instability as motion. That’s why the lesson opens with a
+<p data-ARCKHÉ-block="m2-2-t2-p2">A <strong>diagonal composition</strong> does the opposite of calm: it
+              injects energy. A horizontal line is stable, a vertical line is firm â€” but a diagonal is
+              <em>unstable</em>, and the eye reads instability as motion. Thatâ€™s why the lesson opens with a
               diagonal: it introduces action quickly and makes the scene feel already underway. Use a diagonal when you want
               the shot to feel dynamic, in motion, on the verge of changing; avoid it when you want serenity. The camera
-              angle is often enough to create the diagonal—a slightly high-angle or low-angle shot
+              angle is often enough to create the diagonalâ€”a slightly high-angle or low-angle shot
               tilts the lines of the world and creates energy without any actual movement.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m2-2-t2-p3">The <strong>guide lines</strong> are perhaps the most elegant tool:
-              they use real elements of the scene — a road, a handrail, a row of posts, a beam
-              of light — to <em>guide the eye</em> to the focal point. The viewer doesn’t realize they’re
+<p data-ARCKHÉ-block="m2-2-t2-p3">The <strong>guide lines</strong> are perhaps the most elegant tool:
+              they use real elements of the scene â€” a road, a handrail, a row of posts, a beam
+              of light â€” to <em>guide the eye</em> to the focal point. The viewer doesnâ€™t realize theyâ€™re
               being guided; they simply follow the line, like following an arrow. Converging lines also create a
               sense of depth (the subject of Module 2.4). The strongest combination is also the most
-              common in cinema: leading lines that <em>lead into</em> at a focal point positioned over a thirds intersection—
+              common in cARCKHÉ: leading lines that <em>lead into</em> at a focal point positioned over a thirds intersectionâ€”
               direction and balance working together.</p>
 </div>
 <!-- figura 2: grade dos tercos + linhas-guia -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · The grid of <b>thirds</b> and the <b>guide lines</b> that lead to the focal point</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· The grid of <b>thirds</b> and the <b>guide lines</b> that lead to the focal point</figcaption>
 <svg aria-label="Diagram of a frame with the rule-of-thirds grid (two vertical lines and two horizontal lines) and guide lines converging from below to a focal point positioned on the upper-right intersection." class="diagram" role="img" viewbox="0 0 720 220">
 <rect class="rule-stroke" fill="none" height="172" rx="3" stroke-width="1.3" width="560" x="80" y="24"></rect>
 <!-- grade dos tercos -->
@@ -359,15 +359,15 @@ the viewer sees <em>first</em>, what it sees <em>after</em> is what <span class=
 <!-- ponto focal sobre cruzamento -->
 <circle class="accent-stroke" cx="453" cy="81" fill="url(#hatch-2-2)" r="13" stroke-width="1.6"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" x="478" y="76">focus on the intersection</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" x="150" y="214">the set’s lines lead the eye to the focal point</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" x="150" y="214">the setâ€™s lines lead the eye to the focal point</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-2-t2-p4">In the prompt, you name the composition using cinematic language — the
+<p data-ARCKHÉ-block="m2-2-t2-p4">In the prompt, you name the composition using cARCKHÉtic language â€” the
               generator understands terms like <em>rule of thirds</em>, <em>diagonal composition</em> e <em>leading
               lines</em>. The example below is a <em>composition recipe</em> for a single entry composition:
-diagonal for energy, leading lines to guide, focus on the third. Notice there are no quality adjectives — only decisions about where the eye goes.</p>
-<div class="codeblock"><span class="c"># Composition recipe — establishing shot with energy and direction</span>
+diagonal for energy, leading lines to guide, focus on the third. Notice there are no quality adjectives â€” only decisions about where the eye goes.</p>
+<div class="codeblock"><span class="c"># Composition recipe â€” establishing shot with energy and direction</span>
 <span class="c"># name the composition; the generator (Seedance / Kling / Freepik) understands</span>
 <span class="k">Shot:</span> a lone car arriving on a wet road at night, introducing the action.
 <span class="k">Composition:</span> strong diagonal composition for energy; leading lines from the road guide the eye.
@@ -376,48 +376,48 @@ diagonal for energy, leading lines to guide, focus on the third. Notice there ar
 <span class="k">Negative:</span> avoid a centered, flat, symmetric frame.</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: why the diagonal “feels like” movement
+<summary><span class="chev">â–¸</span> Going deeper: why the diagonal â€œfeels likeâ€ movement
               <span class="opt">optional</span></summary>
 <div class="inner">
 <p>Optional layer on how to read lines perceptually.</p>
 <p>Through the physics of the world, the eye has learned that tilted things are falling, slipping, or in
-                motion — a leaning tree, a slope, a falling body. Horizontal and vertical lines,
+                motion â€” a leaning tree, a slope, a falling body. Horizontal and vertical lines,
                 by contrast, signal a state of rest: the horizon, a wall, a person standing upright. When you tilt the
                 lines in a frame (through diagonal composition or a slight dutch tilt in the camera), the brain draws
-                on that association and <em>feels</em> instability, even in a still image. That’s why action scenes rely heavily on diagonals and scenes of mourning favor steady horizontals. Geometry carries emotion before content.</p>
+                on that association and <em>feels</em> instability, even in a still image. Thatâ€™s why action scenes rely heavily on diagonals and scenes of mourning favor steady horizontals. Geometry carries emotion before content.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-3" data-inema-track="2" id="topico-3">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="section-mark">
-<span class="where">Section 3 of 5</span><span>·</span><span>Negative space and center</span>
+<span class="where">Section 3 of 5</span><span>Â·</span><span>Negative space and center</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Negative space and symmetry</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t3-p1">Two tools work by <em>subtraction</em> by
+<p class="lede" data-ARCKHÉ-block="m2-2-t3-p1">Two tools work by <em>subtraction</em> by
               <em>absolute order</em>: negative space and symmetry. The <strong>negative space</strong> is the empty area
-              around the subject — and it is anything but functionless. Surrounding an element with emptiness
+              around the subject â€” and it is anything but functionless. Surrounding an element with emptiness
               isolates it, and the brain fixates on isolated objects, especially when they are in motion. A small subject
-              in a vast field of nothing does not get lost — it <em>shouts</em>, because nothing competes for attention. The lesson uses this exact idea for important moments: the subject surrounded by empty space, with no distractions, serving as a breath—a <span class="sidenote-ref">4</span>mood
+              in a vast field of nothing does not get lost â€” it <em>shouts</em>, because nothing competes for attention. The lesson uses this exact idea for important moments: the subject surrounded by empty space, with no distractions, serving as a breathâ€”a <span class="sidenote-ref">4</span>mood
               before the twist.</p>
-<p data-inema-block="m2-2-t3-p2">Negative space also carries emotion on its own. A lot of empty space around a figure suggests loneliness, scale, insignificance in the face of the world. Empty space in the direction of the gaze (that “air” in front of the face) gives the sense that there’s a future, a path, an expectation. Empty space <em>behind</em> of the gaze — a figure pressed against the edge, looking at the wall of the frame
-              — creates discomfort and confinement. Empty space is never neutral: it is a choice as expressive
+<p data-ARCKHÉ-block="m2-2-t3-p2">Negative space also carries emotion on its own. A lot of empty space around a figure suggests loneliness, scale, insignificance in the face of the world. Empty space in the direction of the gaze (that â€œairâ€ in front of the face) gives the sense that thereâ€™s a future, a path, an expectation. Empty space <em>behind</em> of the gaze â€” a figure pressed against the edge, looking at the wall of the frame
+              â€” creates discomfort and confinement. Empty space is never neutral: it is a choice as expressive
               as what you put in the frame. In AI, explicitly asking for <em>negative space</em> is one of the
               instructions that most heighten the sense of intention.</p>
 <h3 class="sub">Symmetry: control, stability, formality</h3>
-<p data-inema-block="m2-2-t3-p3">A <strong>symmetry</strong> — and its extreme case, the
-              centered composition—is the tool of order and power. A perfectly symmetrical frame, with the subject
+<p data-ARCKHÉ-block="m2-2-t3-p3">A <strong>symmetry</strong> â€” and its extreme case, the
+              centered compositionâ€”is the tool of order and power. A perfectly symmetrical frame, with the subject
               in the absolute center, communicates control, stability, formality, and sometimes direct confrontation with the
               viewer. It's the opposite of the diagonal: where the diagonal stirs things up, symmetry <em>settles</em>. Directors
               use it for scenes of authority, ritual, and unsettling calm. The risk is that poorly motivated symmetry
-              can feel stiff or artificial — it works when the <em>content</em> calls for order (a throne, a
+              can feel stiff or artificial â€” it works when the <em>content</em> calls for order (a throne, a
               corridor, a face-off), not decoration. Diagonals, thirds, and symmetry don't compete: they're
               different emotional registers, and the craft is choosing the right one for each shot.</p>
 </div>
 <!-- figura 3: espaco negativo vs simetria -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · <b>Negative space</b> (isolate through emptiness) versus <b>symmetry</b> (sort by center)</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· <b>Negative space</b> (isolate through emptiness) versus <b>symmetry</b> (sort by center)</figcaption>
 <svg aria-label="Diagram: on the left, a small subject in a large empty space, isolated by negative space; on the right, a subject in the exact center of a symmetrical frame with a vertical axis." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- esquerda: espaco negativo -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">NEGATIVE SPACE</text>
@@ -441,146 +441,146 @@ diagonal for energy, leading lines to guide, focus on the third. Notice there ar
 </figure>
 <div class="predict">
 <p class="lbl">Stop and predict</p>
-<p>You need a shot that communicates “this character is completely alone and lost
-              in an immense place.” Between a tight close-up of her face and a wide shot with her small in
-              a corner and lots of empty space, which does the job better — and why?</p>
+<p>You need a shot that communicates â€œthis character is completely alone and lost
+              in an immense place.â€ Between a tight close-up of her face and a wide shot with her small in
+              a corner and lots of empty space, which does the job better â€” and why?</p>
 <details>
 <summary>See one possible answer</summary>
 <p class="answer">The wide shot with lots of <strong>negative space</strong>. The tight close-up conveys
-                intimacy and inner emotion, but <em>eliminates</em> the figure’s relationship to the space —
+                intimacy and inner emotion, but <em>eliminates</em> the figureâ€™s relationship to the space â€”
                 exactly what you need to communicate. Loneliness and scale are relationships between the figure and the emptiness
                 around them: only a shot that shows that emptiness can express them. Composition should serve the idea, and the
-                idea here is “small in an immense place.”</p>
+                idea here is â€œsmall in an immense place.â€</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-4" data-inema-track="2" id="topico-4">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="section-mark">
-<span class="where">Section 4 of 5</span><span>·</span><span>Weight and scale</span>
+<span class="where">Section 4 of 5</span><span>Â·</span><span>Weight and scale</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Visual weight and change in scale</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t4-p1">So far, we've talked about <em>where</em> things stay. What’s missing
-              is the <em>how much they weigh</em>. <strong>Visual weight</strong> is the force with which an element draws the eye —
+<p class="lede" data-ARCKHÉ-block="m2-2-t4-p1">So far, we've talked about <em>where</em> things stay. Whatâ€™s missing
+              is the <em>how much they weigh</em>. <strong>Visual weight</strong> is the force with which an element draws the eye â€”
               and it has nothing to do with actual size, but with contrast, color, sharpness, complexity, and isolation. A
               small red dot carries more weight than a huge gray area. A sharp face carries more weight than a
               blurred landscape. Composing is, to a large extent, <em>balance weights</em>: arrange the elements so
-              the dominant one wins, but the frame doesn’t tip to one side. When an image looks “crooked”
-              for no reason, it’s almost always an imbalance of visual weight — one corner is heavy, the opposite one empty.</p>
+              the dominant one wins, but the frame doesnâ€™t tip to one side. When an image looks â€œcrookedâ€
+              for no reason, itâ€™s almost always an imbalance of visual weight â€” one corner is heavy, the opposite one empty.</p>
 <h3 class="sub">Macro and wide: scale as punctuation</h3>
-<p data-inema-block="m2-2-t4-p2">A <strong>change in scale</strong> is what gives a sequence its rhythm. The <em>macro shot</em> — tight focus on detail and texture — makes the action feel real and
+<p data-ARCKHÉ-block="m2-2-t4-p2">A <strong>change in scale</strong> is what gives a sequence its rhythm. The <em>macro shot</em> â€” tight focus on detail and texture â€” makes the action feel real and
               physical: in the lesson, it's a tire being crushed, deforming on impact, proving that something actually
-              happened. It comes after a larger action to show consequence and weight. The <em>wide shot</em>, at the opposite extreme, delivers atmosphere, scale, and the place of everything in space. Alternating between the two—detail versus wide—is like the punctuation of a text: the wide shot is the paragraph; the macro shot is the underlined word. A sequence made entirely of the same shot size is monotonous; variation in scale creates rhythm.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m2-2-t4-p3">Notice how weight and scale work together. A wide shot distributes weight across
+              happened. It comes after a larger action to show consequence and weight. The <em>wide shot</em>, at the opposite extreme, delivers atmosphere, scale, and the place of everything in space. Alternating between the twoâ€”detail versus wideâ€”is like the punctuation of a text: the wide shot is the paragraph; the macro shot is the underlined word. A sequence made entirely of the same shot size is monotonous; variation in scale creates rhythm.<span class="sidenote-ref">5</span></p>
+<p data-ARCKHÉ-block="m2-2-t4-p3">Notice how weight and scale work together. A wide shot distributes weight across
               many small elements; a macro shot concentrates all the weight in a single giant element that fills the screen. Cutting
-              from the wide shot to the macro shot is, in terms of weight, a punch—the eye moves from a diffuse distribution to
-              a single overwhelming point. That contrast is exactly what makes the detail “land.” That’s
+              from the wide shot to the macro shot is, in terms of weight, a punchâ€”the eye moves from a diffuse distribution to
+              a single overwhelming point. That contrast is exactly what makes the detail â€œland.â€ Thatâ€™s
               why the macro shot works best right after a wide shot: without the wide shot first, the macro has nowhere
-              to fall from. Scale isn’t just “closer or farther”; it’s managing weight over time.</p>
+              to fall from. Scale isnâ€™t just â€œcloser or fartherâ€; itâ€™s managing weight over time.</p>
 </div>
 <!-- figura 4: escala como pontuacao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Scale</b> as punctuation—from wide (atmosphere) to macro (the punch of the detail)</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Scale</b> as punctuationâ€”from wide (atmosphere) to macro (the punch of the detail)</figcaption>
 <svg aria-label="Diagram of three frames: wide shot with weight distributed, medium shot with the subject, macro shot with a single detail filling the screen; a bar shows the concentration of visual weight increasing." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- amplo -->
 <rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="40" y="40"></rect>
 <line class="rule-stroke" opacity="0.6" stroke-width="1" x1="52" x2="208" y1="120" y2="120"></line>
 <g class="rule-stroke" fill="none" opacity="0.7" stroke-width="1"><rect height="20" width="12" x="66" y="100"></rect><rect height="28" width="10" x="92" y="92"></rect><circle cx="150" cy="110" r="5"></circle><rect height="16" width="14" x="180" y="104"></rect></g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="130" y="168">wide — atmosphere</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="130" y="168">wide â€” atmosphere</text>
 <!-- medio -->
 <rect class="rule-stroke" fill="none" height="110" rx="3" stroke-width="1.2" width="180" x="262" y="40"></rect>
 <circle class="rule-stroke" cx="352" cy="84" r="11" stroke-width="1.4"></circle>
 <line class="rule-stroke" stroke-width="1.4" x1="352" x2="352" y1="95" y2="132"></line>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="352" y="168">medium — the subject</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="352" y="168">medium â€” the subject</text>
 <!-- macro -->
 <rect class="accent-stroke" fill="none" height="110" rx="3" stroke-width="1.3" width="180" x="484" y="40"></rect>
 <circle class="accent-stroke" cx="574" cy="95" fill="url(#hatch-2-2)" r="44" stroke-width="1.6"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="574" y="100">detail</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="574" y="168">macro — the punch</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="574" y="168">macro â€” the punch</text>
 <!-- barra de concentracao -->
 <line class="rule-stroke" stroke-width="1" x1="40" x2="664" y1="190" y2="190"></line>
 <path class="accent-stroke" d="M40 190 L664 190" stroke-width="0"></path>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" x="60" y="204">DIFFUSE WEIGHT</text>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="end" x="664" y="204">CONCENTRATED WEIGHT →</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="end" x="664" y="204">CONCENTRATED WEIGHT â†’</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: the right composition, the wrong moment
+<summary><span class="chev">â–¸</span> Going deeper: the right composition, the wrong moment
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>Optional layer—a subtle pitfall the lesson mentions in passing.</p>
+<p>Optional layerâ€”a subtle pitfall the lesson mentions in passing.</p>
 <p>The lesson makes an easy-to-miss observation: in the sequence analyzed, the diagonal entry shot
-                “seems too early,” as if we were already in the middle of the scene. The lesson is that a
+                â€œseems too early,â€ as if we were already in the middle of the scene. The lesson is that a
                 composition can be technically flawless and still <em>wrong for that moment</em>.
-                Opening a sequence with the highest-energy composition spends the energy too early and leaves nowhere to build; starting with all the tension of negative space takes away the breathing room that should prepare the turn. Composition isn’t judged in isolation—it’s judged by its place in the <em>sequence</em>. And
+                Opening a sequence with the highest-energy composition spends the energy too early and leaves nowhere to build; starting with all the tension of negative space takes away the breathing room that should prepare the turn. Composition isnâ€™t judged in isolationâ€”itâ€™s judged by its place in the <em>sequence</em>. And
                 that's precisely the bridge to the final section: the right composition at the right moment.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="2-2" data-inema-topic="modulo-2-2#topico-5" data-inema-track="2" id="topico-5">
+<section data-ARCKHÉ-module="2-2" data-ARCKHÉ-topic="modulo-2-2#topico-5" data-ARCKHÉ-track="2" id="topico-5">
 <div class="section-mark">
-<span class="where">Section 5 of 5</span><span>·</span><span>Sequence</span>
+<span class="where">Section 5 of 5</span><span>Â·</span><span>Sequence</span>
 </div>
 <h2 class="head"><span class="num">5.</span>The sequence of compositions over time</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-2-t5-p1">Here’s the conceptual turning point of the module, and it applies to
+<p class="lede" data-ARCKHÉ-block="m2-2-t5-p1">Hereâ€™s the conceptual turning point of the module, and it applies to
               the entire course: no matter how much you write <em>one</em> structured prompt, the final result is always a
-              <strong>sequence of separate shots</strong>. The generator doesn’t produce one continuous idea—it produces
+              <strong>sequence of separate shots</strong>. The generator doesnâ€™t produce one continuous ideaâ€”it produces
               a sequence. And every shot in that chain has its own composition, its own purpose, its own
-              role. Composing for cinema, then, isn’t about drawing a beautiful frame; it’s about <em>design a
+              role. Composing for cARCKHÉ, then, isnâ€™t about drawing a beautiful frame; itâ€™s about <em>design a
               sequence of compositions over time</em>, where each one solves a different task and the scene evolves instead of repeating itself.</p>
-<p data-inema-block="m2-2-t5-p2">That’s exactly what the lesson demonstrated, shot by shot, with a car scene. <em>Entrance</em>: a high-angle shot with diagonal composition and light-isolated focus — introduces the
+<p data-ARCKHÉ-block="m2-2-t5-p2">Thatâ€™s exactly what the lesson demonstrated, shot by shot, with a car scene. <em>Entrance</em>: a high-angle shot with diagonal composition and light-isolated focus â€” introduces the
               action quickly. <em>Approaching danger</em>: a different composition, a different task. <em>Important Moment</em>:
-              the subject surrounded by negative space, serving as atmosphere. <em>Impact</em>: a macro shot of the detail—
+              the subject surrounded by negative space, serving as atmosphere. <em>Impact</em>: a macro shot of the detailâ€”
               the tire crushing, the physical contact that proves the weight. <em>Final action</em>: a circular drift from above
-              to below. Five shots, five compositions, each chosen for what <em>that</em> precise moment. None is “the best composition” in the abstract — each is right for your moment.</p>
-<h3 class="sub">What makes the sequence feel cinematic</h3>
-<p data-inema-block="m2-2-t5-p3">A cinematic feel comes from the combination of five things: <strong>composition
+              to below. Five shots, five compositions, each chosen for what <em>that</em> precise moment. None is â€œthe best compositionâ€ in the abstract â€” each is right for your moment.</p>
+<h3 class="sub">What makes the sequence feel cARCKHÉtic</h3>
+<p data-ARCKHÉ-block="m2-2-t5-p3">A cARCKHÉtic feel comes from the combination of five things: <strong>composition
               per shot</strong> (each one solves a task), <strong>changes in scale</strong> (detail versus
               wide), <strong>continuous movement</strong>, <strong>clear visual hierarchy</strong> in every frame and
-              <strong>controlled timing</strong> — the composition used at the right moment. That, in one sentence, is the
-difference between a video that merely <em>looks good</em> is a sequence that is <em>cinematic</em>:
-              the first repeats the same good composition; the second makes the composition <span class="dfn"><details class="dfn"><summary>evolve</summary><span class="body"><b>Sequence that evolves</b> is one where each shot changes the composition, scale, or focus to serve a new narrative purpose — as opposed to a sequence that repeats the same framing and therefore stagnates.</span></details></span>
+              <strong>controlled timing</strong> â€” the composition used at the right moment. That, in one sentence, is the
+difference between a video that merely <em>looks good</em> is a sequence that is <em>cARCKHÉtic</em>:
+              the first repeats the same good composition; the second makes the composition <span class="dfn"><details class="dfn"><summary>evolve</summary><span class="body"><b>Sequence that evolves</b> is one where each shot changes the composition, scale, or focus to serve a new narrative purpose â€” as opposed to a sequence that repeats the same framing and therefore stagnates.</span></details></span>
               for each shot to serve the narrative.</p>
-<p data-inema-block="m2-2-t5-p4">The practice that wraps up the module makes this concrete: take a simple
-              subject, build five to seven shots, use at least three different compositions — center, rule
-              of thirds, negative space — and, in each shot, check <em>where your eye goes</em>. The
-              goal isn’t just to control the visuals; it’s to control <em>attention, rhythm, and timing</em>. When you plan
-              the sequence of compositions before generating, you stop hoping the shots will “match” and
-              start directing how they connect—which is what the next module will do with light, and the
+<p data-ARCKHÉ-block="m2-2-t5-p4">The practice that wraps up the module makes this concrete: take a simple
+              subject, build five to seven shots, use at least three different compositions â€” center, rule
+              of thirds, negative space â€” and, in each shot, check <em>where your eye goes</em>. The
+              goal isnâ€™t just to control the visuals; itâ€™s to control <em>attention, rhythm, and timing</em>. When you plan
+              the sequence of compositions before generating, you stop hoping the shots will â€œmatchâ€ and
+              start directing how they connectâ€”which is what the next module will do with light, and the
               one after that with depth.</p>
 </div>
 <!-- figura 5: a sequencia de cinco composicoes -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · One <b>scene</b> = five shots, five compositions, five tasks</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· One <b>scene</b> = five shots, five compositions, five tasks</figcaption>
 <svg aria-label="Diagram with five frames in sequence: diagonal entrance, danger, negative space as atmosphere, impact macro shot, final circular drift; each frame shows a different composition scheme." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="150" y2="150"></line>
 <!-- 1 diagonal -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="30" y="44"></rect>
 <path class="accent-stroke" d="M40 116 L138 56" stroke-width="1.6"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="89" y="140">1 · diagonal</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="89" y="140">1 Â· diagonal</text>
 <!-- 2 perigo -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="164" y="44"></rect>
 <path class="rule-stroke" d="M174 60 L272 60" stroke-width="1.3"></path>
 <circle class="accent-stroke" cx="248" cy="96" r="8" stroke-width="1.5"></circle>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="223" y="140">2 · danger</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="223" y="140">2 Â· danger</text>
 <!-- 3 espaco negativo -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="298" y="44"></rect>
 <circle class="accent-stroke" cx="392" cy="104" r="5" stroke-width="1.6"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="357" y="140">3 · emptiness</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="357" y="140">3 Â· emptiness</text>
 <!-- 4 macro -->
 <rect class="accent-stroke" fill="none" height="80" rx="3" stroke-width="1.3" width="118" x="432" y="44"></rect>
 <circle class="accent-stroke" cx="491" cy="84" fill="url(#hatch-2-2)" r="30" stroke-width="1.5"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="491" y="140">4 · macro</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="491" y="140">4 Â· macro</text>
 <!-- 5 drift -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="118" x="566" y="44"></rect>
 <path class="accent-stroke" d="M625 84 m -22 0 a 22 22 0 1 0 44 0 a 22 22 0 1 0 -44 0" fill="none" stroke-width="1.5"></path>
 <path class="accent-stroke" d="M647 70 L654 62 L644 60" fill="none" stroke-width="1.5"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="625" y="140">5 · drift</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="625" y="140">5 Â· drift</text>
 <!-- linha de evolucao -->
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="186">THE SCENE EVOLVES — IT DOESN'T REPEAT →</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="186">THE SCENE EVOLVES â€” IT DOESN'T REPEAT â†’</text>
 </svg>
 </figure>
 </section>
@@ -589,57 +589,57 @@ difference between a video that merely <em>looks good</em> is a sequence that is
 <h2>Before moving on: four quick checks</h2>
 <p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>What’s the key question you ask about any composition—and why does it reveal the hierarchy?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>“<em>Where does my eye go first?</em>” If the answer isn’t
-              immediate, there’s no hierarchy — the frame is democratic, everything competing, nothing dominating. Good
+<summary><span class="qn">01</span><span>Whatâ€™s the key question you ask about any compositionâ€”and why does it reveal the hierarchy?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>â€œ<em>Where does my eye go first?</em>â€ If the answer isnâ€™t
+              immediate, thereâ€™s no hierarchy â€” the frame is democratic, everything competing, nothing dominating. Good
               composition imposes a reading order; the focal point is where the eye lands first.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Diagonals and symmetry evoke opposite emotions. Which ones—and when should you use each?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>A <em>diagonal</em> is unstable, and the eye reads it as movement and energy — good for introducing action and adding dynamism. The <em>symmetry</em> (absolute center) grounds the frame: it communicates control,
+<summary><span class="qn">02</span><span>Diagonals and symmetry evoke opposite emotions. Which onesâ€”and when should you use each?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>A <em>diagonal</em> is unstable, and the eye reads it as movement and energy â€” good for introducing action and adding dynamism. The <em>symmetry</em> (absolute center) grounds the frame: it communicates control,
               power, formality, confrontation. Use a diagonal when you want agitation; symmetry when the content calls for
               order (throne, hallway, ritual).</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Why does the macro shot work better right after a wide shot?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>By contrast <em>weight</em>. The wide shot distributes the weight across many small elements;
-              the macro shot concentrates it into one, filling the screen. Cutting from one to the other is a visual punch—the detail “lands”.
+              the macro shot concentrates it into one, filling the screen. Cutting from one to the other is a visual punchâ€”the detail â€œlandsâ€.
               Without the wide shot beforehand, the macro has nowhere to fall from, and
               shows consequence and weight after a larger action.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Why doesn’t “the best composition” exist in the abstract?</span><span class="reveal">Reveal</span></summary>
+<summary><span class="qn">04</span><span>Why doesnâ€™t â€œthe best compositionâ€ exist in the abstract?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>Because one prompt always becomes a <em>sequence</em> shots, and each shot has a
               different purpose. Composition is judged by its place in the sequence, not in isolation: the same flawless diagonal
-              can be “too early.” Composing for cinema means designing compositions <em>over time</em> — the right composition at the right moment, making the scene evolve.</p></div>
+              can be â€œtoo early.â€ Composing for cARCKHÉ means designing compositions <em>over time</em> â€” the right composition at the right moment, making the scene evolve.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="My journey — consolidated progress" class="journey">
+<section aria-label="My journey â€” consolidated progress" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> My journey</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+<h2><span class="ico">â§</span> My journey</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Open notebook â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">In this module</div>
-<div class="v" data-inema-meter="modulo:2-2">
-<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:2-2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In track 2</div>
-<div class="v" data-inema-meter="trilha:2">
-<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In the course</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -648,27 +648,27 @@ difference between a video that merely <em>looks good</em> is a sequence that is
 <div class="nextup">
 <div class="txt">
 <div class="k">Continue</div>
-<div class="t">Module 2.3 — Light and Atmosphere</div>
+<div class="t">Module 2.3 â€” Light and Atmosphere</div>
 </div>
-<a class="go" href="modulo-2-3.html">Next →</a>
+<a class="go" href="modulo-2-3.html">Next â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Visual hierarchy.</b> The order in which the eye moves across the frame—what you see first, next, and
+<b>Visual hierarchy.</b> The order in which the eye moves across the frameâ€”what you see first, next, and
           never. Composition imposes that order; a confusing frame lacks it.
         </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Focal point.</b> The place where the eye lands before anything else. It comes from <i>difference</i> — contrast in
-light, focus, color, or isolation — not position.
+<b>Focal point.</b> The place where the eye lands before anything else. It comes from <i>difference</i> â€” contrast in
+light, focus, color, or isolation â€” not position.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Leading lines.</b> Real elements in the scene (road, railing, beam of light) that lead the eye toward the
@@ -676,43 +676,43 @@ light, focus, color, or isolation — not position.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          A diagonal “feels” like movement because the eye has learned that tilted things are falling or in
+          A diagonal â€œfeelsâ€ like movement because the eye has learned that tilted things are falling or in
           motion. A slight Dutch tilt brings that instability into a still image.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Negative space.</b> The empty space around the subject. It isolates through subtraction — the brain focuses on
+<b>Negative space.</b> The empty space around the subject. It isolates through subtraction â€” the brain focuses on
           what's alone. Emptiness suggests loneliness, scale, anticipation: it's never neutral.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
-          The lesson demonstrates the shot-by-shot toolkit in a scene assembled in CapCut + Seedance 2.0 —
+          The lesson demonstrates the shot-by-shot toolkit in a scene assembled in CapCut + Seedance 2.0 â€”
           composition, scale, and timing under control.
-          <div class="src-line">Block 2 · Lesson 4 — Composition for Cinema</div>
+          <div class="src-line">Block 2 Â· Lesson 4 â€” Composition for CARCKHÉ</div>
 </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Visual weight.</b> The force with which an element draws the eye—it comes from contrast, color, sharpness, and
+<b>Visual weight.</b> The force with which an element draws the eyeâ€”it comes from contrast, color, sharpness, and
           isolation, not actual size. A red dot carries more weight than a huge gray area.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-2-2#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-2#topico-5"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Going deeper</div>
-          A prompt always becomes a <i>sequence of shots</i>. Composing for cinema means designing the sequence of compositions
-          over time — each shot with a purpose, the scene evolving instead of repeating itself.
+          A prompt always becomes a <i>sequence of shots</i>. Composing for cARCKHÉ means designing the sequence of compositions
+          over time â€” each shot with a purpose, the scene evolving instead of repeating itself.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Module 2.2 — folio vi</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Module 2.2 â€” folio vi</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -721,8 +721,8 @@ light, focus, color, or isolation — not position.
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

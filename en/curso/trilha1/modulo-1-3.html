@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Module 1.3 — From Script to Scene | AI Filmmaking</title>
+<title>Module 1.3 â€” From Script to Scene | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha1/modulo-1-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha1/modulo-1-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha1/modulo-1-3.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:1-3"><span data-inema-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:1-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Track <b>1</b> Fundamentals (Light)</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Module <b>1.3</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Section 1 of 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Section 1 of 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,29 +189,29 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Module 1.3 · Track 1 · Fundamentals (Light)</p>
+<p class="kicker">Module 1.3 Â· Track 1 Â· Fundamentals (Light)</p>
 <h1 class="module">From the Script to <em>Scene</em></h1>
-<p class="deck">The first end-to-end production. From a script fragment — a samurai
-          alone on a bridge in the rain — to a complete pre-production package, following the same
+<p class="deck">The first end-to-end production. From a script fragment â€” a samurai
+          alone on a bridge in the rain â€” to a complete pre-production package, following the same
           pipeline as a professional set, now run by one person with AI.</p>
 <p class="read-meta">
 <span class="here">Reading now</span>
-<span>~17 min · full module</span>
+<span>~17 min Â· full module</span>
 <span>5 sections</span>
 </p>
 <!-- objetivos -->
 <section aria-label="What you will understand" class="aims">
 <h2>What you will understand</h2>
 <ul>
-<li>How <b>interpret a script as a director</b>: identify the scene’s emotion before generating any image.</li>
+<li>How <b>interpret a script as a director</b>: identify the sceneâ€™s emotion before generating any image.</li>
 <li>How to turn the idea into a <b>storyboard</b> six frames that define framing, rhythm, and escalation.</li>
-<li>Why <b>character, wardrobe, and setting</b> are built separately — the VFX pipeline logic.</li>
+<li>Why <b>character, wardrobe, and setting</b> are built separately â€” the VFX pipeline logic.</li>
 <li>How to close the <b>list of plans</b> and generate the final frames, ready to become video.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Module summary" class="toc" data-inema-toc="">
-<p class="toc-head">Summary — five movements</p>
+<nav aria-label="Module summary" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Summary â€” five movements</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">The pipeline is the emotion of the scene</span></a></li>
@@ -222,34 +222,34 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-1" data-inema-track="1" id="topico-1">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-1" data-ARCKHÉ-track="1" id="topico-1">
 <div class="section-mark">
-<span class="where">Section 1 of 5</span><span>·</span><span>Pipeline</span>
+<span class="where">Section 1 of 5</span><span>Â·</span><span>Pipeline</span>
 </div>
 <h2 class="head"><span class="num">1.</span>The pipeline is the emotion of the scene</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m1-3-t1-p1">In professional filmmaking, every scene begins long
-              before the camera rolls. The director, cinematographer, production designer, and concept artists
+<p class="lede dropcap" data-ARCKHÉ-block="m1-3-t1-p1">In professional filmmaking, every scene begins long
+              before the camera rolls. The director, cARCKHÉtographer, production designer, and concept artists
               work together to turn a written idea into a visual plan. In this lesson, we replicate that process with
-              AI tools — and the goal isn’t to “generate images”; it’s to <em>simulate a real
+              AI tools â€” and the goal isnâ€™t to â€œgenerate imagesâ€; itâ€™s to <em>simulate a real
               film production</em>, from script interpretation to final frames.<span class="sidenote-ref">1</span>
-              By the end, you’ll see how one creator does the work of an entire pre-production team.</p>
-<p data-inema-block="m1-3-t1-p2">Production always follows a structured process, and that’s what removes
-              chance and replaces it with <em>cinematic intention</em>: <strong>script → storyboard →
-              character → outfit → environment → shot list → final frames.</strong>
-              Each step feeds into the next. We’ll follow this same sequence in Freepik Spaces, starting by
+              By the end, youâ€™ll see how one creator does the work of an entire pre-production team.</p>
+<p data-ARCKHÉ-block="m1-3-t1-p2">Production always follows a structured process, and thatâ€™s what removes
+              chance and replaces it with <em>cARCKHÉtic intention</em>: <strong>script â†’ storyboard â†’
+              character â†’ outfit â†’ environment â†’ shot list â†’ final frames.</strong>
+              Each step feeds into the next. Weâ€™ll follow this same sequence in Freepik Spaces, starting by
               creating a <em>in the text</em> with the scene description.</p>
 <h3 class="sub">The question that comes before any image</h3>
-<p data-inema-block="m1-3-t1-p3">Before creating any visual, a director always asks one
-              fundamental question: <strong>what should the audience feel at this moment?</strong> In our example — a
+<p data-ARCKHÉ-block="m1-3-t1-p3">Before creating any visual, a director always asks one
+              fundamental question: <strong>what should the audience feel at this moment?</strong> In our example â€” a
               samurai in his thirties crosses a long suspension bridge between two mountains, in fog
-              and rain, katana in hand, sensing that something is watching him — the emotions are <em>isolation, tension, and anticipation of the confrontation</em>. These will determine camera angles, lighting, and
+              and rain, katana in hand, sensing that something is watching him â€” the emotions are <em>isolation, tension, and anticipation of the confrontation</em>. These will determine camera angles, lighting, and
               composition. Every scene can be broken down into four coherent elements: <em>character</em>, o
               <em>environment</em>, a <em>atmosphere</em> e a <em>narrative tension</em>.</p>
 </div>
 <!-- figura 1: o pipeline -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · The pre-production pipeline — <b>each step feeds into the next</b></figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· The pre-production pipeline â€” <b>each step feeds into the next</b></figcaption>
 <svg aria-label="Flow diagram with seven connected blocks: script, storyboard, character, wardrobe, environment, shot list, and final frames." class="diagram" role="img" viewbox="0 0 720 176">
 <defs>
 <pattern height="6" id="hatch-1-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -280,18 +280,18 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m1-3-t1-p4">Notice that the emotion defined at the beginning doesn’t get left behind—it
-              runs through the entire pipeline. “Isolation” becomes negative space in the sky; “tension”
-              becomes a narrow bridge; “anticipation” becomes the ready katana and the alert gaze. Defining
+<p data-ARCKHÉ-block="m1-3-t1-p4">Notice that the emotion defined at the beginning doesnâ€™t get left behindâ€”it
+              runs through the entire pipeline. â€œIsolationâ€ becomes negative space in the sky; â€œtensionâ€
+              becomes a narrow bridge; â€œanticipationâ€ becomes the ready katana and the alert gaze. Defining
               the feeling first is what weaves every stage into a coherent scene, instead of a collection of
               beautiful, disconnected images.</p>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: the complete project for this lesson
+<summary><span class="chev">â–¸</span> Going deeper: the complete project for this lesson
               <span class="opt">optional</span></summary>
 <div class="inner">
 <p>Optional layer. The instructor provides the entire Space used in the lesson.</p>
-<p>The source project includes all the nodes, prompts, and workflow, assembled step by step — it’s worth opening and
+<p>The source project includes all the nodes, prompts, and workflow, assembled step by step â€” itâ€™s worth opening and
                 exploring the node-by-node structure as you read this lesson:
                 <a href="https://www.freepik.com/pikaso/spaces/a14a336f-4e41-41b3-8a53-bde9b0c89e31/invite?payload=eyJpdiI6IkNGUUVXaDVjTWpjbVhMK1ZDL2RZREE9PSIsInZhbHVlIjoiOUp4cy9nZDZFRVg5QVpVTjl3WTFVdkVMV0NmcjQrdHF0S1ZuYU5VR2MxUXRQTmVuRzlzVTkxNzcvWTZ1OE02ZCs2OS9EUlVXblRNUEx0czdZV2pVRWxMMGhlaTY3QnRzaHE1a2pYQWtFVDNRWkR6MEpLVW5oUmNOQTh1K2IvejYiLCJtYWMiOiIwYjQ0OGIxMTY5NDk0M2I2MDk3ZjZhN2VlNjVmY2JiMDJiZGE1ZWE5OWQwZTFmNTFjNGU2ZDJlMDY1ZmE0MWI1IiwidGFnIjoiIn0%3D">Complete Production Pipeline (Freepik Space)</a>.
                 The logic you learn here applies to any scene; Space is just the environment where it was assembled.</p>
@@ -299,31 +299,31 @@
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-2" data-inema-track="1" id="topico-2">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-2" data-ARCKHÉ-track="1" id="topico-2">
 <div class="section-mark">
-<span class="where">Section 2 of 5</span><span>·</span><span>Storyboard</span>
+<span class="where">Section 2 of 5</span><span>Â·</span><span>Storyboard</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Storyboard: the first language of directing</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t2-p1">The storyboard is the <em>first language of direction</em>.
-              It defines the framing, camera perspective, visual rhythm, and escalation of tension—before any detailed image exists. Even great filmmakers use storyboards to understand how the camera moves, where tension appears, and how a scene unfolds. In our workflow, we use one in <em>assistant</em> to turn the script into a six-frame sketch that shows the moment’s
-              cinematic progression.<span class="sidenote-ref">2</span></p>
-<p data-inema-block="m1-3-t2-p2">The instruction you give the assistant matters: ask it to <em>act as a professional
+<p class="lede" data-ARCKHÉ-block="m1-3-t2-p1">The storyboard is the <em>first language of direction</em>.
+              It defines the framing, camera perspective, visual rhythm, and escalation of tensionâ€”before any detailed image exists. Even great filmmakers use storyboards to understand how the camera moves, where tension appears, and how a scene unfolds. In our workflow, we use one in <em>assistant</em> to turn the script into a six-frame sketch that shows the momentâ€™s
+              cARCKHÉtic progression.<span class="sidenote-ref">2</span></p>
+<p data-ARCKHÉ-block="m1-3-t2-p2">The instruction you give the assistant matters: ask it to <em>act as a professional
               storyboard artist</em>, analyze the scene and create six panels that visualize the progression
-              of the moment—each panel a different shot, following the cinematic shot scale, while keeping the
+              of the momentâ€”each panel a different shot, following the cARCKHÉtic shot scale, while keeping the
               same location and environment, with a focus on framing, composition, and tension. Then we generate the images for the
               panels (in the example, with the Nano Banana Pro model). One honest note about the craft: the generator
-              rarely gets everything right on the first try— <em>iterate</em>, regenerate and keep the panels that best follow the desired progression.</p>
+              rarely gets everything right on the first tryâ€” <em>iterate</em>, regenerate and keep the panels that best follow the desired progression.</p>
 </div>
 <!-- prompt pronto do storyboard -->
 <div class="prose">
-<p data-inema-block="m1-3-t2-p3">This is the storyboard prompt, ready to adapt to your own scene:</p>
-<div class="codeblock"><span class="c"># Storyboard prompt — assistant as storyboard artist</span>
+<p data-ARCKHÉ-block="m1-3-t2-p3">This is the storyboard prompt, ready to adapt to your own scene:</p>
+<div class="codeblock"><span class="c"># Storyboard prompt â€” assistant as storyboard artist</span>
 <span class="k">Role:</span> act as a professional storyboard artist.
 <span class="k">Task:</span> analyze the given scene and create a 6-panel storyboard sketch
-that visualizes the cinematic progression of the moment.
+that visualizes the cARCKHÉtic progression of the moment.
 <span class="k">Rules:</span>
-- each panel = a different shot that follows the cinematic scale
+- each panel = a different shot that follows the cARCKHÉtic scale
 - keep the same location and environment across all panels
 - focus on camera framing, composition and rising tension
 <span class="k">Scene:</span> a lone samurai (~30) crosses a long suspension bridge between
@@ -332,8 +332,8 @@ a hidden threat and scans cautiously.</div>
 </div>
 <!-- figura 2: seis paineis escalando -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Six panels that <b>escalate the tension</b>, from wide to close-up</figcaption>
-<svg aria-label="Diagram with six storyboard frames in sequence: from the wide shot of the bridge to the samurai’s close-up gaze, with tension building." class="diagram" role="img" viewbox="0 0 720 188">
+<figcaption><span class="fig-n">Fig. 2</span> Â· Six panels that <b>escalate the tension</b>, from wide to close-up</figcaption>
+<svg aria-label="Diagram with six storyboard frames in sequence: from the wide shot of the bridge to the samuraiâ€™s close-up gaze, with tension building." class="diagram" role="img" viewbox="0 0 720 188">
 <g class="rule-stroke" fill="none" stroke-width="1.2">
 <rect height="68" rx="3" width="104" x="20" y="44"></rect>
 <rect height="68" rx="3" width="104" x="138" y="44"></rect>
@@ -350,12 +350,12 @@ a hidden threat and scans cautiously.</div>
 <circle class="ink" cx="544" cy="82" r="16"></circle>
 <circle class="ink" cx="655" cy="80" r="20"></circle>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
-<text x="72" y="128">1 · wide shot</text>
-<text x="190" y="128">2 · bridge</text>
-<text x="308" y="128">3 · medium shot</text>
-<text x="426" y="128">4 · approx.</text>
-<text x="544" y="128">5 · close</text>
-<text class="accent" x="655" y="128">6 · gaze</text>
+<text x="72" y="128">1 Â· wide shot</text>
+<text x="190" y="128">2 Â· bridge</text>
+<text x="308" y="128">3 Â· medium shot</text>
+<text x="426" y="128">4 Â· approx.</text>
+<text x="544" y="128">5 Â· close</text>
+<text class="accent" x="655" y="128">6 Â· gaze</text>
 </g>
 <path class="mark-stroke" d="M40 158 C 300 144, 480 144, 690 158" fill="none" stroke-dasharray="4 4" stroke-width="1.3"></path>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="180">TENSION RISES PANEL BY PANEL</text>
@@ -364,55 +364,55 @@ a hidden threat and scans cautiously.</div>
 <div class="predict">
 <p class="lbl">Stop and predict</p>
 <p>Why is it worth generating a rough six-frame storyboard <em>before</em> to move on to the polished images
-              for each shot — instead of generating the final image directly?</p>
+              for each shot â€” instead of generating the final image directly?</p>
 <details>
 <summary>See one possible answer</summary>
-<p class="answer">Because the storyboard resolves the <strong>progression</strong> — framing,
-                pacing, and escalation — while changes are still cheap. Getting the sequence wrong in a sketch costs seconds;
+<p class="answer">Because the storyboard resolves the <strong>progression</strong> â€” framing,
+                pacing, and escalation â€” while changes are still cheap. Getting the sequence wrong in a sketch costs seconds;
                 getting it wrong after generating six final images costs time and credits. The storyboard is where you make
                 directing decisions before the finish.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-3" data-inema-track="1" id="topico-3">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-3" data-ARCKHÉ-track="1" id="topico-3">
 <div class="section-mark">
-<span class="where">Section 3 of 5</span><span>·</span><span>Character</span>
+<span class="where">Section 3 of 5</span><span>Â·</span><span>Character</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Character, costume, and prop</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t3-p1">In traditional production, this stage belongs to the
+<p class="lede" data-ARCKHÉ-block="m1-3-t3-p1">In traditional production, this stage belongs to the
               departments of <em>casting</em> is concept art. In our workflow, the AI takes on that role. The
-              key principle: the character must be created in a <strong>neutral studio environment</strong>, to isolate the design. The focus is on realistic proportions, a plausible clothing base, natural light, and a neutral pose. This creates a <em>clean reference</em> of the character — which can then be dressed and
+              key principle: the character must be created in a <strong>neutral studio environment</strong>, to isolate the design. The focus is on realistic proportions, a plausible clothing base, natural light, and a neutral pose. This creates a <em>clean reference</em> of the character â€” which can then be dressed and
               placed in the environment.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m1-3-t3-p2">The character is at the center of the scene, which is why it’s worth insisting on a
+<p data-ARCKHÉ-block="m1-3-t3-p2">The character is at the center of the scene, which is why itâ€™s worth insisting on a
               believable face, natural proportions, and convincing clothing: <strong>if the audience believes in the character, they start believing in the scene.</strong> Next, we dress this character. In film,
               this is the work of the costume and props departments; in our pipeline, we generate the clothing and
-              weapons as <em>separate studio reference objects</em> — in the samurai example: the
+              weapons as <em>separate studio reference objects</em> â€” in the samurai example: the
               traditional garments, the kasa hat, and the katana, each rendered in studio lighting before being
               combined with the character.</p>
 <h3 class="sub">Why separate everything</h3>
-<p data-inema-block="m1-3-t3-p3">Separation isn’t bureaucracy—it’s the default logic of professional
+<p data-ARCKHÉ-block="m1-3-t3-p3">Separation isnâ€™t bureaucracyâ€”itâ€™s the default logic of professional
               visualization pipelines. Building the character, costume, and prop as separate pieces is what
               guarantees <em>consistency</em>: the same face, the same outfit, and the same katana can appear in all
               six shots without drifting. Then we connect the character and costume nodes to the image generator,
-              with an explicit instruction to preserve the same character’s identity and proportions.</p>
+              with an explicit instruction to preserve the same characterâ€™s identity and proportions.</p>
 </div>
-<!-- prompt pronto de integração de figurino -->
+<!-- prompt pronto de integraÃ§Ã£o de figurino -->
 <div class="prose">
-<p data-inema-block="m1-3-t3-p4">The wardrobe integration prompt, maintaining consistency:</p>
-<div class="codeblock"><span class="c"># Costume integration — dress the character while preserving their identity</span>
+<p data-ARCKHÉ-block="m1-3-t3-p4">The wardrobe integration prompt, maintaining consistency:</p>
+<div class="codeblock"><span class="c"># Costume integration â€” dress the character while preserving their identity</span>
 <span class="k">Task:</span> dress the provided character using the attached reference items.
 <span class="k">Items:</span> use the samurai robe, the kasa hat and the katana exactly
 as referenced.
-<span class="k">Consistency:</span> keep the SAME character — identity, face and proportions
+<span class="k">Consistency:</span> keep the SAME character â€” identity, face and proportions
 unchanged.
-<span class="k">Goal:</span> a cinematic look suitable for a film scene; studio-neutral
+<span class="k">Goal:</span> a cARCKHÉtic look suitable for a film scene; studio-neutral
 lighting so it can be composited into the environment later.</div>
 </div>
-<!-- figura 3: peças separadas que combinam -->
+<!-- figura 3: peÃ§as separadas que combinam -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · Study pieces <b>separated</b> — combined without losing their identity</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· Study pieces <b>separated</b> â€” combined without losing their identity</figcaption>
 <svg aria-label="Diagram: three isolated study references (neutral character, costume, katana) converge into a fully assembled, consistent final character." class="diagram" role="img" viewbox="0 0 720 196">
 <g font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
 <rect class="wash rule-stroke" height="40" rx="3" stroke-width="1.2" width="120" x="30" y="40"></rect>
@@ -435,54 +435,54 @@ lighting so it can be composited into the environment later.</div>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: the rule for referencing components
+<summary><span class="chev">â–¸</span> Going deeper: the rule for referencing components
               <span class="opt">optional</span></summary>
 <div class="inner">
 <p>Optional layer, but this detail determines consistency in practice.</p>
 <p>When you build the prompt in the assistant node, you need to <em>reference</em> each component
-                explicitly — using the system mentions — so it structures the request
+                explicitly â€” using the system mentions â€” so it structures the request
                 correctly. The instructor offers a useful analogy: think of the components (character, setting,
                 storyboard) as <em>ingredients for a chef</em>. Together and properly referenced, they let you
                 generate results that truly follow the original design. Without that reference, the generator recombines
-                everything from scratch, and consistency is lost. And remember: no model gets it right the first time—
+                everything from scratch, and consistency is lost. And remember: no model gets it right the first timeâ€”
                 regeneration is part of the craft.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-4" data-inema-track="1" id="topico-4">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-4" data-ARCKHÉ-track="1" id="topico-4">
 <div class="section-mark">
-<span class="where">Section 4 of 5</span><span>·</span><span>Environment</span>
+<span class="where">Section 4 of 5</span><span>Â·</span><span>Environment</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Environment: scale and tension</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t4-p1">In professional VFX pipelines, <em>characters and
-              settings are created separately</em> — standard practice in professional visualization. We follow
+<p class="lede" data-ARCKHÉ-block="m1-3-t4-p1">In professional VFX pipelines, <em>characters and
+              settings are created separately</em> â€” standard practice in professional visualization. We follow
               the same principle: we generate the environment as its own piece. In the example, it becomes a dark wooden
               suspension bridge between cliffs, above a deep canyon, with heavy rain, strong wind,
               and fog moving through the abyss.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m1-3-t4-p2">The environment <strong>defines the scale and dramatic tension</strong> of the
-              scene, and each element pulls in a different direction. A bridge <em>narrows</em> creates vulnerability — there's
-              nowhere to run. A canyon <em>immense</em> creates cinematic scale — the character looks
-              small against the world. The fog introduces uncertainty — you can't see what's coming. Together, these
+<p data-ARCKHÉ-block="m1-3-t4-p2">The environment <strong>defines the scale and dramatic tension</strong> of the
+              scene, and each element pulls in a different direction. A bridge <em>narrows</em> creates vulnerability â€” there's
+              nowhere to run. A canyon <em>immense</em> creates cARCKHÉtic scale â€” the character looks
+              small against the world. The fog introduces uncertainty â€” you can't see what's coming. Together, these
               elements amplify the dramatic impact. Notice how the environment <em>embodies</em> the emotion decided
               in Section 1: isolation and tension stop being words and become geography.</p>
 </div>
 <!-- prompt pronto de ambiente -->
 <div class="prose">
-<p data-inema-block="m1-3-t4-p3">The environment prompt, derived from the script and storyboard:</p>
-<div class="codeblock"><span class="c"># Setting — generated from the script and storyboard</span>
-<span class="k">Task:</span> create a cinematic environment based on the script and storyboard.
+<p data-ARCKHÉ-block="m1-3-t4-p3">The environment prompt, derived from the script and storyboard:</p>
+<div class="codeblock"><span class="c"># Setting â€” generated from the script and storyboard</span>
+<span class="k">Task:</span> create a cARCKHÉtic environment based on the script and storyboard.
 <span class="k">Location:</span> a dark-wood suspension bridge between two cliffs, above a
 deep canyon.
 <span class="k">Atmosphere:</span> heavy rain, strong wind, fog drifting through the canyon.
-<span class="k">Intent:</span> a dramatic, cinematic environment suitable for a film scene —
+<span class="k">Intent:</span> a dramatic, cARCKHÉtic environment suitable for a film scene â€”
 narrow bridge for vulnerability, vast canyon for scale.
-<span class="k">Style:</span> moody cinematic lighting, deep atmospheric perspective.</div>
+<span class="k">Style:</span> moody cARCKHÉtic lighting, deep atmospheric perspective.</div>
 </div>
-<!-- figura 4: escala — pequeno x imenso -->
+<!-- figura 4: escala â€” pequeno x imenso -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · The environment <b>embodies the emotion</b> — narrow and vulnerable, vast and epic</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· The environment <b>embodies the emotion</b> â€” narrow and vulnerable, vast and epic</figcaption>
 <svg aria-label="Diagram: a narrow bridge spans an immense canyon; the tiny figure in the center shows vulnerability, while the walls and depth show the scale." class="diagram" role="img" viewbox="0 0 720 200">
 <rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.1" width="640" x="40" y="34"></rect>
 <!-- paredes do canyon -->
@@ -493,61 +493,61 @@ narrow bridge for vulnerability, vast canyon for scale.
 <!-- ponte estreita -->
 <line class="ink" stroke-width="1.6" x1="150" x2="570" y1="104" y2="104"></line>
 <line class="faint" stroke-width="1" x1="150" x2="570" y1="110" y2="110"></line>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="96">narrow bridge — vulnerability</text>
-<!-- figura minúscula -->
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="96">narrow bridge â€” vulnerability</text>
+<!-- figura minÃºscula -->
 <circle class="accent" cx="360" cy="100" r="3.5"></circle>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="360" y="84">samurai</text>
 <!-- neblina -->
 <path class="faint" d="M180 140 q 40 -10 80 0 t 80 0 t 80 0 t 80 0" fill="none" stroke-width="1.2"></path>
 <path class="faint" d="M200 152 q 40 -10 80 0 t 80 0 t 80 0" fill="none" stroke-width="1.2"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="190">vast canyon + fog — scale and uncertainty</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="190">vast canyon + fog â€” scale and uncertainty</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Stop and predict</p>
-<p>Suppose that, instead of a narrow bridge over a canyon, the same scene took place in a wide, flat field. What would you lose in terms of tension—and why?</p>
+<p>Suppose that, instead of a narrow bridge over a canyon, the same scene took place in a wide, flat field. What would you lose in terms of tensionâ€”and why?</p>
 <details>
 <summary>See one possible answer</summary>
 <p class="answer">It would lose nearly all its spatial tension. The open space offers <em>outputs</em> in
                 every direction (with no vulnerability) and has no vertical scale (no grandeur). The bridge works
                 precisely because <strong>restricts</strong>: a single path, a drop on both sides, the abyss
-                amplifying the risk. The environment isn’t scenery — it’s drama.</p>
+                amplifying the risk. The environment isnâ€™t scenery â€” itâ€™s drama.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="1-3" data-inema-topic="modulo-1-3#topico-5" data-inema-track="1" id="topico-5">
+<section data-ARCKHÉ-module="1-3" data-ARCKHÉ-topic="modulo-1-3#topico-5" data-ARCKHÉ-track="1" id="topico-5">
 <div class="section-mark">
-<span class="where">Section 5 of 5</span><span>·</span><span>Final shots</span>
+<span class="where">Section 5 of 5</span><span>Â·</span><span>Final shots</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Shot lists and final frames</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m1-3-t5-p1">Once the scene is clear, we turn the storyboard into a
-              <em>cinematography shot</em> — the shot list. It defines, for each shot: the shot type, the
+<p class="lede" data-ARCKHÉ-block="m1-3-t5-p1">Once the scene is clear, we turn the storyboard into a
+              <em>cARCKHÉtography shot</em> â€” the shot list. It defines, for each shot: the shot type, the
 camera position, the camera movement, and the dramatic purpose. At this point, AI acts
 as both <strong>female director and director of photography</strong>,
               helping shape how the audience will experience the scene. A shot list is, in practice, a production document: it
               determines where tension appears and how the story manifests visually.<span class="sidenote-ref">5</span></p>
-<p data-inema-block="m1-3-t5-p2">To generate it, we connected to the assistant node <em>everyone</em> the elements
-              already created—the character, environment, storyboard—and ask for a realistic list of six
-              shots based on the scene, referencing each component with the system’s mentions. Then comes the
+<p data-ARCKHÉ-block="m1-3-t5-p2">To generate it, we connected to the assistant node <em>everyone</em> the elements
+              already createdâ€”the character, environment, storyboardâ€”and ask for a realistic list of six
+              shots based on the scene, referencing each component with the systemâ€™s mentions. Then comes the
               <strong>separation of frames</strong>: we broke the list into individual images, one shot at a
-              time. Here, again, the honesty of the craft: the generator doesn’t get every shot right on the first try —
+              time. Here, again, the honesty of the craft: the generator doesnâ€™t get every shot right on the first try â€”
               <em>iterate</em>, regenerate and keep collecting the images that best match the original layout, paying attention to composition and camera design until you have the complete set.</p>
 <h3 class="sub">What you have at the end</h3>
-<p data-inema-block="m1-3-t5-p3">By the end of the workflow, you have a script, a storyboard, a drawn
-              character, wardrobe and props, an environment, a shot list, and the final frames—in other
-              words, a <strong>complete pre-production package</strong> a scene. These frames aren’t the
-              destination: they’re the raw material for the next lesson. They’re used for AI video generation, animation,
+<p data-ARCKHÉ-block="m1-3-t5-p3">By the end of the workflow, you have a script, a storyboard, a drawn
+              character, wardrobe and props, an environment, a shot list, and the final framesâ€”in other
+              words, a <strong>complete pre-production package</strong> a scene. These frames arenâ€™t the
+              destination: theyâ€™re the raw material for the next lesson. Theyâ€™re used for AI video generation, animation,
               film previsualization, and pitch presentations. The still frame is now ready to come to
               life.</p>
 </div>
 <!-- prompt pronto de lista de planos -->
 <div class="prose">
-<p data-inema-block="m1-3-t5-p4">The shot-list prompt, with AI in the role of director and DoP:</p>
-<div class="codeblock"><span class="c"># Shot list — AI as director + cinematographer</span>
-<span class="k">Role:</span> act as both director and cinematographer.
-<span class="k">Task:</span> produce a realistic 6-shot cinematography shot list for the scene.
+<p data-ARCKHÉ-block="m1-3-t5-p4">The shot-list prompt, with AI in the role of director and DoP:</p>
+<div class="codeblock"><span class="c"># Shot list â€” AI as director + cARCKHÉtographer</span>
+<span class="k">Role:</span> act as both director and cARCKHÉtographer.
+<span class="k">Task:</span> produce a realistic 6-shot cARCKHÉtography shot list for the scene.
 <span class="k">Reference (use mentions):</span> the character, the environment, the storyboard.
 <span class="k">For each shot, define:</span>
 - shot type (wide / medium / close / detail)
@@ -558,7 +558,7 @@ as both <strong>female director and director of photography</strong>,
 </div>
 <!-- figura 5: storyboard vira lista de planos vira quadros -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · From storyboard to shot list to <b>final frames</b></figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· From storyboard to shot list to <b>final frames</b></figcaption>
 <svg aria-label="Diagram: the storyboard feeds into the shot list (type, camera, movement, purpose), which branches into final frames ready for video." class="diagram" role="img" viewbox="0 0 720 184">
 <rect class="wash rule-stroke" height="56" rx="3" stroke-width="1.2" width="150" x="30" y="56"></rect>
 <text class="ink-soft" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="105" y="80">storyboard</text>
@@ -567,7 +567,7 @@ as both <strong>female director and director of photography</strong>,
 <rect class="accent-stroke" fill="url(#hatch-1-3)" height="88" rx="3" stroke-width="1.3" width="200" x="230" y="40"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="330" y="60">list of plans</text>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
-<text x="330" y="78">type · camera</text>
+<text x="330" y="78">type Â· camera</text>
 <text x="330" y="92">movement</text>
 <text x="330" y="106">dramatic purpose</text>
 </g>
@@ -576,15 +576,15 @@ as both <strong>female director and director of photography</strong>,
 <rect height="40" rx="2" width="58" x="490" y="50"></rect><rect height="40" rx="2" width="58" x="556" y="50"></rect><rect height="40" rx="2" width="58" x="622" y="50"></rect>
 <rect height="34" rx="2" width="58" x="490" y="96"></rect><rect height="34" rx="2" width="58" x="556" y="96"></rect><rect height="34" rx="2" width="58" x="622" y="96"></rect>
 </g>
-<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="585" y="150">final frames—ready for video</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="585" y="150">final framesâ€”ready for video</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m1-3-t5-p5">Capture the module in one sentence: <em>one person, with AI and a structured pipeline,
-              does the work of an entire preproduction team — as long as they decide on the emotion
+<p data-ARCKHÉ-block="m1-3-t5-p5">Capture the module in one sentence: <em>one person, with AI and a structured pipeline,
+              does the work of an entire preproduction team â€” as long as they decide on the emotion
               first and iterate without rushing.</em> The assignment (in film school format) is precisely this:
               build your own short scene with this pipeline and experiment with composition and camera design. In the
-              next lesson, we’ll bring these frames to life.</p>
+              next lesson, weâ€™ll bring these frames to life.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
@@ -593,20 +593,20 @@ as both <strong>female director and director of photography</strong>,
 <p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
 <details class="q-item">
 <summary><span class="qn">01</span><span>What question does the director ask before generating any image?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>“What should the audience feel in this moment?” The emotion defined at the start
-              (isolation, tension, anticipation) determines the angles, lighting, and composition — and ties all
+<div class="ans"><p>â€œWhat should the audience feel in this moment?â€ The emotion defined at the start
+              (isolation, tension, anticipation) determines the angles, lighting, and composition â€” and ties all
               the pipeline stages into a coherent scene.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Why are the character and environment generated separately?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>It’s the standard logic of VFX pipelines and what ensures <em>consistency</em>: creating
-              each piece in isolation (neutral character, wardrobe, environment) lets you recombine them without drift — the
+<div class="ans"><p>Itâ€™s the standard logic of VFX pipelines and what ensures <em>consistency</em>: creating
+              each piece in isolation (neutral character, wardrobe, environment) lets you recombine them without drift â€” the
               same face and the same clothes appear again in every shot.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>What does a shot list define, and what role does AI play in it?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>Define, for each shot: shot type, camera position and angle, movement, and dramatic purpose.
-              The AI acts as <em>female director and director of photography</em> — and the list becomes a
+              The AI acts as <em>female director and director of photography</em> â€” and the list becomes a
 production document for how the audience experiences the scene.</p></div>
 </details>
 <details class="q-item">
@@ -617,31 +617,31 @@ production document for how the audience experiences the scene.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="My journey — consolidated progress" class="journey">
+<section aria-label="My journey â€” consolidated progress" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> My journey</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+<h2><span class="ico">â§</span> My journey</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Open notebook â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">In this module</div>
-<div class="v" data-inema-meter="modulo:1-3">
-<span data-inema-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:1-3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 5</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In track 1</div>
-<div class="v" data-inema-meter="trilha:1">
-<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:1">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In the course</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -650,40 +650,40 @@ production document for how the audience experiences the scene.</p></div>
 <div class="nextup">
 <div class="txt">
 <div class="k">Continue</div>
-<div class="t">Module 1.4 — From Frame to Motion</div>
+<div class="t">Module 1.4 â€” From Frame to Motion</div>
 </div>
-<a class="go" href="modulo-1-4.html">Next →</a>
+<a class="go" href="modulo-1-4.html">Next â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Pre-production.</b> Everything that happens before “rolling”: script, storyboard, character,
-          wardrobe, setting, shot list. It’s where the scene’s intent is decided — and the focus of this lesson.
+<b>Pre-production.</b> Everything that happens before â€œrollingâ€: script, storyboard, character,
+          wardrobe, setting, shot list. Itâ€™s where the sceneâ€™s intent is decided â€” and the focus of this lesson.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
-          Lesson 2 of the Light block — “From Script to Scene,” demonstrated in Freepik Spaces. The
-          complete Space (nodes, prompts, workflow) is linked in the “Going deeper” block in this section.
-          <div class="src-line">freepik.com · pikaso/spaces</div>
+          Lesson 2 of the Light block â€” â€œFrom Script to Scene,â€ demonstrated in Freepik Spaces. The
+          complete Space (nodes, prompts, workflow) is linked in the â€œGoing deeperâ€ block in this section.
+          <div class="src-line">freepik.com Â· pikaso/spaces</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Storyboard.</b> The sequence of frames that plans the scene before the final images—
+<b>Storyboard.</b> The sequence of frames that plans the scene before the final imagesâ€”
           framing, perspective, rhythm, and escalation. The first language of directing.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          Work out the progression in the outline, while it’s still cheap. Getting the sequence wrong in a draft costs seconds;
+          Work out the progression in the outline, while itâ€™s still cheap. Getting the sequence wrong in a draft costs seconds;
           getting it wrong after the final images costs time and credits.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Studio reference.</b> A character or object generated against a neutral background with controlled lighting, isolated so it can reappear consistently in multiple shots. A believable character = the audience believes in the scene.
@@ -694,10 +694,10 @@ production document for how the audience experiences the scene.</p></div>
           so the generator can structure the request and maintain identity.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Environment as drama.</b> The setting doesn’t just establish the scene—it embodies the emotion. Narrow bridge = vulnerability; vast canyon = scale; fog = uncertainty.
+<b>Environment as drama.</b> The setting doesnâ€™t just establish the sceneâ€”it embodies the emotion. Narrow bridge = vulnerability; vast canyon = scale; fog = uncertainty.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
@@ -705,7 +705,7 @@ production document for how the audience experiences the scene.</p></div>
           lets you compose the scene with control, shot by shot.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-1-3#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-1-3#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
 <b>Shot list.</b> A production document that defines, shot by shot, the camera type, position, and
@@ -713,7 +713,7 @@ production document for how the audience experiences the scene.</p></div>
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Going deeper</div>
-          The final result — script, storyboard, character, wardrobe, setting, shot list, frames — is
+          The final result â€” script, storyboard, character, wardrobe, setting, shot list, frames â€” is
           a pre-production package. The still frames are the raw material for Module 1.4.
         </aside>
 </aside>
@@ -721,8 +721,8 @@ production document for how the audience experiences the scene.</p></div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Module 1.3 — folio iii</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Module 1.3 â€” folio iii</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -731,8 +731,8 @@ production document for how the audience experiences the scene.</p></div>
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

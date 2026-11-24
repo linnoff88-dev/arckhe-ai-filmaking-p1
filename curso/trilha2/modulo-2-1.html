@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 2.1 — Pensamento Visual | AI Filmmaking</title>
+<title>Modulo 2.1 â€” Pensamento Visual | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha2/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha2/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha2/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:2-1"><span data-inema-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:2-1"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Trilha <b>2</b> Fundamentos Cinematograficos</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Trilha <b>2</b> Fundamentos CARCKHÉtograficos</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>2.1</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 4</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 4</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,76 +189,76 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 2.1 · Trilha 2 · Fundamentos Cinematograficos</p>
+<p class="kicker">Modulo 2.1 Â· Trilha 2 Â· Fundamentos CARCKHÉtograficos</p>
 <h1 class="module">Pensamento <em>Visual</em></h1>
 <p class="deck">Antes de aprender qualquer regra, aprenda a olhar. Um prompt profissional nao descreve uma
-          cena — ele controla a percepcao ao longo do tempo, decidindo o que voce ve primeiro, o que entende
+          cena â€” ele controla a percepcao ao longo do tempo, decidindo o que voce ve primeiro, o que entende
           depois e qual pergunta fica na sua cabeca no fim.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~15 min · modulo inteiro</span>
+<span>~15 min Â· modulo inteiro</span>
 <span>4 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que um prompt profissional e um <b>sistema de decisoes</b> — formato, ambiente, luz,
-              personagem, sequencia — e nao uma lista de coisas bonitas.</li>
+<li>Por que um prompt profissional e um <b>sistema de decisoes</b> â€” formato, ambiente, luz,
+              personagem, sequencia â€” e nao uma lista de coisas bonitas.</li>
 <li>Como <b>ler uma imagem como um diretor</b>: enxergar cada elemento como uma escolha que controla
               o que o espectador ve, onde olha e quando descobre.</li>
-<li>Por que a <b>contradicao</b> — um personagem que nao pertence ao mundo — gera intriga,
+<li>Por que a <b>contradicao</b> â€” um personagem que nao pertence ao mundo â€” gera intriga,
               e por que ambiente e luz contam a historia antes de qualquer palavra.</li>
 <li>Por que o objetivo final nao e produzir uma cena, e sim <b>criar uma pergunta na mente do
-              espectador</b> — o aluno deixa de receber e passa a descobrir.</li>
+              espectador</b> â€” o aluno deixa de receber e passa a descobrir.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — quatro movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” quatro movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Ler antes de gerar: o prompt como sistema</span></a></li>
 <li><span class="n">2</span><a href="#topico-2"><span class="t">Formato e ambiente: a camera e o mundo</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">Luz e personagem: emocao e contradicao</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">A cena como sequencia — e como pergunta</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">A cena como sequencia â€” e como pergunta</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-1" data-inema-track="2" id="topico-1">
+<section data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-1" data-ARCKHÉ-track="2" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 4</span><span>·</span><span>Leitura</span>
+<span class="where">Secao 1 de 4</span><span>Â·</span><span>Leitura</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Ler antes de gerar: o prompt como sistema</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m2-1-t1-p1">Esta trilha comeca por uma habilidade que parece
+<p class="lede dropcap" data-ARCKHÉ-block="m2-1-t1-p1">Esta trilha comeca por uma habilidade que parece
               passiva, mas e a mais ativa de todas: <em>ler</em> uma imagem. Antes de escrever um prompt, antes de
               escolher uma lente, antes de qualquer geracao, voce precisa olhar uma cena e enxergar as
               <span class="sidenote-ref">1</span>decisoes que a sustentam. A maioria das pessoas olha uma boa
-              imagem e sente “isso e bonito”. Um diretor olha a mesma imagem e ve uma lista de
+              imagem e sente â€œisso e bonitoâ€. Um diretor olha a mesma imagem e ve uma lista de
               escolhas: este formato, esta fonte de luz, este personagem, esta ordem de revelacao. A diferenca nao
-              e talento — e <em>vocabulario</em>. Quem nomeia, controla.</p>
-<p data-inema-block="m2-1-t1-p2">Por isso a definicao que abre o bloco e tao precisa: um prompt
-              profissional <em>nao descreve uma cena</em> — ele <strong>controla a percepcao ao longo do
+              e talento â€” e <em>vocabulario</em>. Quem nomeia, controla.</p>
+<p data-ARCKHÉ-block="m2-1-t1-p2">Por isso a definicao que abre o bloco e tao precisa: um prompt
+              profissional <em>nao descreve uma cena</em> â€” ele <strong>controla a percepcao ao longo do
               tempo</strong>. Ele decide o que o espectador ve primeiro, o que entende mais tarde e qual pergunta
               fica na mente no final. Isso muda o que voce escreve. Voce para de empilhar adjetivos
-              (“epico, cinematografico, 8K, premiado”) e passa a tomar decisoes de direcao: como a
+              (â€œepico, cARCKHÉtografico, 8K, premiadoâ€) e passa a tomar decisoes de direcao: como a
               camera se comporta, o que o mundo diz, de onde vem a luz, quem e a pessoa no quadro, em que ordem a
               informacao aparece. Cada parte deixa de ser decoracao e vira uma escolha com proposito.</p>
 <h3 class="sub">As cinco camadas de um prompt que funciona</h3>
-<p data-inema-block="m2-1-t1-p3">A aula organiza o prompt profissional em <strong>cinco camadas</strong>,
-              e e util decora-las como um checklist mental. <strong>Formato</strong> — o comportamento da
+<p data-ARCKHÉ-block="m2-1-t1-p3">A aula organiza o prompt profissional em <strong>cinco camadas</strong>,
+              e e util decora-las como um checklist mental. <strong>Formato</strong> â€” o comportamento da
               camera: proporcao, lente, profundidade de campo, motion blur, movimento. <strong>Ambiente</strong>
-              — a historia sem palavras: o mundo ja diz o que aconteceu. <strong>Luz</strong> — a
-              emocao: quente para humanidade, fria para perigo. <strong>Personagem</strong> — a contradicao:
-              alguem que nao se encaixa no mundo, e por isso intriga. <strong>Estrutura de cena</strong> — a
+              â€” a historia sem palavras: o mundo ja diz o que aconteceu. <strong>Luz</strong> â€” a
+              emocao: quente para humanidade, fria para perigo. <strong>Personagem</strong> â€” a contradicao:
+              alguem que nao se encaixa no mundo, e por isso intriga. <strong>Estrutura de cena</strong> â€” a
               sequencia: nao um plano, mas uma progressao que faz o espectador <em>descobrir</em> em vez de
               receber.<span class="sidenote-ref">2</span> Nas proximas secoes, abrimos cada camada com um exemplo
               concreto.</p>
 </div>
 <!-- figura 1: as cinco camadas do prompt -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · O prompt profissional como <b>pilha de cinco decisoes</b>, nao lista de adjetivos</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· O prompt profissional como <b>pilha de cinco decisoes</b>, nao lista de adjetivos</figcaption>
 <svg aria-label="Diagrama em cinco faixas empilhadas: formato (comportamento da camera), ambiente (historia sem palavras), luz (emocao), personagem (contradicao) e estrutura de cena (sequencia)." class="diagram" role="img" viewbox="0 0 720 232">
 <defs>
 <pattern height="6" id="hatch-2-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -271,94 +271,94 @@
 <rect class="accent-stroke" fill="url(#hatch-2-1)" height="34" rx="3" stroke-width="1.3" width="600" x="64" y="22"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="44">01</text>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="44">Formato</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="44">o comportamento da camera — proporcao, lente, foco, movimento</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="44">o comportamento da camera â€” proporcao, lente, foco, movimento</text>
 <rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="60"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="82">02</text>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="82">Ambiente</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="82">a historia sem palavras — o mundo ja diz o que aconteceu</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="82">a historia sem palavras â€” o mundo ja diz o que aconteceu</text>
 <rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="98"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="120">03</text>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="120">Luz</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="120">a emocao — quente (humano) contra frio (perigo, vazio)</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="120">a emocao â€” quente (humano) contra frio (perigo, vazio)</text>
 <rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="136"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="158">04</text>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="158">Personagem</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="158">a contradicao — quem nao pertence ao mundo intriga</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="158">a contradicao â€” quem nao pertence ao mundo intriga</text>
 <rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="600" x="64" y="174"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" x="80" y="196">05</text>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" x="116" y="196">Sequencia</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="196">a estrutura — o espectador descobre, nao recebe</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" x="250" y="196">a estrutura â€” o espectador descobre, nao recebe</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Dois prompts pedem “uma mulher numa cidade em ruinas”. O primeiro acrescenta dez
+<p>Dois prompts pedem â€œuma mulher numa cidade em ruinasâ€. O primeiro acrescenta dez
               adjetivos de qualidade: <em>epic, hyperdetailed, 8K, award-winning, masterpiece</em>. O segundo
               define o formato, a fonte de luz, a contradicao do personagem e a ordem de revelacao. Qual tende a
-              produzir uma cena — e nao so uma imagem — e por que?</p>
+              produzir uma cena â€” e nao so uma imagem â€” e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">O segundo. Adjetivos de qualidade nao sao <strong>decisoes</strong>: eles pedem
-                “capricho”, mas nao dizem o que a camera faz, o que o mundo conta nem onde o olho deve
-                ir. O segundo prompt controla a <em>percepcao</em> — e e isso que separa uma imagem bonita de
-                uma cena com intencao. “8K” nao dirige nada; “a camera abre num mar calmo e a
-                figura so aparece no terceiro segundo” dirige tudo.</p>
+                â€œcaprichoâ€, mas nao dizem o que a camera faz, o que o mundo conta nem onde o olho deve
+                ir. O segundo prompt controla a <em>percepcao</em> â€” e e isso que separa uma imagem bonita de
+                uma cena com intencao. â€œ8Kâ€ nao dirige nada; â€œa camera abre num mar calmo e a
+                figura so aparece no terceiro segundoâ€ dirige tudo.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: descricao versus direcao
+<summary><span class="chev">â–¸</span> Indo mais fundo: descricao versus direcao
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada distingue dois modos de escrever — e pode ser
+<p>O caminho-feliz acima ja basta. Esta camada distingue dois modos de escrever â€” e pode ser
                 pulada.</p>
 <p>Existe uma fronteira clara entre <strong>descrever</strong> e <strong>dirigir</strong>. Descrever
-                e listar o que esta no quadro: “uma mulher, um vestido vermelho, predios destruidos”.
-                Dirigir e decidir como o quadro se comporta e como a informacao chega: “abertura em plano
+                e listar o que esta no quadro: â€œuma mulher, um vestido vermelho, predios destruidosâ€.
+                Dirigir e decidir como o quadro se comporta e como a informacao chega: â€œabertura em plano
                 aberto sobre a destruicao, camera desce devagar, a figura entra de costas, o vermelho do vestido e
-                a unica cor saturada”. O gerador de imagem aceita os dois — mas so o segundo controla a
+                a unica cor saturadaâ€. O gerador de imagem aceita os dois â€” mas so o segundo controla a
                 experiencia. Quando voce sentir que esta acumulando substantivos e adjetivos, pare e pergunte: qual
                 e a <em>decisao de camera</em> aqui? qual e a <em>ordem</em> em que isto se revela? E ai que mora o
-                cinema.</p>
+                cARCKHÉ.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-2" data-inema-track="2" id="topico-2">
+<section data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-2" data-ARCKHÉ-track="2" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 4</span><span>·</span><span>Camera e mundo</span>
+<span class="where">Secao 2 de 4</span><span>Â·</span><span>Camera e mundo</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Formato e ambiente: a camera e o mundo</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-1-t2-p1">A primeira camada, <em>formato</em>, define a linguagem
-              da camera <strong>antes de qualquer coisa acontecer</strong>. Nao e o que esta no quadro — e
+<p class="lede" data-ARCKHÉ-block="m2-1-t2-p1">A primeira camada, <em>formato</em>, define a linguagem
+              da camera <strong>antes de qualquer coisa acontecer</strong>. Nao e o que esta no quadro â€” e
               como o quadro se comporta. A proporcao define a composicao e o espaco. A lente define como o espaco e
               percebido (uma grande-angular abre, uma teleobjetiva achata). A profundidade de campo define onde o
               foco cai. O motion blur e a taxa de quadros definem o quanto o movimento parece real. E movimentos
-              agressivos — tracking veloz, whip pan, mergulho aereo — definem a <em>energia</em>. So
+              agressivos â€” tracking veloz, whip pan, mergulho aereo â€” definem a <em>energia</em>. So
               com essas escolhas, antes de descrever um unico objeto, o espectador ja sabe se a cena e passiva ou
               se e caos controlado.</p>
 <h3 class="sub">O ambiente conta a historia sem dizer uma palavra</h3>
-<p data-inema-block="m2-1-t2-p2">A segunda camada, <em>ambiente</em>, e a historia sem palavras. Um
-              mundo bem escolhido <strong>ja narra</strong>. Uma megacidade em ruinas diz “civilizacao
-              perdida”. Arquiteturas de epocas misturadas dizem “historia em camadas”. Poeira,
-              destrocos e fumaca suspensos dizem “algo se moveu aqui ha pouco” — e mantem o mundo
+<p data-ARCKHÉ-block="m2-1-t2-p2">A segunda camada, <em>ambiente</em>, e a historia sem palavras. Um
+              mundo bem escolhido <strong>ja narra</strong>. Uma megacidade em ruinas diz â€œcivilizacao
+              perdidaâ€. Arquiteturas de epocas misturadas dizem â€œhistoria em camadasâ€. Poeira,
+              destrocos e fumaca suspensos dizem â€œalgo se moveu aqui ha poucoâ€ â€” e mantem o mundo
               vivo mesmo quando nada se mexe. O ponto e que o espectador <em>nao precisa de explicacao</em>: ele
               olha e entende que algo esta errado.<span class="sidenote-ref">3</span> Em vez de uma legenda
-              dizendo “o mundo acabou”, voce mostra um outdoor rachado e um carro coberto de cinza
-              — e a ideia entra sem texto.</p>
-<p data-inema-block="m2-1-t2-p3">Repare como formato e ambiente trabalham juntos. O formato decide a
+              dizendo â€œo mundo acabouâ€, voce mostra um outdoor rachado e um carro coberto de cinza
+              â€” e a ideia entra sem texto.</p>
+<p data-ARCKHÉ-block="m2-1-t2-p3">Repare como formato e ambiente trabalham juntos. O formato decide a
               <em>distancia</em> e o <em>ritmo</em> com que voce ve o mundo; o ambiente decide <em>o que</em> esse
               mundo confessa. Um plano aberto e lento sobre uma cidade arruinada deixa a desolacao respirar; um
               tracking rapido e instavel pelo mesmo cenario transmite perigo iminente. Mesmo cenario, leituras
-              opostas — porque a camada de formato mudou. Decidir essas duas camadas antes de pensar no
+              opostas â€” porque a camada de formato mudou. Decidir essas duas camadas antes de pensar no
               personagem ja resolve metade da cena.</p>
 </div>
 <!-- figura 2: formato decide a leitura do mesmo mundo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Mesmo <b>ambiente</b>, duas leituras — quem decide e o <b>formato</b></figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· Mesmo <b>ambiente</b>, duas leituras â€” quem decide e o <b>formato</b></figcaption>
 <svg aria-label="Diagrama comparando dois quadros do mesmo cenario em ruinas: a esquerda, plano aberto e lento transmite desolacao; a direita, tracking rapido e inclinado transmite perigo." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- quadro esquerdo: aberto e lento -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">PLANO ABERTO · LENTO</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="180" y="28">PLANO ABERTO Â· LENTO</text>
 <rect class="rule-stroke" fill="none" height="130" rx="3" stroke-width="1.2" width="280" x="40" y="40"></rect>
 <line class="rule-stroke" opacity="0.7" stroke-width="1" x1="52" x2="308" y1="140" y2="140"></line>
 <g class="rule-stroke" fill="none" opacity="0.8" stroke-width="1.1">
@@ -367,11 +367,11 @@
 <rect height="30" width="34" x="244" y="110"></rect>
 </g>
 <path class="mark-stroke" d="M150 160 L150 132" stroke-width="2"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="194">a desolacao respira — melancolia</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="194">a desolacao respira â€” melancolia</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="36" y2="174"></line>
 <!-- quadro direito: tracking inclinado -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TRACKING RAPIDO · INCLINADO</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">TRACKING RAPIDO Â· INCLINADO</text>
 <rect class="accent-stroke" fill="none" height="130" rx="3" stroke-width="1.3" transform="rotate(-4 540 105)" width="280" x="400" y="40"></rect>
 <g class="rule-stroke" fill="none" opacity="0.8" stroke-width="1.1" transform="rotate(-4 540 105)">
 <rect height="50" width="24" x="430" y="92"></rect><rect height="64" width="20" x="466" y="78"></rect>
@@ -381,29 +381,29 @@
 <g class="accent-stroke" stroke-width="2">
 <path d="M520 70 L470 76"></path><path d="M560 96 L506 102"></path><path d="M600 122 L548 128"></path>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="194">o mesmo mundo vira ameaca — tensao</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="194">o mesmo mundo vira ameaca â€” tensao</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-1-t2-p4">Vale exercitar isso direto no prompt. As duas linhas abaixo descrevem
-              o <em>mesmo</em> mundo — muda apenas o bloco de formato. Cole-as num gerador de video e observe
+<p data-ARCKHÉ-block="m2-1-t2-p4">Vale exercitar isso direto no prompt. As duas linhas abaixo descrevem
+              o <em>mesmo</em> mundo â€” muda apenas o bloco de formato. Cole-as num gerador de video e observe
               como a sensacao se inverte sem trocar um unico elemento do cenario. Essa e a licao da camada 1: a
               camera fala primeiro.</p>
-<div class="codeblock"><span class="c"># Mesmo ambiente, dois formatos — a camera decide a emocao</span>
+<div class="codeblock"><span class="c"># Mesmo ambiente, dois formatos â€” a camera decide a emocao</span>
 <span class="c"># (teste as duas no mesmo gerador: Seedance / Kling / Runway / Luma)</span>
 <span class="k">Environment (fixed):</span> a ruined megacity at dusk, ash in the air, a cracked billboard, dust drifting.
-<span class="k">Take A — desolation:</span> wide static shot, anamorphic 2.39:1, deep focus, slow almost imperceptible push-in.
-<span class="k">Take B — danger:</span> same city, fast handheld tracking, slight dutch tilt, shallow focus, motion blur, urgent pace.
-<span class="k">Note:</span> change only the camera block — keep the world identical — and compare how the scene feels.</div>
+<span class="k">Take A â€” desolation:</span> wide static shot, anamorphic 2.39:1, deep focus, slow almost imperceptible push-in.
+<span class="k">Take B â€” danger:</span> same city, fast handheld tracking, slight dutch tilt, shallow focus, motion blur, urgent pace.
+<span class="k">Note:</span> change only the camera block â€” keep the world identical â€” and compare how the scene feels.</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que “como se comporta” vem antes de “o que ha”
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que â€œcomo se comportaâ€ vem antes de â€œo que haâ€
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional — util quando uma geracao “esta certa” mas nao emociona.</p>
+<p>Camada opcional â€” util quando uma geracao â€œesta certaâ€ mas nao emociona.</p>
 <p>Quando uma imagem tem todos os elementos certos e ainda assim parece morta, quase sempre o
                 problema esta na camada de formato, que foi deixada no automatico. O gerador escolheu uma lente
-                neutra, foco em tudo, camera parada — e o resultado e uma foto de catalogo de um mundo que
+                neutra, foco em tudo, camera parada â€” e o resultado e uma foto de catalogo de um mundo que
                 deveria assustar. Tratar o <em>comportamento da camera</em> como a primeira decisao, antes de
                 listar objetos, e o que evita esse vazio. Pergunte sempre: de que distancia vejo isso? a camera
                 esta parada, empurrando, orbitando? o foco isola alguem ou mostra tudo? Essas respostas carregam
@@ -412,42 +412,42 @@
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-3" data-inema-track="2" id="topico-3">
+<section data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-3" data-ARCKHÉ-track="2" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 4</span><span>·</span><span>Emocao e contradicao</span>
+<span class="where">Secao 3 de 4</span><span>Â·</span><span>Emocao e contradicao</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Luz e personagem: emocao e contradicao</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-1-t3-p1">A terceira camada, <em>luz</em>, e psicologica antes de
+<p class="lede" data-ARCKHÉ-block="m2-1-t3-p1">A terceira camada, <em>luz</em>, e psicologica antes de
               ser visual. Luz quente e avermelhada sugere algo humano, belo, que ainda resiste; sombras frias e
               esverdeadas sugerem perigo, vazio, perda. Quando os dois coexistem no mesmo quadro, a imagem fica em
-              <strong>conflito</strong> — e conflito e tensao. A luz volumetrica (aquela que se ve atravessar
+              <strong>conflito</strong> â€” e conflito e tensao. A luz volumetrica (aquela que se ve atravessar
               a fumaca) cria profundidade; o alto contraste cria clareza, permitindo que o personagem se destaque
               sem que voce force a atencao. A aula desenvolve isso em detalhe no proximo modulo; aqui basta a
               ideia: <strong>luz e emocao</strong>, nao iluminacao.</p>
 <h3 class="sub">O personagem como contradicao</h3>
-<p data-inema-block="m2-1-t3-p2">A quarta camada e a mais contraintuitiva: o <em>personagem como
+<p data-ARCKHÉ-block="m2-1-t3-p2">A quarta camada e a mais contraintuitiva: o <em>personagem como
               contradicao</em>. O exemplo da aula e uma mulher elegante, de vestido de festa, atravessando calma um
-              mundo destruido. Isso nao e logico — e e exatamente por isso que <strong>funciona</strong>.
+              mundo destruido. Isso nao e logico â€” e e exatamente por isso que <strong>funciona</strong>.
               Cada detalhe vira uma pergunta. O vermelho do vestido nao e so cor: e uma ameaca visual que captura o
-              olho na hora. Os saltos altos nao sao praticos, sao <em>simbolicos</em> — dizem que ela nao se
+              olho na hora. Os saltos altos nao sao praticos, sao <em>simbolicos</em> â€” dizem que ela nao se
               adapta ao mundo; o mundo e que deveria se adaptar a ela. Os oculos escuros escondem a emocao e criam
               distancia e controle. Uma arma grande e elegante e destrutiva ao mesmo tempo. Nada ali e
-              “sobre” o mundo — tudo ali <em>contradiz</em> o mundo.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m2-1-t3-p3">A contradicao gera intriga porque o cerebro <em>precisa</em> resolver
+              â€œsobreâ€ o mundo â€” tudo ali <em>contradiz</em> o mundo.<span class="sidenote-ref">4</span></p>
+<p data-ARCKHÉ-block="m2-1-t3-p3">A contradicao gera intriga porque o cerebro <em>precisa</em> resolver
               o que nao se encaixa. Personagem perfeito num mundo perfeito e propaganda; personagem perfeito num
-              mundo em ruinas e <em>mistério</em>. Repare que isso retoma, em outra escala, a licao da Trilha 1: o
-              impacto nasce quando a previsao e quebrada. Aqui a quebra e de <em>coerencia</em> — a figura
+              mundo em ruinas e <em>mistÃ©rio</em>. Repare que isso retoma, em outra escala, a licao da Trilha 1: o
+              impacto nasce quando a previsao e quebrada. Aqui a quebra e de <em>coerencia</em> â€” a figura
               nega o contexto, e essa negacao abre perguntas. Beleza contra destruicao, calma contra caos, controle
               contra instabilidade: e o atrito entre o personagem e o mundo que prende o espectador, nao a soma de
               elementos bonitos.</p>
 </div>
 <!-- figura 3: o atrito personagem x mundo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · A <b>contradicao</b> — o personagem nega o mundo, e a negacao abre a pergunta</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· A <b>contradicao</b> â€” o personagem nega o mundo, e a negacao abre a pergunta</figcaption>
 <svg aria-label="Diagrama: a esquerda um campo de caos e ruinas, a direita uma figura calma e elegante; entre os dois, uma linha de atrito de onde nasce a pergunta do espectador." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- campo do mundo: caos -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="170" y="28">O MUNDO — CAOS, RUINA, FRIO</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="170" y="28">O MUNDO â€” CAOS, RUINA, FRIO</text>
 <rect class="rule-stroke" fill="url(#hatch-2-1)" height="140" opacity="0.85" rx="3" stroke-width="1.2" width="260" x="40" y="40"></rect>
 <g class="rule-stroke" fill="none" opacity="0.7" stroke-width="1.1">
 <path d="M64 150 L96 96 L128 150"></path><path d="M150 150 L182 110 L214 150"></path>
@@ -457,7 +457,7 @@
 <line class="accent-stroke" stroke-dasharray="5 4" stroke-width="2.2" x1="330" x2="330" y1="40" y2="180"></line>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="330" y="32">ATRITO</text>
 <!-- a figura: calma e elegante -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">A FIGURA — CALMA, ELEGANTE, QUENTE</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" text-anchor="middle" x="540" y="28">A FIGURA â€” CALMA, ELEGANTE, QUENTE</text>
 <rect class="accent-stroke" fill="none" height="140" rx="3" stroke-width="1.3" width="280" x="400" y="40"></rect>
 <line class="accent-stroke" stroke-width="2.4" x1="540" x2="540" y1="64" y2="150"></line>
 <circle class="accent-stroke" cx="540" cy="58" r="9" stroke-width="2"></circle>
@@ -466,77 +466,77 @@
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" x="600" y="96">vermelho</text>
 <text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" x="600" y="120">controle</text>
 <!-- a pergunta -->
-<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="202">“quem e ela? por que esta calma?”</text>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="202">â€œquem e ela? por que esta calma?â€</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m2-1-t3-p4">No prompt, a contradicao se constroi com escolhas deliberadas de luz
-              e de personagem — nunca com “uma mulher linda”. Voce nomeia a temperatura da luz, a
+<p data-ARCKHÉ-block="m2-1-t3-p4">No prompt, a contradicao se constroi com escolhas deliberadas de luz
+              e de personagem â€” nunca com â€œuma mulher lindaâ€. Voce nomeia a temperatura da luz, a
               fonte, e os detalhes simbolicos que negam o ambiente. O exemplo abaixo e uma <em>receita de
               contradicao</em>: note como cada linha de personagem briga com cada linha de mundo, e como a luz
               quente sobre a figura a separa do frio em volta.</p>
-<div class="codeblock"><span class="c"># Receita de contradicao — a figura que nega o mundo</span>
+<div class="codeblock"><span class="c"># Receita de contradicao â€” a figura que nega o mundo</span>
 <span class="c"># personagem perfeito + mundo em ruina = pergunta, nao propaganda</span>
 <span class="k">World:</span> a frozen ruined city, cold green shadows, ash and broken concrete, volumetric haze.
 <span class="k">Figure:</span> an elegant woman in a saturated red evening dress, high heels, dark sunglasses, perfectly calm.
-<span class="k">Light:</span> warm amber key on the figure only; the world stays cold — the two temperatures clash on purpose.
+<span class="k">Light:</span> warm amber key on the figure only; the world stays cold â€” the two temperatures clash on purpose.
 <span class="k">Contradiction:</span> she does not adapt to the world; her stillness denies the chaos around her.
-<span class="k">Goal:</span> the viewer should ask "who is she?" — not admire, but wonder.</div>
+<span class="k">Goal:</span> the viewer should ask "who is she?" â€” not admire, but wonder.</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: detalhe simbolico contra detalhe pratico
+<summary><span class="chev">â–¸</span> Indo mais fundo: detalhe simbolico contra detalhe pratico
               <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>Camada opcional sobre como escolher os detalhes de um personagem.</p>
-<p>Ha duas formas de detalhar um personagem. A <strong>pratica</strong> pergunta “isto faria
-                sentido neste mundo?” — botas resistentes, roupa suja, mochila. A <strong>simbolica</strong>
-                pergunta “o que isto <em>diz</em> sobre quem ela e?” — saltos altos que recusam o
-                terreno, vermelho que exige atencao, oculos que negam acesso a emocao. Cinema de contradicao escolhe
+<p>Ha duas formas de detalhar um personagem. A <strong>pratica</strong> pergunta â€œisto faria
+                sentido neste mundo?â€ â€” botas resistentes, roupa suja, mochila. A <strong>simbolica</strong>
+                pergunta â€œo que isto <em>diz</em> sobre quem ela e?â€ â€” saltos altos que recusam o
+                terreno, vermelho que exige atencao, oculos que negam acesso a emocao. CARCKHÉ de contradicao escolhe
                 o simbolico de proposito, e e por isso que funciona: o detalhe que <em>nao</em> deveria estar ali e
                 justamente o que faz perguntar. Quando for desenhar um personagem, separe os dois tipos e decida
-                quais detalhes vao contra o mundo — sao eles que carregam o mistério.</p>
+                quais detalhes vao contra o mundo â€” sao eles que carregam o mistÃ©rio.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="2-1" data-inema-topic="modulo-2-1#topico-4" data-inema-track="2" id="topico-4">
+<section data-ARCKHÉ-module="2-1" data-ARCKHÉ-topic="modulo-2-1#topico-4" data-ARCKHÉ-track="2" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 4</span><span>·</span><span>Sequencia</span>
+<span class="where">Secao 4 de 4</span><span>Â·</span><span>Sequencia</span>
 </div>
-<h2 class="head"><span class="num">4.</span>A cena como sequencia — e como pergunta</h2>
+<h2 class="head"><span class="num">4.</span>A cena como sequencia â€” e como pergunta</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m2-1-t4-p1">A quinta camada amarra tudo: <em>estrutura de cena</em>.
-              Uma cena forte nao e um plano — e uma <strong>progressao</strong>. A ordem que a aula propoe e
+<p class="lede" data-ARCKHÉ-block="m2-1-t4-p1">A quinta camada amarra tudo: <em>estrutura de cena</em>.
+              Uma cena forte nao e um plano â€” e uma <strong>progressao</strong>. A ordem que a aula propoe e
               simples e poderosa: primeiro <em>mostre o mundo</em>, depois <em>aproxime</em>, entao <em>revele o
               personagem</em>, em seguida <em>introduza a ruptura</em> e por fim <em>mostre a intencao</em>. Essa
               ordem nao e capricho: ela faz o espectador <strong>descobrir em vez de receber</strong>. Quando voce
-              entrega tudo de uma vez, o cerebro arquiva “imagem completa” e segue em frente. Quando
-              voce revela por etapas, ele se inclina para a frente — cada passo abre a expectativa do
+              entrega tudo de uma vez, o cerebro arquiva â€œimagem completaâ€ e segue em frente. Quando
+              voce revela por etapas, ele se inclina para a frente â€” cada passo abre a expectativa do
               seguinte.</p>
-<p data-inema-block="m2-1-t4-p2">Por isso a cena parece cinematografica: ela usa <em>escala contra
-              intimidade</em>, <em>caos contra controle</em>, <em>beleza contra destruicao</em> — e controla
+<p data-ARCKHÉ-block="m2-1-t4-p2">Por isso a cena parece cARCKHÉtografica: ela usa <em>escala contra
+              intimidade</em>, <em>caos contra controle</em>, <em>beleza contra destruicao</em> â€” e controla
               quatro coisas ao mesmo tempo: o que voce ve, para onde olha, como as coisas se movem e <em>quando</em>
-              a informacao e revelada.<span class="sidenote-ref">5</span> Esse “quando” e a dimensao
+              a informacao e revelada.<span class="sidenote-ref">5</span> Esse â€œquandoâ€ e a dimensao
               que a maioria ignora. Duas cenas com os mesmos elementos podem ser banais ou hipnoticas dependendo so
               da <em>ordem</em> em que mostram cada coisa. Sequenciar e dirigir o tempo da descoberta.</p>
 <h3 class="sub">A ideia que reorganiza tudo: voce cria uma pergunta</h3>
-<p data-inema-block="m2-1-t4-p3">Dai a tese que fecha o modulo e define o bloco inteiro: <em>voce nao
-              esta criando uma cena — esta criando uma pergunta na mente do espectador</em>. Beleza sozinha
-              satisfaz e e esquecida; uma pergunta <span class="dfn"><details class="dfn"><summary>pergunta visual</summary><span class="body"><b>Pergunta visual</b> e a lacuna deliberada que uma imagem deixa — uma contradicao ou uma informacao adiada — que o espectador sente necessidade de resolver. E o que transforma “bonito” em “inesquecivel”.</span></details></span>
+<p data-ARCKHÉ-block="m2-1-t4-p3">Dai a tese que fecha o modulo e define o bloco inteiro: <em>voce nao
+              esta criando uma cena â€” esta criando uma pergunta na mente do espectador</em>. Beleza sozinha
+              satisfaz e e esquecida; uma pergunta <span class="dfn"><details class="dfn"><summary>pergunta visual</summary><span class="body"><b>Pergunta visual</b> e a lacuna deliberada que uma imagem deixa â€” uma contradicao ou uma informacao adiada â€” que o espectador sente necessidade de resolver. E o que transforma â€œbonitoâ€ em â€œinesquecivelâ€.</span></details></span>
               fica. O objetivo da tarefa do modulo e justamente esse: pegar uma estrutura que funciona, manter o
-              esqueleto, trocar a contradicao — e definir, em uma frase, qual e o <em>contraste</em>, qual e
+              esqueleto, trocar a contradicao â€” e definir, em uma frase, qual e o <em>contraste</em>, qual e
               a <em>tensao</em> e qual e a <em>pergunta</em>. Se voce consegue nomear os tres, sua cena tem
               direcao; se nao consegue, ela ainda e so uma imagem.</p>
-<p data-inema-block="m2-1-t4-p4">Guarde o modulo como uma unica disciplina: antes de gerar, <em>leia</em>.
-              Decomponha a imagem que voce quer em cinco camadas — formato, ambiente, luz, personagem,
-              sequencia — e garanta que cada uma seja uma decisao, nao um acaso. As proximas tres aulas
+<p data-ARCKHÉ-block="m2-1-t4-p4">Guarde o modulo como uma unica disciplina: antes de gerar, <em>leia</em>.
+              Decomponha a imagem que voce quer em cinco camadas â€” formato, ambiente, luz, personagem,
+              sequencia â€” e garanta que cada uma seja uma decisao, nao um acaso. As proximas tres aulas
               destrincham tres dessas camadas com profundidade de oficio: a composicao (onde o olho vai), a luz
               (como a cena se sente) e a profundidade (como o espaco ganha tres dimensoes). Mas todas elas
-              pressupoem o que voce instalou aqui — o habito de olhar uma cena e ver decisoes.</p>
+              pressupoem o que voce instalou aqui â€” o habito de olhar uma cena e ver decisoes.</p>
 </div>
 <!-- figura 4: a sequencia de revelacao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · A <b>sequencia</b> de revelacao — o espectador descobre, passo a passo</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· A <b>sequencia</b> de revelacao â€” o espectador descobre, passo a passo</figcaption>
 <svg aria-label="Diagrama de cinco quadros em sequencia da esquerda para a direita: mostrar o mundo, aproximar, revelar o personagem, introduzir a ruptura, mostrar a intencao; uma seta de curiosidade crescente atravessa todos." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="150" y2="150"></line>
 <!-- 5 quadros -->
@@ -545,46 +545,46 @@
 <line class="rule-stroke" opacity="0.6" stroke-width="1" x1="44" x2="136" y1="108" y2="108"></line>
 <rect class="rule-stroke" fill="none" height="22" stroke-width="1" width="14" x="58" y="86"></rect>
 <rect class="rule-stroke" fill="none" height="28" stroke-width="1" width="12" x="96" y="80"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="90" y="138">1 · o mundo</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="90" y="138">1 Â· o mundo</text>
 </g>
 <g>
 <rect class="rule-stroke" fill="none" height="78" rx="3" stroke-width="1.2" width="112" x="172" y="44"></rect>
 <rect class="rule-stroke" fill="none" height="44" stroke-width="1.1" width="44" x="206" y="70"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="228" y="138">2 · aproxima</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="228" y="138">2 Â· aproxima</text>
 </g>
 <g>
 <rect class="rule-stroke" fill="none" height="78" rx="3" stroke-width="1.2" width="112" x="310" y="44"></rect>
 <circle class="accent-stroke" cx="366" cy="74" r="7" stroke-width="1.6"></circle>
 <line class="accent-stroke" stroke-width="1.6" x1="366" x2="366" y1="81" y2="110"></line>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="366" y="138">3 · personagem</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="366" y="138">3 Â· personagem</text>
 </g>
 <g>
 <rect class="accent-stroke" fill="none" height="78" rx="3" stroke-width="1.3" width="112" x="448" y="44"></rect>
 <path class="accent-stroke" d="M470 100 L496 64 L522 100" fill="none" stroke-width="1.6"></path>
 <circle class="accent" cx="538" cy="70" r="4"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="504" y="138">4 · ruptura</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="504" y="138">4 Â· ruptura</text>
 </g>
 <g>
 <rect class="accent-stroke" fill="none" height="78" rx="3" stroke-width="1.3" width="112" x="586" y="44"></rect>
 <line class="accent-stroke" stroke-width="2" x1="642" x2="642" y1="64" y2="110"></line>
 <path class="accent-stroke" d="M642 64 L666 80" stroke-width="1.6"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="642" y="138">5 · intencao</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="642" y="138">5 Â· intencao</text>
 </g>
 <!-- seta de curiosidade -->
 <path class="mark-stroke" d="M34 170 C 300 162, 520 160, 690 162" fill="none" marker-end="" stroke-width="1.6"></path>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="190">CURIOSIDADE CRESCENTE →</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="190">CURIOSIDADE CRESCENTE â†’</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Voce tem cinco quadros — mundo, aproximacao, personagem, ruptura, intencao — e um colega
-              sugere mostrar o personagem <em>logo no primeiro</em>, em close, “pra prender de cara”.
+<p>Voce tem cinco quadros â€” mundo, aproximacao, personagem, ruptura, intencao â€” e um colega
+              sugere mostrar o personagem <em>logo no primeiro</em>, em close, â€œpra prender de caraâ€.
               Pela logica deste modulo, o que se perde com isso?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">Perde-se a <strong>descoberta</strong>. Comecando pelo close do personagem, voce
                 entrega a resposta antes da pergunta: o espectador nao teve o mundo para estranhar nem a contradicao
-                para sentir. A forca da estrutura esta em <em>adiar</em> — mostrar primeiro o mundo cria o
+                para sentir. A forca da estrutura esta em <em>adiar</em> â€” mostrar primeiro o mundo cria o
                 contexto que faz o personagem contradizer algo. Sem esse contexto, o close vira so um rosto bonito,
                 nao um enigma.</p>
 </details>
@@ -597,57 +597,57 @@
 <details class="q-item">
 <summary><span class="qn">01</span><span>Qual e a diferenca entre um prompt que <em>descreve</em> e um que <em>controla a percepcao</em>?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Descrever lista o que esta no quadro (objetos, adjetivos de qualidade). Controlar a
-              percepcao decide <em>como</em> o quadro se comporta e <em>quando</em> a informacao chega —
+              percepcao decide <em>como</em> o quadro se comporta e <em>quando</em> a informacao chega â€”
               formato da camera, o que o mundo conta, de onde vem a luz, qual a contradicao, em que ordem se revela.
               So o segundo dirige uma cena.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Por que a camada de <em>formato</em> pode mudar a emocao de um cenario sem trocar nenhum elemento dele?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque o formato — lente, foco, proporcao, movimento — define a
+<div class="ans"><p>Porque o formato â€” lente, foco, proporcao, movimento â€” define a
               distancia e o ritmo com que vemos o mundo. O mesmo cenario em ruinas vira melancolia num plano aberto
               e lento, ou ameaca num tracking rapido e inclinado. A camera fala antes de qualquer objeto.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Por que um personagem que <em>nao se encaixa</em> no mundo intriga mais do que um que se encaixa?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque a contradicao abre uma pergunta que o cerebro precisa resolver. Personagem
-              perfeito num mundo perfeito e propaganda; personagem perfeito num mundo em ruinas e mistério. O atrito
-              entre figura e contexto — beleza contra destruicao, calma contra caos — e o que prende, nao
+              perfeito num mundo perfeito e propaganda; personagem perfeito num mundo em ruinas e mistÃ©rio. O atrito
+              entre figura e contexto â€” beleza contra destruicao, calma contra caos â€” e o que prende, nao
               a soma de elementos bonitos.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Qual e o objetivo final de uma cena, segundo este modulo — e por que a ordem de revelacao importa?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Qual e o objetivo final de uma cena, segundo este modulo â€” e por que a ordem de revelacao importa?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Criar uma <em>pergunta</em> na mente do espectador, nao apenas uma imagem bonita. A
-              ordem importa porque revelar por etapas (mundo → aproximacao → personagem → ruptura
-              → intencao) faz o espectador <em>descobrir</em>; entregar tudo de uma vez faz o cerebro arquivar e
+              ordem importa porque revelar por etapas (mundo â†’ aproximacao â†’ personagem â†’ ruptura
+              â†’ intencao) faz o espectador <em>descobrir</em>; entregar tudo de uma vez faz o cerebro arquivar e
               seguir adiante. Sequenciar e dirigir o tempo da descoberta.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:2-1">
-<span data-inema-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:2-1">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 2</div>
-<div class="v" data-inema-meter="trilha:2">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:2">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -656,28 +656,28 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 2.2 — Composicao para Cinema</div>
+<div class="t">Modulo 2.2 â€” Composicao para CARCKHÉ</div>
 </div>
-<a class="go" href="modulo-2-2.html">Proximo →</a>
+<a class="go" href="modulo-2-2.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-2-1#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-1#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Ler uma imagem.</b> Olhar uma cena e enxergar as decisoes que a compoem — nao “que
-          bonito”, mas “este formato, esta luz, esta contradicao, esta ordem”. Quem nomeia,
+<b>Ler uma imagem.</b> Olhar uma cena e enxergar as decisoes que a compoem â€” nao â€œque
+          bonitoâ€, mas â€œeste formato, esta luz, esta contradicao, esta ordemâ€. Quem nomeia,
           controla.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Modulo 1 do programa — <i>Visual Thinking</i>, abertura do Bloco 2 (Fundamentos Cinematograficos).
+          Modulo 1 do programa â€” <i>Visual Thinking</i>, abertura do Bloco 2 (Fundamentos CARCKHÉtograficos).
           Tese: <i>um prompt profissional controla a percepcao ao longo do tempo</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-2-1#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-1#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Formato.</b> O comportamento da camera antes do conteudo: proporcao, lente, profundidade de campo,
@@ -685,14 +685,14 @@
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          O ambiente narra sem texto: poeira e destrocos suspensos mantem o mundo “vivo” mesmo parado.
+          O ambiente narra sem texto: poeira e destrocos suspensos mantem o mundo â€œvivoâ€ mesmo parado.
           O espectador entende que algo esta errado sem nenhuma legenda.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-2-1#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-1#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Contradicao.</b> Um personagem que nega o mundo — elegante na ruina, calmo no caos. O detalhe
+<b>Contradicao.</b> Um personagem que nega o mundo â€” elegante na ruina, calmo no caos. O detalhe
           que <i>nao</i> deveria estar ali e o que faz o espectador perguntar.
         </aside>
 <aside class="sidenote" data-kind="fundo">
@@ -701,16 +701,16 @@
           mesmo quadro, a imagem ja entra em conflito antes de qualquer acao.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-2-1#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-2-1#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Sequencia.</b> A ordem de revelacao — mundo, aproximacao, personagem, ruptura, intencao —
-          que faz o espectador <i>descobrir</i> em vez de receber. O “quando” e a dimensao mais
+<b>Sequencia.</b> A ordem de revelacao â€” mundo, aproximacao, personagem, ruptura, intencao â€”
+          que faz o espectador <i>descobrir</i> em vez de receber. O â€œquandoâ€ e a dimensao mais
           ignorada.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
-          A tese que define o bloco: <i>voce nao cria uma cena, cria uma pergunta</i>. Nomeie sempre tres coisas —
+          A tese que define o bloco: <i>voce nao cria uma cena, cria uma pergunta</i>. Nomeie sempre tres coisas â€”
           o contraste, a tensao e a pergunta. Se nao consegue, ainda e so uma imagem.
         </aside>
 </aside>
@@ -718,8 +718,8 @@
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 2.1 — folio v</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 2.1 â€” folio v</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -728,8 +728,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

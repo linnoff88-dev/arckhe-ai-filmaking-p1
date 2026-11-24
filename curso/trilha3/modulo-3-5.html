@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 3.5 — Integracao Luma e Runway | AI Filmmaking</title>
+<title>Modulo 3.5 â€” Integracao Luma e Runway | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha3/modulo-3-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha3/modulo-3-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha3/modulo-3-5.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:3-5"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:3-5"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Trilha <b>3</b> Workflow de Cinema com IA</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
+<span>Trilha <b>3</b> Workflow de CARCKHÉ com IA</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>3.5</b> / 5</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,32 +189,32 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 3.5 · Trilha 3 · Workflow de Cinema com IA</p>
+<p class="kicker">Modulo 3.5 Â· Trilha 3 Â· Workflow de CARCKHÉ com IA</p>
 <h1 class="module">Integracao <em>Luma</em> e Runway</h1>
 <p class="deck">O acabamento, dirigindo por conversa. A Luma (com o Uni-1) nao e mais um gerador de
-          imagem ou video — e um ambiente de cinema onde voce fala como com um colaborador humano. O
+          imagem ou video â€” e um ambiente de cARCKHÉ onde voce fala como com um colaborador humano. O
           sistema lembra o contexto do projeto, e voce dirige em vez de digitar comandos.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~18 min · modulo inteiro</span>
+<span>~18 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que a Luma (Uni-1) e um <b>ambiente de cinema</b>, e nao um gerador — e o que a Inteligencia Unificada faz pela coerencia.</li>
-<li>A diferenca entre <b>escrever comandos e dirigir conversando</b> — e por que falar natural deixa a IA entender intencao.</li>
-<li>O fluxo pratico em <b>tres etapas</b>: criar o personagem, dirigir o plano cinematografico, animar.</li>
-<li>Como <b>comparar saidas</b> (Kling x Ray) e escolher a que serve a visao — refinando por linguagem natural.</li>
+<li>Por que a Luma (Uni-1) e um <b>ambiente de cARCKHÉ</b>, e nao um gerador â€” e o que a Inteligencia Unificada faz pela coerencia.</li>
+<li>A diferenca entre <b>escrever comandos e dirigir conversando</b> â€” e por que falar natural deixa a IA entender intencao.</li>
+<li>O fluxo pratico em <b>tres etapas</b>: criar o personagem, dirigir o plano cARCKHÉtografico, animar.</li>
+<li>Como <b>comparar saidas</b> (Kling x Ray) e escolher a que serve a visao â€” refinando por linguagem natural.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">Um ambiente de cinema, nao um gerador</span></a></li>
+<a href="#topico-1"><span class="t">Um ambiente de cARCKHÉ, nao um gerador</span></a></li>
 <li><span class="n">2</span><a href="#topico-2"><span class="t">Dirigir conversando, nao comandar</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">Etapa 1: criar o personagem</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Etapa 2 e 3: dirigir e animar</span></a><span class="leader"></span></li>
@@ -222,35 +222,35 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-1" data-inema-track="3" id="topico-1">
+<section data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-1" data-ARCKHÉ-track="3" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>O ambiente</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>O ambiente</span>
 </div>
-<h2 class="head"><span class="num">1.</span>Um ambiente de cinema, nao um gerador</h2>
+<h2 class="head"><span class="num">1.</span>Um ambiente de cARCKHÉ, nao um gerador</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m3-5-t1-p1">A virada desta aula esta numa frase: a Luma, com
-              o modelo <strong>Uni-1</strong>, nao e “mais um gerador de imagem ou video” — e um
-              <em>ambiente criativo de cinema</em> onde voce age como diretor, nao como engenheiro de prompt.<span class="sidenote-ref">1</span>
+<p class="lede dropcap" data-ARCKHÉ-block="m3-5-t1-p1">A virada desta aula esta numa frase: a Luma, com
+              o modelo <strong>Uni-1</strong>, nao e â€œmais um gerador de imagem ou videoâ€ â€” e um
+              <em>ambiente criativo de cARCKHÉ</em> onde voce age como diretor, nao como engenheiro de prompt.<span class="sidenote-ref">1</span>
               A diferenca nao e cosmetica. Um gerador trata cada pedido como um evento isolado; um ambiente de
-              cinema entende que voce esta construindo um <em>filme</em>, com continuidade entre as partes.</p>
-<p data-inema-block="m3-5-t1-p2">O que torna isso possivel e a <em>Inteligencia Unificada</em>: o
+              cARCKHÉ entende que voce esta construindo um <em>filme</em>, com continuidade entre as partes.</p>
+<p data-ARCKHÉ-block="m3-5-t1-p2">O que torna isso possivel e a <em>Inteligencia Unificada</em>: o
               sistema <strong>lembra o contexto do projeto</strong>, de modo que o filme permanece coerente visual
               e narrativamente. Tres consequencias praticas, segundo a fonte: voce nao precisa mais ficar trocando
               de ferramenta a cada passo; os <strong>personagens permanecem consistentes</strong> entre planos; e a
               <strong>luz, o estilo e o tom ficam estaveis</strong>. Tudo o que custava esforco manual nas etapas
-              anteriores — manter o mesmo rosto, a mesma paleta — passa a ser lembrado pelo proprio
+              anteriores â€” manter o mesmo rosto, a mesma paleta â€” passa a ser lembrado pelo proprio
               ambiente.</p>
 <h3 class="sub">Por que isso resolve o problema do pipeline</h3>
-<p data-inema-block="m3-5-t1-p3">As aulas anteriores te ensinaram a impor continuidade <em>na marra</em>:
+<p data-ARCKHÉ-block="m3-5-t1-p3">As aulas anteriores te ensinaram a impor continuidade <em>na marra</em>:
               referenciar o personagem no Freepik, repetir a fisica no Seedance, justificar cada movimento no Kling.
-              O Uni-1 muda a natureza do trabalho ao carregar o contexto por voce. Voce ainda dirige — mas
+              O Uni-1 muda a natureza do trabalho ao carregar o contexto por voce. Voce ainda dirige â€” mas
               dirige uma memoria, nao uma folha em branco a cada pedido. E por isso que a aula trata a Luma como o
               <em>refino</em> do pipeline: e onde as pecas construidas antes ganham coerencia de filme sem que voce
               precise recriar o contexto a cada plano.</p>
 </div>
-<!-- figura 1: gerador isolado x ambiente com memória -->
+<!-- figura 1: gerador isolado x ambiente com memÃ³ria -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · Gerador isolado x <b>ambiente com memoria</b> de projeto</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· Gerador isolado x <b>ambiente com memoria</b> de projeto</figcaption>
 <svg aria-label="Diagrama: a esquerda, tres pedidos isolados geram saidas desconexas; a direita, tres pedidos dentro de um ambiente que lembra o contexto geram saidas coerentes em personagem, luz e tom." class="diagram" role="img" viewbox="0 0 720 206">
 <defs>
 <pattern height="6" id="hatch-3-5" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -263,9 +263,9 @@
 <rect height="44" rx="3" width="70" x="60" y="48"></rect><rect height="44" rx="3" width="70" x="140" y="100"></rect><rect height="44" rx="3" width="70" x="220" y="56"></rect>
 </g>
 <g class="faint"><circle cx="95" cy="70" r="6"></circle><circle cx="175" cy="122" r="9"></circle><circle cx="255" cy="78" r="5"></circle></g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="175" y="172">cada pedido isolado — desconexo</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="175" y="172">cada pedido isolado â€” desconexo</text>
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="34" y2="186"></line>
-<!-- direita: ambiente com memória -->
+<!-- direita: ambiente com memÃ³ria -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">AMBIENTE COM MEMORIA</text>
 <rect class="accent-stroke" fill="url(#hatch-3-5)" height="118" rx="4" stroke-width="1.3" width="268" x="406" y="44"></rect>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="540" y="62">CONTEXTO DO PROJETO</text>
@@ -273,13 +273,13 @@
 <rect height="44" rx="3" width="64" x="426" y="78"></rect><rect height="44" rx="3" width="64" x="500" y="78"></rect><rect height="44" rx="3" width="64" x="574" y="78"></rect>
 </g>
 <g class="accent"><circle cx="458" cy="100" r="7"></circle><circle cx="532" cy="100" r="7"></circle><circle cx="606" cy="100" r="7"></circle></g>
-<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="540" y="150">mesmo personagem · mesma luz · mesmo tom</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="540" y="150">mesmo personagem Â· mesma luz Â· mesmo tom</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Nas aulas anteriores, manter o mesmo rosto entre planos exigia referenciar o personagem
-              manualmente, plano a plano. O que muda quando o ambiente “lembra o contexto do projeto”?</p>
+              manualmente, plano a plano. O que muda quando o ambiente â€œlembra o contexto do projetoâ€?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">A continuidade deixa de ser <strong>tarefa sua</strong> e passa a ser
@@ -291,46 +291,46 @@
 </div>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-2" data-inema-track="3" id="topico-2">
+<section data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-2" data-ARCKHÉ-track="3" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>Dirigir</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>Dirigir</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Dirigir conversando, nao comandar</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-5-t2-p1">A segunda virada e no <em>modo de falar</em>. Voce nao
-              escreve comandos tecnicos — voce <strong>fala, descreve e dirige</strong>, como faria com um
+<p class="lede" data-ARCKHÉ-block="m3-5-t2-p1">A segunda virada e no <em>modo de falar</em>. Voce nao
+              escreve comandos tecnicos â€” voce <strong>fala, descreve e dirige</strong>, como faria com um
               colaborador humano. Pergunta, descreve a cena, ajusta. Essa mudanca de registro nao e um detalhe de
               interface: ela muda o que a IA consegue fazer com o seu pedido.<span class="sidenote-ref">2</span></p>
-<p data-inema-block="m3-5-t2-p2">A fonte explica por que isso funciona. Quando voce fala de forma
+<p data-ARCKHÉ-block="m3-5-t2-p2">A fonte explica por que isso funciona. Quando voce fala de forma
               natural, tres coisas acontecem: a IA entende a <strong>intencao</strong>, nao apenas palavras-chave;
               ela <strong>lembra o contexto</strong> entre os passos; e voce <strong>permanece numa mentalidade
               criativa</strong>, em vez de cair no modo tecnico. A sintese e elegante: <em>voce nao esta dando
-              prompt — esta dirigindo o seu parceiro criativo.</em> A linguagem natural e o que mantem voce na
+              prompt â€” esta dirigindo o seu parceiro criativo.</em> A linguagem natural e o que mantem voce na
               cadeira do diretor.</p>
 <h3 class="sub">O refinamento tambem e conversa</h3>
-<p data-inema-block="m3-5-t2-p3">O ajuste segue o mesmo registro. Em vez de reescrever um prompt inteiro,
-              voce conversa: “mantenha tudo igual, so adicione um vaqueiro a esquerda”, “deixe o
-              salto mais realista”, “melhore a fluidez cinematografica”. Como o ambiente carrega o
-              contexto, esses pedidos incrementais funcionam — ele sabe o que e “tudo” quando voce
-              diz “mantenha tudo igual”. Iterar deixa de ser refazer; vira <em>dialogar</em>.</p>
+<p data-ARCKHÉ-block="m3-5-t2-p3">O ajuste segue o mesmo registro. Em vez de reescrever um prompt inteiro,
+              voce conversa: â€œmantenha tudo igual, so adicione um vaqueiro a esquerdaâ€, â€œdeixe o
+              salto mais realistaâ€, â€œmelhore a fluidez cARCKHÉtograficaâ€. Como o ambiente carrega o
+              contexto, esses pedidos incrementais funcionam â€” ele sabe o que e â€œtudoâ€ quando voce
+              diz â€œmantenha tudo igualâ€. Iterar deixa de ser refazer; vira <em>dialogar</em>.</p>
 </div>
-<!-- prompt pronto: comando x direção conversacional -->
+<!-- prompt pronto: comando x direÃ§Ã£o conversacional -->
 <div class="prose">
-<p data-inema-block="m3-5-t2-p4">A mesma intencao, escrita como comando seco e como direcao
-              conversacional — a forma de baixo e a que o Uni-1 espera:</p>
-<div class="codeblock"><span class="c"># Luma (Uni-1) — comando seco vs direcao conversacional</span>
-<span class="c"># A) command style (avoid) — treated as isolated keywords</span>
-<span class="k">cmd:</span> cowboy, golden hills, drone, gallop, jump, cinematic, 16:9
+<p data-ARCKHÉ-block="m3-5-t2-p4">A mesma intencao, escrita como comando seco e como direcao
+              conversacional â€” a forma de baixo e a que o Uni-1 espera:</p>
+<div class="codeblock"><span class="c"># Luma (Uni-1) â€” comando seco vs direcao conversacional</span>
+<span class="c"># A) command style (avoid) â€” treated as isolated keywords</span>
+<span class="k">cmd:</span> cowboy, golden hills, drone, gallop, jump, cARCKHÉtic, 16:9
 
-<span class="c"># B) direction style (use) — natural language, intent + context</span>
-<span class="k">say:</span> "Hey — let's open on an ultra-wide drone shot, top-down over the golden
+<span class="c"># B) direction style (use) â€” natural language, intent + context</span>
+<span class="k">say:</span> "Hey â€” let's open on an ultra-wide drone shot, top-down over the golden
 hills at dawn. Then flip down to our cowboy riding at full gallop, jumping between the
-cliffs. Keep it cinematic and photorealistic, 16:9."
+cliffs. Keep it cARCKHÉtic and photorealistic, 16:9."
 <span class="c"># refine by talking: "keep everything the same, just add a cowboy on the left."</span></div>
 </div>
 <!-- figura 2: comando vs conversa -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · <b>Palavra-chave</b> vira so palavra; <b>conversa</b> vira intencao + contexto</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· <b>Palavra-chave</b> vira so palavra; <b>conversa</b> vira intencao + contexto</figcaption>
 <svg aria-label="Diagrama: a esquerda, palavras-chave soltas entram e produzem fragmentos; a direita, uma fala natural entra e produz intencao, contexto lembrado e mentalidade criativa." class="diagram" role="img" viewbox="0 0 720 192">
 <!-- esquerda: keywords -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="160" y="28">PALAVRAS-CHAVE</text>
@@ -346,22 +346,22 @@ cliffs. Keep it cinematic and photorealistic, 16:9."
 <!-- direita: conversa -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="540" y="28">CONVERSA</text>
 <rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="260" x="410" y="40"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="62">“abre num drone amplo...”</text>
+<text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="62">â€œabre num drone amplo...â€</text>
 <path class="accent-stroke" d="M540 74 V 96" stroke-width="1.4"></path>
 <g font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle">
 <rect class="accent-stroke" fill="url(#hatch-3-5)" height="30" rx="3" stroke-width="1.1" width="84" x="412" y="104"></rect><text class="ink" x="454" y="123">intencao</text>
 <rect class="accent-stroke" fill="url(#hatch-3-5)" height="30" rx="3" stroke-width="1.1" width="84" x="500" y="104"></rect><text class="ink" x="542" y="123">contexto</text>
 <rect class="accent-stroke" fill="url(#hatch-3-5)" height="30" rx="3" stroke-width="1.1" width="84" x="588" y="104"></rect><text class="ink" x="630" y="123">criatividade</text>
 </g>
-<text class="accent" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="540" y="160">voce dirige um parceiro — nao da prompt</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="540" y="160">voce dirige um parceiro â€” nao da prompt</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: anexar imagens como referencia
+<summary><span class="chev">â–¸</span> Indo mais fundo: anexar imagens como referencia
               <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>Camada opcional, util quando voce ja tem quadros das aulas anteriores.</p>
-<p>O fluxo conversacional aceita <em>imagens</em> como ponto de partida — voce nao precisa
+<p>O fluxo conversacional aceita <em>imagens</em> como ponto de partida â€” voce nao precisa
                 comecar do zero. Para dirigir a partir de uma imagem, basta anexa-la e descrever a camera, a acao e
                 a sensacao que voce quer; se forem varias (no exemplo da fonte, tres), seleciona todas de uma vez.
                 Isso fecha o ciclo do pipeline: os <strong>quadros finais</strong> que voce construiu no Freepik
@@ -372,42 +372,42 @@ cliffs. Keep it cinematic and photorealistic, 16:9."
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-3" data-inema-track="3" id="topico-3">
+<section data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-3" data-ARCKHÉ-track="3" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>Personagem</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>Personagem</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Etapa 1: criar o personagem</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-5-t3-p1">O fluxo pratico da aula tem tres etapas, cada uma em
-              linguagem conversacional plena. A primeira e <strong>criar o personagem</strong> — e ela existe
+<p class="lede" data-ARCKHÉ-block="m3-5-t3-p1">O fluxo pratico da aula tem tres etapas, cada uma em
+              linguagem conversacional plena. A primeira e <strong>criar o personagem</strong> â€” e ela existe
               por um motivo de continuidade: pedir uma <em>ficha completa de personagem</em> (character sheet) trava
               o rosto, o figurino e as proporcoes para o filme inteiro. Sem essa ancora, cada plano arriscaria um
               personagem ligeiramente diferente; com ela, a identidade fica fixada de saida.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m3-5-t3-p2">O pedido e feito como uma conversa, com a descricao do personagem e o
-              pedido explicito de vistas frontal, lateral e traseira — todas com o <em>mesmo rosto, mesmo
+<p data-ARCKHÉ-block="m3-5-t3-p2">O pedido e feito como uma conversa, com a descricao do personagem e o
+              pedido explicito de vistas frontal, lateral e traseira â€” todas com o <em>mesmo rosto, mesmo
               figurino, mesmas proporcoes</em>. Um aviso pratico que a fonte repete de toda a trilha: a IA pode
               comecar gerando uma vista so; <strong>guie passo a passo, a iteracao e a chave.</strong> Voce nao
-              ganha a folha completa num pedido — voce a constroi conversando, ajustando ate as tres vistas
+              ganha a folha completa num pedido â€” voce a constroi conversando, ajustando ate as tres vistas
               baterem.</p>
 </div>
 <!-- prompt pronto: character sheet conversacional -->
 <div class="prose">
-<p data-inema-block="m3-5-t3-p3">O pedido de ficha de personagem em linguagem natural, travando a
-              consistencia — pronto para a Luma:</p>
-<div class="codeblock"><span class="c"># Luma (Uni-1) — Etapa 1: ficha de personagem (trava rosto, figurino, proporcoes)</span>
-<span class="k">say:</span> "Hey, let's create our main character. I need a cinematic, photorealistic
-cowboy in his early 40s — rugged, broad shoulders, strong build. Dressed in a fringed
+<p data-ARCKHÉ-block="m3-5-t3-p3">O pedido de ficha de personagem em linguagem natural, travando a
+              consistencia â€” pronto para a Luma:</p>
+<div class="codeblock"><span class="c"># Luma (Uni-1) â€” Etapa 1: ficha de personagem (trava rosto, figurino, proporcoes)</span>
+<span class="k">say:</span> "Hey, let's create our main character. I need a cARCKHÉtic, photorealistic
+cowboy in his early 40s â€” rugged, broad shoulders, strong build. Dressed in a fringed
 suede jacket, denim, worn leather boots and a classic cowboy hat.
 Please generate a full-body character sheet with front, side and back views.
 All three must share the SAME face, SAME outfit, SAME proportions.
 Straight, relaxed posture, clean clothes, natural lighting, subtle film grain,
 clean background. Make it look like a real film still, 16:9."
-<span class="c"># tip: the AI may start with one view — guide it step by step, iteration is key.</span>
-<span class="c"># keep the character generic — do not replicate any real identifiable person.</span></div>
+<span class="c"># tip: the AI may start with one view â€” guide it step by step, iteration is key.</span>
+<span class="c"># keep the character generic â€” do not replicate any real identifiable person.</span></div>
 </div>
 <!-- figura 3: a folha de personagem trava a identidade -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · A <b>ficha de personagem</b> trava a identidade para o filme inteiro</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· A <b>ficha de personagem</b> trava a identidade para o filme inteiro</figcaption>
 <svg aria-label="Diagrama: tres vistas do personagem (frente, lado, costas) com o mesmo rosto e figurino formam uma ficha que serve de ancora de identidade para todos os planos seguintes." class="diagram" role="img" viewbox="0 0 720 188">
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle">
 <rect class="wash rule-stroke" height="96" rx="3" stroke-width="1.2" width="80" x="60" y="40"></rect>
@@ -420,7 +420,7 @@ clean background. Make it look like a real film still, 16:9."
 <circle class="ink" cx="280" cy="68" r="11"></circle><line class="rule-stroke" stroke-width="1.4" x1="280" x2="280" y1="80" y2="116"></line>
 <text x="280" y="150">costas</text>
 </g>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="190" y="30">MESMO ROSTO · MESMO FIGURINO</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="190" y="30">MESMO ROSTO Â· MESMO FIGURINO</text>
 <g class="accent-stroke" fill="none" stroke-width="1.6">
 <path d="M320 88 H 470"></path><path d="M470 88 l -7 -4 m 7 4 l -7 4"></path>
 </g>
@@ -437,118 +437,118 @@ clean background. Make it look like a real film still, 16:9."
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">Ela previne a <strong>deriva de identidade</strong>. A ficha trava rosto, figurino
                 e proporcoes de saida, dando ao ambiente uma referencia estavel para todos os planos seguintes. Se
-                voce comecasse pelo primeiro plano, cada novo plano arriscaria um personagem um pouco diferente —
+                voce comecasse pelo primeiro plano, cada novo plano arriscaria um personagem um pouco diferente â€”
                 e a incoerencia entre tomadas e justamente o que denuncia um filme de IA. Travar a identidade antes
                 e o que mantem o filme crivel.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-4" data-inema-track="3" id="topico-4">
+<section data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-4" data-ARCKHÉ-track="3" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>Dirigir + animar</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>Dirigir + animar</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Etapa 2 e 3: dirigir e animar</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-5-t4-p1">Com o personagem travado, a <strong>Etapa 2</strong> e
-              dirigir um plano cinematografico — agora pensando como diretor. Voce descreve a tomada em
+<p class="lede" data-ARCKHÉ-block="m3-5-t4-p1">Com o personagem travado, a <strong>Etapa 2</strong> e
+              dirigir um plano cARCKHÉtografico â€” agora pensando como diretor. Voce descreve a tomada em
               linguagem natural e controla as quatro alavancas que ja conhece das aulas anteriores:
               <em>movimento de camera, composicao, luz e emocao</em>. No exemplo da fonte, um drone ultra-amplo,
               de cima para baixo sobre colinas douradas, que mergulha ate o vaqueiro galopando e saltando entre
-              penhascos. Refinar segue a logica da conversa: “mantenha tudo igual, so adicione um vaqueiro a
-              esquerda”.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m3-5-t4-p2">A <strong>Etapa 3</strong> e dar vida ao plano — <em>animar</em>.
-              Aqui voce descreve o movimento que quer: “faca a camera parecer um drone veloz, varrendo ao
-              redor do cavaleiro, alta energia, movimento realista”. E refina de novo conversando: “deixe
-              o salto mais realista”, “melhore a fluidez cinematografica”. Repare que as tres
-              etapas — criar, dirigir, animar — sao o mesmo arco do pipeline inteiro (imagem →
-              direcao → movimento) condensado num so ambiente conversacional. O que mudou nao foi a gramatica;
+              penhascos. Refinar segue a logica da conversa: â€œmantenha tudo igual, so adicione um vaqueiro a
+              esquerdaâ€.<span class="sidenote-ref">4</span></p>
+<p data-ARCKHÉ-block="m3-5-t4-p2">A <strong>Etapa 3</strong> e dar vida ao plano â€” <em>animar</em>.
+              Aqui voce descreve o movimento que quer: â€œfaca a camera parecer um drone veloz, varrendo ao
+              redor do cavaleiro, alta energia, movimento realistaâ€. E refina de novo conversando: â€œdeixe
+              o salto mais realistaâ€, â€œmelhore a fluidez cARCKHÉtograficaâ€. Repare que as tres
+              etapas â€” criar, dirigir, animar â€” sao o mesmo arco do pipeline inteiro (imagem â†’
+              direcao â†’ movimento) condensado num so ambiente conversacional. O que mudou nao foi a gramatica;
               foi a interface, que agora carrega o contexto por voce.</p>
 </div>
 <!-- prompt pronto: dirigir + animar -->
 <div class="prose">
-<p data-inema-block="m3-5-t4-p3">Os prompts das etapas 2 e 3, em sequencia — dirigir o plano e
+<p data-ARCKHÉ-block="m3-5-t4-p3">Os prompts das etapas 2 e 3, em sequencia â€” dirigir o plano e
               depois anima-lo, ambos por conversa:</p>
-<div class="codeblock"><span class="c"># Luma (Uni-1) — Etapa 2: dirigir o plano (camera, composicao, luz, emocao)</span>
+<div class="codeblock"><span class="c"># Luma (Uni-1) â€” Etapa 2: dirigir o plano (camera, composicao, luz, emocao)</span>
 <span class="k">say:</span> "Give me an ultra-wide drone shot, top-down over the golden hills at dawn.
 Then flip the camera down to the cowboy riding at full gallop, jumping between the cliffs.
-Cinematic, photorealistic, dramatic low sun, wide negative space."
+CARCKHÉtic, photorealistic, dramatic low sun, wide negative space."
 <span class="k">refine:</span> "Keep everything the same, just add a cowboy on the left."
 
 <span class="c"># Etapa 3: animar o plano (descreva o movimento, depois ajuste)</span>
-<span class="k">say:</span> "Make the camera feel like a fast drone sweeping around the rider —
+<span class="k">say:</span> "Make the camera feel like a fast drone sweeping around the rider â€”
 high energy, realistic motion."
-<span class="k">refine:</span> "Make the jump more realistic." / "Improve the cinematic flow."</div>
+<span class="k">refine:</span> "Make the jump more realistic." / "Improve the cARCKHÉtic flow."</div>
 </div>
-<!-- figura 4: as três etapas conversacionais -->
+<!-- figura 4: as trÃªs etapas conversacionais -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Criar, dirigir, animar</b> — o pipeline inteiro condensado em conversa</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Criar, dirigir, animar</b> â€” o pipeline inteiro condensado em conversa</figcaption>
 <svg aria-label="Diagrama de tres etapas encadeadas: criar o personagem, dirigir o plano e animar, todas por linguagem conversacional, com setas de refino voltando a cada etapa." class="diagram" role="img" viewbox="0 0 720 184">
 <g font-family="Source Serif 4, serif" font-size="12" text-anchor="middle">
 <rect class="wash accent-stroke" height="52" rx="3" stroke-width="1.2" width="180" x="30" y="56"></rect>
-<text class="ink-soft" x="120" y="80">1 · criar</text>
+<text class="ink-soft" x="120" y="80">1 Â· criar</text>
 <text class="faint" font-size="9.5" x="120" y="97">ficha de personagem</text>
 <rect class="wash accent-stroke" height="52" rx="3" stroke-width="1.2" width="180" x="270" y="56"></rect>
-<text class="ink-soft" x="360" y="80">2 · dirigir</text>
+<text class="ink-soft" x="360" y="80">2 Â· dirigir</text>
 <text class="faint" font-size="9.5" x="360" y="97">camera, luz, emocao</text>
 <rect class="accent-stroke" fill="url(#hatch-3-5)" height="52" rx="3" stroke-width="1.3" width="180" x="510" y="56"></rect>
-<text class="ink" x="600" y="80">3 · animar</text>
+<text class="ink" x="600" y="80">3 Â· animar</text>
 <text class="accent" font-size="9.5" x="600" y="97">movimento + fluidez</text>
 </g>
 <g class="accent-stroke" fill="none" stroke-width="1.8">
 <path d="M210 82 H 268"></path><path d="M268 82 l -7 -4 m 7 4 l -7 4"></path>
 <path d="M450 82 H 508"></path><path d="M508 82 l -7 -4 m 7 4 l -7 4"></path>
 </g>
-<!-- laços de refino -->
+<!-- laÃ§os de refino -->
 <g class="mark-stroke" fill="none" stroke-dasharray="3 3" stroke-width="1.2">
 <path d="M120 56 C 120 30, 160 30, 160 50"></path>
 <path d="M360 56 C 360 30, 400 30, 400 50"></path>
 <path d="M600 56 C 600 30, 640 30, 640 50"></path>
 </g>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1.2" text-anchor="middle" x="360" y="24">REFINO POR CONVERSA EM CADA ETAPA</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="150">imagem → direcao → movimento — o mesmo arco, agora num so ambiente</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="150">imagem â†’ direcao â†’ movimento â€” o mesmo arco, agora num so ambiente</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m3-5-t4-p4">Note como cada etapa tem seu <em>laco de refino</em>: voce nunca
-              precisa acertar de primeira. Criar → ajustar a folha; dirigir → ajustar a composicao;
-              animar → ajustar o movimento. A iteracao conversacional e o motor do fluxo — e, como o
+<p data-ARCKHÉ-block="m3-5-t4-p4">Note como cada etapa tem seu <em>laco de refino</em>: voce nunca
+              precisa acertar de primeira. Criar â†’ ajustar a folha; dirigir â†’ ajustar a composicao;
+              animar â†’ ajustar o movimento. A iteracao conversacional e o motor do fluxo â€” e, como o
               ambiente lembra o contexto, cada ajuste preserva o que ja estava certo em vez de recomecar.</p>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="3-5" data-inema-topic="modulo-3-5#topico-5" data-inema-track="3" id="topico-5">
+<section data-ARCKHÉ-module="3-5" data-ARCKHÉ-topic="modulo-3-5#topico-5" data-ARCKHÉ-track="3" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Comparar</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Comparar</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Comparar saidas e escolher</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m3-5-t5-p1">Um diferencial pratico fecha a aula: voce pode
-              <strong>comparar saidas</strong> de modelos diferentes — por exemplo, Kling versus Ray (3.14)
-              — e escolher a que melhor serve a sua visao.<span class="sidenote-ref">5</span> Isso devolve, em
-              nivel de plano, a logica de roteamento do Modulo 3.1: a ferramenta certa nao e a “melhor”
+<p class="lede" data-ARCKHÉ-block="m3-5-t5-p1">Um diferencial pratico fecha a aula: voce pode
+              <strong>comparar saidas</strong> de modelos diferentes â€” por exemplo, Kling versus Ray (3.14)
+              â€” e escolher a que melhor serve a sua visao.<span class="sidenote-ref">5</span> Isso devolve, em
+              nivel de plano, a logica de roteamento do Modulo 3.1: a ferramenta certa nao e a â€œmelhorâ€
               em abstrato, e a que entrega o que <em>esta</em> cena precisa. Um modelo pode dar um movimento mais
               fluido; o outro, uma textura mais crivel. Voce julga pelo resultado, nao pela marca.</p>
-<p data-inema-block="m3-5-t5-p2">Esse habito de comparar e escolher e o que conecta a Luma e o Runway
+<p data-ARCKHÉ-block="m3-5-t5-p2">Esse habito de comparar e escolher e o que conecta a Luma e o Runway
               dentro do pipeline. O Runway, como vimos no mapa, traz <em>controle preciso, edicao de movimento e
-              fluxos no estilo VFX</em> — e brilha justamente onde voce precisa ajustar um detalhe de
+              fluxos no estilo VFX</em> â€” e brilha justamente onde voce precisa ajustar um detalhe de
               movimento com mais mao. A Luma traz o ambiente conversacional e o movimento atmosferico. Usadas juntas,
               cobrem o <strong>refino</strong> do pipeline: a Luma dirige e gera; o Runway pune e edita. A escolha
-              entre elas — e entre as saidas que cada uma produz — e a ultima decisao de direcao antes
+              entre elas â€” e entre as saidas que cada uma produz â€” e a ultima decisao de direcao antes
               da montagem.</p>
-<h3 class="sub">O fim da oficina — e o que vem depois</h3>
-<p data-inema-block="m3-5-t5-p3">A tarefa da fonte e o resumo do fluxo: faca tres coisas com o
-              assistente — crie a ficha do personagem, gere um plano cinematografico e anime o plano. E o
+<h3 class="sub">O fim da oficina â€” e o que vem depois</h3>
+<p data-ARCKHÉ-block="m3-5-t5-p3">A tarefa da fonte e o resumo do fluxo: faca tres coisas com o
+              assistente â€” crie a ficha do personagem, gere um plano cARCKHÉtografico e anime o plano. E o
               pipeline inteiro da trilha, em miniatura, dentro de um ambiente conversacional. Guarde o modulo em uma
-              frase: <em>na Luma voce nao escreve comandos — dirige um parceiro que lembra o contexto, e
+              frase: <em>na Luma voce nao escreve comandos â€” dirige um parceiro que lembra o contexto, e
               compara saidas para escolher a que serve a cena.</em> Com isso encerramos a oficina da Trilha 3: voce
               ja sabe construir a cena, dar movimento, dirigir a camera e refinar conversando. A proxima trilha
-              aprofunda a <strong>linguagem de camera</strong> — a gramatica que transforma esses fluxos em
-              cinema de verdade.</p>
+              aprofunda a <strong>linguagem de camera</strong> â€” a gramatica que transforma esses fluxos em
+              cARCKHÉ de verdade.</p>
 </div>
 <!-- figura 5: comparar e escolher -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · <b>Comparar e escolher</b> — a ferramenta certa e a que serve esta cena</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· <b>Comparar e escolher</b> â€” a ferramenta certa e a que serve esta cena</figcaption>
 <svg aria-label="Diagrama: a mesma direcao gera duas saidas (Kling e Ray); um filtro de visao escolhe uma delas, que segue para a montagem." class="diagram" role="img" viewbox="0 0 720 188">
 <rect class="accent-stroke" fill="url(#hatch-3-5)" height="40" rx="3" stroke-width="1.3" width="130" x="40" y="76"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="105" y="101">direcao</text>
@@ -558,9 +558,9 @@ high energy, realistic motion."
 </g>
 <g font-family="Source Serif 4, serif" font-size="11" text-anchor="middle">
 <rect class="wash accent-stroke" height="36" rx="3" stroke-width="1.1" width="130" x="290" y="42"></rect>
-<text class="ink-soft" x="355" y="65">saida · Kling</text>
+<text class="ink-soft" x="355" y="65">saida Â· Kling</text>
 <rect class="wash accent-stroke" height="36" rx="3" stroke-width="1.1" width="130" x="290" y="112"></rect>
-<text class="ink-soft" x="355" y="135">saida · Ray</text>
+<text class="ink-soft" x="355" y="135">saida Â· Ray</text>
 </g>
 <g class="rule-stroke" fill="none" stroke-width="1.3">
 <path d="M420 60 C 470 60, 470 88, 500 92"></path>
@@ -572,15 +572,15 @@ high energy, realistic motion."
 <text class="accent" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="560" y="106">escolhe</text>
 <path class="accent-stroke" d="M594 94 H 640" stroke-width="1.8"></path><path class="accent-stroke" d="M640 94 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="668" y="90">MONTAGEM</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="668" y="104">→</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="middle" x="668" y="104">â†’</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m3-5-t5-p4">Repare no arco que se fecha: a Trilha 3 abriu com o mapa —
-              imagem, movimento, refino, montagem — e termina exatamente no ponto em que o refino entrega o
+<p data-ARCKHÉ-block="m3-5-t5-p4">Repare no arco que se fecha: a Trilha 3 abriu com o mapa â€”
+              imagem, movimento, refino, montagem â€” e termina exatamente no ponto em que o refino entrega o
               plano escolhido para a montagem. Voce percorreu a oficina inteira: Freepik construiu, Seedance moveu,
               Kling dirigiu a camera, Luma e Runway refinaram. O que sustentou tudo, do primeiro modulo ao ultimo,
-              foi a mesma tese: <em>a ferramenta executa a sua direcao — ela nao a inventa.</em></p>
+              foi a mesma tese: <em>a ferramenta executa a sua direcao â€” ela nao a inventa.</em></p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
@@ -591,55 +591,55 @@ high energy, realistic motion."
 <summary><span class="qn">01</span><span>O que a Inteligencia Unificada do Uni-1 muda no trabalho?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Ela <em>lembra o contexto do projeto</em>, entao personagem, luz, estilo e tom
               permanecem coerentes entre planos. A continuidade deixa de ser tarefa manual sua e vira propriedade
-              do ambiente — voce dirige uma memoria, nao uma folha em branco a cada pedido.</p></div>
+              do ambiente â€” voce dirige uma memoria, nao uma folha em branco a cada pedido.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Por que falar em linguagem natural funciona melhor que dar comandos?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque a IA entende a <em>intencao</em> (nao so palavras-chave), lembra o contexto
-              entre passos e mantem voce numa mentalidade criativa. Voce nao esta dando prompt — esta
-              dirigindo um parceiro criativo, inclusive no refino (“mantenha tudo igual, so...”).</p></div>
+              entre passos e mantem voce numa mentalidade criativa. Voce nao esta dando prompt â€” esta
+              dirigindo um parceiro criativo, inclusive no refino (â€œmantenha tudo igual, so...â€).</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Quais sao as tres etapas do fluxo, e por que comecar pelo personagem?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>Criar o personagem → dirigir o plano → animar.</em> Comeca-se pela
+<div class="ans"><p><em>Criar o personagem â†’ dirigir o plano â†’ animar.</em> Comeca-se pela
               ficha de personagem (tres vistas, mesmo rosto/figurino/proporcoes) porque ela <em>trava a
-              identidade</em> para o filme inteiro — previne a deriva entre planos que denuncia um filme de
+              identidade</em> para o filme inteiro â€” previne a deriva entre planos que denuncia um filme de
               IA.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">04</span><span>Por que comparar saidas (Kling x Ray) e por que Luma e Runway se completam?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque a ferramenta certa e a que serve <em>esta</em> cena, nao a “melhor”
-              em abstrato — voce julga pelo resultado. Luma traz o ambiente conversacional e o movimento
+<div class="ans"><p>Porque a ferramenta certa e a que serve <em>esta</em> cena, nao a â€œmelhorâ€
+              em abstrato â€” voce julga pelo resultado. Luma traz o ambiente conversacional e o movimento
               atmosferico; Runway traz controle preciso e edicao de movimento estilo VFX. Juntas cobrem o refino do
               pipeline.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:3-5">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:3-5">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 3</div>
-<div class="v" data-inema-meter="trilha:3">
-<span data-inema-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 24</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -647,33 +647,33 @@ high energy, realistic motion."
 <!-- proxima acao (UMA clara) -->
 <div class="nextup">
 <div class="txt">
-<div class="k">Continuar — proxima trilha</div>
-<div class="t">Modulo 4.1 — Cinematografia (Linguagem de Camera)</div>
+<div class="k">Continuar â€” proxima trilha</div>
+<div class="t">Modulo 4.1 â€” CARCKHÉtografia (Linguagem de Camera)</div>
 </div>
-<a class="go" href="../trilha4/modulo-4-1.html">Proximo →</a>
+<a class="go" href="../trilha4/modulo-4-1.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-3-5#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-5#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Uni-1.</b> O modelo da Luma que faz dela um <i>ambiente de cinema</i>, nao um gerador. Voce age como
+<b>Uni-1.</b> O modelo da Luma que faz dela um <i>ambiente de cARCKHÉ</i>, nao um gerador. Voce age como
           diretor, nao como engenheiro de prompt.
         </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Inteligencia Unificada.</b> O sistema lembra o contexto do projeto — personagem, luz, estilo,
-          tom — mantendo o filme coerente sem voce recriar o contexto a cada plano.
+<b>Inteligencia Unificada.</b> O sistema lembra o contexto do projeto â€” personagem, luz, estilo,
+          tom â€” mantendo o filme coerente sem voce recriar o contexto a cada plano.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Licao 10 do bloco AI Cinema Workflow — “Luma and Runway Integration”. A virada: <i>voce
-          nao escreve comandos — voce fala, descreve e dirige</i>.
+          Licao 10 do bloco AI CARCKHÉ Workflow â€” â€œLuma and Runway Integrationâ€. A virada: <i>voce
+          nao escreve comandos â€” voce fala, descreve e dirige</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-3-5#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-5#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Dirigir conversando.</b> Falar natural faz a IA entender intencao (nao so palavras-chave), lembrar o
@@ -685,35 +685,35 @@ high energy, realistic motion."
           acao e sensacao. O refino vira conversa sobre o material que voce ja tem.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-3-5#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-5#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Ficha de personagem.</b> Vistas frente/lado/costas com o mesmo rosto, figurino e proporcoes. Trava a
-          identidade para o filme inteiro — a ancora contra a deriva entre planos.
+          identidade para o filme inteiro â€” a ancora contra a deriva entre planos.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          A IA pode comecar por uma vista so — guie passo a passo, a iteracao e a chave. Mantenha o
+          A IA pode comecar por uma vista so â€” guie passo a passo, a iteracao e a chave. Mantenha o
           personagem generico, sem replicar pessoa real.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-3-5#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-5#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Criar, dirigir, animar.</b> As tres etapas do fluxo — o arco do pipeline (imagem → direcao
-          → movimento) condensado num so ambiente conversacional, com refino em cada etapa.
+<b>Criar, dirigir, animar.</b> As tres etapas do fluxo â€” o arco do pipeline (imagem â†’ direcao
+          â†’ movimento) condensado num so ambiente conversacional, com refino em cada etapa.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Ao dirigir, controle as mesmas quatro alavancas: movimento de camera, composicao, luz e emocao. Ao
-          animar, descreva o movimento e ajuste por conversa (“deixe o salto mais realista”).
+          animar, descreva o movimento e ajuste por conversa (â€œdeixe o salto mais realistaâ€).
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-3-5#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-3-5#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Comparar saidas.</b> Gerar a mesma direcao em modelos diferentes (Kling x Ray) e escolher pelo
-          resultado, nao pela marca — a logica de roteamento do 3.1, agora em nivel de plano.
+          resultado, nao pela marca â€” a logica de roteamento do 3.1, agora em nivel de plano.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
@@ -725,8 +725,8 @@ high energy, realistic motion."
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 3.5 — folio xiii</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 3.5 â€” folio xiii</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -735,8 +735,8 @@ high energy, realistic motion."
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

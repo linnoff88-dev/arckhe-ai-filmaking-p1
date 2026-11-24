@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,68 +118,68 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Módulo 5.3 — Sistemas de partículas en el cine | AI Filmmaking</title>
+<title>MÃ³dulo 5.3 â€” Sistemas de partÃ­culas en el cine | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha5/modulo-5-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha5/modulo-5-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha5/modulo-5-3.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:5-3"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:5-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Ruta <b>5</b> VFX y acción</span>
-<span class="sep">·</span>
-<span>Módulo <b>5.3</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Sección 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>Ruta <b>5</b> VFX y acciÃ³n</span>
+<span class="sep">Â·</span>
+<span>MÃ³dulo <b>5.3</b> / 4</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,87 +189,87 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Módulo 5.3 · Ruta 5 · VFX y acción</p>
-<h1 class="module">Sistemas de <em>Partículas</em> en Cinema</h1>
-<p class="deck">Humo, chispas, polvo, lluvia: el mundo real nunca está perfectamente quieto. Las partículas
-          devuelven esa respiración a un encuadre digital inerte y, en la IA, son la herramienta secreta que
-          oculta los defectos del modelo sin que nadie se dé cuenta.</p>
+<p class="kicker">MÃ³dulo 5.3 Â· Ruta 5 Â· VFX y acciÃ³n</p>
+<h1 class="module">Sistemas de <em>PartÃ­culas</em> en CARCKHÉ</h1>
+<p class="deck">Humo, chispas, polvo, lluvia: el mundo real nunca estÃ¡ perfectamente quieto. Las partÃ­culas
+          devuelven esa respiraciÃ³n a un encuadre digital inerte y, en la IA, son la herramienta secreta que
+          oculta los defectos del modelo sin que nadie se dÃ© cuenta.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~18 min · módulo completo</span>
+<span>~18 min Â· mÃ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Qué crean las partículas <b>crean</b> en un cuadro: atmósfera, movimiento, realismo, profundidad y la
-              «respiración» de una escena estática.</li>
-<li>Por qué son <b>sistemas dirigidos por el comportamiento</b> — emisores, turbulencia, gravedad
-              — y no objetos animados a mano.</li>
-<li>El secreto del realizador de IA: cómo la partícula <b>esconde los defectos</b> del modelo: oculta la topología, suaviza los bordes, redirige la mirada.</li>
-<li>Cuatro <b>conceptos de VFX</b> (oclusión transicional, integración volumétrica, suavizado temporal,
-              capas cinéticas) y cómo pedirlos en el prompt.</li>
+<li>QuÃ© crean las partÃ­culas <b>crean</b> en un cuadro: atmÃ³sfera, movimiento, realismo, profundidad y la
+              Â«respiraciÃ³nÂ» de una escena estÃ¡tica.</li>
+<li>Por quÃ© son <b>sistemas dirigidos por el comportamiento</b> â€” emisores, turbulencia, gravedad
+              â€” y no objetos animados a mano.</li>
+<li>El secreto del realizador de IA: cÃ³mo la partÃ­cula <b>esconde los defectos</b> del modelo: oculta la topologÃ­a, suaviza los bordes, redirige la mirada.</li>
+<li>Cuatro <b>conceptos de VFX</b> (oclusiÃ³n transicional, integraciÃ³n volumÃ©trica, suavizado temporal,
+              capas cinÃ©ticas) y cÃ³mo pedirlos en el prompt.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del módulo" class="toc" data-inema-toc="">
+<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">La respiración del encuadre</span></a></li>
+<a href="#topico-1"><span class="t">La respiraciÃ³n del encuadre</span></a></li>
 <li><span class="n">2</span><a href="#topico-2"><span class="t">Sistemas dirigidos por el comportamiento</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">Las partículas ocultan los defectos de la IA</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">Cuatro conceptos de partículas</span></a><span class="leader"></span></li>
-<li><span class="n">5</span><a href="#topico-5"><span class="t">La transformación: mujer en gato</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Las partÃ­culas ocultan los defectos de la IA</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Cuatro conceptos de partÃ­culas</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">La transformaciÃ³n: mujer en gato</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="5-3" data-inema-topic="modulo-5-3#topico-1" data-inema-track="5" id="topico-1">
+<section data-ARCKHÉ-module="5-3" data-ARCKHÉ-topic="modulo-5-3#topico-1" data-ARCKHÉ-track="5" id="topico-1">
 <div class="section-mark">
-<span class="where">Sección 1 de 5</span><span>·</span><span>Atmósfera</span>
+<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>AtmÃ³sfera</span>
 </div>
-<h2 class="head"><span class="num">1.</span>La respiración del encuadre</h2>
+<h2 class="head"><span class="num">1.</span>La respiraciÃ³n del encuadre</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m5-3-t1-p1">Empieza por una observación sencilla y radical:
-              <em>el mundo real nunca es perfectamente estático.</em><span class="sidenote-ref">1</span> Incluso el
-              ambiente más quieto contiene micromovimientos — polvo flotando en el aire, humo elevándose a lo lejos,
-              vapor, partículas a la deriva, inestabilidad atmosférica. El ojo registra todo esto constantemente, sin
+<p class="lede dropcap" data-ARCKHÉ-block="m5-3-t1-p1">Empieza por una observaciÃ³n sencilla y radical:
+              <em>el mundo real nunca es perfectamente estÃ¡tico.</em><span class="sidenote-ref">1</span> Incluso el
+              ambiente mÃ¡s quieto contiene micromovimientos â€” polvo flotando en el aire, humo elevÃ¡ndose a lo lejos,
+              vapor, partÃ­culas a la deriva, inestabilidad atmosfÃ©rica. El ojo registra todo esto constantemente, sin
               darse cuenta de que lo registra. Y cuando este micromovimiento <em>desaparece</em>, la imagen digital
-              empieza a parecer sintética de inmediato. Un cuadro técnicamente perfecto, pero absolutamente quieto,
-              suena falso, y es difícil decir por qué hasta que nombras lo que falta: la respiración.</p>
-<p data-inema-block="m5-3-t1-p2">Las partículas no son simplemente «efectos visuales». En
-              el lenguaje del cine, funcionan como acción ambiental, realismo atmosférico, textura emocional y
-              continuidad visual. Moldean cómo se <em>siente</em>, cómo se comporta la luz, cómo se percibe la acción dentro del encuadre. Piensa en ellas como la capa que transforma una pantalla digital estéril en un cuadro vivo que respira. Sin partículas, la escena es plana; con ellas, gana presencia.</p>
-<h3 class="sub">Qué crean las partículas</h3>
-<p data-inema-block="m5-3-t1-p3">La clase enumera cinco aportes, y vale la pena guardarlos. <strong>Atmósfera:</strong>
-              el humor, el tono y la textura de un lugar. <strong>Movimiento:</strong> la sensación de velocidad, viento y
-              energía dinámica. <strong>Realismo:</strong> los microdetalles que reflejan el mundo físico.
-              <strong>Profundidad:</strong> composiciones en capas que separan el primer plano y el fondo — el
-              humo o el viento que crea distancia entre los planos. Es la <strong>energía cinematográfica:</strong> la
-              «respiración» orgánica de una escena estática. Los elementos ambientales esenciales son
+              empieza a parecer sintÃ©tica de inmediato. Un cuadro tÃ©cnicamente perfecto, pero absolutamente quieto,
+              suena falso, y es difÃ­cil decir por quÃ© hasta que nombras lo que falta: la respiraciÃ³n.</p>
+<p data-ARCKHÉ-block="m5-3-t1-p2">Las partÃ­culas no son simplemente Â«efectos visualesÂ». En
+              el lenguaje del cine, funcionan como acciÃ³n ambiental, realismo atmosfÃ©rico, textura emocional y
+              continuidad visual. Moldean cÃ³mo se <em>siente</em>, cÃ³mo se comporta la luz, cÃ³mo se percibe la acciÃ³n dentro del encuadre. Piensa en ellas como la capa que transforma una pantalla digital estÃ©ril en un cuadro vivo que respira. Sin partÃ­culas, la escena es plana; con ellas, gana presencia.</p>
+<h3 class="sub">QuÃ© crean las partÃ­culas</h3>
+<p data-ARCKHÉ-block="m5-3-t1-p3">La clase enumera cinco aportes, y vale la pena guardarlos. <strong>AtmÃ³sfera:</strong>
+              el humor, el tono y la textura de un lugar. <strong>Movimiento:</strong> la sensaciÃ³n de velocidad, viento y
+              energÃ­a dinÃ¡mica. <strong>Realismo:</strong> los microdetalles que reflejan el mundo fÃ­sico.
+              <strong>Profundidad:</strong> composiciones en capas que separan el primer plano y el fondo â€” el
+              humo o el viento que crea distancia entre los planos. Es la <strong>energÃ­a cARCKHÉtogrÃ¡fica:</strong> la
+              Â«respiraciÃ³nÂ» orgÃ¡nica de una escena estÃ¡tica. Los elementos ambientales esenciales son
               pocos y familiares: humo y niebla, polvo en los haces de luz, chispas y brasas, lluvia y escombros,
-              bruma atmosférica.</p>
+              bruma atmosfÃ©rica.</p>
 </div>
 <!-- figura 1: o quadro morto x o quadro que respira -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · La partícula devuelve la <b>respiración</b> que pierde el cuadro digital</figcaption>
-<svg aria-label="Comparación de dos encuadres: a la izquierda, vacío y estático, se percibe sintético; a la derecha, el mismo encuadre con polvo, humo y haces de luz, se percibe vivo y con profundidad." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 1</span> Â· La partÃ­cula devuelve la <b>respiraciÃ³n</b> que pierde el cuadro digital</figcaption>
+<svg aria-label="ComparaciÃ³n de dos encuadres: a la izquierda, vacÃ­o y estÃ¡tico, se percibe sintÃ©tico; a la derecha, el mismo encuadre con polvo, humo y haces de luz, se percibe vivo y con profundidad." class="diagram" role="img" viewbox="0 0 720 200">
 <defs>
 <pattern height="6" id="hatch-5-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
 </pattern>
 </defs>
 <!-- quadro morto -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">SIN PARTÍCULAS</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">SIN PARTÃCULAS</text>
 <rect class="rule-stroke" fill="none" height="120" rx="3" stroke-width="1.2" width="260" x="50" y="40"></rect>
 <line class="rule-stroke" opacity="0.6" stroke-width="1" x1="50" x2="310" y1="120" y2="120"></line>
 <rect class="rule-stroke" fill="none" height="34" stroke-width="1.2" width="40" x="150" y="86"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">estático, plano: se lee como sintético</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">estÃ¡tico, plano: se lee como sintÃ©tico</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="160"></line>
 <!-- quadro vivo -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">CON PARTÍCULAS</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">CON PARTÃCULAS</text>
 <rect class="accent-stroke" fill="url(#hatch-5-3)" height="120" rx="3" stroke-width="1.3" width="260" x="410" y="40"></rect>
 <line class="rule-stroke" opacity="0.6" stroke-width="1" x1="410" x2="670" y1="120" y2="120"></line>
 <!-- feixe de luz -->
@@ -279,73 +279,73 @@
 <g class="accent"><circle cx="500" cy="70" r="1.6"></circle><circle cx="530" cy="90" r="1.3"></circle><circle cx="515" cy="108" r="1.5"></circle><circle cx="486" cy="96" r="1.2"></circle><circle cx="544" cy="64" r="1.4"></circle><circle cx="470" cy="80" r="1.1"></circle></g>
 <!-- fumaca -->
 <path class="mark-stroke" d="M600 130 C 590 105, 615 95, 605 70" fill="none" opacity="0.7" stroke-width="1.2"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="178">polvo, haz de luz, profundidad — vivo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="178">polvo, haz de luz, profundidad â€” vivo</text>
 </svg>
 </figure>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Generas dos fotogramas idénticos de un pasillo abandonado: misma luz, misma geometría, misma
-              composición. En uno, agregas polvo flotando en los haces de luz y una ligera bruma al fondo. ¿Por qué ese
-              fotograma parece de inmediato más «cinematográfico», aunque en realidad no se mueva nada?</p>
+<p>Generas dos fotogramas idÃ©nticos de un pasillo abandonado: misma luz, misma geometrÃ­a, misma
+              composiciÃ³n. En uno, agregas polvo flotando en los haces de luz y una ligera bruma al fondo. Â¿Por quÃ© ese
+              fotograma parece de inmediato mÃ¡s Â«cARCKHÉtogrÃ¡ficoÂ», aunque en realidad no se mueva nada?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Porque la partícula devuelve dos cosas que el cerebro espera del mundo real:
-                <strong>micromovimiento</strong> (la respiración que dice “este es un lugar vivo”) y
-                <strong>profundidad atmosférica</strong> (el polvo y la bruma separan los planos y dan distancia). El
-                encuadre sin partículas es correcto, pero está muerto; el cerebro interpreta la ausencia de vida como artificio. La
-                partícula no añade detalle — añade <em>verosimilitud</em>.</p>
+<p class="answer">Porque la partÃ­cula devuelve dos cosas que el cerebro espera del mundo real:
+                <strong>micromovimiento</strong> (la respiraciÃ³n que dice â€œeste es un lugar vivoâ€) y
+                <strong>profundidad atmosfÃ©rica</strong> (el polvo y la bruma separan los planos y dan distancia). El
+                encuadre sin partÃ­culas es correcto, pero estÃ¡ muerto; el cerebro interpreta la ausencia de vida como artificio. La
+                partÃ­cula no aÃ±ade detalle â€” aÃ±ade <em>verosimilitud</em>.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: la partícula como profundidad, no solo como adorno
+<summary><span class="chev">â–¸</span> Profundizando: la partÃ­cula como profundidad, no solo como adorno
               <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>Capa opcional: conecta esta clase con la profundidad espacial que ya se abordaba en la Ruta 1.</p>
-<p>La contribución más subestimada de la partícula no es la atmósfera, sino la <strong>profundidad</strong>.
-              Vimos en los fundamentos del curso que lo que separa un cuadro plano de uno que parece cine es la relación
-              entre el primer plano, el plano medio y el fondo. Las partículas son una forma económica y poderosa de construir esa
-              relación: una capa de polvo cerca de la cámara, una bruma a media distancia y un viento lejano crean tres
-              planos de profundidad donde antes había uno solo. El ojo percibe la distancia entre ellos y el espacio gana
+<p>La contribuciÃ³n mÃ¡s subestimada de la partÃ­cula no es la atmÃ³sfera, sino la <strong>profundidad</strong>.
+              Vimos en los fundamentos del curso que lo que separa un cuadro plano de uno que parece cine es la relaciÃ³n
+              entre el primer plano, el plano medio y el fondo. Las partÃ­culas son una forma econÃ³mica y poderosa de construir esa
+              relaciÃ³n: una capa de polvo cerca de la cÃ¡mara, una bruma a media distancia y un viento lejano crean tres
+              planos de profundidad donde antes habÃ­a uno solo. El ojo percibe la distancia entre ellos y el espacio gana
               volumen. Por eso la niebla y el humo aparecen tanto en el cine de prestigio: no por
               misterio, sino por <em>arquitectura espacial</em>.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="5-3" data-inema-topic="modulo-5-3#topico-2" data-inema-track="5" id="topico-2">
+<section data-ARCKHÉ-module="5-3" data-ARCKHÉ-topic="modulo-5-3#topico-2" data-ARCKHÉ-track="5" id="topico-2">
 <div class="section-mark">
-<span class="where">Sección 2 de 5</span><span>·</span><span>Comportamiento</span>
+<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>Comportamiento</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Sistemas dirigidos por el comportamiento</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-3-t2-p1">Para usar partículas con intención, conviene entender qué
-              hacen <em>son</em>, técnicamente. Un sistema de partículas simula elementos microdinámicos —
-              fuego, humo, chispas, lluvia, polvo, brasas, caos atmosférico — y su comportamiento está regido
-              por un puñado de fuerzas: emisores, velocidad, turbulencia, gravedad, colisiones, simulación de
-              fuerzas y aleatoriedad procedural. No dibujas cada partícula; defines las <em>reglas</em> a
+<p class="lede" data-ARCKHÉ-block="m5-3-t2-p1">Para usar partÃ­culas con intenciÃ³n, conviene entender quÃ©
+              hacen <em>son</em>, tÃ©cnicamente. Un sistema de partÃ­culas simula elementos microdinÃ¡micos â€”
+              fuego, humo, chispas, lluvia, polvo, brasas, caos atmosfÃ©rico â€” y su comportamiento estÃ¡ regido
+              por un puÃ±ado de fuerzas: emisores, velocidad, turbulencia, gravedad, colisiones, simulaciÃ³n de
+              fuerzas y aleatoriedad procedural. No dibujas cada partÃ­cula; defines las <em>reglas</em> a
               la que todas obedecen.</p>
-<p data-inema-block="m5-3-t2-p2">Aquí está la idea central: las partículas son <strong>sistemas dirigidos
+<p data-ARCKHÉ-block="m5-3-t2-p2">AquÃ­ estÃ¡ la idea central: las partÃ­culas son <strong>sistemas dirigidos
               por el comportamiento</strong>, no objetos animados a mano.<span class="sidenote-ref">2</span> En vez de
-              controlar cada elemento individualmente, el artista controla la lógica del movimiento y la interacción con el
-              entorno. Esto es exactamente <em>imprevisibilidad procedimental</em> que crea el realismo —recuerda
-              la clase anterior: el caos parece real, la perfección parece falsa. Las partículas son la forma más pura de este
+              controlar cada elemento individualmente, el artista controla la lÃ³gica del movimiento y la interacciÃ³n con el
+              entorno. Esto es exactamente <em>imprevisibilidad procedimental</em> que crea el realismo â€”recuerda
+              la clase anterior: el caos parece real, la perfecciÃ³n parece falsa. Las partÃ­culas son la forma mÃ¡s pura de este
               principio, porque su propia naturaleza consiste en ser muchas, irregulares e impredecibles. Nadie
               puede animar a mano mil chispas convincentes; pero un sistema con las fuerzas adecuadas las genera todas, y
               cada una es diferente.</p>
-<h3 class="sub">Por qué esto encaja tan bien con la IA</h3>
-<p data-inema-block="m5-3-t2-p3">Esa naturaleza «por comportamiento» es lo que hace de la
-partícula la aliada perfecta del cine con IA. Construir una simulación de partículas real exige
-software pesado, rigs y horas de cálculo: el costoso territorio del CGI tradicional. La IA genera el
-              <em>visual</em> de ese comportamiento a partir de una descripción de movimiento: pides “humo
-              denso en turbulencia, brasas que suben, polvo a la deriva” y el modelo se acerca a la física. Tú
-              controlas la lógica (densidad, dirección del viento, comportamiento) con palabras, y la herramienta entrega la
-              complejidad percibida. Es el atajo que sustituye semanas de simulación por una frase bien escrita.</p>
+<h3 class="sub">Por quÃ© esto encaja tan bien con la IA</h3>
+<p data-ARCKHÉ-block="m5-3-t2-p3">Esa naturaleza Â«por comportamientoÂ» es lo que hace de la
+partÃ­cula la aliada perfecta del cine con IA. Construir una simulaciÃ³n de partÃ­culas real exige
+software pesado, rigs y horas de cÃ¡lculo: el costoso territorio del CGI tradicional. La IA genera el
+              <em>visual</em> de ese comportamiento a partir de una descripciÃ³n de movimiento: pides â€œhumo
+              denso en turbulencia, brasas que suben, polvo a la derivaâ€ y el modelo se acerca a la fÃ­sica. TÃº
+              controlas la lÃ³gica (densidad, direcciÃ³n del viento, comportamiento) con palabras, y la herramienta entrega la
+              complejidad percibida. Es el atajo que sustituye semanas de simulaciÃ³n por una frase bien escrita.</p>
 </div>
 <!-- figura 2: forcas que dirigem o sistema -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Tú controlas las <b>fuerzas</b>, no cada partícula</figcaption>
-<svg aria-label="Diagrama: un emisor en la base lanza partículas que se dispersan según fuerzas etiquetadas — velocidad, turbulencia, gravedad, colisión — en lugar de posicionar cada partícula a mano." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 2</span> Â· TÃº controlas las <b>fuerzas</b>, no cada partÃ­cula</figcaption>
+<svg aria-label="Diagrama: un emisor en la base lanza partÃ­culas que se dispersan segÃºn fuerzas etiquetadas â€” velocidad, turbulencia, gravedad, colisiÃ³n â€” en lugar de posicionar cada partÃ­cula a mano." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- emissor -->
 <rect class="accent-stroke" fill="url(#hatch-5-3)" height="20" rx="2" stroke-width="1.4" width="80" x="60" y="150"></rect>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.8" text-anchor="middle" x="100" y="186">EMISOR</text>
@@ -362,63 +362,63 @@ software pesado, rigs y horas de cálculo: el costoso territorio del CGI tradici
 <text x="360" y="60">fuerzas que gobiernan el sistema:</text>
 </g>
 <g class="ink" font-family="Source Serif 4, serif" font-size="12">
-<text x="380" y="86">· velocidad — qué tan rápido emiten</text>
-<text x="380" y="108">· turbulencia — el caos del recorrido</text>
-<text x="380" y="130">· gravedad — suben o caen</text>
-<text x="380" y="152">· colisión — reaccionan al entorno</text>
+<text x="380" y="86">Â· velocidad â€” quÃ© tan rÃ¡pido emiten</text>
+<text x="380" y="108">Â· turbulencia â€” el caos del recorrido</text>
+<text x="380" y="130">Â· gravedad â€” suben o caen</text>
+<text x="380" y="152">Â· colisiÃ³n â€” reaccionan al entorno</text>
 </g>
-<text class="accent" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="180">reglas, no posiciones — y de ahí viene el realismo</text>
+<text class="accent" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="180">reglas, no posiciones â€” y de ahÃ­ viene el realismo</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: la aleatoriedad procedural es una aliada, no una enemiga
+<summary><span class="chev">â–¸</span> Profundizando: la aleatoriedad procedural es una aliada, no una enemiga
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional: por qué renunciar al control total mejora el resultado.</p>
-<p>Existe el instinto de querer controlar cada detalle, pero las partículas enseñan lo contrario: el realismo vive
-                precisamente en la <strong>aleatoriedad</strong> que tú <em>no</em> controla. Si posicionaras
-                cada chispa, formarían un patrón, y el patrón es el indicio de artificialidad. Al definir solo las
+<p>Capa opcional: por quÃ© renunciar al control total mejora el resultado.</p>
+<p>Existe el instinto de querer controlar cada detalle, pero las partÃ­culas enseÃ±an lo contrario: el realismo vive
+                precisamente en la <strong>aleatoriedad</strong> que tÃº <em>no</em> controla. Si posicionaras
+                cada chispa, formarÃ­an un patrÃ³n, y el patrÃ³n es el indicio de artificialidad. Al definir solo las
                 fuerzas y dejar que la aleatoriedad procedural distribuya el resto, obtienes la irregularidad que el
-                cerebro interpreta como natural. Para la IA, eso significa no pedir “chispas organizadas”, sino
-                describir el <em>comportamiento</em> (“chispas que se dispersan caóticamente con el impacto”) y
-                confiar en que el modelo las distribuya. Controla la lógica; deja libre la posición.</p>
+                cerebro interpreta como natural. Para la IA, eso significa no pedir â€œchispas organizadasâ€, sino
+                describir el <em>comportamiento</em> (â€œchispas que se dispersan caÃ³ticamente con el impactoâ€) y
+                confiar en que el modelo las distribuya. Controla la lÃ³gica; deja libre la posiciÃ³n.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="5-3" data-inema-topic="modulo-5-3#topico-3" data-inema-track="5" id="topico-3">
+<section data-ARCKHÉ-module="5-3" data-ARCKHÉ-topic="modulo-5-3#topico-3" data-ARCKHÉ-track="5" id="topico-3">
 <div class="section-mark">
-<span class="where">Sección 3 de 5</span><span>·</span><span>Disfraz</span>
+<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>Disfraz</span>
 </div>
-<h2 class="head"><span class="num">3.</span>Las partículas ocultan los defectos de la IA</h2>
+<h2 class="head"><span class="num">3.</span>Las partÃ­culas ocultan los defectos de la IA</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-3-t3-p1">Esta es la sección que justifica el subtítulo de la lección:
-«la herramienta secreta del director de IA». El video generado por IA aún sufre de
-problemas de crecimiento conocidos: morfismo impredecible, inconsistencia anatómica, inestabilidad
-temporal, bordes que tiemblan, incoherencia geométrica. Las transformaciones directas exponen esos artefactos,
+<p class="lede" data-ARCKHÉ-block="m5-3-t3-p1">Esta es la secciÃ³n que justifica el subtÃ­tulo de la lecciÃ³n:
+Â«la herramienta secreta del director de IAÂ». El video generado por IA aÃºn sufre de
+problemas de crecimiento conocidos: morfismo impredecible, inconsistencia anatÃ³mica, inestabilidad
+temporal, bordes que tiemblan, incoherencia geomÃ©trica. Las transformaciones directas exponen esos artefactos,
 porque el modelo intenta mantener una continuidad imposible entre formas radicalmente diferentes. Y
-aquí las partículas hacen algo genial: <strong>esconden las imperfecciones mediante el movimiento
-              atmosférico.</strong></p>
-<p data-inema-block="m5-3-t3-p2">En vez de luchar por una transformación matemáticamente perfecta —
-              una batalla que la IA pierde—, el realizador profesional usa la física para engañar al ojo.<span class="sidenote-ref">3</span>
-              Son cuatro movimientos. <strong>Ocultar la topología:</strong> el humo denso esconde el instante exacto en
-              que la forma cambia. <strong>Suavizar los bordes:</strong> la bruma atmosférica difunde contornos
-              inestables y temblorosos. <strong>Fragmentar la silueta:</strong> las partículas que se disuelven rompen
+aquÃ­ las partÃ­culas hacen algo genial: <strong>esconden las imperfecciones mediante el movimiento
+              atmosfÃ©rico.</strong></p>
+<p data-ARCKHÉ-block="m5-3-t3-p2">En vez de luchar por una transformaciÃ³n matemÃ¡ticamente perfecta â€”
+              una batalla que la IA pierdeâ€”, el realizador profesional usa la fÃ­sica para engaÃ±ar al ojo.<span class="sidenote-ref">3</span>
+              Son cuatro movimientos. <strong>Ocultar la topologÃ­a:</strong> el humo denso esconde el instante exacto en
+              que la forma cambia. <strong>Suavizar los bordes:</strong> la bruma atmosfÃ©rica difunde contornos
+              inestables y temblorosos. <strong>Fragmentar la silueta:</strong> las partÃ­culas que se disuelven rompen
               formas predecibles, haciendo que el artefacto de la IA parezca <em>intencional</em>. <strong>Redirigir la
-              atención:</strong> la turbulencia cinética atrae la mirada hacia el movimiento del entorno, en vez de hacia la
+              atenciÃ³n:</strong> la turbulencia cinÃ©tica atrae la mirada hacia el movimiento del entorno, en vez de hacia la
               falla del sujeto.</p>
-<h3 class="sub">El elogio de la abstracción transicional</h3>
-<p data-inema-block="m5-3-t3-p3">El nombre técnico para esto es <span class="dfn"><details class="dfn"><summary>abstracción transicional</summary><span class="body"><b>Abstracción transicional</b> es la técnica de cubrir una transformación inestable con una capa atmosférica (humo, sombra, disolución) durante el tramo en que cambia la forma. En vez de mostrar la transformación limpia — que expone artefactos — la vuelves temporalmente abstracta, y el ojo la acepta.</span></details></span>:
-              durante la transformación, la forma se convierte en <em>temporalmente inestable</em> a propósito. El público
-              deja de enfocarse en la anatomía y pasa a seguir el movimiento, la energía, el comportamiento ambiental. Eso
-              reduce drásticamente la complejidad de producción — nada de rigs ni simulaciones detalladas —
-              y preserva el realismo cinematográfico. Esa es la lógica moderna de los VFX con IA: no corregir el defecto, sino
-              <em>cubrirlo con atmósfera</em> hasta que se convierta en parte del lenguaje.</p>
+<h3 class="sub">El elogio de la abstracciÃ³n transicional</h3>
+<p data-ARCKHÉ-block="m5-3-t3-p3">El nombre tÃ©cnico para esto es <span class="dfn"><details class="dfn"><summary>abstracciÃ³n transicional</summary><span class="body"><b>AbstracciÃ³n transicional</b> es la tÃ©cnica de cubrir una transformaciÃ³n inestable con una capa atmosfÃ©rica (humo, sombra, disoluciÃ³n) durante el tramo en que cambia la forma. En vez de mostrar la transformaciÃ³n limpia â€” que expone artefactos â€” la vuelves temporalmente abstracta, y el ojo la acepta.</span></details></span>:
+              durante la transformaciÃ³n, la forma se convierte en <em>temporalmente inestable</em> a propÃ³sito. El pÃºblico
+              deja de enfocarse en la anatomÃ­a y pasa a seguir el movimiento, la energÃ­a, el comportamiento ambiental. Eso
+              reduce drÃ¡sticamente la complejidad de producciÃ³n â€” nada de rigs ni simulaciones detalladas â€”
+              y preserva el realismo cARCKHÉtogrÃ¡fico. Esa es la lÃ³gica moderna de los VFX con IA: no corregir el defecto, sino
+              <em>cubrirlo con atmÃ³sfera</em> hasta que se convierta en parte del lenguaje.</p>
 </div>
 <!-- figura 3: a particula como disfarce -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · La partícula transforma el <b>artefacto</b> de la IA en una elección intencional</figcaption>
-<svg aria-label="Diagrama de tres paneles: forma A estable, transición inestable expuesta (artefacto visible) y la misma transición cubierta por humo y disolución (artefacto oculto)." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 3</span> Â· La partÃ­cula transforma el <b>artefacto</b> de la IA en una elecciÃ³n intencional</figcaption>
+<svg aria-label="Diagrama de tres paneles: forma A estable, transiciÃ³n inestable expuesta (artefacto visible) y la misma transiciÃ³n cubierta por humo y disoluciÃ³n (artefacto oculto)." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- painel 1: forma A -->
 <rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.2" width="180" x="40" y="50"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="130" y="42">FORMA A</text>
@@ -426,7 +426,7 @@ aquí las partículas hacen algo genial: <strong>esconden las imperfecciones med
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="130" y="170">estable</text>
 <!-- painel 2: transicao exposta -->
 <rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.2" width="180" x="270" y="50"></rect>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="42">TRANSICIÓN CRUDA</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="42">TRANSICIÃ“N CRUDA</text>
 <path class="mark-stroke" d="M330 80 L350 75 L345 95 L365 88 L358 110 L375 100 L370 120" fill="none" stroke-width="1.4"></path>
 <path class="rule-stroke" d="M340 70 Q 360 100 350 125" fill="none" opacity="0.7" stroke-dasharray="2 3" stroke-width="1"></path>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="360" y="170">artefacto expuesto</text>
@@ -437,122 +437,122 @@ aquí las partículas hacen algo genial: <strong>esconden las imperfecciones med
 <g class="accent"><circle cx="600" cy="70" r="1.6"></circle><circle cx="560" cy="66" r="1.3"></circle><circle cx="612" cy="100" r="1.4"></circle></g>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="590" y="170">artefacto oculto en el humo</text>
 <!-- setas -->
-<g class="mark-fill"><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="245" y="105">→</text><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="475" y="105">→</text></g>
+<g class="mark-fill"><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="245" y="105">â†’</text><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="475" y="105">â†’</text></g>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Intentas generar la transformación de un hombre en lobo y pides el morphing más limpio y nítido
-              posible. El resultado queda grotesco: bordes que tiemblan, anatomía que se derrite, la IA «luchando»
-              con el cambio. Según la lógica de esta clase, ¿cuál es la corrección y por qué funciona?</p>
+<p>Intentas generar la transformaciÃ³n de un hombre en lobo y pides el morphing mÃ¡s limpio y nÃ­tido
+              posible. El resultado queda grotesco: bordes que tiemblan, anatomÃ­a que se derrite, la IA Â«luchandoÂ»
+              con el cambio. SegÃºn la lÃ³gica de esta clase, Â¿cuÃ¡l es la correcciÃ³n y por quÃ© funciona?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Deja de pedir nitidez y <strong>cubre la transición con partículas</strong>: sombra,
-                humo, pelo que se disuelve, bruma. La corrección funciona porque el problema no era la IA, sino
-                pedir lo imposible (continuidad perfecta entre anatomías radicalmente diferentes). La abstracción
-                transicional vuelve inestable la forma <em>a propósito</em>, el ojo sigue el movimiento en vez de la anatomía, y el artefacto se convierte en lenguaje. El defecto no se corrige; se cubre con atmósfera.</p>
+<p class="answer">Deja de pedir nitidez y <strong>cubre la transiciÃ³n con partÃ­culas</strong>: sombra,
+                humo, pelo que se disuelve, bruma. La correcciÃ³n funciona porque el problema no era la IA, sino
+                pedir lo imposible (continuidad perfecta entre anatomÃ­as radicalmente diferentes). La abstracciÃ³n
+                transicional vuelve inestable la forma <em>a propÃ³sito</em>, el ojo sigue el movimiento en vez de la anatomÃ­a, y el artefacto se convierte en lenguaje. El defecto no se corrige; se cubre con atmÃ³sfera.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="5-3" data-inema-topic="modulo-5-3#topico-4" data-inema-track="5" id="topico-4">
+<section data-ARCKHÉ-module="5-3" data-ARCKHÉ-topic="modulo-5-3#topico-4" data-ARCKHÉ-track="5" id="topico-4">
 <div class="section-mark">
-<span class="where">Sección 4 de 5</span><span>·</span><span>Conceptos</span>
+<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Conceptos</span>
 </div>
-<h2 class="head"><span class="num">4.</span>Cuatro conceptos de partículas</h2>
+<h2 class="head"><span class="num">4.</span>Cuatro conceptos de partÃ­culas</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-3-t4-p1">La clase nombra cuatro conceptos profesionales de VFX que
-              estructuran escenas dirigidas por partículas. Vale la pena conocerlos porque se convierten en <em>vocabulario de
-              prompt</em>: pedir el concepto correcto es más eficaz que pedir «más humo».</p>
-<p data-inema-block="m5-3-t4-p2"><strong>Oclusión transicional:</strong> usar una ráfaga de partículas
-              para enmascarar artefactos de transformación durante la acción — el chorro de humo que cubre el cambio.
-              <strong>Integración volumétrica:</strong> dejar que las partículas capten y dispersen la luz
-              naturalmente dentro del espacio tridimensional, creando profundidad atmosférica — el haz de luz
+<p class="lede" data-ARCKHÉ-block="m5-3-t4-p1">La clase nombra cuatro conceptos profesionales de VFX que
+              estructuran escenas dirigidas por partÃ­culas. Vale la pena conocerlos porque se convierten en <em>vocabulario de
+              prompt</em>: pedir el concepto correcto es mÃ¡s eficaz que pedir Â«mÃ¡s humoÂ».</p>
+<p data-ARCKHÉ-block="m5-3-t4-p2"><strong>OclusiÃ³n transicional:</strong> usar una rÃ¡faga de partÃ­culas
+              para enmascarar artefactos de transformaciÃ³n durante la acciÃ³n â€” el chorro de humo que cubre el cambio.
+              <strong>IntegraciÃ³n volumÃ©trica:</strong> dejar que las partÃ­culas capten y dispersen la luz
+              naturalmente dentro del espacio tridimensional, creando profundidad atmosfÃ©rica â€” el haz de luz
               que cobra cuerpo al atravesar el polvo.<span class="sidenote-ref">4</span> <strong>Suavizado
               temporal:</strong> usar movimiento continuo (nieve cayendo, polvo a la deriva) para contrarrestar el
-              temblor de cuadro de la IA — el flujo constante oculta el parpadeo del modelo. <strong>Capas
-              cinéticas:</strong> combinar varios sistemas a diferentes velocidades (niebla + chispa) para
-              construir profundidad cinematográfica y riqueza de movimiento.</p>
-<h3 class="sub">Cómo pedir en el prompt</h3>
-<p data-inema-block="m5-3-t4-p3">El prompt profesional de partículas no describe solo al personaje y la acción
-              — describe condiciones atmosféricas, comportamiento del movimiento, turbulencia, interacción
-              ambiental, iluminación volumétrica y flujo de energía. Los mejores prompts especifican: luz y rayos
-              volumétricos, densidad atmosférica, turbulencia y dirección del viento, el comportamiento del movimiento de las
-              micropartículas y la interacción con el entorno. El ejemplo de abajo aplica los cuatro conceptos en una escena
-              atmosférica.</p>
-<div class="codeblock"><span class="c"># Escena atmosférica dirigida por partículas — Seedance / Kling / Runway</span>
-<span class="c"># aplica los cuatro conceptos: oclusión, volumetría, suavizado, capas</span>
+              temblor de cuadro de la IA â€” el flujo constante oculta el parpadeo del modelo. <strong>Capas
+              cinÃ©ticas:</strong> combinar varios sistemas a diferentes velocidades (niebla + chispa) para
+              construir profundidad cARCKHÉtogrÃ¡fica y riqueza de movimiento.</p>
+<h3 class="sub">CÃ³mo pedir en el prompt</h3>
+<p data-ARCKHÉ-block="m5-3-t4-p3">El prompt profesional de partÃ­culas no describe solo al personaje y la acciÃ³n
+              â€” describe condiciones atmosfÃ©ricas, comportamiento del movimiento, turbulencia, interacciÃ³n
+              ambiental, iluminaciÃ³n volumÃ©trica y flujo de energÃ­a. Los mejores prompts especifican: luz y rayos
+              volumÃ©tricos, densidad atmosfÃ©rica, turbulencia y direcciÃ³n del viento, el comportamiento del movimiento de las
+              micropartÃ­culas y la interacciÃ³n con el entorno. El ejemplo de abajo aplica los cuatro conceptos en una escena
+              atmosfÃ©rica.</p>
+<div class="codeblock"><span class="c"># Escena atmosfÃ©rica dirigida por partÃ­culas â€” Seedance / Kling / Runway</span>
+<span class="c"># aplica los cuatro conceptos: oclusiÃ³n, volumetrÃ­a, suavizado, capas</span>
 <span class="k">escena:</span> a figure walking through a ruined hall at dawn, shafts of light cutting the dark.
 <span class="k">volumetric_light:</span> hard god rays through broken windows, catching and scattering in the air.
 <span class="k">atmosphere_density:</span> heavy drifting dust, low haze pooling near the floor.
 <span class="k">turbulence_wind:</span> slow left-to-right air current; embers rising and curling in the draft.
-<span class="k">kinetic_layering:</span> near dust fast, mid haze slow, distant smoke barely moving — three depth layers.
+<span class="k">kinetic_layering:</span> near dust fast, mid haze slow, distant smoke barely moving â€” three depth layers.
 <span class="k">temporal_smoothing:</span> continuous falling particles to mask frame flicker.
-<span class="k">estilo:</span> cinematic, photoreal, deep shadows, volumetric, no flat CGI.</div>
-<p data-inema-block="m5-3-t4-p4">Fíjate en que ese prompt es, por sí mismo, un prompt por bloques: cada
-              campo aísla una decisión, como enseñó el Módulo 5.1. Las partículas no son un elemento más de la lista:
-              atraviesan toda la escena, desde la luz hasta la profundidad. Precisamente por eso son el sustituto más
-              eficiente del CGI costoso: una frase de atmósfera bien construida ofrece lo que costaría horas de
-              simulación.</p>
+<span class="k">estilo:</span> cARCKHÉtic, photoreal, deep shadows, volumetric, no flat CGI.</div>
+<p data-ARCKHÉ-block="m5-3-t4-p4">FÃ­jate en que ese prompt es, por sÃ­ mismo, un prompt por bloques: cada
+              campo aÃ­sla una decisiÃ³n, como enseÃ±Ã³ el MÃ³dulo 5.1. Las partÃ­culas no son un elemento mÃ¡s de la lista:
+              atraviesan toda la escena, desde la luz hasta la profundidad. Precisamente por eso son el sustituto mÃ¡s
+              eficiente del CGI costoso: una frase de atmÃ³sfera bien construida ofrece lo que costarÃ­a horas de
+              simulaciÃ³n.</p>
 </div>
 <!-- figura 4: camadas cineticas (profundidade por velocidade) -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · <b>Capas cinéticas</b>: las distintas velocidades construyen profundidad</figcaption>
-<svg aria-label="Diagrama de tres capas de profundidad: polvo rápido en primer plano, bruma lenta en el medio, humo casi inmóvil al fondo, creando profundidad por la diferencia de velocidad." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Capas cinÃ©ticas</b>: las distintas velocidades construyen profundidad</figcaption>
+<svg aria-label="Diagrama de tres capas de profundidad: polvo rÃ¡pido en primer plano, bruma lenta en el medio, humo casi inmÃ³vil al fondo, creando profundidad por la diferencia de velocidad." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- fundo: fumaca lenta -->
 <rect class="rule-stroke" fill="url(#hatch-5-3)" height="40" opacity="0.55" rx="3" stroke-width="1" width="640" x="40" y="40"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="60" y="64">fondo — humo casi inmóvil</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="end" x="640" y="64">v ≈ 0</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="60" y="64">fondo â€” humo casi inmÃ³vil</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="end" x="640" y="64">v â‰ˆ 0</text>
 <!-- meio: bruma lenta -->
 <rect class="wash accent-stroke" height="44" rx="3" stroke-width="1.1" width="640" x="40" y="90"></rect>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="60" y="116">medio — bruma a la deriva, lenta</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="60" y="116">medio â€” bruma a la deriva, lenta</text>
 <text class="ink-soft" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="end" x="640" y="116">baja</text>
 <!-- primeiro plano: poeira rapida -->
 <rect class="accent-stroke" fill="url(#hatch-5-3)" height="44" rx="3" stroke-width="1.5" width="640" x="40" y="144"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="60" y="170">primer plano — polvo rápido</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="60" y="170">primer plano â€” polvo rÃ¡pido</text>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="end" x="640" y="170">v alta</text>
 <g class="accent"><circle cx="300" cy="166" r="2"></circle><circle cx="360" cy="170" r="1.8"></circle><circle cx="420" cy="162" r="2.1"></circle><circle cx="480" cy="172" r="1.7"></circle></g>
 </svg>
 </figure>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="5-3" data-inema-topic="modulo-5-3#topico-5" data-inema-track="5" id="topico-5">
+<section data-ARCKHÉ-module="5-3" data-ARCKHÉ-topic="modulo-5-3#topico-5" data-ARCKHÉ-track="5" id="topico-5">
 <div class="section-mark">
-<span class="where">Sección 5 de 5</span><span>·</span><span>Caso</span>
+<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>Caso</span>
 </div>
-<h2 class="head"><span class="num">5.</span>La transformación: mujer en gato</h2>
+<h2 class="head"><span class="num">5.</span>La transformaciÃ³n: mujer en gato</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m5-3-t5-p1">La clase termina con un caso que demuestra todo lo anterior:
-              una mujer transformándose en un gato negro. Un morfismo directo entre la anatomía humana y la felina
-              <em>debería</em> ser una pesadilla para la IA: las proporciones, las siluetas, la estructura ósea y el lenguaje
-              del movimiento cambian de forma demasiado agresiva. Si se hiciera de manera limpia, el resultado sería artificial,
-              casi cómico. Y aun así, la escena funciona de maravilla. ¿Por qué?</p>
-<p data-inema-block="m5-3-t5-p2">Porque no intenta una transformación limpia:
-              <strong>potencia la atmósfera</strong>.<span class="sidenote-ref">5</span> Las partículas de sombra
+<p class="lede" data-ARCKHÉ-block="m5-3-t5-p1">La clase termina con un caso que demuestra todo lo anterior:
+              una mujer transformÃ¡ndose en un gato negro. Un morfismo directo entre la anatomÃ­a humana y la felina
+              <em>deberÃ­a</em> ser una pesadilla para la IA: las proporciones, las siluetas, la estructura Ã³sea y el lenguaje
+              del movimiento cambian de forma demasiado agresiva. Si se hiciera de manera limpia, el resultado serÃ­a artificial,
+              casi cÃ³mico. Y aun asÃ­, la escena funciona de maravilla. Â¿Por quÃ©?</p>
+<p data-ARCKHÉ-block="m5-3-t5-p2">Porque no intenta una transformaciÃ³n limpia:
+              <strong>potencia la atmÃ³sfera</strong>.<span class="sidenote-ref">5</span> Las partÃ­culas de sombra
               absorben la silueta humana. El humo oculta las proporciones cambiantes. El pelo que se disuelve se mezcla con la
-              transición en el aire. La iluminación volumétrica define la forma de la nube de humo. El cuerpo parece
-              <em>disolverse en pura energía</em> antes de reorganizarse en una nueva estructura biológica. Las
-              partículas resuelven varios problemas a la vez: ocultan las transiciones anatómicas, crean una
-              evolución material creíble (el cuerpo se deshace y se vuelve a armar, en vez de simplemente cambiar de forma),
-              inyectan energía cinética y — lo más importante — guían la mirada lejos de la
-              inestabilidad y hacia la atmósfera.</p>
+              transiciÃ³n en el aire. La iluminaciÃ³n volumÃ©trica define la forma de la nube de humo. El cuerpo parece
+              <em>disolverse en pura energÃ­a</em> antes de reorganizarse en una nueva estructura biolÃ³gica. Las
+              partÃ­culas resuelven varios problemas a la vez: ocultan las transiciones anatÃ³micas, crean una
+              evoluciÃ³n material creÃ­ble (el cuerpo se deshace y se vuelve a armar, en vez de simplemente cambiar de forma),
+              inyectan energÃ­a cinÃ©tica y â€” lo mÃ¡s importante â€” guÃ­an la mirada lejos de la
+              inestabilidad y hacia la atmÃ³sfera.</p>
 <h3 class="sub">El principio final</h3>
-<p data-inema-block="m5-3-t5-p3">Llévate de esta clase una frase que cambie cómo ves los VFX de IA: <em>en el
-              cine con IA, las partículas no son decoración: son una herramienta funcional que sustituye CGI
-              costoso y complejo por atmósfera y movimiento cinematográficos.</em> Resuelven el problema central del
-              medio — la imperfección del modelo — no escondiéndola debajo de la alfombra, sino transformándola
-              en lenguaje. El defecto se convierte en humo; el humo, en atmósfera; la atmósfera, en cine.</p>
-<p data-inema-block="m5-3-t5-p4">La tarea del instructor es la prueba perfecta: crea una escena de 10 segundos
-              de transformación —de humano a humo, de metal a líquido, lo que quieras— integrando
-              sistemas densos de partículas (brasas, polvo, bruma) y una fuerte contraluz, usando las partículas para
-              ocultar los artefactos de morphing de la IA. El objetivo no es lograr una transformación perfecta, sino la <em>ilusión</em>
-              cinematográfica. La próxima y última clase de la ruta toma todo esto —efecto, tiempo, atmósfera
-              — y lo pone en movimiento en la escena de acción.</p>
+<p data-ARCKHÉ-block="m5-3-t5-p3">LlÃ©vate de esta clase una frase que cambie cÃ³mo ves los VFX de IA: <em>en el
+              cine con IA, las partÃ­culas no son decoraciÃ³n: son una herramienta funcional que sustituye CGI
+              costoso y complejo por atmÃ³sfera y movimiento cARCKHÉtogrÃ¡ficos.</em> Resuelven el problema central del
+              medio â€” la imperfecciÃ³n del modelo â€” no escondiÃ©ndola debajo de la alfombra, sino transformÃ¡ndola
+              en lenguaje. El defecto se convierte en humo; el humo, en atmÃ³sfera; la atmÃ³sfera, en cine.</p>
+<p data-ARCKHÉ-block="m5-3-t5-p4">La tarea del instructor es la prueba perfecta: crea una escena de 10 segundos
+              de transformaciÃ³n â€”de humano a humo, de metal a lÃ­quido, lo que quierasâ€” integrando
+              sistemas densos de partÃ­culas (brasas, polvo, bruma) y una fuerte contraluz, usando las partÃ­culas para
+              ocultar los artefactos de morphing de la IA. El objetivo no es lograr una transformaciÃ³n perfecta, sino la <em>ilusiÃ³n</em>
+              cARCKHÉtogrÃ¡fica. La prÃ³xima y Ãºltima clase de la ruta toma todo esto â€”efecto, tiempo, atmÃ³sfera
+              â€” y lo pone en movimiento en la escena de acciÃ³n.</p>
 </div>
 <!-- figura 5: a dissolucao em energia -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · El cuerpo <b>se disuelve en energía</b> y se transforma — la atmósfera sostiene la ilusión</figcaption>
-<svg aria-label="Diagrama de cuatro etapas: figura humana nítida, figura que se disuelve en partículas y humo, nube de energía volumétrica y nueva forma felina que emerge de la nube." class="diagram" role="img" viewbox="0 0 720 190">
+<figcaption><span class="fig-n">Fig. 5</span> Â· El cuerpo <b>se disuelve en energÃ­a</b> y se transforma â€” la atmÃ³sfera sostiene la ilusiÃ³n</figcaption>
+<svg aria-label="Diagrama de cuatro etapas: figura humana nÃ­tida, figura que se disuelve en partÃ­culas y humo, nube de energÃ­a volumÃ©trica y nueva forma felina que emerge de la nube." class="diagram" role="img" viewbox="0 0 720 190">
 <!-- estagio 1: humana -->
 <g class="rule-stroke" fill="none" stroke-width="1.4">
 <circle cx="90" cy="70" r="12"></circle><line x1="90" x2="90" y1="82" y2="125"></line><line x1="90" x2="74" y1="95" y2="115"></line><line x1="90" x2="106" y1="95" y2="115"></line><line x1="90" x2="78" y1="125" y2="150"></line><line x1="90" x2="102" y1="125" y2="150"></line>
@@ -564,77 +564,77 @@ aquí las partículas hacen algo genial: <strong>esconden las imperfecciones med
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="250" y="172">se disuelve</text>
 <!-- estagio 3: nuvem de energia -->
 <ellipse class="accent-stroke" cx="420" cy="95" fill="url(#hatch-5-3)" rx="48" ry="42" stroke-width="1.5"></ellipse>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="420" y="100">energía</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="420" y="172">nube volumétrica</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="420" y="100">energÃ­a</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="420" y="172">nube volumÃ©trica</text>
 <!-- estagio 4: gato -->
 <g class="accent-stroke" fill="none" stroke-width="1.5">
 <ellipse cx="600" cy="110" rx="34" ry="16"></ellipse><circle cx="630" cy="92" r="10"></circle><path d="M624 84 L620 74 L628 80 Z"></path><path d="M636 84 L640 74 L632 80 Z"></path><path d="M566 110 Q 545 100 552 80"></path>
 </g>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="600" y="172">nueva forma</text>
 <!-- setas -->
-<g class="mark-fill"><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="165" y="100">→</text><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="335" y="100">→</text><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="505" y="100">→</text></g>
+<g class="mark-fill"><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="165" y="100">â†’</text><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="335" y="100">â†’</text><text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="505" y="100">â†’</text></g>
 </svg>
 </figure>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="Autocomprobación" class="check">
-<h2>Antes de continuar: cuatro revisiones rápidas</h2>
+<section aria-label="AutocomprobaciÃ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>¿Por qué un cuadro digital técnicamente perfecto, pero sin partículas, parece falso?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque el mundo real nunca es perfectamente estático: siempre hay micromovimientos
-              (polvo, vapor, bruma). Cuando desaparecen, el cerebro interpreta la falta de «respiración» como algo
-              sintético. Las partículas devuelven ese micromovimiento y, con él, la atmósfera, la profundidad y
+<summary><span class="qn">01</span><span>Â¿Por quÃ© un cuadro digital tÃ©cnicamente perfecto, pero sin partÃ­culas, parece falso?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque el mundo real nunca es perfectamente estÃ¡tico: siempre hay micromovimientos
+              (polvo, vapor, bruma). Cuando desaparecen, el cerebro interpreta la falta de Â«respiraciÃ³nÂ» como algo
+              sintÃ©tico. Las partÃ­culas devuelven ese micromovimiento y, con Ã©l, la atmÃ³sfera, la profundidad y
               la verosimilitud.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>¿Qué significa decir que las partículas son «sistemas dirigidos por el comportamiento»?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">02</span><span>Â¿QuÃ© significa decir que las partÃ­culas son Â«sistemas dirigidos por el comportamientoÂ»?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Que controlas las <em>reglas</em> (emisores, velocidad, turbulencia, gravedad,
-              colisión), no cada partícula individual. La aleatoriedad procedural distribuye el resto — y es
+              colisiÃ³n), no cada partÃ­cula individual. La aleatoriedad procedural distribuye el resto â€” y es
               precisamente esa imprevisibilidad la que crea realismo. Para la IA, describe el comportamiento, no la
-              posición.</p></div>
+              posiciÃ³n.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>¿Cómo resuelve la partícula los “problemas de crecimiento” del video de IA?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Ocultando las imperfecciones con movimiento atmosférico: oculta la topología cambiante,
-              suaviza los bordes temblorosos, fragmenta las siluetas y redirige la atención al entorno. Es la
-              <em>abstracción transicional</em> — volver la forma inestable a propósito para que el artefacto se convierta
+<summary><span class="qn">03</span><span>Â¿CÃ³mo resuelve la partÃ­cula los â€œproblemas de crecimientoâ€ del video de IA?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Ocultando las imperfecciones con movimiento atmosfÃ©rico: oculta la topologÃ­a cambiante,
+              suaviza los bordes temblorosos, fragmenta las siluetas y redirige la atenciÃ³n al entorno. Es la
+              <em>abstracciÃ³n transicional</em> â€” volver la forma inestable a propÃ³sito para que el artefacto se convierta
               en lenguaje, en vez de ser un error.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>¿Por qué la transformación de la mujer en gato funciona, aunque la IA sea mala para el morphing?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque no intenta una metamorfosis limpia: aprovecha la atmósfera. La sombra absorbe la
-              silueta, el humo oculta las proporciones, el pelaje que se disuelve mezcla la transición, la luz volumétrica da forma a la
-              nube. El cuerpo parece disolverse en energía y recomponerse. La mirada sigue la atmósfera, no la anatomía, y la
-              ilusión se sostiene.</p></div>
+<summary><span class="qn">04</span><span>Â¿Por quÃ© la transformaciÃ³n de la mujer en gato funciona, aunque la IA sea mala para el morphing?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque no intenta una metamorfosis limpia: aprovecha la atmÃ³sfera. La sombra absorbe la
+              silueta, el humo oculta las proporciones, el pelaje que se disuelve mezcla la transiciÃ³n, la luz volumÃ©trica da forma a la
+              nube. El cuerpo parece disolverse en energÃ­a y recomponerse. La mirada sigue la atmÃ³sfera, no la anatomÃ­a, y la
+              ilusiÃ³n se sostiene.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido — progreso consolidado" class="journey">
+<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Mi recorrido</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir cuaderno →</button>
+<h2><span class="ico">â§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este módulo</div>
-<div class="v" data-inema-meter="modulo:5-3">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leídas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="k">En este mÃ³dulo</div>
+<div class="v" data-ARCKHÉ-meter="modulo:5-3">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 5</div>
-<div class="v" data-inema-meter="trilha:5">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:5">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -643,73 +643,73 @@ aquí las partículas hacen algo genial: <strong>esconden las imperfecciones med
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Módulo 5.4 — Escenas de acción</div>
+<div class="t">MÃ³dulo 5.4 â€” Escenas de acciÃ³n</div>
 </div>
-<a class="go" href="modulo-5-4.html">Siguiente →</a>
+<a class="go" href="modulo-5-4.html">Siguiente â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-5-3#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-3#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Respiración del encuadre.</b> El micromovimiento ambiental —polvo, vapor, bruma— que existe
-          incluso en las escenas más quietas. Su ausencia hace que la imagen digital parezca sintética de inmediato.
+<div class="tag">DefiniciÃ³n</div>
+<b>RespiraciÃ³n del encuadre.</b> El micromovimiento ambiental â€”polvo, vapor, brumaâ€” que existe
+          incluso en las escenas mÃ¡s quietas. Su ausencia hace que la imagen digital parezca sintÃ©tica de inmediato.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Lección 15 del programa <i>AI Filmmaking</i> — “Particle Systems in Cinema”. Las partículas =
-          atmósfera, movimiento, realismo, profundidad y energía de una escena estática.
-          <div class="src-line">Bloque 5 · VFX &amp; Action</div>
+          LecciÃ³n 15 del programa <i>AI Filmmaking</i> â€” â€œParticle Systems in CARCKHÉâ€. Las partÃ­culas =
+          atmÃ³sfera, movimiento, realismo, profundidad y energÃ­a de una escena estÃ¡tica.
+          <div class="src-line">Bloque 5 Â· VFX &amp; Action</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-5-3#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Sistema según el comportamiento.</b> Partículas generadas mediante reglas (emisor, velocidad, turbulencia,
+<div class="tag">DefiniciÃ³n</div>
+<b>Sistema segÃºn el comportamiento.</b> PartÃ­culas generadas mediante reglas (emisor, velocidad, turbulencia,
           gravedad), no colocadas a mano. La imprevisibilidad procedimental es lo que crea el realismo.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-5-3#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Abstracción transicional.</b> Cubrir una transformación inestable con atmósfera (humo, sombra,
-          disolución) durante el cambio de forma. El ojo sigue el movimiento, no la anatomía, y el artefacto
+<div class="tag">DefiniciÃ³n</div>
+<b>AbstracciÃ³n transicional.</b> Cubrir una transformaciÃ³n inestable con atmÃ³sfera (humo, sombra,
+          disoluciÃ³n) durante el cambio de forma. El ojo sigue el movimiento, no la anatomÃ­a, y el artefacto
           se convierte en lenguaje.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Es el mismo principio de las clases anteriores: usar la <i>lenguaje del cine</i> (atmósfera, cambio de plano)
+          Es el mismo principio de las clases anteriores: usar la <i>lenguaje del cine</i> (atmÃ³sfera, cambio de plano)
           para cubrir las limitaciones de la IA, en vez de luchar contra ellas.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-5-3#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Integración volumétrica.</b> Deja que las partículas capten y dispersen la luz dentro del espacio 3D —
-          el haz que cobra cuerpo al atravesar el polvo. Crea profundidad atmosférica real.
+<div class="tag">DefiniciÃ³n</div>
+<b>IntegraciÃ³n volumÃ©trica.</b> Deja que las partÃ­culas capten y dispersen la luz dentro del espacio 3D â€”
+          el haz que cobra cuerpo al atravesar el polvo. Crea profundidad atmosfÃ©rica real.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          Los cuatro conceptos —oclusión transicional, integración volumétrica, suavizado temporal y capas
-          cinéticas— son vocabulario para prompts: pedir el concepto es más eficaz que pedir «más
-          humo».
+          Los cuatro conceptos â€”oclusiÃ³n transicional, integraciÃ³n volumÃ©trica, suavizado temporal y capas
+          cinÃ©ticasâ€” son vocabulario para prompts: pedir el concepto es mÃ¡s eficaz que pedir Â«mÃ¡s
+          humoÂ».
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-5-3#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-3#topico-5"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          En la transformación de mujer → gato, la partícula no es decorativa: sostiene la ilusión. El cuerpo se disuelve en
-          energía y vuelve a formarse; la mirada sigue la atmósfera y la anatomía imperfecta pasa desapercibida.
+          En la transformaciÃ³n de mujer â†’ gato, la partÃ­cula no es decorativa: sostiene la ilusiÃ³n. El cuerpo se disuelve en
+          energÃ­a y vuelve a formarse; la mirada sigue la atmÃ³sfera y la anatomÃ­a imperfecta pasa desapercibida.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Módulo 5.3 — folio iii</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">MÃ³dulo 5.3 â€” folio iii</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -718,8 +718,8 @@ aquí las partículas hacen algo genial: <strong>esconden las imperfecciones med
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

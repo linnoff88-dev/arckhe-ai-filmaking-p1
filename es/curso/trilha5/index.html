@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,66 +118,66 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Ruta 5 — VFX y acción | AI Filmmaking</title>
+<title>Ruta 5 â€” VFX y acciÃ³n | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha5/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha5/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha5/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="trilha:5"><span data-inema-meter-frac=""><strong>0</strong> de 19</span></span> leídas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="trilha:5"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span></span> leÃ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — máxima legibilidad" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
 </div>
-<div aria-label="Tamaño del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de línea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="Dónde estás" class="wayfind">
+<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
-<span>Ruta <b>5</b> VFX y acción</span>
-<span class="sep">·</span>
-<span>Índice de la ruta</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Mi recorrido <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span>Ruta <b>5</b> VFX y acciÃ³n</span>
+<span class="sep">Â·</span>
+<span>Ãndice de la ruta</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -187,178 +187,178 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura editorial da trilha -->
-<p class="kicker">Ruta 5 · VFX y acción</p>
-<h1 class="module">El efecto al servicio de la <em>percepción</em></h1>
-<p class="deck">Cuatro módulos sobre el espectáculo — y por qué solo funciona cuando está bajo
-          control. Los efectos visuales, la cámara lenta, las partículas y las escenas de acción no son adornos: son instrumentos para
-          dirigir la atención de quien mira, y cada uno se vuelve en tu contra cuando se convierte en ruido.</p>
+<p class="kicker">Ruta 5 Â· VFX y acciÃ³n</p>
+<h1 class="module">El efecto al servicio de la <em>percepciÃ³n</em></h1>
+<p class="deck">Cuatro mÃ³dulos sobre el espectÃ¡culo â€” y por quÃ© solo funciona cuando estÃ¡ bajo
+          control. Los efectos visuales, la cÃ¡mara lenta, las partÃ­culas y las escenas de acciÃ³n no son adornos: son instrumentos para
+          dirigir la atenciÃ³n de quien mira, y cada uno se vuelve en tu contra cuando se convierte en ruido.</p>
 <!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
-<p class="read-meta" data-inema-meter="trilha:5">
-<span class="here" data-inema-meter-frac=""><strong>0</strong> de 19</span>
-<span>secciones leídas en esta ruta</span>
-<span class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></span>
+<p class="read-meta" data-ARCKHÉ-meter="trilha:5">
+<span class="here" data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span>
+<span>secciones leÃ­das en esta ruta</span>
+<span class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></span>
 </p>
 <!-- o "porque" da trilha -->
 <div class="prose">
-<p class="lede" data-inema-block="t5-porque-p1">Esta es la trilha en la que el curso aborda de frente aquello
-que la mayoría confunde con cine con IA: <em>el espectáculo</em>. Explosiones, cámara lenta,
+<p class="lede" data-ARCKHÉ-block="t5-porque-p1">Esta es la trilha en la que el curso aborda de frente aquello
+que la mayorÃ­a confunde con cine con IA: <em>el espectÃ¡culo</em>. Explosiones, cÃ¡mara lenta,
             humo, persecuciones. El riesgo es tratar todo eso como botones que hay que presionar, y el resultado es la
-            sobrecarga de efectos, el “demasiado CGI” que delata al aficionado. La tesis de la ruta es la misma que la de todo el
-            curso, pero aplicada al territorio más peligroso: <strong>el efecto existe para servir a la
-            percepción, nunca para lucirse</strong>. El Módulo 5.1 establece el principio: cuándo los VFX
-            suman realismo y cuándo se vuelven ruido. El 5.2 analiza la psicología de la cámara lenta: por qué dice
-            «esto importa» y por qué necesita aceleración antes para funcionar. El 5.3 trata las
-            partículas —humo, chispas, polvo, lluvia— como la capa que devuelve atmósfera,
-            profundidad y escala a un encuadre digital muerto. Y el 5.4 cierra con la escena de acción: claridad en el caos,
-            geografía espacial, ritmo de corte. En todos, la pregunta no es «¿cómo hago el efecto?», sino
-            «¿qué hace este efecto por el espectador?».</p>
+            sobrecarga de efectos, el â€œdemasiado CGIâ€ que delata al aficionado. La tesis de la ruta es la misma que la de todo el
+            curso, pero aplicada al territorio mÃ¡s peligroso: <strong>el efecto existe para servir a la
+            percepciÃ³n, nunca para lucirse</strong>. El MÃ³dulo 5.1 establece el principio: cuÃ¡ndo los VFX
+            suman realismo y cuÃ¡ndo se vuelven ruido. El 5.2 analiza la psicologÃ­a de la cÃ¡mara lenta: por quÃ© dice
+            Â«esto importaÂ» y por quÃ© necesita aceleraciÃ³n antes para funcionar. El 5.3 trata las
+            partÃ­culas â€”humo, chispas, polvo, lluviaâ€” como la capa que devuelve atmÃ³sfera,
+            profundidad y escala a un encuadre digital muerto. Y el 5.4 cierra con la escena de acciÃ³n: claridad en el caos,
+            geografÃ­a espacial, ritmo de corte. En todos, la pregunta no es Â«Â¿cÃ³mo hago el efecto?Â», sino
+            Â«Â¿quÃ© hace este efecto por el espectador?Â».</p>
 </div>
 <!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
-<p class="toc-head" style="margin-top:var(--s7)">El recorrido — cuatro módulos, en orden</p>
+<p class="toc-head" style="margin-top:var(--s7)">El recorrido â€” cuatro mÃ³dulos, en orden</p>
 <!-- ---- ENTRADA / MODULO 5.1 ---- -->
-<section data-inema-module="5-1" data-inema-topic="modulo-5-1#indice" data-inema-track="5" id="topico-1">
+<section data-ARCKHÉ-module="5-1" data-ARCKHÉ-topic="modulo-5-1#indice" data-ARCKHÉ-track="5" id="topico-1">
 <div class="section-mark">
-<span class="where">Módulo 5.1</span><span>·</span><span>4 secciones · ~15 min</span>
+<span class="where">MÃ³dulo 5.1</span><span>Â·</span><span>4 secciones Â· ~15 min</span>
 </div>
 <h2 class="head"><span class="num">5.1</span>Efectos visuales</h2>
 <div class="prose">
-<p data-inema-block="t5-m5-1-p1">El principio que rige todo el recorrido. Por qué las técnicas que
-              persiguen el <em>realismo físico</em> — fuego real, lluvia práctica, miniaturas, suspensión con cables, pared LED — enseñan algo que también sirve para la IA: el cerebro cree en lo que tiene peso, y el «movimiento perfecto» parece falso. Entenderás los VFX como
-              <em>decisión</em>, no como un botón; cuándo el efecto aporta y cuándo se convierte en una sobrecarga; y por qué estructurar
-              el prompt en bloques lógicos (estilo YAML) controla mejor la imagen que una frase larga y confusa.</p>
-<p data-inema-block="t5-m5-1-p2">
-<a class="entry-link" href="modulo-5-1.html">Leer el Módulo 5.1 →</a>
+<p data-ARCKHÉ-block="t5-m5-1-p1">El principio que rige todo el recorrido. Por quÃ© las tÃ©cnicas que
+              persiguen el <em>realismo fÃ­sico</em> â€” fuego real, lluvia prÃ¡ctica, miniaturas, suspensiÃ³n con cables, pared LED â€” enseÃ±an algo que tambiÃ©n sirve para la IA: el cerebro cree en lo que tiene peso, y el Â«movimiento perfectoÂ» parece falso. EntenderÃ¡s los VFX como
+              <em>decisiÃ³n</em>, no como un botÃ³n; cuÃ¡ndo el efecto aporta y cuÃ¡ndo se convierte en una sobrecarga; y por quÃ© estructurar
+              el prompt en bloques lÃ³gicos (estilo YAML) controla mejor la imagen que una frase larga y confusa.</p>
+<p data-ARCKHÉ-block="t5-m5-1-p2">
+<a class="entry-link" href="modulo-5-1.html">Leer el MÃ³dulo 5.1 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 5.2 ---- -->
-<section data-inema-module="5-2" data-inema-topic="modulo-5-2#indice" data-inema-track="5" id="topico-2">
+<section data-ARCKHÉ-module="5-2" data-ARCKHÉ-topic="modulo-5-2#indice" data-ARCKHÉ-track="5" id="topico-2">
 <div class="section-mark">
-<span class="where">Módulo 5.2</span><span>·</span><span>5 secciones · ~17 min</span>
+<span class="where">MÃ³dulo 5.2</span><span>Â·</span><span>5 secciones Â· ~17 min</span>
 </div>
-<h2 class="head"><span class="num">5.2</span>Cámara lenta</h2>
+<h2 class="head"><span class="num">5.2</span>CÃ¡mara lenta</h2>
 <div class="prose">
-<p data-inema-block="t5-m5-2-p1">La técnica más mal utilizada del cine con IA, analizada desde la psicología.
-              La cámara lenta no significa “hacer que todo vaya despacio”: significa decirle al cerebro de quien mira que
-              <em>ese</em> el instante importa. Vas a ver por qué el impacto viene de <strong>contraste</strong>
-              — la regla rápido → lento → rápido: por qué la cámara lenta no funciona sin una aceleración previa
-              y cómo especificar la velocidad de fotogramas (120fps → 24fps) y la microactuación para evitar
-              las «caras inexpresivas» de la IA en Seedance.</p>
-<p data-inema-block="t5-m5-2-p2">
-<a class="entry-link" href="modulo-5-2.html">Leer el Módulo 5.2 →</a>
+<p data-ARCKHÉ-block="t5-m5-2-p1">La tÃ©cnica mÃ¡s mal utilizada del cine con IA, analizada desde la psicologÃ­a.
+              La cÃ¡mara lenta no significa â€œhacer que todo vaya despacioâ€: significa decirle al cerebro de quien mira que
+              <em>ese</em> el instante importa. Vas a ver por quÃ© el impacto viene de <strong>contraste</strong>
+              â€” la regla rÃ¡pido â†’ lento â†’ rÃ¡pido: por quÃ© la cÃ¡mara lenta no funciona sin una aceleraciÃ³n previa
+              y cÃ³mo especificar la velocidad de fotogramas (120fps â†’ 24fps) y la microactuaciÃ³n para evitar
+              las Â«caras inexpresivasÂ» de la IA en Seedance.</p>
+<p data-ARCKHÉ-block="t5-m5-2-p2">
+<a class="entry-link" href="modulo-5-2.html">Leer el MÃ³dulo 5.2 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 5.3 ---- -->
-<section data-inema-module="5-3" data-inema-topic="modulo-5-3#indice" data-inema-track="5" id="topico-3">
+<section data-ARCKHÉ-module="5-3" data-ARCKHÉ-topic="modulo-5-3#indice" data-ARCKHÉ-track="5" id="topico-3">
 <div class="section-mark">
-<span class="where">Módulo 5.3</span><span>·</span><span>5 secciones · ~18 min</span>
+<span class="where">MÃ³dulo 5.3</span><span>Â·</span><span>5 secciones Â· ~18 min</span>
 </div>
-<h2 class="head"><span class="num">5.3</span>Sistemas de partículas en el cine</h2>
+<h2 class="head"><span class="num">5.3</span>Sistemas de partÃ­culas en el cine</h2>
 <div class="prose">
-<p data-inema-block="t5-m5-3-p1">La herramienta secreta del realizador de IA. Humo, chispas, polvo en la
-              luz, lluvia, niebla: el mundo real nunca es perfectamente estático, y es esa microinestabilidad la que
-              no tiene un cuadro digital muerto. Vas a entender las partículas como sistemas dirigidos por
-              comportamiento — y, más importante, cómo <em>esconden</em> los defectos de la IA: ocultan la
-              topología que cambia, suavizan los bordes inestables y redirigen la mirada hacia el movimiento del entorno.
-              El ejemplo central: una mujer que se convierte en gato, que solo convence porque la atmósfera enmascara la anatomía.</p>
-<p data-inema-block="t5-m5-3-p2">
-<a class="entry-link" href="modulo-5-3.html">Leer el Módulo 5.3 →</a>
+<p data-ARCKHÉ-block="t5-m5-3-p1">La herramienta secreta del realizador de IA. Humo, chispas, polvo en la
+              luz, lluvia, niebla: el mundo real nunca es perfectamente estÃ¡tico, y es esa microinestabilidad la que
+              no tiene un cuadro digital muerto. Vas a entender las partÃ­culas como sistemas dirigidos por
+              comportamiento â€” y, mÃ¡s importante, cÃ³mo <em>esconden</em> los defectos de la IA: ocultan la
+              topologÃ­a que cambia, suavizan los bordes inestables y redirigen la mirada hacia el movimiento del entorno.
+              El ejemplo central: una mujer que se convierte en gato, que solo convence porque la atmÃ³sfera enmascara la anatomÃ­a.</p>
+<p data-ARCKHÉ-block="t5-m5-3-p2">
+<a class="entry-link" href="modulo-5-3.html">Leer el MÃ³dulo 5.3 â†’</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 5.4 ---- -->
-<section data-inema-module="5-4" data-inema-topic="modulo-5-4#indice" data-inema-track="5" id="topico-4">
+<section data-ARCKHÉ-module="5-4" data-ARCKHÉ-topic="modulo-5-4#indice" data-ARCKHÉ-track="5" id="topico-4">
 <div class="section-mark">
-<span class="where">Módulo 5.4</span><span>·</span><span>5 secciones · ~18 min</span>
+<span class="where">MÃ³dulo 5.4</span><span>Â·</span><span>5 secciones Â· ~18 min</span>
 </div>
-<h2 class="head"><span class="num">5.4</span>Escenas de acción</h2>
+<h2 class="head"><span class="num">5.4</span>Escenas de acciÃ³n</h2>
 <div class="prose">
-<p data-inema-block="t5-m5-4-p1">El cierre de la ruta: cinco mecánicas de acción de blockbuster y la
-              regla que está debajo de todas. La acción no es movimiento: es peligro, movimiento, anticipación y
-              recompensa, mientras el espectador siempre se pregunta «¿cómo va a terminar esto?». Vas a
-              recorrer la transformación en vuelo, la persecución con casi accidente, el vuelco del que se sobrevive, la
+<p data-ARCKHÉ-block="t5-m5-4-p1">El cierre de la ruta: cinco mecÃ¡nicas de acciÃ³n de blockbuster y la
+              regla que estÃ¡ debajo de todas. La acciÃ³n no es movimiento: es peligro, movimiento, anticipaciÃ³n y
+              recompensa, mientras el espectador siempre se pregunta Â«Â¿cÃ³mo va a terminar esto?Â». Vas a
+              recorrer la transformaciÃ³n en vuelo, la persecuciÃ³n con casi accidente, el vuelco del que se sobrevive, la
               fuga de parkour contra la gravedad y el rescate en cuenta regresiva; y vas a aprender lo que
-              de verdad importa en la ejecución: <em>claridad en el caos</em>, geografía espacial legible y ritmo de
+              de verdad importa en la ejecuciÃ³n: <em>claridad en el caos</em>, geografÃ­a espacial legible y ritmo de
               corte.</p>
-<p data-inema-block="t5-m5-4-p2">
-<a class="entry-link" href="modulo-5-4.html">Leer el Módulo 5.4 →</a>
+<p data-ARCKHÉ-block="t5-m5-4-p2">
+<a class="entry-link" href="modulo-5-4.html">Leer el MÃ³dulo 5.4 â†’</a>
 </p>
 </div>
 </section>
 <!-- indo mais fundo: divulgacao progressiva (opcional) -->
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Profundizando: por qué el espectáculo viene con una advertencia
+<summary><span class="chev">â–¸</span> Profundizando: por quÃ© el espectÃ¡culo viene con una advertencia
             <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>El camino recomendado es lineal: 5.1, 5.2, 5.3, 5.4. Esta capa explica el hilo que une la ruta
-              y puedes saltártela.</p>
-<p>Esta es la trilha más seductora del curso y, por eso, la más arriesgada. El efecto impresiona; el efecto vende
-el video en una miniatura. Pero el efecto también es lo que más fácilmente juega en contra de la escena: la
-cámara lenta aplicada a todo cansa, el humo añadido sin motivo se vuelve contaminación visual, la persecución sin geografía
-se vuelve confusa y la explosión constante anestesia. Un solo hilo conecta los cuatro módulos:
-              <em>todo efecto es una promesa de significado</em>. Cuando la cámara desacelera, dice
-              «presta atención»; si no había nada a lo que prestar atención, le mentiste al cerebro de
-              quien mira — y aprende a desconfiar.</p>
-<p>Fíjate en cómo esta ruta retoma el algoritmo de la Ruta 1 (estabilidad → ruptura → escalada
-              → aceleración → cámara lenta en el pico → impacto) y lo aplica pieza por pieza. La cámara lenta es el
-              quinto tiempo de esa curva. La acción es toda la curva en movimiento. Las partículas son la atmósfera que
-              le da peso al impacto. El VFX es la disciplina que decide cuándo entra cada elemento. No estás aprendiendo
-              efectos nuevos: estás aprendiendo a <em>dirigir</em> los que ya conocías.</p>
+              y puedes saltÃ¡rtela.</p>
+<p>Esta es la trilha mÃ¡s seductora del curso y, por eso, la mÃ¡s arriesgada. El efecto impresiona; el efecto vende
+el video en una miniatura. Pero el efecto tambiÃ©n es lo que mÃ¡s fÃ¡cilmente juega en contra de la escena: la
+cÃ¡mara lenta aplicada a todo cansa, el humo aÃ±adido sin motivo se vuelve contaminaciÃ³n visual, la persecuciÃ³n sin geografÃ­a
+se vuelve confusa y la explosiÃ³n constante anestesia. Un solo hilo conecta los cuatro mÃ³dulos:
+              <em>todo efecto es una promesa de significado</em>. Cuando la cÃ¡mara desacelera, dice
+              Â«presta atenciÃ³nÂ»; si no habÃ­a nada a lo que prestar atenciÃ³n, le mentiste al cerebro de
+              quien mira â€” y aprende a desconfiar.</p>
+<p>FÃ­jate en cÃ³mo esta ruta retoma el algoritmo de la Ruta 1 (estabilidad â†’ ruptura â†’ escalada
+              â†’ aceleraciÃ³n â†’ cÃ¡mara lenta en el pico â†’ impacto) y lo aplica pieza por pieza. La cÃ¡mara lenta es el
+              quinto tiempo de esa curva. La acciÃ³n es toda la curva en movimiento. Las partÃ­culas son la atmÃ³sfera que
+              le da peso al impacto. El VFX es la disciplina que decide cuÃ¡ndo entra cada elemento. No estÃ¡s aprendiendo
+              efectos nuevos: estÃ¡s aprendiendo a <em>dirigir</em> los que ya conocÃ­as.</p>
 </div>
 </details>
 <!-- proxima acao (UMA clara) -->
 <div class="nextup">
 <div class="txt">
 <div class="k">Empezar por el principio</div>
-<div class="t">Módulo 5.1 — Efectos visuales</div>
+<div class="t">MÃ³dulo 5.1 â€” Efectos visuales</div>
 </div>
-<a class="go" href="modulo-5-1.html">Leer el primero →</a>
+<a class="go" href="modulo-5-1.html">Leer el primero â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- MODULO 5.1 ---- -->
-<aside data-inema-rail="modulo-5-1#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-1#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>VFX.</b> Efectos visuales — todo lo que se construye o altera fuera de la captura directa. En esta
-          trilha, el punto no es la técnica, sino la <i>decisión</i>: por qué este efecto, aquí, ahora.
+<div class="tag">DefiniciÃ³n</div>
+<b>VFX.</b> Efectos visuales â€” todo lo que se construye o altera fuera de la captura directa. En esta
+          trilha, el punto no es la tÃ©cnica, sino la <i>decisiÃ³n</i>: por quÃ© este efecto, aquÃ­, ahora.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          El orden importa: 5.1 es el <i>principio</i> (efecto al servicio de la percepción), 5.2 es el <i>tiempo</i> (la cámara
-          lenta), 5.3 y la <i>atmósfera</i> (partículas) y 5.4 es el <i>caos bajo control</i> (acción).
+          El orden importa: 5.1 es el <i>principio</i> (efecto al servicio de la percepciÃ³n), 5.2 es el <i>tiempo</i> (la cÃ¡mara
+          lenta), 5.3 y la <i>atmÃ³sfera</i> (partÃ­culas) y 5.4 es el <i>caos bajo control</i> (acciÃ³n).
         </aside>
 <!-- ---- MODULO 5.2 ---- -->
-<aside data-inema-rail="modulo-5-2#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-2#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">Definición</div>
-<b>Overcranking.</b> El término de rodaje para cámara lenta: filmar con una alta frecuencia de cuadros (120/240fps) para
-          reproducir a 24fps. Estira el tiempo y es el quinto tiempo de la curva de tensión de la Ruta 1.
+<div class="tag">DefiniciÃ³n</div>
+<b>Overcranking.</b> El tÃ©rmino de rodaje para cÃ¡mara lenta: filmar con una alta frecuencia de cuadros (120/240fps) para
+          reproducir a 24fps. Estira el tiempo y es el quinto tiempo de la curva de tensiÃ³n de la Ruta 1.
         </aside>
 <!-- ---- MODULO 5.3 ---- -->
-<aside data-inema-rail="modulo-5-3#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-3#indice"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          El ejemplo de la transformación (mujer → gato negro) se muestra en la clase como prueba de que la IA no
-          necesita una anatomía perfecta: la atmósfera sostiene la ilusión.
-          <div class="src-line">Bloque 5 · AI Filmmaking</div>
+          El ejemplo de la transformaciÃ³n (mujer â†’ gato negro) se muestra en la clase como prueba de que la IA no
+          necesita una anatomÃ­a perfecta: la atmÃ³sfera sostiene la ilusiÃ³n.
+          <div class="src-line">Bloque 5 Â· AI Filmmaking</div>
 </aside>
 <!-- ---- MODULO 5.4 ---- -->
-<aside data-inema-rail="modulo-5-4#indice"></aside>
+<aside data-ARCKHÉ-rail="modulo-5-4#indice"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          La regla de oro del 5.4: <i>una idea visual potente = una escena de acción</i>. Acumular mecánicas genera
-          confusión; una mecánica clara, con una geografía legible, ya parece una superproducción.
+          La regla de oro del 5.4: <i>una idea visual potente = una escena de acciÃ³n</i>. Acumular mecÃ¡nicas genera
+          confusiÃ³n; una mecÃ¡nica clara, con una geografÃ­a legible, ya parece una superproducciÃ³n.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Cuaderno del estudiante</span>
-<span class="pg">Ruta 5 — índice</span>
+<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
+<span class="pg">Ruta 5 â€” Ã­ndice</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -367,8 +367,8 @@ se vuelve confusa y la explosión constante anestesia. Un solo hilo conecta los 
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

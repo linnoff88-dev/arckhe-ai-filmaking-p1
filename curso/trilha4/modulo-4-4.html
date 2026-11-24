@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 4.4 — Video Cinematografico no Seedance 2 | AI Filmmaking</title>
+<title>Modulo 4.4 â€” Video CARCKHÉtografico no Seedance 2 | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/modulo-4-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/modulo-4-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/modulo-4-4.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:4-4"><span data-inema-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:4-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible — legibilidade maxima" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Trilha <b>4</b> Linguagem de Camera</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Modulo <b>4.4</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Secao 1 de 5</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        Minha jornada <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,66 +189,66 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 4.4 · Trilha 4 · Linguagem de Camera</p>
-<h1 class="module">Video Cinematografico no Seedance 2: dirigir, nao <em>gerar</em></h1>
-<p class="deck">A sintese pratica da trilha. Toda a linguagem de camera entra, agora, num gerador real —
+<p class="kicker">Modulo 4.4 Â· Trilha 4 Â· Linguagem de Camera</p>
+<h1 class="module">Video CARCKHÉtografico no Seedance 2: dirigir, nao <em>gerar</em></h1>
+<p class="deck">A sintese pratica da trilha. Toda a linguagem de camera entra, agora, num gerador real â€”
           com storyboard, trava de identidade e prompts em YAML. A IA nao pensa: ela interpreta estrutura. E o
-          objetivo nunca e gerar — e controlar.</p>
+          objetivo nunca e gerar â€” e controlar.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~18 min · modulo inteiro</span>
+<span>~18 min Â· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que um <b>storyboard de seis planos</b> — escala, velocidade, controle, emocao, acao,
-              alivio — impede o modelo de improvisar e quebrar a continuidade.</li>
+<li>Por que um <b>storyboard de seis planos</b> â€” escala, velocidade, controle, emocao, acao,
+              alivio â€” impede o modelo de improvisar e quebrar a continuidade.</li>
 <li>Como <b>travar a identidade</b> do personagem com uma imagem de referencia, eliminando o
               <em>drift</em> de rosto, proporcoes e design.</li>
-<li>Por que escrever o prompt em <b>YAML</b> — a IA nao pensa como humano, ela interpreta
-              estrutura — e as regras essenciais desse formato.</li>
+<li>Por que escrever o prompt em <b>YAML</b> â€” a IA nao pensa como humano, ela interpreta
+              estrutura â€” e as regras essenciais desse formato.</li>
 <li>Como as <b>transicoes</b> controlam ritmo, emocao e atencao; e por que, no Seedance, elas
-              quebram — tornando direcao e iteracao inseparaveis.</li>
+              quebram â€” tornando direcao e iteracao inseparaveis.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-inema-toc="">
-<p class="toc-head">Sumario — cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Sumario â€” cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">A IA interpreta estrutura, nao desejo</span></a></li>
 <li><span class="n">2</span><a href="#topico-2"><span class="t">Storyboard de seis planos</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">Travar a identidade do personagem</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">Escrever em YAML — as regras</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Escrever em YAML â€” as regras</span></a><span class="leader"></span></li>
 <li><span class="n">5</span><a href="#topico-5"><span class="t">Transicoes, limites e iteracao</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-1" data-inema-track="4" id="topico-1">
+<section data-ARCKHÉ-module="4-4" data-ARCKHÉ-topic="modulo-4-4#topico-1" data-ARCKHÉ-track="4" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>·</span><span>Principio</span>
+<span class="where">Secao 1 de 5</span><span>Â·</span><span>Principio</span>
 </div>
 <h2 class="head"><span class="num">1.</span>A IA interpreta estrutura, nao desejo</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m4-4-t1-p1">Toda a linguagem das tres aulas anteriores —
-              os pilares, o movimento, os planos — precisa, em algum momento, descer ao gerador. E aqui
-              aparece o principio que organiza esta aula inteira: <em>a IA nao pensa — ela interpreta
-              estrutura.</em><span class="sidenote-ref">1</span> O Seedance nao “entende” a sua cena
+<p class="lede dropcap" data-ARCKHÉ-block="m4-4-t1-p1">Toda a linguagem das tres aulas anteriores â€”
+              os pilares, o movimento, os planos â€” precisa, em algum momento, descer ao gerador. E aqui
+              aparece o principio que organiza esta aula inteira: <em>a IA nao pensa â€” ela interpreta
+              estrutura.</em><span class="sidenote-ref">1</span> O Seedance nao â€œentendeâ€ a sua cena
               como um colaborador humano entenderia; ele faz uma analise mecanica do texto e procura blocos
               claros. Quanto mais estruturada a sua descricao, mais previsivel o resultado.</p>
-<p data-inema-block="m4-4-t1-p2">Isso reorienta o que e um bom prompt. Um paragrafo longo e bonito,
+<p data-ARCKHÉ-block="m4-4-t1-p2">Isso reorienta o que e um bom prompt. Um paragrafo longo e bonito,
               cheio de adjetivos, e exatamente o tipo de entrada que confunde o modelo: ele nao sabe o que e
-              camera, o que e acao, o que e luz, e mistura tudo. A solucao nao e escrever mais — e escrever
+              camera, o que e acao, o que e luz, e mistura tudo. A solucao nao e escrever mais â€” e escrever
               <strong>organizado</strong>. Por isso a aula adota o YAML: nao por estetica de programador, mas
               porque ele e um <em>sistema de controle</em>. Cada coisa no seu campo, sem ambiguidade.</p>
 <h3 class="sub">O objetivo e controle, nao geracao</h3>
-<p data-inema-block="m4-4-t1-p3">Repita isto como mantra do modulo: <strong>o objetivo nao e gerar
-              video — e controla-lo como um cineasta.</strong> Gerar e facil; qualquer um digita uma frase e
+<p data-ARCKHÉ-block="m4-4-t1-p3">Repita isto como mantra do modulo: <strong>o objetivo nao e gerar
+              video â€” e controla-lo como um cineasta.</strong> Gerar e facil; qualquer um digita uma frase e
               recebe um clipe. Controlar e o trabalho do diretor: decidir a sequencia, travar a identidade,
               estruturar cada bloco de tempo, prever as transicoes. A diferenca entre um amador e um diretor com
-              IA nao esta na ferramenta — esta em quanto da cena ele <em>governa</em> de proposito, em vez
+              IA nao esta na ferramenta â€” esta em quanto da cena ele <em>governa</em> de proposito, em vez
               de aceitar o que a maquina improvisou.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
@@ -260,15 +260,15 @@
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">Porque a IA <strong>interpreta estrutura</strong>, nao prosa. Num paragrafo unico,
-                ela nao consegue separar o que e movimento de camera do que e acao do sujeito ou da luz —
-                tudo vira uma sopa ambigua, e ela “chuta”. O mesmo conteudo, quebrado em blocos
+                ela nao consegue separar o que e movimento de camera do que e acao do sujeito ou da luz â€”
+                tudo vira uma sopa ambigua, e ela â€œchutaâ€. O mesmo conteudo, quebrado em blocos
                 (camera, action, lighting, transitions), remove a ambiguidade e ela passa a seguir um plano
                 claro.</p>
 </details>
 </div>
 <!-- figura 1: paragrafo x blocos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · O mesmo conteudo: <b>paragrafo ambiguo</b> versus <b>blocos claros</b></figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· O mesmo conteudo: <b>paragrafo ambiguo</b> versus <b>blocos claros</b></figcaption>
 <svg aria-label="Diagrama: a esquerda um paragrafo unico onde camera, acao e luz se misturam e a IA chuta; a direita o mesmo conteudo em blocos separados que a IA segue com precisao." class="diagram" role="img" viewbox="0 0 720 196">
 <defs>
 <pattern height="6" id="hatch-4-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -306,34 +306,34 @@
 </figure>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-2" data-inema-track="4" id="topico-2">
+<section data-ARCKHÉ-module="4-4" data-ARCKHÉ-topic="modulo-4-4#topico-2" data-ARCKHÉ-track="4" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>·</span><span>Storyboard</span>
+<span class="where">Secao 2 de 5</span><span>Â·</span><span>Storyboard</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Storyboard de seis planos</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-4-t2-p1">Antes de escrever uma linha de prompt, desenhe a
-              sequencia. O <strong>storyboard</strong> — aqui, seis planos — nao e formalidade: sem
+<p class="lede" data-ARCKHÉ-block="m4-4-t2-p1">Antes de escrever uma linha de prompt, desenhe a
+              sequencia. O <strong>storyboard</strong> â€” aqui, seis planos â€” nao e formalidade: sem
               ele, o modelo comeca a <em>improvisar</em> e quebra a continuidade visual entre os planos.<span class="sidenote-ref">2</span>
               Com ele, voce da a cena um esqueleto que a IA pode seguir, em vez de inventar.</p>
 <h3 class="sub">Seis planos que ja contam uma historia</h3>
-<p data-inema-block="m4-4-t2-p2">A sequencia-exemplo segue um motociclista — estilizado, com
-              silhueta forte e proporcoes consistentes — e seus seis planos formam uma curva narrativa
+<p data-ARCKHÉ-block="m4-4-t2-p2">A sequencia-exemplo segue um motociclista â€” estilizado, com
+              silhueta forte e proporcoes consistentes â€” e seus seis planos formam uma curva narrativa
               completa: um <em>drone</em> de cima da estrada (escala), um <em>plano geral</em> com o piloto
               ganhando velocidade (velocidade), um <em>plano medio</em> durante uma curva (controle), um
               <em>close-up</em> (emocao), um plano de <em>acao</em> com o salto (acao) e um <em>plano geral</em> de
               por do sol fechando (alivio). Repare: cada plano usa um tamanho diferente, de proposito, exatamente
               como voce aprendeu na aula anterior.</p>
-<p data-inema-block="m4-4-t2-p3">Essa ordem nao e aleatoria. Ela e a estrutura cinematografica em
-              estado puro: <strong>escala → velocidade → emocao → acao → alivio.</strong>
+<p data-ARCKHÉ-block="m4-4-t2-p3">Essa ordem nao e aleatoria. Ela e a estrutura cARCKHÉtografica em
+              estado puro: <strong>escala â†’ velocidade â†’ emocao â†’ acao â†’ alivio.</strong>
               Primeiro entendemos o mundo, depois sentimos a velocidade, depois nos conectamos com o personagem,
               depois vemos habilidade e risco, e por fim sentimos a liberacao. Uma boa sequencia <em>flui</em>
-              nessa progressao — e o storyboard e onde voce garante esse fluxo antes que a IA tenha chance de
+              nessa progressao â€” e o storyboard e onde voce garante esse fluxo antes que a IA tenha chance de
               embaralha-lo.</p>
 </div>
 <!-- figura 2: os seis planos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · Seis planos, uma curva: <b>escala → velocidade → emocao → acao → alivio</b></figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> Â· Seis planos, uma curva: <b>escala â†’ velocidade â†’ emocao â†’ acao â†’ alivio</b></figcaption>
 <svg aria-label="Diagrama de seis quadros em sequencia: drone, plano geral, plano medio, close-up, acao e plano geral de por do sol, formando uma curva narrativa." class="diagram" role="img" viewbox="0 0 720 190">
 <g class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle">
 <text x="80" y="34">DRONE</text><text x="190" y="34">WIDE</text><text x="300" y="34">MEDIO</text>
@@ -364,45 +364,45 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Indo mais fundo: por que seis, e nao um plano longo
+<summary><span class="chev">â–¸</span> Indo mais fundo: por que seis, e nao um plano longo
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional — sobre granularidade e controle.</p>
+<p>Camada opcional â€” sobre granularidade e controle.</p>
 <p>Poderia parecer mais simples pedir um unico plano longo de quinze segundos. Mas planos longos sao
                 onde o gerador mais erra: quanto mais tempo continuo, mais chance de deriva, deformacao e perda de
                 identidade. Quebrar a cena em seis planos curtos da a voce <em>pontos de controle</em>: cada plano
                 e gerado, avaliado e, se preciso, refeito isoladamente, sem comprometer os outros. E ainda
-                impoe a gramatica de planos — cada um com seu tamanho e sua funcao. Seis planos nao e so
+                impoe a gramatica de planos â€” cada um com seu tamanho e sua funcao. Seis planos nao e so
                 narrativa; e uma estrategia de risco contra as fraquezas da IA.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-3" data-inema-track="4" id="topico-3">
+<section data-ARCKHÉ-module="4-4" data-ARCKHÉ-topic="modulo-4-4#topico-3" data-ARCKHÉ-track="4" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>·</span><span>Identidade</span>
+<span class="where">Secao 3 de 5</span><span>Â·</span><span>Identidade</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Travar a identidade do personagem</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-4-t3-p1">O segundo pilar pratico e a <strong>trava de
+<p class="lede" data-ARCKHÉ-block="m4-4-t3-p1">O segundo pilar pratico e a <strong>trava de
               identidade</strong>. Voce ja viu, no Modulo 4.1, que o Seedance oscila rostos; a solucao aqui e
               ainda mais direta. Suba a imagem do storyboard (ou da ficha de personagem) como referencia e, no
-              prompt, <em>trave explicitamente</em> a identidade — instrua o modelo a casar com aquela
+              prompt, <em>trave explicitamente</em> a identidade â€” instrua o modelo a casar com aquela
               referencia, com bloqueio estrito.<span class="sidenote-ref">3</span></p>
-<p data-inema-block="m4-4-t3-p2">A instrucao tem uma forma reconhecivel:
+<p data-ARCKHÉ-block="m4-4-t3-p2">A instrucao tem uma forma reconhecivel:
               <code>base: "matching reference @image1 with strict identity lock"</code>. Isso diz ao gerador para
               manter exatamente o mesmo rosto, capacete, traje, proporcoes e cores ao longo de todos os planos.
-              Vale travar tambem o <em>ambiente</em> — a estrada, as montanhas, a luz — para que o
+              Vale travar tambem o <em>ambiente</em> â€” a estrada, as montanhas, a luz â€” para que o
               cenario nao mude de plano para plano. Essa unica etapa elimina os tres fantasmas mais comuns do
               video de IA: o <em>drift</em> de identidade, a mudanca de estilo e os redesenhos aleatorios.</p>
 <h3 class="sub">Por que isso vem antes do YAML</h3>
-<p data-inema-block="m4-4-t3-p3">A ordem importa: trava primeiro, estrutura depois. De nada adianta um
+<p data-ARCKHÉ-block="m4-4-t3-p3">A ordem importa: trava primeiro, estrutura depois. De nada adianta um
               YAML impecavel se, no plano 4, o personagem virou outra pessoa. A trava de identidade e a fundacao
-              da continuidade — ela garante <em>quem</em> esta na cena; o YAML governa <em>o que</em>
+              da continuidade â€” ela garante <em>quem</em> esta na cena; o YAML governa <em>o que</em>
               acontece com essa pessoa. Sem a primeira, a segunda constroi sobre areia. Com as duas, voce tem um
-              personagem estavel se movendo por uma sequencia estruturada — que e, em essencia, o que um set
+              personagem estavel se movendo por uma sequencia estruturada â€” que e, em essencia, o que um set
               de filmagem entrega.</p>
-<div class="codeblock"><span class="c"># Trava de identidade — antes de qualquer outra coisa</span>
+<div class="codeblock"><span class="c"># Trava de identidade â€” antes de qualquer outra coisa</span>
 <span class="c"># suba a imagem do storyboard/ficha como @image1</span>
 <span class="k">base:</span> matching reference @image1 with strict identity lock
 <span class="k">lock_character:</span> exact same face, helmet, suit, proportions and colors across all shots
@@ -411,7 +411,7 @@
 </div>
 <!-- figura 3: drift x lock -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · Sem trava: o rosto <b>deriva</b>; com trava: a identidade <b>se mantem</b></figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· Sem trava: o rosto <b>deriva</b>; com trava: a identidade <b>se mantem</b></figcaption>
 <svg aria-label="Diagrama: na fileira de cima, sem trava, o mesmo personagem muda de rosto a cada plano; na fileira de baixo, com trava de identidade, o personagem permanece identico." class="diagram" role="img" viewbox="0 0 720 188">
 <!-- sem trava -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" x="60" y="30">SEM TRAVA</text>
@@ -422,7 +422,7 @@
 <circle cx="222" cy="56" r="2.5"></circle><circle cx="238" cy="56" r="2.5"></circle>
 <circle cx="335" cy="57" r="1.6"></circle><circle cx="345" cy="57" r="1.6"></circle>
 <circle cx="443" cy="56" r="2.2"></circle><circle cx="457" cy="56" r="2.2"></circle></g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="285" y="96">muda a cada plano — drift</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="285" y="96">muda a cada plano â€” drift</text>
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="500" x2="500" y1="40" y2="150"></line>
 <!-- com trava -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" x="60" y="124">COM TRAVA</text>
@@ -442,45 +442,45 @@
 </figure>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-4" data-inema-track="4" id="topico-4">
+<section data-ARCKHÉ-module="4-4" data-ARCKHÉ-topic="modulo-4-4#topico-4" data-ARCKHÉ-track="4" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>·</span><span>YAML</span>
+<span class="where">Secao 4 de 5</span><span>Â·</span><span>YAML</span>
 </div>
-<h2 class="head"><span class="num">4.</span>Escrever em YAML — as regras</h2>
+<h2 class="head"><span class="num">4.</span>Escrever em YAML â€” as regras</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-4-t4-p1">O <span class="dfn"><details class="dfn"><summary>YAML</summary><span class="body"><b>YAML</b> e um jeito de escrever instrucoes em blocos rotulados — cada informacao numa linha <code>chave: valor</code>. No contexto de prompts, ele organiza a cena em campos (camera, action, lighting, transitions) para que o modelo saiba exatamente o que pertence a onde.</span></details></span>
+<p class="lede" data-ARCKHÉ-block="m4-4-t4-p1">O <span class="dfn"><details class="dfn"><summary>YAML</summary><span class="body"><b>YAML</b> e um jeito de escrever instrucoes em blocos rotulados â€” cada informacao numa linha <code>chave: valor</code>. No contexto de prompts, ele organiza a cena em campos (camera, action, lighting, transitions) para que o modelo saiba exatamente o que pertence a onde.</span></details></span>
               e a forma de transformar o storyboard em instrucao que a IA executa. Em vez de um paragrafo, voce
               quebra a cena em blocos: personagem, camera, acao, luz, som, transicoes. Como o Seedance interpreta
               estrutura, o YAML <em>remove a ambiguidade</em> e ajuda o modelo a entender exatamente o que
-              pertence a onde. Mas o YAML so funciona se voce respeitar algumas regras — e elas resumem
+              pertence a onde. Mas o YAML so funciona se voce respeitar algumas regras â€” e elas resumem
               toda a linguagem de camera da trilha.</p>
 <h3 class="sub">As seis regras essenciais</h3>
-<p data-inema-block="m4-4-t4-p2"><strong>Uma funcao por campo.</strong> Camera nao e acao; nao misture.
-              <strong>Descreva movimento fisico, nao ideia abstrata.</strong> Nao escreva “ela corre
-              rapido”; escreva “os pes comprimem, o corpo se inclina, o cenario acelera” —
-              o modelo entende fisica, nao adjetivos. <strong>Mantenha a camera simples e controlada</strong> —
+<p data-ARCKHÉ-block="m4-4-t4-p2"><strong>Uma funcao por campo.</strong> Camera nao e acao; nao misture.
+              <strong>Descreva movimento fisico, nao ideia abstrata.</strong> Nao escreva â€œela corre
+              rapidoâ€; escreva â€œos pes comprimem, o corpo se inclina, o cenario aceleraâ€ â€”
+              o modelo entende fisica, nao adjetivos. <strong>Mantenha a camera simples e controlada</strong> â€”
               um movimento por plano, como voce aprendeu no 4.2.</p>
-<p data-inema-block="m4-4-t4-p3"><strong>Sempre inclua luz</strong> em cada plano; mesmo uma frase
-              curta como “warm side light” melhora muito o resultado. <strong>Defina blocos de
-              tempo</strong> claros — <code>00_02</code>, <code>02_04</code>, <code>04_06</code> —
+<p data-ARCKHÉ-block="m4-4-t4-p3"><strong>Sempre inclua luz</strong> em cada plano; mesmo uma frase
+              curta como â€œwarm side lightâ€ melhora muito o resultado. <strong>Defina blocos de
+              tempo</strong> claros â€” <code>00_02</code>, <code>02_04</code>, <code>04_06</code> â€”
               para que cada segundo seja descrito, sem lacunas. <strong>Escreva as transicoes explicitamente</strong>,
               com momento, direcao e proposito. A regra-mae por tras de tudo: <em>se a estrutura quebra, o
               resultado quebra.</em><span class="sidenote-ref">4</span></p>
-<div class="codeblock"><span class="c"># Plano em YAML — uma funcao por campo, movimento fisico, luz sempre</span>
+<div class="codeblock"><span class="c"># Plano em YAML â€” uma funcao por campo, movimento fisico, luz sempre</span>
 <span class="c"># um dos seis blocos da sequencia do motociclista</span>
 <span class="k">base:</span> matching reference @image1 with strict identity lock
 <span class="k">shot_03_medium:</span>
 <span class="k">  time:</span> 04_06
-<span class="k">  camera:</span> medium shot, single slow tracking move alongside the rider — no zoom, no orbit
+<span class="k">  camera:</span> medium shot, single slow tracking move alongside the rider â€” no zoom, no orbit
 <span class="k">  action:</span> rider leans into a curve, feet compress on the pegs, gravel sprays from the rear wheel
 <span class="k">  lighting:</span> warm low side light, long shadows, dust catching the sun
 <span class="k">  sound:</span> engine growl (diegetic), low synth pulse rising (non-diegetic)
-<span class="k">  transition_out:</span> match-on-action into the close-up at 06s — the lean continues across the cut
+<span class="k">  transition_out:</span> match-on-action into the close-up at 06s â€” the lean continues across the cut
 <span class="k">  production_notes:</span> no deformation, no identity drift, physical motion only</div>
 </div>
 <!-- figura 4: anatomia de um bloco YAML -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · Anatomia de um <b>bloco</b>: cada campo, uma funcao</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· Anatomia de um <b>bloco</b>: cada campo, uma funcao</figcaption>
 <svg aria-label="Diagrama anotando um bloco YAML: o campo time define o intervalo, camera define um movimento, action descreve fisica, lighting sempre presente, transition_out liga ao proximo plano." class="diagram" role="img" viewbox="0 0 720 196">
 <!-- coluna de campos -->
 <g>
@@ -501,7 +501,7 @@
 <path d="M360 132 L420 132"></path><path d="M360 162 L420 162"></path>
 </g>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5">
-<text x="428" y="46">quando — sem lacunas</text>
+<text x="428" y="46">quando â€” sem lacunas</text>
 <text x="428" y="76">um movimento, so</text>
 <text x="428" y="106">fisica, nao adjetivo</text>
 <text x="428" y="136">sempre presente</text>
@@ -511,44 +511,44 @@
 </figure>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-inema-module="4-4" data-inema-topic="modulo-4-4#topico-5" data-inema-track="4" id="topico-5">
+<section data-ARCKHÉ-module="4-4" data-ARCKHÉ-topic="modulo-4-4#topico-5" data-ARCKHÉ-track="4" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>·</span><span>Transicoes</span>
+<span class="where">Secao 5 de 5</span><span>Â·</span><span>Transicoes</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Transicoes, limites e iteracao</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-4-t5-p1">As <strong>transicoes</strong> sao a cola que mantem a
-              sequencia inteira. No cinema, elas nao sao efeitos — sao ferramentas de narrativa, e controlam
+<p class="lede" data-ARCKHÉ-block="m4-4-t5-p1">As <strong>transicoes</strong> sao a cola que mantem a
+              sequencia inteira. No cARCKHÉ, elas nao sao efeitos â€” sao ferramentas de narrativa, e controlam
               tres coisas: ritmo, emocao e atencao.<span class="sidenote-ref">5</span> Quatro delas estruturam a
               cena-exemplo, e cada uma tem um proposito distinto.</p>
 <h3 class="sub">Quatro transicoes, quatro propositos</h3>
-<p data-inema-block="m4-4-t5-p2">O <strong>corte seco</strong> (cut) e a transicao da estrutura: ele
+<p data-ARCKHÉ-block="m4-4-t5-p2">O <strong>corte seco</strong> (cut) e a transicao da estrutura: ele
               comeca o ritmo, liga um plano ao outro sem disfarce. O <strong>whip pan</strong> e a transicao do
-              movimento: a camera gira rapido, cria borrao e <em>esconde</em> o corte — serve para conectar
+              movimento: a camera gira rapido, cria borrao e <em>esconde</em> o corte â€” serve para conectar
               acoes rapidas e manter a energia. O <strong>smash cut</strong> e a transicao do contraste: uma
               mudanca subita de escala, som ou emocao, usada para impacto e surpresa. E o <strong>match on
               action</strong> (ou passagem) e a transicao da continuidade: o movimento atravessa o corte, de modo
-              que o espectador nao sente a edicao — mantem o fluxo na acao. Juntas, no exemplo: o corte
+              que o espectador nao sente a edicao â€” mantem o fluxo na acao. Juntas, no exemplo: o corte
               inicia o ritmo, o whip pan constroi velocidade, o smash cut cria impacto e o match on action sustenta
               o movimento ate o alivio final.</p>
 <h3 class="sub">O limite incomodo: no Seedance, transicoes quebram</h3>
-<p data-inema-block="m4-4-t5-p3">E aqui vem a verdade que o curso nao esconde: no Seedance, transicoes
+<p data-ARCKHÉ-block="m4-4-t5-p3">E aqui vem a verdade que o curso nao esconde: no Seedance, transicoes
               <em>frequentemente quebram</em>. Mesmo com um prompt correto, o movimento pode derivar, o tempo pode
-              falhar, os planos podem colapsar. <strong>Isso e normal.</strong> A IA nao <em>executa</em> —
+              falhar, os planos podem colapsar. <strong>Isso e normal.</strong> A IA nao <em>executa</em> â€”
               ela <em>aproxima</em>. Esperar que ela acerte a transicao de primeira e o erro de quem ainda pensa
               como usuario, nao como diretor. A resposta certa nao e frustracao: e <em>iteracao</em>. Gere,
               observe o ponto exato do corte, ajuste o bloco, gere de novo. O controle nasce da repeticao
               dirigida.</p>
-<p data-inema-block="m4-4-t5-p4">Feche a trilha com a frase que a resume: <em>uma boa sequencia flui —
-              escala, velocidade, emocao, acao, alivio — e o objetivo nunca foi gerar, foi controlar.</em>
+<p data-ARCKHÉ-block="m4-4-t5-p4">Feche a trilha com a frase que a resume: <em>uma boa sequencia flui â€”
+              escala, velocidade, emocao, acao, alivio â€” e o objetivo nunca foi gerar, foi controlar.</em>
               Voce entrou nesta trilha sabendo operar ferramentas; sai dela falando a lingua que elas obedecem:
-              os pilares, o movimento, os planos, a continuidade, a estrutura. A proxima trilha — VFX e Acao —
+              os pilares, o movimento, os planos, a continuidade, a estrutura. A proxima trilha â€” VFX e Acao â€”
               assume tudo isso e vai alem, para a camera lenta, os sistemas de particulas e as cenas de acao. Voce
               ja nao prompta: voce dirige.</p>
 </div>
 <!-- figura 5: transicoes e o laco de iteracao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> · Quatro transicoes — e o <b>laco</b> que conserta o que a IA so aproxima</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> Â· Quatro transicoes â€” e o <b>laco</b> que conserta o que a IA so aproxima</figcaption>
 <svg aria-label="Diagrama: quatro tipos de transicao ligando planos (cut, whip pan, smash cut, match on action), e abaixo um ciclo de gerar, observar o corte e ajustar." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- quatro transicoes em linha -->
 <g class="rule-stroke" fill="none" stroke-width="1.3">
@@ -570,7 +570,7 @@
 <text x="464" y="88">impacto</text><text x="604" y="88">fluxo</text>
 </g>
 <!-- laco de iteracao -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="124">A IA APROXIMA — VOCE ITERA</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="124">A IA APROXIMA â€” VOCE ITERA</text>
 <g class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle">
 <text x="220" y="160">gerar</text><text x="360" y="184">observar o corte</text><text x="500" y="160">ajustar</text>
 </g>
@@ -593,16 +593,16 @@
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
 <summary><span class="qn">01</span><span>Por que YAML, e nao um paragrafo bem escrito?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque a IA <em>nao pensa — ela interpreta estrutura</em>. Um paragrafo
-              mistura camera, acao e luz, e o modelo “chuta”. O YAML quebra a cena em blocos rotulados
-              (camera, action, lighting, transitions), removendo a ambiguidade. Nao e formatacao — e um
+<div class="ans"><p>Porque a IA <em>nao pensa â€” ela interpreta estrutura</em>. Um paragrafo
+              mistura camera, acao e luz, e o modelo â€œchutaâ€. O YAML quebra a cena em blocos rotulados
+              (camera, action, lighting, transitions), removendo a ambiguidade. Nao e formatacao â€” e um
               sistema de controle.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>Qual a curva narrativa do storyboard de seis planos?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>Escala → velocidade → emocao → acao → alivio.</em> Drone
+<div class="ans"><p><em>Escala â†’ velocidade â†’ emocao â†’ acao â†’ alivio.</em> Drone
               (escala), wide (velocidade), medio (controle), close (emocao), acao (salto), wide de por do sol
-              (alivio). Cada plano usa um tamanho diferente de proposito — e o storyboard garante esse fluxo
+              (alivio). Cada plano usa um tamanho diferente de proposito â€” e o storyboard garante esse fluxo
               antes que a IA improvise.</p></div>
 </details>
 <details class="q-item">
@@ -615,37 +615,37 @@
 <details class="q-item">
 <summary><span class="qn">04</span><span>No Seedance, transicoes quebram. Qual a resposta correta a isso?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p><em>Iteracao</em>, nao frustracao. A IA aproxima, nao executa: movimento deriva,
-              tempo falha, planos colapsam — e isso e normal. A resposta de diretor e gerar, observar o
+              tempo falha, planos colapsam â€” e isso e normal. A resposta de diretor e gerar, observar o
               ponto exato do corte, ajustar o bloco e gerar de novo. O objetivo nunca foi gerar de primeira; foi
               <em>controlar</em>.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada — progresso consolidado" class="journey">
+<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> Minha jornada</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Abrir caderno →</button>
+<h2><span class="ico">â§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-inema-meter="modulo:4-4">
-<span data-inema-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:4-4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 4</div>
-<div class="v" data-inema-meter="trilha:4">
-<span data-inema-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -654,20 +654,20 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar na proxima trilha</div>
-<div class="t">Modulo 5.1 — Efeitos Visuais</div>
+<div class="t">Modulo 5.1 â€” Efeitos Visuais</div>
 </div>
-<a class="go" href="../trilha5/modulo-5-1.html">Proximo →</a>
+<a class="go" href="../trilha5/modulo-5-1.html">Proximo â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-4-4#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-4#topico-1"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Lesson 13 — <i>Cinematic Video in Seedance 2</i> (Block 4). O principio central:
-          <i>“AI does not think — it parses structure. That's why we use YAML. It's not formatting — it's
-          a control system.”</i>
+          Lesson 13 â€” <i>CARCKHÉtic Video in Seedance 2</i> (Block 4). O principio central:
+          <i>â€œAI does not think â€” it parses structure. That's why we use YAML. It's not formatting â€” it's
+          a control system.â€</i>
 </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
@@ -675,7 +675,7 @@
           busca de blocos claros. Quanto mais estruturada a entrada, mais previsivel a saida.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-4-4#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Storyboard.</b> A sequencia de planos desenhada antes de gerar. Sem ele, o modelo improvisa e quebra
@@ -687,10 +687,10 @@
           (emocao), acao e wide final. A escala dos planos conta a historia tanto quanto o roteiro.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-4-4#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-4#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Trava de identidade.</b> <code>base: matching reference @image1 with strict identity lock</code> —
+<b>Trava de identidade.</b> <code>base: matching reference @image1 with strict identity lock</code> â€”
           mantem rosto, traje, proporcoes e cores estaveis em todos os planos. Trave o ambiente tambem.
         </aside>
 <aside class="sidenote" data-kind="fundo">
@@ -699,7 +699,7 @@
           acontece. Um YAML impecavel nao salva um personagem que virou outra pessoa no plano 4.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-4-4#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>YAML.</b> Instrucoes em blocos <code>chave: valor</code>. Regras: uma funcao por campo, movimento
@@ -707,19 +707,19 @@
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          “Descreva fisica, nao adjetivo”: troque “ela corre rapido” por “os pes
-          comprimem, o corpo se inclina, o cenario acelera”. O modelo entende movimento, nao impressao.
+          â€œDescreva fisica, nao adjetivoâ€: troque â€œela corre rapidoâ€ por â€œos pes
+          comprimem, o corpo se inclina, o cenario aceleraâ€. O modelo entende movimento, nao impressao.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-inema-rail="modulo-4-4#topico-5"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Match on action.</b> Transicao de continuidade: o movimento atravessa o corte, e o espectador nao
-          sente a edicao. Mantem o fluxo — oposta ao smash cut, que existe para o impacto da quebra.
+          sente a edicao. Mantem o fluxo â€” oposta ao smash cut, que existe para o impacto da quebra.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
-          “AI doesn't execute — it approximates.” Transicoes quebram no Seedance, e isso e esperado.
+          â€œAI doesn't execute â€” it approximates.â€ Transicoes quebram no Seedance, e isso e esperado.
           Direcao e iteracao sao inseparaveis: gere, observe o corte, ajuste, repita. Controle, nao geracao.
         </aside>
 </aside>
@@ -727,8 +727,8 @@
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Caderno do aluno</span>
-<span class="pg">Modulo 4.4 — folio iv</span>
+<span>ARCKHÉ AI Â· Caderno do aluno</span>
+<span class="pg">Modulo 4.4 â€” folio iv</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -737,8 +737,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>

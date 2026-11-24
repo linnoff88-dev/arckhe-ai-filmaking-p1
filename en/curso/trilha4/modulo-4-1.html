@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC — script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le inema.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca INEMA).
-          (REL = "../.." — caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
+          (REL = "../.." â€” caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="inema-course"/>
-<script data-inema-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial Cinematografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos Cinematograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para Cinema", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de Cinema com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "Cinematografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video Cinematografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no Cinema", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,51 +118,51 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura Cinematografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias Cinematograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia Cinematografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Module 4.1 — Cinematography | AI Filmmaking</title>
+<title>Module 4.1 â€” CARCKHÉtography | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
-<link href="https://inematds.github.io/ai-filmaking-p1/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/ai-filmaking-p1/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Skip to content</a>
-<!-- ===================== READER BAR — controles minimos ===================== -->
+<!-- ===================== READER BAR â€” controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">INEMA<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-inema-appearance="">
-<span class="rc-read"><span data-inema-meter="modulo:4-1"><span data-inema-meter-frac=""><strong>0</strong> of 4</span></span> read</span>
+<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHÉ-appearance="">
+<span class="rc-read"><span data-ARCKHÉ-meter="modulo:4-1"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 4</span></span> read</span>
 <div aria-label="Reading theme" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-theme="papel" type="button">Role</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-theme="escuro" type="button">Dark</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Role</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Dark</button>
 </div>
 <div aria-label="Reading source" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-font="hyperlegible" title="Atkinson Hyperlegible—maximum legibility" type="button">Aa↹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegibleâ€”maximum legibility" type="button">Aaâ†¹</button>
 </div>
 <div aria-label="Text size" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-inema-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Line width" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="62" type="button">Narrow</button>
-<button aria-pressed="true" class="rc-btn" data-inema-set-linewidth="66" type="button">Medium</button>
-<button aria-pressed="false" class="rc-btn" data-inema-set-linewidth="70" type="button">Wide</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Narrow</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medium</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Where you are" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Track <b>4</b> Camera Language</span>
-<span class="sep">·</span>
+<span class="sep">Â·</span>
 <span>Module <b>4.1</b> / 4</span>
-<span class="sep">·</span>
-<span data-inema-section-counter="">Section 1 of 4</span>
-<span class="sep">·</span>
-<button data-inema-journey-open="" type="button">
-        My journey <span class="inema-journey-badge" data-count="0" data-inema-journey-badge="">0</span>
+<span class="sep">Â·</span>
+<span data-ARCKHÉ-section-counter="">Section 1 of 4</span>
+<span class="sep">Â·</span>
+<button data-ARCKHÉ-journey-open="" type="button">
+        My journey <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,24 +189,24 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Module 4.1 · Track 4 · Camera Language</p>
-<h1 class="module">Cinematography: what makes an image become <em>cinema</em></h1>
-<p class="deck">AI doesn't create cinema — cinematography does. The generator executes; the direction is
-          yours. This lesson establishes the four pillars that distinguish a frame that “looks like AI” from one that
-          “looks like a film,” and the method for building a scene like a set, not like a one-off prompt.</p>
+<p class="kicker">Module 4.1 Â· Track 4 Â· Camera Language</p>
+<h1 class="module">CARCKHÉtography: what makes an image become <em>cARCKHÉ</em></h1>
+<p class="deck">AI doesn't create cARCKHÉ â€” cARCKHÉtography does. The generator executes; the direction is
+          yours. This lesson establishes the four pillars that distinguish a frame that â€œlooks like AIâ€ from one that
+          â€œlooks like a film,â€ and the method for building a scene like a set, not like a one-off prompt.</p>
 <p class="read-meta">
 <span class="here">Reading now</span>
-<span>~15 min · full module</span>
+<span>~15 min Â· full module</span>
 <span>4 sections</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="What you will understand" class="aims">
 <h2>What you will understand</h2>
 <ul>
-<li>Why <b>the tool doesn't create cinema</b> — Seedance does what you describe, and the
+<li>Why <b>the tool doesn't create cARCKHÉ</b> â€” Seedance does what you describe, and the
               absence of camera language produces random video.</li>
-<li>The <b>four pillars</b> that make a frame cinematic: composition, light, camera, and rhythm
-              — and why the absence of even one gives the result away as AI.</li>
+<li>The <b>four pillars</b> that make a frame cARCKHÉtic: composition, light, camera, and rhythm
+              â€” and why the absence of even one gives the result away as AI.</li>
 <li>How to build a scene <b>like a film set</b>: character sheets for consistency,
               environments with depth, and a prompt written as <em>timeline</em>.</li>
 <li>Why shoot with AI and <b>direction + iteration + editing</b>, and not the search for the perfect prompt
@@ -214,35 +214,35 @@
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Module summary" class="toc" data-inema-toc="">
-<p class="toc-head">Summary — four movements</p>
+<nav aria-label="Module summary" class="toc" data-ARCKHÉ-toc="">
+<p class="toc-head">Summary â€” four movements</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">The tool doesn’t create cinema</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">The four pillars of cinematography</span></a><span class="leader"></span></li>
+<a href="#topico-1"><span class="t">The tool doesnâ€™t create cARCKHÉ</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">The four pillars of cARCKHÉtography</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">Build the scene like a set</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">Direct, don’t prompt</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">Direct, donâ€™t prompt</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-inema-module="4-1" data-inema-topic="modulo-4-1#topico-1" data-inema-track="4" id="topico-1">
+<section data-ARCKHÉ-module="4-1" data-ARCKHÉ-topic="modulo-4-1#topico-1" data-ARCKHÉ-track="4" id="topico-1">
 <div class="section-mark">
-<span class="where">Section 1 of 4</span><span>·</span><span>Principle</span>
+<span class="where">Section 1 of 4</span><span>Â·</span><span>Principle</span>
 </div>
-<h2 class="head"><span class="num">1.</span>The tool doesn’t create cinema</h2>
+<h2 class="head"><span class="num">1.</span>The tool doesnâ€™t create cARCKHÉ</h2>
 <div class="prose">
-<p class="lede dropcap" data-inema-block="m4-1-t1-p1">Start this track with a phrase that’s uncomfortable and
-              liberating at the same time: <em>artificial intelligence doesn't create cinema — cinematography does.</em><span class="sidenote-ref">1</span> The generator, whether it's Seedance, Kling, or Runway, has no taste, no intention, and no idea what matters in your scene. It does one thing, and does it well: it carries out what you describe. If the description has camera logic, the result looks like a film. If it doesn't, it gives you beautiful, disconnected images—what many people rightly call “AI-looking.”</p>
-<p data-inema-block="m4-1-t1-p2">This changes who you are in front of the machine. You're not a user asking a model for a favor; you're the <strong>director and director of photography</strong> an invisible crew. The difference between the two roles is exactly the difference between “generating video”
-              and “making a film.” The user hopes the result turns out well. The director knows what they want
-              to see before pressing the button — and describes it in language the tool can
+<p class="lede dropcap" data-ARCKHÉ-block="m4-1-t1-p1">Start this track with a phrase thatâ€™s uncomfortable and
+              liberating at the same time: <em>artificial intelligence doesn't create cARCKHÉ â€” cARCKHÉtography does.</em><span class="sidenote-ref">1</span> The generator, whether it's Seedance, Kling, or Runway, has no taste, no intention, and no idea what matters in your scene. It does one thing, and does it well: it carries out what you describe. If the description has camera logic, the result looks like a film. If it doesn't, it gives you beautiful, disconnected imagesâ€”what many people rightly call â€œAI-looking.â€</p>
+<p data-ARCKHÉ-block="m4-1-t1-p2">This changes who you are in front of the machine. You're not a user asking a model for a favor; you're the <strong>director and director of photography</strong> an invisible crew. The difference between the two roles is exactly the difference between â€œgenerating videoâ€
+              and â€œmaking a film.â€ The user hopes the result turns out well. The director knows what they want
+              to see before pressing the button â€” and describes it in language the tool can
               follow.</p>
 <h3 class="sub">Camera language and what you are learning</h3>
-<p data-inema-block="m4-1-t1-p3">This lesson — and the entire track — is not about prompts. It’s
-              about <em>principles</em>: composition, lighting, camera movement, and shot rhythm. They’re the same
-              principles a cinematographer brings to any set, with or without AI. The new thing is that,
-              for the first time, you don’t need a million dollars to apply them. You need clarity. By
-              the end of the track, you’ll be able to describe a short sequence — fifteen seconds — that
+<p data-ARCKHÉ-block="m4-1-t1-p3">This lesson â€” and the entire track â€” is not about prompts. Itâ€™s
+              about <em>principles</em>: composition, lighting, camera movement, and shot rhythm. Theyâ€™re the same
+              principles a cARCKHÉtographer brings to any set, with or without AI. The new thing is that,
+              for the first time, you donâ€™t need a million dollars to apply them. You need clarity. By
+              the end of the track, youâ€™ll be able to describe a short sequence â€” fifteen seconds â€” that
               <em>looks directed</em>, and not generated by chance.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
@@ -253,15 +253,15 @@
               probably set the two results apart?</p>
 <details>
 <summary>See one possible answer</summary>
-<p class="answer">A <strong>camera language</strong> of the prompt — not the model. The first
+<p class="answer">A <strong>camera language</strong> of the prompt â€” not the model. The first
                 person described composition, lighting, movement, and rhythm (gave direction); the second described only
                 <em>what</em> appears without saying so <em>how</em> is seen. The tool amplifies the clarity it receives;
-                without direction, it improvises — and improvisation becomes noise.</p>
+                without direction, it improvises â€” and improvisation becomes noise.</p>
 </details>
 </div>
 <!-- figura 1: ferramenta x diretor -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> · The tool <b>executes</b>; the direction <b>decides</b></figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> Â· The tool <b>executes</b>; the direction <b>decides</b></figcaption>
 <svg aria-label="Diagram: on the left, a prompt without camera language goes into the tool and a random image comes out; on the right, a prompt with direction goes in and a film comes out." class="diagram" role="img" viewbox="0 0 720 200">
 <defs>
 <pattern height="6" id="hatch-4-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -289,59 +289,59 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: “AI amplifies what's already there”
+<summary><span class="chev">â–¸</span> Going deeper: â€œAI amplifies what's already thereâ€
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>The happy path above is enough. This layer connects the lesson to the thesis of Track 1—and can be skipped.</p>
-<p>You saw in Module 1.1 that AI <strong>expands what already exists</strong>: if there’s structure, it
-                amplifies structure; if there’s chaos, it amplifies chaos. Cinematography is what we call that structure
-                when it’s <em>visual</em>. That’s why this track comes after the tools pipeline: mastering
-                buttons doesn’t help if you have nothing to say. Camera language is precisely the content that
-                the generator will amplify—and it’s the only part of the process that the machine, for now, can’t
+<p>The happy path above is enough. This layer connects the lesson to the thesis of Track 1â€”and can be skipped.</p>
+<p>You saw in Module 1.1 that AI <strong>expands what already exists</strong>: if thereâ€™s structure, it
+                amplifies structure; if thereâ€™s chaos, it amplifies chaos. CARCKHÉtography is what we call that structure
+                when itâ€™s <em>visual</em>. Thatâ€™s why this track comes after the tools pipeline: mastering
+                buttons doesnâ€™t help if you have nothing to say. Camera language is precisely the content that
+                the generator will amplifyâ€”and itâ€™s the only part of the process that the machine, for now, canâ€™t
                 do for you.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-inema-module="4-1" data-inema-topic="modulo-4-1#topico-2" data-inema-track="4" id="topico-2">
+<section data-ARCKHÉ-module="4-1" data-ARCKHÉ-topic="modulo-4-1#topico-2" data-ARCKHÉ-track="4" id="topico-2">
 <div class="section-mark">
-<span class="where">Section 2 of 4</span><span>·</span><span>Four pillars</span>
+<span class="where">Section 2 of 4</span><span>Â·</span><span>Four pillars</span>
 </div>
-<h2 class="head"><span class="num">2.</span>The four pillars of cinematography</h2>
+<h2 class="head"><span class="num">2.</span>The four pillars of cARCKHÉtography</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-1-t2-p1">Ask any cinematographer what makes an image feel cinematic, and the answer fits in <em>four pillars</em>. They aren't style options:
-              they're pillars that support the frame at the same time. The practical rule is strict — if <strong>one</strong>
-              of them is missing, the eye registers “this is AI”; if all four are present, it registers
-              “this is a film”.<span class="sidenote-ref">2</span></p>
-<h3 class="sub">Composition—depth across three planes</h3>
-<p data-inema-block="m4-1-t2-p2">The first pillar is the arrangement of space: <em>foreground</em> (close-up), <em>midground</em> (middle) and <em>background</em> (background) working together. A flat frame
-              —everything on the same plane—is the most immediate sign of a generated image. Depth creates volume,
+<p class="lede" data-ARCKHÉ-block="m4-1-t2-p1">Ask any cARCKHÉtographer what makes an image feel cARCKHÉtic, and the answer fits in <em>four pillars</em>. They aren't style options:
+              they're pillars that support the frame at the same time. The practical rule is strict â€” if <strong>one</strong>
+              of them is missing, the eye registers â€œthis is AIâ€; if all four are present, it registers
+              â€œthis is a filmâ€.<span class="sidenote-ref">2</span></p>
+<h3 class="sub">Compositionâ€”depth across three planes</h3>
+<p data-ARCKHÉ-block="m4-1-t2-p2">The first pillar is the arrangement of space: <em>foreground</em> (close-up), <em>midground</em> (middle) and <em>background</em> (background) working together. A flat frame
+              â€”everything on the same planeâ€”is the most immediate sign of a generated image. Depth creates volume,
               and volume creates the feeling of a real world. Real films almost always have something close, something in the middle, and
               something far away; this layering is what makes the eye believe.</p>
-<h3 class="sub">Light — contrast, direction, atmosphere</h3>
-<p data-inema-block="m4-1-t2-p3">The second pillar is light, and light isn't about “brightening the scene.” It's
+<h3 class="sub">Light â€” contrast, direction, atmosphere</h3>
+<p data-ARCKHÉ-block="m4-1-t2-p3">The second pillar is light, and light isn't about â€œbrightening the scene.â€ It's
               <em>direction</em> (where it comes from), <em>contrast</em> (the difference between light and dark) and
               <em>atmosphere</em> (smoke, dust, haze that make light visible). A warm side light,
-              a deep shadow, a particle suspended in the air—these are the details that add weight. Without a direction
-              for the light, the frame looks flat and “digital”; with it, it gains materiality.</p>
-<h3 class="sub">Camera — angle, movement, lens feel</h3>
-<p data-inema-block="m4-1-t2-p4">The third pillar is the camera: the <em>angle</em> where it is observed, the
-              <em>movement</em> what it does (or doesn’t do) and the <em>lens feel</em> — a wide-angle lens exaggerates space; a telephoto lens compresses and isolates. These two pillars, camera and movement,
-              fill the next two entire lessons because that’s where the language is most concentrated.</p>
-<h3 class="sub">Rhythm — shot duration and transition</h3>
-<p data-inema-block="m4-1-t2-p5">The fourth pillar is rhythm: how long each shot lasts and how one cuts
+              a deep shadow, a particle suspended in the airâ€”these are the details that add weight. Without a direction
+              for the light, the frame looks flat and â€œdigitalâ€; with it, it gains materiality.</p>
+<h3 class="sub">Camera â€” angle, movement, lens feel</h3>
+<p data-ARCKHÉ-block="m4-1-t2-p4">The third pillar is the camera: the <em>angle</em> where it is observed, the
+              <em>movement</em> what it does (or doesnâ€™t do) and the <em>lens feel</em> â€” a wide-angle lens exaggerates space; a telephoto lens compresses and isolates. These two pillars, camera and movement,
+              fill the next two entire lessons because thatâ€™s where the language is most concentrated.</p>
+<h3 class="sub">Rhythm â€” shot duration and transition</h3>
+<p data-ARCKHÉ-block="m4-1-t2-p5">The fourth pillar is rhythm: how long each shot lasts and how one cuts
               to the next. Alternating wide and close shots creates energy; staying with medium shots creates calm. Rhythm
-              is the pillar that exists only in the <em>time</em> — and that's why it's what separates a collection of
+              is the pillar that exists only in the <em>time</em> â€” and that's why it's what separates a collection of
               beautiful images from a <em>sequence</em> that breathes. Together, the four form a system: none
-              can make up for another’s absence.</p>
+              can make up for anotherâ€™s absence.</p>
 </div>
 <!-- figura 2: os quatro pilares -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> · The <b>four pillars</b> — miss one, and the frame gives away the AI</figcaption>
-<svg aria-label="Diagram with four columns labeled composition, lighting, camera, and rhythm, supporting a beam labeled cinema; a missing fifth column shows the beam sagging." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 2</span> Â· The <b>four pillars</b> â€” miss one, and the frame gives away the AI</figcaption>
+<svg aria-label="Diagram with four columns labeled composition, lighting, camera, and rhythm, supporting a beam labeled cARCKHÉ; a missing fifth column shows the beam sagging." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- viga superior -->
 <rect class="accent-stroke" fill="url(#hatch-4-1)" height="26" rx="3" stroke-width="1.3" width="500" x="60" y="40"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="310" y="58">looks cinematic</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="310" y="58">looks cARCKHÉtic</text>
 <!-- quatro colunas -->
 <g class="rule-stroke" fill="none" stroke-width="1.3">
 <rect height="96" rx="3" width="70" x="80" y="66"></rect>
@@ -365,80 +365,80 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">▸</span> Going deeper: using the four pillars as a diagnostic checklist
+<summary><span class="chev">â–¸</span> Going deeper: using the four pillars as a diagnostic checklist
               <span class="opt">optional</span></summary>
 <div class="inner">
-<p>Optional layer, useful when a generation “didn’t work” and you don’t know why.</p>
+<p>Optional layer, useful when a generation â€œdidnâ€™t workâ€ and you donâ€™t know why.</p>
 <p>When faced with a weak clip, go through the pillars in order. <strong>Composition:</strong> is there a foreground,
                 middle ground, and background, or is everything stacked on a single plane? <strong>Light:</strong> can you tell
                 where the light is coming from, and is there contrast, or is everything lit equally? <strong>Camera:</strong> the
-                angle and movement have a reason, or is the camera just “there”? <strong>Rhythm:</strong> do
+                angle and movement have a reason, or is the camera just â€œthereâ€? <strong>Rhythm:</strong> do
                 the plans have considered durations, or do they all last the same amount of time? The first pillar to fail is the one you
-                rewrite first in the prompt—and it almost always fixes more than switching models.</p>
+                rewrite first in the promptâ€”and it almost always fixes more than switching models.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-inema-module="4-1" data-inema-topic="modulo-4-1#topico-3" data-inema-track="4" id="topico-3">
+<section data-ARCKHÉ-module="4-1" data-ARCKHÉ-topic="modulo-4-1#topico-3" data-ARCKHÉ-track="4" id="topico-3">
 <div class="section-mark">
-<span class="where">Section 3 of 4</span><span>·</span><span>The set</span>
+<span class="where">Section 3 of 4</span><span>Â·</span><span>The set</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Build the scene like a set</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-1-t3-p1">A director doesn’t arrive on set and improvise from scratch. They
+<p class="lede" data-ARCKHÉ-block="m4-1-t3-p1">A director doesnâ€™t arrive on set and improvise from scratch. They
               arrive with defined characters, a built setting, and a shooting plan. With AI, the method is the
-              same — except the entire set fits into a sequence of prompts. Three stages structure the scene
+              same â€” except the entire set fits into a sequence of prompts. Three stages structure the scene
               before any video generation: characters, setting, and timeline.</p>
-<h3 class="sub">Characters with reference sheets — consistency comes first</h3>
-<p data-inema-block="m4-1-t3-p2">Seedance has a known weakness: <em>faces</em>. It shifts
+<h3 class="sub">Characters with reference sheets â€” consistency comes first</h3>
+<p data-ARCKHÉ-block="m4-1-t3-p2">Seedance has a known weakness: <em>faces</em>. It shifts
               identity, swaps features, changes the character's age from one shot to the next. The solution is
-              <span class="dfn"><details class="dfn"><summary>character sheet</summary><span class="body"><b>Character sheet</b> (character sheet) is a sheet showing the same character from several angles — front, side, back, full body — so the model can build an internal 3D understanding of the identity and keep it consistent.</span></details></span>:
+              <span class="dfn"><details class="dfn"><summary>character sheet</summary><span class="body"><b>Character sheet</b> (character sheet) is a sheet showing the same character from several angles â€” front, side, back, full body â€” so the model can build an internal 3D understanding of the identity and keep it consistent.</span></details></span>:
               generate the character from the front, side, back, and full body, on the same sheet. Seeing the same
-              person from several angles, the model forms a three-dimensional understanding of them — and stops
+              person from several angles, the model forms a three-dimensional understanding of them â€” and stops
               redrawing them in every shot.<span class="sidenote-ref">3</span></p>
-<h3 class="sub">Environment with depth — build it like a set</h3>
-<p data-inema-block="m4-1-t3-p3">The setting isn’t a background; it’s a character. Build it with the same elements as a real set—depth (something near, something far), light direction, atmosphere (fire, dust, fog), and scale (a storm in the distance that gives the world dimension). When the environment has these layers, it already looks cinematic before any character enters it, because that’s exactly how real movies are shot.</p>
+<h3 class="sub">Environment with depth â€” build it like a set</h3>
+<p data-ARCKHÉ-block="m4-1-t3-p3">The setting isnâ€™t a background; itâ€™s a character. Build it with the same elements as a real setâ€”depth (something near, something far), light direction, atmosphere (fire, dust, fog), and scale (a storm in the distance that gives the world dimension). When the environment has these layers, it already looks cARCKHÉtic before any character enters it, because thatâ€™s exactly how real movies are shot.</p>
 <h3 class="sub">The prompt as a timeline</h3>
-<p data-inema-block="m4-1-t3-p4">The key shift: never describe the scene as a still photo.
+<p data-ARCKHÉ-block="m4-1-t3-p4">The key shift: never describe the scene as a still photo.
               Describe it as a <em>timeline</em>, from second 0 to second 15. Upload the three references
-              —the character, the robot, the setting—and write what happens in each time range.
+              â€”the character, the robot, the settingâ€”and write what happens in each time range.
               The prompt below is exactly that: a complete scene, with tension, action, and resolution, written as the
               timed script the generator understands.</p>
-<div class="codeblock"><span class="c"># Cinematic scene as a TIMELINE (0:00 → 0:15)</span>
-<span class="c"># Upload 3 references first: @image1 human · @image2 robot · @image3 environment</span>
-<span class="k">Format:</span> cinematic 16:9, hyper-real with subtle stylization, film grain.
+<div class="codeblock"><span class="c"># CARCKHÉtic scene as a TIMELINE (0:00 â†’ 0:15)</span>
+<span class="c"># Upload 3 references first: @image1 human Â· @image2 robot Â· @image3 environment</span>
+<span class="k">Format:</span> cARCKHÉtic 16:9, hyper-real with subtle stylization, film grain.
 <span class="k">Scene:</span> a man and a small one-wheeled robot trapped in a broken vehicle, racing to restart the engine and flee an approaching sandstorm.
-<span class="k">0:00–0:04:</span> wide establishing — dead car, towering sandstorm closing in from the horizon, dust in the air.
-<span class="k">0:04–0:08:</span> medium shot — the robot reaches the engine, sparks fly, the man reacts; tension builds.
-<span class="k">0:08–0:11:</span> close-up — engine catches, the man's face shifts from fear to hope.
-<span class="k">0:11–0:15:</span> wide tracking — the car accelerates away from the storm across the desert; release.
+<span class="k">0:00â€“0:04:</span> wide establishing â€” dead car, towering sandstorm closing in from the horizon, dust in the air.
+<span class="k">0:04â€“0:08:</span> medium shot â€” the robot reaches the engine, sparks fly, the man reacts; tension builds.
+<span class="k">0:08â€“0:11:</span> close-up â€” engine catches, the man's face shifts from fear to hope.
+<span class="k">0:11â€“0:15:</span> wide tracking â€” the car accelerates away from the storm across the desert; release.
 <span class="k">Lighting:</span> warm low side light, high contrast, volumetric dust, deep shadows.
-<span class="k">Camera:</span> grounded angles, one deliberate move per shot — no random drift.</div>
+<span class="k">Camera:</span> grounded angles, one deliberate move per shot â€” no random drift.</div>
 </div>
 <!-- figura 3: pipeline do set -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> · O <b>set</b> in three steps, before generating the video</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> Â· O <b>set</b> in three steps, before generating the video</figcaption>
 <svg aria-label="Flow diagram: character sheet with four angles, then layered environment, then timeline prompt, converging in the scene." class="diagram" role="img" viewbox="0 0 720 196">
 <!-- etapa 1: ficha -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="110" y="32">01 · SHEET</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="110" y="32">01 Â· SHEET</text>
 <g class="rule-stroke" fill="none" stroke-width="1.2">
 <rect height="40" rx="2" width="30" x="44" y="44"></rect><rect height="40" rx="2" width="30" x="80" y="44"></rect>
 <rect height="40" rx="2" width="30" x="116" y="44"></rect><rect height="40" rx="2" width="30" x="152" y="44"></rect>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="113" y="100">front · side · back · body</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="113" y="100">front Â· side Â· back Â· body</text>
 <!-- etapa 2: ambiente -->
 <path class="mark-stroke" d="M210 64 L250 64" fill="none" stroke-width="1.4"></path>
 <polygon class="mark-fill" points="250,60 258,64 250,68"></polygon>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="350" y="32">02 · ENVIRONMENT</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="350" y="32">02 Â· ENVIRONMENT</text>
 <rect class="rule-stroke" fill="none" height="64" rx="3" stroke-width="1.3" width="148" x="276" y="44"></rect>
 <line class="rule-stroke" opacity="0.6" stroke-width="1" x1="276" x2="424" y1="92" y2="92"></line>
 <line class="rule-stroke" opacity="0.4" stroke-width="1" x1="276" x2="424" y1="76" y2="76"></line>
 <circle class="accent-stroke" cx="300" cy="100" fill="url(#hatch-4-1)" r="6" stroke-width="1"></circle>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="350" y="124">depth · light · atmosphere · scale</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="350" y="124">depth Â· light Â· atmosphere Â· scale</text>
 <!-- etapa 3: timeline -->
 <path class="mark-stroke" d="M452 76 L492 76" fill="none" stroke-width="1.4"></path>
 <polygon class="mark-fill" points="492,72 500,76 492,80"></polygon>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="600" y="32">03 · TIMELINE</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="600" y="32">03 Â· TIMELINE</text>
 <line class="accent-stroke" stroke-width="2" x1="516" x2="690" y1="64" y2="64"></line>
 <g class="accent"><circle cx="528" cy="64" r="3"></circle><circle cx="584" cy="64" r="3"></circle><circle cx="640" cy="64" r="3"></circle><circle cx="684" cy="64" r="3"></circle></g>
 <g class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle">
@@ -449,28 +449,28 @@
 </figure>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-inema-module="4-1" data-inema-topic="modulo-4-1#topico-4" data-inema-track="4" id="topico-4">
+<section data-ARCKHÉ-module="4-1" data-ARCKHÉ-topic="modulo-4-1#topico-4" data-ARCKHÉ-track="4" id="topico-4">
 <div class="section-mark">
-<span class="where">Section 4 of 4</span><span>·</span><span>Direction</span>
+<span class="where">Section 4 of 4</span><span>Â·</span><span>Direction</span>
 </div>
-<h2 class="head"><span class="num">4.</span>Direct, don’t prompt</h2>
+<h2 class="head"><span class="num">4.</span>Direct, donâ€™t prompt</h2>
 <div class="prose">
-<p class="lede" data-inema-block="m4-1-t4-p1">There’s a myth that holds back almost every beginner: that somewhere, there is <em>the perfect prompt</em> — the one that delivers the finished film all by itself.
-It doesn’t exist. Filming with AI is <strong>direction + iteration + editing</strong>. You describe,
-              generate, observe the result, adjust, generate again—and then edit, choose, assemble. The machine isn’t
-              the author; it’s the crew that carries out your instructions.<span class="sidenote-ref">4</span></p>
-<p data-inema-block="m4-1-t4-p2">This reframes the mistake. When a shot comes out wrong, the question isn't “did the AI fail?” but “which instruction of mine was ambiguous?” Almost always, the problem is vague camera direction: it wasn't clear where the shot is seen from, how the camera moves, or what the subject does. The more precise your camera language, the more cinematic the result—and that's the guiding principle for the entire learning path.</p>
+<p class="lede" data-ARCKHÉ-block="m4-1-t4-p1">Thereâ€™s a myth that holds back almost every beginner: that somewhere, there is <em>the perfect prompt</em> â€” the one that delivers the finished film all by itself.
+It doesnâ€™t exist. Filming with AI is <strong>direction + iteration + editing</strong>. You describe,
+              generate, observe the result, adjust, generate againâ€”and then edit, choose, assemble. The machine isnâ€™t
+              the author; itâ€™s the crew that carries out your instructions.<span class="sidenote-ref">4</span></p>
+<p data-ARCKHÉ-block="m4-1-t4-p2">This reframes the mistake. When a shot comes out wrong, the question isn't â€œdid the AI fail?â€ but â€œwhich instruction of mine was ambiguous?â€ Almost always, the problem is vague camera direction: it wasn't clear where the shot is seen from, how the camera moves, or what the subject does. The more precise your camera language, the more cARCKHÉtic the resultâ€”and that's the guiding principle for the entire learning path.</p>
 <h3 class="sub">A practical detail: when the model freezes on the face</h3>
-<p data-inema-block="m4-1-t4-p3">It's worth keeping one concrete trick in mind, because it comes up all the time. Seedance sometimes <em>blocks</em> the generation of faces — even faces you have already generated with AI — because it mistakes them for real people. A simple workaround: before uploading the reference, apply a light grid over the face in Photoshop. This makes the image look more like a CG character than a real person, so the model stops blocking it and facial consistency is maintained. This is an example of how directing is also <em>work around</em> the tool’s limitations, instead of fighting them.</p>
-<p data-inema-block="m4-1-t4-p4">Capture this module in one sentence: <em>you're not prompting, you're
-              directing — the AI executes, you decide.</em> The next three lessons detail the vocabulary
+<p data-ARCKHÉ-block="m4-1-t4-p3">It's worth keeping one concrete trick in mind, because it comes up all the time. Seedance sometimes <em>blocks</em> the generation of faces â€” even faces you have already generated with AI â€” because it mistakes them for real people. A simple workaround: before uploading the reference, apply a light grid over the face in Photoshop. This makes the image look more like a CG character than a real person, so the model stops blocking it and facial consistency is maintained. This is an example of how directing is also <em>work around</em> the toolâ€™s limitations, instead of fighting them.</p>
+<p data-ARCKHÉ-block="m4-1-t4-p4">Capture this module in one sentence: <em>you're not prompting, you're
+              directing â€” the AI executes, you decide.</em> The next three lessons detail the vocabulary
               of this direction: how the camera moves and what each movement says (4.2), how distance becomes emotion
               (4.3), and how all of this is written into an actual generator (4.4). Form comes before effect,
-              always—and form, here, is camera language.</p>
+              alwaysâ€”and form, here, is camera language.</p>
 </div>
 <!-- figura 4: o laco da direcao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> · Filming with AI is a <b>loop</b>, not a single prompt</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> Â· Filming with AI is a <b>loop</b>, not a single prompt</figcaption>
 <svg aria-label="Cycle diagram: describe leads to generate, generate to observe, observe to adjust, and adjust back to describe; a side arrow leads to assemble." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- quatro nos do ciclo -->
 <g class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle">
@@ -500,7 +500,7 @@ It doesn’t exist. Filming with AI is <strong>direction + iteration + editing</
 </svg>
 </figure>
 <div class="prose">
-<p data-inema-block="m4-1-t4-p5">The module’s homework points the way: create your own fifteen-second cinematic sequence—two characters (one human, one nonhuman), an environment, and a short story with tension and resolution. Use sheets with multiple angles, build the setting with depth, and write the timeline. Think like a director, not a user. The next lesson gives you the first verb in this vocabulary: camera movement.</p>
+<p data-ARCKHÉ-block="m4-1-t4-p5">The moduleâ€™s homework points the way: create your own fifteen-second cARCKHÉtic sequenceâ€”two characters (one human, one nonhuman), an environment, and a short story with tension and resolution. Use sheets with multiple angles, build the setting with depth, and write the timeline. Think like a director, not a user. The next lesson gives you the first verb in this vocabulary: camera movement.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
@@ -508,57 +508,57 @@ It doesn’t exist. Filming with AI is <strong>direction + iteration + editing</
 <h2>Before moving on: four quick checks</h2>
 <p class="intro">No grades, no score. Answer from memory, then reveal the answer to compare.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Why “AI doesn’t create cinema”—and what does that make you?</span><span class="reveal">Reveal</span></summary>
+<summary><span class="qn">01</span><span>Why â€œAI doesnâ€™t create cARCKHÉâ€â€”and what does that make you?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>Because the generator only <em>executes</em> the description: without camera language, it
-              returns random images. That makes you the <strong>director and director of photography</strong> —
+              returns random images. That makes you the <strong>director and director of photography</strong> â€”
               who decides the composition, lighting, camera, and pacing. The tool is the crew; the direction is yours.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">02</span><span>What are the four pillars, and what happens if one is missing?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p><em>Composition</em> (depth in three planes), <em>light</em> (direction,
               contrast, atmosphere), <em>camera</em> (angle, movement, lens) and <em>rhythm</em> (shot duration
-              and transition). Leave one out, and the eye registers “this is AI”; include all four, and it registers
-              “this is a film”.</p></div>
+              and transition). Leave one out, and the eye registers â€œthis is AIâ€; include all four, and it registers
+              â€œthis is a filmâ€.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Why does a character sheet with multiple angles solve facial inconsistency?</span><span class="reveal">Reveal</span></summary>
 <div class="ans"><p>Because, when it sees the same character from the front, side, back, and full body, the model
               builds a <em>internal 3D understanding</em> of identity. With this stable reference, it stops
-              redrawing features in every shot — there’s no more <em>drift</em>.</p></div>
+              redrawing features in every shot â€” thereâ€™s no more <em>drift</em>.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>What does “filming with AI is direction + iteration + editing” mean?</span><span class="reveal">Reveal</span></summary>
-<div class="ans"><p>That there’s no perfect prompt on the first try. You describe, generate, observe, adjust,
-              generate again—and then cut and edit. When a shot comes out wrong, it’s rarely the AI’s fault:
-              it’s a <em>ambiguous camera order</em>. Precision creates cinema.</p></div>
+<summary><span class="qn">04</span><span>What does â€œfilming with AI is direction + iteration + editingâ€ mean?</span><span class="reveal">Reveal</span></summary>
+<div class="ans"><p>That thereâ€™s no perfect prompt on the first try. You describe, generate, observe, adjust,
+              generate againâ€”and then cut and edit. When a shot comes out wrong, itâ€™s rarely the AIâ€™s fault:
+              itâ€™s a <em>ambiguous camera order</em>. Precision creates cARCKHÉ.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="My journey — consolidated progress" class="journey">
+<section aria-label="My journey â€” consolidated progress" class="journey">
 <div class="journey-top">
-<h2><span class="ico">❧</span> My journey</h2>
-<button class="journey-cta" data-inema-journey-open="" type="button">Open notebook →</button>
+<h2><span class="ico">â§</span> My journey</h2>
+<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Open notebook â†’</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">In this module</div>
-<div class="v" data-inema-meter="modulo:4-1">
-<span data-inema-meter-frac=""><strong>0</strong> of 4</span> <span class="nm">sections read</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="modulo:4-1">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 4</span> <span class="nm">sections read</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In track 4</div>
-<div class="v" data-inema-meter="trilha:4">
-<span data-inema-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="trilha:4">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 19</span> <span class="nm">topics</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">In the course</div>
-<div class="v" data-inema-meter="curso">
-<span data-inema-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
-<div class="progress-line"><span class="progress-line__fill" data-inema-meter-fill=""></span></div>
+<div class="v" data-ARCKHÉ-meter="curso">
+<span data-ARCKHÉ-meter-frac=""><strong>0</strong> of 138</span> <span class="nm">covered</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -567,52 +567,52 @@ It doesn’t exist. Filming with AI is <strong>direction + iteration + editing</
 <div class="nextup">
 <div class="txt">
 <div class="k">Continue</div>
-<div class="t">Module 4.2 — Camera Movement</div>
+<div class="t">Module 4.2 â€” Camera Movement</div>
 </div>
-<a class="go" href="modulo-4-2.html">Next →</a>
+<a class="go" href="modulo-4-2.html">Next â†’</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margin: author notes, definitions, and your learning dashboard" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-inema-rail="modulo-4-1#topico-1"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-1#topico-1"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Source</div>
-          Module 3 — <i>Cinematography</i>, opening of Block 4 (Camera Language). The central thesis:
-          <i>“AI does not create cinema; cinematography creates cinema. Seedance = tool, you = director.”</i>
+          Module 3 â€” <i>CARCKHÉtography</i>, opening of Block 4 (Camera Language). The central thesis:
+          <i>â€œAI does not create cARCKHÉ; cARCKHÉtography creates cARCKHÉ. Seedance = tool, you = director.â€</i>
 </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
           The generator mentioned is <i>Seedance 2.0</i>, but the principle applies to Kling, Runway, and Luma: they all execute direction; none invents it. Switching models rarely fixes a scene with no visual language.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-inema-rail="modulo-4-1#topico-2"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-1#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Depth in three planes.</b> Foreground, midground, and background working together. It’s the fastest
-          sign of cinema—and its absence is the fastest sign of an AI-generated image.
+<b>Depth in three planes.</b> Foreground, midground, and background working together. Itâ€™s the fastest
+          sign of cARCKHÉâ€”and its absence is the fastest sign of an AI-generated image.
         </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Lens feel.</b> The optical effect created by a focal length: a wide-angle lens (21–35mm) exaggerates space and movement; a telephoto lens (85mm+) compresses space and isolates the face.
+<b>Lens feel.</b> The optical effect created by a focal length: a wide-angle lens (21â€“35mm) exaggerates space and movement; a telephoto lens (85mm+) compresses space and isolates the face.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-inema-rail="modulo-4-1#topico-3"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-1#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Timeline (timeline prompt).</b> Write the scene in time ranges (0:00→0:15) instead
+<b>Timeline (timeline prompt).</b> Write the scene in time ranges (0:00â†’0:15) instead
           of describing a still photo. This is the format the generator understands as a sequence, not as an image.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Going deeper</div>
-          The example story—a man and a robot trapped in a vehicle, fleeing a sandstorm—
-          follows the curve of Track 1: tension → action → escape. Structure before effects.
+          The example storyâ€”a man and a robot trapped in a vehicle, fleeing a sandstormâ€”
+          follows the curve of Track 1: tension â†’ action â†’ escape. Structure before effects.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-inema-rail="modulo-4-1#topico-4"></aside>
+<aside data-ARCKHÉ-rail="modulo-4-1#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definition</div>
-<b>Iteration.</b> The describe → generate → observe → adjust cycle. AI “gets close”; it doesn’t get it right on the first try. Good results come from guided repetition, not a single prompt.
+<b>Iteration.</b> The describe â†’ generate â†’ observe â†’ adjust cycle. AI â€œgets closeâ€; it doesnâ€™t get it right on the first try. Good results come from guided repetition, not a single prompt.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Going deeper</div>
@@ -624,8 +624,8 @@ It doesn’t exist. Filming with AI is <strong>direction + iteration + editing</
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>INEMA.CLUB · Student Notebook</span>
-<span class="pg">Module 4.1 — folio i</span>
+<span>ARCKHÉ AI Â· Student Notebook</span>
+<span class="pg">Module 4.1 â€” folio i</span>
 <span>Set in Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -634,8 +634,8 @@ It doesn’t exist. Filming with AI is <strong>direction + iteration + editing</
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') {
-      window.INEMA.init();
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
+      window.ARCKHÉ.init();
     }
   </script>
 </body>
