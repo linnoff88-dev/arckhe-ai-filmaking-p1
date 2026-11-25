@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>MÃ³dulo 7.3 â€” ConstrucciÃ³n de secuencias cARCKHÉtogrÃ¡ficas | AI Filmmaking</title>
+<title>MêÂ³dulo 7.3 ê¢â¬â ConstrucciêÂ³n de secuencias cARCKHêtogrêÂ¡ficas | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,51 +135,51 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:7-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:7-3"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span></span> leêÂ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â mêÂ¡xima legibilidad" type="button">Aaê¢â Â¹</button>
 </div>
-<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaêÂ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lêÂ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
+<nav aria-label="DêÂ³nde estêÂ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
-<span>Ruta <b>7</b> Historia y estructura cARCKHÉtogrÃ¡fica</span>
-<span class="sep">Â·</span>
-<span>MÃ³dulo <b>7.3</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span>Ruta <b>7</b> Historia y estructura cARCKHêtogrêÂ¡fica</span>
+<span class="sep">êÂ·</span>
+<span>MêÂ³dulo <b>7.3</b> / 4</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">SecciêÂ³n 1 de 5</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,90 +189,90 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">MÃ³dulo 7.3 Â· Ruta 7 Â· Historia y estructura cARCKHÉtogrÃ¡fica</p>
+<p class="kicker">MêÂ³dulo 7.3 êÂ· Ruta 7 êÂ· Historia y estructura cARCKHêtogrêÂ¡fica</p>
 <h1 class="module">Construyendo <em>Secuencias</em></h1>
-<p class="deck">El cine no es un buen plano: es una progresiÃ³n. La mayorÃ­a de los videos de IA falla en el mismo punto:
-          cada plano es cARCKHÉtogrÃ¡fico, pero no hay un hilo que los conecte. Una secuencia de verdad es
-          una emociÃ³n que evoluciona con el tiempo.</p>
+<p class="deck">El cine no es un buen plano: es una progresiêÂ³n. La mayorêÂ­a de los videos de IA falla en el mismo punto:
+          cada plano es cARCKHêtogrêÂ¡fico, pero no hay un hilo que los conecte. Una secuencia de verdad es
+          una emociêÂ³n que evoluciona con el tiempo.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~17 min Â· mÃ³dulo completo</span>
+<span>~17 min êÂ· mêÂ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Por quÃ© <b>el cine es progresiÃ³n</b>, y por quÃ© los planos hermosos por separado no forman una secuencia.</li>
-<li>La pregunta central del director: no â€œÂ¿quÃ© plano genial viene ahora?â€, sino <b>â€œÂ¿quÃ© emociÃ³n debe sentir el pÃºblico ahora?â€</b></li>
-<li>La fÃ³rmula de <b>seis tiempos</b> â€” establecer, conectar, perturbar, reaccionar, revelar, escapar â€” y cÃ³mo evoluciona la cÃ¡mara junto con la emociÃ³n.</li>
-<li>La regla de <b>reacciÃ³n antes de la revelaciÃ³n</b>, y cÃ³mo la transiciÃ³n, el ritmo y la continuidad lo unen todo en una secuencia cohesiva.</li>
+<li>Por quêÂ© <b>el cine es progresiêÂ³n</b>, y por quêÂ© los planos hermosos por separado no forman una secuencia.</li>
+<li>La pregunta central del director: no ê¢â¬ÅêÂ¿quêÂ© plano genial viene ahora?ê¢â¬Â, sino <b>ê¢â¬ÅêÂ¿quêÂ© emociêÂ³n debe sentir el pêÂºblico ahora?ê¢â¬Â</b></li>
+<li>La fêÂ³rmula de <b>seis tiempos</b> ê¢â¬â establecer, conectar, perturbar, reaccionar, revelar, escapar ê¢â¬â y cêÂ³mo evoluciona la cêÂ¡mara junto con la emociêÂ³n.</li>
+<li>La regla de <b>reacciêÂ³n antes de la revelaciêÂ³n</b>, y cêÂ³mo la transiciêÂ³n, el ritmo y la continuidad lo unen todo en una secuencia cohesiva.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
+<nav aria-label="Resumen del mêÂ³dulo" class="toc" data-ARCKHê-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Un plano bonito no es una secuencia</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">La fÃ³rmula de los seis tiempos</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">La cÃ¡mara evoluciona con la emociÃ³n</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">ReacciÃ³n antes de la revelaciÃ³n</span></a><span class="leader"></span></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">La fêÂ³rmula de los seis tiempos</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">La cêÂ¡mara evoluciona con la emociêÂ³n</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">ReacciêÂ³n antes de la revelaciêÂ³n</span></a><span class="leader"></span></li>
 <li><span class="n">5</span><a href="#topico-5"><span class="t">Transiciones, ritmo y continuidad</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="7-3" data-ARCKHÉ-topic="modulo-7-3#topico-1" data-ARCKHÉ-track="7" id="topico-1">
+<section data-ARCKHê-module="7-3" data-ARCKHê-topic="modulo-7-3#topico-1" data-ARCKHê-track="7" id="topico-1">
 <div class="section-mark">
-<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>ProgresiÃ³n</span>
+<span class="where">SecciêÂ³n 1 de 5</span><span>êÂ·</span><span>ProgresiêÂ³n</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Un plano bonito no es una secuencia</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m7-3-t1-p1">Hasta aquÃ­ trabajaste la escena individual. Esta clase
-              cambia la escala: cÃ³mo <em>encadenar</em> planos. Y el error que combate es quizÃ¡ el mÃ¡s comÃºn de todo
-              el cine con IA: creer que <em>cARCKHÉtogrÃ¡fico</em> es igual a <em>buenos planos</em>. En realidad,
-              <strong>narrativa cARCKHÉtogrÃ¡fica y progresiÃ³n</strong>. La mayorÃ­a de los videos de IA ya parece
+<p class="lede dropcap" data-ARCKHê-block="m7-3-t1-p1">Hasta aquêÂ­ trabajaste la escena individual. Esta clase
+              cambia la escala: cêÂ³mo <em>encadenar</em> planos. Y el error que combate es quizêÂ¡ el mêÂ¡s comêÂºn de todo
+              el cine con IA: creer que <em>cARCKHêtogrêÂ¡fico</em> es igual a <em>buenos planos</em>. En realidad,
+              <strong>narrativa cARCKHêtogrêÂ¡fica y progresiêÂ³n</strong>. La mayorêÂ­a de los videos de IA ya parece
               impresionante, pero tiene una sola falla: las escenas parecen desconectadas. Cada plano,
-              por separado, es bonito; lo que falta es el <span class="dfn"><details class="dfn"><summary>tela</summary><span class="body"><b>Tela</b> â€” la continuidad emocional y lÃ³gica que conecta un plano con el siguiente: la sensaciÃ³n de que cada imagen responde a la anterior y prepara la siguiente. Sin ella, hay clips; con ella, hay una secuencia.</span></details></span>
+              por separado, es bonito; lo que falta es el <span class="dfn"><details class="dfn"><summary>tela</summary><span class="body"><b>Tela</b> ê¢â¬â la continuidad emocional y lêÂ³gica que conecta un plano con el siguiente: la sensaciêÂ³n de que cada imagen responde a la anterior y prepara la siguiente. Sin ella, hay clips; con ella, hay una secuencia.</span></details></span>
               que conecta uno con otro.<span class="sidenote-ref">1</span></p>
-<p data-ARCKHÉ-block="m7-3-t1-p2">Una secuencia cARCKHÉtogrÃ¡fica de verdad no es una colecciÃ³n de
-              recursos visuales aleatorios. Es una <strong>progresiÃ³n emocional</strong> â€” un recorrido en el que
-              la tensiÃ³n, el lenguaje de cÃ¡mara y el ritmo <em>evolucionan con el tiempo</em>. El pÃºblico no deberÃ­a sentir
-              que vio seis clips; deberÃ­a sentir que viviÃ³ un pequeÃ±o arco. La diferencia entre ambas
-              cosas no estÃ¡ en la calidad de cada plano, sino en cÃ³mo dialogan entre sÃ­.</p>
+<p data-ARCKHê-block="m7-3-t1-p2">Una secuencia cARCKHêtogrêÂ¡fica de verdad no es una colecciêÂ³n de
+              recursos visuales aleatorios. Es una <strong>progresiêÂ³n emocional</strong> ê¢â¬â un recorrido en el que
+              la tensiêÂ³n, el lenguaje de cêÂ¡mara y el ritmo <em>evolucionan con el tiempo</em>. El pêÂºblico no deberêÂ­a sentir
+              que vio seis clips; deberêÂ­a sentir que viviêÂ³ un pequeêÂ±o arco. La diferencia entre ambas
+              cosas no estêÂ¡ en la calidad de cada plano, sino en cêÂ³mo dialogan entre sêÂ­.</p>
 <h3 class="sub">La pregunta central del director</h3>
-<p data-ARCKHÉ-block="m7-3-t1-p3">Hay un cambio de mentalidad en el corazÃ³n de esta lecciÃ³n. Antes de generar el siguiente plano, el creador principiante
-              pregunta: <em>â€œÂ¿quÃ© plano genial sucede ahora?â€</em>. El
-              cineasta profesional casi nunca pregunta eso. Pregunta: <strong>â€œÂ¿quÃ© emociÃ³n debe sentir el pÃºblico
-              ahora?â€</strong>. Este Ãºnico cambio de pregunta lo reorganiza todo, porque
-              ancla cada plano en una <em>funciÃ³n emocional</em>, y no en una idea visual aislada. El plano deja de ser un fin en sÃ­ mismo y pasa a ser un paso en una curva de sentimiento.</p>
+<p data-ARCKHê-block="m7-3-t1-p3">Hay un cambio de mentalidad en el corazêÂ³n de esta lecciêÂ³n. Antes de generar el siguiente plano, el creador principiante
+              pregunta: <em>ê¢â¬ÅêÂ¿quêÂ© plano genial sucede ahora?ê¢â¬Â</em>. El
+              cineasta profesional casi nunca pregunta eso. Pregunta: <strong>ê¢â¬ÅêÂ¿quêÂ© emociêÂ³n debe sentir el pêÂºblico
+              ahora?ê¢â¬Â</strong>. Este êÂºnico cambio de pregunta lo reorganiza todo, porque
+              ancla cada plano en una <em>funciêÂ³n emocional</em>, y no en una idea visual aislada. El plano deja de ser un fin en sêÂ­ mismo y pasa a ser un paso en una curva de sentimiento.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Detente y predice</p>
 <p>Un creador genera seis planos individualmente espectaculares de un bosque de noche; cada uno
-              podrÃ­a ser un pÃ³ster. Montados en secuencia, parecen Â«un banco de imÃ¡genesÂ», no una
-              pelÃ­cula. Â¿CuÃ¡l es el fallo y quÃ© pregunta deberÃ­a haberse hecho antes de cada plano?</p>
+              podrêÂ­a ser un pêÂ³ster. Montados en secuencia, parecen êÂ«un banco de imêÂ¡genesêÂ», no una
+              pelêÂ­cula. êÂ¿CuêÂ¡l es el fallo y quêÂ© pregunta deberêÂ­a haberse hecho antes de cada plano?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">La falla es la falta de <strong>tela</strong>: los planos no forman una progresiÃ³n
-                emocional; cada uno es bonito por sÃ­ solo, pero ninguno responde al anterior. La pregunta correcta
-                no era Â«Â¿quÃ© plano genial viene ahora?Â», sino <strong>â€œÂ¿quÃ© emociÃ³n debe
-                sentir el pÃºblico ahora?â€</strong>. Con esa pregunta como ancla, cada plano tendrÃ­a una funciÃ³n en la curva
-                â€”y la secuencia avanzarÃ­a en lugar de limitarse a mostrar.</p>
+<p class="answer">La falla es la falta de <strong>tela</strong>: los planos no forman una progresiêÂ³n
+                emocional; cada uno es bonito por sêÂ­ solo, pero ninguno responde al anterior. La pregunta correcta
+                no era êÂ«êÂ¿quêÂ© plano genial viene ahora?êÂ», sino <strong>ê¢â¬ÅêÂ¿quêÂ© emociêÂ³n debe
+                sentir el pêÂºblico ahora?ê¢â¬Â</strong>. Con esa pregunta como ancla, cada plano tendrêÂ­a una funciêÂ³n en la curva
+                ê¢â¬ây la secuencia avanzarêÂ­a en lugar de limitarse a mostrar.</p>
 </details>
 </div>
 <!-- figura 1: clipes soltos vs progressao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· Seis planos hermosos <b>sin tela</b> frente a una <b>progresiÃ³n</b> que avanza</figcaption>
-<svg aria-label="Diagrama que compara dos filas de seis cuadros: arriba, seis cuadros iguales y desconectados, sin vÃ­nculo (colecciÃ³n); abajo, seis cuadros unidos por una lÃ­nea de emociÃ³n ascendente (progresiÃ³n)." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· Seis planos hermosos <b>sin tela</b> frente a una <b>progresiêÂ³n</b> que avanza</figcaption>
+<svg aria-label="Diagrama que compara dos filas de seis cuadros: arriba, seis cuadros iguales y desconectados, sin vêÂ­nculo (colecciêÂ³n); abajo, seis cuadros unidos por una lêÂ­nea de emociêÂ³n ascendente (progresiêÂ³n)." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-7-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
 </pattern>
 </defs>
 <!-- fila de cima: colecao -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" x="30" y="34">COLECCIÃ“N â€” planos sueltos</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" x="30" y="34">COLECCIêâN ê¢â¬â planos sueltos</text>
 <g class="rule-stroke" fill="none" stroke-width="1.3">
 <rect height="48" rx="3" width="86" x="40" y="44"></rect>
 <rect height="48" rx="3" width="86" x="148" y="44"></rect>
@@ -287,7 +287,7 @@
 <!-- divisor -->
 <line class="rule-stroke" opacity="0.5" stroke-dasharray="2 5" stroke-width="0.8" x1="40" x2="666" y1="112" y2="112"></line>
 <!-- fila de baixo: progressao -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" x="30" y="134">PROGRESIÃ“N â€” tejido que conecta</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.1" x="30" y="134">PROGRESIêâN ê¢â¬â tejido que conecta</text>
 <g class="accent-stroke" fill="none" stroke-width="1.4">
 <rect height="40" rx="3" width="86" x="40" y="150"></rect>
 <rect fill="url(#hatch-7-3)" height="40" rx="3" width="86" x="148" y="150"></rect>
@@ -302,64 +302,64 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Profundizando: por quÃ© una IA buena para los planos aumenta la tentaciÃ³n de coleccionarlos
+<summary><span class="chev">ê¢âÂ¸</span> Profundizando: por quêÂ© una IA buena para los planos aumenta la tentaciêÂ³n de coleccionarlos
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>El camino recomendado de arriba ya basta. Esta capa explica una trampa y puedes saltÃ¡rtela.</p>
-<p>Cuanto mejor se vuelve el generador para producir planos aislados deslumbrantes, mayor es la tentaciÃ³n de
-                simplemente <em>acumular</em> estos planos. Cada generaciÃ³n parece un pequeÃ±o triunfo, y es fÃ¡cil
-                confundir â€œtengo seis planos hermososâ€ con â€œtengo una secuenciaâ€. Pero la
-                calidad individual no une nada â€” incluso puede empeorar el problema, porque seis planos
-                igualmente espectaculares compiten entre sÃ­ por la atenciÃ³n, sin jerarquÃ­a ni direcciÃ³n. El antÃ­doto es
-                la pregunta de la emociÃ³n: antes de admirar un plano, pregÃºntate quÃ© funciÃ³n cumple en la curva. Si no
-                hace avanzar la emociÃ³n, es bonito y descartable â€” el mismo veredicto de la clase sobre el propÃ³sito.</p>
+<p>El camino recomendado de arriba ya basta. Esta capa explica una trampa y puedes saltêÂ¡rtela.</p>
+<p>Cuanto mejor se vuelve el generador para producir planos aislados deslumbrantes, mayor es la tentaciêÂ³n de
+                simplemente <em>acumular</em> estos planos. Cada generaciêÂ³n parece un pequeêÂ±o triunfo, y es fêÂ¡cil
+                confundir ê¢â¬Åtengo seis planos hermososê¢â¬Â con ê¢â¬Åtengo una secuenciaê¢â¬Â. Pero la
+                calidad individual no une nada ê¢â¬â incluso puede empeorar el problema, porque seis planos
+                igualmente espectaculares compiten entre sêÂ­ por la atenciêÂ³n, sin jerarquêÂ­a ni direcciêÂ³n. El antêÂ­doto es
+                la pregunta de la emociêÂ³n: antes de admirar un plano, pregêÂºntate quêÂ© funciêÂ³n cumple en la curva. Si no
+                hace avanzar la emociêÂ³n, es bonito y descartable ê¢â¬â el mismo veredicto de la clase sobre el propêÂ³sito.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="7-3" data-ARCKHÉ-topic="modulo-7-3#topico-2" data-ARCKHÉ-track="7" id="topico-2">
+<section data-ARCKHê-module="7-3" data-ARCKHê-topic="modulo-7-3#topico-2" data-ARCKHê-track="7" id="topico-2">
 <div class="section-mark">
-<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>Seis tiempos</span>
+<span class="where">SecciêÂ³n 2 de 5</span><span>êÂ·</span><span>Seis tiempos</span>
 </div>
-<h2 class="head"><span class="num">2.</span>La fÃ³rmula de los seis tiempos</h2>
+<h2 class="head"><span class="num">2.</span>La fêÂ³rmula de los seis tiempos</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-3-t2-p1">La clase ofrece una fÃ³rmula concreta para la progresiÃ³n,
-              de seis tiempos: <strong>establecer â†’ conectar â†’ perturbar â†’ reaccionar â†’ revelar
-              â†’ escapar</strong>. Funciona porque la tensiÃ³n crece de forma natural: lleva al pÃºblico de
-              entender el entorno, a conectar con el personaje y, finalmente, a la resoluciÃ³n del conflicto. Cada momento tiene un
-              trabajo emocional y un plano tÃ­pico; y, como siempre en la ruta, es el orden lo que crea el
+<p class="lede" data-ARCKHê-block="m7-3-t2-p1">La clase ofrece una fêÂ³rmula concreta para la progresiêÂ³n,
+              de seis tiempos: <strong>establecer ê¢â â conectar ê¢â â perturbar ê¢â â reaccionar ê¢â â revelar
+              ê¢â â escapar</strong>. Funciona porque la tensiêÂ³n crece de forma natural: lleva al pêÂºblico de
+              entender el entorno, a conectar con el personaje y, finalmente, a la resoluciêÂ³n del conflicto. Cada momento tiene un
+              trabajo emocional y un plano têÂ­pico; y, como siempre en la ruta, es el orden lo que crea el
               sentido.</p>
 <h3 class="sub">A tiempo</h3>
-<p data-ARCKHÉ-block="m7-3-t2-p2"><strong>1. Establecer â€” crear escala.</strong> Plano general.
-              EmociÃ³n: escala, atmÃ³sfera, vulnerabilidad. La regla: el pÃºblico necesita contexto y una sensaciÃ³n del espacio
-              antes de que empiece la tensiÃ³n. Error comÃºn: pasar directamente al primer plano sin situar la escena.
-              <strong>2. Conectar â€” crear emociÃ³n.</strong> Plano medio con <em>push-in</em> suave. EmociÃ³n:
-              curiosidad, ligera incertidumbre. La regla: crear un vÃ­nculo entre el pÃºblico y el personaje antes de
-              introducir el peligro. Error comÃºn: revelar demasiada informaciÃ³n demasiado pronto.</p>
-<p data-ARCKHÉ-block="m7-3-t2-p3"><strong>3. Perturbar â€” crear tensiÃ³n.</strong> Movimiento
-              ambiental dinÃ¡mico o cambio de luz. EmociÃ³n: tensiÃ³n, suspenso, anticipaciÃ³n. La regla: pequeÃ±os
-              cambios en el ambiente sugieren que las cosas se estÃ¡n volviendo inestables. Error comÃºn: aumentar el riesgo y el
-              ritmo demasiado rÃ¡pido. <strong>4. Reaccionar â€” crear inmersiÃ³n.</strong> Primer plano emocional o plano de
-              reacciÃ³n. EmociÃ³n: miedo, aprensiÃ³n, anticipaciÃ³n. La regla â€”y esta merece su propia secciÃ³n en la
-              prÃ³xima secciÃ³nâ€” es mostrar la emociÃ³n del personaje <em>antes</em> de mostrar la amenaza. Error comÃºn:
-              mostrar al â€œmonstruoâ€ antes del impacto en el personaje.<span class="sidenote-ref">2</span></p>
-<p data-ARCKHÉ-block="m7-3-t2-p4"><strong>5. Revelar â€” crear recompensa.</strong> Plano de
-              revelaciÃ³n. EmociÃ³n: conmociÃ³n, peligro inmediato. La regla: retrasar la revelaciÃ³n aumenta exponencialmente su
-              impacto emocional. Error comÃºn: mostrar la amenaza principal de inmediato, sin construcciÃ³n narrativa.
-              <strong>6. Escapar â€” crear impulso.</strong> Travelling rÃ¡pido o <em>whip pan</em>. EmociÃ³n:
-              supervivencia, urgencia, adrenalina. La regla: el movimiento crea impulso; mantÃ©n la secuencia en
-              movimiento para hacer avanzar el arco. Error comÃºn: terminar abruptamente justo despuÃ©s de la revelaciÃ³n.</p>
-<p data-ARCKHÉ-block="m7-3-t2-p5">La idea central cabe en una frase: la narrativa cARCKHÉtogrÃ¡fica de vanguardia es
-              una <em>evoluciÃ³n de los sentimientos</em> â€” curiosidad â†’ sospecha â†’ tensiÃ³n â†’ miedo
-              â†’ impacto â†’ supervivencia. El contenido de cada plano puede cambiar de una historia a otra; la
+<p data-ARCKHê-block="m7-3-t2-p2"><strong>1. Establecer ê¢â¬â crear escala.</strong> Plano general.
+              EmociêÂ³n: escala, atmêÂ³sfera, vulnerabilidad. La regla: el pêÂºblico necesita contexto y una sensaciêÂ³n del espacio
+              antes de que empiece la tensiêÂ³n. Error comêÂºn: pasar directamente al primer plano sin situar la escena.
+              <strong>2. Conectar ê¢â¬â crear emociêÂ³n.</strong> Plano medio con <em>push-in</em> suave. EmociêÂ³n:
+              curiosidad, ligera incertidumbre. La regla: crear un vêÂ­nculo entre el pêÂºblico y el personaje antes de
+              introducir el peligro. Error comêÂºn: revelar demasiada informaciêÂ³n demasiado pronto.</p>
+<p data-ARCKHê-block="m7-3-t2-p3"><strong>3. Perturbar ê¢â¬â crear tensiêÂ³n.</strong> Movimiento
+              ambiental dinêÂ¡mico o cambio de luz. EmociêÂ³n: tensiêÂ³n, suspenso, anticipaciêÂ³n. La regla: pequeêÂ±os
+              cambios en el ambiente sugieren que las cosas se estêÂ¡n volviendo inestables. Error comêÂºn: aumentar el riesgo y el
+              ritmo demasiado rêÂ¡pido. <strong>4. Reaccionar ê¢â¬â crear inmersiêÂ³n.</strong> Primer plano emocional o plano de
+              reacciêÂ³n. EmociêÂ³n: miedo, aprensiêÂ³n, anticipaciêÂ³n. La regla ê¢â¬ây esta merece su propia secciêÂ³n en la
+              prêÂ³xima secciêÂ³nê¢â¬â es mostrar la emociêÂ³n del personaje <em>antes</em> de mostrar la amenaza. Error comêÂºn:
+              mostrar al ê¢â¬Åmonstruoê¢â¬Â antes del impacto en el personaje.<span class="sidenote-ref">2</span></p>
+<p data-ARCKHê-block="m7-3-t2-p4"><strong>5. Revelar ê¢â¬â crear recompensa.</strong> Plano de
+              revelaciêÂ³n. EmociêÂ³n: conmociêÂ³n, peligro inmediato. La regla: retrasar la revelaciêÂ³n aumenta exponencialmente su
+              impacto emocional. Error comêÂºn: mostrar la amenaza principal de inmediato, sin construcciêÂ³n narrativa.
+              <strong>6. Escapar ê¢â¬â crear impulso.</strong> Travelling rêÂ¡pido o <em>whip pan</em>. EmociêÂ³n:
+              supervivencia, urgencia, adrenalina. La regla: el movimiento crea impulso; mantêÂ©n la secuencia en
+              movimiento para hacer avanzar el arco. Error comêÂºn: terminar abruptamente justo despuêÂ©s de la revelaciêÂ³n.</p>
+<p data-ARCKHê-block="m7-3-t2-p5">La idea central cabe en una frase: la narrativa cARCKHêtogrêÂ¡fica de vanguardia es
+              una <em>evoluciêÂ³n de los sentimientos</em> ê¢â¬â curiosidad ê¢â â sospecha ê¢â â tensiêÂ³n ê¢â â miedo
+              ê¢â â impacto ê¢â â supervivencia. El contenido de cada plano puede cambiar de una historia a otra; la
               curva emocional, no.</p>
 </div>
 <!-- figura 2: a escada dos seis tempos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· La escalera de tensiÃ³n â€” <b>seis tiempos</b>, de la escala a la supervivencia</figcaption>
-<svg aria-label="Diagrama en escalones ascendentes con seis hitos: establecer, conectar, perturbar, reaccionar, revelar y escapar, cada uno anotado con su emociÃ³n, formando una curva creciente de tensiÃ³n." class="diagram" role="img" viewbox="0 0 720 222">
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· La escalera de tensiêÂ³n ê¢â¬â <b>seis tiempos</b>, de la escala a la supervivencia</figcaption>
+<svg aria-label="Diagrama en escalones ascendentes con seis hitos: establecer, conectar, perturbar, reaccionar, revelar y escapar, cada uno anotado con su emociêÂ³n, formando una curva creciente de tensiêÂ³n." class="diagram" role="img" viewbox="0 0 720 222">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="190" y2="190"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 64)" x="14" y="64">TENSIÃ“N</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 64)" x="14" y="64">TENSIêâN</text>
 <!-- degraus -->
 <g class="accent-stroke" fill="none" stroke-width="2">
 <path d="M50 178 L150 178 L150 158 L250 158 L250 130 L350 130 L350 96 L450 96 L450 60 L550 60 L550 84 L650 84"></path>
@@ -387,39 +387,39 @@
 </figure>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="7-3" data-ARCKHÉ-topic="modulo-7-3#topico-3" data-ARCKHÉ-track="7" id="topico-3">
+<section data-ARCKHê-module="7-3" data-ARCKHê-topic="modulo-7-3#topico-3" data-ARCKHê-track="7" id="topico-3">
 <div class="section-mark">
-<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>CÃ¡mara y emociÃ³n</span>
+<span class="where">SecciêÂ³n 3 de 5</span><span>êÂ·</span><span>CêÂ¡mara y emociêÂ³n</span>
 </div>
-<h2 class="head"><span class="num">3.</span>La cÃ¡mara evoluciona con la emociÃ³n</h2>
+<h2 class="head"><span class="num">3.</span>La cêÂ¡mara evoluciona con la emociêÂ³n</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-3-t3-p1">Los seis tiempos vienen con una regla de cÃ¡mara que es el motor
-              invisible de la secuencia: <strong>el movimiento de cÃ¡mara tiene que evolucionar junto con la emociÃ³n</strong>. La
-              distancia de cÃ¡mara no es una decisiÃ³n estÃ©tica aislada: forma parte de la narrativa. Cuando la
-              cÃ¡mara correcta acompaÃ±a la emociÃ³n correcta, el pÃºblico ni siquiera percibe la tÃ©cnica; solo siente que la escena
-              â€œfuncionaâ€.</p>
-<h3 class="sub">La lÃ³gica de cÃ¡mara</h3>
-<p data-ARCKHÉ-block="m7-3-t3-p2">La regla se desglosa en cuatro asociaciones simples. <strong>Planos abiertos
-              establecen la escala</strong> â€” son la entrada, el contexto, el aliento antes de la tensiÃ³n.
-              <strong>Los planos medios crean conexiÃ³n</strong> â€” se acercan lo suficiente para que el pÃºblico
-              empiece a interesarse por quiÃ©n estÃ¡ ahÃ­. <strong>Los primeros planos aumentan la tensiÃ³n</strong> â€” eliminan el
-              entorno, fijan la mirada en la emociÃ³n y hacen que todo se sienta Ã­ntimo y urgente. <strong>El movimiento dinÃ¡mico crea
-              urgencia</strong> â€” travelling, whip pan, cÃ¡mara en mano: el cuerpo de la secuencia en fuga. Pasar
-              del plano abierto al primer plano y de lo estÃ¡tico a lo dinÃ¡mico es, en sÃ­ mismo, una forma de aumentar la emociÃ³n sin cambiar una
-              lÃ­nea del guion.<span class="sidenote-ref">3</span></p>
-<p data-ARCKHÉ-block="m7-3-t3-p3">FÃ­jate en cÃ³mo esto encaja exactamente con los seis tiempos: establecer pide
+<p class="lede" data-ARCKHê-block="m7-3-t3-p1">Los seis tiempos vienen con una regla de cêÂ¡mara que es el motor
+              invisible de la secuencia: <strong>el movimiento de cêÂ¡mara tiene que evolucionar junto con la emociêÂ³n</strong>. La
+              distancia de cêÂ¡mara no es una decisiêÂ³n estêÂ©tica aislada: forma parte de la narrativa. Cuando la
+              cêÂ¡mara correcta acompaêÂ±a la emociêÂ³n correcta, el pêÂºblico ni siquiera percibe la têÂ©cnica; solo siente que la escena
+              ê¢â¬Åfuncionaê¢â¬Â.</p>
+<h3 class="sub">La lêÂ³gica de cêÂ¡mara</h3>
+<p data-ARCKHê-block="m7-3-t3-p2">La regla se desglosa en cuatro asociaciones simples. <strong>Planos abiertos
+              establecen la escala</strong> ê¢â¬â son la entrada, el contexto, el aliento antes de la tensiêÂ³n.
+              <strong>Los planos medios crean conexiêÂ³n</strong> ê¢â¬â se acercan lo suficiente para que el pêÂºblico
+              empiece a interesarse por quiêÂ©n estêÂ¡ ahêÂ­. <strong>Los primeros planos aumentan la tensiêÂ³n</strong> ê¢â¬â eliminan el
+              entorno, fijan la mirada en la emociêÂ³n y hacen que todo se sienta êÂ­ntimo y urgente. <strong>El movimiento dinêÂ¡mico crea
+              urgencia</strong> ê¢â¬â travelling, whip pan, cêÂ¡mara en mano: el cuerpo de la secuencia en fuga. Pasar
+              del plano abierto al primer plano y de lo estêÂ¡tico a lo dinêÂ¡mico es, en sêÂ­ mismo, una forma de aumentar la emociêÂ³n sin cambiar una
+              lêÂ­nea del guion.<span class="sidenote-ref">3</span></p>
+<p data-ARCKHê-block="m7-3-t3-p3">FêÂ­jate en cêÂ³mo esto encaja exactamente con los seis tiempos: establecer pide
               un plano abierto; conectar pide un plano medio con push-in; perturbar pide el cambio en el ambiente; reaccionar pide el primer plano;
-              revelar pide el plano de revelaciÃ³n; escapar pide el movimiento rÃ¡pido. La fÃ³rmula y la lÃ³gica de cÃ¡mara
-              son lo mismo visto desde dos Ã¡ngulos: una describe la emociÃ³n y la otra describe cÃ³mo la
-              cÃ¡mara la acompaÃ±a. Equivocarse de cÃ¡mara en un tiempo â€”un primer plano cuando deberÃ­a haber escala, un plano estÃ¡tico
-              cuando deberÃ­a haber una fugaâ€” frena la progresiÃ³n aunque la emociÃ³n escrita sea correcta.</p>
+              revelar pide el plano de revelaciêÂ³n; escapar pide el movimiento rêÂ¡pido. La fêÂ³rmula y la lêÂ³gica de cêÂ¡mara
+              son lo mismo visto desde dos êÂ¡ngulos: una describe la emociêÂ³n y la otra describe cêÂ³mo la
+              cêÂ¡mara la acompaêÂ±a. Equivocarse de cêÂ¡mara en un tiempo ê¢â¬âun primer plano cuando deberêÂ­a haber escala, un plano estêÂ¡tico
+              cuando deberêÂ­a haber una fugaê¢â¬â frena la progresiêÂ³n aunque la emociêÂ³n escrita sea correcta.</p>
 </div>
 <!-- figura 3: a escala de planos contra a emocao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· A <b>distancia de la cÃ¡mara</b> es parte de la narrativa, no decoraciÃ³n</figcaption>
-<svg aria-label="Diagrama en cuatro columnas, de lo abierto a lo dinÃ¡mico: el plano abierto establece la escala, el plano medio construye conexiÃ³n, el primer plano aumenta la tensiÃ³n, el movimiento dinÃ¡mico crea urgencia, y la emociÃ³n crece de izquierda a derecha." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· A <b>distancia de la cêÂ¡mara</b> es parte de la narrativa, no decoraciêÂ³n</figcaption>
+<svg aria-label="Diagrama en cuatro columnas, de lo abierto a lo dinêÂ¡mico: el plano abierto establece la escala, el plano medio construye conexiêÂ³n, el primer plano aumenta la tensiêÂ³n, el movimiento dinêÂ¡mico crea urgencia, y la emociêÂ³n crece de izquierda a derecha." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="680" y1="158" y2="158"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="184">DE LO AMPLIO Y ESTÃTICO â†’ A LO CERCANO Y DINÃMICO</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="360" y="184">DE LO AMPLIO Y ESTêÂTICO ê¢â â A LO CERCANO Y DINêÂMICO</text>
 <!-- aberto -->
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="120" x="60" y="64"></rect>
 <circle class="rule-stroke" cx="120" cy="118" fill="none" r="5" stroke-width="1"></circle>
@@ -429,139 +429,139 @@
 <rect class="rule-stroke" fill="none" height="80" rx="3" stroke-width="1.2" width="120" x="216" y="64"></rect>
 <circle class="rule-stroke" cx="276" cy="112" fill="none" r="12" stroke-width="1.2"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="11.5" text-anchor="middle" x="276" y="56">medio</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="276" y="156">conexiÃ³n</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="276" y="156">conexiêÂ³n</text>
 <!-- close -->
 <rect class="accent-stroke" fill="none" height="80" rx="3" stroke-width="1.3" width="120" x="372" y="64"></rect>
 <circle class="accent-stroke" cx="432" cy="108" fill="url(#hatch-7-3)" r="24" stroke-width="1.3"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="11.5" text-anchor="middle" x="432" y="56">plano cercano</text>
-<text class="accent" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="432" y="156">tensiÃ³n</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="432" y="156">tensiêÂ³n</text>
 <!-- dinamico -->
 <rect class="accent-stroke" fill="none" height="80" rx="3" stroke-width="1.3" width="120" x="528" y="64"></rect>
 <path class="accent-stroke" d="M544 128 C 580 90, 600 120, 632 84" fill="none" stroke-width="2"></path>
 <path class="accent" d="M632 84 l-9 1 l4 7 z"></path>
-<text class="ink" font-family="Spectral, serif" font-size="11.5" text-anchor="middle" x="588" y="56">dinÃ¡mico</text>
+<text class="ink" font-family="Spectral, serif" font-size="11.5" text-anchor="middle" x="588" y="56">dinêÂ¡mico</text>
 <text class="accent" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="588" y="156">urgencia</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m7-3-t3-p4">Ese acoplamiento entre cÃ¡mara y emociÃ³n es lo que escribes en el prompt
-de cada plano de la secuencia. En vez de pedir Â«un plano cARCKHÉtogrÃ¡ficoÂ», nombras el
-tiempo, la emociÃ³n y el movimiento exactos, y eso es lo que hace que el generador construya una progresiÃ³n en vez de
+<p data-ARCKHê-block="m7-3-t3-p4">Ese acoplamiento entre cêÂ¡mara y emociêÂ³n es lo que escribes en el prompt
+de cada plano de la secuencia. En vez de pedir êÂ«un plano cARCKHêtogrêÂ¡ficoêÂ», nombras el
+tiempo, la emociêÂ³n y el movimiento exactos, y eso es lo que hace que el generador construya una progresiêÂ³n en vez de
 repetir el mismo registro. El prompt de abajo arma la secuencia completa de los seis tiempos, plano a plano.</p>
-<div class="codeblock"><span class="c"># Secuencia de 6 planos â€” la emociÃ³n y la cÃ¡mara evolucionan juntas</span>
+<div class="codeblock"><span class="c"># Secuencia de 6 planos ê¢â¬â la emociêÂ³n y la cêÂ¡mara evolucionan juntas</span>
 <span class="c"># (genera una toma a la vez en Kling; ~2s cada una para una secuencia de ~10s)</span>
-<span class="k">Shot 1 â€” Establish (wide):</span> a lone hiker on a vast misty ridge at dawn. Slow wide establishing shot. Emotion: scale, atmosphere, vulnerability.
-<span class="k">Shot 2 â€” Connect (medium push-in):</span> plano medio, lento acercamiento al excursionista que observa el valle. EmociÃ³n: curiosidad, inquietud sutil.
-<span class="k">Shot 3 â€” Disrupt (environment):</span> la niebla se espesa de forma antinatural, las aves se dispersan, la luz se atenÃºa. Movimiento dinÃ¡mico del entorno. EmociÃ³n: tensiÃ³n, anticipaciÃ³n.
-<span class="k">Shot 4 â€” React (close-up):</span> primerÃ­simo primer plano de los ojos del excursionista, que se abren mÃ¡s, y de su respiraciÃ³n entrecortada: muestra el miedo ANTES que la amenaza. EmociÃ³n: terror.
-<span class="k">Shot 5 â€” Reveal (reveal shot):</span> cARCKHÉtic reveal of a massive shape emerging from the fog behind them. Emotion: shock, immediate danger.
-<span class="k">Shot 6 â€” Escape (tracking):</span> fast tracking shot as the hiker runs downhill, motion blur, whip pan. Emotion: survival, adrenaline.
-<span class="k">Regla:</span> la cÃ¡mara evoluciona con la emociÃ³n: de plano abierto a primer plano, de estÃ¡tica a dinÃ¡mica; reacciÃ³n antes de la revelaciÃ³n.</div>
+<span class="k">Shot 1 ê¢â¬â Establish (wide):</span> a lone hiker on a vast misty ridge at dawn. Slow wide establishing shot. Emotion: scale, atmosphere, vulnerability.
+<span class="k">Shot 2 ê¢â¬â Connect (medium push-in):</span> plano medio, lento acercamiento al excursionista que observa el valle. EmociêÂ³n: curiosidad, inquietud sutil.
+<span class="k">Shot 3 ê¢â¬â Disrupt (environment):</span> la niebla se espesa de forma antinatural, las aves se dispersan, la luz se atenêÂºa. Movimiento dinêÂ¡mico del entorno. EmociêÂ³n: tensiêÂ³n, anticipaciêÂ³n.
+<span class="k">Shot 4 ê¢â¬â React (close-up):</span> primerêÂ­simo primer plano de los ojos del excursionista, que se abren mêÂ¡s, y de su respiraciêÂ³n entrecortada: muestra el miedo ANTES que la amenaza. EmociêÂ³n: terror.
+<span class="k">Shot 5 ê¢â¬â Reveal (reveal shot):</span> cARCKHêtic reveal of a massive shape emerging from the fog behind them. Emotion: shock, immediate danger.
+<span class="k">Shot 6 ê¢â¬â Escape (tracking):</span> fast tracking shot as the hiker runs downhill, motion blur, whip pan. Emotion: survival, adrenaline.
+<span class="k">Regla:</span> la cêÂ¡mara evoluciona con la emociêÂ³n: de plano abierto a primer plano, de estêÂ¡tica a dinêÂ¡mica; reacciêÂ³n antes de la revelaciêÂ³n.</div>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="7-3" data-ARCKHÉ-topic="modulo-7-3#topico-4" data-ARCKHÉ-track="7" id="topico-4">
+<section data-ARCKHê-module="7-3" data-ARCKHê-topic="modulo-7-3#topico-4" data-ARCKHê-track="7" id="topico-4">
 <div class="section-mark">
-<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Primero la reacciÃ³n</span>
+<span class="where">SecciêÂ³n 4 de 5</span><span>êÂ·</span><span>Primero la reacciêÂ³n</span>
 </div>
-<h2 class="head"><span class="num">4.</span>ReacciÃ³n antes de la revelaciÃ³n</h2>
+<h2 class="head"><span class="num">4.</span>ReacciêÂ³n antes de la revelaciêÂ³n</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-3-t4-p1">De todas las reglas de la fÃ³rmula, una merece destacarse,
-              porque es la que mÃ¡s distingue al aficionado del profesional: <strong>reacciÃ³n antes de la revelaciÃ³n</strong>.
-              Siempre muestra la <em>emociÃ³n del personaje</em> antes de mostrar la amenaza. El miedo en el rostro es lo que
-              hace que el peligro sea real y pesado para el pÃºblico â€” la reacciÃ³n le enseÃ±a al pÃºblico <em>cÃ³mo sentir</em>
-              lo que viene a continuaciÃ³n.</p>
-<p data-ARCKHÉ-block="m7-3-t4-p2">La lÃ³gica es contraintuitiva, pero poderosa. Si muestras al
-              Â«monstruoÂ» primero, el pÃºblico evalÃºa: Â¿da miedo? Â¿estÃ¡ bien hecho? La amenaza se convierte en objeto de
-              juicio. Pero si primero muestras al personaje <em>reaccionando</em> â€” los ojos muy abiertos, la respiraciÃ³n contenida, el cuerpo paralizado â€” el pÃºblico <em>hereda</em> esa emociÃ³n incluso antes de
-              ver la causa. Cuando llega la revelaciÃ³n, cae sobre un terreno emocional ya preparado. El miedo
-              del personaje se convierte en el miedo del pÃºblico.<span class="sidenote-ref">4</span></p>
+<p class="lede" data-ARCKHê-block="m7-3-t4-p1">De todas las reglas de la fêÂ³rmula, una merece destacarse,
+              porque es la que mêÂ¡s distingue al aficionado del profesional: <strong>reacciêÂ³n antes de la revelaciêÂ³n</strong>.
+              Siempre muestra la <em>emociêÂ³n del personaje</em> antes de mostrar la amenaza. El miedo en el rostro es lo que
+              hace que el peligro sea real y pesado para el pêÂºblico ê¢â¬â la reacciêÂ³n le enseêÂ±a al pêÂºblico <em>cêÂ³mo sentir</em>
+              lo que viene a continuaciêÂ³n.</p>
+<p data-ARCKHê-block="m7-3-t4-p2">La lêÂ³gica es contraintuitiva, pero poderosa. Si muestras al
+              êÂ«monstruoêÂ» primero, el pêÂºblico evalêÂºa: êÂ¿da miedo? êÂ¿estêÂ¡ bien hecho? La amenaza se convierte en objeto de
+              juicio. Pero si primero muestras al personaje <em>reaccionando</em> ê¢â¬â los ojos muy abiertos, la respiraciêÂ³n contenida, el cuerpo paralizado ê¢â¬â el pêÂºblico <em>hereda</em> esa emociêÂ³n incluso antes de
+              ver la causa. Cuando llega la revelaciêÂ³n, cae sobre un terreno emocional ya preparado. El miedo
+              del personaje se convierte en el miedo del pêÂºblico.<span class="sidenote-ref">4</span></p>
 <h3 class="sub">Retrasar y amplificar</h3>
-<p data-ARCKHÉ-block="m7-3-t4-p3">La misma lÃ³gica rige el tiempo de la revelaciÃ³n: <em>posponer la revelaciÃ³n
-              aumenta exponencialmente su impacto</em>. Cada segundo que mantienes la amenaza fuera de cuadro â€”
-              mientras crece la reacciÃ³nâ€” carga el resorte. El error de principiante es apresurarse:
+<p data-ARCKHê-block="m7-3-t4-p3">La misma lêÂ³gica rige el tiempo de la revelaciêÂ³n: <em>posponer la revelaciêÂ³n
+              aumenta exponencialmente su impacto</em>. Cada segundo que mantienes la amenaza fuera de cuadro ê¢â¬â
+              mientras crece la reacciêÂ³nê¢â¬â carga el resorte. El error de principiante es apresurarse:
               muestra la amenaza de inmediato, sin construirla, y gasta de una sola vez todo el potencial de impacto. El profesional
               <strong>retiene</strong>: establece, conecta, perturba, deja que el personaje reaccione y solo entonces
-              revela. La anticipaciÃ³n hace la mitad del trabajo que el efecto por sÃ­ solo jamÃ¡s podrÃ­a hacer.</p>
+              revela. La anticipaciêÂ³n hace la mitad del trabajo que el efecto por sêÂ­ solo jamêÂ¡s podrêÂ­a hacer.</p>
 </div>
 <!-- figura 4: ordem certa vs errada -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· <b>ReacciÃ³n â†’ revelaciÃ³n</b> contagia; la revelaciÃ³n primero se convierte en juicio</figcaption>
-<svg aria-label="Diagrama que compara dos Ã³rdenes: arriba, mostrar la amenaza antes de la reacciÃ³n lleva al pÃºblico a juzgar el efecto; abajo, mostrar la reacciÃ³n del personaje antes de la revelaciÃ³n hace que el pÃºblico herede la emociÃ³n." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· <b>ReacciêÂ³n ê¢â â revelaciêÂ³n</b> contagia; la revelaciêÂ³n primero se convierte en juicio</figcaption>
+<svg aria-label="Diagrama que compara dos êÂ³rdenes: arriba, mostrar la amenaza antes de la reacciêÂ³n lleva al pêÂºblico a juzgar el efecto; abajo, mostrar la reacciêÂ³n del personaje antes de la revelaciêÂ³n hace que el pêÂºblico herede la emociêÂ³n." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- ordem errada -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="30" y="32">AMENAZA PRIMERO â€” el pÃºblico juzga</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="30" y="32">AMENAZA PRIMERO ê¢â¬â el pêÂºblico juzga</text>
 <rect class="rule-stroke" fill="none" height="48" rx="3" stroke-width="1.2" width="120" x="60" y="44"></rect>
 <text class="faint" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="120" y="72">la amenaza</text>
 <path class="rule-stroke" d="M188 68 L268 68" stroke-width="1.4"></path><path class="rule-stroke" d="M268 68 l-9 -4 l0 8 z" fill="none"></path>
 <rect class="rule-stroke" fill="none" height="48" rx="3" stroke-width="1.2" width="120" x="276" y="44"></rect>
-<text class="faint" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="336" y="66">la reacciÃ³n</text>
+<text class="faint" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="336" y="66">la reacciêÂ³n</text>
 <text class="faint" font-family="Source Serif 4, serif" font-size="8.5" text-anchor="middle" x="336" y="82">(demasiado tarde)</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="72">â†’ â€œÂ¿serÃ¡ que estÃ¡ bien hecho?â€</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="72">ê¢â â ê¢â¬ÅêÂ¿serêÂ¡ que estêÂ¡ bien hecho?ê¢â¬Â</text>
 <!-- divisor -->
 <line class="rule-stroke" opacity="0.5" stroke-dasharray="2 5" stroke-width="0.8" x1="40" x2="680" y1="108" y2="108"></line>
 <!-- ordem certa -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="30" y="130">PRIMERO LA REACCIÃ“N â€” el pÃºblico hereda</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" x="30" y="130">PRIMERO LA REACCIêâN ê¢â¬â el pêÂºblico hereda</text>
 <rect class="accent-stroke" fill="url(#hatch-7-3)" height="48" rx="3" stroke-width="1.4" width="120" x="60" y="142"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="120" y="170">la reacciÃ³n</text>
+<text class="ink" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="120" y="170">la reacciêÂ³n</text>
 <path class="accent-stroke" d="M188 166 L268 166" stroke-width="1.8"></path><path class="accent" d="M268 166 l-9 -4 l0 8 z"></path>
 <rect class="accent-stroke" fill="none" height="48" rx="3" stroke-width="1.3" width="120" x="276" y="142"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="336" y="170">la revelaciÃ³n</text>
-<text class="accent" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="170">â†’ su miedo se convierte en el nuestro</text>
+<text class="ink" font-family="Spectral, serif" font-size="11" text-anchor="middle" x="336" y="170">la revelaciêÂ³n</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="170">ê¢â â su miedo se convierte en el nuestro</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m7-3-t4-p4">En tÃ©rminos de prompt, esto significa algo prÃ¡ctico: el plano de
-              <em>reacciÃ³n</em> (tiempo 4) debe generarse y montarse <strong>antes</strong> del plano de
-              <em>revelaciÃ³n</em> (tiempo 5), aunque los crees fuera de orden. En la descripciÃ³n del plano de reacciÃ³n,
-              concÃ©ntrate por completo en el rostro y el cuerpo del personaje â€” todavÃ­a nada de la amenaza. Deja la causa para
-              el plano siguiente. El montaje cosecha lo que el orden sembrÃ³.</p>
+<p data-ARCKHê-block="m7-3-t4-p4">En têÂ©rminos de prompt, esto significa algo prêÂ¡ctico: el plano de
+              <em>reacciêÂ³n</em> (tiempo 4) debe generarse y montarse <strong>antes</strong> del plano de
+              <em>revelaciêÂ³n</em> (tiempo 5), aunque los crees fuera de orden. En la descripciêÂ³n del plano de reacciêÂ³n,
+              concêÂ©ntrate por completo en el rostro y el cuerpo del personaje ê¢â¬â todavêÂ­a nada de la amenaza. Deja la causa para
+              el plano siguiente. El montaje cosecha lo que el orden sembrêÂ³.</p>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-ARCKHÉ-module="7-3" data-ARCKHÉ-topic="modulo-7-3#topico-5" data-ARCKHÉ-track="7" id="topico-5">
+<section data-ARCKHê-module="7-3" data-ARCKHê-topic="modulo-7-3#topico-5" data-ARCKHê-track="7" id="topico-5">
 <div class="section-mark">
-<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>Costura</span>
+<span class="where">SecciêÂ³n 5 de 5</span><span>êÂ·</span><span>Costura</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Transiciones, ritmo y continuidad</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-3-t5-p1">Los seis tiempos le dan a <em>estructura</em>; queda la
-              <em>costura</em> â€” lo que hace que los planos parezcan una sola pelÃ­cula y no clips pegados. Tres elementos hacen ese trabajo: <strong>transiciÃ³n</strong>, <strong>ritmo</strong> e
-              <strong>continuidad</strong>. Casi nunca se notan cuando estÃ¡n bien hechos, pero, cuando fallan, el
-              pÃºblico siente de inmediato la costura y la ilusiÃ³n se rompe.</p>
-<h3 class="sub">TransiciÃ³n â€” cÃ³mo un plano da paso al siguiente</h3>
-<p data-ARCKHÉ-block="m7-3-t5-p2">La transiciÃ³n es el puente entre dos planos. El corte directo mantiene la energÃ­a y la claridad, y la transiciÃ³n predeterminada casi siempre es la mejor. El whip pan y el desenfoque de movimiento transmiten urgencia, Ãºtiles cuando hay que escapar. Pero la mejor transiciÃ³n suele ser invisible:
+<p class="lede" data-ARCKHê-block="m7-3-t5-p1">Los seis tiempos le dan a <em>estructura</em>; queda la
+              <em>costura</em> ê¢â¬â lo que hace que los planos parezcan una sola pelêÂ­cula y no clips pegados. Tres elementos hacen ese trabajo: <strong>transiciêÂ³n</strong>, <strong>ritmo</strong> e
+              <strong>continuidad</strong>. Casi nunca se notan cuando estêÂ¡n bien hechos, pero, cuando fallan, el
+              pêÂºblico siente de inmediato la costura y la ilusiêÂ³n se rompe.</p>
+<h3 class="sub">TransiciêÂ³n ê¢â¬â cêÂ³mo un plano da paso al siguiente</h3>
+<p data-ARCKHê-block="m7-3-t5-p2">La transiciêÂ³n es el puente entre dos planos. El corte directo mantiene la energêÂ­a y la claridad, y la transiciêÂ³n predeterminada casi siempre es la mejor. El whip pan y el desenfoque de movimiento transmiten urgencia, êÂºtiles cuando hay que escapar. Pero la mejor transiciêÂ³n suele ser invisible:
               <em>match on action</em>, en la que un movimiento iniciado en un plano se completa en el siguiente, o
               <em>coincidencia emocional</em>, en la que el estado emocional fluye de uno a otro sin sobresaltos. La
-              pregunta que debes hacerte: el final de este plano <em>prepara</em> Â¿la entrada del siguiente?</p>
-<h3 class="sub">Ritmo: la duraciÃ³n cuenta la historia</h3>
-<p data-ARCKHÉ-block="m7-3-t5-p3">El ritmo es la duraciÃ³n de cada plano y la velocidad del cambio entre ellos
-              â€” y es <em>e</em> narrativa. Los planos largos respiran: dan peso, calma, contemplaciÃ³n;
-              sirven para establecer y conectar. Los planos cortos aceleran el pulso: los cortes rÃ¡pidos al perturbar, al
-              reaccionar y al escapar impulsan la adrenalina. AquÃ­ reaparece la regla de oro de la lecciÃ³n: <em>variar</em>.
-              Todo lo lento aburre; todo lo rÃ¡pido agota. La secuencia respira cuando alterna â€”y el pico (la revelaciÃ³n) gana fuerza precisamente por el contraste con lo que vino antes.<span class="sidenote-ref">5</span></p>
-<h3 class="sub">Continuidad â€” el mismo mundo de principio a fin</h3>
-<p data-ARCKHÉ-block="m7-3-t5-p4">La continuidad es lo que mantiene la ilusiÃ³n de un espacio Ãºnico: el mismo
-              personaje, la misma luz, la misma direcciÃ³n del movimiento, la misma paleta entre planos. En el cine de
-              IA esto es un desafÃ­o real: cada generaciÃ³n tiende a reinventar pequeÃ±os detalles. Por eso, ancla
+              pregunta que debes hacerte: el final de este plano <em>prepara</em> êÂ¿la entrada del siguiente?</p>
+<h3 class="sub">Ritmo: la duraciêÂ³n cuenta la historia</h3>
+<p data-ARCKHê-block="m7-3-t5-p3">El ritmo es la duraciêÂ³n de cada plano y la velocidad del cambio entre ellos
+              ê¢â¬â y es <em>e</em> narrativa. Los planos largos respiran: dan peso, calma, contemplaciêÂ³n;
+              sirven para establecer y conectar. Los planos cortos aceleran el pulso: los cortes rêÂ¡pidos al perturbar, al
+              reaccionar y al escapar impulsan la adrenalina. AquêÂ­ reaparece la regla de oro de la lecciêÂ³n: <em>variar</em>.
+              Todo lo lento aburre; todo lo rêÂ¡pido agota. La secuencia respira cuando alterna ê¢â¬ây el pico (la revelaciêÂ³n) gana fuerza precisamente por el contraste con lo que vino antes.<span class="sidenote-ref">5</span></p>
+<h3 class="sub">Continuidad ê¢â¬â el mismo mundo de principio a fin</h3>
+<p data-ARCKHê-block="m7-3-t5-p4">La continuidad es lo que mantiene la ilusiêÂ³n de un espacio êÂºnico: el mismo
+              personaje, la misma luz, la misma direcciêÂ³n del movimiento, la misma paleta entre planos. En el cine de
+              IA esto es un desafêÂ­o real: cada generaciêÂ³n tiende a reinventar pequeêÂ±os detalles. Por eso, ancla
               todo lo que puedas: describe al personaje con las mismas palabras en cada plano, fija la fuente y el color de la luz,
-              mantÃ©n la coherencia de direcciÃ³n (si el personaje huye hacia la derecha, sigue yendo hacia la
-              derecha). Las rupturas de continuidad â€”el abrigo que cambia de color, la luz que pasa de cÃ¡lida a
-              frÃ­a sin motivoâ€” son lo que mÃ¡s delata una secuencia montada a ciegas.</p>
+              mantêÂ©n la coherencia de direcciêÂ³n (si el personaje huye hacia la derecha, sigue yendo hacia la
+              derecha). Las rupturas de continuidad ê¢â¬âel abrigo que cambia de color, la luz que pasa de cêÂ¡lida a
+              frêÂ­a sin motivoê¢â¬â son lo que mêÂ¡s delata una secuencia montada a ciegas.</p>
 <h3 class="sub">La tarea que cierra la clase</h3>
-<p data-ARCKHÉ-block="m7-3-t5-p5">El ejercicio propuesto es directo y vale la pena hacerlo: crea tu propia
-              secuencia cARCKHÉtogrÃ¡fica de diez segundos con la fÃ³rmula: establecer, conectar, perturbar,
+<p data-ARCKHê-block="m7-3-t5-p5">El ejercicio propuesto es directo y vale la pena hacerlo: crea tu propia
+              secuencia cARCKHêtogrêÂ¡fica de diez segundos con la fêÂ³rmula: establecer, conectar, perturbar,
               reaccionar, revelar, escapar; luego responde tres preguntas, que son el verdadero objetivo del
-              mÃ³dulo. <strong>(1)</strong> Â¿CÃ³mo evoluciona la emociÃ³n a lo largo de tu secuencia? <strong>(2)</strong> Â¿Por
-              quÃ© el movimiento de cÃ¡mara elegido sostiene la narrativa? <strong>(3)</strong> Â¿Por quÃ© la secuencia
-              parece una pelÃ­cula coherente y no una colecciÃ³n de planos aleatorios? Si puedes responder las tres con
-              claridad, pasaste de generar planos a construir secuencias. La siguiente y Ãºltima clase lleva esto al
-              cierre del curso: reunirlo todo â€”fÃ³rmula, cÃ¡mara, ritmo, continuidadâ€” en el arte de una
+              mêÂ³dulo. <strong>(1)</strong> êÂ¿CêÂ³mo evoluciona la emociêÂ³n a lo largo de tu secuencia? <strong>(2)</strong> êÂ¿Por
+              quêÂ© el movimiento de cêÂ¡mara elegido sostiene la narrativa? <strong>(3)</strong> êÂ¿Por quêÂ© la secuencia
+              parece una pelêÂ­cula coherente y no una colecciêÂ³n de planos aleatorios? Si puedes responder las tres con
+              claridad, pasaste de generar planos a construir secuencias. La siguiente y êÂºltima clase lleva esto al
+              cierre del curso: reunirlo todo ê¢â¬âfêÂ³rmula, cêÂ¡mara, ritmo, continuidadê¢â¬â en el arte de una
               secuencia completa.</p>
 </div>
 <!-- figura 5: as tres costuras -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> Â· <b>Tres uniones</b> entre planos: transiciÃ³n, ritmo y continuidad</figcaption>
-<svg aria-label="Diagrama: tres planos en fila unidos por costuras etiquetadas transiciÃ³n (el puente), ritmo (la duraciÃ³n variable de cada plano) y continuidad (luz, personaje y direcciÃ³n constantes en todos ellos)." class="diagram" role="img" viewbox="0 0 720 196">
+<figcaption><span class="fig-n">Fig. 5</span> êÂ· <b>Tres uniones</b> entre planos: transiciêÂ³n, ritmo y continuidad</figcaption>
+<svg aria-label="Diagrama: tres planos en fila unidos por costuras etiquetadas transiciêÂ³n (el puente), ritmo (la duraciêÂ³n variable de cada plano) y continuidad (luz, personaje y direcciêÂ³n constantes en todos ellos)." class="diagram" role="img" viewbox="0 0 720 196">
 <!-- tres planos -->
 <g class="accent-stroke" fill="none" stroke-width="1.3">
 <rect height="70" rx="3" width="150" x="60" y="50"></rect>
@@ -574,80 +574,80 @@ repetir el mismo registro. El prompt de abajo arma la secuencia completa de los 
 <text class="faint" font-family="Source Serif 4, serif" font-size="9" text-anchor="middle" x="545" y="44">largo</text>
 <!-- transicoes -->
 <g class="accent" font-family="IBM Plex Mono, monospace" font-size="12" text-anchor="middle">
-<text x="247" y="90">â€º</text><text x="412" y="90">â€º</text>
+<text x="247" y="90">ê¢â¬Âº</text><text x="412" y="90">ê¢â¬Âº</text>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="247" y="138">transiciÃ³n</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="412" y="138">transiciÃ³n</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="330" y="30">RITMO â€” la duraciÃ³n varÃ­a</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="247" y="138">transiciêÂ³n</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="412" y="138">transiciêÂ³n</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="330" y="30">RITMO ê¢â¬â la duraciêÂ³n varêÂ­a</text>
 <!-- continuidade: barra por baixo -->
 <line class="mark-stroke" stroke-width="2.5" x1="60" x2="640" y1="158" y2="158"></line>
-<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="350" y="180">CONTINUIDAD â€” la misma luz, el personaje y la direcciÃ³n por debajo de todo</text>
+<text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.2" text-anchor="middle" x="350" y="180">CONTINUIDAD ê¢â¬â la misma luz, el personaje y la direcciêÂ³n por debajo de todo</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m7-3-t5-p6">Resume esta lecciÃ³n en una frase: <em>una secuencia no es una suma de
-              planos â€” es una emociÃ³n que evoluciona, sostenida por una cÃ¡mara que evoluciona y enlazada por
-              la transiciÃ³n, el ritmo y la continuidad.</em> Ya sabes construir la escena (propÃ³sito) y encadenarlas
-              (secuencia). La Ãºltima clase lo une todo: cÃ³mo tratar una secuencia entera como una obra, desde el primer
-              plano hasta el Ãºltimo.</p>
+<p data-ARCKHê-block="m7-3-t5-p6">Resume esta lecciêÂ³n en una frase: <em>una secuencia no es una suma de
+              planos ê¢â¬â es una emociêÂ³n que evoluciona, sostenida por una cêÂ¡mara que evoluciona y enlazada por
+              la transiciêÂ³n, el ritmo y la continuidad.</em> Ya sabes construir la escena (propêÂ³sito) y encadenarlas
+              (secuencia). La êÂºltima clase lo une todo: cêÂ³mo tratar una secuencia entera como una obra, desde el primer
+              plano hasta el êÂºltimo.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="AutocomprobaciÃ³n" class="check">
-<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
+<section aria-label="AutocomprobaciêÂ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rêÂ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Â¿QuÃ© pregunta se hace el director antes de cada plano â€” y por quÃ© lo cambia todo?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>No es â€œÂ¿quÃ© plano genial viene ahora?â€, sino <strong>â€œÂ¿quÃ© emociÃ³n
-              debe sentir el pÃºblico ahora?â€</strong>. Ancla cada plano en una funciÃ³n emocional: el
-              plano se convierte en un paso dentro de una curva de sentimientos, no en un fin en sÃ­ mismo.</p></div>
+<summary><span class="qn">01</span><span>êÂ¿QuêÂ© pregunta se hace el director antes de cada plano ê¢â¬â y por quêÂ© lo cambia todo?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>No es ê¢â¬ÅêÂ¿quêÂ© plano genial viene ahora?ê¢â¬Â, sino <strong>ê¢â¬ÅêÂ¿quêÂ© emociêÂ³n
+              debe sentir el pêÂºblico ahora?ê¢â¬Â</strong>. Ancla cada plano en una funciêÂ³n emocional: el
+              plano se convierte en un paso dentro de una curva de sentimientos, no en un fin en sêÂ­ mismo.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Â¿CuÃ¡les son los seis tiempos y quÃ© evoluciÃ³n de sentimientos producen?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Establecer, conectar, perturbar, reaccionar, revelar, escapar. La evoluciÃ³n:
-curiosidad â†’ sospecha â†’ tensiÃ³n â†’ miedo â†’ impacto â†’ supervivencia. El orden
+<summary><span class="qn">02</span><span>êÂ¿CuêÂ¡les son los seis tiempos y quêÂ© evoluciêÂ³n de sentimientos producen?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Establecer, conectar, perturbar, reaccionar, revelar, escapar. La evoluciêÂ³n:
+curiosidad ê¢â â sospecha ê¢â â tensiêÂ³n ê¢â â miedo ê¢â â impacto ê¢â â supervivencia. El orden
 crea el sentido; el contenido de cada plano puede cambiar, la curva no.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Â¿Por quÃ© mostrar la reacciÃ³n antes de la revelaciÃ³n?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque la reacciÃ³n del personaje le enseÃ±a al pÃºblico <em>cÃ³mo sentir</em>. Si se muestra
-              antes, el pÃºblico hereda la emociÃ³n y la revelaciÃ³n llega a un terreno preparado. Mostrar primero la amenaza
-              la convierte en objeto de juicio (Â«Â¿estÃ¡ bien hecha?Â»). Y retrasar la
-              revelaciÃ³n amplifica su impacto.</p></div>
+<summary><span class="qn">03</span><span>êÂ¿Por quêÂ© mostrar la reacciêÂ³n antes de la revelaciêÂ³n?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque la reacciêÂ³n del personaje le enseêÂ±a al pêÂºblico <em>cêÂ³mo sentir</em>. Si se muestra
+              antes, el pêÂºblico hereda la emociêÂ³n y la revelaciêÂ³n llega a un terreno preparado. Mostrar primero la amenaza
+              la convierte en objeto de juicio (êÂ«êÂ¿estêÂ¡ bien hecha?êÂ»). Y retrasar la
+              revelaciêÂ³n amplifica su impacto.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Â¿QuÃ© aportan la transiciÃ³n, el ritmo y la continuidad a una secuencia?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Son la <em>costura</em>. La transiciÃ³n es el puente entre planos (corte, match on action);
-              el ritmo es la duraciÃ³n variable (el plano largo da respiro, el corto acelera); la continuidad mantiene el mismo mundo (luz,
-              personaje, direcciÃ³n). Cuando estÃ¡n bien hechas, nadie las nota; cuando fallan, se rompe la ilusiÃ³n de una sola pelÃ­cula.</p></div>
+<summary><span class="qn">04</span><span>êÂ¿QuêÂ© aportan la transiciêÂ³n, el ritmo y la continuidad a una secuencia?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Son la <em>costura</em>. La transiciêÂ³n es el puente entre planos (corte, match on action);
+              el ritmo es la duraciêÂ³n variable (el plano largo da respiro, el corto acelera); la continuidad mantiene el mismo mundo (luz,
+              personaje, direcciêÂ³n). Cuando estêÂ¡n bien hechas, nadie las nota; cuando fallan, se rompe la ilusiêÂ³n de una sola pelêÂ­cula.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
+<section aria-label="Mi recorrido ê¢â¬â progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Mi recorrido</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir cuaderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este mÃ³dulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:7-3">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="k">En este mêÂ³dulo</div>
+<div class="v" data-ARCKHê-meter="modulo:7-3">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leêÂ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 7</div>
-<div class="v" data-ARCKHÉ-meter="trilha:7">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:7">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -656,69 +656,69 @@ crea el sentido; el contenido de cada plano puede cambiar, la curva no.</p></div
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">MÃ³dulo 7.4 â€” El arte de la secuencia cARCKHÉtogrÃ¡fica</div>
+<div class="t">MêÂ³dulo 7.4 ê¢â¬â El arte de la secuencia cARCKHêtogrêÂ¡fica</div>
 </div>
-<a class="go" href="modulo-7-4.html">Siguiente â†’</a>
+<a class="go" href="modulo-7-4.html">Siguiente ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-3#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-7-3#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>ProgresiÃ³n.</b> La evoluciÃ³n de la tensiÃ³n, la cÃ¡mara y el ritmo a lo largo del tiempo. Es lo que convierte una secuencia
-          en cARCKHÉtogrÃ¡fica, y lo que falta cuando planos hermosos parecen desconectados.
+<div class="tag">DefiniciêÂ³n</div>
+<b>ProgresiêÂ³n.</b> La evoluciêÂ³n de la tensiêÂ³n, la cêÂ¡mara y el ritmo a lo largo del tiempo. Es lo que convierte una secuencia
+          en cARCKHêtogrêÂ¡fica, y lo que falta cuando planos hermosos parecen desconectados.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          LecciÃ³n 21 del programa <i>AI Filmmaking</i> â€” â€œBuilding CARCKHÉtic Sequencesâ€. El cambio de
-          mentalidad: <i>Â¿quÃ© emociÃ³n debe sentir el pÃºblico ahora?</i>
+          LecciêÂ³n 21 del programa <i>AI Filmmaking</i> ê¢â¬â ê¢â¬ÅBuilding CARCKHêtic Sequencesê¢â¬Â. El cambio de
+          mentalidad: <i>êÂ¿quêÂ© emociêÂ³n debe sentir el pêÂºblico ahora?</i>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-3#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-7-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Los seis tiempos.</b> Establecer (escala), conectar (emociÃ³n), perturbar (tensiÃ³n), reaccionar (inmersiÃ³n),
-revelar (recompensa), escapar (impulso). La curva: curiosidad â†’ ... â†’ supervivencia.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Los seis tiempos.</b> Establecer (escala), conectar (emociêÂ³n), perturbar (tensiêÂ³n), reaccionar (inmersiêÂ³n),
+revelar (recompensa), escapar (impulso). La curva: curiosidad ê¢â â ... ê¢â â supervivencia.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-3#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-7-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>LÃ³gica de cÃ¡mara.</b> Plano general = escala; plano medio = conexiÃ³n; primer plano = tensiÃ³n; movimiento dinÃ¡mico = urgencia. Pasar del plano general al primer plano y de lo estÃ¡tico a lo dinÃ¡mico ya aumenta la emociÃ³n.
+<div class="tag">DefiniciêÂ³n</div>
+<b>LêÂ³gica de cêÂ¡mara.</b> Plano general = escala; plano medio = conexiêÂ³n; primer plano = tensiêÂ³n; movimiento dinêÂ¡mico = urgencia. Pasar del plano general al primer plano y de lo estêÂ¡tico a lo dinêÂ¡mico ya aumenta la emociêÂ³n.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          La fÃ³rmula y la lÃ³gica de cÃ¡mara son lo mismo desde dos Ã¡ngulos: una describe la emociÃ³n y la otra cÃ³mo la
-          cÃ¡mara la sirve. Equivocarse con la cÃ¡mara en un tiempo bloquea la progresiÃ³n.
+          La fêÂ³rmula y la lêÂ³gica de cêÂ¡mara son lo mismo desde dos êÂ¡ngulos: una describe la emociêÂ³n y la otra cêÂ³mo la
+          cêÂ¡mara la sirve. Equivocarse con la cêÂ¡mara en un tiempo bloquea la progresiêÂ³n.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-3#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-7-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>ReacciÃ³n antes de la revelaciÃ³n.</b> Mostrar la emociÃ³n del personaje antes de la amenaza. Su miedo se convierte en el
-          miedo del pÃºblico; mostrar la amenaza primero la convierte en objeto de juicio.
+<div class="tag">DefiniciêÂ³n</div>
+<b>ReacciêÂ³n antes de la revelaciêÂ³n.</b> Mostrar la emociêÂ³n del personaje antes de la amenaza. Su miedo se convierte en el
+          miedo del pêÂºblico; mostrar la amenaza primero la convierte en objeto de juicio.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-3#topico-5"></aside>
+<aside data-ARCKHê-rail="modulo-7-3#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Continuidad.</b> Mantener el mismo mundo entre planos: personaje, luz, direcciÃ³n del movimiento, paleta.
-          En el cine de IA es un desafÃ­o: ancla con palabras repetidas y una direcciÃ³n coherente.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Continuidad.</b> Mantener el mismo mundo entre planos: personaje, luz, direcciêÂ³n del movimiento, paleta.
+          En el cine de IA es un desafêÂ­o: ancla con palabras repetidas y una direcciêÂ³n coherente.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          La tarea del mÃ³dulo: arma 10s con la fÃ³rmula y responde: Â¿cÃ³mo evoluciona la emociÃ³n? Â¿Por quÃ© la cÃ¡mara la
-          sostiene? Â¿Por quÃ© parece una pelÃ­cula cohesionada y no planos sueltos?
+          La tarea del mêÂ³dulo: arma 10s con la fêÂ³rmula y responde: êÂ¿cêÂ³mo evoluciona la emociêÂ³n? êÂ¿Por quêÂ© la cêÂ¡mara la
+          sostiene? êÂ¿Por quêÂ© parece una pelêÂ­cula cohesionada y no planos sueltos?
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
-<span class="pg">MÃ³dulo 7.3 â€” folio iii</span>
+<span>ARCKHê AI êÂ· Cuaderno del estudiante</span>
+<span class="pg">MêÂ³dulo 7.3 ê¢â¬â folio iii</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -727,8 +727,8 @@ revelar (recompensa), escapar (impulso). La curva: curiosidad â†’ ... â†
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

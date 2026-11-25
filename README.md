@@ -1,4 +1,4 @@
-# AI Filmmaking â€” Parte 1 Â· Caderno de estudo (ARCKHÉ AI)
+# AI Filmmaking ê¢â¬â Parte 1 êÂ· Caderno de estudo (ARCKHê AI)
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,39 +6,39 @@
 </div>
 
 
-Curso de leitura no formato editorial do ARCKHÉ AI (formato-curso **v3**): pÃ¡gina que
+Curso de leitura no formato editorial do ARCKHê AI (formato-curso **v3**): pêÂ¡gina que
 abre como *reader-mode* (papel quente, serif, uma coluna de leitura com notas na margem),
-progresso/notas/dÃºvidas sÃ³ no seu navegador (`localStorage`), **zero gamificaÃ§Ã£o**.
+progresso/notas/dêÂºvidas sêÂ³ no seu navegador (`localStorage`), **zero gamificaêÂ§êÂ£o**.
 
-AdaptaÃ§Ã£o editorial em **PT-BR** do curso *AI Filmmaking â€” Part 1*: a base da linguagem
-cARCKHÉtogrÃ¡fica aplicada a geradores de vÃ­deo por IA (Seedance, Kling, Runway, Luma,
+AdaptaêÂ§êÂ£o editorial em **PT-BR** do curso *AI Filmmaking ê¢â¬â Part 1*: a base da linguagem
+cARCKHêtogrêÂ¡fica aplicada a geradores de vêÂ­deo por IA (Seedance, Kling, Runway, Luma,
 Freepik, Midjourney). Primeiro a mentalidade de diretor; depois as ferramentas.
 
 ## Como abrir
 Abra `index.html` no navegador (funciona em `file://` e em GitHub Pages). Sem build, sem
 backend, sem cadastro.
 
-## Estrutura â€” 7 trilhas, 29 mÃ³dulos, 138 seÃ§Ãµes
-1. **Fundamentos (Luz)** â€” o framework do diretor, controle espacial, do roteiro Ã  cena, do quadro ao movimento
-2. **Fundamentos CARCKHÉtogrÃ¡ficos** â€” pensamento visual, composiÃ§Ã£o, luz e atmosfera, profundidade
-3. **Workflow de CARCKHÉ com IA** â€” pipeline, Freepik, Seedance, Kling, Luma & Runway
-4. **Linguagem de CÃ¢mera** â€” cARCKHÉtografia, movimento, planos e enquadramento, Seedance 2
-5. **VFX e AÃ§Ã£o** â€” efeitos visuais, cÃ¢mera lenta, partÃ­culas, cenas de aÃ§Ã£o
-6. **Personagem e AtuaÃ§Ã£o** â€” diÃ¡logo, performance com IA, close-ups, estrutura de cena
-7. **HistÃ³ria e Estrutura CARCKHÉtogrÃ¡fica** â€” narrativa visual, propÃ³sito da cena, sequÃªncias, a arte da sequÃªncia
+## Estrutura ê¢â¬â 7 trilhas, 29 mêÂ³dulos, 138 seêÂ§êÂµes
+1. **Fundamentos (Luz)** ê¢â¬â o framework do diretor, controle espacial, do roteiro êÂ  cena, do quadro ao movimento
+2. **Fundamentos CARCKHêtogrêÂ¡ficos** ê¢â¬â pensamento visual, composiêÂ§êÂ£o, luz e atmosfera, profundidade
+3. **Workflow de CARCKHê com IA** ê¢â¬â pipeline, Freepik, Seedance, Kling, Luma & Runway
+4. **Linguagem de CêÂ¢mera** ê¢â¬â cARCKHêtografia, movimento, planos e enquadramento, Seedance 2
+5. **VFX e AêÂ§êÂ£o** ê¢â¬â efeitos visuais, cêÂ¢mera lenta, partêÂ­culas, cenas de aêÂ§êÂ£o
+6. **Personagem e AtuaêÂ§êÂ£o** ê¢â¬â diêÂ¡logo, performance com IA, close-ups, estrutura de cena
+7. **HistêÂ³ria e Estrutura CARCKHêtogrêÂ¡fica** ê¢â¬â narrativa visual, propêÂ³sito da cena, sequêÂªncias, a arte da sequêÂªncia
 
-Cada aula traz explicaÃ§Ã£o, ilustraÃ§Ãµes (SVG autoral), exemplos e **prompts prontos** para os geradores.
+Cada aula traz explicaêÂ§êÂ£o, ilustraêÂ§êÂµes (SVG autoral), exemplos e **prompts prontos** para os geradores.
 
 ```
-index.html            landing / Ã­ndice do curso
+index.html            landing / êÂ­ndice do curso
 assets/               learn.css + learn.js (camada de leitura v3)
-curso/trilhaN/        index.html (Ã­ndice da trilha) + modulo-N-M.html (aulas)
+curso/trilhaN/        index.html (êÂ­ndice da trilha) + modulo-N-M.html (aulas)
 ```
 
 ## Origem
-Caderno de estudo, sem fins comerciais â€” reorganizado e reescrito a partir do material do
-curso *AI Filmmaking â€” Part 1*. As ferramentas citadas evoluem rÃ¡pido; trate os prompts
-como pontos de partida para iterar, nÃ£o como receitas fixas.
+Caderno de estudo, sem fins comerciais ê¢â¬â reorganizado e reescrito a partir do material do
+curso *AI Filmmaking ê¢â¬â Part 1*. As ferramentas citadas evoluem rêÂ¡pido; trate os prompts
+como pontos de partida para iterar, nêÂ£o como receitas fixas.
 
 ---
 

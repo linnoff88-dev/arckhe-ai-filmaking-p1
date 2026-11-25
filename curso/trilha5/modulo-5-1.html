@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 5.1 â€” Efeitos Visuais | AI Filmmaking</title>
+<title>Modulo 5.1 ê¢â¬â Efeitos Visuais | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,34 +135,34 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha5/modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha5/modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha5/modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha5/modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:5-1"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:5-1"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â legibilidade maxima" type="button">Aaê¢â Â¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Trilha <b>5</b> VFX e Acao</span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Modulo <b>5.1</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">Secao 1 de 4</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">Secao 1 de 4</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Minha jornada <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,33 +189,33 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 5.1 Â· Trilha 5 Â· VFX e Acao</p>
+<p class="kicker">Modulo 5.1 êÂ· Trilha 5 êÂ· VFX e Acao</p>
 <h1 class="module">Efeitos <em>Visuais</em></h1>
-<p class="deck">O efeito impressiona â€” e e exatamente por isso que ele e perigoso. Antes de qualquer
+<p class="deck">O efeito impressiona ê¢â¬â e e exatamente por isso que ele e perigoso. Antes de qualquer
           explosao, instale o criterio que separa o VFX que ancora a cena no real do VFX que a denuncia como
           falsa: o cerebro acredita no peso, nao no espetaculo.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~15 min Â· modulo inteiro</span>
+<span>~15 min êÂ· modulo inteiro</span>
 <span>4 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que <b>efeito nao e o mesmo que realismo</b> â€” e por que o cARCKHÉ fisico de verdade
+<li>Por que <b>efeito nao e o mesmo que realismo</b> ê¢â¬â e por que o cARCKHê fisico de verdade
               (fogo, chuva, miniatura) ensina o que a IA mais erra.</li>
 <li>O segredo contraintuitivo do realismo: <b>movimento perfeito parece falso, o caos parece real</b>
-              â€” e como pedir caos ao gerador.</li>
+              ê¢â¬â e como pedir caos ao gerador.</li>
 <li>O VFX como <b>decisao</b>, nao como botao: quando o efeito soma presenca e quando vira a sobrecarga
-              de â€œCGI demaisâ€.</li>
+              de ê¢â¬ÅCGI demaisê¢â¬Â.</li>
 <li>Por que <b>estruturar o prompt em blocos logicos</b> (estilo YAML) controla a imagem melhor do que
-              uma frase longa â€” e onde a IA ainda quebra.</li>
+              uma frase longa ê¢â¬â e onde a IA ainda quebra.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
-<p class="toc-head">Sumario â€” quatro movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHê-toc="">
+<p class="toc-head">Sumario ê¢â¬â quatro movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Efeito nao e realismo</span></a></li>
@@ -225,39 +225,39 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="5-1" data-ARCKHÉ-topic="modulo-5-1#topico-1" data-ARCKHÉ-track="5" id="topico-1">
+<section data-ARCKHê-module="5-1" data-ARCKHê-topic="modulo-5-1#topico-1" data-ARCKHê-track="5" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 4</span><span>Â·</span><span>Principio</span>
+<span class="where">Secao 1 de 4</span><span>êÂ·</span><span>Principio</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Efeito nao e realismo</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m5-1-t1-p1">Comece desfazendo a confusao mais cara desta
+<p class="lede dropcap" data-ARCKHê-block="m5-1-t1-p1">Comece desfazendo a confusao mais cara desta
               trilha: <em>efeito</em> e <em>realismo</em> nao sao a mesma coisa. Um efeito e uma coisa que aparece
-              na tela â€” a explosao, a onda, a nave caindo. O realismo e a sensacao de que aquilo tem
+              na tela ê¢â¬â a explosao, a onda, a nave caindo. O realismo e a sensacao de que aquilo tem
               <span class="sidenote-ref">1</span>peso, materia, consequencia fisica. A IA gera efeito com
               facilidade espantosa; o que ela quase nunca entrega sozinha e realismo. E sem realismo, o efeito vira
               o oposto do que voce queria: em vez de impressionar, ele denuncia. E o que chamamos de
-              â€œsobrecarga de CGIâ€ â€” aquele brilho plastico que faz o cerebro dizer
-              â€œfalsoâ€ antes mesmo de a cena terminar.</p>
-<p data-ARCKHÉ-block="m5-1-t1-p2">Para entender o que falta, vale olhar como o cARCKHÉ de alto orcamento
-              ainda resolve isso â€” com tecnicas <em>fisicas</em>, mesmo na era digital. Nao por nostalgia:
+              ê¢â¬Åsobrecarga de CGIê¢â¬Â ê¢â¬â aquele brilho plastico que faz o cerebro dizer
+              ê¢â¬Åfalsoê¢â¬Â antes mesmo de a cena terminar.</p>
+<p data-ARCKHê-block="m5-1-t1-p2">Para entender o que falta, vale olhar como o cARCKHê de alto orcamento
+              ainda resolve isso ê¢â¬â com tecnicas <em>fisicas</em>, mesmo na era digital. Nao por nostalgia:
               por eficiencia perceptiva. Sao seis abordagens que perseguem o que a aula chama de realismo fisico
               sem concessoes, e cada uma ensina algo que vale diretamente para o prompt de IA.</p>
 <h3 class="sub">Seis modos de ancorar no real</h3>
-<p data-ARCKHÉ-block="m5-1-t1-p3">A <strong>parede de LED</strong> projeta o ambiente atras do ator
+<p data-ARCKHê-block="m5-1-t1-p3">A <strong>parede de LED</strong> projeta o ambiente atras do ator
               durante a filmagem, e a luz real do cenario digital reflete no figurino, cria sombras e contorno
-              corretos â€” a luz <em>ancora</em> o ator no mundo. O <strong>fogo pratico</strong> traz o
+              corretos ê¢â¬â a luz <em>ancora</em> o ator no mundo. O <strong>fogo pratico</strong> traz o
               movimento caotico e a fumaca organica que o fogo digital, limpo demais, nao tem. A <strong>suspensao
-              por cabos</strong> captura a inercia verdadeira do corpo e o arrasto do tecido â€” peso fisico e
+              por cabos</strong> captura a inercia verdadeira do corpo e o arrasto do tecido ê¢â¬â peso fisico e
               das coisas mais dificeis de falsificar. A <strong>chuva pratica</strong> molha de verdade roupa e
               asfalto, e a fisica da agua e o jeito mais rapido de expor um CGI ruim. As <strong>miniaturas</strong>
               trazem poeira real e textura tatil; com enquadramento certo, o cerebro as le como estruturas em
-              escala real. E o <strong>hibrido</strong> â€” primeiro plano fisico sobre fundo digital â€”
+              escala real. E o <strong>hibrido</strong> ê¢â¬â primeiro plano fisico sobre fundo digital ê¢â¬â
               usa um elemento detalhado na frente para emprestar credibilidade ao fundo gerado.</p>
 </div>
 <!-- figura 1: efeito x realismo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· <b>Efeito</b> chega facil; <b>realismo</b> e o que a IA nao da sozinha</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· <b>Efeito</b> chega facil; <b>realismo</b> e o que a IA nao da sozinha</figcaption>
 <svg aria-label="Diagrama em dois eixos: o efeito sobe rapido e barato; o realismo exige peso, luz e textura. O ponto de credibilidade so e cruzado quando o realismo acompanha o efeito." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-5-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -266,14 +266,14 @@
 </defs>
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="175" y2="175"></line>
 <line class="rule-stroke" stroke-width="1" x1="40" x2="40" y1="30" y2="175"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="50" y="195">CUSTO / ESFORCO â†’</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="50" y="195">CUSTO / ESFORCO ê¢â â</text>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 26 100)" x="26" y="100">IMPACTO CRIVEL</text>
 <!-- efeito: sobe rapido e satura -->
 <path class="rule-stroke" d="M40 160 C 120 90, 180 70, 320 66 L 660 64" fill="none" stroke-dasharray="4 4" stroke-width="1.8"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="300" y="56">o efeito â€” barato, mas satura cedo</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="300" y="56">o efeito ê¢â¬â barato, mas satura cedo</text>
 <!-- realismo: sobe devagar mas sem teto -->
 <path class="accent-stroke" d="M40 165 C 220 158, 360 120, 540 70 C 600 52, 640 44, 680 40" fill="none" stroke-width="2.4"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="540" y="100">o realismo â€” peso, luz, textura</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="540" y="100">o realismo ê¢â¬â peso, luz, textura</text>
 <!-- linha de credibilidade -->
 <line class="mark-stroke" stroke-dasharray="2 5" stroke-width="1" x1="40" x2="690" y1="78" y2="78"></line>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="end" x="684" y="74">LINHA DE CREDIBILIDADE</text>
@@ -285,55 +285,55 @@
 <p class="lbl">Pare e preveja</p>
 <p>Duas tomadas mostram a mesma cidade em chamas. Numa, o fogo e CGI: chamas simetricas, lambendo o ar
               num loop suave. Na outra, e fogo pratico filmado e composto sobre a placa. Qual parece mais real
-              â€” e o que exatamente o cerebro detecta?</p>
+              ê¢â¬â e o que exatamente o cerebro detecta?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">A segunda, quase sempre. O cerebro nao mede â€œquantidade de fogoâ€: ele
+<p class="answer">A segunda, quase sempre. O cerebro nao mede ê¢â¬Åquantidade de fogoê¢â¬Â: ele
                 mede <strong>imprevisibilidade</strong>. O fogo real flameja de modo caotico, solta faisca
-                irregular, distorce o ar com calor. O fogo digital limpo e <em>previsivel</em> â€” e
+                irregular, distorce o ar com calor. O fogo digital limpo e <em>previsivel</em> ê¢â¬â e
                 previsibilidade e o cheiro de falso. Movimento perfeito parece artificial; o caos e o que assina o
                 real.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: por que a luz e a primeira coisa a acertar
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: por que a luz e a primeira coisa a acertar
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada explica por que a parede de LED virou padrao â€” e
+<p>O caminho-feliz acima ja basta. Esta camada explica por que a parede de LED virou padrao ê¢â¬â e
                 pode ser pulada.</p>
 <p>A razao de a parede de LED ter mudado a producao moderna nao e a imagem de fundo: e a
                 <strong>luz</strong>. Quando o ambiente digital emite luz de verdade no set, ela bate no rosto, no
-                figurino, no metal â€” e gera reflexo, sombra e contorno coerentes com aquele mundo. Composicao
+                figurino, no metal ê¢â¬â e gera reflexo, sombra e contorno coerentes com aquele mundo. Composicao
                 tradicional sofre justamente nisso: a luz do ator nunca casa perfeitamente com a do fundo, e o olho
                 sente a costura. Para a IA, a licao e direta: <em>nunca deixe a fonte de luz por conta do
                 acaso</em>. Um prompt que define de onde vem a luz, de que cor e com que dureza, ja ancora o
-                personagem no espaco antes de qualquer efeito entrar. Luz vem primeiro â€” e a ordem do projeto
-                cARCKHÉtografico e luz, textura, movimento, atmosfera, emocao.</p>
+                personagem no espaco antes de qualquer efeito entrar. Luz vem primeiro ê¢â¬â e a ordem do projeto
+                cARCKHêtografico e luz, textura, movimento, atmosfera, emocao.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="5-1" data-ARCKHÉ-topic="modulo-5-1#topico-2" data-ARCKHÉ-track="5" id="topico-2">
+<section data-ARCKHê-module="5-1" data-ARCKHê-topic="modulo-5-1#topico-2" data-ARCKHê-track="5" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 4</span><span>Â·</span><span>Caos</span>
+<span class="where">Secao 2 de 4</span><span>êÂ·</span><span>Caos</span>
 </div>
 <h2 class="head"><span class="num">2.</span>O caos que convence o cerebro</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-1-t2-p1">Reuna o que as seis tecnicas ensinam numa unica frase, e
+<p class="lede" data-ARCKHê-block="m5-1-t2-p1">Reuna o que as seis tecnicas ensinam numa unica frase, e
               voce tem o segredo do realismo: <strong>movimento perfeito parece falso; o caos parece real.</strong>
-              Isto contraria o instinto do iniciante, que pede ao gerador â€œchamas perfeitasâ€,
-              â€œagua cristalinaâ€, â€œmovimento suaveâ€ â€” e recebe de volta uma imagem
+              Isto contraria o instinto do iniciante, que pede ao gerador ê¢â¬Åchamas perfeitasê¢â¬Â,
+              ê¢â¬Åagua cristalinaê¢â¬Â, ê¢â¬Åmovimento suaveê¢â¬Â ê¢â¬â e recebe de volta uma imagem
               esteril, de videogame antigo. O mundo fisico nao e limpo. Fogo treme de forma imprevisivel; agua
               respinga em angulos irregulares; poeira flutua sem rota; tecido arrasta com atraso. Sao essas
               imperfeicoes que o cerebro usa, ha milhoes de anos, para distinguir o que e real do que nao e.</p>
-<p data-ARCKHÉ-block="m5-1-t2-p2">Para a IA, isso vira uma instrucao pratica e quase paradoxal: peca o
-              <em>defeito certo</em>. Em vez de â€œchamas perfeitasâ€, escreva â€œchamas caoticas,
-              faiscas organicas, fumaca irregular subindoâ€. Em vez de â€œagua suaveâ€,
-              â€œrespingos imprevisiveis, escorrimento desigualâ€. Voce nao esta pedindo bagunca â€”
+<p data-ARCKHê-block="m5-1-t2-p2">Para a IA, isso vira uma instrucao pratica e quase paradoxal: peca o
+              <em>defeito certo</em>. Em vez de ê¢â¬Åchamas perfeitasê¢â¬Â, escreva ê¢â¬Åchamas caoticas,
+              faiscas organicas, fumaca irregular subindoê¢â¬Â. Em vez de ê¢â¬Åagua suaveê¢â¬Â,
+              ê¢â¬Årespingos imprevisiveis, escorrimento desigualê¢â¬Â. Voce nao esta pedindo bagunca ê¢â¬â
               esta pedindo a <em>fisica</em> daquele material, descrita pela lente do comportamento real. Esse e o
               segundo principio de prompting da aula: descreva o movimento sempre pela otica da fisica.</p>
-<h3 class="sub">O mesmo principio fora do cARCKHÉ de catastrofe</h3>
-<p data-ARCKHÉ-block="m5-1-t2-p3">Vale alem do mundo distopico onde essas tecnicas brilham â€”
+<h3 class="sub">O mesmo principio fora do cARCKHê de catastrofe</h3>
+<p data-ARCKHê-block="m5-1-t2-p3">Vale alem do mundo distopico onde essas tecnicas brilham ê¢â¬â
               cenarios pos-apocalipticos, desastres atmosfericos, infraestrutura em ruinas, sobrevivencia
               isolada.<span class="sidenote-ref">2</span> Num anuncio de bebida, a condensacao desigual na lata e
               a gota que escorre torto e que fazem o produto parecer gelado e real; uma superficie limpa demais
@@ -343,14 +343,14 @@
 </div>
 <!-- figura 2: perfeito x caotico -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· A assinatura do real e a <b>irregularidade</b>, nao a perfeicao</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· A assinatura do real e a <b>irregularidade</b>, nao a perfeicao</figcaption>
 <svg aria-label="Comparacao de duas chamas: a esquerda, contorno simetrico e repetido (le-se como falso); a direita, contorno irregular com faiscas dispersas (le-se como real)." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- lado esquerdo: perfeito -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">MOVIMENTO PERFEITO</text>
 <rect class="rule-stroke" fill="none" height="120" rx="3" stroke-width="1.2" width="260" x="50" y="40"></rect>
 <path class="rule-stroke" d="M180 150 C 140 110, 150 80, 180 55 C 210 80, 220 110, 180 150 Z" fill="none" stroke-width="1.4"></path>
 <path class="rule-stroke" d="M180 145 C 155 115, 162 92, 180 72 C 198 92, 205 115, 180 145 Z" fill="none" opacity="0.6" stroke-width="1"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">simetrico, repetido â€” le-se falso</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">simetrico, repetido ê¢â¬â le-se falso</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="38" y2="162"></line>
 <!-- lado direito: caotico -->
@@ -358,57 +358,57 @@
 <rect class="accent-stroke" fill="none" height="120" rx="3" stroke-width="1.3" width="260" x="410" y="40"></rect>
 <path class="accent-stroke" d="M540 152 C 500 116, 528 92, 512 70 C 552 84, 540 60, 560 50 C 558 84, 588 100, 568 132 C 560 144, 552 150, 540 152 Z" fill="url(#hatch-5-1)" stroke-width="1.5"></path>
 <g class="accent"><circle cx="588" cy="62" r="1.8"></circle><circle cx="600" cy="80" r="1.4"></circle><circle cx="512" cy="58" r="1.6"></circle><circle cx="606" cy="100" r="1.2"></circle><circle cx="500" cy="86" r="1.3"></circle></g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="178">irregular, faiscas dispersas â€” le-se real</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="178">irregular, faiscas dispersas ê¢â¬â le-se real</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: o caos nao e desculpa para descontrole
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: o caos nao e desculpa para descontrole
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional â€” um contrapeso importante para nao ler â€œcaosâ€ como
-                â€œqualquer coisa serveâ€.</p>
-<p>â€œCaos parece realâ€ e uma verdade sobre a <em>textura</em> do movimento â€” nao
+<p>Camada opcional ê¢â¬â um contrapeso importante para nao ler ê¢â¬Åcaosê¢â¬Â como
+                ê¢â¬Åqualquer coisa serveê¢â¬Â.</p>
+<p>ê¢â¬ÅCaos parece realê¢â¬Â e uma verdade sobre a <em>textura</em> do movimento ê¢â¬â nao
                 sobre a estrutura da cena. A fumaca pode subir de forma imprevisivel; a <strong>composicao</strong>
                 que a contem, nao. Geografia espacial, ponto focal e luz continuam rigorosamente controlados. O
-                erro de leitura seria gerar uma cena bagunÃ§ada e chamar de â€œrealistaâ€. O alvo e o
+                erro de leitura seria gerar uma cena bagunêÂ§ada e chamar de ê¢â¬Årealistaê¢â¬Â. O alvo e o
                 oposto: um quadro impecavelmente organizado, dentro do qual os <em>materiais</em> se comportam com
-                a irregularidade da fisica. Ordem na arquitetura, caos na materia â€” e dai vem a credibilidade.</p>
+                a irregularidade da fisica. Ordem na arquitetura, caos na materia ê¢â¬â e dai vem a credibilidade.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="5-1" data-ARCKHÉ-topic="modulo-5-1#topico-3" data-ARCKHÉ-track="5" id="topico-3">
+<section data-ARCKHê-module="5-1" data-ARCKHê-topic="modulo-5-1#topico-3" data-ARCKHê-track="5" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 4</span><span>Â·</span><span>Decisao</span>
+<span class="where">Secao 3 de 4</span><span>êÂ·</span><span>Decisao</span>
 </div>
 <h2 class="head"><span class="num">3.</span>VFX e decisao, nao botao</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-1-t3-p1">Aqui esta a virada de mentalidade que da nome a esta
+<p class="lede" data-ARCKHê-block="m5-1-t3-p1">Aqui esta a virada de mentalidade que da nome a esta
               trilha. Para o amador, efeito e um <em>botao</em>: tem explosao disponivel, entao usa; tem slow-mo,
-              entao aplica; tem fumaca, entao joga. Para o diretor, todo efeito e uma <em>decisao</em> â€” e
+              entao aplica; tem fumaca, entao joga. Para o diretor, todo efeito e uma <em>decisao</em> ê¢â¬â e
               decisao tem custo. Cada efeito que entra disputa a atencao do espectador com tudo o mais no quadro.
               Se ele nao esta conduzindo o olho para o que importa, ele esta <strong>roubando</strong> atencao do
-              que importa. Por isso o â€œCGI demaisâ€ cansa: nao e excesso de qualidade, e ausencia de
+              que importa. Por isso o ê¢â¬ÅCGI demaisê¢â¬Â cansa: nao e excesso de qualidade, e ausencia de
               hierarquia.</p>
-<p data-ARCKHÉ-block="m5-1-t3-p2">A pergunta que transforma efeito em direcao e simples e voce deveria
-              fazer a cada um: <em>o que este efeito faz pelo espectador?</em> Se a resposta e â€œmostra que eu
-              sei fazer efeitoâ€, corte. Se a resposta e â€œcria a sensacao de perigoâ€, â€œdÃ¡
-              escala ao espacoâ€, â€œmarca o instante decisivoâ€, mantenha â€” porque agora o
+<p data-ARCKHê-block="m5-1-t3-p2">A pergunta que transforma efeito em direcao e simples e voce deveria
+              fazer a cada um: <em>o que este efeito faz pelo espectador?</em> Se a resposta e ê¢â¬Åmostra que eu
+              sei fazer efeitoê¢â¬Â, corte. Se a resposta e ê¢â¬Åcria a sensacao de perigoê¢â¬Â, ê¢â¬ÅdêÂ¡
+              escala ao espacoê¢â¬Â, ê¢â¬Åmarca o instante decisivoê¢â¬Â, mantenha ê¢â¬â porque agora o
               efeito serve a percepcao.<span class="sidenote-ref">3</span> Esse e o fio que liga esta aula a todas
-              as outras da trilha: a camera lenta serve quando diz â€œisto importaâ€; a particula serve
+              as outras da trilha: a camera lenta serve quando diz ê¢â¬Åisto importaê¢â¬Â; a particula serve
               quando devolve atmosfera; a acao serve quando cria clareza no caos.</p>
 <h3 class="sub">O fluxo que coloca emocao por ultimo</h3>
-<p data-ARCKHÉ-block="m5-1-t3-p3">A aula resume o realismo cARCKHÉtografico como uma ordem fixa:
-              <strong>luz â†’ textura â†’ movimento â†’ atmosfera â†’ emocao.</strong> Repare que
-              emocao vem por ultimo â€” nao porque seja menos importante, mas porque ela e o <em>resultado</em>
-              das quatro camadas anteriores bem resolvidas. O iniciante tenta gerar emocao direto (â€œcena
-              epica e emocionanteâ€) e recebe nada. O diretor constroi luz, depois textura, depois movimento,
-              depois atmosfera â€” e a emocao emerge. O efeito mora no meio dessa cadeia, na camada de
+<p data-ARCKHê-block="m5-1-t3-p3">A aula resume o realismo cARCKHêtografico como uma ordem fixa:
+              <strong>luz ê¢â â textura ê¢â â movimento ê¢â â atmosfera ê¢â â emocao.</strong> Repare que
+              emocao vem por ultimo ê¢â¬â nao porque seja menos importante, mas porque ela e o <em>resultado</em>
+              das quatro camadas anteriores bem resolvidas. O iniciante tenta gerar emocao direto (ê¢â¬Åcena
+              epica e emocionanteê¢â¬Â) e recebe nada. O diretor constroi luz, depois textura, depois movimento,
+              depois atmosfera ê¢â¬â e a emocao emerge. O efeito mora no meio dessa cadeia, na camada de
               movimento e atmosfera; ele nunca e o ponto de partida nem o ponto de chegada.</p>
 </div>
 <!-- figura 3: a cadeia luz->emocao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· A cadeia do realismo â€” <b>emocao</b> e resultado, nao ponto de partida</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· A cadeia do realismo ê¢â¬â <b>emocao</b> e resultado, nao ponto de partida</figcaption>
 <svg aria-label="Cadeia de cinco elos em fila: luz, textura, movimento, atmosfera e emocao. O efeito entra nos elos do meio; a emocao e a saida do conjunto." class="diagram" role="img" viewbox="0 0 720 170">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="92" y2="92"></line>
 <g class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle">
@@ -434,76 +434,76 @@
 </g>
 </g>
 <g class="mark-fill">
-<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="160" y="60">â†’</text>
-<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="288" y="60">â†’</text>
-<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="416" y="60">â†’</text>
-<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="544" y="60">â†’</text>
+<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="160" y="60">ê¢â â</text>
+<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="288" y="60">ê¢â â</text>
+<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="416" y="60">ê¢â â</text>
+<text font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" x="544" y="60">ê¢â â</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="416" y="142">o efeito vive aqui â€” no movimento e na atmosfera, nunca como ponto de partida</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="416" y="142">o efeito vive aqui ê¢â¬â no movimento e na atmosfera, nunca como ponto de partida</text>
 <path class="mark-stroke" d="M352 118 L352 132 M480 118 L480 132" stroke-width="1.2"></path>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Voce gerou uma cena de sobrevivencia: ruina, neblina, fumaca, faisca, chuva, raio, debris voando
-              â€” tudo ao mesmo tempo. Tecnicamente impecavel, e mesmo assim o espectador nao sente nada.
+              ê¢â¬â tudo ao mesmo tempo. Tecnicamente impecavel, e mesmo assim o espectador nao sente nada.
               Olhando para a ideia de efeito-como-decisao: o que provavelmente deu errado?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">Todo efeito virou botao apertado de uma vez. Sem <strong>hierarquia</strong>, cada
-                elemento rouba atencao do outro e nenhum conduz o olho â€” e a sobrecarga de CGI. Falta a
-                pergunta â€œo que <em>este</em> efeito faz pelo espectador?â€. Uma cena forte costuma ter
+                elemento rouba atencao do outro e nenhum conduz o olho ê¢â¬â e a sobrecarga de CGI. Falta a
+                pergunta ê¢â¬Åo que <em>este</em> efeito faz pelo espectador?ê¢â¬Â. Uma cena forte costuma ter
                 um efeito dominante a servico de um foco; o resto e apoio discreto. Escala sem clareza e barulho.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="5-1" data-ARCKHÉ-topic="modulo-5-1#topico-4" data-ARCKHÉ-track="5" id="topico-4">
+<section data-ARCKHê-module="5-1" data-ARCKHê-topic="modulo-5-1#topico-4" data-ARCKHê-track="5" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 4</span><span>Â·</span><span>Prompt</span>
+<span class="where">Secao 4 de 4</span><span>êÂ·</span><span>Prompt</span>
 </div>
 <h2 class="head"><span class="num">4.</span>O prompt em blocos e seus limites</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-1-t4-p1">Decidido <em>o que</em> o efeito serve, falta o
+<p class="lede" data-ARCKHê-block="m5-1-t4-p1">Decidido <em>o que</em> o efeito serve, falta o
               <em>como</em> pedir. Em fluxos profissionais de IA, a aula recomenda estruturar o prompt em blocos
-              logicos â€” estilo <span class="dfn"><details class="dfn"><summary>YAML</summary><span class="body"><b>YAML</b> e um formato de texto que organiza informacao em pares <i>rotulo: valor</i>, em linhas separadas. Aqui ele nao precisa ser YAML valido de verdade: o que importa e a <i>disciplina</i> de separar cada decisao (sujeito, luz, fisica, camera) em seu proprio campo, em vez de despejar tudo numa frase.</span></details></span> â€”
-              em vez de uma frase unica, longa e bagunÃ§ada. A razao e de controle: quando cada decisao mora em seu
+              logicos ê¢â¬â estilo <span class="dfn"><details class="dfn"><summary>YAML</summary><span class="body"><b>YAML</b> e um formato de texto que organiza informacao em pares <i>rotulo: valor</i>, em linhas separadas. Aqui ele nao precisa ser YAML valido de verdade: o que importa e a <i>disciplina</i> de separar cada decisao (sujeito, luz, fisica, camera) em seu proprio campo, em vez de despejar tudo numa frase.</span></details></span> ê¢â¬â
+              em vez de uma frase unica, longa e bagunêÂ§ada. A razao e de controle: quando cada decisao mora em seu
               proprio campo (sujeito, luz, fisica do movimento, caminho de camera), voce consegue mudar uma sem
               quebrar as outras, e o gerador interpreta cada instrucao com mais precisao.</p>
-<p data-ARCKHÉ-block="m5-1-t4-p2">Quatro regras governam esses campos. <strong>Funcao unica:</strong>
+<p data-ARCKHê-block="m5-1-t4-p2">Quatro regras governam esses campos. <strong>Funcao unica:</strong>
               uma tarefa especifica por campo. <strong>Foco fisico:</strong> descreva o movimento pela lente da
               fisica, nada de adjetivos vagos. <strong>Defina a luz:</strong> nunca deixe a fonte de luz ao acaso.
               <strong>Camera controlada:</strong> mantenha o caminho da camera logico e ancorado. O prompt abaixo
-              aplica as quatro â€” e ja incorpora o â€œcaos organicoâ€ da Secao 2.</p>
-<div class="codeblock"><span class="c"># VFX realista â€” prompt em blocos (estilo YAML) para um plano de 5s</span>
+              aplica as quatro ê¢â¬â e ja incorpora o ê¢â¬Åcaos organicoê¢â¬Â da Secao 2.</p>
+<div class="codeblock"><span class="c"># VFX realista ê¢â¬â prompt em blocos (estilo YAML) para um plano de 5s</span>
 <span class="c"># funciona em Seedance / Kling / Runway / Luma; um campo, uma decisao</span>
 <span class="k">subject:</span> a survivor crossing a flooded, ruined street in a dead city.
-<span class="k">lighting:</span> hard low sun from camera-left, warm key, deep cold shadows â€” never neutral.
+<span class="k">lighting:</span> hard low sun from camera-left, warm key, deep cold shadows ê¢â¬â never neutral.
 <span class="k">physics_motion:</span> chaotic flames on a wreck, organic sparks, irregular smoke rising; water splashes unevenly underfoot.
 <span class="k">atmosphere:</span> drifting haze, floating ash, heat distortion above the fire.
 <span class="k">texture:</span> soaked fabric clinging, wet asphalt reflecting the key, chipped concrete.
-<span class="k">camera:</span> slow grounded dolly-in, steady eye-level, single intentional move â€” no orbit stacking.
-<span class="k">style:</span> cARCKHÉtic, high contrast, photoreal, no plastic CGI sheen.</div>
+<span class="k">camera:</span> slow grounded dolly-in, steady eye-level, single intentional move ê¢â¬â no orbit stacking.
+<span class="k">style:</span> cARCKHêtic, high contrast, photoreal, no plastic CGI sheen.</div>
 <h3 class="sub">Onde a IA ainda quebra</h3>
-<p data-ARCKHÉ-block="m5-1-t4-p3">Nenhum prompt e garantia, porque a IA <em>aproxima</em> a realidade
-              â€” ela nao entende fisica de verdade.<span class="sidenote-ref">4</span> Tres falhas sao
+<p data-ARCKHê-block="m5-1-t4-p3">Nenhum prompt e garantia, porque a IA <em>aproxima</em> a realidade
+              ê¢â¬â ela nao entende fisica de verdade.<span class="sidenote-ref">4</span> Tres falhas sao
               recorrentes e voce precisa reconhece-las de olho. A <strong>deriva de movimento</strong>: objetos
-              que â€œflutuamâ€ ou perdem a trajetoria, como se a gravidade desligasse. A <strong>quebra de
+              que ê¢â¬Åflutuamê¢â¬Â ou perdem a trajetoria, como se a gravidade desligasse. A <strong>quebra de
               tempo</strong>: aceleracao nao natural, falhas, saltos no ritmo do movimento. E a <strong>textura
               artificial</strong>: superficies que ficam lisas e plasticas demais, justamente o oposto do caos que
               voce pediu. Diante de qualquer uma, a resposta nao e frustracao: e <em>iteracao</em>. Refazer,
-              ajustar um campo, gerar de novo â€” iterar e parte normal do processo criativo, nao sinal de
+              ajustar um campo, gerar de novo ê¢â¬â iterar e parte normal do processo criativo, nao sinal de
               erro.</p>
-<p data-ARCKHÉ-block="m5-1-t4-p4">Guarde este modulo como a porta de entrada da trilha: <em>efeito nao
+<p data-ARCKHê-block="m5-1-t4-p4">Guarde este modulo como a porta de entrada da trilha: <em>efeito nao
               e realismo; realismo e peso, luz e caos organico; e todo efeito e uma decisao a servico da
-              percepcao.</em> A tarefa que o instrutor propoe e o melhor teste â€” escolha <strong>uma</strong>
+              percepcao.</em> A tarefa que o instrutor propoe e o melhor teste ê¢â¬â escolha <strong>uma</strong>
               das seis tecnicas e construa uma cena realista de cinco segundos com um prompt em blocos. Uma so,
               feita com criterio, ensina mais do que dez cheias de efeito. As proximas aulas pegam tres desses
-              efeitos â€” tempo, atmosfera e acao â€” e os abrem um a um.</p>
+              efeitos ê¢â¬â tempo, atmosfera e acao ê¢â¬â e os abrem um a um.</p>
 </div>
 <!-- figura 4: as tres falhas da IA -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· Tres falhas a reconhecer â€” e a resposta e <b>iterar</b></figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· Tres falhas a reconhecer ê¢â¬â e a resposta e <b>iterar</b></figcaption>
 <svg aria-label="Tres painneis de falha da IA: deriva de movimento (objeto fora da trajetoria), quebra de tempo (saltos no ritmo) e textura artificial (superficie lisa demais), com a iteracao como resposta comum." class="diagram" role="img" viewbox="0 0 720 180">
 <!-- painel 1: deriva -->
 <rect class="rule-stroke" fill="none" height="96" rx="3" stroke-width="1.2" width="190" x="40" y="34"></rect>
@@ -524,12 +524,12 @@
 <path class="mark-stroke" d="M545 76 C 565 70, 605 70, 625 76" fill="none" opacity="0.7" stroke-width="0.9"></path>
 <text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="585" y="122">lisa demais, sem poros</text>
 <!-- iteracao como resposta -->
-<text class="accent" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="360" y="158">a resposta a qualquer das tres: iterar â€” ajustar um campo e gerar de novo</text>
+<text class="accent" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="360" y="158">a resposta a qualquer das tres: iterar ê¢â¬â ajustar um campo e gerar de novo</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m5-1-t4-p5">Antes de virar a pagina, fixe a pergunta que voce vai carregar pelo
-              resto da trilha â€” e que e a propria definicao de dirigir um efeito em vez de aplica-lo:
+<p data-ARCKHê-block="m5-1-t4-p5">Antes de virar a pagina, fixe a pergunta que voce vai carregar pelo
+              resto da trilha ê¢â¬â e que e a propria definicao de dirigir um efeito em vez de aplica-lo:
               <em>o que este efeito faz pelo espectador?</em> Se voce nao tem resposta, o efeito ainda e um botao.
               A proxima aula coloca essa pergunta a prova no efeito mais sedutor e mais mal usado de todos: a
               camera lenta.</p>
@@ -540,59 +540,59 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Qual e a diferenca entre â€œefeitoâ€ e â€œrealismoâ€ â€” e qual deles a IA nao entrega sozinha?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Qual e a diferenca entre ê¢â¬Åefeitoê¢â¬Â e ê¢â¬Årealismoê¢â¬Â ê¢â¬â e qual deles a IA nao entrega sozinha?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Efeito e a coisa que aparece na tela (a explosao, a onda); realismo e a sensacao de
               peso, materia e consequencia fisica. A IA gera efeito com facilidade, mas <em>realismo</em> e o que
-              falta â€” e sem ele o efeito vira â€œCGI demaisâ€ e denuncia a cena como falsa.</p></div>
+              falta ê¢â¬â e sem ele o efeito vira ê¢â¬ÅCGI demaisê¢â¬Â e denuncia a cena como falsa.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Por que pedir â€œchamas perfeitasâ€ ao gerador costuma piorar o resultado?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">02</span><span>Por que pedir ê¢â¬Åchamas perfeitasê¢â¬Â ao gerador costuma piorar o resultado?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque movimento perfeito parece falso. O cerebro le <em>previsibilidade</em> como
-              artificial. O real e caotico â€” faisca irregular, fumaca desigual, respingo torto. O caminho e
+              artificial. O real e caotico ê¢â¬â faisca irregular, fumaca desigual, respingo torto. O caminho e
               pedir o caos organico de proposito: descreva o movimento pela lente da fisica, nao por adjetivos de
               perfeicao.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Qual e a unica pergunta que transforma um efeito em decisao de direcao?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>O que este efeito faz pelo espectador?</em> Se a resposta e â€œmostra que
-              sei fazer efeitoâ€, corte. Se e â€œcria perigoâ€, â€œda escalaâ€, â€œmarca
-              o instante decisivoâ€, mantenha â€” agora o efeito serve a percepcao, em vez de roubar
+<div class="ans"><p><em>O que este efeito faz pelo espectador?</em> Se a resposta e ê¢â¬Åmostra que
+              sei fazer efeitoê¢â¬Â, corte. Se e ê¢â¬Åcria perigoê¢â¬Â, ê¢â¬Åda escalaê¢â¬Â, ê¢â¬Åmarca
+              o instante decisivoê¢â¬Â, mantenha ê¢â¬â agora o efeito serve a percepcao, em vez de roubar
               atencao.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>A IA devolveu um objeto que â€œflutuaâ€ e perde a trajetoria. Que falha e essa, e qual a resposta?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>E a <em>deriva de movimento</em> â€” a IA aproxima a fisica, nao a entende, e
+<summary><span class="qn">04</span><span>A IA devolveu um objeto que ê¢â¬Åflutuaê¢â¬Â e perde a trajetoria. Que falha e essa, e qual a resposta?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>E a <em>deriva de movimento</em> ê¢â¬â a IA aproxima a fisica, nao a entende, e
               o objeto perde a rota. A resposta nao e frustracao: e <strong>iteracao</strong>. Ajuste o campo de
               fisica/camera no prompt em blocos e gere de novo. Iterar e parte normal do processo, nao sinal de
               fracasso.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
+<section aria-label="Minha jornada ê¢â¬â progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Minha jornada</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir caderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:5-1">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="modulo:5-1">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 5</div>
-<div class="v" data-ARCKHÉ-meter="trilha:5">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:5">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -601,41 +601,41 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 5.2 â€” Camera Lenta</div>
+<div class="t">Modulo 5.2 ê¢â¬â Camera Lenta</div>
 </div>
-<a class="go" href="modulo-5-2.html">Proximo â†’</a>
+<a class="go" href="modulo-5-2.html">Proximo ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-1#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-5-1#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Realismo fisico.</b> A sensacao de que o que esta na tela tem peso, materia e consequencia. Nasce de
-          luz correta, textura e movimento que obedece a fisica â€” nao da quantidade de efeito.
+          luz correta, textura e movimento que obedece a fisica ê¢â¬â nao da quantidade de efeito.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           As seis tecnicas (LED, fogo, cabos, chuva, miniatura, hibrido) brilham nos mundos distopicos: ruina,
-          desastre, sobrevivencia. Mas a licao â€” peso e caos â€” vale para qualquer genero.
+          desastre, sobrevivencia. Mas a licao ê¢â¬â peso e caos ê¢â¬â vale para qualquer genero.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Modulo 4 do programa <i>AI Filmmaking</i> â€” â€œVisual Effectsâ€. Seis tecnicas de realismo
+          Modulo 4 do programa <i>AI Filmmaking</i> ê¢â¬â ê¢â¬ÅVisual Effectsê¢â¬Â. Seis tecnicas de realismo
           fisico e por que <i>movimento perfeito parece falso, caos parece real</i>.
-          <div class="src-line">Bloco 5 Â· VFX &amp; Action</div>
+          <div class="src-line">Bloco 5 êÂ· VFX &amp; Action</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-1#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-5-1#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Sobrecarga de CGI.</b> O brilho plastico e a perfeicao limpa demais que fazem o cerebro gritar
-          â€œfalsoâ€. Quase sempre vem de efeito sem fisica e sem hierarquia â€” nao de pouca
+          ê¢â¬Åfalsoê¢â¬Â. Quase sempre vem de efeito sem fisica e sem hierarquia ê¢â¬â nao de pouca
           qualidade.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-1#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-5-1#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Efeito como decisao.</b> Tratar cada efeito como uma escolha com custo de atencao. Se ele nao conduz o
@@ -644,11 +644,11 @@
 </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          A ordem do realismo â€” luz, textura, movimento, atmosfera, emocao â€” coloca a emocao por
+          A ordem do realismo ê¢â¬â luz, textura, movimento, atmosfera, emocao ê¢â¬â coloca a emocao por
           ultimo de proposito: ela e o <i>resultado</i> das camadas anteriores, nunca o ponto de partida.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-1#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-5-1#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Prompt em blocos.</b> Separar cada decisao (sujeito, luz, fisica, camera) em seu proprio campo, estilo
@@ -657,15 +657,15 @@
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
           A IA <i>aproxima</i> a fisica, nao a entende: deriva de movimento, quebra de tempo e textura plastica sao
-          falhas esperadas. A resposta e iterar â€” ajustar um campo e gerar de novo.
+          falhas esperadas. A resposta e iterar ê¢â¬â ajustar um campo e gerar de novo.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Caderno do aluno</span>
-<span class="pg">Modulo 5.1 â€” folio i</span>
+<span>ARCKHê AI êÂ· Caderno do aluno</span>
+<span class="pg">Modulo 5.1 ê¢â¬â folio i</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -674,8 +674,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

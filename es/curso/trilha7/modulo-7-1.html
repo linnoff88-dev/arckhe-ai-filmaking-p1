@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>MÃ³dulo 7.1 â€” Narrativa visual | AI Filmmaking</title>
+<title>MêÂ³dulo 7.1 ê¢â¬â Narrativa visual | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,51 +135,51 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:7-1"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span></span> leÃ­das</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:7-1"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 4</span></span> leêÂ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â mêÂ¡xima legibilidad" type="button">Aaê¢â Â¹</button>
 </div>
-<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaêÂ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lêÂ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
+<nav aria-label="DêÂ³nde estêÂ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
-<span>Ruta <b>7</b> Historia y estructura cARCKHÉtogrÃ¡fica</span>
-<span class="sep">Â·</span>
-<span>MÃ³dulo <b>7.1</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 4</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span>Ruta <b>7</b> Historia y estructura cARCKHêtogrêÂ¡fica</span>
+<span class="sep">êÂ·</span>
+<span>MêÂ³dulo <b>7.1</b> / 4</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">SecciêÂ³n 1 de 4</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,83 +189,83 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">MÃ³dulo 7.1 Â· Ruta 7 Â· Historia y estructura cARCKHÉtogrÃ¡fica</p>
+<p class="kicker">MêÂ³dulo 7.1 êÂ· Ruta 7 êÂ· Historia y estructura cARCKHêtogrêÂ¡fica</p>
 <h1 class="module">Narrativa <em>Visual</em></h1>
 <p class="deck">La mayor distancia entre el video de IA impresionante y la historia que la gente recuerda
-          no estÃ¡ en la belleza del plano: estÃ¡ en el cambio emocional. Una escena que no cambia nada por dentro puede ser
-          deslumbrante â€” y aun asÃ­ ser olvidable.</p>
+          no estêÂ¡ en la belleza del plano: estêÂ¡ en el cambio emocional. Una escena que no cambia nada por dentro puede ser
+          deslumbrante ê¢â¬â y aun asêÂ­ ser olvidable.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~15 min Â· mÃ³dulo completo</span>
+<span>~15 min êÂ· mêÂ³dulo completo</span>
 <span>4 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Por quÃ© <b>historia visual y cambio emocional</b> â€” y por quÃ© una escena bonita que no cambia nada se siente vacÃ­a.</li>
-<li>O <b>prueba del silencio</b>: una buena historia visual aÃºn debe tener sentido sin ningÃºn diÃ¡logo.</li>
-<li>O <b>arco de cinco escenas</b> que cabe en un clip corto: planteamiento, conflicto, escalada, emociÃ³n, resoluciÃ³n â€”y por quÃ© existe cada uno.</li>
-<li>Las <b>reglas prÃ¡cticas</b> del instructor: la claridad crea emociÃ³n, una acciÃ³n fuerte por escena, acerca la cÃ¡mara para transmitir emociÃ³n y escribe prompts sobre la intenciÃ³n, no sobre la estÃ©tica.</li>
+<li>Por quêÂ© <b>historia visual y cambio emocional</b> ê¢â¬â y por quêÂ© una escena bonita que no cambia nada se siente vacêÂ­a.</li>
+<li>O <b>prueba del silencio</b>: una buena historia visual aêÂºn debe tener sentido sin ningêÂºn diêÂ¡logo.</li>
+<li>O <b>arco de cinco escenas</b> que cabe en un clip corto: planteamiento, conflicto, escalada, emociêÂ³n, resoluciêÂ³n ê¢â¬ây por quêÂ© existe cada uno.</li>
+<li>Las <b>reglas prêÂ¡cticas</b> del instructor: la claridad crea emociêÂ³n, una acciêÂ³n fuerte por escena, acerca la cêÂ¡mara para transmitir emociêÂ³n y escribe prompts sobre la intenciêÂ³n, no sobre la estêÂ©tica.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
+<nav aria-label="Resumen del mêÂ³dulo" class="toc" data-ARCKHê-toc="">
 <p class="toc-head">Resumen: cuatro movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Contar con la imagen: cambio, no belleza</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">QuÃ© dice la forma cuando nadie habla</span></a><span class="leader"></span></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">QuêÂ© dice la forma cuando nadie habla</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">El arco en cinco escenas</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Reglas para quien dirige la IA</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="7-1" data-ARCKHÉ-topic="modulo-7-1#topico-1" data-ARCKHÉ-track="7" id="topico-1">
+<section data-ARCKHê-module="7-1" data-ARCKHê-topic="modulo-7-1#topico-1" data-ARCKHê-track="7" id="topico-1">
 <div class="section-mark">
-<span class="where">SecciÃ³n 1 de 4</span><span>Â·</span><span>La tesis</span>
+<span class="where">SecciêÂ³n 1 de 4</span><span>êÂ·</span><span>La tesis</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Contar con la imagen: cambio, no belleza</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m7-1-t1-p1">Muchos videos de IA impresionan en los primeros
-              segundos y, poco despuÃ©s, desaparecen de la memoria.<span class="sidenote-ref">1</span> El espectador
-              ve luz dramÃ¡tica, movimiento cARCKHÉtogrÃ¡fico y cuadros hermosos, y aun asÃ­, emocionalmente,
-              la historia se siente vacÃ­a. La razÃ³n es simple y contundente: nada significativo <em>sucediÃ³</em>. La imagen
-              mostrÃ³ algo, pero nada cambiÃ³. Y esa es la tesis que abre la ruta final: <strong>historia visual y
-              cambio emocional</strong>. Si nada cambia por dentro, la escena se siente dÃ©bil, por muy bien producida
-              que estÃ©.</p>
-<p data-ARCKHÉ-block="m7-1-t1-p2">FÃ­jate en la diferencia, porque es el eje de todo lo que viene despuÃ©s.
+<p class="lede dropcap" data-ARCKHê-block="m7-1-t1-p1">Muchos videos de IA impresionan en los primeros
+              segundos y, poco despuêÂ©s, desaparecen de la memoria.<span class="sidenote-ref">1</span> El espectador
+              ve luz dramêÂ¡tica, movimiento cARCKHêtogrêÂ¡fico y cuadros hermosos, y aun asêÂ­, emocionalmente,
+              la historia se siente vacêÂ­a. La razêÂ³n es simple y contundente: nada significativo <em>sucediêÂ³</em>. La imagen
+              mostrêÂ³ algo, pero nada cambiêÂ³. Y esa es la tesis que abre la ruta final: <strong>historia visual y
+              cambio emocional</strong>. Si nada cambia por dentro, la escena se siente dêÂ©bil, por muy bien producida
+              que estêÂ©.</p>
+<p data-ARCKHê-block="m7-1-t1-p2">FêÂ­jate en la diferencia, porque es el eje de todo lo que viene despuêÂ©s.
               <em>Una imagen bonita muestra algo. Una historia cambia algo.</em> Un plano de un desierto al atardecer puede
-              ser hermoso â€” pero, si es solo eso, es una postal. Se convierte en historia en el instante en que ese mismo
-              desierto empieza a significar peligro, alivio o pÃ©rdida. El pÃºblico no recuerda el plano: recuerda la
-              <em>transiciÃ³n</em> de un estado emocional a otro. La belleza capta la atenciÃ³n; el cambio la mantiene.</p>
-<h3 class="sub">El error mÃ¡s comÃºn del cine con IA</h3>
-<p data-ARCKHÉ-block="m7-1-t1-p3">El error recurrente es tratar Â«cARCKHÉtogrÃ¡ficoÂ» como
-              sinÃ³nimo de Â«bonitoÂ». De ahÃ­ nace el video que parece un <span class="dfn"><details class="dfn"><summary>trÃ¡iler de nada</summary><span class="body"><b>TrÃ¡iler de nada</b> â€” una sucesiÃ³n de planos espectaculares sin una narrativa detrÃ¡s: cada imagen promete una pelÃ­cula, pero ninguna historia se concreta. Impresiona durante unos segundos y no deja huella.</span></details></span>:
-              una colecciÃ³n de imÃ¡genes espectaculares sin ninguna pregunta que responder, sin ninguna situaciÃ³n
+              ser hermoso ê¢â¬â pero, si es solo eso, es una postal. Se convierte en historia en el instante en que ese mismo
+              desierto empieza a significar peligro, alivio o pêÂ©rdida. El pêÂºblico no recuerda el plano: recuerda la
+              <em>transiciêÂ³n</em> de un estado emocional a otro. La belleza capta la atenciêÂ³n; el cambio la mantiene.</p>
+<h3 class="sub">El error mêÂ¡s comêÂºn del cine con IA</h3>
+<p data-ARCKHê-block="m7-1-t1-p3">El error recurrente es tratar êÂ«cARCKHêtogrêÂ¡ficoêÂ» como
+              sinêÂ³nimo de êÂ«bonitoêÂ». De ahêÂ­ nace el video que parece un <span class="dfn"><details class="dfn"><summary>trêÂ¡iler de nada</summary><span class="body"><b>TrêÂ¡iler de nada</b> ê¢â¬â una sucesiêÂ³n de planos espectaculares sin una narrativa detrêÂ¡s: cada imagen promete una pelêÂ­cula, pero ninguna historia se concreta. Impresiona durante unos segundos y no deja huella.</span></details></span>:
+              una colecciêÂ³n de imêÂ¡genes espectaculares sin ninguna pregunta que responder, sin ninguna situaciêÂ³n
               que avance. La regla que organiza el resto de la ruta cabe en una frase del instructor: antes de generar
-              cualquier escena, pregÃºntate <em>Â¿quÃ© cambiÃ³ emocionalmente?</em> Si la respuesta es clara, la historia
-              casi siempre se vuelve mÃ¡s fuerte. Si no hay respuesta, tienes un plano, no una escena.</p>
+              cualquier escena, pregêÂºntate <em>êÂ¿quêÂ© cambiêÂ³ emocionalmente?</em> Si la respuesta es clara, la historia
+              casi siempre se vuelve mêÂ¡s fuerte. Si no hay respuesta, tienes un plano, no una escena.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Detente y predice</p>
 <p>Dos clips de cinco segundos muestran la misma carretera en el desierto. En el primero, un auto atraviesa
-              el paisaje dorado y no pasa nada mÃ¡s. En el segundo, el auto cruza y, al fondo, una
-              tormenta de polvo avanza demasiado rÃ¡pido. Â¿CuÃ¡l de ellos es <em>historia</em>, Â¿y por quÃ©?</p>
+              el paisaje dorado y no pasa nada mêÂ¡s. En el segundo, el auto cruza y, al fondo, una
+              tormenta de polvo avanza demasiado rêÂ¡pido. êÂ¿CuêÂ¡l de ellos es <em>historia</em>, êÂ¿y por quêÂ©?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Lo segundo. El primero es bonito, pero estÃ¡tico: el estado emocional al final es igual
-                al del inicio â€” calma. El segundo <strong>cambia algo</strong>: la calma se convierte en incertidumbre en
-                el momento en que aparece la tormenta. El pÃºblico empieza a preguntarse Â«Â¿quÃ© viene ahora?Â», y
-                es esa pregunta â€”esa transiciÃ³n de la calma a la tensiÃ³nâ€” la que transforma el plano en
+<p class="answer">Lo segundo. El primero es bonito, pero estêÂ¡tico: el estado emocional al final es igual
+                al del inicio ê¢â¬â calma. El segundo <strong>cambia algo</strong>: la calma se convierte en incertidumbre en
+                el momento en que aparece la tormenta. El pêÂºblico empieza a preguntarse êÂ«êÂ¿quêÂ© viene ahora?êÂ», y
+                es esa pregunta ê¢â¬âesa transiciêÂ³n de la calma a la tensiêÂ³nê¢â¬â la que transforma el plano en
                 narrativa.</p>
 </details>
 </div>
 <!-- figura 1: mostrar vs mudar -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· <b>Mostrar</b> mantiene el estado; <b>contar</b> desplaza el estado</figcaption>
-<svg aria-label="Diagrama que compara dos lÃ­neas de tiempo: en la de arriba, el estado emocional permanece plano de principio a fin (mostrar); en la de abajo, el estado parte de la calma y se desplaza hacia la tensiÃ³n en un punto de inflexiÃ³n (contar)." class="diagram" role="img" viewbox="0 0 720 210">
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· <b>Mostrar</b> mantiene el estado; <b>contar</b> desplaza el estado</figcaption>
+<svg aria-label="Diagrama que compara dos lêÂ­neas de tiempo: en la de arriba, el estado emocional permanece plano de principio a fin (mostrar); en la de abajo, el estado parte de la calma y se desplaza hacia la tensiêÂ³n en un punto de inflexiêÂ³n (contar)." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-7-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
@@ -276,7 +276,7 @@
 <line class="rule-stroke" stroke-width="1.6" x1="40" x2="680" y1="60" y2="60"></line>
 <circle class="rule-stroke" cx="40" cy="60" r="3.5"></circle>
 <circle class="rule-stroke" cx="680" cy="60" r="3.5"></circle>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="50">el mismo estado emocional de principio a fin â€” bonito, olvidable</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="360" y="50">el mismo estado emocional de principio a fin ê¢â¬â bonito, olvidable</text>
 <!-- divisor -->
 <line class="rule-stroke" opacity="0.5" stroke-dasharray="2 5" stroke-width="0.8" x1="40" x2="680" y1="92" y2="92"></line>
 <!-- faixa de baixo: contar (desloca) -->
@@ -288,49 +288,49 @@
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="350" y="186">GIRO</text>
 <rect class="accent-stroke" fill="url(#hatch-7-1)" height="22" rx="3" stroke-width="1" width="150" x="120" y="172"></rect>
 <text class="ink" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="195" y="187">calma</text>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="560" y="100">tensiÃ³n</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="560" y="100">tensiêÂ³n</text>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Profundizando: por quÃ© Â«mÃ¡s dramaÂ» no arregla una escena vacÃ­a
+<summary><span class="chev">ê¢âÂ¸</span> Profundizando: por quêÂ© êÂ«mêÂ¡s dramaêÂ» no arregla una escena vacêÂ­a
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>El camino recomendado de arriba ya basta. Esta capa explica un error comÃºn y puedes saltÃ¡rtela.</p>
-<p>Cuando un clip se siente vacÃ­o, el reflejo del principiante es agregar mÃ¡s movimiento de cÃ¡mara, mÃ¡s
-                efectos, mÃ¡s acciÃ³n. Casi nunca funciona, porque el problema no es <em>falta de espectÃ¡culo</em>, e
-                <em>falta de cambio</em>. Acumular drama en una escena que no produce ningÃºn cambio solo la vuelve
-                ruidosa: el estado emocional sigue igual desde el principio hasta el final, solo que mÃ¡s agitado. La
-                correcciÃ³n adecuada casi siempre es la opuesta: <strong>simplificar</strong>, definir un Ãºnico punto de inflexiÃ³n y dejar que la escena pase de un estado a otro con claridad. La claridad mejora la narrativa mÃ¡s rÃ¡pido que la complejidad.</p>
+<p>El camino recomendado de arriba ya basta. Esta capa explica un error comêÂºn y puedes saltêÂ¡rtela.</p>
+<p>Cuando un clip se siente vacêÂ­o, el reflejo del principiante es agregar mêÂ¡s movimiento de cêÂ¡mara, mêÂ¡s
+                efectos, mêÂ¡s acciêÂ³n. Casi nunca funciona, porque el problema no es <em>falta de espectêÂ¡culo</em>, e
+                <em>falta de cambio</em>. Acumular drama en una escena que no produce ningêÂºn cambio solo la vuelve
+                ruidosa: el estado emocional sigue igual desde el principio hasta el final, solo que mêÂ¡s agitado. La
+                correcciêÂ³n adecuada casi siempre es la opuesta: <strong>simplificar</strong>, definir un êÂºnico punto de inflexiêÂ³n y dejar que la escena pase de un estado a otro con claridad. La claridad mejora la narrativa mêÂ¡s rêÂ¡pido que la complejidad.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="7-1" data-ARCKHÉ-topic="modulo-7-1#topico-2" data-ARCKHÉ-track="7" id="topico-2">
+<section data-ARCKHê-module="7-1" data-ARCKHê-topic="modulo-7-1#topico-2" data-ARCKHê-track="7" id="topico-2">
 <div class="section-mark">
-<span class="where">SecciÃ³n 2 de 4</span><span>Â·</span><span>La prueba del silencio</span>
+<span class="where">SecciêÂ³n 2 de 4</span><span>êÂ·</span><span>La prueba del silencio</span>
 </div>
-<h2 class="head"><span class="num">2.</span>QuÃ© dice la forma cuando nadie habla</h2>
+<h2 class="head"><span class="num">2.</span>QuêÂ© dice la forma cuando nadie habla</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-1-t2-p1">Existe una prueba sencilla para saber si una historia
-              visual funciona: <strong>quita el sonido</strong>. Si, sin sonido, el pÃºblico entiende instantÃ¡neamente
-              quiÃ©n es el personaje, quÃ© estÃ¡ pasando, quÃ© cambiÃ³ y quÃ© emociÃ³n deberÃ­a sentir â€” entonces la
-              narrativa visual se sostiene. Si <em>necesita</em> del diÃ¡logo o de la banda sonora para que la escena tenga
-              sentido, la historia estÃ¡ siendo transmitida por el audio, no por la imagen.<span class="sidenote-ref">2</span></p>
-<p data-ARCKHÉ-block="m7-1-t2-p2">Esta prueba es exigente a propÃ³sito. Obliga a que cada decisiÃ³n de
-              <em>forma</em> â€” encuadre, luz, movimiento, gesto del personaje, orden de los planos â€” que transmiten significado por sÃ­ solos. En el cine, la forma no es un adorno: es la voz misma de la escena. Un rostro que se cierra, una luz que se enfrÃ­a, una cÃ¡mara que se aleja en el momento equivocado: todo eso <em>dice</em> algo, incluso en silencio. Cuando la forma estÃ¡ clara, la versiÃ³n muda no pierde nada
+<p class="lede" data-ARCKHê-block="m7-1-t2-p1">Existe una prueba sencilla para saber si una historia
+              visual funciona: <strong>quita el sonido</strong>. Si, sin sonido, el pêÂºblico entiende instantêÂ¡neamente
+              quiêÂ©n es el personaje, quêÂ© estêÂ¡ pasando, quêÂ© cambiêÂ³ y quêÂ© emociêÂ³n deberêÂ­a sentir ê¢â¬â entonces la
+              narrativa visual se sostiene. Si <em>necesita</em> del diêÂ¡logo o de la banda sonora para que la escena tenga
+              sentido, la historia estêÂ¡ siendo transmitida por el audio, no por la imagen.<span class="sidenote-ref">2</span></p>
+<p data-ARCKHê-block="m7-1-t2-p2">Esta prueba es exigente a propêÂ³sito. Obliga a que cada decisiêÂ³n de
+              <em>forma</em> ê¢â¬â encuadre, luz, movimiento, gesto del personaje, orden de los planos ê¢â¬â que transmiten significado por sêÂ­ solos. En el cine, la forma no es un adorno: es la voz misma de la escena. Un rostro que se cierra, una luz que se enfrêÂ­a, una cêÂ¡mara que se aleja en el momento equivocado: todo eso <em>dice</em> algo, incluso en silencio. Cuando la forma estêÂ¡ clara, la versiêÂ³n muda no pierde nada
               esencial.</p>
-<h3 class="sub">La confusiÃ³n mata la emociÃ³n; la claridad crea emociÃ³n</h3>
-<p data-ARCKHÉ-block="m7-1-t2-p3">La mayor amenaza para la prueba sin sonido es la confusiÃ³n. Si el pÃºblico no sabe
-              dÃ³nde mirar, quiÃ©n es el centro o quÃ© estÃ¡ en juego, ninguna emociÃ³n llega â€” el cerebro gasta toda
-              su energÃ­a intentando orientarse. Por eso, la regla que atraviesa la lecciÃ³n: <em>la confusiÃ³n mata la emociÃ³n,
-              la claridad crea la emociÃ³n</em>. Una buena narrativa visual casi siempre es <strong>simples</strong>: el
-              espectador entiende en un instante quiÃ©n, quÃ© cambiÃ³ y por quÃ© importa. La belleza llama la atenciÃ³n,
+<h3 class="sub">La confusiêÂ³n mata la emociêÂ³n; la claridad crea emociêÂ³n</h3>
+<p data-ARCKHê-block="m7-1-t2-p3">La mayor amenaza para la prueba sin sonido es la confusiêÂ³n. Si el pêÂºblico no sabe
+              dêÂ³nde mirar, quiêÂ©n es el centro o quêÂ© estêÂ¡ en juego, ninguna emociêÂ³n llega ê¢â¬â el cerebro gasta toda
+              su energêÂ­a intentando orientarse. Por eso, la regla que atraviesa la lecciêÂ³n: <em>la confusiêÂ³n mata la emociêÂ³n,
+              la claridad crea la emociêÂ³n</em>. Una buena narrativa visual casi siempre es <strong>simples</strong>: el
+              espectador entiende en un instante quiêÂ©n, quêÂ© cambiêÂ³ y por quêÂ© importa. La belleza llama la atenciêÂ³n,
               pero es la claridad emocional la que la sostiene.</p>
 </div>
 <!-- figura 2: o teste do mudo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· O <b>prueba del silencio</b> â€” lo que la forma debe expresar por sÃ­ sola</figcaption>
-<svg aria-label="Diagrama: un cuadro central, con el sonido silenciado, debe responder por sÃ­ solo cuatro preguntas que parten de Ã©l como flechas: quiÃ©n, quÃ© cambia, por quÃ© importa, quÃ© emociÃ³n." class="diagram" role="img" viewbox="0 0 720 218">
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· O <b>prueba del silencio</b> ê¢â¬â lo que la forma debe expresar por sêÂ­ sola</figcaption>
+<svg aria-label="Diagrama: un cuadro central, con el sonido silenciado, debe responder por sêÂ­ solo cuatro preguntas que parten de êÂ©l como flechas: quiêÂ©n, quêÂ© cambia, por quêÂ© importa, quêÂ© emociêÂ³n." class="diagram" role="img" viewbox="0 0 720 218">
 <!-- quadro central mudo -->
 <rect class="wash accent-stroke" height="78" rx="4" stroke-width="1.4" width="140" x="290" y="78"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="112">la escena,</text>
@@ -344,81 +344,81 @@
 <!-- quatro perguntas -->
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="12">
 <line class="rule-stroke" stroke-width="1.1" x1="290" x2="150" y1="96" y2="60"></line>
-<text text-anchor="end" x="145" y="56">Â¿quiÃ©n es el personaje?</text>
+<text text-anchor="end" x="145" y="56">êÂ¿quiêÂ©n es el personaje?</text>
 <line class="rule-stroke" stroke-width="1.1" x1="290" x2="150" y1="138" y2="170"></line>
-<text text-anchor="end" x="145" y="174">Â¿quÃ© cambiÃ³?</text>
+<text text-anchor="end" x="145" y="174">êÂ¿quêÂ© cambiêÂ³?</text>
 <line class="rule-stroke" stroke-width="1.1" x1="430" x2="570" y1="96" y2="60"></line>
-<text x="575" y="56">por quÃ© importa esto?</text>
+<text x="575" y="56">por quêÂ© importa esto?</text>
 <line class="accent-stroke" stroke-width="1.3" x1="430" x2="570" y1="138" y2="170"></line>
-<text class="accent" x="575" y="174">Â¿quÃ© emociÃ³n sentir?</text>
+<text class="accent" x="575" y="174">êÂ¿quêÂ© emociêÂ³n sentir?</text>
 </g>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="200">SI RESPONDE A LAS CUATRO: LA NARRATIVA VISUAL FUNCIONA</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m7-1-t2-p4">Conviene guardar la prueba sin sonido como hÃ¡bito de revisiÃ³n, no solo como
-              una idea bonita. DespuÃ©s de generar una escena, mÃ­rala sin audio. Si dudas en cualquiera de las cuatro
-              preguntas, la soluciÃ³n rara vez estÃ¡ en el sonido que falta: estÃ¡ en la forma. QuizÃ¡ el punto focal
-              no estÃ© claro, quizÃ¡ el cambio emocional no haya sido <em>escenificada</em> en la acciÃ³n, quizÃ¡ haya
+<p data-ARCKHê-block="m7-1-t2-p4">Conviene guardar la prueba sin sonido como hêÂ¡bito de revisiêÂ³n, no solo como
+              una idea bonita. DespuêÂ©s de generar una escena, mêÂ­rala sin audio. Si dudas en cualquiera de las cuatro
+              preguntas, la soluciêÂ³n rara vez estêÂ¡ en el sonido que falta: estêÂ¡ en la forma. QuizêÂ¡ el punto focal
+              no estêÂ© claro, quizêÂ¡ el cambio emocional no haya sido <em>escenificada</em> en la acciêÂ³n, quizêÂ¡ haya
               demasiados elementos compitiendo. Cambia la forma hasta que el silencio baste.</p>
 </div>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="7-1" data-ARCKHÉ-topic="modulo-7-1#topico-3" data-ARCKHÉ-track="7" id="topico-3">
+<section data-ARCKHê-module="7-1" data-ARCKHê-topic="modulo-7-1#topico-3" data-ARCKHê-track="7" id="topico-3">
 <div class="section-mark">
-<span class="where">SecciÃ³n 3 de 4</span><span>Â·</span><span>El arco</span>
+<span class="where">SecciêÂ³n 3 de 4</span><span>êÂ·</span><span>El arco</span>
 </div>
 <h2 class="head"><span class="num">3.</span>El arco en cinco escenas</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-1-t3-p1">Una historia visual potente cabe en un arco corto y repetible,
-              de cinco movimientos: <strong>establecer â†’ conflicto â†’ escalada â†’ emociÃ³n â†’
-              resoluciÃ³n</strong>. Cada uno cumple un trabajo emocional especÃ­fico, y la fuerza estÃ¡ en la <em>orden</em>
-              â€” no en lo bonita que es cada escena. Sigue el arco con un ejemplo concreto: un viaje solitario en auto que atraviesa el desierto, en cinco planos de cinco segundos.</p>
-<h3 class="sub">1. Establecer â€” el mundo antes de la tensiÃ³n</h3>
-<p data-ARCKHÉ-block="m7-1-t3-p2">Toda historia potente empieza con claridad. Antes de que aparezca la tensiÃ³n, el
-              pÃºblico necesita orientarse: dÃ³nde estamos, quiÃ©n es el personaje, cÃ³mo es el <em>normal</em>. Un plano
-              abierto de un auto viejo cruzando lentamente un desierto vacÃ­o, al atardecer, con luz cÃ¡lida y una atmÃ³sfera
-              tranquila â€” todavÃ­a no ha ocurrido nada peligroso. El plano abierto crea contexto espacial y distancia emocional.
-              El error clÃ¡sico de principiante es comenzar directamente con un primer plano o con la acciÃ³n dramÃ¡tica: sin establecer primero lo normal,
-              los momentos emocionales siguientes llegan con menos fuerza, porque el espectador nunca entendiÃ³ el mundo. El
-              pÃºblico siente <em>curiosidad tranquila</em>; entiende que alguien viaja solo por un lugar silencioso.</p>
-<h3 class="sub">2. Conflicto â€” algo cambia</h3>
-<p data-ARCKHÉ-block="m7-1-t3-p3">La historia se vuelve interesante en el instante en que algo cambia. El mismo
-              auto sigue avanzando, todo aÃºn estÃ¡ en calma â€” pero, a lo lejos, un muro de polvo se mueve demasiado rÃ¡pido,
-              de una manera que no deberÃ­a. La atmÃ³sfera emocional pasa de la calma a la incertidumbre. Una buena narrativa
-              introduce <em>contraste</em>: el pÃºblico empieza a preguntarse de inmediato: Â¿hay algo mal? Â¿quÃ©
-              viene ahora? La curiosidad es una de las emociones mÃ¡s fuertes de la narrativa. La regla que debes recordar: cada escena
-              debe introducir informaciÃ³n nueva. Si nada cambia, la atenciÃ³n cae.</p>
-<h3 class="sub">3. Escalada â€” la presiÃ³n aumenta</h3>
-<p data-ARCKHÉ-block="m7-1-t3-p4">Cuando surge el conflicto, la presiÃ³n emocional necesita <em>crecer</em>.
-              Muchos videos de IA fallan aquÃ­: los elementos visuales cambian, pero la intensidad permanece igual. Ahora la tormenta
-              de polvo alcanza el auto. La visibilidad cae en picada, el viento sacude el vehÃ­culo, conducir se vuelve una lucha y el
+<p class="lede" data-ARCKHê-block="m7-1-t3-p1">Una historia visual potente cabe en un arco corto y repetible,
+              de cinco movimientos: <strong>establecer ê¢â â conflicto ê¢â â escalada ê¢â â emociêÂ³n ê¢â â
+              resoluciêÂ³n</strong>. Cada uno cumple un trabajo emocional especêÂ­fico, y la fuerza estêÂ¡ en la <em>orden</em>
+              ê¢â¬â no en lo bonita que es cada escena. Sigue el arco con un ejemplo concreto: un viaje solitario en auto que atraviesa el desierto, en cinco planos de cinco segundos.</p>
+<h3 class="sub">1. Establecer ê¢â¬â el mundo antes de la tensiêÂ³n</h3>
+<p data-ARCKHê-block="m7-1-t3-p2">Toda historia potente empieza con claridad. Antes de que aparezca la tensiêÂ³n, el
+              pêÂºblico necesita orientarse: dêÂ³nde estamos, quiêÂ©n es el personaje, cêÂ³mo es el <em>normal</em>. Un plano
+              abierto de un auto viejo cruzando lentamente un desierto vacêÂ­o, al atardecer, con luz cêÂ¡lida y una atmêÂ³sfera
+              tranquila ê¢â¬â todavêÂ­a no ha ocurrido nada peligroso. El plano abierto crea contexto espacial y distancia emocional.
+              El error clêÂ¡sico de principiante es comenzar directamente con un primer plano o con la acciêÂ³n dramêÂ¡tica: sin establecer primero lo normal,
+              los momentos emocionales siguientes llegan con menos fuerza, porque el espectador nunca entendiêÂ³ el mundo. El
+              pêÂºblico siente <em>curiosidad tranquila</em>; entiende que alguien viaja solo por un lugar silencioso.</p>
+<h3 class="sub">2. Conflicto ê¢â¬â algo cambia</h3>
+<p data-ARCKHê-block="m7-1-t3-p3">La historia se vuelve interesante en el instante en que algo cambia. El mismo
+              auto sigue avanzando, todo aêÂºn estêÂ¡ en calma ê¢â¬â pero, a lo lejos, un muro de polvo se mueve demasiado rêÂ¡pido,
+              de una manera que no deberêÂ­a. La atmêÂ³sfera emocional pasa de la calma a la incertidumbre. Una buena narrativa
+              introduce <em>contraste</em>: el pêÂºblico empieza a preguntarse de inmediato: êÂ¿hay algo mal? êÂ¿quêÂ©
+              viene ahora? La curiosidad es una de las emociones mêÂ¡s fuertes de la narrativa. La regla que debes recordar: cada escena
+              debe introducir informaciêÂ³n nueva. Si nada cambia, la atenciêÂ³n cae.</p>
+<h3 class="sub">3. Escalada ê¢â¬â la presiêÂ³n aumenta</h3>
+<p data-ARCKHê-block="m7-1-t3-p4">Cuando surge el conflicto, la presiêÂ³n emocional necesita <em>crecer</em>.
+              Muchos videos de IA fallan aquêÂ­: los elementos visuales cambian, pero la intensidad permanece igual. Ahora la tormenta
+              de polvo alcanza el auto. La visibilidad cae en picada, el viento sacude el vehêÂ­culo, conducir se vuelve una lucha y el
               conductor empieza a perder el control. La escena deja de ser incierta y pasa a ser <em>peligro</em>. La
-              pregunta guÃ­a antes de cada plano: Â¿la situaciÃ³n se volviÃ³ mÃ¡s difÃ­cil? Si la respuesta es no, la escalada
-              pierde fuerza â€”y sin escalada, la historia se vuelve repetitiva.<span class="sidenote-ref">3</span></p>
-<h3 class="sub">4. EmociÃ³n â€” el respiro despuÃ©s de la lucha</h3>
-<p data-ARCKHÉ-block="m7-1-t3-p5">DespuÃ©s de la tensiÃ³n, el pÃºblico necesita conexiÃ³n. AquÃ­ muchos principiantes
-              tropiezan en sentido contrario: empiezan con un primer plano emocional <em>antes</em> de cualquier contexto. Pero la emociÃ³n
-              pesa mÃ¡s cuando llega de forma progresiva. Por fin pasa la tormenta, el auto se detiene, el conductor baja
-              exhausto y camina junto al vehÃ­culo mientras vuelve a salir el sol. Por primera vez, el espectador hace una pausa
-              emocional. El primer plano reduce la distracciÃ³n y desplaza la tensiÃ³n hacia el sentimiento â€” y,
-              como la lucha ya ocurriÃ³, este instante se siente <em>conquistado</em>. La emociÃ³n suele entrar con mÃ¡s
-              fuerza despuÃ©s del esfuerzo.</p>
-<h3 class="sub">5. ResoluciÃ³n â€” cerrar con sentido</h3>
-<p data-ARCKHÉ-block="m7-1-t3-p6">Las escenas potentes terminan con claridad emocional, lo que no
-              significa un final feliz. Significa que el pÃºblico entiende, emocionalmente, adÃ³nde llegÃ³ el personaje. El
-              auto vuelve a cruzar el desierto, la tormenta quedÃ³ atrÃ¡s, la atmÃ³sfera vuelve a estar en calma,
-              pero algo cambiÃ³ por dentro. El viaje ya no parece tranquilo: parece <em>merecida</em>. El arco
-              pasÃ³ de la calma a la incertidumbre, al peligro, a la supervivencia, y la calma que vuelve al final ya no es la
+              pregunta guêÂ­a antes de cada plano: êÂ¿la situaciêÂ³n se volviêÂ³ mêÂ¡s difêÂ­cil? Si la respuesta es no, la escalada
+              pierde fuerza ê¢â¬ây sin escalada, la historia se vuelve repetitiva.<span class="sidenote-ref">3</span></p>
+<h3 class="sub">4. EmociêÂ³n ê¢â¬â el respiro despuêÂ©s de la lucha</h3>
+<p data-ARCKHê-block="m7-1-t3-p5">DespuêÂ©s de la tensiêÂ³n, el pêÂºblico necesita conexiêÂ³n. AquêÂ­ muchos principiantes
+              tropiezan en sentido contrario: empiezan con un primer plano emocional <em>antes</em> de cualquier contexto. Pero la emociêÂ³n
+              pesa mêÂ¡s cuando llega de forma progresiva. Por fin pasa la tormenta, el auto se detiene, el conductor baja
+              exhausto y camina junto al vehêÂ­culo mientras vuelve a salir el sol. Por primera vez, el espectador hace una pausa
+              emocional. El primer plano reduce la distracciêÂ³n y desplaza la tensiêÂ³n hacia el sentimiento ê¢â¬â y,
+              como la lucha ya ocurriêÂ³, este instante se siente <em>conquistado</em>. La emociêÂ³n suele entrar con mêÂ¡s
+              fuerza despuêÂ©s del esfuerzo.</p>
+<h3 class="sub">5. ResoluciêÂ³n ê¢â¬â cerrar con sentido</h3>
+<p data-ARCKHê-block="m7-1-t3-p6">Las escenas potentes terminan con claridad emocional, lo que no
+              significa un final feliz. Significa que el pêÂºblico entiende, emocionalmente, adêÂ³nde llegêÂ³ el personaje. El
+              auto vuelve a cruzar el desierto, la tormenta quedêÂ³ atrêÂ¡s, la atmêÂ³sfera vuelve a estar en calma,
+              pero algo cambiêÂ³ por dentro. El viaje ya no parece tranquilo: parece <em>merecida</em>. El arco
+              pasêÂ³ de la calma a la incertidumbre, al peligro, a la supervivencia, y la calma que vuelve al final ya no es la
               misma. Ese contraste entre la apertura y el cierre es lo que crea el cierre emocional.</p>
 </div>
 <!-- figura 3: a curva do arco de cinco cenas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· El arco emocional â€” <b>cinco escenas</b>, la misma calma, distinta al final</figcaption>
-<svg aria-label="Diagrama de curva emocional en cinco hitos: establecer (calma baja), conflicto (sube hacia la incertidumbre), escalada (pico de peligro), emociÃ³n (baja para dar un respiro) y resoluciÃ³n (calma, pero en un nivel distinto al del inicio)." class="diagram" role="img" viewbox="0 0 720 226">
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· El arco emocional ê¢â¬â <b>cinco escenas</b>, la misma calma, distinta al final</figcaption>
+<svg aria-label="Diagrama de curva emocional en cinco hitos: establecer (calma baja), conflicto (sube hacia la incertidumbre), escalada (pico de peligro), emociêÂ³n (baja para dar un respiro) y resoluciêÂ³n (calma, pero en un nivel distinto al del inicio)." class="diagram" role="img" viewbox="0 0 720 226">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="180" y2="180"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="200">CINCO ESCENAS â†’</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 64)" x="14" y="64">EMOCIÃ“N</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="200">CINCO ESCENAS ê¢â â</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 64)" x="14" y="64">EMOCIêâN</text>
 <!-- a curva -->
 <path class="accent-stroke" d="M70 162 L190 160 C 240 158, 270 120, 330 110 C 390 100, 400 46, 430 44 C 470 42, 480 110, 540 130 C 590 146, 620 150, 660 150" fill="none" stroke-width="2.4"></path>
 <!-- marcos -->
@@ -431,169 +431,169 @@
 <text dy="-30" x="120" y="184">establecer</text>
 <text x="300" y="106">conflicto</text>
 <text class="accent" x="430" y="34">escalada</text>
-<text x="520" y="146">emociÃ³n</text>
-<text x="640" y="170">resoluciÃ³n</text>
+<text x="520" y="146">emociêÂ³n</text>
+<text x="640" y="170">resoluciêÂ³n</text>
 </g>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m7-1-t3-p7">Ese arco no es exclusivo del drama Ã©pico: el mismo esqueleto
+<p data-ARCKHê-block="m7-1-t3-p7">Ese arco no es exclusivo del drama êÂ©pico: el mismo esqueleto
 sirve para un anuncio, un videoclip o una escena con un solo personaje. Y, como describe
-              <em>intenciÃ³n</em> y no es estÃ©tica, se traduce casi directamente en un prompt de IA. El prompt de abajo
-              recorre una por una las cinco escenas del ejemplo del desierto y describe quÃ© cambia emocionalmente
-              en cada una â€” no solo cÃ³mo deberÃ­a verse.</p>
-<div class="codeblock"><span class="c"># Arco de 5 escenas â€” historia visual a travÃ©s del cambio emocional</span>
-<span class="c"># (genera una escena a la vez en Kling; ~5s cada una; deja que el texto dicte la cÃ¡mara)</span>
-<span class="k">Escena 1 â€” Establecimiento:</span> wide, slow shot of an old car crossing an empty desert at golden hour. Warm soft light, dust, total stillness. Emotion: calm curiosity. Nothing dangerous yet.
-<span class="k">Escena 2 â€” Conflicto:</span> el mismo auto sigue avanzando; a lo lejos, una pared de polvo se mueve a una velocidad antinatural. La atmÃ³sfera pasa de la calma a la inquietud. EmociÃ³n: preocupaciÃ³n, curiosidad. Algo ha cambiado.
-<span class="k">Escena 3 â€” Escalada:</span> la tormenta de polvo golpea el auto, la visibilidad se desploma, el viento sacude el vehÃ­culo y el conductor lucha con el volante. EmociÃ³n: peligro, urgencia. Ahora es mÃ¡s difÃ­cil tener Ã©xito.
-<span class="k">Escena 4 â€” EmociÃ³n:</span> pasa la tormenta, el auto se detiene y el conductor exhausto baja y camina a su lado mientras vuelve el sol. Encuadre cerrado del rostro. EmociÃ³n: alivio, conexiÃ³n: merecidos.
-<span class="k">Escena 5 â€” ResoluciÃ³n:</span> wide shot, the car continues across the quiet desert. The storm is gone, calm returns â€” but it feels different now. Emotion: rest and hope. The journey feels earned.
+              <em>intenciêÂ³n</em> y no es estêÂ©tica, se traduce casi directamente en un prompt de IA. El prompt de abajo
+              recorre una por una las cinco escenas del ejemplo del desierto y describe quêÂ© cambia emocionalmente
+              en cada una ê¢â¬â no solo cêÂ³mo deberêÂ­a verse.</p>
+<div class="codeblock"><span class="c"># Arco de 5 escenas ê¢â¬â historia visual a travêÂ©s del cambio emocional</span>
+<span class="c"># (genera una escena a la vez en Kling; ~5s cada una; deja que el texto dicte la cêÂ¡mara)</span>
+<span class="k">Escena 1 ê¢â¬â Establecimiento:</span> wide, slow shot of an old car crossing an empty desert at golden hour. Warm soft light, dust, total stillness. Emotion: calm curiosity. Nothing dangerous yet.
+<span class="k">Escena 2 ê¢â¬â Conflicto:</span> el mismo auto sigue avanzando; a lo lejos, una pared de polvo se mueve a una velocidad antinatural. La atmêÂ³sfera pasa de la calma a la inquietud. EmociêÂ³n: preocupaciêÂ³n, curiosidad. Algo ha cambiado.
+<span class="k">Escena 3 ê¢â¬â Escalada:</span> la tormenta de polvo golpea el auto, la visibilidad se desploma, el viento sacude el vehêÂ­culo y el conductor lucha con el volante. EmociêÂ³n: peligro, urgencia. Ahora es mêÂ¡s difêÂ­cil tener êÂ©xito.
+<span class="k">Escena 4 ê¢â¬â EmociêÂ³n:</span> pasa la tormenta, el auto se detiene y el conductor exhausto baja y camina a su lado mientras vuelve el sol. Encuadre cerrado del rostro. EmociêÂ³n: alivio, conexiêÂ³n: merecidos.
+<span class="k">Escena 5 ê¢â¬â ResoluciêÂ³n:</span> wide shot, the car continues across the quiet desert. The storm is gone, calm returns ê¢â¬â but it feels different now. Emotion: rest and hope. The journey feels earned.
 <span class="k">Regla:</span> one strong action per scene; prompt intention and emotional change, not aesthetic buzzwords.</div>
 </div>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Un creador genera las cinco escenas, pero cambia el orden: pone la <em>emociÃ³n</em> (el primer plano agotado del
-              conductor) justo al comienzo, antes de la tormenta. Â¿Por quÃ© ahora la escena Â«no funcionaÂ»,
+<p>Un creador genera las cinco escenas, pero cambia el orden: pone la <em>emociêÂ³n</em> (el primer plano agotado del
+              conductor) justo al comienzo, antes de la tormenta. êÂ¿Por quêÂ© ahora la escena êÂ«no funcionaêÂ»,
               aunque cada plano siga siendo hermoso?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">Porque la emociÃ³n fue <strong>desconectada de la progresiÃ³n</strong>. El primer plano solo tiene peso
-                <em>despuÃ©s</em> de la pelea: transmite la tensiÃ³n que vino antes. Si aparece al inicio, el pÃºblico ve
-                un rostro agotado sin saber por quÃ©, sin contexto, sin haber sentido el peligro. La emociÃ³n necesita ser
-                <em>conquistada</em>: es la secuencia de calma â†’ conflicto â†’ escalada la que le da peso a la pausa.
+<p class="answer">Porque la emociêÂ³n fue <strong>desconectada de la progresiêÂ³n</strong>. El primer plano solo tiene peso
+                <em>despuêÂ©s</em> de la pelea: transmite la tensiêÂ³n que vino antes. Si aparece al inicio, el pêÂºblico ve
+                un rostro agotado sin saber por quêÂ©, sin contexto, sin haber sentido el peligro. La emociêÂ³n necesita ser
+                <em>conquistada</em>: es la secuencia de calma ê¢â â conflicto ê¢â â escalada la que le da peso a la pausa.
                 Fuera de orden, se convierte en un rostro bonito sin causa.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="7-1" data-ARCKHÉ-topic="modulo-7-1#topico-4" data-ARCKHÉ-track="7" id="topico-4">
+<section data-ARCKHê-module="7-1" data-ARCKHê-topic="modulo-7-1#topico-4" data-ARCKHê-track="7" id="topico-4">
 <div class="section-mark">
-<span class="where">SecciÃ³n 4 de 4</span><span>Â·</span><span>Reglas de direcciÃ³n</span>
+<span class="where">SecciêÂ³n 4 de 4</span><span>êÂ·</span><span>Reglas de direcciêÂ³n</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Reglas para quien dirige la IA</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m7-1-t4-p1">Para terminar, un puÃ±ado de reglas prÃ¡cticas que el
+<p class="lede" data-ARCKHê-block="m7-1-t4-p1">Para terminar, un puêÂ±ado de reglas prêÂ¡cticas que el
               instructor repite: el tipo de disciplina que separa la escena que <em>parece</em> intencional de
               la que parece aleatoria. Ninguna se trata del efecto; todas se tratan de claridad y cambio.</p>
 <h3 class="sub">Simplifica el movimiento</h3>
-<p data-ARCKHÉ-block="m7-1-t4-p2">Â¿Quieres mÃ¡s realismo cARCKHÉtogrÃ¡fico? <strong>Simplifica.</strong> Uno
-              de los mayores errores de quien empieza es querer que todo sea dramÃ¡tico al mismo tiempo: demasiada acciÃ³n, demasiado movimiento,
-              una cÃ¡mara caÃ³tica. El resultado parece artificial. En la mayorÃ­a de los casos, <em>una acciÃ³n contundente por escena</em>
-              funciona mejor que la sobrecarga visual. El exceso confunde â€” y la confusiÃ³n, ya lo sabemos, mata
-              la emociÃ³n.<span class="sidenote-ref">4</span></p>
-<h3 class="sub">Acerca la cÃ¡mara para transmitir emociÃ³n</h3>
-<p data-ARCKHÉ-block="m7-1-t4-p3">Los planos abiertos crean escala; los momentos emocionales suelen funcionar
-              mejor en plano medio o primer plano, porque la expresiÃ³n facial se distingue. Si el pÃºblico debe sentir
-              miedo, alivio, incertidumbre â€” <em>acerca la cÃ¡mara</em>. La distancia de cÃ¡mara no es
-              decoraciÃ³n: decide si el espectador observa el mundo desde afuera o entra en la emociÃ³n del personaje.</p>
-<h3 class="sub">Crea progresiÃ³n â€” evita el plan emocional</h3>
-<p data-ARCKHÉ-block="m7-1-t4-p4">Para que parezca cine, crea <em>progresiÃ³n</em> emocional; evita mantener
-              cada momento emocionalmente idÃ©ntico. Calma, calma, calma aburre. DramÃ¡tico, dramÃ¡tico, dramÃ¡tico
-              agota. El camino es el contraste: dejar que la emociÃ³n suba y baje a lo largo del arco. Es esa variaciÃ³n,
-              y no la intensidad constante, la que mantiene al pÃºblico hasta el final.</p>
-<h3 class="sub">Indica la intenciÃ³n en el prompt, no la estÃ©tica</h3>
-<p data-ARCKHÉ-block="m7-1-t4-p5">La regla que lo une todo y que sirve para cualquier generador: <strong>prompt e
-              intenciÃ³n en lugar de estÃ©tica</strong>. Evita fÃ³rmulas vacÃ­as como â€œobra maestra cARCKHÉtogrÃ¡fica
-              Ã©picaâ€. En su lugar, explica quiÃ©n estÃ¡ en la escena, quÃ© hace esa persona, quÃ© cambiÃ³
-              emocionalmente y cÃ³mo se comporta la cÃ¡mara. Las historias especÃ­ficas casi siempre se traducen mejor que
-              los adjetivos abstractos: el modelo ejecuta tus instrucciones; no inventa tu intenciÃ³n. Y,
-              al final de cada escena, vuelve a la Ãºnica pregunta que guÃ­a esta ruta: <em>Â¿quÃ© cambiÃ³
-              emocionalmente?</em> Si la respuesta es clara, tu historia casi siempre serÃ¡ mÃ¡s fuerte. La prÃ³xima
-              clase pasa de esta visiÃ³n general al nÃºcleo de una sola escena: por quÃ© existe.</p>
+<p data-ARCKHê-block="m7-1-t4-p2">êÂ¿Quieres mêÂ¡s realismo cARCKHêtogrêÂ¡fico? <strong>Simplifica.</strong> Uno
+              de los mayores errores de quien empieza es querer que todo sea dramêÂ¡tico al mismo tiempo: demasiada acciêÂ³n, demasiado movimiento,
+              una cêÂ¡mara caêÂ³tica. El resultado parece artificial. En la mayorêÂ­a de los casos, <em>una acciêÂ³n contundente por escena</em>
+              funciona mejor que la sobrecarga visual. El exceso confunde ê¢â¬â y la confusiêÂ³n, ya lo sabemos, mata
+              la emociêÂ³n.<span class="sidenote-ref">4</span></p>
+<h3 class="sub">Acerca la cêÂ¡mara para transmitir emociêÂ³n</h3>
+<p data-ARCKHê-block="m7-1-t4-p3">Los planos abiertos crean escala; los momentos emocionales suelen funcionar
+              mejor en plano medio o primer plano, porque la expresiêÂ³n facial se distingue. Si el pêÂºblico debe sentir
+              miedo, alivio, incertidumbre ê¢â¬â <em>acerca la cêÂ¡mara</em>. La distancia de cêÂ¡mara no es
+              decoraciêÂ³n: decide si el espectador observa el mundo desde afuera o entra en la emociêÂ³n del personaje.</p>
+<h3 class="sub">Crea progresiêÂ³n ê¢â¬â evita el plan emocional</h3>
+<p data-ARCKHê-block="m7-1-t4-p4">Para que parezca cine, crea <em>progresiêÂ³n</em> emocional; evita mantener
+              cada momento emocionalmente idêÂ©ntico. Calma, calma, calma aburre. DramêÂ¡tico, dramêÂ¡tico, dramêÂ¡tico
+              agota. El camino es el contraste: dejar que la emociêÂ³n suba y baje a lo largo del arco. Es esa variaciêÂ³n,
+              y no la intensidad constante, la que mantiene al pêÂºblico hasta el final.</p>
+<h3 class="sub">Indica la intenciêÂ³n en el prompt, no la estêÂ©tica</h3>
+<p data-ARCKHê-block="m7-1-t4-p5">La regla que lo une todo y que sirve para cualquier generador: <strong>prompt e
+              intenciêÂ³n en lugar de estêÂ©tica</strong>. Evita fêÂ³rmulas vacêÂ­as como ê¢â¬Åobra maestra cARCKHêtogrêÂ¡fica
+              êÂ©picaê¢â¬Â. En su lugar, explica quiêÂ©n estêÂ¡ en la escena, quêÂ© hace esa persona, quêÂ© cambiêÂ³
+              emocionalmente y cêÂ³mo se comporta la cêÂ¡mara. Las historias especêÂ­ficas casi siempre se traducen mejor que
+              los adjetivos abstractos: el modelo ejecuta tus instrucciones; no inventa tu intenciêÂ³n. Y,
+              al final de cada escena, vuelve a la êÂºnica pregunta que guêÂ­a esta ruta: <em>êÂ¿quêÂ© cambiêÂ³
+              emocionalmente?</em> Si la respuesta es clara, tu historia casi siempre serêÂ¡ mêÂ¡s fuerte. La prêÂ³xima
+              clase pasa de esta visiêÂ³n general al nêÂºcleo de una sola escena: por quêÂ© existe.</p>
 </div>
 <!-- figura 4: intencao vs estetica no prompt -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· El prompt: <b>adjetivo vago</b> se convierte en ruido; <b>intenciÃ³n</b> se convierte en direcciÃ³n</figcaption>
-<svg aria-label="Diagrama que compara dos prompts: a la izquierda, adjetivos abstractos que producen un resultado genÃ©rico; a la derecha, la descripciÃ³n de quiÃ©n, quÃ© hace, quÃ© cambia y cÃ³mo se comporta la cÃ¡mara, que produce direcciÃ³n." class="diagram" role="img" viewbox="0 0 720 196">
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· El prompt: <b>adjetivo vago</b> se convierte en ruido; <b>intenciêÂ³n</b> se convierte en direcciêÂ³n</figcaption>
+<svg aria-label="Diagrama que compara dos prompts: a la izquierda, adjetivos abstractos que producen un resultado genêÂ©rico; a la derecha, la descripciêÂ³n de quiêÂ©n, quêÂ© hace, quêÂ© cambia y cêÂ³mo se comporta la cêÂ¡mara, que produce direcciêÂ³n." class="diagram" role="img" viewbox="0 0 720 196">
 <!-- coluna esquerda: estetica -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" x="180" y="28">ESTÃ‰TICA VAGA</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" x="180" y="28">ESTêâ°TICA VAGA</text>
 <rect class="rule-stroke" fill="none" height="116" rx="4" stroke-width="1.2" width="280" x="40" y="42"></rect>
 <g class="faint" font-family="Source Serif 4, serif" font-size="11.5">
-<text x="60" y="70">â€œÃ©picoâ€</text>
-<text x="60" y="92">â€œcARCKHÉtogrÃ¡ficoâ€</text>
-<text x="60" y="114">â€œobra maestraâ€</text>
+<text x="60" y="70">ê¢â¬ÅêÂ©picoê¢â¬Â</text>
+<text x="60" y="92">ê¢â¬ÅcARCKHêtogrêÂ¡ficoê¢â¬Â</text>
+<text x="60" y="114">ê¢â¬Åobra maestraê¢â¬Â</text>
 </g>
-<text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="180" y="146">â†’ resultado genÃ©rico</text>
+<text class="ink-soft" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="180" y="146">ê¢â â resultado genêÂ©rico</text>
 <!-- seta divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="50" y2="150"></line>
 <!-- coluna direita: intencao -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" x="540" y="28">INTENCIÃ“N CLARA</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1" text-anchor="middle" x="540" y="28">INTENCIêâN CLARA</text>
 <rect class="accent-stroke" fill="url(#hatch-7-1)" height="116" rx="4" stroke-width="1.4" width="280" x="400" y="42"></rect>
 <g class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5">
-<text x="420" y="68">quiÃ©n estÃ¡ en la escena</text>
-<text x="420" y="90">quÃ© hace ahora</text>
-<text x="420" y="112">quÃ© cambiÃ³ emocionalmente</text>
-<text x="420" y="134">cÃ³mo se comporta la cÃ¡mara</text>
+<text x="420" y="68">quiêÂ©n estêÂ¡ en la escena</text>
+<text x="420" y="90">quêÂ© hace ahora</text>
+<text x="420" y="112">quêÂ© cambiêÂ³ emocionalmente</text>
+<text x="420" y="134">cêÂ³mo se comporta la cêÂ¡mara</text>
 </g>
-<text class="accent" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="178">â†’ direcciÃ³n ejecutable</text>
+<text class="accent" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="540" y="178">ê¢â â direcciêÂ³n ejecutable</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m7-1-t4-p6">Resume este mÃ³dulo en una frase: <em>la belleza captura la atenciÃ³n, pero
-              la claridad emocional la sostiene â€” y la Ãºnica pregunta que importa no es quÃ© pasÃ³, sino quÃ©
-              cambiÃ³.</em> Con esta perspectiva, ya miras cualquier generaciÃ³n como un director: sin preguntar
-              â€œÂ¿quedÃ³ bonito?â€, sino â€œÂ¿quÃ© se desplazÃ³ aquÃ­?â€. Las prÃ³ximas tres clases
-              parten de esto: primero, el propÃ³sito de una escena; despuÃ©s, el encadenamiento de varias,
-              y, por Ãºltimo, la secuencia entera como una obra.</p>
+<p data-ARCKHê-block="m7-1-t4-p6">Resume este mêÂ³dulo en una frase: <em>la belleza captura la atenciêÂ³n, pero
+              la claridad emocional la sostiene ê¢â¬â y la êÂºnica pregunta que importa no es quêÂ© pasêÂ³, sino quêÂ©
+              cambiêÂ³.</em> Con esta perspectiva, ya miras cualquier generaciêÂ³n como un director: sin preguntar
+              ê¢â¬ÅêÂ¿quedêÂ³ bonito?ê¢â¬Â, sino ê¢â¬ÅêÂ¿quêÂ© se desplazêÂ³ aquêÂ­?ê¢â¬Â. Las prêÂ³ximas tres clases
+              parten de esto: primero, el propêÂ³sito de una escena; despuêÂ©s, el encadenamiento de varias,
+              y, por êÂºltimo, la secuencia entera como una obra.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="AutocomprobaciÃ³n" class="check">
-<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
+<section aria-label="AutocomprobaciêÂ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rêÂ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>En una frase, Â¿quÃ© es la Â«historia visualÂ»?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>En una frase, êÂ¿quêÂ© es la êÂ«historia visualêÂ»?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>E <em>cambio emocional</em>. Una imagen bonita muestra algo; una historia cambia algo. Si el
-              estado emocional al final es igual al del inicio, la escena se siente vacÃ­a â€” por mÃ¡s bonita que
+              estado emocional al final es igual al del inicio, la escena se siente vacêÂ­a ê¢â¬â por mêÂ¡s bonita que
               sea.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Â¿QuÃ© es la â€œprueba del silencioâ€ y por quÃ© importa?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Mira la escena sin sonido. Si, en silencio, el pÃºblico aÃºn entiende quiÃ©n es el personaje, quÃ©
-              cambia, por quÃ© importa y quÃ© emociÃ³n sentir, la narrativa visual funciona. Obliga a la <em>forma</em>
-              â€” y no el diÃ¡logo, el que lleva el sentido.</p></div>
+<summary><span class="qn">02</span><span>êÂ¿QuêÂ© es la ê¢â¬Åprueba del silencioê¢â¬Â y por quêÂ© importa?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Mira la escena sin sonido. Si, en silencio, el pêÂºblico aêÂºn entiende quiêÂ©n es el personaje, quêÂ©
+              cambia, por quêÂ© importa y quêÂ© emociêÂ³n sentir, la narrativa visual funciona. Obliga a la <em>forma</em>
+              ê¢â¬â y no el diêÂ¡logo, el que lleva el sentido.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Â¿Por quÃ© la escena de Â«emociÃ³nÂ» (el primer plano) no puede ir al comienzo del arco?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque la emociÃ³n se siente <em>conquistada</em> solo despuÃ©s de la lucha. El primer plano exige la
-              tensiÃ³n que vino antes (establecimiento â†’ conflicto â†’ escalada). Si aparece al principio, se convierte en un rostro
-              sin causa â€” el pÃºblico no sintiÃ³ el peligro que justifica la pausa.</p></div>
+<summary><span class="qn">03</span><span>êÂ¿Por quêÂ© la escena de êÂ«emociêÂ³nêÂ» (el primer plano) no puede ir al comienzo del arco?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque la emociêÂ³n se siente <em>conquistada</em> solo despuêÂ©s de la lucha. El primer plano exige la
+              tensiêÂ³n que vino antes (establecimiento ê¢â â conflicto ê¢â â escalada). Si aparece al principio, se convierte en un rostro
+              sin causa ê¢â¬â el pêÂºblico no sintiêÂ³ el peligro que justifica la pausa.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Â¿CuÃ¡l es la diferencia prÃ¡ctica entre hacer prompts de estÃ©tica y hacer prompts de intenciÃ³n?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>La estÃ©tica son adjetivos vagos (Â«Ã©picoÂ», Â«cARCKHÉtogrÃ¡ficoÂ») que
-dan resultados genÃ©ricos. La intenciÃ³n describe quiÃ©n estÃ¡ en la escena, quÃ© hace, quÃ© cambiÃ³ emocionalmente y
-cÃ³mo se comporta la cÃ¡mara. El modelo ejecuta la direcciÃ³n, no inventa la intenciÃ³n, asÃ­ que
+<summary><span class="qn">04</span><span>êÂ¿CuêÂ¡l es la diferencia prêÂ¡ctica entre hacer prompts de estêÂ©tica y hacer prompts de intenciêÂ³n?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>La estêÂ©tica son adjetivos vagos (êÂ«êÂ©picoêÂ», êÂ«cARCKHêtogrêÂ¡ficoêÂ») que
+dan resultados genêÂ©ricos. La intenciêÂ³n describe quiêÂ©n estêÂ¡ en la escena, quêÂ© hace, quêÂ© cambiêÂ³ emocionalmente y
+cêÂ³mo se comporta la cêÂ¡mara. El modelo ejecuta la direcciêÂ³n, no inventa la intenciêÂ³n, asêÂ­ que
 la especificidad es clave.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
+<section aria-label="Mi recorrido ê¢â¬â progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Mi recorrido</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir cuaderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este mÃ³dulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:7-1">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secciones leÃ­das</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="k">En este mêÂ³dulo</div>
+<div class="v" data-ARCKHê-meter="modulo:7-1">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secciones leêÂ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 7</div>
-<div class="v" data-ARCKHÉ-meter="trilha:7">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:7">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -602,68 +602,68 @@ la especificidad es clave.</p></div>
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">MÃ³dulo 7.2 â€” PropÃ³sito de la escena</div>
+<div class="t">MêÂ³dulo 7.2 ê¢â¬â PropêÂ³sito de la escena</div>
 </div>
-<a class="go" href="modulo-7-2.html">Siguiente â†’</a>
+<a class="go" href="modulo-7-2.html">Siguiente ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-1#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-7-1#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
+<div class="tag">DefiniciêÂ³n</div>
 <b>Cambio emocional.</b> El paso de un estado emocional a otro a lo largo de la escena. Es lo
           que distingue contar de mostrar: sin ese cambio, la imagen es una postal, no una historia.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          MÃ³dulo 7 del programa <i>AI Filmmaking</i> â€” â€œVisual Storytellingâ€. La tesis central:
-          <i>la pregunta no es quÃ© pasÃ³, sino quÃ© cambiÃ³ emocionalmente</i>.
+          MêÂ³dulo 7 del programa <i>AI Filmmaking</i> ê¢â¬â ê¢â¬ÅVisual Storytellingê¢â¬Â. La tesis central:
+          <i>la pregunta no es quêÂ© pasêÂ³, sino quêÂ© cambiêÂ³ emocionalmente</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-1#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-7-1#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Prueba sin sonido.</b> Mira la escena sin audio para comprobar si la forma transmite el sentido por sÃ­ sola. Si el
-          pÃºblico aÃºn entiende quiÃ©n, quÃ© cambia y por quÃ© importa, la narrativa visual se sostiene.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Prueba sin sonido.</b> Mira la escena sin audio para comprobar si la forma transmite el sentido por sêÂ­ sola. Si el
+          pêÂºblico aêÂºn entiende quiêÂ©n, quêÂ© cambia y por quêÂ© importa, la narrativa visual se sostiene.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          La regla madre de la legibilidad: <i>la confusiÃ³n mata la emociÃ³n, la claridad crea la emociÃ³n</i>. Si el cerebro gasta
-          energÃ­a orientÃ¡ndose, no le queda atenciÃ³n para sentir.
+          La regla madre de la legibilidad: <i>la confusiêÂ³n mata la emociêÂ³n, la claridad crea la emociêÂ³n</i>. Si el cerebro gasta
+          energêÂ­a orientêÂ¡ndose, no le queda atenciêÂ³n para sentir.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-1#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-7-1#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Escalada.</b> El aumento de la presiÃ³n emocional despuÃ©s de que aparece el conflicto. Antes de cada
-          plano, comprueba: Â¿la situaciÃ³n se volviÃ³ mÃ¡s difÃ­cil? Si no, la historia se vuelve repetitiva.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Escalada.</b> El aumento de la presiêÂ³n emocional despuêÂ©s de que aparece el conflicto. Antes de cada
+          plano, comprueba: êÂ¿la situaciêÂ³n se volviêÂ³ mêÂ¡s difêÂ­cil? Si no, la historia se vuelve repetitiva.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
           El arco de cinco escenas es el mismo esqueleto de un anuncio o un videoclip: cambia el contenido, no la
-          progresiÃ³n. La calma que vuelve al final ya no es la calma del inicio: el contraste es el cierre.
+          progresiêÂ³n. La calma que vuelve al final ya no es la calma del inicio: el contraste es el cierre.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-7-1#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-7-1#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Indicar la intenciÃ³n en el prompt.</b> Describe quiÃ©n, quÃ© hace, quÃ© cambia y cÃ³mo se comporta la cÃ¡mara, en
-          lugar de usar adjetivos abstractos. El modelo ejecuta la direcciÃ³n; no inventa la intenciÃ³n.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Indicar la intenciêÂ³n en el prompt.</b> Describe quiêÂ©n, quêÂ© hace, quêÂ© cambia y cêÂ³mo se comporta la cêÂ¡mara, en
+          lugar de usar adjetivos abstractos. El modelo ejecuta la direcciêÂ³n; no inventa la intenciêÂ³n.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          Cuatro disciplinas: simplifica el movimiento (una acciÃ³n fuerte por escena), acerca la cÃ¡mara para la emociÃ³n,
-          crea progresiÃ³n en vez de intensidad constante y escribe prompts con intenciÃ³n, no con estÃ©tica.
+          Cuatro disciplinas: simplifica el movimiento (una acciêÂ³n fuerte por escena), acerca la cêÂ¡mara para la emociêÂ³n,
+          crea progresiêÂ³n en vez de intensidad constante y escribe prompts con intenciêÂ³n, no con estêÂ©tica.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
-<span class="pg">MÃ³dulo 7.1 â€” folio i</span>
+<span>ARCKHê AI êÂ· Cuaderno del estudiante</span>
+<span class="pg">MêÂ³dulo 7.1 ê¢â¬â folio i</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -672,8 +672,8 @@ la especificidad es clave.</p></div>
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

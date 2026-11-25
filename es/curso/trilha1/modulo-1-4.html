@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>MÃ³dulo 1.4 â€” Del encuadre al movimiento | AI Filmmaking</title>
+<title>MêÂ³dulo 1.4 ê¢â¬â Del encuadre al movimiento | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,51 +135,51 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:1-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:1-4"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span></span> leêÂ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â mêÂ¡xima legibilidad" type="button">Aaê¢â Â¹</button>
 </div>
-<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaêÂ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lêÂ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
+<nav aria-label="DêÂ³nde estêÂ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Ruta <b>1</b> Fundamentos (Luz)</span>
-<span class="sep">Â·</span>
-<span>MÃ³dulo <b>1.4</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span>MêÂ³dulo <b>1.4</b> / 4</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">SecciêÂ³n 1 de 5</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,60 +189,60 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">MÃ³dulo 1.4 Â· Ruta 1 Â· Fundamentos (Luz)</p>
+<p class="kicker">MêÂ³dulo 1.4 êÂ· Ruta 1 êÂ· Fundamentos (Luz)</p>
 <h1 class="module">Del encuadre al <em>Movimiento</em></h1>
-<p class="deck">El punto en que el proyecto deja de ser una serie de imÃ¡genes y empieza a parecer una pelÃ­cula.
-          La IA no Â«lo vuelve cARCKHÉtogrÃ¡ficoÂ» por sÃ­ sola â€” ejecuta lo que describes. Y casi
-          todos los resultados dÃ©biles se deben a una direcciÃ³n de cÃ¡mara poco clara, no a una mala idea.</p>
+<p class="deck">El punto en que el proyecto deja de ser una serie de imêÂ¡genes y empieza a parecer una pelêÂ­cula.
+          La IA no êÂ«lo vuelve cARCKHêtogrêÂ¡ficoêÂ» por sêÂ­ sola ê¢â¬â ejecuta lo que describes. Y casi
+          todos los resultados dêÂ©biles se deben a una direcciêÂ³n de cêÂ¡mara poco clara, no a una mala idea.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~17 min Â· mÃ³dulo completo</span>
+<span>~17 min êÂ· mêÂ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>Por quÃ© <b>secuenciar primero</b> â€” ordenar los planos segÃºn la lÃ³gica narrativa antes de animar nada.</li>
-<li>CÃ³mo escribir <b>un prompt de animaciÃ³n por plano</b> y por quÃ© los mejores prompts producen mejores videos.</li>
-<li>La guÃ­a prÃ¡ctica de <b>movimiento de cÃ¡mara</b>: dÃ³nde estÃ¡ la cÃ¡mara, cÃ³mo se mueve, quÃ© hace el sujeto y la estructura de prompt que siempre funciona.</li>
-<li>CÃ³mo <b>generar, iterar, revisar y montar</b> â€” y por quÃ© el montaje final necesita un editor de verdad.</li>
+<li>Por quêÂ© <b>secuenciar primero</b> ê¢â¬â ordenar los planos segêÂºn la lêÂ³gica narrativa antes de animar nada.</li>
+<li>CêÂ³mo escribir <b>un prompt de animaciêÂ³n por plano</b> y por quêÂ© los mejores prompts producen mejores videos.</li>
+<li>La guêÂ­a prêÂ¡ctica de <b>movimiento de cêÂ¡mara</b>: dêÂ³nde estêÂ¡ la cêÂ¡mara, cêÂ³mo se mueve, quêÂ© hace el sujeto y la estructura de prompt que siempre funciona.</li>
+<li>CêÂ³mo <b>generar, iterar, revisar y montar</b> ê¢â¬â y por quêÂ© el montaje final necesita un editor de verdad.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
+<nav aria-label="Resumen del mêÂ³dulo" class="toc" data-ARCKHê-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Secuenciar primero: el orden es la historia</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">Un prompt de animaciÃ³n por plano</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">Movimiento de cÃ¡mara: la guÃ­a prÃ¡ctica</span></a><span class="leader"></span></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Un prompt de animaciêÂ³n por plano</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">Movimiento de cêÂ¡mara: la guêÂ­a prêÂ¡ctica</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Generar e iterar con el generador de video</span></a><span class="leader"></span></li>
-<li><span class="n">5</span><a href="#topico-5"><span class="t">Revisar y montar como una pelÃ­cula</span></a><span class="leader"></span></li>
+<li><span class="n">5</span><a href="#topico-5"><span class="t">Revisar y montar como una pelêÂ­cula</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<section data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="section-mark">
-<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>Secuencia</span>
+<span class="where">SecciêÂ³n 1 de 5</span><span>êÂ·</span><span>Secuencia</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Secuenciar primero: el orden es la historia</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m1-4-t1-p1">No estÃ¡s generando clips aleatorios. EstÃ¡s
-              construyendo una <em>secuencia controlada</em>, donde cada plano se conecta, fluye y sostiene la historia â€” y es aquÃ­ donde el proyecto empieza, de verdad, a parecer una pelÃ­cula.<span class="sidenote-ref">1</span>
+<p class="lede dropcap" data-ARCKHê-block="m1-4-t1-p1">No estêÂ¡s generando clips aleatorios. EstêÂ¡s
+              construyendo una <em>secuencia controlada</em>, donde cada plano se conecta, fluye y sostiene la historia ê¢â¬â y es aquêÂ­ donde el proyecto empieza, de verdad, a parecer una pelêÂ­cula.<span class="sidenote-ref">1</span>
               Antes de animar cualquier cosa, volvemos al storyboard y organizamos todos los planos en la <strong>orden
-              narrativa correcta</strong>. Y ese orden es lo que define el flujo. Si la secuencia estÃ¡ equivocada, todo el video
-              parecerÃ¡ inconexo, por mejor que sea cada clip por separado.</p>
-<p data-ARCKHÉ-block="m1-4-t1-p2">En este punto ya tienes tres cosas listas del MÃ³dulo 1.3: una
+              narrativa correcta</strong>. Y ese orden es lo que define el flujo. Si la secuencia estêÂ¡ equivocada, todo el video
+              parecerêÂ¡ inconexo, por mejor que sea cada clip por separado.</p>
+<p data-ARCKHê-block="m1-4-t1-p2">En este punto ya tienes tres cosas listas del MêÂ³dulo 1.3: una
               secuencia de planos, prompts estructurados y un pipeline en funcionamiento. Ahora todo se reduce a una sola
-              pregunta: <strong>quÃ© tan claramente describes el movimiento.</strong> La mayorÃ­a de los resultados
-              dÃ©biles no viene de malas ideas â€” viene de una direcciÃ³n de cÃ¡mara poco clara. La IA no vuelve cARCKHÉtogrÃ¡ficas las cosas
-              por sÃ­ sola; ella <em>ejecuta</em> lo que dices. Por eso esta lecciÃ³n dedica
-              tiempo a la gramÃ¡tica del movimiento antes de presionar â€œgenerarâ€.</p>
+              pregunta: <strong>quêÂ© tan claramente describes el movimiento.</strong> La mayorêÂ­a de los resultados
+              dêÂ©biles no viene de malas ideas ê¢â¬â viene de una direcciêÂ³n de cêÂ¡mara poco clara. La IA no vuelve cARCKHêtogrêÂ¡ficas las cosas
+              por sêÂ­ sola; ella <em>ejecuta</em> lo que dices. Por eso esta lecciêÂ³n dedica
+              tiempo a la gramêÂ¡tica del movimiento antes de presionar ê¢â¬Ågenerarê¢â¬Â.</p>
 </div>
 <!-- figura 1: ordem certa x errada -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· A <b>orden narrativa</b> define el flujo â€” la misma materia, dos resultados</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· A <b>orden narrativa</b> define el flujo ê¢â¬â la misma materia, dos resultados</figcaption>
 <svg aria-label="Diagrama: arriba, los planos fuera de orden generan una secuencia inconexa; abajo, los mismos planos en el orden narrativo generan un flujo coherente." class="diagram" role="img" viewbox="0 0 720 196">
 <defs>
 <pattern height="6" id="hatch-1-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -258,7 +258,7 @@
 <rect class="rule-stroke" height="38" rx="2" stroke-width="1.2" width="48" x="232" y="42"></rect><text x="256" y="66">2</text>
 <rect class="rule-stroke" height="38" rx="2" stroke-width="1.2" width="48" x="296" y="42"></rect><text x="320" y="66">4</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="392" y="66">â†’ secuencia inconexa</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" x="392" y="66">ê¢â â secuencia inconexa</text>
 <!-- fileira ordenada -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="40" y="116">ORDEN NARRATIVO</text>
 <g class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle">
@@ -271,108 +271,108 @@
 <g class="accent-stroke" fill="none" stroke-width="1.4">
 <path d="M88 143 H 104"></path><path d="M152 143 H 168"></path><path d="M216 143 H 232"></path><path d="M280 143 H 296"></path>
 </g>
-<text class="accent" font-family="Source Serif 4, serif" font-size="11" x="392" y="148">â†’ flujo coherente</text>
+<text class="accent" font-family="Source Serif 4, serif" font-size="11" x="392" y="148">ê¢â â flujo coherente</text>
 </svg>
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Generaste cinco clips hermosos por separado, pero la secuencia montada parece Â«extraÃ±aÂ»
-              y difÃ­cil de seguir. Antes de regenerar cualquier clip, Â¿quÃ© revisas primero?</p>
+<p>Generaste cinco clips hermosos por separado, pero la secuencia montada parece êÂ«extraêÂ±aêÂ»
+              y difêÂ­cil de seguir. Antes de regenerar cualquier clip, êÂ¿quêÂ© revisas primero?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">A <strong>orden</strong>. Clips bonitos en la secuencia equivocada parecen inconexos: el problema suele ser de montaje, no de generaciÃ³n. Vuelve al storyboard, confirma la lÃ³gica narrativa y solo despuÃ©s cuestiona los clips individuales. Regenerar antes de ordenar es gastar crÃ©ditos donde no corresponde.</p>
+<p class="answer">A <strong>orden</strong>. Clips bonitos en la secuencia equivocada parecen inconexos: el problema suele ser de montaje, no de generaciêÂ³n. Vuelve al storyboard, confirma la lêÂ³gica narrativa y solo despuêÂ©s cuestiona los clips individuales. Regenerar antes de ordenar es gastar crêÂ©ditos donde no corresponde.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<section data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="section-mark">
-<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>Prompt por plano</span>
+<span class="where">SecciêÂ³n 2 de 5</span><span>êÂ·</span><span>Prompt por plano</span>
 </div>
-<h2 class="head"><span class="num">2.</span>Un prompt de animaciÃ³n por plano</h2>
+<h2 class="head"><span class="num">2.</span>Un prompt de animaciêÂ³n por plano</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-4-t2-p1">Con la secuencia lista, agregamos un nodo
-              <em>asistente</em> para generar los prompts de video a partir del guion, y despuÃ©s un <em>list node</em>
-              que crea un prompt de animaciÃ³n <strong>separado para cada plano</strong>. Esta es la etapa mÃ¡s crÃ­tica
-              del pipeline: la calidad total del video final depende de lo detallados y bien hechos que estÃ©n estos
+<p class="lede" data-ARCKHê-block="m1-4-t2-p1">Con la secuencia lista, agregamos un nodo
+              <em>asistente</em> para generar los prompts de video a partir del guion, y despuêÂ©s un <em>list node</em>
+              que crea un prompt de animaciêÂ³n <strong>separado para cada plano</strong>. Esta es la etapa mêÂ¡s crêÂ­tica
+              del pipeline: la calidad total del video final depende de lo detallados y bien hechos que estêÂ©n estos
               prompts. La regla es cruda y verdadera: <strong>mejores prompts, mejor video.</strong> Puedes
               generar los prompts con un asistente externo o dentro del propio nodo; elige lo que te funcione.<span class="sidenote-ref">2</span></p>
-<p data-ARCKHÉ-block="m1-4-t2-p2">La estructura sencilla de un buen prompt de animaciÃ³n â€”que la siguiente
-              secciÃ³n detallaâ€” es <strong>sujeto + entorno + movimiento de cÃ¡mara + estilo</strong>. Piensa en
-              cada plano como una combinaciÃ³n de solo tres cosas: <em>dÃ³nde estÃ¡ la cÃ¡mara</em>, <em>cÃ³mo se
-              mueve</em> e <em>lo que hace el sujeto</em>. Si estas tres estÃ¡n claras, el resultado funciona. La
-              tentaciÃ³n de quien empieza es apilar adjetivos y movimientos; el profesional describe <em>una</em>
-              intenciÃ³n clara por plano.</p>
+<p data-ARCKHê-block="m1-4-t2-p2">La estructura sencilla de un buen prompt de animaciêÂ³n ê¢â¬âque la siguiente
+              secciêÂ³n detallaê¢â¬â es <strong>sujeto + entorno + movimiento de cêÂ¡mara + estilo</strong>. Piensa en
+              cada plano como una combinaciêÂ³n de solo tres cosas: <em>dêÂ³nde estêÂ¡ la cêÂ¡mara</em>, <em>cêÂ³mo se
+              mueve</em> e <em>lo que hace el sujeto</em>. Si estas tres estêÂ¡n claras, el resultado funciona. La
+              tentaciêÂ³n de quien empieza es apilar adjetivos y movimientos; el profesional describe <em>una</em>
+              intenciêÂ³n clara por plano.</p>
 </div>
 <!-- prompt pronto: estrutura por plano -->
 <div class="prose">
-<p data-ARCKHÉ-block="m1-4-t2-p3">Un prompt de animaciÃ³n listo, con la estructura que siempre funciona:</p>
-<div class="codeblock"><span class="c"># Prompt de animaciÃ³n por plano â€” sujeto + ambiente + cÃ¡mara + estilo</span>
+<p data-ARCKHê-block="m1-4-t2-p3">Un prompt de animaciêÂ³n listo, con la estructura que siempre funciona:</p>
+<div class="codeblock"><span class="c"># Prompt de animaciêÂ³n por plano ê¢â¬â sujeto + ambiente + cêÂ¡mara + estilo</span>
 lone samurai walking across a rainy suspension bridge,
 <span class="c"># ambiente</span>
 heavy fog drifting through the canyon, wind moving his robe,
-<span class="c"># cÃ¡mara (UN movimiento claro)</span>
+<span class="c"># cêÂ¡mara (UN movimiento claro)</span>
 slow tracking shot following him from the side,
 <span class="c"># estilo (UN estilo)</span>
-steadycam, cARCKHÉtic lighting, shallow depth of field</div>
+steadycam, cARCKHêtic lighting, shallow depth of field</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Profundizando: por quÃ© el prompt tiene tanto peso aquÃ­
+<summary><span class="chev">ê¢âÂ¸</span> Profundizando: por quêÂ© el prompt tiene tanto peso aquêÂ­
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional: el Â«porquÃ©Â» de que la etapa del prompt sea la mÃ¡s crÃ­tica.</p>
-<p>En la generaciÃ³n de imÃ¡genes fijas, el modelo solo tiene un fotograma para acertar. En el video, debe decidir
-                <em>cÃ³mo todo evoluciona con el tiempo</em> â€” hacia dÃ³nde va la cÃ¡mara, cÃ³mo se desplaza el sujeto, quÃ©
-                ocurre con la luz y la atmÃ³sfera en cada fotograma. Cada ambigÃ¼edad en el prompt se convierte en una decisiÃ³n que el
+<p>Capa opcional: el êÂ«porquêÂ©êÂ» de que la etapa del prompt sea la mêÂ¡s crêÂ­tica.</p>
+<p>En la generaciêÂ³n de imêÂ¡genes fijas, el modelo solo tiene un fotograma para acertar. En el video, debe decidir
+                <em>cêÂ³mo todo evoluciona con el tiempo</em> ê¢â¬â hacia dêÂ³nde va la cêÂ¡mara, cêÂ³mo se desplaza el sujeto, quêÂ©
+                ocurre con la luz y la atmêÂ³sfera en cada fotograma. Cada ambigêÂ¼edad en el prompt se convierte en una decisiêÂ³n que el
                 modelo toma <em>por ti</em>, y rara vez de la forma que imaginabas. Por eso un prompt vago
-                produce movimiento errÃ¡tico e inestable: no porque el modelo sea malo, sino porque dejaste las decisiones
-                abiertas. Describir el movimiento con precisiÃ³n es, literalmente, dirigir, y esa es la diferencia entre
+                produce movimiento errêÂ¡tico e inestable: no porque el modelo sea malo, sino porque dejaste las decisiones
+                abiertas. Describir el movimiento con precisiêÂ³n es, literalmente, dirigir, y esa es la diferencia entre
                 un clip que parece intencional y uno que parece producto del azar.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<section data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="section-mark">
-<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>CÃ¡mara</span>
+<span class="where">SecciêÂ³n 3 de 5</span><span>êÂ·</span><span>CêÂ¡mara</span>
 </div>
-<h2 class="head"><span class="num">3.</span>Movimiento de cÃ¡mara: la guÃ­a prÃ¡ctica</h2>
+<h2 class="head"><span class="num">3.</span>Movimiento de cêÂ¡mara: la guêÂ­a prêÂ¡ctica</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-4-t3-p1">No necesitas prompts complejos: necesitas
-              <em>direcciÃ³n clara</em>. Si el movimiento de cÃ¡mara es intencional, el video ya parece cARCKHÉtogrÃ¡fico.
-              El movimiento de cÃ¡mara es el motor principal del prompt, y la regla de oro es usar <strong>un movimiento
-              claro por plano</strong>. Los cuatro esenciales: el <em>dolly in</em> empuja la cÃ¡mara hacia el
-              sujeto y aÃ±ade tensiÃ³n; el <em>tracking</em> sigue el movimiento y crea flujo; la <em>Ã³rbita</em>
-              rodea al sujeto y aÃ±ade profundidad; <em>pan/tilt</em> es un desplazamiento direccional simple.
-              Empieza con tres â€” <strong>dolly in, tracking, Ã³rbita</strong> â€” y ya cubres la mayorÃ­a
-              de los planos cARCKHÉtogrÃ¡ficos.<span class="sidenote-ref">3</span></p>
-<p data-ARCKHÉ-block="m1-4-t3-p2">A <strong>distancia</strong> define quÃ© tan cerca estÃ¡ el espectador:
-              primer plano para la emociÃ³n y el detalle, plano medio para enfocarse en el personaje, plano general para el ambiente y
-              la escala â€” y la pregunta guÃ­a sigue siendo â€œÂ¿quÃ© debe sentir el espectador en este
-              momento?â€. A <strong>profundidad</strong> es lo que hace que el plano parezca real: primer plano
+<p class="lede" data-ARCKHê-block="m1-4-t3-p1">No necesitas prompts complejos: necesitas
+              <em>direcciêÂ³n clara</em>. Si el movimiento de cêÂ¡mara es intencional, el video ya parece cARCKHêtogrêÂ¡fico.
+              El movimiento de cêÂ¡mara es el motor principal del prompt, y la regla de oro es usar <strong>un movimiento
+              claro por plano</strong>. Los cuatro esenciales: el <em>dolly in</em> empuja la cêÂ¡mara hacia el
+              sujeto y aêÂ±ade tensiêÂ³n; el <em>tracking</em> sigue el movimiento y crea flujo; la <em>êÂ³rbita</em>
+              rodea al sujeto y aêÂ±ade profundidad; <em>pan/tilt</em> es un desplazamiento direccional simple.
+              Empieza con tres ê¢â¬â <strong>dolly in, tracking, êÂ³rbita</strong> ê¢â¬â y ya cubres la mayorêÂ­a
+              de los planos cARCKHêtogrêÂ¡ficos.<span class="sidenote-ref">3</span></p>
+<p data-ARCKHê-block="m1-4-t3-p2">A <strong>distancia</strong> define quêÂ© tan cerca estêÂ¡ el espectador:
+              primer plano para la emociêÂ³n y el detalle, plano medio para enfocarse en el personaje, plano general para el ambiente y
+              la escala ê¢â¬â y la pregunta guêÂ­a sigue siendo ê¢â¬ÅêÂ¿quêÂ© debe sentir el espectador en este
+              momento?ê¢â¬Â. A <strong>profundidad</strong> es lo que hace que el plano parezca real: primer plano
               (objetos, cables, elementos), fondo (neblina, distancia, luz) y paralaje (capas que se mueven a
-              distintas velocidades) â€” y movimientos como el tracking y la Ã³rbita refuerzan esa profundidad
-              de forma natural. El <strong>estilo de movimiento</strong> define la sensaciÃ³n: <em>steadycam</em> es suave y
-              controlado, <em>handheld</em> es crudo e inestable, <em>cÃ¡mara lenta</em> es pesada y dramÃ¡tica. Mantenla
-              simple â€” basta con un estilo por plano.</p>
-<h3 class="sub">El error mÃ¡s comÃºn y la estructura que lo evita</h3>
-<p data-ARCKHÉ-block="m1-4-t3-p3">El error clÃ¡sico es acumular movimientos en un solo prompt: Ã³rbita + dolly
-              + pan + zoom. El resultado es un video inestable y caÃ³tico: el modelo intenta conciliar comandos que
-              compiten entre sÃ­ y ninguno queda limpio. El mejor enfoque sigue la misma regla del MÃ³dulo 1.1, ahora aplicada a
-              la cÃ¡mara: <strong>un plano = una idea clara.</strong> La estructura de prompt que siempre funciona,
-              entonces, es <em>sujeto + entorno + movimiento de cÃ¡mara + estilo</em>, con <em>un</em> movimiento y
+              distintas velocidades) ê¢â¬â y movimientos como el tracking y la êÂ³rbita refuerzan esa profundidad
+              de forma natural. El <strong>estilo de movimiento</strong> define la sensaciêÂ³n: <em>steadycam</em> es suave y
+              controlado, <em>handheld</em> es crudo e inestable, <em>cêÂ¡mara lenta</em> es pesada y dramêÂ¡tica. Mantenla
+              simple ê¢â¬â basta con un estilo por plano.</p>
+<h3 class="sub">El error mêÂ¡s comêÂºn y la estructura que lo evita</h3>
+<p data-ARCKHê-block="m1-4-t3-p3">El error clêÂ¡sico es acumular movimientos en un solo prompt: êÂ³rbita + dolly
+              + pan + zoom. El resultado es un video inestable y caêÂ³tico: el modelo intenta conciliar comandos que
+              compiten entre sêÂ­ y ninguno queda limpio. El mejor enfoque sigue la misma regla del MêÂ³dulo 1.1, ahora aplicada a
+              la cêÂ¡mara: <strong>un plano = una idea clara.</strong> La estructura de prompt que siempre funciona,
+              entonces, es <em>sujeto + entorno + movimiento de cêÂ¡mara + estilo</em>, con <em>un</em> movimiento y
               <em>un</em> un estilo a la vez.<span class="sidenote-ref">4</span></p>
 </div>
-<!-- figura 3: trÃªs movimentos essenciais -->
+<!-- figura 3: trêÂªs movimentos essenciais -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· Los <b>tres movimientos</b> para empezar, y lo que cada uno te hace sentir</figcaption>
-<svg aria-label="Diagrama con tres esquemas de movimiento de cÃ¡mara: dolly in hacia el sujeto (tensiÃ³n), tracking que sigue lateralmente (flujo) y Ã³rbita alrededor del sujeto (profundidad)." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· Los <b>tres movimientos</b> para empezar, y lo que cada uno te hace sentir</figcaption>
+<svg aria-label="Diagrama con tres esquemas de movimiento de cêÂ¡mara: dolly in hacia el sujeto (tensiêÂ³n), tracking que sigue lateralmente (flujo) y êÂ³rbita alrededor del sujeto (profundidad)." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- dolly in -->
 <rect class="ink-soft" height="22" rx="2" width="32" x="20" y="36"></rect>
 <circle class="accent-stroke" cx="160" cy="60" fill="url(#hatch-1-4)" r="12" stroke-width="1.4"></circle>
 <path class="accent-stroke" d="M56 56 H 144" stroke-width="1.8"></path><path class="accent-stroke" d="M144 56 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="100" y="86">dolly in</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="100" y="102">tensiÃ³n</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="100" y="102">tensiêÂ³n</text>
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="232" x2="232" y1="30" y2="110"></line>
 <!-- tracking -->
 <circle class="accent-stroke" cx="320" cy="60" fill="url(#hatch-1-4)" r="12" stroke-width="1.4"></circle>
@@ -388,7 +388,7 @@ steadycam, cARCKHÉtic lighting, shallow depth of field</div>
 <rect class="ink-soft" height="18" rx="2" width="26" x="640" y="56"></rect>
 <path class="accent-stroke" d="M548 58 a 56 26 0 0 1 18 -14" fill="none" stroke-width="1.4"></path>
 <path class="accent-stroke" d="M566 44 l 1 8 m -1 -8 l -8 2" fill="none" stroke-width="1.4"></path>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="600" y="118">Ã³rbita</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="600" y="118">êÂ³rbita</text>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="600" y="134">profundidad</text>
 <!-- regra de ouro -->
 <line class="rule-stroke" stroke-width="1" x1="40" x2="680" y1="160" y2="160"></line>
@@ -396,58 +396,58 @@ steadycam, cARCKHÉtic lighting, shallow depth of field</div>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-4-t3-p4">Mira la diferencia entre acumular movimientos y dar una direcciÃ³n clara:
+<p data-ARCKHê-block="m1-4-t3-p4">Mira la diferencia entre acumular movimientos y dar una direcciêÂ³n clara:
               el mismo plano, dos resultados:</p>
-<div class="codeblock"><span class="c"># Incorrecto â€” movimientos acumulados, resultado caÃ³tico</span>
+<div class="codeblock"><span class="c"># Incorrecto ê¢â¬â movimientos acumulados, resultado caêÂ³tico</span>
 samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 
-<span class="c"># Correcto â€” un movimiento, un estilo, una intenciÃ³n clara</span>
+<span class="c"># Correcto ê¢â¬â un movimiento, un estilo, una intenciêÂ³n clara</span>
 <span class="k">Sujeto:</span> lone samurai bracing against the wind on a rainy bridge.
 <span class="k">Entorno:</span> fog in the canyon, rain, swaying cables in foreground.
-<span class="k">CÃ¡mara:</span> slow dolly in toward his face (building tension).
-<span class="k">Estilo:</span> steadycam, cARCKHÉtic lighting, shallow depth of field.</div>
+<span class="k">CêÂ¡mara:</span> slow dolly in toward his face (building tension).
+<span class="k">Estilo:</span> steadycam, cARCKHêtic lighting, shallow depth of field.</div>
 </div>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Quieres un plano que haga crecer la tensiÃ³n a medida que se acerca al rostro del samurÃ¡i. Â¿CuÃ¡l de los tres
-              movimientos esenciales eliges y por quÃ© <em>no</em> Â¿combinar con una Ã³rbita al mismo tiempo?</p>
+<p>Quieres un plano que haga crecer la tensiêÂ³n a medida que se acerca al rostro del samurêÂ¡i. êÂ¿CuêÂ¡l de los tres
+              movimientos esenciales eliges y por quêÂ© <em>no</em> êÂ¿combinar con una êÂ³rbita al mismo tiempo?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">O <strong>dolly in</strong> â€” empujar hacia el sujeto y el movimiento que aÃ±ade tensiÃ³n. Combinarlo con una Ã³rbita al mismo tiempo diluye la intenciÃ³n: la Ã³rbita lleva la mirada hacia la profundidad lateral mientras el dolly tira hacia adelante, y el modelo intenta conciliar ambos, generando un movimiento inestable. <em>Un plano = una idea clara.</em></p>
+<p class="answer">O <strong>dolly in</strong> ê¢â¬â empujar hacia el sujeto y el movimiento que aêÂ±ade tensiêÂ³n. Combinarlo con una êÂ³rbita al mismo tiempo diluye la intenciêÂ³n: la êÂ³rbita lleva la mirada hacia la profundidad lateral mientras el dolly tira hacia adelante, y el modelo intenta conciliar ambos, generando un movimiento inestable. <em>Un plano = una idea clara.</em></p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<section data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="section-mark">
-<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Generar e iterar</span>
+<span class="where">SecciêÂ³n 4 de 5</span><span>êÂ·</span><span>Generar e iterar</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Generar e iterar con el generador de video</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-4-t4-p1">Conectamos todo â€” la secuencia de planos y los prompts
-              del list node â€” al nodo <em>generador de video</em>. Dentro de Ã©l, elegimos el modelo de animaciÃ³n
-              (en esta clase, <strong>Kling 3.0</strong>), definimos la resoluciÃ³n y la duraciÃ³n, y generamos la secuencia. El
-              sistema produce los clips en secuencia automÃ¡ticamente.<span class="sidenote-ref">5</span> Una nota
-              honesta sobre las herramientas en este momento: los mejores resultados visuales hoy se obtendrÃ­an con Seedance 2.0,
-              pero todavÃ­a no estÃ¡ disponible en Freepik â€” por eso el flujo usa Kling. Las rutas
+<p class="lede" data-ARCKHê-block="m1-4-t4-p1">Conectamos todo ê¢â¬â la secuencia de planos y los prompts
+              del list node ê¢â¬â al nodo <em>generador de video</em>. Dentro de êÂ©l, elegimos el modelo de animaciêÂ³n
+              (en esta clase, <strong>Kling 3.0</strong>), definimos la resoluciêÂ³n y la duraciêÂ³n, y generamos la secuencia. El
+              sistema produce los clips en secuencia automêÂ¡ticamente.<span class="sidenote-ref">5</span> Una nota
+              honesta sobre las herramientas en este momento: los mejores resultados visuales hoy se obtendrêÂ­an con Seedance 2.0,
+              pero todavêÂ­a no estêÂ¡ disponible en Freepik ê¢â¬â por eso el flujo usa Kling. Las rutas
               siguientes exploran cada generador (Seedance, Kling, Runway, Luma) en detalle.</p>
-<p data-ARCKHÉ-block="m1-4-t4-p2">El primer resultado <strong>no</strong> va a ser perfecto â€” y
-              esto es completamente normal. La iteraciÃ³n es una parte esencial del proceso, y debes esperar pasar por
+<p data-ARCKHê-block="m1-4-t4-p2">El primer resultado <strong>no</strong> va a ser perfecto ê¢â¬â y
+              esto es completamente normal. La iteraciêÂ³n es una parte esencial del proceso, y debes esperar pasar por
               varias versiones antes de alcanzar la calidad deseada. Cuando un clip no te convenza, vuelve a generarlo (con
-              la opciÃ³n de refresh) o refina el prompt en el list node e intÃ©ntalo de nuevo. Recuerda el ciclo del MÃ³dulo 1.1: el
-              defecto del clip seÃ±ala la parte imprecisa del prompt â€” un movimiento errÃ¡tico pide una direcciÃ³n de cÃ¡mara mÃ¡s
-              clara; un sujeto deformado pide una descripciÃ³n mÃ¡s firme. Cambia una cosa a la vez.</p>
+              la opciêÂ³n de refresh) o refina el prompt en el list node e intêÂ©ntalo de nuevo. Recuerda el ciclo del MêÂ³dulo 1.1: el
+              defecto del clip seêÂ±ala la parte imprecisa del prompt ê¢â¬â un movimiento errêÂ¡tico pide una direcciêÂ³n de cêÂ¡mara mêÂ¡s
+              clara; un sujeto deformado pide una descripciêÂ³n mêÂ¡s firme. Cambia una cosa a la vez.</p>
 <h3 class="sub">Dos limitaciones que vale la pena registrar</h3>
-<p data-ARCKHÉ-block="m1-4-t4-p3">Dos puntos prÃ¡cticos para que no te tomen por sorpresa. Primero: el
-              <strong>diseÃ±o de sonido</strong> no sale de aquÃ­: debe tratarse en una herramienta aparte;
-              el generador de video produce imÃ¡genes en movimiento, no una banda sonora. Segundo: generar resultados de alta
-              calidad puede exigir <strong>mÃºltiples intentos</strong>, y cada intento consume crÃ©ditos; asÃ­ que ten cuidado con la cantidad de regeneraciones y prioriza refinar el prompt antes de empezar a generar automÃ¡ticamente. Este workflow es <em>un</em> estÃ¡ndar, no el Ãºnico; puedes personalizarlo y ampliarlo
-              segÃºn tu necesidad creativa.</p>
+<p data-ARCKHê-block="m1-4-t4-p3">Dos puntos prêÂ¡cticos para que no te tomen por sorpresa. Primero: el
+              <strong>diseêÂ±o de sonido</strong> no sale de aquêÂ­: debe tratarse en una herramienta aparte;
+              el generador de video produce imêÂ¡genes en movimiento, no una banda sonora. Segundo: generar resultados de alta
+              calidad puede exigir <strong>mêÂºltiples intentos</strong>, y cada intento consume crêÂ©ditos; asêÂ­ que ten cuidado con la cantidad de regeneraciones y prioriza refinar el prompt antes de empezar a generar automêÂ¡ticamente. Este workflow es <em>un</em> estêÂ¡ndar, no el êÂºnico; puedes personalizarlo y ampliarlo
+              segêÂºn tu necesidad creativa.</p>
 </div>
-<!-- figura 4: o laÃ§o de geraÃ§Ã£o -->
+<!-- figura 4: o laêÂ§o de geraêÂ§êÂ£o -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· El ciclo de generaciÃ³n â€” <b>el defecto del clip seÃ±ala la parte del prompt</b></figcaption>
-<svg aria-label="Diagrama en bucle: el prompt del plano alimenta al generador de video; se evalÃºa el clip resultante; el defecto indica quÃ© ajustar en el prompt; el ciclo se repite hasta estabilizarse." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· El ciclo de generaciêÂ³n ê¢â¬â <b>el defecto del clip seêÂ±ala la parte del prompt</b></figcaption>
+<svg aria-label="Diagrama en bucle: el prompt del plano alimenta al generador de video; se evalêÂºa el clip resultante; el defecto indica quêÂ© ajustar en el prompt; el ciclo se repite hasta estabilizarse." class="diagram" role="img" viewbox="0 0 720 200">
 <rect class="accent-stroke" fill="url(#hatch-1-4)" height="48" rx="3" stroke-width="1.3" width="130" x="40" y="78"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="105" y="100">prompt</text>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="105" y="117">del plano</text>
@@ -457,7 +457,7 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 <text class="faint" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="315" y="117">Kling 3.0</text>
 <path class="rule-stroke" d="M380 102 H 458" stroke-width="1.8"></path><path class="rule-stroke" d="M458 102 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
 <rect class="accent-stroke" height="56" rx="3" stroke-width="1.2" width="200" x="458" y="74"></rect>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.4" text-anchor="middle" x="558" y="96">Â¿QUÃ‰ DEFECTO?</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.4" text-anchor="middle" x="558" y="96">êÂ¿QUêâ° DEFECTO?</text>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="558" y="114">= la pieza vaga del prompt</text>
 <path class="mark-stroke" d="M558 130 C 558 176, 105 176, 105 126" fill="none" stroke-dasharray="4 4" stroke-width="1.4"></path>
 <path class="mark-stroke" d="M105 126 l -5 7 m 5 -7 l 6 6" fill="none" stroke-width="1.4"></path>
@@ -465,47 +465,47 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Profundizando: gastar crÃ©ditos con criterio
+<summary><span class="chev">ê¢âÂ¸</span> Profundizando: gastar crêÂ©ditos con criterio
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional: ahorro prÃ¡ctico de crÃ©ditos y tiempo.</p>
-<p>Como cada generaciÃ³n cuesta, conviene tratar la iteraciÃ³n como un experimento, no como una loterÃ­a. Antes de
-                volver a generar, lee el clip y nombra <em>o</em> defecto dominante â€” solo uno. Ajusta la parte
-                correspondiente en el prompt (el movimiento, la descripciÃ³n del sujeto, el estilo) y genera de nuevo. Cambiar tres
-                cosas al mismo tiempo y ver una mejora no te dice cuÃ¡l funcionÃ³, y terminas generando mucho mÃ¡s para
-                aprender mucho menos. Prioriza siempre refinar el prompt en vez de presionar â€œrefreshâ€ en
-                automÃ¡tico: el prompt es barato; la generaciÃ³n, no.</p>
+<p>Capa opcional: ahorro prêÂ¡ctico de crêÂ©ditos y tiempo.</p>
+<p>Como cada generaciêÂ³n cuesta, conviene tratar la iteraciêÂ³n como un experimento, no como una loterêÂ­a. Antes de
+                volver a generar, lee el clip y nombra <em>o</em> defecto dominante ê¢â¬â solo uno. Ajusta la parte
+                correspondiente en el prompt (el movimiento, la descripciêÂ³n del sujeto, el estilo) y genera de nuevo. Cambiar tres
+                cosas al mismo tiempo y ver una mejora no te dice cuêÂ¡l funcionêÂ³, y terminas generando mucho mêÂ¡s para
+                aprender mucho menos. Prioriza siempre refinar el prompt en vez de presionar ê¢â¬Årefreshê¢â¬Â en
+                automêÂ¡tico: el prompt es barato; la generaciêÂ³n, no.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-ARCKHÉ-module="1-4" data-ARCKHÉ-topic="modulo-1-4#topico-5" data-ARCKHÉ-track="1" id="topico-5">
+<section data-ARCKHê-module="1-4" data-ARCKHê-topic="modulo-1-4#topico-5" data-ARCKHê-track="1" id="topico-5">
 <div class="section-mark">
-<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>Montaje</span>
+<span class="where">SecciêÂ³n 5 de 5</span><span>êÂ·</span><span>Montaje</span>
 </div>
-<h2 class="head"><span class="num">5.</span>Revisar y montar como una pelÃ­cula</h2>
+<h2 class="head"><span class="num">5.</span>Revisar y montar como una pelêÂ­cula</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-4-t5-p1">Con los clips listos, descarga y <strong>revise cada uno</strong>:
-              conserva los planos fuertes, descarta los dÃ©biles. Ese filtro es direcciÃ³n: no todos los clips generados
+<p class="lede" data-ARCKHê-block="m1-4-t5-p1">Con los clips listos, descarga y <strong>revise cada uno</strong>:
+              conserva los planos fuertes, descarta los dêÂ©biles. Ese filtro es direcciêÂ³n: no todos los clips generados
               merecen entrar en el corte final, y saber decir que no es parte del oficio. Cuando todos los planos
-              aprobados estÃ©n reunidos, llega el Ãºltimo paso: unirlos.<span class="sidenote-ref">6</span></p>
-<p data-ARCKHÉ-block="m1-4-t5-p2">Existe uno en el Â«combinadorÂ» para una soluciÃ³n rÃ¡pida, pero tiende a producir algo que parece una <em>secuencia de clips suelta</em>, sin un flujo cARCKHÉtogrÃ¡fico
-              real. Para lograr un acabado profesional, la recomendaciÃ³n es clara: revisa, selecciona y refina
-              manualmente, y luego monta con intenciÃ³n â€” de preferencia en un editor de video como
-              <strong>Adobe Premiere Pro</strong>, donde controlas el tiempo de cada plano, las transiciones y la duraciÃ³n total. <strong>AquÃ­ es donde la secuencia se convierte en una pelÃ­cula.</strong> El montaje no es un detalle
-              tÃ©cnico: es la Ãºltima capa de direcciÃ³n, donde finalmente se concreta el ritmo del MÃ³dulo 1.1.</p>
+              aprobados estêÂ©n reunidos, llega el êÂºltimo paso: unirlos.<span class="sidenote-ref">6</span></p>
+<p data-ARCKHê-block="m1-4-t5-p2">Existe uno en el êÂ«combinadorêÂ» para una soluciêÂ³n rêÂ¡pida, pero tiende a producir algo que parece una <em>secuencia de clips suelta</em>, sin un flujo cARCKHêtogrêÂ¡fico
+              real. Para lograr un acabado profesional, la recomendaciêÂ³n es clara: revisa, selecciona y refina
+              manualmente, y luego monta con intenciêÂ³n ê¢â¬â de preferencia en un editor de video como
+              <strong>Adobe Premiere Pro</strong>, donde controlas el tiempo de cada plano, las transiciones y la duraciêÂ³n total. <strong>AquêÂ­ es donde la secuencia se convierte en una pelêÂ­cula.</strong> El montaje no es un detalle
+              têÂ©cnico: es la êÂºltima capa de direcciêÂ³n, donde finalmente se concreta el ritmo del MêÂ³dulo 1.1.</p>
 <h3 class="sub">El ciclo se cierra</h3>
-<p data-ARCKHÉ-block="m1-4-t5-p3">Mira atrÃ¡s: instalaste la mentalidad del director (1.1),
+<p data-ARCKHê-block="m1-4-t5-p3">Mira atrêÂ¡s: instalaste la mentalidad del director (1.1),
               aprendiste a leer el espacio (1.2), produjiste una escena completa, desde el guion hasta los cuadros (1.3), y ahora llevaste
-              esos cuadros al movimiento y al montaje (1.4). El bloque de la Luz estÃ¡ completo: tienes los
-              fundamentos que ningÃºn modelo ofrece por sÃ­ solo. La tarea de la lecciÃ³n lo cierra: anima tu storyboard con este
-              flujo de trabajo, centrÃ¡ndote en la continuidad, el movimiento y el flujo cARCKHÉtogrÃ¡fico. La siguiente ruta profundiza en los
-              fundamentos cARCKHÉtogrÃ¡ficos, empezando por el pensamiento visual.</p>
+              esos cuadros al movimiento y al montaje (1.4). El bloque de la Luz estêÂ¡ completo: tienes los
+              fundamentos que ningêÂºn modelo ofrece por sêÂ­ solo. La tarea de la lecciêÂ³n lo cierra: anima tu storyboard con este
+              flujo de trabajo, centrêÂ¡ndote en la continuidad, el movimiento y el flujo cARCKHêtogrêÂ¡fico. La siguiente ruta profundiza en los
+              fundamentos cARCKHêtogrêÂ¡ficos, empezando por el pensamiento visual.</p>
 </div>
-<!-- figura 5: do clipe Ã  linha de montagem -->
+<!-- figura 5: do clipe êÂ  linha de montagem -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> Â· Revisar, seleccionar y <b>montar con intenciÃ³n</b> â€” donde se convierte en pelÃ­cula</figcaption>
-<svg aria-label="Diagrama: varios clips sin editar pasan por un filtro que descarta los dÃ©biles; los aprobados entran en una lÃ­nea de montaje con tiempos y transiciones controlados." class="diagram" role="img" viewbox="0 0 720 196">
+<figcaption><span class="fig-n">Fig. 5</span> êÂ· Revisar, seleccionar y <b>montar con intenciêÂ³n</b> ê¢â¬â donde se convierte en pelêÂ­cula</figcaption>
+<svg aria-label="Diagrama: varios clips sin editar pasan por un filtro que descarta los dêÂ©biles; los aprobados entran en una lêÂ­nea de montaje con tiempos y transiciones controlados." class="diagram" role="img" viewbox="0 0 720 196">
 <!-- clipes brutos -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="80" y="30">CLIPS EN BRUTO</text>
 <g class="rule-stroke" fill="none" stroke-width="1.2">
@@ -517,166 +517,166 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
 <path class="accent-stroke" d="M150 60 L210 76 L210 104 L150 120 Z" fill="url(#hatch-1-4)" stroke-width="1.3"></path>
 <text class="ink" font-family="Source Serif 4, serif" font-size="10" text-anchor="middle" x="180" y="94">filtro</text>
 <text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="180" y="150">guarda fuertes,</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="180" y="163">descarta los dÃ©biles</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="180" y="163">descarta los dêÂ©biles</text>
 <path class="rule-stroke" d="M124 90 H 150" stroke-width="1.4"></path>
 <path class="accent-stroke" d="M210 90 H 250" stroke-width="1.8"></path><path class="accent-stroke" d="M250 90 l -7 -4 m 7 4 l -7 4" fill="none" stroke-width="1.8"></path>
 <!-- linha de montagem -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="470" y="30">LÃNEA DE MONTAJE (PREMIERE)</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" text-anchor="middle" x="470" y="30">LêÂNEA DE MONTAJE (PREMIERE)</text>
 <rect class="wash accent-stroke" height="34" rx="3" stroke-width="1.2" width="410" x="270" y="74"></rect>
 <g class="accent-stroke" fill="url(#hatch-1-4)" stroke-width="1.1">
 <rect height="22" rx="2" width="70" x="280" y="80"></rect><rect height="22" rx="2" width="92" x="360" y="80"></rect>
 <rect height="22" rx="2" width="60" x="462" y="80"></rect><rect height="22" rx="2" width="138" x="532" y="80"></rect>
 </g>
-<!-- transiÃ§Ãµes -->
+<!-- transiêÂ§êÂµes -->
 <g class="mark-stroke" stroke-width="1.3">
 <path d="M355 91 l 5 -5 m -5 5 l 5 5"></path><path d="M457 91 l 5 -5 m -5 5 l 5 5"></path><path d="M527 91 l 5 -5 m -5 5 l 5 5"></path>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="470" y="132">tiempos y transiciones controlados â€” ritmo de la pelÃ­cula</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="470" y="132">tiempos y transiciones controlados ê¢â¬â ritmo de la pelêÂ­cula</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-4-t5-p4">Resume el mÃ³dulo en una frase: <em>la IA ejecuta la direcciÃ³n que describes: secuencia primero, dirige la cÃ¡mara con una idea clara por plano, itera sin
-              desperdiciar recursos y monta con intenciÃ³n; asÃ­ es como una serie de imÃ¡genes se convierte en pelÃ­cula.</em> Completaste la Ruta
-              1 â€” los fundamentos de la luz. Es hora de profundizar en los fundamentos cARCKHÉtogrÃ¡ficos en la siguiente ruta.</p>
+<p data-ARCKHê-block="m1-4-t5-p4">Resume el mêÂ³dulo en una frase: <em>la IA ejecuta la direcciêÂ³n que describes: secuencia primero, dirige la cêÂ¡mara con una idea clara por plano, itera sin
+              desperdiciar recursos y monta con intenciêÂ³n; asêÂ­ es como una serie de imêÂ¡genes se convierte en pelêÂ­cula.</em> Completaste la Ruta
+              1 ê¢â¬â los fundamentos de la luz. Es hora de profundizar en los fundamentos cARCKHêtogrêÂ¡ficos en la siguiente ruta.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="AutocomprobaciÃ³n" class="check">
-<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
+<section aria-label="AutocomprobaciêÂ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rêÂ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Â¿Por quÃ© Â«secuenciar primeroÂ» va antes de animar cualquier plano?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque el orden define el flujo narrativo. Si la secuencia estÃ¡ mal, el video entero
+<summary><span class="qn">01</span><span>êÂ¿Por quêÂ© êÂ«secuenciar primeroêÂ» va antes de animar cualquier plano?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque el orden define el flujo narrativo. Si la secuencia estêÂ¡ mal, el video entero
               parece inconexo, por buenos que sean los clips. Resolver el orden en el storyboard evita gastar
               generaciones en corregir lo que en realidad es un problema de montaje.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Â¿CuÃ¡l es la estructura de prompt de animaciÃ³n que siempre funciona?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><em>Sujeto + entorno + movimiento de cÃ¡mara + estilo</em> â€” con <strong>un</strong>
-              movimiento y <strong>un</strong> estilo por plano. Piensa en cada plano como el lugar donde estÃ¡ la cÃ¡mara, cÃ³mo se
-              mueve y quÃ© hace el sujeto.</p></div>
+<summary><span class="qn">02</span><span>êÂ¿CuêÂ¡l es la estructura de prompt de animaciêÂ³n que siempre funciona?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><em>Sujeto + entorno + movimiento de cêÂ¡mara + estilo</em> ê¢â¬â con <strong>un</strong>
+              movimiento y <strong>un</strong> estilo por plano. Piensa en cada plano como el lugar donde estêÂ¡ la cêÂ¡mara, cêÂ³mo se
+              mueve y quêÂ© hace el sujeto.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Â¿CuÃ¡l es el error mÃ¡s comÃºn en el movimiento de cÃ¡mara y cÃ³mo lo evitas?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Apilar movimientos (Ã³rbita + dolly + paneo + zoom), lo que genera un video inestable y
-              caÃ³tico. La regla para evitarlo: <em>un plano = una idea clara</em>. Empieza con tres movimientos: dolly in, tracking, Ã³rbita, uno a la vez.</p></div>
+<summary><span class="qn">03</span><span>êÂ¿CuêÂ¡l es el error mêÂ¡s comêÂºn en el movimiento de cêÂ¡mara y cêÂ³mo lo evitas?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Apilar movimientos (êÂ³rbita + dolly + paneo + zoom), lo que genera un video inestable y
+              caêÂ³tico. La regla para evitarlo: <em>un plano = una idea clara</em>. Empieza con tres movimientos: dolly in, tracking, êÂ³rbita, uno a la vez.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Â¿Por quÃ© el montaje final necesita un editor de verdad y no solo el nodo combinador?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>El combinador rÃ¡pido produce una secuencia inconexa, sin flujo. En un editor como Premiere
-              controlas el tiempo de cada plano, las transiciones y la duraciÃ³n total: la Ãºltima capa de direcciÃ³n, donde
-              el ritmo se concreta y la serie de clips se convierte en una pelÃ­cula.</p></div>
+<summary><span class="qn">04</span><span>êÂ¿Por quêÂ© el montaje final necesita un editor de verdad y no solo el nodo combinador?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>El combinador rêÂ¡pido produce una secuencia inconexa, sin flujo. En un editor como Premiere
+              controlas el tiempo de cada plano, las transiciones y la duraciêÂ³n total: la êÂºltima capa de direcciêÂ³n, donde
+              el ritmo se concreta y la serie de clips se convierte en una pelêÂ­cula.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
+<section aria-label="Mi recorrido ê¢â¬â progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Mi recorrido</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir cuaderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este mÃ³dulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:1-4">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="k">En este mêÂ³dulo</div>
+<div class="v" data-ARCKHê-meter="modulo:1-4">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leêÂ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 1</div>
-<div class="v" data-ARCKHÉ-meter="trilha:1">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:1">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
 </section>
-<!-- proxima acao (UMA clara) â€” virada de trilha -->
+<!-- proxima acao (UMA clara) ê¢â¬â virada de trilha -->
 <div class="nextup">
 <div class="txt">
 <div class="k">Siguiente ruta</div>
-<div class="t">Ruta 2 Â· MÃ³dulo 2.1 â€” Pensamiento visual</div>
+<div class="t">Ruta 2 êÂ· MêÂ³dulo 2.1 ê¢â¬â Pensamiento visual</div>
 </div>
-<a class="go" href="../trilha2/modulo-2-1.html">Avanzar â†’</a>
+<a class="go" href="../trilha2/modulo-2-1.html">Avanzar ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-4#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-1-4#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
+<div class="tag">DefiniciêÂ³n</div>
 <b>Secuencia.</b> Los planos en el orden narrativo que crea el flujo. El orden es la historia: los clips bonitos
           fuera de orden parecen desconectados.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          LecciÃ³n 3 del bloque Luz â€” â€œDel cuadro al movimientoâ€. Tesis: <i>la IA no hace que el video sea cARCKHÉtogrÃ¡fico
-          por sÃ­ sola: ejecuta lo que le dices</i>. El Space del proyecto estÃ¡ vinculado en la clase.
-          <div class="src-line">magnific.com Â· spaces</div>
+          LecciêÂ³n 3 del bloque Luz ê¢â¬â ê¢â¬ÅDel cuadro al movimientoê¢â¬Â. Tesis: <i>la IA no hace que el video sea cARCKHêtogrêÂ¡fico
+          por sêÂ­ sola: ejecuta lo que le dices</i>. El Space del proyecto estêÂ¡ vinculado en la clase.
+          <div class="src-line">magnific.com êÂ· spaces</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-4#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-1-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Prompt por plano.</b> Una descripciÃ³n de animaciÃ³n separada para cada plano, en el list node. La etapa mÃ¡s
-          crÃ­tica del pipeline: mejores prompts = mejor video.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Prompt por plano.</b> Una descripciêÂ³n de animaciêÂ³n separada para cada plano, en el list node. La etapa mêÂ¡s
+          crêÂ­tica del pipeline: mejores prompts = mejor video.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          En el video, cada ambigÃ¼edad se convierte en una decisiÃ³n que el modelo toma por ti, y rara vez como tÃº
-          la imaginaste. La precisiÃ³n en el prompt es, literalmente, direcciÃ³n.
+          En el video, cada ambigêÂ¼edad se convierte en una decisiêÂ³n que el modelo toma por ti, y rara vez como têÂº
+          la imaginaste. La precisiêÂ³n en el prompt es, literalmente, direcciêÂ³n.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-4#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-1-4#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Dolly in / tracking / Ã³rbita.</b> Empujar hacia el sujeto (tensiÃ³n), seguir de lado (flujo), circular
-          (profundidad). Los tres movimientos que cubren la mayorÃ­a de los planos.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Dolly in / tracking / êÂ³rbita.</b> Empujar hacia el sujeto (tensiêÂ³n), seguir de lado (flujo), circular
+          (profundidad). Los tres movimientos que cubren la mayorêÂ­a de los planos.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Estructura que siempre funciona: <i>sujeto + entorno + movimiento de cÃ¡mara + estilo</i>. Un movimiento, un
-          estilo. El error clÃ¡sico es apilar â€” Ã³rbita + dolly + pan + zoom = caos.
+          Estructura que siempre funciona: <i>sujeto + entorno + movimiento de cêÂ¡mara + estilo</i>. Un movimiento, un
+          estilo. El error clêÂ¡sico es apilar ê¢â¬â êÂ³rbita + dolly + pan + zoom = caos.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-4#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-1-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>IteraciÃ³n.</b> Generar, detectar el defecto, precisar la parte vaga del prompt y volver a generar. El primer resultado
+<div class="tag">DefiniciêÂ³n</div>
+<b>IteraciêÂ³n.</b> Generar, detectar el defecto, precisar la parte vaga del prompt y volver a generar. El primer resultado
           nunca es perfecto, y eso es normal.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
           La clase usa Kling 3.0 en Freepik. Limitaciones registradas: el sonido se genera en una herramienta aparte; la alta calidad
-          puede requerir varios intentos y crÃ©ditos.
+          puede requerir varios intentos y crêÂ©ditos.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-4#topico-5"></aside>
+<aside data-ARCKHê-rail="modulo-1-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Montaje con intenciÃ³n.</b> Revisar, seleccionar y cortar en un editor (Premiere), controlando el ritmo,
-          las transiciones y la duraciÃ³n. Es la Ãºltima capa de direcciÃ³n: donde la secuencia se convierte en pelÃ­cula.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Montaje con intenciêÂ³n.</b> Revisar, seleccionar y cortar en un editor (Premiere), controlando el ritmo,
+          las transiciones y la duraciêÂ³n. Es la êÂºltima capa de direcciêÂ³n: donde la secuencia se convierte en pelêÂ­cula.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          El nodo combinador es rÃ¡pido, pero entrega clips sueltos. El acabado profesional estÃ¡ en el corte manual â€”
-          donde finalmente se concreta el ritmo del MÃ³dulo 1.1.
+          El nodo combinador es rêÂ¡pido, pero entrega clips sueltos. El acabado profesional estêÂ¡ en el corte manual ê¢â¬â
+          donde finalmente se concreta el ritmo del MêÂ³dulo 1.1.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
-<span class="pg">MÃ³dulo 1.4 â€” folio iv</span>
+<span>ARCKHê AI êÂ· Cuaderno del estudiante</span>
+<span class="pg">MêÂ³dulo 1.4 ê¢â¬â folio iv</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -685,8 +685,8 @@ samurai on a bridge, orbit + dolly in + pan + zoom, fast, dramatic, epic...
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

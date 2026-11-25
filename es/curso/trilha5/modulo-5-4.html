@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>MÃ³dulo 5.4 â€” Escenas de acciÃ³n | AI Filmmaking</title>
+<title>MêÂ³dulo 5.4 ê¢â¬â Escenas de acciêÂ³n | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,51 +135,51 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:5-4"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> leÃ­das</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:5-4"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span></span> leêÂ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â mêÂ¡xima legibilidad" type="button">Aaê¢â Â¹</button>
 </div>
-<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaêÂ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lêÂ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
+<nav aria-label="DêÂ³nde estêÂ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
-<span>Ruta <b>5</b> VFX y acciÃ³n</span>
-<span class="sep">Â·</span>
-<span>MÃ³dulo <b>5.4</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">SecciÃ³n 1 de 5</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span>Ruta <b>5</b> VFX y acciêÂ³n</span>
+<span class="sep">êÂ·</span>
+<span>MêÂ³dulo <b>5.4</b> / 4</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">SecciêÂ³n 1 de 5</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,70 +189,70 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">MÃ³dulo 5.4 Â· Ruta 5 Â· VFX y acciÃ³n</p>
-<h1 class="module">Escenas de <em>AcciÃ³n</em></h1>
-<p class="deck">La acciÃ³n no es movimiento. Es peligro, movimiento, anticipaciÃ³n y recompensa, mientras el espectador se pregunta siempre â€œÂ¿cÃ³mo va a terminar esto?â€. Y solo funciona si el caos es legible: una idea visual clara vale mÃ¡s que mil explosiones confusas.</p>
+<p class="kicker">MêÂ³dulo 5.4 êÂ· Ruta 5 êÂ· VFX y acciêÂ³n</p>
+<h1 class="module">Escenas de <em>AcciêÂ³n</em></h1>
+<p class="deck">La acciêÂ³n no es movimiento. Es peligro, movimiento, anticipaciêÂ³n y recompensa, mientras el espectador se pregunta siempre ê¢â¬ÅêÂ¿cêÂ³mo va a terminar esto?ê¢â¬Â. Y solo funciona si el caos es legible: una idea visual clara vale mêÂ¡s que mil explosiones confusas.</p>
 <p class="read-meta">
 <span class="here">Leyendo ahora</span>
-<span>~18 min Â· mÃ³dulo completo</span>
+<span>~18 min êÂ· mêÂ³dulo completo</span>
 <span>5 secciones</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="Lo que vas a entender" class="aims">
 <h2>Lo que vas a entender</h2>
 <ul>
-<li>La ecuaciÃ³n de la acciÃ³n: <b>peligro + movimiento + anticipaciÃ³n + recompensa</b> â€” la pregunta que
+<li>La ecuaciêÂ³n de la acciêÂ³n: <b>peligro + movimiento + anticipaciêÂ³n + recompensa</b> ê¢â¬â la pregunta que
               toda escena debe provocar.</li>
-<li>Cinco <b>mecÃ¡nicas de blockbuster</b> â€” transformaciÃ³n en pleno vuelo, casi accidente, vuelco del que se sale con vida,
+<li>Cinco <b>mecêÂ¡nicas de blockbuster</b> ê¢â¬â transformaciêÂ³n en pleno vuelo, casi accidente, vuelco del que se sale con vida,
               parkour contra la gravedad, rescate a contrarreloj.</li>
-<li>Â¿Por quÃ© Â«casi fallaÂ» es el secreto: el pÃºblico no quiere perfecciÃ³n, quiere la <b>al borde del
+<li>êÂ¿Por quêÂ© êÂ«casi fallaêÂ» es el secreto: el pêÂºblico no quiere perfecciêÂ³n, quiere la <b>al borde del
               fracaso</b>.</li>
-<li>QuÃ© importa en la ejecuciÃ³n con IA: <b>claridad en el caos</b>, geografÃ­a espacial legible, una idea
+<li>QuêÂ© importa en la ejecuciêÂ³n con IA: <b>claridad en el caos</b>, geografêÂ­a espacial legible, una idea
               visual por escena.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Resumen del mÃ³dulo" class="toc" data-ARCKHÉ-toc="">
+<nav aria-label="Resumen del mêÂ³dulo" class="toc" data-ARCKHê-toc="">
 <p class="toc-head">Resumen: cinco movimientos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">La ecuaciÃ³n de la acciÃ³n</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">Las cinco mecÃ¡nicas</span></a><span class="leader"></span></li>
-<li><span class="n">3</span><a href="#topico-3"><span class="t">El secreto: Â«casi fallaÂ»</span></a><span class="leader"></span></li>
+<a href="#topico-1"><span class="t">La ecuaciêÂ³n de la acciêÂ³n</span></a></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Las cinco mecêÂ¡nicas</span></a><span class="leader"></span></li>
+<li><span class="n">3</span><a href="#topico-3"><span class="t">El secreto: êÂ«casi fallaêÂ»</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Claridad en el caos</span></a><span class="leader"></span></li>
 <li><span class="n">5</span><a href="#topico-5"><span class="t">Una idea visual por escena</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="5-4" data-ARCKHÉ-topic="modulo-5-4#topico-1" data-ARCKHÉ-track="5" id="topico-1">
+<section data-ARCKHê-module="5-4" data-ARCKHê-topic="modulo-5-4#topico-1" data-ARCKHê-track="5" id="topico-1">
 <div class="section-mark">
-<span class="where">SecciÃ³n 1 de 5</span><span>Â·</span><span>EcuaciÃ³n</span>
+<span class="where">SecciêÂ³n 1 de 5</span><span>êÂ·</span><span>EcuaciêÂ³n</span>
 </div>
-<h2 class="head"><span class="num">1.</span>La ecuaciÃ³n de la acciÃ³n</h2>
+<h2 class="head"><span class="num">1.</span>La ecuaciêÂ³n de la acciêÂ³n</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m5-4-t1-p1">Empieza corrigiendo el malentendido que arruina la
-              mayorÃ­a de las escenas de acciÃ³n generadas por IA: <em>la acciÃ³n no es movimiento.</em><span class="sidenote-ref">1</span>
-              El movimiento por sÃ­ solo cansa: autos corriendo, explosiones estallando, cÃ¡mara temblando. Una escena de
-              acciÃ³n potente se compone de cuatro ingredientes en una ecuaciÃ³n: <strong>peligro + movimiento + anticipaciÃ³n +
+<p class="lede dropcap" data-ARCKHê-block="m5-4-t1-p1">Empieza corrigiendo el malentendido que arruina la
+              mayorêÂ­a de las escenas de acciêÂ³n generadas por IA: <em>la acciêÂ³n no es movimiento.</em><span class="sidenote-ref">1</span>
+              El movimiento por sêÂ­ solo cansa: autos corriendo, explosiones estallando, cêÂ¡mara temblando. Una escena de
+              acciêÂ³n potente se compone de cuatro ingredientes en una ecuaciêÂ³n: <strong>peligro + movimiento + anticipaciêÂ³n +
               recompensa</strong>. Si falta uno, la escena se convierte en ruido. El espectador necesita sentir que hay algo en juego
-              (peligro), ver cÃ³mo se desarrolla (movimiento), no saber cÃ³mo termina (anticipaciÃ³n) y recibir
-              una resoluciÃ³n (recompensa).</p>
-<p data-ARCKHÉ-block="m5-4-t1-p2">Hay una prueba Ãºnica que mide si acertaste. Una buena escena de acciÃ³n plantea
-              una pregunta en la mente del pÃºblico y la mantiene viva: <em>â€œÂ¿cÃ³mo va a terminar esto?â€</em>
+              (peligro), ver cêÂ³mo se desarrolla (movimiento), no saber cêÂ³mo termina (anticipaciêÂ³n) y recibir
+              una resoluciêÂ³n (recompensa).</p>
+<p data-ARCKHê-block="m5-4-t1-p2">Hay una prueba êÂºnica que mide si acertaste. Una buena escena de acciêÂ³n plantea
+              una pregunta en la mente del pêÂºblico y la mantiene viva: <em>ê¢â¬ÅêÂ¿cêÂ³mo va a terminar esto?ê¢â¬Â</em>
               Mientras esa pregunta arde, la escena atrapa. En el instante en que al espectador deja de importarle
-              el desenlace â€”porque ya lo vio, porque no hay nada en juego, porque el caos se volviÃ³ paisajeâ€”, la
-              acciÃ³n muriÃ³, por mucho movimiento que haya en pantalla. La anticipaciÃ³n es el motor; la recompensa solo importa
+              el desenlace ê¢â¬âporque ya lo vio, porque no hay nada en juego, porque el caos se volviêÂ³ paisajeê¢â¬â, la
+              acciêÂ³n muriêÂ³, por mucho movimiento que haya en pantalla. La anticipaciêÂ³n es el motor; la recompensa solo importa
               porque antes hubo una pregunta.</p>
-<h3 class="sub">Las tres seÃ±ales de una buena escena</h3>
-<p data-ARCKHÉ-block="m5-4-t1-p3">La clase resume lo que toda escena de acciÃ³n memorable comparte. Es
-              <strong>fÃ¡cil de entender visualmente</strong> â€” sabes en cada instante quÃ© estÃ¡
-              pasando y dÃ³nde. Ella es <strong>emocionalmente clara</strong> â€” sabes por quiÃ©n hinchar y quÃ©
-              teme. Y ella <strong>escala la tensiÃ³n cada segundo</strong> â€” no se mantiene en una meseta de frenesÃ­, sino que crece. FÃ­jate en que dos de esos tres rasgos tienen que ver con <em>claridad</em>, no sobre la intensidad. Este es el hilo conductor de la clase y el tema de la SecciÃ³n 4.</p>
+<h3 class="sub">Las tres seêÂ±ales de una buena escena</h3>
+<p data-ARCKHê-block="m5-4-t1-p3">La clase resume lo que toda escena de acciêÂ³n memorable comparte. Es
+              <strong>fêÂ¡cil de entender visualmente</strong> ê¢â¬â sabes en cada instante quêÂ© estêÂ¡
+              pasando y dêÂ³nde. Ella es <strong>emocionalmente clara</strong> ê¢â¬â sabes por quiêÂ©n hinchar y quêÂ©
+              teme. Y ella <strong>escala la tensiêÂ³n cada segundo</strong> ê¢â¬â no se mantiene en una meseta de frenesêÂ­, sino que crece. FêÂ­jate en que dos de esos tres rasgos tienen que ver con <em>claridad</em>, no sobre la intensidad. Este es el hilo conductor de la clase y el tema de la SecciêÂ³n 4.</p>
 </div>
 <!-- figura 1: a equacao da acao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· La acciÃ³n es una <b>ecuaciÃ³n</b> â€” la pregunta que ella sostiene</figcaption>
-<svg aria-label="Diagrama: cuatro bloques sumados â€” peligro, movimiento, anticipaciÃ³n, recompensa â€” producen la pregunta cÃ³mo va a terminar esto, que es el motor de la escena de acciÃ³n." class="diagram" role="img" viewbox="0 0 720 180">
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· La acciêÂ³n es una <b>ecuaciêÂ³n</b> ê¢â¬â la pregunta que ella sostiene</figcaption>
+<svg aria-label="Diagrama: cuatro bloques sumados ê¢â¬â peligro, movimiento, anticipaciêÂ³n, recompensa ê¢â¬â producen la pregunta cêÂ³mo va a terminar esto, que es el motor de la escena de acciêÂ³n." class="diagram" role="img" viewbox="0 0 720 180">
 <defs>
 <pattern height="6" id="hatch-5-4" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
 <line class="accent-stroke" opacity="0.16" stroke-width="2.4" x1="0" x2="0" y1="0" y2="6"></line>
@@ -261,139 +261,139 @@
 <g class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle">
 <g><rect class="wash accent-stroke" height="46" rx="3" stroke-width="1.2" width="116" x="40" y="44"></rect><text x="98" y="72">peligro</text></g>
 <g><rect class="wash accent-stroke" height="46" rx="3" stroke-width="1.2" width="116" x="180" y="44"></rect><text x="238" y="72">movimiento</text></g>
-<g><rect class="accent-stroke" fill="url(#hatch-5-4)" height="46" rx="3" stroke-width="1.4" width="116" x="320" y="44"></rect><text x="378" y="72">anticipaciÃ³n</text></g>
+<g><rect class="accent-stroke" fill="url(#hatch-5-4)" height="46" rx="3" stroke-width="1.4" width="116" x="320" y="44"></rect><text x="378" y="72">anticipaciêÂ³n</text></g>
 <g><rect class="wash accent-stroke" height="46" rx="3" stroke-width="1.2" width="116" x="460" y="44"></rect><text x="518" y="72">recompensa</text></g>
 </g>
 <g class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="15" text-anchor="middle">
 <text x="168" y="74">+</text><text x="308" y="74">+</text><text x="448" y="74">+</text><text x="606" y="74">=</text>
 </g>
 <text class="accent" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="648" y="62">la escena</text>
-<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="138">â€œÂ¿cÃ³mo va a terminar esto?â€</text>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="160">mientras la pregunta arde, la acciÃ³n atrapa</text>
+<text class="ink" font-family="Spectral, serif" font-size="15" font-style="italic" text-anchor="middle" x="360" y="138">ê¢â¬ÅêÂ¿cêÂ³mo va a terminar esto?ê¢â¬Â</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="160">mientras la pregunta arde, la acciêÂ³n atrapa</text>
 </svg>
 </figure>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Una escena tiene una persecuciÃ³n espectacular, del primer al Ãºltimo segundo, con el mismo nivel mÃ¡ximo de caos.
-              TÃ©cnicamente impresionante â€” y aun asÃ­ el espectador revisa el celular a mitad de la escena. Al observar la
-              ecuaciÃ³n de la acciÃ³n: Â¿quÃ© probablemente faltÃ³?</p>
+<p>Una escena tiene una persecuciêÂ³n espectacular, del primer al êÂºltimo segundo, con el mismo nivel mêÂ¡ximo de caos.
+              TêÂ©cnicamente impresionante ê¢â¬â y aun asêÂ­ el espectador revisa el celular a mitad de la escena. Al observar la
+              ecuaciêÂ³n de la acciêÂ³n: êÂ¿quêÂ© probablemente faltêÂ³?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
-<p class="answer">FaltÃ³ <strong>anticipaciÃ³n</strong> â€” y, con ella, la escalada. El caos constante y
-                mÃ¡ximo desde el principio no deja crecer la pregunta Â«Â¿cÃ³mo va a terminar?Â»: no hay adÃ³nde
-                subir, asÃ­ que el cerebro se acostumbra y se desconecta. Sin variaciones de tensiÃ³n, el movimiento se vuelve paisaje.
-                La acciÃ³n necesita una escalada, y la escalada necesita un punto de partida mÃ¡s bajo: es la misma
-                lÃ³gica de la estabilidad y la cÃ¡mara lenta de las lecciones anteriores.</p>
+<p class="answer">FaltêÂ³ <strong>anticipaciêÂ³n</strong> ê¢â¬â y, con ella, la escalada. El caos constante y
+                mêÂ¡ximo desde el principio no deja crecer la pregunta êÂ«êÂ¿cêÂ³mo va a terminar?êÂ»: no hay adêÂ³nde
+                subir, asêÂ­ que el cerebro se acostumbra y se desconecta. Sin variaciones de tensiêÂ³n, el movimiento se vuelve paisaje.
+                La acciêÂ³n necesita una escalada, y la escalada necesita un punto de partida mêÂ¡s bajo: es la misma
+                lêÂ³gica de la estabilidad y la cêÂ¡mara lenta de las lecciones anteriores.</p>
 </details>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Profundizando: la acciÃ³n y la curva de la Ruta 1 en movimiento
+<summary><span class="chev">ê¢âÂ¸</span> Profundizando: la acciêÂ³n y la curva de la Ruta 1 en movimiento
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Capa opcional: conecta esta clase final con el algoritmo que abriÃ³ el curso.</p>
-<p>Todo en esta clase es una aplicaciÃ³n de la curva de tensiÃ³n que vimos en el MÃ³dulo 1.1: estabilidad, ruptura,
-                escalada, aceleraciÃ³n, cÃ¡mara lenta en el pico, impacto. La ecuaciÃ³n de la acciÃ³n es esa curva traducida en
+<p>Capa opcional: conecta esta clase final con el algoritmo que abriêÂ³ el curso.</p>
+<p>Todo en esta clase es una aplicaciêÂ³n de la curva de tensiêÂ³n que vimos en el MêÂ³dulo 1.1: estabilidad, ruptura,
+                escalada, aceleraciêÂ³n, cêÂ¡mara lenta en el pico, impacto. La ecuaciêÂ³n de la acciêÂ³n es esa curva traducida en
                 ingredientes. <strong>Peligro</strong> es la ruptura de la estabilidad. <strong>Movimiento</strong> y la
-                escalada y la aceleraciÃ³n. <strong>AnticipaciÃ³n</strong> es la tensiÃ³n que crece a lo largo de la curva.
+                escalada y la aceleraciêÂ³n. <strong>AnticipaciêÂ³n</strong> es la tensiêÂ³n que crece a lo largo de la curva.
                 <strong>Recompensa</strong> es el impacto al final. Y el slow-mo de la clase anterior aterriza justo en el
-                pico de esa curva, dentro de la escena de acciÃ³n. No estÃ¡s aprendiendo algo nuevo â€” estÃ¡s viendo operar
-                de una vez todo el sistema del curso, en el gÃ©nero que mÃ¡s lo exige.</p>
+                pico de esa curva, dentro de la escena de acciêÂ³n. No estêÂ¡s aprendiendo algo nuevo ê¢â¬â estêÂ¡s viendo operar
+                de una vez todo el sistema del curso, en el gêÂ©nero que mêÂ¡s lo exige.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="5-4" data-ARCKHÉ-topic="modulo-5-4#topico-2" data-ARCKHÉ-track="5" id="topico-2">
+<section data-ARCKHê-module="5-4" data-ARCKHê-topic="modulo-5-4#topico-2" data-ARCKHê-track="5" id="topico-2">
 <div class="section-mark">
-<span class="where">SecciÃ³n 2 de 5</span><span>Â·</span><span>MecÃ¡nicas</span>
+<span class="where">SecciêÂ³n 2 de 5</span><span>êÂ·</span><span>MecêÂ¡nicas</span>
 </div>
-<h2 class="head"><span class="num">2.</span>Las cinco mecÃ¡nicas</h2>
+<h2 class="head"><span class="num">2.</span>Las cinco mecêÂ¡nicas</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-4-t2-p1">La clase desglosa cinco mecanismos de acciÃ³n de blockbuster.
-              Cada uno es uno <em>fÃ³rmula</em> â€” una combinaciÃ³n de ingredientes que produce un efecto
+<p class="lede" data-ARCKHê-block="m5-4-t2-p1">La clase desglosa cinco mecanismos de acciêÂ³n de blockbuster.
+              Cada uno es uno <em>fêÂ³rmula</em> ê¢â¬â una combinaciêÂ³n de ingredientes que produce un efecto
               predecible.<span class="sidenote-ref">2</span> Piensa en ellas como recetas: no para copiarlas, sino para
-              entender por quÃ© funcionan y poder crear las tuyas.</p>
-<p data-ARCKHÉ-block="m5-4-t2-p2"><strong>1. TransformaciÃ³n en vuelo</strong> (transformaciÃ³n + escala). Un
-              carro sale disparado de un puente que se derrumba y, en el aire, se transforma en una mÃ¡quina voladora. Funciona porque
-              <em>rompe la expectativa</em>: el pÃºblico espera un choque y recibe sorpresa y una demostraciÃ³n de poder. Y el
-              movimiento vertical â€”caer y luego volarâ€” se siente emocionalmente mÃ¡s grande que el horizontal.
-              <span class="dfn"><details class="dfn"><summary>Peligro + sorpresa + cambio de escala = espectÃ¡culo.</summary><span class="body">Esta es la fÃ³rmula de la primera mecÃ¡nica. Cada mecÃ¡nica de la lecciÃ³n viene con una ecuaciÃ³n asÃ­: no es mÃ­stica, sino una combinaciÃ³n deliberada de estÃ­mulos perceptivos que produce una respuesta especÃ­fica en el espectador.</span></details></span></p>
-<p data-ARCKHÉ-block="m5-4-t2-p3"><strong>2. PersecuciÃ³n realista en la ciudad</strong> (casi accidente).
-              Un muscle car casi pierde el control y se escapa por un hueco estrecho en el trÃ¡fico. Funciona porque
-              <em>una buena acciÃ³n parece casi fuera de control</em> â€” al pÃºblico no le gusta la perfecciÃ³n, le gusta el casi error. <strong>3. Vuelco del SUV</strong> (catÃ¡strofe controlada). El vehÃ­culo choca, vuelca
-              violentamente y, contra todo pronÃ³stico, sigue avanzando. Funciona porque a los seres humanos les encanta la destrucciÃ³n controlada:
-              un accidente parece peligroso, pero es emocionalmente seguro â€” miedo sin trauma. <strong>4. Escape de parkour</strong> (altura + movimiento). Un corredor salta entre tejados, resbala y se agarra al borde
-              en el Ãºltimo segundo. Funciona porque <em>el enemigo es la propia gravedad</em> â€” el cuerpo entiende el peligro de caer sin necesitar una palabra. <strong>5. Rescate en el puente</strong> (cuenta regresiva +
+              entender por quêÂ© funcionan y poder crear las tuyas.</p>
+<p data-ARCKHê-block="m5-4-t2-p2"><strong>1. TransformaciêÂ³n en vuelo</strong> (transformaciêÂ³n + escala). Un
+              carro sale disparado de un puente que se derrumba y, en el aire, se transforma en una mêÂ¡quina voladora. Funciona porque
+              <em>rompe la expectativa</em>: el pêÂºblico espera un choque y recibe sorpresa y una demostraciêÂ³n de poder. Y el
+              movimiento vertical ê¢â¬âcaer y luego volarê¢â¬â se siente emocionalmente mêÂ¡s grande que el horizontal.
+              <span class="dfn"><details class="dfn"><summary>Peligro + sorpresa + cambio de escala = espectêÂ¡culo.</summary><span class="body">Esta es la fêÂ³rmula de la primera mecêÂ¡nica. Cada mecêÂ¡nica de la lecciêÂ³n viene con una ecuaciêÂ³n asêÂ­: no es mêÂ­stica, sino una combinaciêÂ³n deliberada de estêÂ­mulos perceptivos que produce una respuesta especêÂ­fica en el espectador.</span></details></span></p>
+<p data-ARCKHê-block="m5-4-t2-p3"><strong>2. PersecuciêÂ³n realista en la ciudad</strong> (casi accidente).
+              Un muscle car casi pierde el control y se escapa por un hueco estrecho en el trêÂ¡fico. Funciona porque
+              <em>una buena acciêÂ³n parece casi fuera de control</em> ê¢â¬â al pêÂºblico no le gusta la perfecciêÂ³n, le gusta el casi error. <strong>3. Vuelco del SUV</strong> (catêÂ¡strofe controlada). El vehêÂ­culo choca, vuelca
+              violentamente y, contra todo pronêÂ³stico, sigue avanzando. Funciona porque a los seres humanos les encanta la destrucciêÂ³n controlada:
+              un accidente parece peligroso, pero es emocionalmente seguro ê¢â¬â miedo sin trauma. <strong>4. Escape de parkour</strong> (altura + movimiento). Un corredor salta entre tejados, resbala y se agarra al borde
+              en el êÂºltimo segundo. Funciona porque <em>el enemigo es la propia gravedad</em> ê¢â¬â el cuerpo entiende el peligro de caer sin necesitar una palabra. <strong>5. Rescate en el puente</strong> (cuenta regresiva +
               rescate). Un puente se derrumba mientras alguien salva a otra persona segundos antes del desastre. Funciona
-              porque al cerebro humano lo cautivan las cuentas regresivas, el peligro y los rescates â€” y el pÃºblico
+              porque al cerebro humano lo cautivan las cuentas regresivas, el peligro y los rescates ê¢â¬â y el pêÂºblico
               elige un bando al instante.</p>
 </div>
 <!-- figura 2: as cinco mecanicas como formulas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· Cinco mecÃ¡nicas, cinco <b>fÃ³rmulas</b> de tensiÃ³n</figcaption>
-<svg aria-label="Tabla visual de cinco mecÃ¡nicas de acciÃ³n, cada una con su fÃ³rmula: transformaciÃ³n en vuelo, persecuciÃ³n, vuelco, parkour y rescate en el puente." class="diagram" role="img" viewbox="0 0 720 230">
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· Cinco mecêÂ¡nicas, cinco <b>fêÂ³rmulas</b> de tensiêÂ³n</figcaption>
+<svg aria-label="Tabla visual de cinco mecêÂ¡nicas de acciêÂ³n, cada una con su fêÂ³rmula: transformaciêÂ³n en vuelo, persecuciêÂ³n, vuelco, parkour y rescate en el puente." class="diagram" role="img" viewbox="0 0 720 230">
 <g font-family="Source Serif 4, serif" font-size="11.5">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="34" y2="34"></line>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="56">1 Â· vuelo</text>
-<text class="ink-soft" x="200" y="56">peligro + sorpresa + escala = espectÃ¡culo</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="56">1 êÂ· vuelo</text>
+<text class="ink-soft" x="200" y="56">peligro + sorpresa + escala = espectêÂ¡culo</text>
 <line class="rule-stroke" opacity="0.5" stroke-width="0.8" x1="40" x2="690" y1="72" y2="72"></line>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="94">2 Â· persecuciÃ³n</text>
-<text class="ink-soft" x="200" y="94">velocidad + pÃ©rdida de control + casi accidente = tensiÃ³n</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="94">2 êÂ· persecuciêÂ³n</text>
+<text class="ink-soft" x="200" y="94">velocidad + pêÂ©rdida de control + casi accidente = tensiêÂ³n</text>
 <line class="rule-stroke" opacity="0.5" stroke-width="0.8" x1="40" x2="690" y1="110" y2="110"></line>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="132">3 Â· vuelco</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="132">3 êÂ· vuelco</text>
 <text class="ink-soft" x="200" y="132">impacto + caos + supervivencia = adrenalina</text>
 <line class="rule-stroke" opacity="0.5" stroke-width="0.8" x1="40" x2="690" y1="148" y2="148"></line>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="170">4 Â· parkour</text>
-<text class="ink-soft" x="200" y="170">altura + impulso + casi caÃ­da = suspenso</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="170">4 êÂ· parkour</text>
+<text class="ink-soft" x="200" y="170">altura + impulso + casi caêÂ­da = suspenso</text>
 <line class="rule-stroke" opacity="0.5" stroke-width="0.8" x1="40" x2="690" y1="186" y2="186"></line>
-<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="208">5 Â· rescate</text>
-<text class="accent" x="200" y="208">cuenta regresiva + peligro + rescate = acciÃ³n emocional</text>
+<text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" x="50" y="208">5 êÂ· rescate</text>
+<text class="accent" x="200" y="208">cuenta regresiva + peligro + rescate = acciêÂ³n emocional</text>
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="220" y2="220"></line>
 </g>
 </svg>
 </figure>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="5-4" data-ARCKHÉ-topic="modulo-5-4#topico-3" data-ARCKHÉ-track="5" id="topico-3">
+<section data-ARCKHê-module="5-4" data-ARCKHê-topic="modulo-5-4#topico-3" data-ARCKHê-track="5" id="topico-3">
 <div class="section-mark">
-<span class="where">SecciÃ³n 3 de 5</span><span>Â·</span><span>Falso fallo</span>
+<span class="where">SecciêÂ³n 3 de 5</span><span>êÂ·</span><span>Falso fallo</span>
 </div>
-<h2 class="head"><span class="num">3.</span>El secreto: Â«casi fallaÂ»</h2>
+<h2 class="head"><span class="num">3.</span>El secreto: êÂ«casi fallaêÂ»</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-4-t3-p1">FÃ­jate en lo que tienen en comÃºn las cinco mecÃ¡nicas: ninguna trata
-              de un Ã©xito fluido. Todas giran en torno a la <em>al borde del fracaso</em>. El auto <em>casi</em> golpea.
+<p class="lede" data-ARCKHê-block="m5-4-t3-p1">FêÂ­jate en lo que tienen en comêÂºn las cinco mecêÂ¡nicas: ninguna trata
+              de un êÂ©xito fluido. Todas giran en torno a la <em>al borde del fracaso</em>. El auto <em>casi</em> golpea.
               El pasillo <em>casi</em> cae. El SUV <em>parece</em> destruido antes de continuar. El rescate ocurre
               <em>segundos antes</em> del desastre. Ese es el secreto que la clase condensa en una regla de oro: si el
-              pÃºblico piensa genuinamente <strong>â€œcasi no lo logrÃ³â€</strong>, la escena
+              pêÂºblico piensa genuinamente <strong>ê¢â¬Åcasi no lo logrêÂ³ê¢â¬Â</strong>, la escena
               funciona.<span class="sidenote-ref">3</span></p>
-<p data-ARCKHÉ-block="m5-4-t3-p2">La razÃ³n es psicolÃ³gica. Al pÃºblico no le gusta la perfecciÃ³n: la
-              perfecciÃ³n es predecible, y la previsibilidad mata la anticipaciÃ³n. Lo que atrapa es ver a alguien resolver un
-              problema bajo una presiÃ³n extrema, con el resultado en duda hasta el Ãºltimo instante. Por eso una buena persecuciÃ³n parece <em>menos</em> controlada, ya no: es el casi accidente lo que hace que el espectador deje de
-              preguntar â€œÂ¿quiÃ©n es mÃ¡s rÃ¡pido?â€ y empiece a preguntar â€œÂ¿cÃ³mo sigue
-              vivo?â€. La imperfecciÃ³n aparente no es un error de ejecuciÃ³n, es el corazÃ³n de la tensiÃ³n.</p>
+<p data-ARCKHê-block="m5-4-t3-p2">La razêÂ³n es psicolêÂ³gica. Al pêÂºblico no le gusta la perfecciêÂ³n: la
+              perfecciêÂ³n es predecible, y la previsibilidad mata la anticipaciêÂ³n. Lo que atrapa es ver a alguien resolver un
+              problema bajo una presiêÂ³n extrema, con el resultado en duda hasta el êÂºltimo instante. Por eso una buena persecuciêÂ³n parece <em>menos</em> controlada, ya no: es el casi accidente lo que hace que el espectador deje de
+              preguntar ê¢â¬ÅêÂ¿quiêÂ©n es mêÂ¡s rêÂ¡pido?ê¢â¬Â y empiece a preguntar ê¢â¬ÅêÂ¿cêÂ³mo sigue
+              vivo?ê¢â¬Â. La imperfecciêÂ³n aparente no es un error de ejecuciêÂ³n, es el corazêÂ³n de la tensiêÂ³n.</p>
 <h3 class="sub">Peligro sin trauma</h3>
-<p data-ARCKHÉ-block="m5-4-t3-p3">Hay un matiz que revela la mecÃ¡nica del vuelco: el pÃºblico quiere
-              peligro, pero no trauma. Un accidente automovilÃ­stico de cine funciona porque parece peligroso y, al
-              mismo tiempo, emocionalmente seguro â€”nadie resulta visiblemente herido; el espectador experimenta el
+<p data-ARCKHê-block="m5-4-t3-p3">Hay un matiz que revela la mecêÂ¡nica del vuelco: el pêÂºblico quiere
+              peligro, pero no trauma. Un accidente automovilêÂ­stico de cine funciona porque parece peligroso y, al
+              mismo tiempo, emocionalmente seguro ê¢â¬ânadie resulta visiblemente herido; el espectador experimenta el
               miedo sin ese costo.<span class="sidenote-ref">4</span> Por eso los accidentes en estudios son
               inolvidables: ofrecen adrenalina pura (impacto + caos + supervivencia) sin cobrar el precio
-              emocional de una tragedia. La acciÃ³n vive en esa lÃ­nea tensa: lo bastante cerca del desastre para
-              asustar, lo bastante lejos para que el pÃºblico disfrute.</p>
+              emocional de una tragedia. La acciêÂ³n vive en esa lêÂ­nea tensa: lo bastante cerca del desastre para
+              asustar, lo bastante lejos para que el pêÂºblico disfrute.</p>
 </div>
 <!-- figura 3: a janela da quase-falha -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· La tensiÃ³n estÃ¡ en la <b>al borde del fracaso</b> â€” ni perfecto ni trÃ¡gico</figcaption>
-<svg aria-label="Diagrama de una franja horizontal: a la izquierda, Ã©xito fluido (aburrido); en el centro, la estrecha ventana del casi fracaso (tensiÃ³n mÃ¡xima); a la derecha, el fracaso real o el trauma (alienante)." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· La tensiêÂ³n estêÂ¡ en la <b>al borde del fracaso</b> ê¢â¬â ni perfecto ni trêÂ¡gico</figcaption>
+<svg aria-label="Diagrama de una franja horizontal: a la izquierda, êÂ©xito fluido (aburrido); en el centro, la estrecha ventana del casi fracaso (tensiêÂ³n mêÂ¡xima); a la derecha, el fracaso real o el trauma (alienante)." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="690" y1="120" y2="120"></line>
 <!-- zona esquerda: perfeito -->
 <rect class="rule-stroke" fill="none" height="48" opacity="0.6" rx="3" stroke-width="1" width="220" x="40" y="96"></rect>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="150" y="124">Ã©xito fluido</text>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="150" y="166">predecible â€” aburre</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="150" y="124">êÂ©xito fluido</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" x="150" y="166">predecible ê¢â¬â aburre</text>
 <!-- zona central: quase-falha -->
 <rect class="accent-stroke" fill="url(#hatch-5-4)" height="64" rx="3" stroke-width="1.8" width="180" x="270" y="80"></rect>
 <text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="360" y="108">casi fallo</text>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="360" y="128">TENSIÃ“N MÃXIMA</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="166">â€œcasi no lo logrÃ³â€</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="0.8" text-anchor="middle" x="360" y="128">TENSIêâN MêÂXIMA</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="166">ê¢â¬Åcasi no lo logrêÂ³ê¢â¬Â</text>
 <!-- zona direita: trauma -->
 <rect class="rule-stroke" fill="none" height="48" opacity="0.6" rx="3" stroke-width="1" width="220" x="460" y="96"></rect>
 <text class="faint" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="570" y="124">fracaso real / trauma</text>
@@ -405,78 +405,78 @@
 </figure>
 <div class="predict">
 <p class="lbl">Detente y predice</p>
-<p>Generas una escena de parkour en la que el corredor hace todo con perfecciÃ³n atlÃ©tica: salta, aterriza
-              con firmeza y sigue sin problemas. Visualmente competente, pero sin ninguna tensiÃ³n. SegÃºn la regla de oro de esta
-              secciÃ³n, Â¿cuÃ¡l es el ajuste mÃ­nimo que transforma la escena?</p>
+<p>Generas una escena de parkour en la que el corredor hace todo con perfecciêÂ³n atlêÂ©tica: salta, aterriza
+              con firmeza y sigue sin problemas. Visualmente competente, pero sin ninguna tensiêÂ³n. SegêÂºn la regla de oro de esta
+              secciêÂ³n, êÂ¿cuêÂ¡l es el ajuste mêÂ­nimo que transforma la escena?</p>
 <details>
 <summary>Ver una posible respuesta</summary>
 <p class="answer">Introducir la <strong>casi fallo</strong>: el pie resbala en el borde, la mano se aferra al
-                parapeto en el Ãºltimo instante posible. El ajuste funciona porque lleva la escena del â€œÃ©xito
-                fluidoâ€ (predecible, aburrido) a la posibilidad de casi fallar (â€œcasi no
-                lo logrÃ³â€). La gravedad se convierte en un antagonista visible, la pregunta â€œÂ¿cÃ³mo va a terminar?â€
-                vuelve a cobrar fuerza y la destreza atlÃ©tica pasa a servir a la tensiÃ³n en vez de disolverla.</p>
+                parapeto en el êÂºltimo instante posible. El ajuste funciona porque lleva la escena del ê¢â¬ÅêÂ©xito
+                fluidoê¢â¬Â (predecible, aburrido) a la posibilidad de casi fallar (ê¢â¬Åcasi no
+                lo logrêÂ³ê¢â¬Â). La gravedad se convierte en un antagonista visible, la pregunta ê¢â¬ÅêÂ¿cêÂ³mo va a terminar?ê¢â¬Â
+                vuelve a cobrar fuerza y la destreza atlêÂ©tica pasa a servir a la tensiêÂ³n en vez de disolverla.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="5-4" data-ARCKHÉ-topic="modulo-5-4#topico-4" data-ARCKHÉ-track="5" id="topico-4">
+<section data-ARCKHê-module="5-4" data-ARCKHê-topic="modulo-5-4#topico-4" data-ARCKHê-track="5" id="topico-4">
 <div class="section-mark">
-<span class="where">SecciÃ³n 4 de 5</span><span>Â·</span><span>Claridad</span>
+<span class="where">SecciêÂ³n 4 de 5</span><span>êÂ·</span><span>Claridad</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Claridad en el caos</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-4-t4-p1">AquÃ­ entra lo que la clase no dice en voz alta, pero que es el
-              punto mÃ¡s importante para quien genera acciÃ³n con IA: el caos solo funciona si es <em>legible</em>. Las escenas
-              memorables son fÃ¡ciles de entender visualmente: en cada instante sabes dÃ³nde estÃ¡ todo,
-              quiÃ©n persigue a quiÃ©n y de dÃ³nde viene el peligro. Sin esa <strong>geografÃ­a espacial</strong>, la acciÃ³n se convierte
-              en una sopa de movimiento: pasan muchas cosas, nada es comprensible. Es el error clÃ¡sico de quien empieza
-              con IA y confunde â€œmÃ¡s caosâ€ con â€œmÃ¡s acciÃ³nâ€.</p>
-<p data-ARCKHÉ-block="m5-4-t4-p2">Recuerda la LecciÃ³n 1: <em>escala sin claridad es ruido; claridad con
-              escala es Ã©pica.</em> La escena de acciÃ³n es donde esta regla cuesta mÃ¡s. Hollywood gasta
-              fortunas precisamente para mantener clara la geografÃ­a en medio de la destrucciÃ³n: dÃ³nde estÃ¡ el hÃ©roe,
-              adÃ³nde va, quÃ© lo amenaza, cuÃ¡l es la distancia hasta la salida.<span class="sidenote-ref">5</span>
+<p class="lede" data-ARCKHê-block="m5-4-t4-p1">AquêÂ­ entra lo que la clase no dice en voz alta, pero que es el
+              punto mêÂ¡s importante para quien genera acciêÂ³n con IA: el caos solo funciona si es <em>legible</em>. Las escenas
+              memorables son fêÂ¡ciles de entender visualmente: en cada instante sabes dêÂ³nde estêÂ¡ todo,
+              quiêÂ©n persigue a quiêÂ©n y de dêÂ³nde viene el peligro. Sin esa <strong>geografêÂ­a espacial</strong>, la acciêÂ³n se convierte
+              en una sopa de movimiento: pasan muchas cosas, nada es comprensible. Es el error clêÂ¡sico de quien empieza
+              con IA y confunde ê¢â¬ÅmêÂ¡s caosê¢â¬Â con ê¢â¬ÅmêÂ¡s acciêÂ³nê¢â¬Â.</p>
+<p data-ARCKHê-block="m5-4-t4-p2">Recuerda la LecciêÂ³n 1: <em>escala sin claridad es ruido; claridad con
+              escala es êÂ©pica.</em> La escena de acciêÂ³n es donde esta regla cuesta mêÂ¡s. Hollywood gasta
+              fortunas precisamente para mantener clara la geografêÂ­a en medio de la destrucciêÂ³n: dêÂ³nde estêÂ¡ el hêÂ©roe,
+              adêÂ³nde va, quêÂ© lo amenaza, cuêÂ¡l es la distancia hasta la salida.<span class="sidenote-ref">5</span>
               Para la IA, esto se traduce en disciplina de prompts: describe el espacio y las relaciones, no solo el
-              movimiento. El ritmo de corte tambiÃ©n importa: cada plano debe durar lo suficiente para que el ojo
-              lea lo que ve, y la transiciÃ³n entre planos debe mantener la orientaciÃ³n. El prompt de abajo prioriza
-              la claridad dentro de una mecÃ¡nica intensa.</p>
-<div class="codeblock"><span class="c"># Escena de acciÃ³n con claridad espacial â€” Seedance / Kling / Runway</span>
-<span class="c"># mecÃ¡nica: rescate en el puente (cuenta regresiva + peligro + rescate); una idea visual</span>
+              movimiento. El ritmo de corte tambiêÂ©n importa: cada plano debe durar lo suficiente para que el ojo
+              lea lo que ve, y la transiciêÂ³n entre planos debe mantener la orientaciêÂ³n. El prompt de abajo prioriza
+              la claridad dentro de una mecêÂ¡nica intensa.</p>
+<div class="codeblock"><span class="c"># Escena de acciêÂ³n con claridad espacial ê¢â¬â Seedance / Kling / Runway</span>
+<span class="c"># mecêÂ¡nica: rescate en el puente (cuenta regresiva + peligro + rescate); una idea visual</span>
 <span class="k">escena:</span> a rider races across a bridge that is collapsing section by section behind them.
-<span class="k">spatial_geography:</span> rider on the right, gap opening on the left, safe ground far ahead â€” clear layout.
-<span class="k">mecÃ¡nica:</span> countdown + rescue â€” the rider grabs a stranded person seconds before the deck falls.
-<span class="k">near_failure:</span> la rueda trasera de la bicicleta resbala por el borde que se desmorona y se recupera en el Ãºltimo instante.
-<span class="k">cÃ¡mara:</span> wide establishing the geography, then a tracking medium â€” hold each shot long enough to read.
+<span class="k">spatial_geography:</span> rider on the right, gap opening on the left, safe ground far ahead ê¢â¬â clear layout.
+<span class="k">mecêÂ¡nica:</span> countdown + rescue ê¢â¬â the rider grabs a stranded person seconds before the deck falls.
+<span class="k">near_failure:</span> la rueda trasera de la bicicleta resbala por el borde que se desmorona y se recupera en el êÂºltimo instante.
+<span class="k">cêÂ¡mara:</span> wide establishing the geography, then a tracking medium ê¢â¬â hold each shot long enough to read.
 <span class="k">ritmo:</span> tension escalates each second; cut on action, keep orientation between shots.
-<span class="k">atmosphere:</span> polvo y escombros (partÃ­culas) para dar peso, sin ocultar la disposiciÃ³n espacial.
-<span class="k">estilo:</span> cARCKHÉtic, legible chaos, photoreal, high stakes.</div>
-<h3 class="sub">PartÃ­culas y cÃ¡mara lenta al servicio de la claridad</h3>
-<p data-ARCKHÉ-block="m5-4-t4-p3">FÃ­jate en cÃ³mo la clase final reÃºne toda la ruta. La atmÃ³sfera de
-              partÃ­culas (MÃ³dulo 5.3) le da peso al impacto, pero el prompt advierte: <em>sin ocultar el diseÃ±o
-              espacial</em>. La cÃ¡mara lenta (MÃ³dulo 5.2) marca el clÃ­max del rescate â€” pero solo funciona porque antes todo iba
-              rÃ¡pido. Los VFX (MÃ³dulo 5.1) son una decisiÃ³n, no un botÃ³n â€” cada efecto plantea: Â«Â¿esto ayuda
-              a entender la escena o la confunde?Â». En una escena de acciÃ³n, el criterio es implacable: si el efecto
-              desdibuja la geografÃ­a, juega en tu contra, por mÃ¡s bonito que sea.</p>
+<span class="k">atmosphere:</span> polvo y escombros (partêÂ­culas) para dar peso, sin ocultar la disposiciêÂ³n espacial.
+<span class="k">estilo:</span> cARCKHêtic, legible chaos, photoreal, high stakes.</div>
+<h3 class="sub">PartêÂ­culas y cêÂ¡mara lenta al servicio de la claridad</h3>
+<p data-ARCKHê-block="m5-4-t4-p3">FêÂ­jate en cêÂ³mo la clase final reêÂºne toda la ruta. La atmêÂ³sfera de
+              partêÂ­culas (MêÂ³dulo 5.3) le da peso al impacto, pero el prompt advierte: <em>sin ocultar el diseêÂ±o
+              espacial</em>. La cêÂ¡mara lenta (MêÂ³dulo 5.2) marca el clêÂ­max del rescate ê¢â¬â pero solo funciona porque antes todo iba
+              rêÂ¡pido. Los VFX (MêÂ³dulo 5.1) son una decisiêÂ³n, no un botêÂ³n ê¢â¬â cada efecto plantea: êÂ«êÂ¿esto ayuda
+              a entender la escena o la confunde?êÂ». En una escena de acciêÂ³n, el criterio es implacable: si el efecto
+              desdibuja la geografêÂ­a, juega en tu contra, por mêÂ¡s bonito que sea.</p>
 </div>
 <!-- figura 4: geografia legivel x sopa de movimento -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· <b>GeografÃ­a legible</b> contra la sopa de movimiento</figcaption>
-<svg aria-label="ComparaciÃ³n: a la izquierda, un encuadre de acciÃ³n confuso con vectores en todas direcciones (sopa de movimiento); a la derecha, la misma cantidad de elementos con posiciones y direcciones claras (geografÃ­a legible)." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· <b>GeografêÂ­a legible</b> contra la sopa de movimiento</figcaption>
+<svg aria-label="ComparaciêÂ³n: a la izquierda, un encuadre de acciêÂ³n confuso con vectores en todas direcciones (sopa de movimiento); a la derecha, la misma cantidad de elementos con posiciones y direcciones claras (geografêÂ­a legible)." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- esquerda: sopa -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">SOPA DE MOVIMIENTO</text>
 <rect class="rule-stroke" fill="none" height="130" rx="3" stroke-width="1.2" width="260" x="50" y="40"></rect>
 <g class="rule-stroke" stroke-width="1.4">
 <path d="M80 60 L140 100"></path><path d="M280 70 L210 120"></path><path d="M90 150 L160 90"></path><path d="M260 150 L190 80"></path><path d="M120 160 L230 60"></path><path d="M70 110 L290 130"></path>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="188">todo se mueve â€” nada se lee</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="188">todo se mueve ê¢â¬â nada se lee</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="170"></line>
 <!-- direita: legivel -->
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">GEOGRAFÃA LEGIBLE</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">GEOGRAFêÂA LEGIBLE</text>
 <rect class="accent-stroke" fill="none" height="130" rx="3" stroke-width="1.3" width="260" x="410" y="40"></rect>
 <line class="rule-stroke" opacity="0.55" stroke-width="1" x1="410" x2="670" y1="140" y2="140"></line>
 <!-- heroi (foco) -->
 <circle class="accent-stroke" cx="470" cy="118" fill="url(#hatch-5-4)" r="14" stroke-width="1.6"></circle>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="470" y="160">HÃ‰ROE</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="470" y="160">Hêâ°ROE</text>
 <!-- direcao clara -->
 <path class="accent-stroke" d="M490 118 L600 110" stroke-width="1.8"></path>
 <path class="accent-stroke" d="M600 110 L590 105 M600 110 L590 116" stroke-width="1.8"></path>
@@ -486,53 +486,53 @@
 <!-- saida -->
 <rect class="rule-stroke" fill="none" height="30" stroke-width="1.2" width="30" x="624" y="96"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="8" text-anchor="middle" x="639" y="146">SALIDA</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="188">dÃ³nde, hacia dÃ³nde, contra quÃ©</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="540" y="188">dêÂ³nde, hacia dêÂ³nde, contra quêÂ©</text>
 </svg>
 </figure>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-ARCKHÉ-module="5-4" data-ARCKHÉ-topic="modulo-5-4#topico-5" data-ARCKHÉ-track="5" id="topico-5">
+<section data-ARCKHê-module="5-4" data-ARCKHê-topic="modulo-5-4#topico-5" data-ARCKHê-track="5" id="topico-5">
 <div class="section-mark">
-<span class="where">SecciÃ³n 5 de 5</span><span>Â·</span><span>SÃ­ntesis</span>
+<span class="where">SecciêÂ³n 5 de 5</span><span>êÂ·</span><span>SêÂ­ntesis</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Una idea visual por escena</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m5-4-t5-p1">La clase termina con una regla de oro que tambiÃ©n cierra la
-              ruta: <strong>una idea visual potente = una gran escena de acciÃ³n.</strong><span class="sidenote-ref">6</span>
-              Cada una de las cinco mecÃ¡nicas es <em>una</em> idea clara: el auto que se convierte en aviÃ³n, el puente que
-              se derrumba durante el rescate. Ninguna intenta hacer cinco cosas al mismo tiempo. La tentaciÃ³n del principiante es
-              amontonar: transformaciÃ³n <em>e</em> persecuciÃ³n <em>e</em> vuelco <em>e</em> parkour en una sola
-              escena. El resultado es confusiÃ³n: la sopa de movimiento de la secciÃ³n anterior. La disciplina es lo opuesto:
-              elige una idea y ejecÃºtala con claridad.</p>
-<p data-ARCKHÉ-block="m5-4-t5-p2">La fÃ³rmula final que ofrece la clase lo resume todo: <em>riesgo + movimiento
-              + casi accidente = acciÃ³n cARCKHÉtogrÃ¡fica.</em> O, aÃºn mÃ¡s conciso: el casi-fallo es la acciÃ³n. FÃ­jate que
-              esta fÃ³rmula no menciona efectos, explosiones ni escala: se trata de <em>estructura de tensiÃ³n</em>.
-              Puedes tener el mayor presupuesto de VFX del mundo y ninguna acciÃ³n si falta el casi fracaso; y puedes tener una escena mÃ­nima y poderosa si aciertas la estructura. Una vez mÃ¡s, la tesis del curso: el efecto sirve a la percepciÃ³n, nunca al contrario.</p>
+<p class="lede" data-ARCKHê-block="m5-4-t5-p1">La clase termina con una regla de oro que tambiêÂ©n cierra la
+              ruta: <strong>una idea visual potente = una gran escena de acciêÂ³n.</strong><span class="sidenote-ref">6</span>
+              Cada una de las cinco mecêÂ¡nicas es <em>una</em> idea clara: el auto que se convierte en aviêÂ³n, el puente que
+              se derrumba durante el rescate. Ninguna intenta hacer cinco cosas al mismo tiempo. La tentaciêÂ³n del principiante es
+              amontonar: transformaciêÂ³n <em>e</em> persecuciêÂ³n <em>e</em> vuelco <em>e</em> parkour en una sola
+              escena. El resultado es confusiêÂ³n: la sopa de movimiento de la secciêÂ³n anterior. La disciplina es lo opuesto:
+              elige una idea y ejecêÂºtala con claridad.</p>
+<p data-ARCKHê-block="m5-4-t5-p2">La fêÂ³rmula final que ofrece la clase lo resume todo: <em>riesgo + movimiento
+              + casi accidente = acciêÂ³n cARCKHêtogrêÂ¡fica.</em> O, aêÂºn mêÂ¡s conciso: el casi-fallo es la acciêÂ³n. FêÂ­jate que
+              esta fêÂ³rmula no menciona efectos, explosiones ni escala: se trata de <em>estructura de tensiêÂ³n</em>.
+              Puedes tener el mayor presupuesto de VFX del mundo y ninguna acciêÂ³n si falta el casi fracaso; y puedes tener una escena mêÂ­nima y poderosa si aciertas la estructura. Una vez mêÂ¡s, la tesis del curso: el efecto sirve a la percepciêÂ³n, nunca al contrario.</p>
 <h3 class="sub">El cierre de la ruta</h3>
-<p data-ARCKHÉ-block="m5-4-t5-p3">Mira atrÃ¡s, a los cuatro mÃ³dulos. El 5.1 estableciÃ³ que el efecto no es
-              realismo y que todo efecto es una decisiÃ³n al servicio de la percepciÃ³n. El 5.2 mostrÃ³ la cÃ¡mara lenta como la
-              frase â€œesto importaâ€, que depende del contraste. El 5.3 revelÃ³ las partÃ­culas como la
-              atmÃ³sfera que devuelve la vida y oculta los lÃ­mites de la IA. Y el 5.4 reuniÃ³ todo en la escena de acciÃ³n,
-              donde la claridad, la geografÃ­a y el casi error deciden si el caos se convierte en algo Ã©pico o en ruido. El hilo nunca cambiÃ³:
-              <em>no diriges efectos; diriges la atenciÃ³n de quien mira, y el efecto es solo uno de los instrumentos.</em></p>
-<p data-ARCKHÉ-block="m5-4-t5-p4">La tarea del instructor cierra el aprendizaje: crea tres escenas de acciÃ³n
-              originales, de unos cinco segundos cada una, y para cada una escribe el aspecto visual (lo que ve el pÃºblico), la
-              mecÃ¡nica utilizada y la lÃ³gica (por quÃ© funciona como acciÃ³n). Es el ejercicio que transforma las cinco fÃ³rmulas
-              en vocabulario propio. A partir de aquÃ­, la ruta cambia de pÃ¡gina: del espectÃ¡culo del cuerpo â€”VFX, cÃ¡mara lenta,
-              partÃ­culas, acciÃ³nâ€” al territorio mÃ¡s Ã­ntimo del cine: el personaje y la actuaciÃ³n. El efecto
-              impresiona, pero es el rostro humano el que hace que al pÃºblico le importe.</p>
+<p data-ARCKHê-block="m5-4-t5-p3">Mira atrêÂ¡s, a los cuatro mêÂ³dulos. El 5.1 estableciêÂ³ que el efecto no es
+              realismo y que todo efecto es una decisiêÂ³n al servicio de la percepciêÂ³n. El 5.2 mostrêÂ³ la cêÂ¡mara lenta como la
+              frase ê¢â¬Åesto importaê¢â¬Â, que depende del contraste. El 5.3 revelêÂ³ las partêÂ­culas como la
+              atmêÂ³sfera que devuelve la vida y oculta los lêÂ­mites de la IA. Y el 5.4 reuniêÂ³ todo en la escena de acciêÂ³n,
+              donde la claridad, la geografêÂ­a y el casi error deciden si el caos se convierte en algo êÂ©pico o en ruido. El hilo nunca cambiêÂ³:
+              <em>no diriges efectos; diriges la atenciêÂ³n de quien mira, y el efecto es solo uno de los instrumentos.</em></p>
+<p data-ARCKHê-block="m5-4-t5-p4">La tarea del instructor cierra el aprendizaje: crea tres escenas de acciêÂ³n
+              originales, de unos cinco segundos cada una, y para cada una escribe el aspecto visual (lo que ve el pêÂºblico), la
+              mecêÂ¡nica utilizada y la lêÂ³gica (por quêÂ© funciona como acciêÂ³n). Es el ejercicio que transforma las cinco fêÂ³rmulas
+              en vocabulario propio. A partir de aquêÂ­, la ruta cambia de pêÂ¡gina: del espectêÂ¡culo del cuerpo ê¢â¬âVFX, cêÂ¡mara lenta,
+              partêÂ­culas, acciêÂ³nê¢â¬â al territorio mêÂ¡s êÂ­ntimo del cine: el personaje y la actuaciêÂ³n. El efecto
+              impresiona, pero es el rostro humano el que hace que al pêÂºblico le importe.</p>
 </div>
 <!-- figura 5: uma ideia x ideias empilhadas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> Â· <b>Una</b> una idea visual ejecutada con claridad supera a cinco amontonadas</figcaption>
-<svg aria-label="ComparaciÃ³n: a la izquierda, cinco ideas de acciÃ³n superpuestas y confusas; a la derecha, una sola idea clara y dominante. La regla de oro: una idea visual fuerte por escena." class="diagram" role="img" viewbox="0 0 720 190">
+<figcaption><span class="fig-n">Fig. 5</span> êÂ· <b>Una</b> una idea visual ejecutada con claridad supera a cinco amontonadas</figcaption>
+<svg aria-label="ComparaciêÂ³n: a la izquierda, cinco ideas de acciêÂ³n superpuestas y confusas; a la derecha, una sola idea clara y dominante. La regla de oro: una idea visual fuerte por escena." class="diagram" role="img" viewbox="0 0 720 190">
 <!-- esquerda: empilhado -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="28">CINCO IDEAS APILADAS</text>
 <rect class="rule-stroke" fill="none" height="120" rx="3" stroke-width="1.2" width="260" x="50" y="40"></rect>
 <g class="rule-stroke" fill="none" opacity="0.8" stroke-width="1.2">
 <circle cx="120" cy="80" r="26"></circle><circle cx="180" cy="110" r="30"></circle><circle cx="230" cy="75" r="24"></circle><rect height="40" width="40" x="150" y="90"></rect><circle cx="100" cy="130" r="22"></circle>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">todo compite â€” confusiÃ³n</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="178">todo compite ê¢â¬â confusiêÂ³n</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="160"></line>
 <!-- direita: uma ideia -->
@@ -545,62 +545,62 @@
 </figure>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
-<section aria-label="AutocomprobaciÃ³n" class="check">
-<h2>Antes de continuar: cuatro revisiones rÃ¡pidas</h2>
+<section aria-label="AutocomprobaciêÂ³n" class="check">
+<h2>Antes de continuar: cuatro revisiones rêÂ¡pidas</h2>
 <p class="intro">Sin nota ni puntaje. Responde de memoria y luego revela la respuesta para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Si la acciÃ³n no es movimiento, Â¿cuÃ¡l es la ecuaciÃ³n? Esa es la pregunta que toda escena debe sostener.</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p><strong>Peligro + movimiento + anticipaciÃ³n + recompensa.</strong> Y la pregunta es
-              â€œÂ¿cÃ³mo va a terminar esto?â€. Mientras arde, la escena atrapa; cuando al espectador deja de
-              importarle el desenlace, la acciÃ³n muere â€” por mÃ¡s movimiento que haya en pantalla.</p></div>
+<summary><span class="qn">01</span><span>Si la acciêÂ³n no es movimiento, êÂ¿cuêÂ¡l es la ecuaciêÂ³n? Esa es la pregunta que toda escena debe sostener.</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p><strong>Peligro + movimiento + anticipaciêÂ³n + recompensa.</strong> Y la pregunta es
+              ê¢â¬ÅêÂ¿cêÂ³mo va a terminar esto?ê¢â¬Â. Mientras arde, la escena atrapa; cuando al espectador deja de
+              importarle el desenlace, la acciêÂ³n muere ê¢â¬â por mêÂ¡s movimiento que haya en pantalla.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Â¿CuÃ¡l es la regla de oro para saber si una escena de acciÃ³n funciona?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Si el pÃºblico realmente piensa <em>â€œcasi no lo logrÃ³â€</em>, la
-              escena funciona. La tensiÃ³n estÃ¡ en el borde del fracaso: al pÃºblico no le gusta la perfecciÃ³n (predecible), le gusta
+<summary><span class="qn">02</span><span>êÂ¿CuêÂ¡l es la regla de oro para saber si una escena de acciêÂ³n funciona?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Si el pêÂºblico realmente piensa <em>ê¢â¬Åcasi no lo logrêÂ³ê¢â¬Â</em>, la
+              escena funciona. La tensiêÂ³n estêÂ¡ en el borde del fracaso: al pêÂºblico no le gusta la perfecciêÂ³n (predecible), le gusta
               casi fallar. Peligro sin trauma: miedo sin el costo.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">03</span><span>Por quÃ© Â«mÃ¡s caosÂ» no significa Â«mÃ¡s acciÃ³nÂ» en la generaciÃ³n con IA</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Porque el caos solo funciona si es legible. Sin <em>geografÃ­a espacial</em> â€”
-              dÃ³nde estÃ¡ todo, quiÃ©n persigue a quiÃ©n, de dÃ³nde viene el peligro: la acciÃ³n se convierte en una sopa de movimiento. Se aplica la
-              regla de la Ruta 1: escala sin claridad es ruido; claridad con escala es Ã©pica. Describe el espacio, no solo
+<summary><span class="qn">03</span><span>Por quêÂ© êÂ«mêÂ¡s caosêÂ» no significa êÂ«mêÂ¡s acciêÂ³nêÂ» en la generaciêÂ³n con IA</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Porque el caos solo funciona si es legible. Sin <em>geografêÂ­a espacial</em> ê¢â¬â
+              dêÂ³nde estêÂ¡ todo, quiêÂ©n persigue a quiêÂ©n, de dêÂ³nde viene el peligro: la acciêÂ³n se convierte en una sopa de movimiento. Se aplica la
+              regla de la Ruta 1: escala sin claridad es ruido; claridad con escala es êÂ©pica. Describe el espacio, no solo
               el movimiento.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Â¿CuÃ¡l es la regla de oro sobre cuÃ¡ntas ideas visuales caben en una escena de acciÃ³n?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Una. <em>Una idea visual potente = una gran escena de acciÃ³n.</em> Cada mecÃ¡nica es una
-              idea clara (el auto que se convierte en aviÃ³n, el puente que se derrumba durante el rescate). Apilar mecÃ¡nicas genera confusiÃ³n;
-              elegir una y ejecutarla con claridad genera el Ã©xito de taquilla. FÃ³rmula final: riesgo + movimiento +
+<summary><span class="qn">04</span><span>êÂ¿CuêÂ¡l es la regla de oro sobre cuêÂ¡ntas ideas visuales caben en una escena de acciêÂ³n?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Una. <em>Una idea visual potente = una gran escena de acciêÂ³n.</em> Cada mecêÂ¡nica es una
+              idea clara (el auto que se convierte en aviêÂ³n, el puente que se derrumba durante el rescate). Apilar mecêÂ¡nicas genera confusiêÂ³n;
+              elegir una y ejecutarla con claridad genera el êÂ©xito de taquilla. FêÂ³rmula final: riesgo + movimiento +
               casi fracaso.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Mi recorrido â€” progreso consolidado" class="journey">
+<section aria-label="Mi recorrido ê¢â¬â progreso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Mi recorrido</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir cuaderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Mi recorrido</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir cuaderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
-<div class="k">En este mÃ³dulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:5-4">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leÃ­das</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="k">En este mêÂ³dulo</div>
+<div class="v" data-ARCKHê-meter="modulo:5-4">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secciones leêÂ­das</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En la ruta 5</div>
-<div class="v" data-ARCKHÉ-meter="trilha:5">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:5">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">temas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">En el curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">recorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -609,75 +609,75 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Siguiente ruta</div>
-<div class="t">MÃ³dulo 6.1 â€” DiÃ¡logo y actuaciÃ³n</div>
+<div class="t">MêÂ³dulo 6.1 ê¢â¬â DiêÂ¡logo y actuaciêÂ³n</div>
 </div>
-<a class="go" href="../trilha6/modulo-6-1.html">Empezar la Trilha 6 â†’</a>
+<a class="go" href="../trilha6/modulo-6-1.html">Empezar la Trilha 6 ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor, definiciones y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-4#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-5-4#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>EcuaciÃ³n de la acciÃ³n.</b> Peligro + movimiento + anticipaciÃ³n + recompensa. Falta un ingrediente y la escena se convierte en ruido. La pregunta clave: Â«Â¿cÃ³mo va a terminar esto?Â»
+<div class="tag">DefiniciêÂ³n</div>
+<b>EcuaciêÂ³n de la acciêÂ³n.</b> Peligro + movimiento + anticipaciêÂ³n + recompensa. Falta un ingrediente y la escena se convierte en ruido. La pregunta clave: êÂ«êÂ¿cêÂ³mo va a terminar esto?êÂ»
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          LecciÃ³n 16 del programa <i>AI Filmmaking</i> â€” Â«Action ScenesÂ». AcciÃ³n = peligro + movimiento +
-          anticipaciÃ³n + recompensa; el pÃºblico siempre se pregunta cÃ³mo terminarÃ¡.
-          <div class="src-line">Bloque 5 Â· VFX &amp; Action</div>
+          LecciêÂ³n 16 del programa <i>AI Filmmaking</i> ê¢â¬â êÂ«Action ScenesêÂ». AcciêÂ³n = peligro + movimiento +
+          anticipaciêÂ³n + recompensa; el pêÂºblico siempre se pregunta cêÂ³mo terminarêÂ¡.
+          <div class="src-line">Bloque 5 êÂ· VFX &amp; Action</div>
 </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-4#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-5-4#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>MecÃ¡nica de acciÃ³n.</b> Una fÃ³rmula que combina detonantes perceptivos para lograr un efecto predecible â€”
-          p. ej.: peligro + sorpresa + escala = espectÃ¡culo. Cinco de ellas estructuran la lecciÃ³n.
+<div class="tag">DefiniciêÂ³n</div>
+<b>MecêÂ¡nica de acciêÂ³n.</b> Una fêÂ³rmula que combina detonantes perceptivos para lograr un efecto predecible ê¢â¬â
+          p. ej.: peligro + sorpresa + escala = espectêÂ¡culo. Cinco de ellas estructuran la lecciêÂ³n.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-4#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-5-4#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Falso fallo.</b> El borde del fracaso, donde la tensiÃ³n es mÃ¡xima. Regla de oro: si el pÃºblico piensa
-          â€œcasi no lo logrÃ³â€, la escena funciona. La perfecciÃ³n es predecible; el casi fracaso atrapa.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Falso fallo.</b> El borde del fracaso, donde la tensiêÂ³n es mêÂ¡xima. Regla de oro: si el pêÂºblico piensa
+          ê¢â¬Åcasi no lo logrêÂ³ê¢â¬Â, la escena funciona. La perfecciêÂ³n es predecible; el casi fracaso atrapa.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          El vuelco enseÃ±a el lÃ­mite: el pÃºblico quiere peligro, no trauma. Un choque cARCKHÉtogrÃ¡fico funciona porque parece
+          El vuelco enseêÂ±a el lêÂ­mite: el pêÂºblico quiere peligro, no trauma. Un choque cARCKHêtogrêÂ¡fico funciona porque parece
           peligroso, pero es emocionalmente seguro: miedo sin consecuencias. Adrenalina sin tragedia.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-4#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-5-4#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>GeografÃ­a espacial.</b> La claridad, en cada instante, sobre dÃ³nde estÃ¡ todo: quiÃ©n persigue a quiÃ©n, de dÃ³nde
-          viene el peligro, cuÃ¡l es la salida. Sin ella, la acciÃ³n se convierte en una sopa de movimiento.
+<div class="tag">DefiniciêÂ³n</div>
+<b>GeografêÂ­a espacial.</b> La claridad, en cada instante, sobre dêÂ³nde estêÂ¡ todo: quiêÂ©n persigue a quiêÂ©n, de dêÂ³nde
+          viene el peligro, cuêÂ¡l es la salida. Sin ella, la acciêÂ³n se convierte en una sopa de movimiento.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          Se aplica la regla de la Ruta 1: <i>escala sin claridad es ruido; claridad con escala es Ã©pica</i>. La acciÃ³n es donde
-          esto mÃ¡s se nota: las partÃ­culas y la cÃ¡mara lenta entran al servicio de la claridad, nunca en su contra.
+          Se aplica la regla de la Ruta 1: <i>escala sin claridad es ruido; claridad con escala es êÂ©pica</i>. La acciêÂ³n es donde
+          esto mêÂ¡s se nota: las partêÂ­culas y la cêÂ¡mara lenta entran al servicio de la claridad, nunca en su contra.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-ARCKHÉ-rail="modulo-5-4#topico-5"></aside>
+<aside data-ARCKHê-rail="modulo-5-4#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Una idea visual.</b> La regla de oro: una idea fuerte = una gran escena. Acumular mecÃ¡nicas confunde;
-          elegir una y ejecutarla con claridad genera el blockbuster. FÃ³rmula final: riesgo + movimiento + casi falla.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Una idea visual.</b> La regla de oro: una idea fuerte = una gran escena. Acumular mecêÂ¡nicas confunde;
+          elegir una y ejecutarla con claridad genera el blockbuster. FêÂ³rmula final: riesgo + movimiento + casi falla.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          Fin de la ruta del espectÃ¡culo. La siguiente se centra en el personaje y la actuaciÃ³n: el efecto impresiona, pero es el
-          rostro humano el que hace que al pÃºblico le importe.
+          Fin de la ruta del espectêÂ¡culo. La siguiente se centra en el personaje y la actuaciêÂ³n: el efecto impresiona, pero es el
+          rostro humano el que hace que al pêÂºblico le importe.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
-<span class="pg">MÃ³dulo 5.4 â€” folio iv</span>
+<span>ARCKHê AI êÂ· Cuaderno del estudiante</span>
+<span class="pg">MêÂ³dulo 5.4 ê¢â¬â folio iv</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -686,8 +686,8 @@
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

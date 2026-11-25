@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 1.2 â€” Controle Espacial CARCKHÉtografico | AI Filmmaking</title>
+<title>Modulo 1.2 ê¢â¬â Controle Espacial CARCKHêtografico | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,34 +135,34 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:1-2"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:1-2"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â legibilidade maxima" type="button">Aaê¢â Â¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Trilha <b>1</b> Fundamentos (Luz)</span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Modulo <b>1.2</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">Secao 1 de 5</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Minha jornada <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,79 +189,79 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 1.2 Â· Trilha 1 Â· Fundamentos (Luz)</p>
-<h1 class="module">Controle Espacial <em>CARCKHÉtografico</em></h1>
-<p class="deck">CARCKHÉ nao e fazer imagens bonitas â€” e controlar espaco, atencao e emocao. Todo
+<p class="kicker">Modulo 1.2 êÂ· Trilha 1 êÂ· Fundamentos (Luz)</p>
+<h1 class="module">Controle Espacial <em>CARCKHêtografico</em></h1>
+<p class="deck">CARCKHê nao e fazer imagens bonitas ê¢â¬â e controlar espaco, atencao e emocao. Todo
           quadro profissional responde, num instante, a tres perguntas: onde olhamos, o que sentimos, onde
           estamos no espaco.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~17 min Â· modulo inteiro</span>
+<span>~17 min êÂ· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que <b>composicao e hierarquia</b>, nao decoracao â€” e como o peso visual decide o que o olho ve primeiro.</li>
-<li>Como o <b>blocking</b>, a linha do olhar e a regra dos 180Â° transformam posicao em poder, tensao e clareza.</li>
-<li>Os <b>sistemas de enquadramento</b> â€” regra dos tercos, simetria, diagonais, linhas-guia, espaco negativo â€” e o que cada um faz sentir.</li>
-<li>Como a <b>profundidade em tres camadas</b> separa o quadro chapado do cARCKHÉ, e como a gramatica de planos conduz a emocao.</li>
+<li>Por que <b>composicao e hierarquia</b>, nao decoracao ê¢â¬â e como o peso visual decide o que o olho ve primeiro.</li>
+<li>Como o <b>blocking</b>, a linha do olhar e a regra dos 180êÂ° transformam posicao em poder, tensao e clareza.</li>
+<li>Os <b>sistemas de enquadramento</b> ê¢â¬â regra dos tercos, simetria, diagonais, linhas-guia, espaco negativo ê¢â¬â e o que cada um faz sentir.</li>
+<li>Como a <b>profundidade em tres camadas</b> separa o quadro chapado do cARCKHê, e como a gramatica de planos conduz a emocao.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
-<p class="toc-head">Sumario â€” cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHê-toc="">
+<p class="toc-head">Sumario ê¢â¬â cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Composicao e hierarquia, nao decoracao</span></a></li>
-<li><span class="n">2</span><a href="#topico-2"><span class="t">Blocking, linha do olhar e a regra dos 180Â°</span></a><span class="leader"></span></li>
+<li><span class="n">2</span><a href="#topico-2"><span class="t">Blocking, linha do olhar e a regra dos 180êÂ°</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">Os sistemas de enquadramento</span></a><span class="leader"></span></li>
 <li><span class="n">4</span><a href="#topico-4"><span class="t">Profundidade em tres camadas</span></a><span class="leader"></span></li>
 <li><span class="n">5</span><a href="#topico-5"><span class="t">A gramatica dos planos</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="1-2" data-ARCKHÉ-topic="modulo-1-2#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<section data-ARCKHê-module="1-2" data-ARCKHê-topic="modulo-1-2#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>Â·</span><span>Hierarquia</span>
+<span class="where">Secao 1 de 5</span><span>êÂ·</span><span>Hierarquia</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Composicao e hierarquia, nao decoracao</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m1-2-t1-p1">Composicao e a <em>arquitetura do
-              quadro</em>.<span class="sidenote-ref">1</span> Nao e o arranjo bonito dos elementos â€” e a
+<p class="lede dropcap" data-ARCKHê-block="m1-2-t1-p1">Composicao e a <em>arquitetura do
+              quadro</em>.<span class="sidenote-ref">1</span> Nao e o arranjo bonito dos elementos ê¢â¬â e a
               organizacao intencional do <em>peso visual</em> dentro do enquadramento. Todo quadro profissional
               contem tres coisas: um ponto focal dominante, elementos secundarios que o apoiam e um espaco
               negativo controlado. Quando essa hierarquia e clara, o espectador sente clareza e emocao. Quando ela
-              colapsa, a imagem vira ruido â€” bonita, talvez, mas sem direcao.</p>
-<p data-ARCKHÉ-block="m1-2-t1-p2">O peso visual nao e misterio: ele e controlado por brilho e contraste,
+              colapsa, a imagem vira ruido ê¢â¬â bonita, talvez, mas sem direcao.</p>
+<p data-ARCKHê-block="m1-2-t1-p2">O peso visual nao e misterio: ele e controlado por brilho e contraste,
               por tamanho e escala, por movimento, pela dominancia de cor e pela posicao no quadro. Um ponto claro
               sobre fundo escuro puxa o olho; um elemento grande pesa mais que um pequeno; o que se move vence o
-              que esta parado. <strong>Composicao forte controla a atencao</strong> â€” ela cria o tom
+              que esta parado. <strong>Composicao forte controla a atencao</strong> ê¢â¬â ela cria o tom
               emocional, guia o foco narrativo e constroi o ritmo da cena. Nada num quadro profissional e
               acidental: personagens, objetos, luz, vazio e movimento sao todos colocados com intencao.</p>
 <h3 class="sub">Um centro de gravidade, sempre</h3>
-<p data-ARCKHÉ-block="m1-2-t1-p3">A regra que organiza tudo: cada quadro deve ter <em>um</em> ponto
+<p data-ARCKHê-block="m1-2-t1-p3">A regra que organiza tudo: cada quadro deve ter <em>um</em> ponto
               focal dominante, e todo o resto o apoia, o equilibra, o emoldura ou o contrasta. Quando dois
-              elementos competem pelo mesmo peso, o olho hesita â€” e a hesitacao e exatamente a sensacao de
+              elementos competem pelo mesmo peso, o olho hesita ê¢â¬â e a hesitacao e exatamente a sensacao de
               imagem amadora. Antes de gerar ou aprovar um quadro, pergunte: <strong>se eu olhasse por meio
-              segundo, para onde meu olho iria?</strong> Se a resposta for â€œnao seiâ€, falta
+              segundo, para onde meu olho iria?</strong> Se a resposta for ê¢â¬Ånao seiê¢â¬Â, falta
               hierarquia.</p>
 </div>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Voce gera uma imagem com dois personagens igualmente iluminados, do mesmo tamanho, um em cada
-              metade do quadro. A composicao parece â€œerradaâ€ mesmo sem nada feio nela. Por que?</p>
+              metade do quadro. A composicao parece ê¢â¬Åerradaê¢â¬Â mesmo sem nada feio nela. Por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">Porque nao ha <strong>ponto focal dominante</strong> â€” os dois competem pelo
+<p class="answer">Porque nao ha <strong>ponto focal dominante</strong> ê¢â¬â os dois competem pelo
                 mesmo peso visual e o olho fica preso no meio, sem saber quem importa. A correcao nao e estetica, e
                 de hierarquia: mude luz, escala ou posicao para que <em>um</em> deles lidere e o outro apoie.</p>
 </details>
 </div>
 <!-- figura 1: hierarquia x ruido -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· Peso visual com <b>um centro</b> â€” o olho sabe onde pousar</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· Peso visual com <b>um centro</b> ê¢â¬â o olho sabe onde pousar</figcaption>
 <svg aria-label="Diagrama: a esquerda, elementos de mesmo peso sem hierarquia; a direita, um ponto focal dominante apoiado por elementos secundarios e espaco negativo." class="diagram" role="img" viewbox="0 0 720 206">
 <defs>
 <pattern height="6" id="hatch-1-2" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -274,7 +274,7 @@
 <g class="rule-stroke" fill="none" stroke-width="1.3">
 <circle cx="100" cy="95" r="24"></circle><circle cx="200" cy="110" r="24"></circle><circle cx="160" cy="155" r="22"></circle><circle cx="255" cy="70" r="23"></circle>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="175" y="198">peso parelho â€” ruido visual</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="175" y="198">peso parelho ê¢â¬â ruido visual</text>
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="182"></line>
 <!-- direita -->
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="540" y="28">HIERARQUIA CLARA</text>
@@ -287,57 +287,57 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: os seis controles do peso visual
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: os seis controles do peso visual
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional â€” util para diagnosticar por que um elemento â€œroubaâ€ a cena.</p>
+<p>Camada opcional ê¢â¬â util para diagnosticar por que um elemento ê¢â¬Åroubaê¢â¬Â a cena.</p>
 <p>O peso de qualquer elemento e a soma de seis forcas: <strong>brilho</strong> (o claro vence o
                 escuro), <strong>contraste</strong> (o que destoa do entorno salta), <strong>tamanho</strong> (o
                 maior pesa mais), <strong>movimento</strong> (o que se move domina o parado), <strong>cor</strong>
                 (o saturado/quente avanca sobre o dessaturado/frio) e <strong>posicao</strong> (centros e pontos de
                 forca atraem). Quando uma geracao coloca o olho no lugar errado, quase sempre um desses seis esta
-                gritando sem voce ter pedido â€” um reflexo brilhante no canto, um objeto vermelho no fundo.
+                gritando sem voce ter pedido ê¢â¬â um reflexo brilhante no canto, um objeto vermelho no fundo.
                 Controlar a composicao e, no fundo, gerenciar essas seis alavancas para que somem a favor do seu
                 ponto focal.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="1-2" data-ARCKHÉ-topic="modulo-1-2#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<section data-ARCKHê-module="1-2" data-ARCKHê-topic="modulo-1-2#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>Â·</span><span>Blocking</span>
+<span class="where">Secao 2 de 5</span><span>êÂ·</span><span>Blocking</span>
 </div>
-<h2 class="head"><span class="num">2.</span>Blocking, linha do olhar e a regra dos 180Â°</h2>
+<h2 class="head"><span class="num">2.</span>Blocking, linha do olhar e a regra dos 180êÂ°</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-2-t2-p1">Composicao sem blocking e fotografia. O <span class="dfn"><details class="dfn"><summary>blocking</summary><span class="body"><b>Blocking</b> e a posicao e a movimentacao dos personagens dentro do quadro, em profundidade. Vem do teatro: e a coreografia que define quem ocupa qual lugar e como isso muda ao longo da cena.</span></details></span>
-              e o que transforma imagem em cARCKHÉ. Ele controla a posicao dos personagens em profundidade, forma
+<p class="lede" data-ARCKHê-block="m1-2-t2-p1">Composicao sem blocking e fotografia. O <span class="dfn"><details class="dfn"><summary>blocking</summary><span class="body"><b>Blocking</b> e a posicao e a movimentacao dos personagens dentro do quadro, em profundidade. Vem do teatro: e a coreografia que define quem ocupa qual lugar e como isso muda ao longo da cena.</span></details></span>
+              e o que transforma imagem em cARCKHê. Ele controla a posicao dos personagens em profundidade, forma
               dinamicas de poder pela distancia, cria tensao pela proximidade e mantem a clareza narrativa pela
               logica espacial. Os principios sao simples: <strong>dominancia</strong> se expressa por posicao mais
               alta, presenca maior e gravidade central; <strong>vulnerabilidade</strong>, por posicao mais baixa,
               isolamento e distancia.<span class="sidenote-ref">2</span></p>
-<p data-ARCKHÉ-block="m1-2-t2-p2">A regra de ouro do movimento dentro do quadro: ele deve sempre
-              <em>mudar</em> algo â€” o poder, a emocao, a relacao. Movimento que existe so para impressionar
+<p data-ARCKHê-block="m1-2-t2-p2">A regra de ouro do movimento dentro do quadro: ele deve sempre
+              <em>mudar</em> algo ê¢â¬â o poder, a emocao, a relacao. Movimento que existe so para impressionar
               enfraquece a cena. Se um personagem se aproxima, a tensao muda; se recua, a relacao muda. Quando o
-              deslocamento nao altera nada, ele e ruido â€” exatamente o tipo de â€œcamera mexendo a toaâ€
+              deslocamento nao altera nada, ele e ruido ê¢â¬â exatamente o tipo de ê¢â¬Åcamera mexendo a toaê¢â¬Â
               que faz um plano parecer gratuito.</p>
-<h3 class="sub">A linha do olhar e a regra dos 180Â°</h3>
-<p data-ARCKHÉ-block="m1-2-t2-p3">Para onde os personagens olham define as relacoes emocionais â€” a
+<h3 class="sub">A linha do olhar e a regra dos 180êÂ°</h3>
+<p data-ARCKHê-block="m1-2-t2-p3">Para onde os personagens olham define as relacoes emocionais ê¢â¬â a
               <em>linha do olhar</em> e a geometria invisivel da cena, comunicando conflito, intimidade, medo,
               controle e conexao. Uma regra profissional permanece constante: <strong>a historia emocional viaja
               pelo olhar antes do dialogo.</strong> Uma vez estabelecida a relacao direcional, nasce o
-              <em>eixo de acao</em> â€” a regra dos 180Â°: a camera deve ficar de um lado desse eixo para
+              <em>eixo de acao</em> ê¢â¬â a regra dos 180êÂ°: a camera deve ficar de um lado desse eixo para
               preservar a logica de esquerda e direita, a orientacao emocional e o fluxo de poder entre os
               personagens. Cruzar o eixo sem intencao desorienta o publico, mesmo que ele nao saiba dizer por que.
-              Os mestres so cruzam de proposito â€” para chocar, desestabilizar ou marcar uma ruptura
+              Os mestres so cruzam de proposito ê¢â¬â para chocar, desestabilizar ou marcar uma ruptura
               psicologica.</p>
 </div>
 <!-- figura 2: regra dos 180 -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· O <b>eixo de acao</b> â€” a camera fica de um lado para preservar a geografia</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· O <b>eixo de acao</b> ê¢â¬â a camera fica de um lado para preservar a geografia</figcaption>
 <svg aria-label="Diagrama: dois personagens definem um eixo de acao; cameras do lado permitido mantem a esquerda-direita coerente, e a camera que cruza o eixo inverte e desorienta." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- eixo entre os dois personagens -->
 <line class="accent-stroke" stroke-dasharray="6 5" stroke-width="1.8" x1="220" x2="500" y1="80" y2="80"></line>
-<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="70">EIXO DE ACAO (180Â°)</text>
+<text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" x="360" y="70">EIXO DE ACAO (180êÂ°)</text>
 <circle class="ink" cx="220" cy="80" r="13"></circle>
 <text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="220" y="56">A</text>
 <circle class="ink" cx="500" cy="80" r="13"></circle>
@@ -347,34 +347,34 @@
 <g class="rule-stroke" fill="none" stroke-width="1.4">
 <rect height="18" rx="2" width="28" x="146" y="176"></rect><rect height="18" rx="2" width="28" x="346" y="178"></rect><rect height="18" rx="2" width="28" x="546" y="176"></rect>
 </g>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="204">lado permitido â€” A fica a esquerda, B a direita</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="204">lado permitido ê¢â¬â A fica a esquerda, B a direita</text>
 <!-- camera que cruza (acima) -->
 <path class="mark-stroke" d="M360 80 L360 18" fill="none" stroke-dasharray="3 4" stroke-width="1.4"></path>
 <rect class="mark-stroke" fill="none" height="18" rx="2" stroke-width="1.4" width="28" x="346" y="6"></rect>
-<text class="mark-fill" font-family="Source Serif 4, serif" font-size="10" x="392" y="20">cruza o eixo â†’ inverte A/B</text>
+<text class="mark-fill" font-family="Source Serif 4, serif" font-size="10" x="392" y="20">cruza o eixo ê¢â â inverte A/B</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-2-t2-p4">Quando voce escreve um prompt de cena com mais de um personagem, vale
-              fixar essas relacoes em palavras â€” o gerador respeita instrucoes espaciais explicitas. O
+<p data-ARCKHê-block="m1-2-t2-p4">Quando voce escreve um prompt de cena com mais de um personagem, vale
+              fixar essas relacoes em palavras ê¢â¬â o gerador respeita instrucoes espaciais explicitas. O
               prompt abaixo descreve poder por blocking e mantem o eixo coerente.</p>
-<div class="codeblock"><span class="c"># Receita de blocking â€” poder e eixo definidos no prompt</span>
+<div class="codeblock"><span class="c"># Receita de blocking ê¢â¬â poder e eixo definidos no prompt</span>
 <span class="k">Scene:</span> a tense standoff between two characters in a dim warehouse.
 <span class="k">Blocking:</span> the leader stands center, slightly higher on a step, dominant;
 the rival is lower and pushed to frame-left edge, isolated, vulnerable.
 <span class="k">Eyeline:</span> they hold direct eye contact across the frame (left-to-right axis).
-<span class="k">Camera:</span> stay on one side of the line â€” medium shot, leader frame-right,
+<span class="k">Camera:</span> stay on one side of the line ê¢â¬â medium shot, leader frame-right,
 rival frame-left, eyelines crossing.
-<span class="k">Style:</span> low-key cARCKHÉtic lighting, deep shadows, shallow depth of field.</div>
+<span class="k">Style:</span> low-key cARCKHêtic lighting, deep shadows, shallow depth of field.</div>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: quando quebrar a regra dos 180Â° vira ferramenta
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: quando quebrar a regra dos 180êÂ° vira ferramenta
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional. A regra existe para servir a clareza â€” e por isso pode ser quebrada de
+<p>Camada opcional. A regra existe para servir a clareza ê¢â¬â e por isso pode ser quebrada de
                 proposito.</p>
 <p>Cruzar o eixo inverte a posicao dos personagens na tela: quem estava a esquerda passa a direita.
-                Feito por acidente, isso confunde â€” o publico perde a geografia. Feito de proposito, vira
+                Feito por acidente, isso confunde ê¢â¬â o publico perde a geografia. Feito de proposito, vira
                 significado: diretores cruzam o eixo no momento em que uma relacao <em>se inverte</em> (o
                 dominado assume o controle), em que um personagem perde a sanidade, ou para chocar numa virada.
                 A diferenca entre erro e autoria e a <em>intencao</em>: se o cruzamento sublinha uma ruptura que a
@@ -383,38 +383,38 @@ rival frame-left, eyelines crossing.
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="1-2" data-ARCKHÉ-topic="modulo-1-2#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<section data-ARCKHê-module="1-2" data-ARCKHê-topic="modulo-1-2#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>Â·</span><span>Enquadramento</span>
+<span class="where">Secao 3 de 5</span><span>êÂ·</span><span>Enquadramento</span>
 </div>
 <h2 class="head"><span class="num">3.</span>Os sistemas de enquadramento</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-2-t3-p1">Os sistemas de composicao nao existem para a beleza â€”
+<p class="lede" data-ARCKHê-block="m1-2-t3-p1">Os sistemas de composicao nao existem para a beleza ê¢â¬â
               existem para a <em>emocao</em>. Cada um organiza o quadro de um jeito e, com isso, produz uma
               sensacao diferente. Conhece-los e ganhar um vocabulario: em vez de gerar imagens aleatorias, voce
               escolhe a estrutura que serve ao que a cena precisa sentir.</p>
 <h3 class="sub">Cinco estruturas e o que cada uma faz sentir</h3>
-<p data-ARCKHÉ-block="m1-2-t3-p2">A <strong>regra dos tercos</strong> divide o quadro em tres faixas
+<p data-ARCKHê-block="m1-2-t3-p2">A <strong>regra dos tercos</strong> divide o quadro em tres faixas
               horizontais e verticais e poe o sujeito sobre uma linha ou interseccao; ela evita o centro estatico
-              e cria energia dinamica â€” e o equilibrio â€œvivoâ€, otimo para dialogo, paisagem e
+              e cria energia dinamica ê¢â¬â e o equilibrio ê¢â¬Åvivoê¢â¬Â, otimo para dialogo, paisagem e
               momentos emocionais. A <strong>simetria</strong> centraliza o sujeito e espelha os lados: gera
-              estabilidade, autoridade e inevitabilidade â€” o cerebro le simetria como ordem, e ela costuma
+              estabilidade, autoridade e inevitabilidade ê¢â¬â o cerebro le simetria como ordem, e ela costuma
               soar formal ou opressiva, ideal para cenas de poder e controle. As <strong>diagonais</strong>
-              introduzem energia, instabilidade e transformacao; expressam conflito e escalada â€” perfeitas
+              introduzem energia, instabilidade e transformacao; expressam conflito e escalada ê¢â¬â perfeitas
               para acao e pontos de virada.<span class="sidenote-ref">3</span></p>
-<p data-ARCKHÉ-block="m1-2-t3-p3">As <strong>linhas-guia</strong> â€” corredores, escadas,
-              arquitetura, perspectiva â€” conduzem o olho ate o sujeito sem forcar a atencao, tornando-o
+<p data-ARCKHê-block="m1-2-t3-p3">As <strong>linhas-guia</strong> ê¢â¬â corredores, escadas,
+              arquitetura, perspectiva ê¢â¬â conduzem o olho ate o sujeito sem forcar a atencao, tornando-o
               dominante de modo natural; servem a revelacoes, ao enquadramento heroico e ao foco narrativo. E o
               <strong>espaco negativo</strong> nao e escuridao vazia: muita area escura ou aberta em volta de um
-              sujeito pequeno comunica solidao, silencio, vulnerabilidade e tensao existencial â€” a propria
+              sujeito pequeno comunica solidao, silencio, vulnerabilidade e tensao existencial ê¢â¬â a propria
               escuridao se torna expressiva. Cada elemento carrega peso visual; a composicao profissional equilibra
               essas forcas, e o desequilibrio so se justifica quando o caos serve a historia.</p>
 </div>
 <!-- figura 3: grade de sistemas -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· Quatro estruturas de quadro, <b>quatro sensacoes</b></figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· Quatro estruturas de quadro, <b>quatro sensacoes</b></figcaption>
 <svg aria-label="Diagrama com quatro miniaturas de enquadramento: regra dos tercos, simetria, diagonal e espaco negativo, cada uma com sua sensacao." class="diagram" role="img" viewbox="0 0 720 200">
-<!-- 1 terÃ§os -->
+<!-- 1 terêÂ§os -->
 <rect class="rule-stroke" fill="none" height="100" rx="3" stroke-width="1.2" width="150" x="24" y="34"></rect>
 <line class="faint" stroke-width="0.9" x1="74" x2="74" y1="34" y2="134"></line>
 <line class="faint" stroke-width="0.9" x1="124" x2="124" y1="34" y2="134"></line>
@@ -435,7 +435,7 @@ rival frame-left, eyelines crossing.
 <circle class="accent-stroke" cx="451" cy="85" fill="url(#hatch-1-2)" r="9" stroke-width="1.4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="451" y="150">diagonal</text>
 <text class="faint" font-family="Source Serif 4, serif" font-size="9.5" text-anchor="middle" x="451" y="166">conflito, escalada</text>
-<!-- 4 espaÃ§o negativo -->
+<!-- 4 espaêÂ§o negativo -->
 <rect class="wash rule-stroke" height="100" rx="3" stroke-width="1.2" width="150" x="552" y="34"></rect>
 <circle class="ink" cx="660" cy="115" r="6"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="12" font-style="italic" text-anchor="middle" x="627" y="150">vazio</text>
@@ -443,121 +443,121 @@ rival frame-left, eyelines crossing.
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-2-t3-p4">A proxima trilha mostra esses sistemas controlados diretamente por
-              prompt de imagem â€” com exemplos como um monstro espaguete colossal ou um super-heroi a contraluz,
-              o texto guia a regra dos tercos, a profundidade espacial, a luz cARCKHÉtografica e a atmosfera. Por ora,
+<p data-ARCKHê-block="m1-2-t3-p4">A proxima trilha mostra esses sistemas controlados diretamente por
+              prompt de imagem ê¢â¬â com exemplos como um monstro espaguete colossal ou um super-heroi a contraluz,
+              o texto guia a regra dos tercos, a profundidade espacial, a luz cARCKHêtografica e a atmosfera. Por ora,
               o ganho ja e concreto: ao nomear a estrutura no prompt, voce deixa de gerar quadros aleatorios e passa
               a compor frases visuais intencionais.</p>
 </div>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Voce quer transmitir que um vilao tem controle total e absoluto da sala. Qual sistema de
-              enquadramento serve melhor â€” e qual seria o pior?</p>
+              enquadramento serve melhor ê¢â¬â e qual seria o pior?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">A <strong>simetria</strong> centralizada serve melhor: o cerebro a le como ordem,
-                autoridade e inevitabilidade â€” soa opressiva, que e exatamente o efeito. O pior seria a
+                autoridade e inevitabilidade ê¢â¬â soa opressiva, que e exatamente o efeito. O pior seria a
                 <em>diagonal</em>, que carrega instabilidade e conflito: ela sugeriria que o controle esta prestes
                 a ruir, contradizendo a intencao.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="1-2" data-ARCKHÉ-topic="modulo-1-2#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<section data-ARCKHê-module="1-2" data-ARCKHê-topic="modulo-1-2#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>Â·</span><span>Profundidade</span>
+<span class="where">Secao 4 de 5</span><span>êÂ·</span><span>Profundidade</span>
 </div>
 <h2 class="head"><span class="num">4.</span>Profundidade em tres camadas</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-2-t4-p1">CARCKHÉ e uma historia em tres dimensoes. Quadros chapados
-              parecem â€œconteudoâ€; quadros com camadas parecem cARCKHÉ. O design espacial profissional
+<p class="lede" data-ARCKHê-block="m1-2-t4-p1">CARCKHê e uma historia em tres dimensoes. Quadros chapados
+              parecem ê¢â¬Åconteudoê¢â¬Â; quadros com camadas parecem cARCKHê. O design espacial profissional
               sempre usa profundidade, e ela se organiza em tres planos: o <strong>primeiro plano</strong> puxa o
               espectador emocionalmente para dentro da cena, o <strong>meio</strong> sustenta a acao narrativa e
               o <strong>fundo</strong> da escala, mundo e consequencia. Essa estrutura em camadas e o que cria
               realismo e riqueza visual.</p>
-<p data-ARCKHÉ-block="m1-2-t4-p2">A profundidade <em>nao</em> e desfoque de fundo. Ela se constroi por
+<p data-ARCKHê-block="m1-2-t4-p2">A profundidade <em>nao</em> e desfoque de fundo. Ela se constroi por
               organizacao: formas que se sobrepoem, linhas de perspectiva que recuam, contraste de escala entre
               perto e longe, separacao de luz motivada, particulas atmosfericas (neblina, poeira, chuva) e
-              movimento em camadas diferentes â€” o paralaxe.<span class="sidenote-ref">4</span> O borrao
+              movimento em camadas diferentes ê¢â¬â o paralaxe.<span class="sidenote-ref">4</span> O borrao
               sozinho nao cria profundidade; a <em>organizacao</em> cria. Se a composicao diz ao espectador
               <em>o que importa</em>, a profundidade diz <em>onde ele esta</em>.</p>
 <h3 class="sub">Sem uma, a outra falha</h3>
-<p data-ARCKHÉ-block="m1-2-t4-p3">Composicao e profundidade sao inseparaveis. Sem composicao, a
-              profundidade vira caos â€” muitas camadas sem hierarquia, so confusao. Sem profundidade, a
-              composicao fica fraca â€” bonita, mas chapada. A imagem cARCKHÉtografica real exige as duas:
+<p data-ARCKHê-block="m1-2-t4-p3">Composicao e profundidade sao inseparaveis. Sem composicao, a
+              profundidade vira caos ê¢â¬â muitas camadas sem hierarquia, so confusao. Sem profundidade, a
+              composicao fica fraca ê¢â¬â bonita, mas chapada. A imagem cARCKHêtografica real exige as duas:
               uma para dizer onde olhar, outra para dizer onde se esta. Imagine um personagem sozinho numa ponte
               ao por do sol, colocado na regra dos tercos, com espaco negativo no ceu criando isolamento, as linhas
               da ponte guiando a atencao e montanhas ao fundo dando profundidade. Num unico quadro sentimos espaco,
-              emocao, direcao e historia. Isso e design cARCKHÉtografico.</p>
+              emocao, direcao e historia. Isso e design cARCKHêtografico.</p>
 </div>
 <!-- figura 4: tres camadas de profundidade -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Tres planos</b> â€” primeiro plano, meio e fundo trabalhando juntos</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· <b>Tres planos</b> ê¢â¬â primeiro plano, meio e fundo trabalhando juntos</figcaption>
 <svg aria-label="Diagrama em corte lateral mostrando tres camadas de profundidade: fundo com escala, meio com a acao e primeiro plano que enquadra; setas indicam recuo em perspectiva." class="diagram" role="img" viewbox="0 0 720 210">
 <rect class="rule-stroke" fill="none" height="140" rx="3" stroke-width="1.1" width="640" x="40" y="40"></rect>
 <!-- fundo -->
 <line class="faint" stroke-width="1" x1="60" x2="660" y1="70" y2="70"></line>
 <path class="faint" d="M120 70 L150 55 L185 70 M520 70 L560 50 L600 70" fill="none" stroke-width="1"></path>
-<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="62">FUNDO â€” escala, mundo, consequencia</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="62">FUNDO ê¢â¬â escala, mundo, consequencia</text>
 <!-- meio -->
 <circle class="wash accent-stroke" cx="360" cy="112" r="16" stroke-width="1.4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="11" font-style="italic" text-anchor="middle" x="360" y="116">acao</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="142">MEIO â€” a acao narrativa</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="142">MEIO ê¢â¬â a acao narrativa</text>
 <!-- primeiro plano -->
 <path class="accent-stroke" d="M40 180 L120 150 L120 180 Z" fill="url(#hatch-1-2)" stroke-width="1.2"></path>
 <path class="accent-stroke" d="M680 180 L600 150 L600 180 Z" fill="url(#hatch-1-2)" stroke-width="1.2"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="174">PRIMEIRO PLANO â€” enquadra e puxa pra dentro</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="360" y="174">PRIMEIRO PLANO ê¢â¬â enquadra e puxa pra dentro</text>
 <!-- seta de recuo -->
 <path class="mark-stroke" d="M90 100 L150 78" fill="none" stroke-width="1.2"></path>
 <path class="mark-stroke" d="M150 78 l -8 0 m 8 0 l -3 6" fill="none" stroke-width="1.2"></path>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: a luz e a camera tambem falam
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: a luz e a camera tambem falam
               <span class="opt">opcional</span></summary>
 <div class="inner">
 <p>Camada opcional, ponte para os modulos de luz e camera mais a frente.</p>
 <p>Dois controles reforcam tudo isto e merecem registro. A <strong>luz</strong> molda o foco, o tom
-                emocional, a profundidade e a hierarquia â€” e, as vezes, a <em>sombra</em> cria mais drama do
+                emocional, a profundidade e a hierarquia ê¢â¬â e, as vezes, a <em>sombra</em> cria mais drama do
                 que qualquer brilho. Luz motivada (vinda de uma fonte plausivel na cena) separa as camadas e diz
                 ao olho o que importa. Ja a <strong>altura da camera</strong> e psicologia, nao estilo: o
                 contra-plongee (camera baixa) sugere poder, dominancia e presenca mitica; a camera ao nivel dos
                 olhos cria realismo e conexao; o plongee (camera alta) expressa vulnerabilidade, fraqueza e
-                isolamento. Nada disso e enfeite â€” cada escolha responde a uma motivacao narrativa: perigo,
+                isolamento. Nada disso e enfeite ê¢â¬â cada escolha responde a uma motivacao narrativa: perigo,
                 esperanca, poder ou solidao.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-ARCKHÉ-module="1-2" data-ARCKHÉ-topic="modulo-1-2#topico-5" data-ARCKHÉ-track="1" id="topico-5">
+<section data-ARCKHê-module="1-2" data-ARCKHê-topic="modulo-1-2#topico-5" data-ARCKHê-track="1" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>Â·</span><span>Planos</span>
+<span class="where">Secao 5 de 5</span><span>êÂ·</span><span>Planos</span>
 </div>
 <h2 class="head"><span class="num">5.</span>A gramatica dos planos</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-2-t5-p1">O cARCKHÉ respira em distancia. Uma cena costuma fluir do
-              plano amplo ao medio, ao close-up, ao detalhe e de volta ao amplo â€” e cada distancia entrega
+<p class="lede" data-ARCKHê-block="m1-2-t5-p1">O cARCKHê respira em distancia. Uma cena costuma fluir do
+              plano amplo ao medio, ao close-up, ao detalhe e de volta ao amplo ê¢â¬â e cada distancia entrega
               uma coisa. O <strong>amplo</strong> introduz o espaco e o contexto emocional. O <strong>medio</strong>
               revela a interacao e a progressao. O <strong>close-up</strong> entrega a emocao interna. O
               <strong>detalhe</strong> enfatiza o significado. E o retorno ao amplo mostra a consequencia. A
-              distancia, em cARCKHÉ, e igual a intensidade emocional: quanto mais perto, mais intenso.</p>
-<p data-ARCKHÉ-block="m1-2-t5-p2">Dai uma regra que evita o erro mais comum do iniciante:
+              distancia, em cARCKHê, e igual a intensidade emocional: quanto mais perto, mais intenso.</p>
+<p data-ARCKHê-block="m1-2-t5-p2">Dai uma regra que evita o erro mais comum do iniciante:
               <strong>close-ups precisam ser conquistados pela historia, nao usados para decorar.</strong> Aproximar
               a camera so faz sentido se a intensidade emocional aumentar de fato; um close gratuito gasta a carta
-              mais forte do baralho sem motivo. Cada plano deve adicionar informacao ou sentimento â€” se nao
+              mais forte do baralho sem motivo. Cada plano deve adicionar informacao ou sentimento ê¢â¬â se nao
               adiciona nenhum dos dois, ele nao deveria existir. E, em toda a sequencia, a clareza espacial precisa
               permanecer intacta: o publico nunca deve se perder de onde esta.<span class="sidenote-ref">5</span></p>
 <h3 class="sub">Quando tudo se alinha</h3>
-<p data-ARCKHÉ-block="m1-2-t5-p3">Quando composicao, blocking, luz e psicologia da lente se alinham, o
-              publico nao apenas <em>ve</em> a cena â€” ele a <em>sente</em>. Quadros bonitos nao criam cARCKHÉ;
+<p data-ARCKHê-block="m1-2-t5-p3">Quando composicao, blocking, luz e psicologia da lente se alinham, o
+              publico nao apenas <em>ve</em> a cena ê¢â¬â ele a <em>sente</em>. Quadros bonitos nao criam cARCKHê;
               historia espacial cria. E o teste final de qualquer quadro continua sendo o mesmo das tres perguntas:
               num instante, onde o espectador deve olhar, o que ele deve sentir, onde ele esta no espaco. Se o
-              quadro responde as tres, ele e cARCKHÉtografico â€” com ou sem efeito.</p>
+              quadro responde as tres, ele e cARCKHêtografico ê¢â¬â com ou sem efeito.</p>
 </div>
 <!-- figura 5: escada de planos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> Â· A respiracao da cena â€” <b>distancia = intensidade</b></figcaption>
-<svg aria-label="Diagrama: cinco planos em sequencia â€” amplo, medio, close, detalhe e volta ao amplo â€” com a intensidade emocional subindo ate o detalhe e caindo no retorno." class="diagram" role="img" viewbox="0 0 720 200">
+<figcaption><span class="fig-n">Fig. 5</span> êÂ· A respiracao da cena ê¢â¬â <b>distancia = intensidade</b></figcaption>
+<svg aria-label="Diagrama: cinco planos em sequencia ê¢â¬â amplo, medio, close, detalhe e volta ao amplo ê¢â¬â com a intensidade emocional subindo ate o detalhe e caindo no retorno." class="diagram" role="img" viewbox="0 0 720 200">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="170" y2="170"></line>
 <!-- amplo -->
 <rect class="rule-stroke" fill="none" height="44" rx="3" stroke-width="1.2" width="92" x="40" y="120"></rect>
@@ -585,9 +585,9 @@ rival frame-left, eyelines crossing.
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-2-t5-p4">Guarde o modulo em uma frase: <em>composicao diz onde olhar,
-              profundidade diz onde se esta, e a distancia dos planos diz o quanto sentir â€” juntas, formam a
-              gramatica espacial do cARCKHÉ.</em> Agora voce tem a mentalidade (1.1) e a leitura do espaco (1.2). A
+<p data-ARCKHê-block="m1-2-t5-p4">Guarde o modulo em uma frase: <em>composicao diz onde olhar,
+              profundidade diz onde se esta, e a distancia dos planos diz o quanto sentir ê¢â¬â juntas, formam a
+              gramatica espacial do cARCKHê.</em> Agora voce tem a mentalidade (1.1) e a leitura do espaco (1.2). A
               proxima aula sai da teoria e poe a mao na massa: produzir uma cena inteira, do roteiro aos quadros
               finais.</p>
 </div>
@@ -597,56 +597,56 @@ rival frame-left, eyelines crossing.
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Por que composicao e â€œhierarquiaâ€ e nao â€œdecoracaoâ€?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Por que composicao e ê¢â¬Åhierarquiaê¢â¬Â e nao ê¢â¬Ådecoracaoê¢â¬Â?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque ela organiza o <em>peso visual</em> para criar um ponto focal dominante,
-              apoios e vazio â€” controlando o que o olho ve primeiro. Decoracao arruma elementos; hierarquia
+              apoios e vazio ê¢â¬â controlando o que o olho ve primeiro. Decoracao arruma elementos; hierarquia
               decide a atencao. Sem ela, a imagem vira ruido bonito.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>O que a regra dos 180Â° preserva, e o que acontece se voce a cruzar sem querer?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Preserva a geografia â€” a logica de esquerda/direita, a orientacao emocional e
+<summary><span class="qn">02</span><span>O que a regra dos 180êÂ° preserva, e o que acontece se voce a cruzar sem querer?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>Preserva a geografia ê¢â¬â a logica de esquerda/direita, a orientacao emocional e
               o fluxo de poder. Cruzar o eixo sem intencao inverte a posicao dos personagens na tela e desorienta o
               publico, mesmo que ele nao saiba explicar por que.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Profundidade vem de desfoque de fundo? Justifique.</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Nao â€” vem de <em>organizacao</em>: sobreposicao de formas, perspectiva,
+<div class="ans"><p>Nao ê¢â¬â vem de <em>organizacao</em>: sobreposicao de formas, perspectiva,
               contraste de escala, luz motivada, atmosfera e paralaxe em tres camadas (frente, meio, fundo). O
               borrao sozinho nao cria profundidade; a estrutura espacial cria.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>Por que um close-up â€œprecisa ser conquistadoâ€?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>Por que um close-up ê¢â¬Åprecisa ser conquistadoê¢â¬Â?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque distancia = intensidade emocional. Aproximar so funciona se a intensidade
               realmente subir; um close gratuito gasta o plano mais forte sem motivo. Cada plano deve adicionar
-              informacao ou sentimento â€” senao, nao deveria existir.</p></div>
+              informacao ou sentimento ê¢â¬â senao, nao deveria existir.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
+<section aria-label="Minha jornada ê¢â¬â progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Minha jornada</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir caderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:1-2">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="modulo:1-2">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 1</div>
-<div class="v" data-ARCKHÉ-meter="trilha:1">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:1">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -655,15 +655,15 @@ rival frame-left, eyelines crossing.
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 1.3 â€” Do Roteiro a Cena</div>
+<div class="t">Modulo 1.3 ê¢â¬â Do Roteiro a Cena</div>
 </div>
-<a class="go" href="modulo-1-3.html">Proximo â†’</a>
+<a class="go" href="modulo-1-3.html">Proximo ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-2#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-1-2#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Peso visual.</b> A forca com que um elemento atrai o olho, somada de brilho, contraste, tamanho,
@@ -671,27 +671,27 @@ rival frame-left, eyelines crossing.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Licao 1 do bloco Luz â€” â€œControle Espacial CARCKHÉtograficoâ€. Premissa: <i>todo quadro
+          Licao 1 do bloco Luz ê¢â¬â ê¢â¬ÅControle Espacial CARCKHêtograficoê¢â¬Â. Premissa: <i>todo quadro
           profissional responde, num instante, onde olhamos, o que sentimos e onde estamos no espaco</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-2#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-1-2#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Linha do olhar.</b> A geometria invisivel formada por para onde os personagens olham. Carrega conflito,
-          intimidade, medo e controle â€” a historia emocional viaja por ela antes do dialogo.
+          intimidade, medo e controle ê¢â¬â a historia emocional viaja por ela antes do dialogo.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Dominancia = posicao mais alta + presenca maior + centro. Vulnerabilidade = posicao mais baixa +
-          isolamento + distancia. Poder vira geometria â€” e o blocking que escreve isso no quadro.
+          isolamento + distancia. Poder vira geometria ê¢â¬â e o blocking que escreve isso no quadro.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-2#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-1-2#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Espaco negativo.</b> Area vazia ou escura em volta do sujeito. Nao e â€œsobraâ€: comunica
-          solidao, silencio e vulnerabilidade â€” a propria escuridao se torna expressiva.
+<b>Espaco negativo.</b> Area vazia ou escura em volta do sujeito. Nao e ê¢â¬Åsobraê¢â¬Â: comunica
+          solidao, silencio e vulnerabilidade ê¢â¬â a propria escuridao se torna expressiva.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
@@ -699,11 +699,11 @@ rival frame-left, eyelines crossing.
           linhas-guia = revelacao; vazio = isolamento. Escolha a sensacao, nao a beleza.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-2#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-1-2#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Paralaxe.</b> Camadas em profundidades diferentes que se deslocam em velocidades diferentes quando a
-          camera se move. E um dos sinais mais fortes de profundidade real â€” e o oposto do quadro chapado.
+          camera se move. E um dos sinais mais fortes de profundidade real ê¢â¬â e o oposto do quadro chapado.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
@@ -711,24 +711,24 @@ rival frame-left, eyelines crossing.
           vulnerabilidade. A escolha responde a uma motivacao da cena, nunca ao acaso.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-2#topico-5"></aside>
+<aside data-ARCKHê-rail="modulo-1-2#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Gramatica de planos.</b> A sequencia amplo â†’ medio â†’ close â†’ detalhe â†’ amplo. Cada
+<b>Gramatica de planos.</b> A sequencia amplo ê¢â â medio ê¢â â close ê¢â â detalhe ê¢â â amplo. Cada
           distancia entrega uma funcao; mais perto = mais intenso. Close-up se conquista pela historia.
         </aside>
 <aside class="sidenote" data-kind="fonte" style="margin-bottom:0">
 <div class="tag">Fonte</div>
-          A sintese da licao: <i>quadros bonitos nao criam cARCKHÉ â€” historia espacial cria</i>. Composicao e
-          profundidade sao inseparaveis; a imagem cARCKHÉtografica real exige as duas.
+          A sintese da licao: <i>quadros bonitos nao criam cARCKHê ê¢â¬â historia espacial cria</i>. Composicao e
+          profundidade sao inseparaveis; a imagem cARCKHêtografica real exige as duas.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Caderno do aluno</span>
-<span class="pg">Modulo 1.2 â€” folio ii</span>
+<span>ARCKHê AI êÂ· Caderno do aluno</span>
+<span class="pg">Modulo 1.2 ê¢â¬â folio ii</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -737,8 +737,8 @@ rival frame-left, eyelines crossing.
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

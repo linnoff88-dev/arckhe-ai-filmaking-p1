@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 1.1 â€” O Framework do Diretor | AI Filmmaking</title>
+<title>Modulo 1.1 ê¢â¬â O Framework do Diretor | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,34 +135,34 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:1-1"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:1-1"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 4</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â legibilidade maxima" type="button">Aaê¢â Â¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Trilha <b>1</b> Fundamentos (Luz)</span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Modulo <b>1.1</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">Secao 1 de 4</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">Secao 1 de 4</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Minha jornada <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,83 +189,83 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 1.1 Â· Trilha 1 Â· Fundamentos (Luz)</p>
+<p class="kicker">Modulo 1.1 êÂ· Trilha 1 êÂ· Fundamentos (Luz)</p>
 <h1 class="module">O Framework do <em>Diretor</em></h1>
-<p class="deck">A tecnologia ja remove a barreira tecnica â€” o que decide a cena agora nao e o
+<p class="deck">A tecnologia ja remove a barreira tecnica ê¢â¬â o que decide a cena agora nao e o
           orcamento, e o controle da percepcao. Antes de gerar qualquer imagem, instale a mentalidade que torna
           o impacto um sistema, nao um acaso.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~15 min Â· modulo inteiro</span>
+<span>~15 min êÂ· modulo inteiro</span>
 <span>4 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
 <section aria-label="O que voce vai entender" class="aims">
 <h2>O que voce vai entender</h2>
 <ul>
-<li>Por que o <b>â€œuauâ€ nao e o efeito</b> â€” e o que acontece com o cerebro quando ele perde a capacidade de prever o que vem a seguir.</li>
+<li>Por que o <b>ê¢â¬Åuauê¢â¬Â nao e o efeito</b> ê¢â¬â e o que acontece com o cerebro quando ele perde a capacidade de prever o que vem a seguir.</li>
 <li>Os <b>tres niveis</b> em que toda cena forte opera: o sensorial (o corpo), a estrutura (o significado) e a forma (a escolha profissional).</li>
-<li>O <b>algoritmo</b> de quase todo momento poderoso â€” estabilidade, ruptura, escalada, aceleracao, camera lenta no pico, impacto.</li>
-<li>Por que uma cena <b>parece cara ou barata</b>, e como tratar o cARCKHÉ como arquitetura de atencao em vez de coleÃ§Ã£o de efeitos.</li>
+<li>O <b>algoritmo</b> de quase todo momento poderoso ê¢â¬â estabilidade, ruptura, escalada, aceleracao, camera lenta no pico, impacto.</li>
+<li>Por que uma cena <b>parece cara ou barata</b>, e como tratar o cARCKHê como arquitetura de atencao em vez de coleêÂ§êÂ£o de efeitos.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
-<p class="toc-head">Sumario â€” quatro movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHê-toc="">
+<p class="toc-head">Sumario ê¢â¬â quatro movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
-<a href="#topico-1"><span class="t">O â€œuauâ€ e controle da percepcao</span></a></li>
+<a href="#topico-1"><span class="t">O ê¢â¬Åuauê¢â¬Â e controle da percepcao</span></a></li>
 <li><span class="n">2</span><a href="#topico-2"><span class="t">Os tres niveis de impacto visual</span></a><span class="leader"></span></li>
 <li><span class="n">3</span><a href="#topico-3"><span class="t">O algoritmo de toda cena forte</span></a><span class="leader"></span></li>
-<li><span class="n">4</span><a href="#topico-4"><span class="t">CARCKHÉ como arquitetura de atencao</span></a><span class="leader"></span></li>
+<li><span class="n">4</span><a href="#topico-4"><span class="t">CARCKHê como arquitetura de atencao</span></a><span class="leader"></span></li>
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="1-1" data-ARCKHÉ-topic="modulo-1-1#topico-1" data-ARCKHÉ-track="1" id="topico-1">
+<section data-ARCKHê-module="1-1" data-ARCKHê-topic="modulo-1-1#topico-1" data-ARCKHê-track="1" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 4</span><span>Â·</span><span>Percepcao</span>
+<span class="where">Secao 1 de 4</span><span>êÂ·</span><span>Percepcao</span>
 </div>
-<h2 class="head"><span class="num">1.</span>O â€œuauâ€ e controle da percepcao</h2>
+<h2 class="head"><span class="num">1.</span>O ê¢â¬Åuauê¢â¬Â e controle da percepcao</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m1-1-t1-p1">Hoje, para criar cenas que antes custariam
+<p class="lede dropcap" data-ARCKHê-block="m1-1-t1-p1">Hoje, para criar cenas que antes custariam
               milhoes, voce precisa de um laptop e de uma compreensao clara de <span class="sidenote-ref">1</span>forma
               visual. Isso nao e exagero de propaganda: a cada mes os geradores de imagem e video ficam mais
-              cARCKHÉtograficos, mais realistas, mais prontos para producao. O que parecia experimento ha um ano
+              cARCKHêtograficos, mais realistas, mais prontos para producao. O que parecia experimento ha um ano
               ja parece producao de verdade. A barreira tecnica caiu. A pergunta deixou de ser <em>quanto voce
               consegue gastar</em> e passou a ser <em>o quao bem voce pensa a imagem</em>.</p>
-<p data-ARCKHÉ-block="m1-1-t1-p2">A maioria das pessoas erra aqui. Acredita que o impacto â€” o
-              â€œuauâ€ â€” vem do efeito: a explosao, a onda gigante, a nave que desaba, a destruicao
-              de ficcao cientifica. Mas o â€œuauâ€ <em>nao</em> e o efeito. O â€œuauâ€ e o
+<p data-ARCKHê-block="m1-1-t1-p2">A maioria das pessoas erra aqui. Acredita que o impacto ê¢â¬â o
+              ê¢â¬Åuauê¢â¬Â ê¢â¬â vem do efeito: a explosao, a onda gigante, a nave que desaba, a destruicao
+              de ficcao cientifica. Mas o ê¢â¬Åuauê¢â¬Â <em>nao</em> e o efeito. O ê¢â¬Åuauê¢â¬Â e o
               controle da percepcao. Se voce nao entende esse principio, a IA vai te entregar imagens bonitas
-              â€” e nada mais. Nao cenas, nao emocao, nao impacto cARCKHÉtografico, nao um anuncio que
+              ê¢â¬â e nada mais. Nao cenas, nao emocao, nao impacto cARCKHêtografico, nao um anuncio que
               convence.</p>
 <h3 class="sub">O cerebro reage quando nao consegue prever</h3>
-<p data-ARCKHÉ-block="m1-1-t1-p3">Do ponto de vista da percepcao, o â€œuauâ€ acontece num
+<p data-ARCKHê-block="m1-1-t1-p3">Do ponto de vista da percepcao, o ê¢â¬Åuauê¢â¬Â acontece num
               instante muito especifico: quando o cerebro <em>perde a capacidade de prever o que vem a
               seguir</em>. Ele e disparado por escala crescente, aceleracao, instabilidade, contraste entre luz e
               sombra, sensacao de perigo, profundidade e altura. Isso e biologia, nao gosto. O cerebro humano
               esta evolutivamente programado para reagir a objetos que se aproximam, a movimento rapido, a
               brilhos subitos, a perda de equilibrio.<span class="sidenote-ref">2</span> Quando voce entende
-              isso, deixa de torcer pelo resultado e passa a controlar a resposta fisica de quem assiste â€”
-              e essa e, ao mesmo tempo, a base do cARCKHÉ e a base de um anuncio poderoso.</p>
+              isso, deixa de torcer pelo resultado e passa a controlar a resposta fisica de quem assiste ê¢â¬â
+              e essa e, ao mesmo tempo, a base do cARCKHê e a base de um anuncio poderoso.</p>
 </div>
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
 <p>Duas tomadas mostram a mesma onda gigante. Numa, a onda aparece ja formada, ocupando a tela. Na
               outra, a camera parte de um mar calmo e a onda <em>cresce</em> ao longo de tres segundos. Qual
-              provoca mais â€œuauâ€ â€” e por que?</p>
+              provoca mais ê¢â¬Åuauê¢â¬Â ê¢â¬â e por que?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">A segunda. O impacto nao mora no tamanho da onda, mas na <strong>quebra da
                 previsao</strong>: a calma estabelece uma expectativa, e a escala crescente a rompe. A primeira
-                tomada ja entrega o auge, entao nao ha previsao para quebrar â€” o cerebro registra
-                â€œimagem grandeâ€, nao â€œperigoâ€.</p>
+                tomada ja entrega o auge, entao nao ha previsao para quebrar ê¢â¬â o cerebro registra
+                ê¢â¬Åimagem grandeê¢â¬Â, nao ê¢â¬Åperigoê¢â¬Â.</p>
 </details>
 </div>
 <!-- figura 1: o uau e a quebra da previsao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· O â€œuauâ€ mora na <b>quebra da previsao</b>, nao no pico</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· O ê¢â¬Åuauê¢â¬Â mora na <b>quebra da previsao</b>, nao no pico</figcaption>
 <svg aria-label="Diagrama: uma linha de previsao do cerebro segue estavel e depois e rompida por um pico inesperado; o ponto de ruptura e onde nasce o uau." class="diagram" role="img" viewbox="0 0 720 210">
 <defs>
 <pattern height="6" id="hatch-1-1" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -273,11 +273,11 @@
 </pattern>
 </defs>
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="170" y2="170"></line>
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="190">TEMPO â†’</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" x="30" y="190">TEMPO ê¢â â</text>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1" transform="rotate(-90 14 60)" x="14" y="60">INTENSIDADE</text>
 <!-- linha estavel (previsivel) -->
 <path class="rule-stroke" d="M40 150 L160 150 L300 148 L420 150" fill="none" stroke-width="1.6"></path>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="180" y="138">estabilidade â€” o cerebro preve</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11.5" text-anchor="middle" x="180" y="138">estabilidade ê¢â¬â o cerebro preve</text>
 <!-- continuacao esperada (tracejada) -->
 <path class="rule-stroke" d="M420 150 L660 150" fill="none" opacity="0.7" stroke-dasharray="3 5" stroke-width="1.2"></path>
 <text class="faint" font-family="Source Serif 4, serif" font-size="10.5" text-anchor="middle" x="560" y="142">previsao</text>
@@ -286,135 +286,135 @@
 <circle class="accent" cx="420" cy="150" r="4.5"></circle>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="end" x="416" y="168">RUPTURA</text>
 <rect class="accent-stroke" fill="url(#hatch-1-1)" height="30" rx="3" stroke-width="1.2" width="150" x="500" y="20"></rect>
-<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="575" y="40">o â€œuauâ€</text>
+<text class="ink" font-family="Spectral, serif" font-size="14" font-style="italic" text-anchor="middle" x="575" y="40">o ê¢â¬Åuauê¢â¬Â</text>
 <path class="mark-stroke" d="M560 40 L575 50" fill="none" stroke-width="1.2"></path>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: por que isso vale para anuncio e clipe, nao so para filme
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: por que isso vale para anuncio e clipe, nao so para filme
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada amplia o alcance â€” e pode ser pulada.</p>
-<p>O mesmo mecanismo perceptivo opera fora do cARCKHÉ narrativo. Num <strong>anuncio</strong>, o
-                â€œuauâ€ e o instante em que o produto ganha peso visual e a transformacao se revela
+<p>O caminho-feliz acima ja basta. Esta camada amplia o alcance ê¢â¬â e pode ser pulada.</p>
+<p>O mesmo mecanismo perceptivo opera fora do cARCKHê narrativo. Num <strong>anuncio</strong>, o
+                ê¢â¬Åuauê¢â¬Â e o instante em que o produto ganha peso visual e a transformacao se revela
                 (antes/depois, problema/solucao). Num <strong>videoclipe</strong>, e o climax emocional sustentado
                 pelo ritmo. Em <strong>moda e marca</strong>, e o contraste de luz que faz a textura parecer
                 tatil. A biologia nao muda de formato: escala, movimento, contraste e perigo continuam sendo o que
                 o corpo registra primeiro, antes de qualquer historia.</p>
-<p>Por isso a tese do curso atravessa todos esses generos. Voce nao esta aprendendo â€œefeitos de
-                filmeâ€; esta aprendendo a dirigir a atencao de um cerebro â€” e isso se aplica a qualquer
+<p>Por isso a tese do curso atravessa todos esses generos. Voce nao esta aprendendo ê¢â¬Åefeitos de
+                filmeê¢â¬Â; esta aprendendo a dirigir a atencao de um cerebro ê¢â¬â e isso se aplica a qualquer
                 imagem em movimento que precise convencer.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="1-1" data-ARCKHÉ-topic="modulo-1-1#topico-2" data-ARCKHÉ-track="1" id="topico-2">
+<section data-ARCKHê-module="1-1" data-ARCKHê-topic="modulo-1-1#topico-2" data-ARCKHê-track="1" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 4</span><span>Â·</span><span>Tres niveis</span>
+<span class="where">Secao 2 de 4</span><span>êÂ·</span><span>Tres niveis</span>
 </div>
 <h2 class="head"><span class="num">2.</span>Os tres niveis de impacto visual</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-1-t2-p1">Toda cena forte â€” seja um filme de duas horas ou
-              um comercial de quinze segundos â€” opera em <em>tres niveis</em> ao mesmo tempo. Eles nao sao
+<p class="lede" data-ARCKHê-block="m1-1-t2-p1">Toda cena forte ê¢â¬â seja um filme de duas horas ou
+              um comercial de quinze segundos ê¢â¬â opera em <em>tres niveis</em> ao mesmo tempo. Eles nao sao
               etapas: sao camadas que coexistem em cada quadro. Quando uma falha, a cena desanda de um jeito que
               o publico sente mas nem sempre sabe nomear. Conhece-los e o que separa quem dirige de quem so gera
               imagem.</p>
-<h3 class="sub">Nivel 1 â€” o sensorial: o nivel do corpo</h3>
-<p data-ARCKHÉ-block="m1-1-t2-p2">Vem <em>antes</em> da logica e antes da historia. E feito de escala,
+<h3 class="sub">Nivel 1 ê¢â¬â o sensorial: o nivel do corpo</h3>
+<p data-ARCKHê-block="m1-1-t2-p2">Vem <em>antes</em> da logica e antes da historia. E feito de escala,
               movimento, velocidade, profundidade, luz e contraste. Se este nivel falha, a cena <em>parece
-              barata</em> â€” nao porque a ideia seja ruim, mas porque o cerebro nao registra peso, perigo
+              barata</em> ê¢â¬â nao porque a ideia seja ruim, mas porque o cerebro nao registra peso, perigo
               nem significado. Em anuncio isso e decisivo: se um produto nao tem peso visual, ele nao parece
               premium; se a luz nao molda forma, nao parece caro; se falta profundidade, o quadro parece
               falso.<span class="sidenote-ref">3</span> A IA gera textura; so quem entende forma cria
               <em>presenca fisica</em>.</p>
-<h3 class="sub">Nivel 2 â€” a estrutura: onde mora o significado</h3>
-<p data-ARCKHÉ-block="m1-1-t2-p3">Aqui aparecem as perguntas que dao sentido ao quadro: quem e o
+<h3 class="sub">Nivel 2 ê¢â¬â a estrutura: onde mora o significado</h3>
+<p data-ARCKHê-block="m1-1-t2-p3">Aqui aparecem as perguntas que dao sentido ao quadro: quem e o
               centro? o que se deseja? o que esta em jogo? No filme, o centro e o personagem; no anuncio, e o
               produto, a ideia ou a transformacao; no videoclipe, e o ritmo e a escalada emocional. Mesmo um
-              anuncio de dez segundos precisa de conflito â€” antes e depois, problema e solucao, limitacao e
+              anuncio de dez segundos precisa de conflito ê¢â¬â antes e depois, problema e solucao, limitacao e
               liberdade, caos e controle. <strong>Sem tensao, nao ha impacto.</strong></p>
-<h3 class="sub">Nivel 3 â€” a forma: a camada profissional</h3>
-<p data-ARCKHÉ-block="m1-1-t2-p4">E onde voce justifica cada escolha. Por que <em>este</em> angulo? por
+<h3 class="sub">Nivel 3 ê¢â¬â a forma: a camada profissional</h3>
+<p data-ARCKHê-block="m1-1-t2-p4">E onde voce justifica cada escolha. Por que <em>este</em> angulo? por
               que a camera lenta <em>aqui</em>? por que o close-up <em>agora</em>? por que cores frias? A emocao
-              nao e acidental â€” ela e construida. E este e o ponto critico de todo o curso: a IA nao cria
+              nao e acidental ê¢â¬â ela e construida. E este e o ponto critico de todo o curso: a IA nao cria
               emocao, ela cria <em>material</em>. Voce cria a emocao pela escolha. Se uma decisao de camera, luz
               ou ritmo nao pode ser justificada, ela enfraquece a cena.</p>
 </div>
 <!-- figura 2: tres niveis empilhados -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· As <b>tres camadas</b> que toda cena forte sustenta ao mesmo tempo</figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· As <b>tres camadas</b> que toda cena forte sustenta ao mesmo tempo</figcaption>
 <svg aria-label="Diagrama em tres faixas empilhadas: na base o nivel sensorial (corpo), no meio a estrutura (significado) e no topo a forma (escolha profissional)." class="diagram" role="img" viewbox="0 0 720 232">
 <!-- base: sensorial -->
 <rect class="accent-stroke" fill="url(#hatch-1-1)" height="54" rx="3" stroke-width="1.3" width="600" x="60" y="150"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="80" y="172">01</text>
 <text class="ink" font-family="Spectral, serif" font-size="17" font-style="italic" x="120" y="174">Sensorial</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="300" y="174">escala Â· movimento Â· profundidade Â· luz â€” o corpo</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="300" y="174">escala êÂ· movimento êÂ· profundidade êÂ· luz ê¢â¬â o corpo</text>
 <!-- meio: estrutura -->
 <rect class="wash accent-stroke" height="54" rx="3" stroke-width="1.3" width="480" x="120" y="86"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="140" y="108">02</text>
 <text class="ink" font-family="Spectral, serif" font-size="17" font-style="italic" x="180" y="110">Estrutura</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="360" y="110">quem e o centro? qual o conflito? â€” o significado</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="360" y="110">quem e o centro? qual o conflito? ê¢â¬â o significado</text>
 <!-- topo: forma -->
 <rect class="wash accent-stroke" height="54" rx="3" stroke-width="1.3" width="360" x="180" y="22"></rect>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" x="200" y="44">03</text>
 <text class="ink" font-family="Spectral, serif" font-size="17" font-style="italic" x="240" y="46">Forma</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="400" y="46">por que este angulo? â€” a escolha</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="12" x="400" y="46">por que este angulo? ê¢â¬â a escolha</text>
 <!-- eixo de justificativa -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="40" x2="40" y1="22" y2="204"></line>
 <text class="mark-fill" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle" transform="rotate(-90 30 118)" x="30" y="118">DO CORPO A ESCOLHA</text>
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-1-t2-p5">Repare na piramide invertida: o nivel sensorial e a base larga â€”
+<p data-ARCKHê-block="m1-1-t2-p5">Repare na piramide invertida: o nivel sensorial e a base larga ê¢â¬â
               sem peso fisico, nada acima se sustenta. A estrutura assenta sobre ele, e a forma e a camada mais
               fina e mais consciente, a do diretor. Cenas que falham costumam ter forma bonita e base vazia: muito
-              enquadramento elegante, nenhum peso. O caminho contrario â€” garantir o corpo primeiro â€” e
+              enquadramento elegante, nenhum peso. O caminho contrario ê¢â¬â garantir o corpo primeiro ê¢â¬â e
               o que faz uma imagem simples parecer cara.</p>
 </div>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: diagnosticar em qual nivel a cena quebrou
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: diagnosticar em qual nivel a cena quebrou
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional, util para revisar uma geracao que â€œnao funcionouâ€ sem saber por que.</p>
+<p>Camada opcional, util para revisar uma geracao que ê¢â¬Ånao funcionouê¢â¬Â sem saber por que.</p>
 <p>Use os tres niveis como um checklist de diagnostico, de baixo para cima. <strong>Sensorial:</strong>
                 a imagem tem peso, profundidade e uma fonte de luz que molda forma? Se nao, conserte isso antes de
-                tudo â€” nenhum enquadramento salva um quadro chapado. <strong>Estrutura:</strong> da para
-                dizer, em um segundo, quem e o centro e qual e o conflito? Se a resposta e â€œtem coisas
-                bonitas, mas nao sei o que olharâ€, falta hierarquia. <strong>Forma:</strong> cada escolha de
+                tudo ê¢â¬â nenhum enquadramento salva um quadro chapado. <strong>Estrutura:</strong> da para
+                dizer, em um segundo, quem e o centro e qual e o conflito? Se a resposta e ê¢â¬Åtem coisas
+                bonitas, mas nao sei o que olharê¢â¬Â, falta hierarquia. <strong>Forma:</strong> cada escolha de
                 angulo, lente e ritmo tem uma razao? Se voce nao consegue justificar, provavelmente foi a IA quem
-                escolheu â€” e o resultado e generico. O nivel onde voce trava primeiro e o que voce conserta
+                escolheu ê¢â¬â e o resultado e generico. O nivel onde voce trava primeiro e o que voce conserta
                 primeiro.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="1-1" data-ARCKHÉ-topic="modulo-1-1#topico-3" data-ARCKHÉ-track="1" id="topico-3">
+<section data-ARCKHê-module="1-1" data-ARCKHê-topic="modulo-1-1#topico-3" data-ARCKHê-track="1" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 4</span><span>Â·</span><span>O algoritmo</span>
+<span class="where">Secao 3 de 4</span><span>êÂ·</span><span>O algoritmo</span>
 </div>
 <h2 class="head"><span class="num">3.</span>O algoritmo de toda cena forte</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-1-t3-p1">Quase todo momento cARCKHÉtografico poderoso segue a
-              mesma estrutura temporal. Nao e uma camisa de forca â€” e um padrao que se repete porque casa
-              com a forma como o cerebro processa a tensao: <strong>estabilidade â†’ ruptura â†’ escalada
-              â†’ aceleracao â†’ camera lenta no pico â†’ impacto.</strong> Cada peca prepara a
+<p class="lede" data-ARCKHê-block="m1-1-t3-p1">Quase todo momento cARCKHêtografico poderoso segue a
+              mesma estrutura temporal. Nao e uma camisa de forca ê¢â¬â e um padrao que se repete porque casa
+              com a forma como o cerebro processa a tensao: <strong>estabilidade ê¢â â ruptura ê¢â â escalada
+              ê¢â â aceleracao ê¢â â camera lenta no pico ê¢â â impacto.</strong> Cada peca prepara a
               seguinte, e tirar uma delas costuma esvaziar a cena inteira.</p>
-<p data-ARCKHÉ-block="m1-1-t3-p2">A logica e simples quando voce a le na ordem. <em>Sem estabilidade</em>,
-              nao ha nada a quebrar â€” a ruptura precisa de um chao calmo para contrastar. <em>Sem
+<p data-ARCKHê-block="m1-1-t3-p2">A logica e simples quando voce a le na ordem. <em>Sem estabilidade</em>,
+              nao ha nada a quebrar ê¢â¬â a ruptura precisa de um chao calmo para contrastar. <em>Sem
               escalada</em>, a tensao nao cresce e o pico chega sem peso. E a <strong>camera lenta no pico</strong>
-              nao e enfeite: ela diz ao cerebro â€œ<em>este</em> momento importaâ€, esticando o instante
-              em que a previsao foi quebrada. Mas atencao â€” camera lenta <em>sem</em> aceleracao antes nao
+              nao e enfeite: ela diz ao cerebro ê¢â¬Å<em>este</em> momento importaê¢â¬Â, esticando o instante
+              em que a previsao foi quebrada. Mas atencao ê¢â¬â camera lenta <em>sem</em> aceleracao antes nao
               funciona; ela so impacta como contraste do que vinha rapido.<span class="sidenote-ref">4</span></p>
 <h3 class="sub">O mesmo esqueleto, generos diferentes</h3>
-<p data-ARCKHÉ-block="m1-1-t3-p3">No filme, o pico costuma ser vida ou morte. No anuncio, e o contato
-              com o produto â€” o momento em que ele preenche o quadro. No videoclipe, e o climax emocional.
+<p data-ARCKHê-block="m1-1-t3-p3">No filme, o pico costuma ser vida ou morte. No anuncio, e o contato
+              com o produto ê¢â¬â o momento em que ele preenche o quadro. No videoclipe, e o climax emocional.
               O conteudo muda; o esqueleto, nao. Quando uma cena de acao, um lancamento de produto ou um refrao
-              te arrepiam, quase sempre e este algoritmo operando por baixo â€” mesmo que ninguem na sala
+              te arrepiam, quase sempre e este algoritmo operando por baixo ê¢â¬â mesmo que ninguem na sala
               consiga nomea-lo.</p>
 </div>
 <!-- figura 3: a curva do algoritmo -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· A curva da tensao â€” <b>seis tempos</b> de quase toda cena forte</figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· A curva da tensao ê¢â¬â <b>seis tempos</b> de quase toda cena forte</figcaption>
 <svg aria-label="Diagrama de curva: a tensao parte da estabilidade, sofre ruptura, escala, acelera, congela em camera lenta no pico e desemboca no impacto." class="diagram" role="img" viewbox="0 0 720 220">
 <line class="rule-stroke" stroke-width="1" x1="20" x2="700" y1="180" y2="180"></line>
 <!-- a curva -->
@@ -435,20 +435,20 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-1-t3-p4">Voce nao precisa de um gerador de video para ensaiar isto. Quando for
-              escrever o prompt de uma cena ou de uma sequencia, descreva os tempos â€” o gerador entende
+<p data-ARCKHê-block="m1-1-t3-p4">Voce nao precisa de um gerador de video para ensaiar isto. Quando for
+              escrever o prompt de uma cena ou de uma sequencia, descreva os tempos ê¢â¬â o gerador entende
               instrucoes de progressao. O prompt abaixo e um exemplo de <em>receita de direcao</em>: ele nao pede
               um efeito, pede a <em>curva</em>.</p>
-<div class="codeblock"><span class="c"># Receita de direcao â€” a curva da tensao em um unico plano</span>
+<div class="codeblock"><span class="c"># Receita de direcao ê¢â¬â a curva da tensao em um unico plano</span>
 <span class="c"># (use em Seedance / Kling / Runway / Luma para gerar a sequencia de uma cena)</span>
 <span class="k">Subject:</span> a lone runner sprinting across a flooded street at night.
-<span class="k">Beat 1 (stability):</span> open on stillness â€” calm wet asphalt, steady wide framing.
+<span class="k">Beat 1 (stability):</span> open on stillness ê¢â¬â calm wet asphalt, steady wide framing.
 <span class="k">Beat 2 (disruption):</span> headlights cut in from the left, the runner reacts.
 <span class="k">Beat 3 (escalation):</span> camera tracks alongside, pace and water spray build.
 <span class="k">Beat 4 (acceleration):</span> fast dolly-in as the gap closes, motion blur rises.
 <span class="k">Beat 5 (slow motion at peak):</span> hard slow-mo on the moment of impact, water frozen mid-air.
 <span class="k">Beat 6 (impact):</span> return to real speed, hold on the aftermath.
-<span class="k">Style:</span> cARCKHÉtic lighting, shallow depth, rain, high contrast.</div>
+<span class="k">Style:</span> cARCKHêtic lighting, shallow depth, rain, high contrast.</div>
 </div>
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
@@ -457,49 +457,49 @@
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">A <strong>estabilidade</strong> (e, com ela, a ruptura). Sem um chao calmo para
-                contrastar, o cerebro <em>se habitua</em> ao caos constante e para de reagir â€” tudo vira o
+                contrastar, o cerebro <em>se habitua</em> ao caos constante e para de reagir ê¢â¬â tudo vira o
                 novo normal. Sem variacao de ritmo, nao ha pico: e barulho parelho, nao escalada. Frenesi
                 ininterrupto cansa; tensao precisa de respiro antes do golpe.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="1-1" data-ARCKHÉ-topic="modulo-1-1#topico-4" data-ARCKHÉ-track="1" id="topico-4">
+<section data-ARCKHê-module="1-1" data-ARCKHê-topic="modulo-1-1#topico-4" data-ARCKHê-track="1" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 4</span><span>Â·</span><span>Arquitetura</span>
+<span class="where">Secao 4 de 4</span><span>êÂ·</span><span>Arquitetura</span>
 </div>
-<h2 class="head"><span class="num">4.</span>CARCKHÉ como arquitetura de atencao</h2>
+<h2 class="head"><span class="num">4.</span>CARCKHê como arquitetura de atencao</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m1-1-t4-p1">Por que Hollywood parece cara? As cenas de alto orcamento
+<p class="lede" data-ARCKHê-block="m1-1-t4-p1">Por que Hollywood parece cara? As cenas de alto orcamento
               compartilham um conjunto de tracos: <em>geografia espacial clara</em>, composicao legivel,
               profundidade, escala de cor coerente, luz controlada e ritmo gerenciado. Cenas baratas sao o oposto
-              â€” caos sem hierarquia. E a regra a guardar e curta: <strong>escala sem clareza e barulho;
+              ê¢â¬â caos sem hierarquia. E a regra a guardar e curta: <strong>escala sem clareza e barulho;
               clareza com escala e epico.</strong></p>
-<p data-ARCKHÉ-block="m1-1-t4-p2">Dai a definicao que reorganiza tudo: cARCKHÉ nao e contar historia, e
+<p data-ARCKHê-block="m1-1-t4-p2">Dai a definicao que reorganiza tudo: cARCKHê nao e contar historia, e
               <em>organizar a percepcao</em>. Voce decide o que o espectador ve, quando ve, de que distancia, em
               que ritmo. A historia diz <em>o que acontece</em>; a forma controla <em>como se sente</em>. Pense no
-              quadro como uma <span class="dfn"><details class="dfn"><summary>arquitetura de atencao</summary><span class="body"><b>Arquitetura de atencao</b> e a ideia de que cada quadro e projetado para conduzir o olhar: um ponto focal dominante, apoios que o sustentam e vazios que o destacam â€” como um arquiteto guia o corpo por um espaco.</span></details></span>:
+              quadro como uma <span class="dfn"><details class="dfn"><summary>arquitetura de atencao</summary><span class="body"><b>Arquitetura de atencao</b> e a ideia de que cada quadro e projetado para conduzir o olhar: um ponto focal dominante, apoios que o sustentam e vazios que o destacam ê¢â¬â como um arquiteto guia o corpo por um espaco.</span></details></span>:
               cada elemento esta ali para conduzir o olho, nao para enfeitar.</p>
 <h3 class="sub">Cara ou barata: o que muda no quadro</h3>
-<p data-ARCKHÉ-block="m1-1-t4-p3">Na pratica, alguns controles decidem a sensacao de custo. <strong>Geografia
+<p data-ARCKHê-block="m1-1-t4-p3">Na pratica, alguns controles decidem a sensacao de custo. <strong>Geografia
               espacial:</strong> da para saber onde tudo esta em relacao a tudo. <strong>Hierarquia:</strong> ha um
               centro de gravidade visual claro. <strong>Profundidade:</strong> primeiro plano, meio e fundo
               trabalhando juntos. <strong>Luz:</strong> motivada, moldando forma e nao so iluminando. <strong>Ritmo:</strong>
               a duracao de cada plano e a transicao entre eles, gerenciados. Aplicado a anuncio, isso vira uma
               disciplina concreta: saiba onde o espectador olha nos primeiros 0,3 segundo, o que domina o quadro,
               onde esta o ponto focal, onde ocorre a virada e onde fica o impacto final.<span class="sidenote-ref">5</span>
-              Anuncio bom nao mostra um produto â€” constroi um centro de gravidade visual.</p>
-<p data-ARCKHÉ-block="m1-1-t4-p4">Por isso comecamos pela teoria: a IA <em>amplia o que ja existe</em>.
+              Anuncio bom nao mostra um produto ê¢â¬â constroi um centro de gravidade visual.</p>
+<p data-ARCKHê-block="m1-1-t4-p4">Por isso comecamos pela teoria: a IA <em>amplia o que ja existe</em>.
               Se a estrutura existe, ela amplia a estrutura; se o caos existe, ela amplia o caos. Voce nao precisa
-              mais de um orcamento de um milhao â€” precisa de uma mentalidade de diretor: construir tensao,
+              mais de um orcamento de um milhao ê¢â¬â precisa de uma mentalidade de diretor: construir tensao,
               criar escala, controlar a luz, montar profundidade, desenvolver ritmo, entender a psicologia da
-              camera lenta. Sem isso, o â€œuauâ€ e aleatorio. Com isso, vira sistema. As proximas aulas
-              constroem esse sistema, peca por peca â€” e a forma vem antes do efeito, sempre, porque o epico
+              camera lenta. Sem isso, o ê¢â¬Åuauê¢â¬Â e aleatorio. Com isso, vira sistema. As proximas aulas
+              constroem esse sistema, peca por peca ê¢â¬â e a forma vem antes do efeito, sempre, porque o epico
               nao e uma explosao: e um calculo visual preciso.</p>
 </div>
 <!-- figura 4: clareza x escala -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· <b>Escala sem clareza</b> e barulho; clareza com escala e epico</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· <b>Escala sem clareza</b> e barulho; clareza com escala e epico</figcaption>
 <svg aria-label="Diagrama comparando dois quadros: a esquerda, muitos elementos do mesmo tamanho sem hierarquia (barulho); a direita, um ponto focal dominante com apoios e profundidade (epico)." class="diagram" role="img" viewbox="0 0 720 210">
 <!-- quadro esquerdo: caos -->
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.2" text-anchor="middle" x="180" y="30">ESCALA SEM CLAREZA</text>
@@ -508,7 +508,7 @@
 <circle cx="90" cy="90" r="20"></circle><circle cx="160" cy="120" r="22"></circle><circle cx="230" cy="80" r="19"></circle>
 <circle cx="270" cy="140" r="21"></circle><circle cx="120" cy="160" r="18"></circle><rect height="34" width="34" x="180" y="60"></rect>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">tudo compete â€” nada domina</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="180" y="200">tudo compete ê¢â¬â nada domina</text>
 <!-- divisor -->
 <line class="rule-stroke" stroke-dasharray="3 4" stroke-width="1" x1="360" x2="360" y1="40" y2="186"></line>
 <!-- quadro direito: hierarquia -->
@@ -526,11 +526,11 @@
 </svg>
 </figure>
 <div class="prose">
-<p data-ARCKHÉ-block="m1-1-t4-p5">Guarde este modulo como uma unica frase: <em>a ferramenta executa
-              direcao â€” ela nao a inventa; o impacto e controle da percepcao, e isso e um sistema que se
+<p data-ARCKHê-block="m1-1-t4-p5">Guarde este modulo como uma unica frase: <em>a ferramenta executa
+              direcao ê¢â¬â ela nao a inventa; o impacto e controle da percepcao, e isso e um sistema que se
               aprende.</em> A pergunta com que o instrutor fecha vale como provocacao para o resto da trilha: voce
               esta pronto para <strong>analisar</strong> as cenas, em vez de apenas gera-las? A proxima aula da o
-              primeiro instrumento concreto desse controle â€” como o espaco do quadro organiza a atencao.</p>
+              primeiro instrumento concreto desse controle ê¢â¬â como o espaco do quadro organiza a atencao.</p>
 </div>
 </section>
 <!-- ============================= KNOWLEDGE CHECK ============================= -->
@@ -538,22 +538,22 @@
 <h2>Antes de seguir: quatro checagens rapidas</h2>
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
-<summary><span class="qn">01</span><span>Se o â€œuauâ€ nao e o efeito, o que ele e â€” em termos de percepcao?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">01</span><span>Se o ê¢â¬Åuauê¢â¬Â nao e o efeito, o que ele e ê¢â¬â em termos de percepcao?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>E o instante em que o cerebro <em>perde a capacidade de prever</em> o que vem a
-              seguir. Escala crescente, aceleracao, instabilidade e contraste rompem a previsao â€” e e a
+              seguir. Escala crescente, aceleracao, instabilidade e contraste rompem a previsao ê¢â¬â e e a
               ruptura, nao o tamanho do efeito, que dispara a reacao.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Uma cena tem enquadramento elegante mas â€œparece barataâ€. Em qual dos tres niveis provavelmente falhou?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>No <em>sensorial</em> â€” a base. Forma bonita (nivel 3) nao salva um quadro
+<summary><span class="qn">02</span><span>Uma cena tem enquadramento elegante mas ê¢â¬Åparece barataê¢â¬Â. Em qual dos tres niveis provavelmente falhou?</span><span class="reveal">Revelar</span></summary>
+<div class="ans"><p>No <em>sensorial</em> ê¢â¬â a base. Forma bonita (nivel 3) nao salva um quadro
               sem peso, profundidade ou luz que molde forma. Sem o corpo registrar presenca fisica, nada acima se
               sustenta.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">03</span><span>Por que camera lenta no pico, sozinha, nao garante impacto?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque ela funciona por <em>contraste</em>: precisa de aceleracao antes. Esticar o
-              tempo so importa se vinha rapido. Slow-mo sem escalada previa vira lentidao vazia â€” nao diz ao
-              cerebro â€œeste momento importaâ€.</p></div>
+              tempo so importa se vinha rapido. Slow-mo sem escalada previa vira lentidao vazia ê¢â¬â nao diz ao
+              cerebro ê¢â¬Åeste momento importaê¢â¬Â.</p></div>
 </details>
 <details class="q-item">
 <summary><span class="qn">04</span><span>Qual e a diferenca pratica entre escala e clareza num quadro?</span><span class="reveal">Revelar</span></summary>
@@ -564,31 +564,31 @@
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
+<section aria-label="Minha jornada ê¢â¬â progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Minha jornada</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir caderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:1-1">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="modulo:1-1">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 4</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 1</div>
-<div class="v" data-ARCKHÉ-meter="trilha:1">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:1">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -597,44 +597,44 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 1.2 â€” Controle Espacial CARCKHÉtografico</div>
+<div class="t">Modulo 1.2 ê¢â¬â Controle Espacial CARCKHêtografico</div>
 </div>
-<a class="go" href="modulo-1-2.html">Proximo â†’</a>
+<a class="go" href="modulo-1-2.html">Proximo ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-1#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-1-1#topico-1"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Forma visual.</b> A compreensao de como escala, luz, profundidade e movimento criam peso e presenca.
-          E o que a IA <i>nao</i> entrega sozinha â€” e o que faz uma imagem simples parecer cara.
+          E o que a IA <i>nao</i> entrega sozinha ê¢â¬â e o que faz uma imagem simples parecer cara.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           A reacao a objetos que se aproximam e a movimento rapido e <i>evolutiva</i>: o cerebro foi moldado para
-          detectar perigo antes de pensar. O cARCKHÉ sequestra exatamente esses gatilhos.
+          detectar perigo antes de pensar. O cARCKHê sequestra exatamente esses gatilhos.
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Modulo 0 do programa <i>AI Filmmaking</i> â€” â€œO Framework do Diretorâ€. A tese central:
+          Modulo 0 do programa <i>AI Filmmaking</i> ê¢â¬â ê¢â¬ÅO Framework do Diretorê¢â¬Â. A tese central:
           <i>as ferramentas de IA nao criam intencao; elas executam direcao</i>.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-1#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-1-1#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Peso visual.</b> A sensacao de massa e materialidade de um elemento no quadro, criada por luz,
-          contraste, escala e profundidade â€” nao por textura. Produto sem peso nao parece premium.
+          contraste, escala e profundidade ê¢â¬â nao por textura. Produto sem peso nao parece premium.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
           Os tres niveis formam uma piramide: base sensorial (larga), estrutura (meio), forma (topo, fina). Quase
-          toda cena fraca tem forma elegante sobre base vazia â€” conserte de baixo para cima.
+          toda cena fraca tem forma elegante sobre base vazia ê¢â¬â conserte de baixo para cima.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-1#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-1-1#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Camera lenta no pico.</b> Esticar o instante exato em que a previsao e quebrada. Nao e decoracao:
@@ -642,28 +642,28 @@
         </aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          O algoritmo â€” estabilidade, ruptura, escalada, aceleracao, slow-mo, impacto â€” e apresentado
-          como a estrutura comum de â€œcada momento cARCKHÉtograficoâ€ no Modulo 0.
+          O algoritmo ê¢â¬â estabilidade, ruptura, escalada, aceleracao, slow-mo, impacto ê¢â¬â e apresentado
+          como a estrutura comum de ê¢â¬Åcada momento cARCKHêtograficoê¢â¬Â no Modulo 0.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-1-1#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-1-1#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Geografia espacial.</b> A clareza sobre onde cada elemento esta em relacao aos outros e ao espectador.
-          E o primeiro traco que separa a cena cara da barata â€” sem ela, a escala vira caos.
+          E o primeiro traco que separa a cena cara da barata ê¢â¬â sem ela, a escala vira caos.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
-          â€œA IA amplia o que ja existeâ€: estrutura vira mais estrutura, caos vira mais caos. Por isso a
-          teoria vem primeiro â€” voce instala o que sera amplificado.
+          ê¢â¬ÅA IA amplia o que ja existeê¢â¬Â: estrutura vira mais estrutura, caos vira mais caos. Por isso a
+          teoria vem primeiro ê¢â¬â voce instala o que sera amplificado.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Caderno do aluno</span>
-<span class="pg">Modulo 1.1 â€” folio i</span>
+<span>ARCKHê AI êÂ· Caderno do aluno</span>
+<span class="pg">Modulo 1.1 ê¢â¬â folio i</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -672,8 +672,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Ruta 6 â€” Personaje y actuaciÃ³n | AI Filmmaking</title>
+<title>Ruta 6 ê¢â¬â Personaje y actuaciêÂ³n | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,49 +135,49 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Saltar al contenido</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="trilha:6"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span></span> leÃ­das</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="trilha:6"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span></span> leêÂ­das</span>
 <div aria-label="Tema de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Oscuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Oscuro</button>
 </div>
 <div aria-label="Fuente de lectura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” mÃ¡xima legibilidad" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â mêÂ¡xima legibilidad" type="button">Aaê¢â Â¹</button>
 </div>
-<div aria-label="TamaÃ±o del texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<div aria-label="TamaêÂ±o del texto" class="rc-group" role="group">
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
-<div aria-label="Ancho de lÃ­nea" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estrecho</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Ancho</button>
+<div aria-label="Ancho de lêÂ­nea" class="rc-group" role="group">
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estrecho</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Ancho</button>
 </div>
 </div>
 </div>
 </div>
 <!-- ===================== MASTHEAD + WAYFINDING ===================== -->
 <header class="masthead">
-<nav aria-label="DÃ³nde estÃ¡s" class="wayfind">
+<nav aria-label="DêÂ³nde estêÂ¡s" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
-<span>Ruta <b>6</b> Personaje y actuaciÃ³n</span>
-<span class="sep">Â·</span>
-<span>Ãndice de la ruta</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Mi recorrido <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span>Ruta <b>6</b> Personaje y actuaciêÂ³n</span>
+<span class="sep">êÂ·</span>
+<span>êÂndice de la ruta</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Mi recorrido <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -187,170 +187,170 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura editorial da trilha -->
-<p class="kicker">Ruta 6 Â· Personaje y actuaciÃ³n</p>
-<h1 class="module">Lo que mueve al pÃºblico no es lo que se dice â€” sino lo que queda <em>por debajo</em></h1>
-<p class="deck">Cuatro mÃ³dulos sobre la capa mÃ¡s humana del cine con IA: cÃ³mo una escena de diÃ¡logo se convierte en
-          drama, cÃ³mo darle a un personaje generado una actuaciÃ³n creÃ­ble y consistente, cÃ³mo el primer plano moldea la emociÃ³n,
-          y cÃ³mo estructurar la escena de conversaciÃ³n en torno a lo que nadie dice.</p>
+<p class="kicker">Ruta 6 êÂ· Personaje y actuaciêÂ³n</p>
+<h1 class="module">Lo que mueve al pêÂºblico no es lo que se dice ê¢â¬â sino lo que queda <em>por debajo</em></h1>
+<p class="deck">Cuatro mêÂ³dulos sobre la capa mêÂ¡s humana del cine con IA: cêÂ³mo una escena de diêÂ¡logo se convierte en
+          drama, cêÂ³mo darle a un personaje generado una actuaciêÂ³n creêÂ­ble y consistente, cêÂ³mo el primer plano moldea la emociêÂ³n,
+          y cêÂ³mo estructurar la escena de conversaciêÂ³n en torno a lo que nadie dice.</p>
 <!-- marcador de progresso discreto da trilha: "N de M" + 1 filete fino -->
-<p class="read-meta" data-ARCKHÉ-meter="trilha:6">
-<span class="here" data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span>
-<span>secciones leÃ­das en esta ruta</span>
-<span class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></span>
+<p class="read-meta" data-ARCKHê-meter="trilha:6">
+<span class="here" data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span>
+<span>secciones leêÂ­das en esta ruta</span>
+<span class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></span>
 </p>
 <!-- o "porque" da trilha -->
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="t6-porque-p1">Hasta aquÃ­ aprendiste a construir el mundo: luz,
-            composiciÃ³n, movimiento de cÃ¡mara, efectos, acciÃ³n. Esta ruta gira la cÃ¡mara hacia adentro â€”hacia el
-            <em>personaje</em>. Y aquÃ­ es donde tropieza la mayorÃ­a de los proyectos de IA: el cuadro es hermoso, la fÃ­sica
-            convence y, aun asÃ­, la escena se siente vacÃ­a porque el personaje no parece <em>vivo</em> y la conversaciÃ³n
-            parece un simple intercambio de informaciÃ³n. El principio que atraviesa los cuatro mÃ³dulos es uno solo: en el cine,
-            el movimiento no es actuaciÃ³n y el habla no es diÃ¡logo â€” lo que importa es la emociÃ³n que corre por debajo.
-            El MÃ³dulo 6.1 establece la anatomÃ­a de la escena de diÃ¡logo: subtexto, reacciÃ³n, silencio, conflicto y
-            encuadre. El 6.2 baja al detalle de la actuaciÃ³n de un personaje generado â€” motivaciÃ³n antes del
-            movimiento, microactuaciÃ³n, timing, cuerpo, ritmo â€” y aborda la fragilidad tÃ­pica de la IA: mantener al
-            mismo personaje entre planos. El 6.3 pone la cÃ¡mara al servicio de la emociÃ³n: el primer plano como decisiÃ³n, el espacio
-            negativo, el push-in, la distancia, el POV. Y el 6.4 monta la escena de diÃ¡logo completa â€” ritmo, giro,
-            plano y contraplano sobre el eje â€” alrededor de lo que no se dice. Quien termina esta ruta deja de
-            generar â€œpersonas que hablanâ€ y pasa a dirigir personajes que sienten.</p>
+<p class="lede" data-ARCKHê-block="t6-porque-p1">Hasta aquêÂ­ aprendiste a construir el mundo: luz,
+            composiciêÂ³n, movimiento de cêÂ¡mara, efectos, acciêÂ³n. Esta ruta gira la cêÂ¡mara hacia adentro ê¢â¬âhacia el
+            <em>personaje</em>. Y aquêÂ­ es donde tropieza la mayorêÂ­a de los proyectos de IA: el cuadro es hermoso, la fêÂ­sica
+            convence y, aun asêÂ­, la escena se siente vacêÂ­a porque el personaje no parece <em>vivo</em> y la conversaciêÂ³n
+            parece un simple intercambio de informaciêÂ³n. El principio que atraviesa los cuatro mêÂ³dulos es uno solo: en el cine,
+            el movimiento no es actuaciêÂ³n y el habla no es diêÂ¡logo ê¢â¬â lo que importa es la emociêÂ³n que corre por debajo.
+            El MêÂ³dulo 6.1 establece la anatomêÂ­a de la escena de diêÂ¡logo: subtexto, reacciêÂ³n, silencio, conflicto y
+            encuadre. El 6.2 baja al detalle de la actuaciêÂ³n de un personaje generado ê¢â¬â motivaciêÂ³n antes del
+            movimiento, microactuaciêÂ³n, timing, cuerpo, ritmo ê¢â¬â y aborda la fragilidad têÂ­pica de la IA: mantener al
+            mismo personaje entre planos. El 6.3 pone la cêÂ¡mara al servicio de la emociêÂ³n: el primer plano como decisiêÂ³n, el espacio
+            negativo, el push-in, la distancia, el POV. Y el 6.4 monta la escena de diêÂ¡logo completa ê¢â¬â ritmo, giro,
+            plano y contraplano sobre el eje ê¢â¬â alrededor de lo que no se dice. Quien termina esta ruta deja de
+            generar ê¢â¬Åpersonas que hablanê¢â¬Â y pasa a dirigir personajes que sienten.</p>
 </div>
 <!-- ===================== CURRICULO COMO INDICE REAL ===================== -->
-<p class="toc-head" style="margin-top:var(--s7)">El recorrido â€” cuatro mÃ³dulos, en orden</p>
+<p class="toc-head" style="margin-top:var(--s7)">El recorrido ê¢â¬â cuatro mêÂ³dulos, en orden</p>
 <!-- ---- ENTRADA / MODULO 6.1 ---- -->
-<section data-ARCKHÉ-module="6-1" data-ARCKHÉ-topic="modulo-6-1#indice" data-ARCKHÉ-track="6" id="topico-1">
+<section data-ARCKHê-module="6-1" data-ARCKHê-topic="modulo-6-1#indice" data-ARCKHê-track="6" id="topico-1">
 <div class="section-mark">
-<span class="where">MÃ³dulo 6.1</span><span>Â·</span><span>4 secciones Â· ~15 min</span>
+<span class="where">MêÂ³dulo 6.1</span><span>êÂ·</span><span>4 secciones êÂ· ~15 min</span>
 </div>
-<h2 class="head"><span class="num">6.1</span>DiÃ¡logo y actuaciÃ³n</h2>
+<h2 class="head"><span class="num">6.1</span>DiêÂ¡logo y actuaciêÂ³n</h2>
 <div class="prose">
-<p data-ARCKHÉ-block="t6-m6-1-p1">La anatomÃ­a de la escena de diÃ¡logo. Por quÃ© una conversaciÃ³n â€œclara y
-              lÃ³gicaâ€ suena muerta y quÃ© la hace cobrar vida: el <em>subtexto</em> (lo que se dice no es lo que se
-              siente), la <em>reacciÃ³n</em> de quien escucha (muchas veces mÃ¡s fuerte que las palabras), el <em>silencio</em>
-              como presiÃ³n, el <em>conflicto</em> de dos deseos que chocan y el <em>encuadre</em> que cambia el
-              sentido emocional de la misma escena. Cierra con el principio que atraviesa el recorrido: emociÃ³n mÃ¡s subtexto
-              mÃ¡s reacciÃ³n mÃ¡s conflicto â€”y no la cantidad de diÃ¡logoâ€” es lo que convierte una conversaciÃ³n en
+<p data-ARCKHê-block="t6-m6-1-p1">La anatomêÂ­a de la escena de diêÂ¡logo. Por quêÂ© una conversaciêÂ³n ê¢â¬Åclara y
+              lêÂ³gicaê¢â¬Â suena muerta y quêÂ© la hace cobrar vida: el <em>subtexto</em> (lo que se dice no es lo que se
+              siente), la <em>reacciêÂ³n</em> de quien escucha (muchas veces mêÂ¡s fuerte que las palabras), el <em>silencio</em>
+              como presiêÂ³n, el <em>conflicto</em> de dos deseos que chocan y el <em>encuadre</em> que cambia el
+              sentido emocional de la misma escena. Cierra con el principio que atraviesa el recorrido: emociêÂ³n mêÂ¡s subtexto
+              mêÂ¡s reacciêÂ³n mêÂ¡s conflicto ê¢â¬ây no la cantidad de diêÂ¡logoê¢â¬â es lo que convierte una conversaciêÂ³n en
               cine.</p>
-<p data-ARCKHÉ-block="t6-m6-1-p2">
-<a class="entry-link" href="modulo-6-1.html">Leer el MÃ³dulo 6.1 â†’</a>
+<p data-ARCKHê-block="t6-m6-1-p2">
+<a class="entry-link" href="modulo-6-1.html">Leer el MêÂ³dulo 6.1 ê¢â â</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 6.2 ---- -->
-<section data-ARCKHÉ-module="6-2" data-ARCKHÉ-topic="modulo-6-2#indice" data-ARCKHÉ-track="6" id="topico-2">
+<section data-ARCKHê-module="6-2" data-ARCKHê-topic="modulo-6-2#indice" data-ARCKHê-track="6" id="topico-2">
 <div class="section-mark">
-<span class="where">MÃ³dulo 6.2</span><span>Â·</span><span>5 secciones Â· ~17 min</span>
+<span class="where">MêÂ³dulo 6.2</span><span>êÂ·</span><span>5 secciones êÂ· ~17 min</span>
 </div>
-<h2 class="head"><span class="num">6.2</span>ActuaciÃ³n de personajes con IA</h2>
+<h2 class="head"><span class="num">6.2</span>ActuaciêÂ³n de personajes con IA</h2>
 <div class="prose">
-<p data-ARCKHÉ-block="t6-m6-2-p1">CÃ³mo lograr que un personaje generado tenga una actuaciÃ³n que parezca viva.
-              Cinco mecanismos: <em>motivaciÃ³n antes del movimiento</em> (todo gesto comienza por una razÃ³n emocional),
-              <em>microactuaciÃ³n</em> e <em>desempeÃ±o de los ojos</em> (el detalle mÃ­nimo que transmite la emociÃ³n),
-              <em>sincronizaciÃ³n emocional</em> (la emociÃ³n entra poco a poco, no de golpe), <em>lenguaje corporal</em>
-              (postura y psicologÃ­a) y <em>ritmo</em> (quietud, movimiento, quietud). Es el problema propio
+<p data-ARCKHê-block="t6-m6-2-p1">CêÂ³mo lograr que un personaje generado tenga una actuaciêÂ³n que parezca viva.
+              Cinco mecanismos: <em>motivaciêÂ³n antes del movimiento</em> (todo gesto comienza por una razêÂ³n emocional),
+              <em>microactuaciêÂ³n</em> e <em>desempeêÂ±o de los ojos</em> (el detalle mêÂ­nimo que transmite la emociêÂ³n),
+              <em>sincronizaciêÂ³n emocional</em> (la emociêÂ³n entra poco a poco, no de golpe), <em>lenguaje corporal</em>
+              (postura y psicologêÂ­a) y <em>ritmo</em> (quietud, movimiento, quietud). Es el problema propio
               de la IA: mantener la <em>identidad del personaje coherente</em> entre planos, con bloque de identidad
               bloqueado y referencia.</p>
-<p data-ARCKHÉ-block="t6-m6-2-p2">
-<a class="entry-link" href="modulo-6-2.html">Leer el MÃ³dulo 6.2 â†’</a>
+<p data-ARCKHê-block="t6-m6-2-p2">
+<a class="entry-link" href="modulo-6-2.html">Leer el MêÂ³dulo 6.2 ê¢â â</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 6.3 ---- -->
-<section data-ARCKHÉ-module="6-3" data-ARCKHÉ-topic="modulo-6-3#indice" data-ARCKHÉ-track="6" id="topico-3">
+<section data-ARCKHê-module="6-3" data-ARCKHê-topic="modulo-6-3#indice" data-ARCKHê-track="6" id="topico-3">
 <div class="section-mark">
-<span class="where">MÃ³dulo 6.3</span><span>Â·</span><span>5 secciones Â· ~17 min</span>
+<span class="where">MêÂ³dulo 6.3</span><span>êÂ·</span><span>5 secciones êÂ· ~17 min</span>
 </div>
 <h2 class="head"><span class="num">6.3</span>Primeros planos y planos emocionales</h2>
 <div class="prose">
-<p data-ARCKHÉ-block="t6-m6-3-p1">La emociÃ³n no solo se actÃºa: tambiÃ©n se encuadra. Cinco decisiones de
-              cÃ¡mara: el <em>plano cercano emocional</em> que hace visible la microexpresiÃ³n, el <em>espacio negativo</em>
-              que convierte el vacÃ­o en soledad, el <em>push-in lento</em> que aumenta la presiÃ³n sin que se note, la
-              <em>distancia de cÃ¡mara</em> que se convierte en distancia emocional (con el plano sobre el hombro) y el <em>POV</em>
-              que hace que el pÃºblico experimente la emociÃ³n en vez de observarla. El hilo conductor: el primer plano como
-              <em>decisiÃ³n</em> â€” cuÃ¡ndo acercarse y preguntarse Â«Â¿de quÃ© estÃ¡ hecha esta emociÃ³n?Â»</p>
-<p data-ARCKHÉ-block="t6-m6-3-p2">
-<a class="entry-link" href="modulo-6-3.html">Leer el MÃ³dulo 6.3 â†’</a>
+<p data-ARCKHê-block="t6-m6-3-p1">La emociêÂ³n no solo se actêÂºa: tambiêÂ©n se encuadra. Cinco decisiones de
+              cêÂ¡mara: el <em>plano cercano emocional</em> que hace visible la microexpresiêÂ³n, el <em>espacio negativo</em>
+              que convierte el vacêÂ­o en soledad, el <em>push-in lento</em> que aumenta la presiêÂ³n sin que se note, la
+              <em>distancia de cêÂ¡mara</em> que se convierte en distancia emocional (con el plano sobre el hombro) y el <em>POV</em>
+              que hace que el pêÂºblico experimente la emociêÂ³n en vez de observarla. El hilo conductor: el primer plano como
+              <em>decisiêÂ³n</em> ê¢â¬â cuêÂ¡ndo acercarse y preguntarse êÂ«êÂ¿de quêÂ© estêÂ¡ hecha esta emociêÂ³n?êÂ»</p>
+<p data-ARCKHê-block="t6-m6-3-p2">
+<a class="entry-link" href="modulo-6-3.html">Leer el MêÂ³dulo 6.3 ê¢â â</a>
 </p>
 </div>
 </section>
 <!-- ---- ENTRADA / MODULO 6.4 ---- -->
-<section data-ARCKHÉ-module="6-4" data-ARCKHÉ-topic="modulo-6-4#indice" data-ARCKHÉ-track="6" id="topico-4">
+<section data-ARCKHê-module="6-4" data-ARCKHê-topic="modulo-6-4#indice" data-ARCKHê-track="6" id="topico-4">
 <div class="section-mark">
-<span class="where">MÃ³dulo 6.4</span><span>Â·</span><span>5 secciones Â· ~18 min</span>
+<span class="where">MêÂ³dulo 6.4</span><span>êÂ·</span><span>5 secciones êÂ· ~18 min</span>
 </div>
-<h2 class="head"><span class="num">6.4</span>Estructura de escena de diÃ¡logo</h2>
+<h2 class="head"><span class="num">6.4</span>Estructura de escena de diêÂ¡logo</h2>
 <div class="prose">
-<p data-ARCKHÉ-block="t6-m6-4-p1">El montaje de toda la escena de diÃ¡logo, plano por plano. La escena como
-              <em>negociaciÃ³n emocional</em> con conflicto incorporado; el <em>subtexto</em> sobre el diÃ¡logo directo (con
-              pares de diÃ¡logos dÃ©bil y fuerte); el <em>silencio</em>, o <em>ritmo</em> del intercambio y la <em>dinÃ¡mica de
-              poder</em>; a <em>giro emocional</em> que toda escena necesita; es la gramÃ¡tica de <em>plano y
-              contraplano</em> sobre el <em>eje</em> (lÃ­nea de los 180Â°), con la eyeline coincidiendo en el corte. La
-              pregunta que organiza todo: Â¿quÃ© son emocionalmente incapaces de decir estos personajes?</p>
-<p data-ARCKHÉ-block="t6-m6-4-p2">
-<a class="entry-link" href="modulo-6-4.html">Leer el MÃ³dulo 6.4 â†’</a>
+<p data-ARCKHê-block="t6-m6-4-p1">El montaje de toda la escena de diêÂ¡logo, plano por plano. La escena como
+              <em>negociaciêÂ³n emocional</em> con conflicto incorporado; el <em>subtexto</em> sobre el diêÂ¡logo directo (con
+              pares de diêÂ¡logos dêÂ©bil y fuerte); el <em>silencio</em>, o <em>ritmo</em> del intercambio y la <em>dinêÂ¡mica de
+              poder</em>; a <em>giro emocional</em> que toda escena necesita; es la gramêÂ¡tica de <em>plano y
+              contraplano</em> sobre el <em>eje</em> (lêÂ­nea de los 180êÂ°), con la eyeline coincidiendo en el corte. La
+              pregunta que organiza todo: êÂ¿quêÂ© son emocionalmente incapaces de decir estos personajes?</p>
+<p data-ARCKHê-block="t6-m6-4-p2">
+<a class="entry-link" href="modulo-6-4.html">Leer el MêÂ³dulo 6.4 ê¢â â</a>
 </p>
 </div>
 </section>
 <!-- indo mais fundo: divulgacao progressiva (opcional) -->
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Profundizando: por quÃ© el personaje viene despuÃ©s de la cÃ¡mara
+<summary><span class="chev">ê¢âÂ¸</span> Profundizando: por quêÂ© el personaje viene despuêÂ©s de la cêÂ¡mara
             <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>El camino recomendado es lineal: 6.1, 6.2, 6.3, 6.4. Esta capa explica el orden y puedes saltÃ¡rtela.</p>
-<p>Las rutas anteriores construyeron el <em>mundo</em>: luz, composiciÃ³n, movimiento, efectos, acciÃ³n. Solo
-              tiene sentido girar la cÃ¡mara hacia el <em>personaje</em> despuÃ©s de que ya sabes construir el espacio a
-              su alrededor â€” porque la actuaciÃ³n no ocurre en el vacÃ­o: se interpreta a travÃ©s del encuadre, la
-              distancia y la luz que aprendiste a controlar. Por eso 6.1 establece la <em>anatomÃ­a</em> de la
-              escena de diÃ¡logo antes de que 6.2 baje al detalle de la interpretaciÃ³n; por eso 6.3 (la cÃ¡mara al servicio de la
-              emociÃ³n) viene antes de 6.4, que reÃºne actuaciÃ³n y cÃ¡mara en la estructura completa de la escena. La lÃ³gica es
-              siempre de la pieza al todo: primero, quÃ© hace que una escena de conversaciÃ³n cobre vida; despuÃ©s, cÃ³mo dirigir al
-              personaje dentro de ella y, por Ãºltimo, cÃ³mo construir toda la escena en torno a lo que no se dice.</p>
-<p>Esta es la trilha mÃ¡s Â«invisibleÂ» del curso: lo que aprendes aquÃ­ no aparece como un
-efecto llamativo, sino como la diferencia entre una escena que el pÃºblico mira y una que el pÃºblico
+<p>El camino recomendado es lineal: 6.1, 6.2, 6.3, 6.4. Esta capa explica el orden y puedes saltêÂ¡rtela.</p>
+<p>Las rutas anteriores construyeron el <em>mundo</em>: luz, composiciêÂ³n, movimiento, efectos, acciêÂ³n. Solo
+              tiene sentido girar la cêÂ¡mara hacia el <em>personaje</em> despuêÂ©s de que ya sabes construir el espacio a
+              su alrededor ê¢â¬â porque la actuaciêÂ³n no ocurre en el vacêÂ­o: se interpreta a travêÂ©s del encuadre, la
+              distancia y la luz que aprendiste a controlar. Por eso 6.1 establece la <em>anatomêÂ­a</em> de la
+              escena de diêÂ¡logo antes de que 6.2 baje al detalle de la interpretaciêÂ³n; por eso 6.3 (la cêÂ¡mara al servicio de la
+              emociêÂ³n) viene antes de 6.4, que reêÂºne actuaciêÂ³n y cêÂ¡mara en la estructura completa de la escena. La lêÂ³gica es
+              siempre de la pieza al todo: primero, quêÂ© hace que una escena de conversaciêÂ³n cobre vida; despuêÂ©s, cêÂ³mo dirigir al
+              personaje dentro de ella y, por êÂºltimo, cêÂ³mo construir toda la escena en torno a lo que no se dice.</p>
+<p>Esta es la trilha mêÂ¡s êÂ«invisibleêÂ» del curso: lo que aprendes aquêÂ­ no aparece como un
+efecto llamativo, sino como la diferencia entre una escena que el pêÂºblico mira y una que el pêÂºblico
               <em>siente</em>.</p>
 </div>
 </details>
 <!-- proxima acao (UMA clara) -->
 <div class="nextup">
 <div class="txt">
-<div class="k">Empezar por la anatomÃ­a</div>
-<div class="t">MÃ³dulo 6.1 â€” DiÃ¡logo y actuaciÃ³n</div>
+<div class="k">Empezar por la anatomêÂ­a</div>
+<div class="t">MêÂ³dulo 6.1 ê¢â¬â DiêÂ¡logo y actuaciêÂ³n</div>
 </div>
-<a class="go" href="modulo-6-1.html">Leer el primero â†’</a>
+<a class="go" href="modulo-6-1.html">Leer el primero ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margen: notas del autor y tu panel de aprendizaje" class="margin-rail">
 <!-- ---- MODULO 6.1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-6-1#indice"></aside>
+<aside data-ARCKHê-rail="modulo-6-1#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
-<b>Bloque de la ruta.</b> La Trilha 6 es el â€œPersonajeâ€: despuÃ©s de construir el mundo (luz,
-          cÃ¡mara, VFX), gira la cÃ¡mara hacia quien vive en Ã©l: emociÃ³n, actuaciÃ³n, diÃ¡logo.
+<div class="tag">DefiniciêÂ³n</div>
+<b>Bloque de la ruta.</b> La Trilha 6 es el ê¢â¬ÅPersonajeê¢â¬Â: despuêÂ©s de construir el mundo (luz,
+          cêÂ¡mara, VFX), gira la cêÂ¡mara hacia quien vive en êÂ©l: emociêÂ³n, actuaciêÂ³n, diêÂ¡logo.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Profundizando</div>
-          El orden importa: 6.1 es la <i>anatomÃ­a</i> de la escena de diÃ¡logo, 6.2 es la <i>desempeÃ±o</i> del personaje,
-          6.3 aÃ±ade la <i>cÃ¡mara</i> al servicio de la emociÃ³n y 6.4 monta la <i>escena completa</i> en torno a lo no dicho.
+          El orden importa: 6.1 es la <i>anatomêÂ­a</i> de la escena de diêÂ¡logo, 6.2 es la <i>desempeêÂ±o</i> del personaje,
+          6.3 aêÂ±ade la <i>cêÂ¡mara</i> al servicio de la emociêÂ³n y 6.4 monta la <i>escena completa</i> en torno a lo no dicho.
         </aside>
 <!-- ---- MODULO 6.2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-6-2#indice"></aside>
+<aside data-ARCKHê-rail="modulo-6-2#indice"></aside>
 <aside class="sidenote" data-kind="definicao">
-<div class="tag">DefiniciÃ³n</div>
+<div class="tag">DefiniciêÂ³n</div>
 <b>Consistencia del personaje.</b> Mantener el rostro, la edad, el cabello y el vestuario estables entre planos. La
-          fragilidad tÃ­pica de la IA â€” resuelta con un bloque de identidad fijo y un retrato de referencia.
+          fragilidad têÂ­pica de la IA ê¢â¬â resuelta con un bloque de identidad fijo y un retrato de referencia.
         </aside>
 <!-- ---- MODULO 6.3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-6-3#indice"></aside>
+<aside data-ARCKHê-rail="modulo-6-3#indice"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fuente</div>
-          El Bloque 6 del programa: <i>Personaje y actuaciÃ³n</i> â€” cubre diÃ¡logo y actuaciÃ³n,
-          interpretaciÃ³n de personajes con IA, planos emocionales y estructura de escenas de diÃ¡logo.
+          El Bloque 6 del programa: <i>Personaje y actuaciêÂ³n</i> ê¢â¬â cubre diêÂ¡logo y actuaciêÂ³n,
+          interpretaciêÂ³n de personajes con IA, planos emocionales y estructura de escenas de diêÂ¡logo.
         </aside>
 <!-- ---- MODULO 6.4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-6-4#indice"></aside>
+<aside data-ARCKHê-rail="modulo-6-4#indice"></aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Profundizando</div>
-          La regla que cierra la ruta: <i>en una escena de diÃ¡logo, lo mÃ¡s importante casi siempre es lo que nadie
+          La regla que cierra la ruta: <i>en una escena de diêÂ¡logo, lo mêÂ¡s importante casi siempre es lo que nadie
           dice</i>. El conflicto, el subtexto, el silencio y el giro existen para abrir espacio a eso.
         </aside>
 </aside>
@@ -358,8 +358,8 @@ efecto llamativo, sino como la diferencia entre una escena que el pÃºblico mir
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Cuaderno del estudiante</span>
-<span class="pg">Ruta 6 â€” Ã­ndice</span>
+<span>ARCKHê AI êÂ· Cuaderno del estudiante</span>
+<span class="pg">Ruta 6 ê¢â¬â êÂ­ndice</span>
 <span>Compuesto en Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -368,8 +368,8 @@ efecto llamativo, sino como la diferencia entre una escena que el pÃºblico mir
        =================================================================== -->
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>

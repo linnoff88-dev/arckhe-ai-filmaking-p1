@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- ===================================================================
-       1) ANTI-FOUC â€” script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
-          e do learn.css. Le ARCKHÉ.prefs (global, cross-curso) e aplica
+       1) ANTI-FOUC ê¢â¬â script BLOQUEANTE, PRIMEIRO no <head>, ANTES das fontes
+          e do learn.css. Le ARCKHê.prefs (global, cross-curso) e aplica
           data-theme + color-scheme + --measure/--leading/--fontscale +
           data-font/--font-disp/--font-body ANTES do primeiro paint.
-          try/catch total => default papel no erro (preserva a marca ARCKHÉ).
-          (REL = "../.." â€” caminho ate a pasta com assets/.)
+          try/catch total => default papel no erro (preserva a ARCKHÉê).
+          (REL = "../.." ê¢â¬â caminho ate a pasta com assets/.)
        =================================================================== -->
 <script>
   (function () {
@@ -20,7 +20,7 @@
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('ARCKHÉ.prefs');
+        var raw = localStorage.getItem('ARCKHê.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') {
@@ -76,24 +76,24 @@
   })();
   </script>
 <!-- 2) Identidade do curso + manifesto (courseId estavel + estrutura completa) -->
-<meta content="ai-filmaking-p1" name="ARCKHÉ-course"/>
-<script data-ARCKHÉ-manifest="" type="application/json">
+<meta content="ai-filmaking-p1" name="ARCKHê-course"/>
+<script data-ARCKHê-manifest="" type="application/json">
   {
     "course": "ai-filmaking-p1",
     "tracks": [
       { "n": "1", "title": "Fundamentos (Luz)", "modules": [
         { "id": "1-1", "title": "O Framework do Diretor", "topics": 4, "href": "curso/trilha1/modulo-1-1.html" },
-        { "id": "1-2", "title": "Controle Espacial CARCKHÉtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
+        { "id": "1-2", "title": "Controle Espacial CARCKHêtografico", "topics": 5, "href": "curso/trilha1/modulo-1-2.html" },
         { "id": "1-3", "title": "Do Roteiro a Cena", "topics": 5, "href": "curso/trilha1/modulo-1-3.html" },
         { "id": "1-4", "title": "Do Quadro ao Movimento", "topics": 5, "href": "curso/trilha1/modulo-1-4.html" }
       ] },
-      { "n": "2", "title": "Fundamentos CARCKHÉtograficos", "modules": [
+      { "n": "2", "title": "Fundamentos CARCKHêtograficos", "modules": [
         { "id": "2-1", "title": "Pensamento Visual", "topics": 4, "href": "curso/trilha2/modulo-2-1.html" },
-        { "id": "2-2", "title": "Composicao para CARCKHÉ", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
+        { "id": "2-2", "title": "Composicao para CARCKHê", "topics": 5, "href": "curso/trilha2/modulo-2-2.html" },
         { "id": "2-3", "title": "Luz e Atmosfera", "topics": 5, "href": "curso/trilha2/modulo-2-3.html" },
         { "id": "2-4", "title": "Profundidade e Estrutura Espacial", "topics": 5, "href": "curso/trilha2/modulo-2-4.html" }
       ] },
-      { "n": "3", "title": "Workflow de CARCKHÉ com IA", "modules": [
+      { "n": "3", "title": "Workflow de CARCKHê com IA", "modules": [
         { "id": "3-1", "title": "Pipeline de Ferramentas de IA", "topics": 4, "href": "curso/trilha3/modulo-3-1.html" },
         { "id": "3-2", "title": "Construcao de Cena no Freepik", "topics": 5, "href": "curso/trilha3/modulo-3-2.html" },
         { "id": "3-3", "title": "Geracao de Movimento no Seedance", "topics": 5, "href": "curso/trilha3/modulo-3-3.html" },
@@ -101,15 +101,15 @@
         { "id": "3-5", "title": "Integracao Luma e Runway", "topics": 5, "href": "curso/trilha3/modulo-3-5.html" }
       ] },
       { "n": "4", "title": "Linguagem de Camera", "modules": [
-        { "id": "4-1", "title": "CARCKHÉtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
+        { "id": "4-1", "title": "CARCKHêtografia", "topics": 4, "href": "curso/trilha4/modulo-4-1.html" },
         { "id": "4-2", "title": "Movimento de Camera", "topics": 5, "href": "curso/trilha4/modulo-4-2.html" },
         { "id": "4-3", "title": "Planos e Enquadramento", "topics": 5, "href": "curso/trilha4/modulo-4-3.html" },
-        { "id": "4-4", "title": "Video CARCKHÉtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
+        { "id": "4-4", "title": "Video CARCKHêtografico no Seedance 2", "topics": 5, "href": "curso/trilha4/modulo-4-4.html" }
       ] },
       { "n": "5", "title": "VFX e Acao", "modules": [
         { "id": "5-1", "title": "Efeitos Visuais", "topics": 4, "href": "curso/trilha5/modulo-5-1.html" },
         { "id": "5-2", "title": "Camera Lenta", "topics": 5, "href": "curso/trilha5/modulo-5-2.html" },
-        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHÉ", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
+        { "id": "5-3", "title": "Sistemas de Particulas no CARCKHê", "topics": 5, "href": "curso/trilha5/modulo-5-3.html" },
         { "id": "5-4", "title": "Cenas de Acao", "topics": 5, "href": "curso/trilha5/modulo-5-4.html" }
       ] },
       { "n": "6", "title": "Personagem e Atuacao", "modules": [
@@ -118,16 +118,16 @@
         { "id": "6-3", "title": "Close-ups e Planos Emocionais", "topics": 5, "href": "curso/trilha6/modulo-6-3.html" },
         { "id": "6-4", "title": "Estrutura de Cena de Dialogo", "topics": 5, "href": "curso/trilha6/modulo-6-4.html" }
       ] },
-      { "n": "7", "title": "Historia e Estrutura CARCKHÉtografica", "modules": [
+      { "n": "7", "title": "Historia e Estrutura CARCKHêtografica", "modules": [
         { "id": "7-1", "title": "Narrativa Visual", "topics": 4, "href": "curso/trilha7/modulo-7-1.html" },
         { "id": "7-2", "title": "Proposito da Cena", "topics": 5, "href": "curso/trilha7/modulo-7-2.html" },
-        { "id": "7-3", "title": "Construindo Sequencias CARCKHÉtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
-        { "id": "7-4", "title": "A Arte da Sequencia CARCKHÉtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
+        { "id": "7-3", "title": "Construindo Sequencias CARCKHêtograficas", "topics": 5, "href": "curso/trilha7/modulo-7-3.html" },
+        { "id": "7-4", "title": "A Arte da Sequencia CARCKHêtografica", "topics": 5, "href": "curso/trilha7/modulo-7-4.html" }
       ] }
     ]
   }
   </script>
-<title>Modulo 4.3 â€” Planos e Enquadramento | AI Filmmaking</title>
+<title>Modulo 4.3 ê¢â¬â Planos e Enquadramento | AI Filmmaking</title>
 <!-- 3) Fontes (DEPOIS do anti-FOUC) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -135,34 +135,34 @@
 <!-- 4) Folha de estilos da camada de aprendizagem v3 (caminho RELATIVO) -->
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
-<body><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body><div class="ARCKHê-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- SKIP LINK (primeiro focavel) -->
 <a class="skip" href="#reading">Pular para o conteudo</a>
-<!-- ===================== READER BAR â€” controles minimos ===================== -->
+<!-- ===================== READER BAR ê¢â¬â controles minimos ===================== -->
 <div class="reader-bar">
 <div class="reader-inner">
-<a class="wordmark" href="../../index.html">ARCKHÉ<span class="dot">.</span><span class="club">CLUB</span></a>
-<div class="reader-controls" data-ARCKHÉ-appearance="">
-<span class="rc-read"><span data-ARCKHÉ-meter="modulo:4-3"><span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
+<a class="wordmark" href="../../index.html">ARCKHê<span class="dot">.</span><span class="club">CLUB</span></a>
+<div class="reader-controls" data-ARCKHê-appearance="">
+<span class="rc-read"><span data-ARCKHê-meter="modulo:4-3"><span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span></span> lidas</span>
 <div aria-label="Tema de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-theme="papel" type="button">Papel</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-theme="escuro" type="button">Escuro</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-theme="papel" type="button">Papel</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="sepia" type="button">Sepia</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-theme="escuro" type="button">Escuro</button>
 </div>
 <div aria-label="Fonte de leitura" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-font="serif" type="button">Serif</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="sans" type="button">Sans</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-font="hyperlegible" title="Atkinson Hyperlegible â€” legibilidade maxima" type="button">Aaâ†¹</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-font="serif" type="button">Serif</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="sans" type="button">Sans</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-font="hyperlegible" title="Atkinson Hyperlegible ê¢â¬â legibilidade maxima" type="button">Aaê¢â Â¹</button>
 </div>
 <div aria-label="Tamanho do texto" class="rc-group" role="group">
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="112" type="button">A+</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-fontscale="125" type="button">A++</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-fontscale="100" type="button">A</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="112" type="button">A+</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-fontscale="125" type="button">A++</button>
 </div>
 <div aria-label="Largura da linha" class="rc-group" role="group">
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="62" type="button">Estreito</button>
-<button aria-pressed="true" class="rc-btn" data-ARCKHÉ-set-linewidth="66" type="button">Medio</button>
-<button aria-pressed="false" class="rc-btn" data-ARCKHÉ-set-linewidth="70" type="button">Largo</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="62" type="button">Estreito</button>
+<button aria-pressed="true" class="rc-btn" data-ARCKHê-set-linewidth="66" type="button">Medio</button>
+<button aria-pressed="false" class="rc-btn" data-ARCKHê-set-linewidth="70" type="button">Largo</button>
 </div>
 </div>
 </div>
@@ -171,15 +171,15 @@
 <header class="masthead">
 <nav aria-label="Onde voce esta" class="wayfind">
 <span><a href="../../index.html" style="text-decoration:none">AI Filmmaking</a></span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Trilha <b>4</b> Linguagem de Camera</span>
-<span class="sep">Â·</span>
+<span class="sep">êÂ·</span>
 <span>Modulo <b>4.3</b> / 4</span>
-<span class="sep">Â·</span>
-<span data-ARCKHÉ-section-counter="">Secao 1 de 5</span>
-<span class="sep">Â·</span>
-<button data-ARCKHÉ-journey-open="" type="button">
-        Minha jornada <span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge="">0</span>
+<span class="sep">êÂ·</span>
+<span data-ARCKHê-section-counter="">Secao 1 de 5</span>
+<span class="sep">êÂ·</span>
+<button data-ARCKHê-journey-open="" type="button">
+        Minha jornada <span class="ARCKHê-journey-badge" data-count="0" data-ARCKHê-journey-badge="">0</span>
 </button>
 </nav>
 </header>
@@ -189,14 +189,14 @@
 <!-- ============================= COLUNA DE LEITURA ============================= -->
 <article class="reading" id="reading">
 <!-- abertura do modulo -->
-<p class="kicker">Modulo 4.3 Â· Trilha 4 Â· Linguagem de Camera</p>
+<p class="kicker">Modulo 4.3 êÂ· Trilha 4 êÂ· Linguagem de Camera</p>
 <h1 class="module">Planos e Enquadramento: a distancia vira <em>emocao</em></h1>
-<p class="deck">A distancia entre a camera e o sujeito nao e um detalhe tecnico â€” e uma decisao
+<p class="deck">A distancia entre a camera e o sujeito nao e um detalhe tecnico ê¢â¬â e uma decisao
           emocional. Quanto mais perto, menos o espectador consegue desviar o olhar. Esta aula percorre a escala
-          inteira de planos e a gramatica que mantem o espaco legivel: eyeline e a regra dos 180Â°.</p>
+          inteira de planos e a gramatica que mantem o espaco legivel: eyeline e a regra dos 180êÂ°.</p>
 <p class="read-meta">
 <span class="here">Lendo agora</span>
-<span>~18 min Â· modulo inteiro</span>
+<span>~18 min êÂ· modulo inteiro</span>
 <span>5 secoes</span>
 </p>
 <!-- objetivos: o que voce vai entender -->
@@ -204,18 +204,18 @@
 <h2>O que voce vai entender</h2>
 <ul>
 <li>Por que <b>distancia e emocao</b>: o plano amplo responde <em>onde estamos?</em>, o close responde
-              <em>como se sente?</em> â€” mesma cena, significados opostos.</li>
+              <em>como se sente?</em> ê¢â¬â mesma cena, significados opostos.</li>
 <li>A <b>escala completa de planos</b>, do <em>establishing</em> ao <em>extreme close-up</em>, e o
               efeito de cada um sobre o corpo de quem assiste.</li>
 <li>A <b>regra de ouro</b>: comece amplo para estabelecer o mundo, aproxime-se para revelar emocao,
-              termine no close para o impacto maximo â€” um plano, uma emocao.</li>
+              termine no close para o impacto maximo ê¢â¬â um plano, uma emocao.</li>
 <li>A gramatica que mantem o espaco coerente: a <b>linha de olhar</b> (eyeline) e a <b>regra dos
-              180Â°</b>, e por que rompe-las desorienta o espectador.</li>
+              180êÂ°</b>, e por que rompe-las desorienta o espectador.</li>
 </ul>
 </section>
 <!-- SUMARIO -->
-<nav aria-label="Sumario do modulo" class="toc" data-ARCKHÉ-toc="">
-<p class="toc-head">Sumario â€” cinco movimentos</p>
+<nav aria-label="Sumario do modulo" class="toc" data-ARCKHê-toc="">
+<p class="toc-head">Sumario ê¢â¬â cinco movimentos</p>
 <ol>
 <li class="current"><span class="dot-now"></span><span class="n">1</span>
 <a href="#topico-1"><span class="t">Distancia e uma decisao emocional</span></a></li>
@@ -226,28 +226,28 @@
 </ol>
 </nav>
 <!-- ============================= SECAO 1 ============================= -->
-<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-1" data-ARCKHÉ-track="4" id="topico-1">
+<section data-ARCKHê-module="4-3" data-ARCKHê-topic="modulo-4-3#topico-1" data-ARCKHê-track="4" id="topico-1">
 <div class="section-mark">
-<span class="where">Secao 1 de 5</span><span>Â·</span><span>Principio</span>
+<span class="where">Secao 1 de 5</span><span>êÂ·</span><span>Principio</span>
 </div>
 <h2 class="head"><span class="num">1.</span>Distancia e uma decisao emocional</h2>
 <div class="prose">
-<p class="lede dropcap" data-ARCKHÉ-block="m4-3-t1-p1">No cARCKHÉ, a distancia entre a camera e o sujeito
-              nunca e um detalhe tecnico â€” e uma <em>decisao emocional</em>.<span class="sidenote-ref">1</span>
+<p class="lede dropcap" data-ARCKHê-block="m4-3-t1-p1">No cARCKHê, a distancia entre a camera e o sujeito
+              nunca e um detalhe tecnico ê¢â¬â e uma <em>decisao emocional</em>.<span class="sidenote-ref">1</span>
               Quando voce se aproxima, entra no mundo interior do personagem; quando se afasta, mostra o lugar dele
               no universo. O mesmo ator, a mesma fala, a mesma posicao: mudar o tamanho do plano muda o
-              significado. E essa a primeira coisa a internalizar â€” o enquadramento nao registra a cena,
+              significado. E essa a primeira coisa a internalizar ê¢â¬â o enquadramento nao registra a cena,
               ele a <em>interpreta</em>.</p>
-<p data-ARCKHÉ-block="m4-3-t1-p2">Para nao se perder na lista de nomes que vem a seguir, guarde a
-              pergunta que cada plano responde. <strong>Planos amplos respondem â€œonde estamos?â€</strong>
-              â€” geografia, clima, escala. <strong>Planos fechados respondem â€œcomo se sente?â€</strong>
-              â€” reacao, decisao, emocao. E o <strong>extreme close-up revela um detalhe que pode mudar a
-              historia</strong> â€” um dedo, uma chave, uma lagrima. Toda a escala de planos vive entre esses
+<p data-ARCKHê-block="m4-3-t1-p2">Para nao se perder na lista de nomes que vem a seguir, guarde a
+              pergunta que cada plano responde. <strong>Planos amplos respondem ê¢â¬Åonde estamos?ê¢â¬Â</strong>
+              ê¢â¬â geografia, clima, escala. <strong>Planos fechados respondem ê¢â¬Åcomo se sente?ê¢â¬Â</strong>
+              ê¢â¬â reacao, decisao, emocao. E o <strong>extreme close-up revela um detalhe que pode mudar a
+              historia</strong> ê¢â¬â um dedo, uma chave, uma lagrima. Toda a escala de planos vive entre esses
               dois polos: o contexto e a emocao.</p>
 <h3 class="sub">O que o tamanho do plano controla</h3>
-<p data-ARCKHÉ-block="m4-3-t1-p3">Tres coisas estao em jogo a cada escolha. A primeira e
+<p data-ARCKHê-block="m4-3-t1-p3">Tres coisas estao em jogo a cada escolha. A primeira e
               <em>contexto versus emocao</em>, que voce ja viu. A segunda e o <em>ritmo</em>: alternar planos
-              amplos e fechados cria energia; ficar em planos medios cria calma. A terceira e a <em>atencao</em> â€”
+              amplos e fechados cria energia; ficar em planos medios cria calma. A terceira e a <em>atencao</em> ê¢â¬â
               e aqui esta a regra mais reveladora: quanto mais fechado o plano, <strong>menos o publico consegue
               desviar o olhar.</strong> Um plano amplo deixa o olho passear; um close prende. Por isso diretores
               constroem cenas indo do amplo ao fechado: comecam soltando o olhar e terminam capturando-o.</p>
@@ -255,20 +255,20 @@
 <!-- recall ativo: pare e preveja -->
 <div class="predict">
 <p class="lbl">Pare e preveja</p>
-<p>Uma atriz diz a mesma frase â€” â€œeu sabiaâ€ â€” em dois planos. No primeiro, ela
+<p>Uma atriz diz a mesma frase ê¢â¬â ê¢â¬Åeu sabiaê¢â¬Â ê¢â¬â em dois planos. No primeiro, ela
               aparece pequena, ao longe, num deserto imenso. No segundo, o rosto dela preenche a tela inteira.
               A fala e identica. O que muda no que o espectador sente?</p>
 <details>
 <summary>Ver uma resposta possivel</summary>
-<p class="answer">Quase tudo. No plano amplo, â€œeu sabiaâ€ soa como destino, solidao,
-                pequenez diante do mundo â€” o <em>contexto</em> fala mais alto. No close, a mesma frase vira
+<p class="answer">Quase tudo. No plano amplo, ê¢â¬Åeu sabiaê¢â¬Â soa como destino, solidao,
+                pequenez diante do mundo ê¢â¬â o <em>contexto</em> fala mais alto. No close, a mesma frase vira
                 intimidade pura: lemos a micro-expressao, sentimos a <em>emocao</em>, e nao conseguimos desviar o
                 olhar. A distancia, sozinha, reescreveu a linha.</p>
 </details>
 </div>
 <!-- figura 1: o eixo contexto-emocao -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 1</span> Â· Um <b>eixo</b>: do contexto (amplo) a emocao (fechado)</figcaption>
+<figcaption><span class="fig-n">Fig. 1</span> êÂ· Um <b>eixo</b>: do contexto (amplo) a emocao (fechado)</figcaption>
 <svg aria-label="Diagrama de eixo horizontal: a esquerda o plano amplo responde onde estamos e da contexto; a direita o close responde como se sente e da emocao; a atencao do publico cresce da esquerda para a direita." class="diagram" role="img" viewbox="0 0 720 184">
 <defs>
 <pattern height="6" id="hatch-4-3" patterntransform="rotate(45)" patternunits="userSpaceOnUse" width="6">
@@ -281,72 +281,72 @@
 <rect class="rule-stroke" fill="none" height="72" rx="3" stroke-width="1.3" width="120" x="60" y="60"></rect>
 <circle class="ink-soft" cx="120" cy="100" r="4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="120" y="50">amplo</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="120" y="150">â€œonde estamos?â€</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="120" y="150">ê¢â¬Åonde estamos?ê¢â¬Â</text>
 <text class="faint" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="120" y="166">CONTEXTO</text>
 <!-- polo fechado -->
 <rect class="accent-stroke" fill="url(#hatch-4-3)" height="72" rx="3" stroke-width="1.4" width="120" x="540" y="60"></rect>
 <circle class="accent-stroke" cx="600" cy="96" fill="none" r="22" stroke-width="1.4"></circle>
 <text class="ink" font-family="Spectral, serif" font-size="13" font-style="italic" text-anchor="middle" x="600" y="50">fechado</text>
-<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="600" y="150">â€œcomo se sente?â€</text>
+<text class="ink-soft" font-family="Source Serif 4, serif" font-size="11" text-anchor="middle" x="600" y="150">ê¢â¬Åcomo se sente?ê¢â¬Â</text>
 <text class="accent" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1" text-anchor="middle" x="600" y="166">EMOCAO</text>
 <!-- atencao crescente -->
-<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="84">ATENCAO DO PUBLICO â†’</text>
+<text class="faint" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" text-anchor="middle" x="360" y="84">ATENCAO DO PUBLICO ê¢â â</text>
 <path class="mark-stroke" d="M260 116 L460 116" fill="none" opacity="0.5" stroke-width="2.6"></path>
 <path class="accent-stroke" d="M260 116 L460 116" fill="none" stroke-dasharray="2 4" stroke-width="1.4"></path>
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: o mundo-laboratorio do deserto
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: o mundo-laboratorio do deserto
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>O caminho-feliz acima ja basta. Esta camada explica os exemplos que vao reaparecer â€” e pode
+<p>O caminho-feliz acima ja basta. Esta camada explica os exemplos que vao reaparecer ê¢â¬â e pode
                 ser pulada.</p>
 <p>Os planos desta aula sao demonstrados por uma unica historia no deserto, filmada de varias
                 distancias: uma nave caida no Saara, tempestades de areia, uma personagem chamada Ella num traje
                 rosa, um homem misterioso com uma orquidea branca, e o reflexo de naves no olho dela. Usar
                 <em>o mesmo mundo</em> para todos os planos e proposital: mantendo cenario, luz e personagens
-                constantes, fica facil ver que <strong>so a distancia</strong> mudou â€” e como essa unica
+                constantes, fica facil ver que <strong>so a distancia</strong> mudou ê¢â¬â e como essa unica
                 variavel altera escala, emocao e para onde o olho corre. E um laboratorio controlado da gramatica
                 de planos.</p>
 </div>
 </details>
 </section>
 <!-- ============================= SECAO 2 ============================= -->
-<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-2" data-ARCKHÉ-track="4" id="topico-2">
+<section data-ARCKHê-module="4-3" data-ARCKHê-topic="modulo-4-3#topico-2" data-ARCKHê-track="4" id="topico-2">
 <div class="section-mark">
-<span class="where">Secao 2 de 5</span><span>Â·</span><span>O amplo</span>
+<span class="where">Secao 2 de 5</span><span>êÂ·</span><span>O amplo</span>
 </div>
 <h2 class="head"><span class="num">2.</span>O lado amplo: estabelecer, isolar, contextualizar</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m4-3-t2-p1">Comece pela ponta larga da escala, onde o mundo fala mais
-              alto que o rosto. Tres planos vivem aqui, e cada um faz um trabalho distinto, embora pareÃ§am
+<p class="lede" data-ARCKHê-block="m4-3-t2-p1">Comece pela ponta larga da escala, onde o mundo fala mais
+              alto que o rosto. Tres planos vivem aqui, e cada um faz um trabalho distinto, embora pareêÂ§am
               parecidos a primeira vista.</p>
-<h3 class="sub">Establishing shot â€” a primeira pagina do capitulo</h3>
-<p data-ARCKHÉ-block="m4-3-t2-p2">O <strong>establishing shot</strong> (plano de estabelecimento),
+<h3 class="sub">Establishing shot ê¢â¬â a primeira pagina do capitulo</h3>
+<p data-ARCKHê-block="m4-3-t2-p2">O <strong>establishing shot</strong> (plano de estabelecimento),
               geralmente um plano geral extremo ou aereo, e a primeira pagina de um capitulo: diz ao publico
-              â€œestamos em algo novoâ€. Mostra a geografia, o clima, a hora do dia e a escala do mundo.
+              ê¢â¬Åestamos em algo novoê¢â¬Â. Mostra a geografia, o clima, a hora do dia e a escala do mundo.
               Sem ele, o espectador se sente perdido; com ele, relaxa e confia na narrativa. Use-o na abertura de
-              uma cena ou ao mudar de locacao â€” seu efeito emocional e deslumbramento e solidao.</p>
-<h3 class="sub">Wide shot â€” a escala do sujeito</h3>
-<p data-ARCKHÉ-block="m4-3-t2-p3">Diferente do establishing, que e sobre <em>lugar</em>, o
+              uma cena ou ao mudar de locacao ê¢â¬â seu efeito emocional e deslumbramento e solidao.</p>
+<h3 class="sub">Wide shot ê¢â¬â a escala do sujeito</h3>
+<p data-ARCKHê-block="m4-3-t2-p3">Diferente do establishing, que e sobre <em>lugar</em>, o
               <strong>wide shot</strong> (plano geral) e sobre <em>escala</em>: o quao grande ou pequeno o sujeito
               e em relacao ao que o cerca. Ele faz o publico sentir isolamento, vulnerabilidade ou poder
-              avassalador. Posicione a camera no chao, em angulo baixo â€” uma nave que ocupa quase todo o
+              avassalador. Posicione a camera no chao, em angulo baixo ê¢â¬â uma nave que ocupa quase todo o
               quadro vira um gigante adormecido, e o angulo baixo a faz pairar. Quando o ambiente engole o sujeito,
               esse e o plano: um personagem solitario contra montanhas, um monstro emergindo, uma figura diante da
               tempestade.</p>
-<h3 class="sub">Medium wide / cowboy â€” a ponte para o personagem</h3>
-<p data-ARCKHÉ-block="m4-3-t2-p4">O <strong>medium wide shot</strong>, tambem chamado de
+<h3 class="sub">Medium wide / cowboy ê¢â¬â a ponte para o personagem</h3>
+<p data-ARCKHê-block="m4-3-t2-p4">O <strong>medium wide shot</strong>, tambem chamado de
               <span class="dfn"><details class="dfn"><summary>cowboy shot</summary><span class="body"><b>Cowboy shot</b> e um plano que corta a figura na altura das coxas. O nome vem dos faroestes: enquadrava-se ali para mostrar o coldre e a arma na cintura, alem do rosto. E a distancia da prontidao e da postura.</span></details></span>,
               e a ponte entre o ambiente e o personagem. Vemos o suficiente do fundo para entender o contexto, mas
-              a linguagem corporal â€” postura, movimento, atitude â€” vira o foco. E o plano da acao com
+              a linguagem corporal ê¢â¬â postura, movimento, atitude ê¢â¬â vira o foco. E o plano da acao com
               contexto: alguem andando de skate, dancando, lutando, correndo. Tambem aparece antes de um confronto,
-              para mostrar prontidao. Seu efeito e dinamico, energico, confiante â€” admiramos a habilidade do
+              para mostrar prontidao. Seu efeito e dinamico, energico, confiante ê¢â¬â admiramos a habilidade do
               personagem enquanto o mundo epico continua visivel atras.</p>
 </div>
 <!-- figura 2: tres planos amplos -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 2</span> Â· Tres distancias amplas: <b>estabelecer</b>, <b>isolar</b>, <b>aproximar do corpo</b></figcaption>
+<figcaption><span class="fig-n">Fig. 2</span> êÂ· Tres distancias amplas: <b>estabelecer</b>, <b>isolar</b>, <b>aproximar do corpo</b></figcaption>
 <svg aria-label="Diagrama com tres quadros: establishing com figura minuscula numa paisagem, wide com a figura maior contra o ambiente, e cowboy shot cortando a figura na altura das coxas." class="diagram" role="img" viewbox="0 0 720 190">
 <!-- establishing -->
 <rect class="rule-stroke" fill="none" height="108" rx="3" stroke-width="1.3" width="190" x="40" y="40"></rect>
@@ -374,49 +374,49 @@
 </figure>
 </section>
 <!-- ============================= SECAO 3 ============================= -->
-<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-3" data-ARCKHÉ-track="4" id="topico-3">
+<section data-ARCKHê-module="4-3" data-ARCKHê-topic="modulo-4-3#topico-3" data-ARCKHê-track="4" id="topico-3">
 <div class="section-mark">
-<span class="where">Secao 3 de 5</span><span>Â·</span><span>O fechado</span>
+<span class="where">Secao 3 de 5</span><span>êÂ·</span><span>O fechado</span>
 </div>
 <h2 class="head"><span class="num">3.</span>O lado fechado: medio, close, extreme close</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m4-3-t3-p1">Agora atravesse para a outra ponta, onde o rosto fala mais
+<p class="lede" data-ARCKHê-block="m4-3-t3-p1">Agora atravesse para a outra ponta, onde o rosto fala mais
               alto que o mundo. Conforme a camera se aproxima, o espectador perde a saida: cada passo a frente e
               menos liberdade para o olho e mais intimidade com o personagem.</p>
-<h3 class="sub">Medium shot â€” o plano neutro e realista</h3>
-<p data-ARCKHÉ-block="m4-3-t3-p2">O <strong>medium shot</strong> (plano medio), em geral da cintura para
-              cima, e o quadro mais neutro e realista â€” imita como vemos as pessoas no dia a dia. Perto o
+<h3 class="sub">Medium shot ê¢â¬â o plano neutro e realista</h3>
+<p data-ARCKHê-block="m4-3-t3-p2">O <strong>medium shot</strong> (plano medio), em geral da cintura para
+              cima, e o quadro mais neutro e realista ê¢â¬â imita como vemos as pessoas no dia a dia. Perto o
               bastante para ler expressao facial, longe o bastante para ainda ver linguagem corporal. Ele nao
               manipula o publico; apresenta o personagem como ele e, em movimento. E o cavalo de batalha do
-              dialogo realista â€” e a regra pratica diz: se voce esta perdido, comece com um medium shot. Ele
+              dialogo realista ê¢â¬â e a regra pratica diz: se voce esta perdido, comece com um medium shot. Ele
               raramente falha.</p>
-<h3 class="sub">Medium close-up e close-up â€” entrando no espaco pessoal</h3>
-<p data-ARCKHÉ-block="m4-3-t3-p3">O <strong>medium close-up</strong> (do peito para cima) entra no
+<h3 class="sub">Medium close-up e close-up ê¢â¬â entrando no espaco pessoal</h3>
+<p data-ARCKHê-block="m4-3-t3-p3">O <strong>medium close-up</strong> (do peito para cima) entra no
               espaco pessoal: o rosto domina, mas ainda vemos ombros e alguns gestos. E perfeito para reacoes
-              emocionais â€” surpresa, medo, deslumbramento â€” sem a intensidade total de um close. E o
+              emocionais ê¢â¬â surpresa, medo, deslumbramento ê¢â¬â sem a intensidade total de um close. E o
               plano da intimidade <em>antes</em> do mergulho final. Ja o <strong>close-up</strong> (ombros e
               rosto, ou so o rosto) captura emocao pura: quando a face preenche o quadro, um sorriso vira
-              contagiante e um aceno vira saudacao a distancia. E a ferramenta mais forte para o momento decisivo â€”
+              contagiante e um aceno vira saudacao a distancia. E a ferramenta mais forte para o momento decisivo ê¢â¬â
               alegria, medo, a decisao que muda uma vida.</p>
-<h3 class="sub">Extreme close-up â€” um detalhe que vira monumento</h3>
-<p data-ARCKHÉ-block="m4-3-t3-p4">O <strong>extreme close-up</strong> isola um detalhe minusculo e o
-              torna monumental. Um olho vira um espelho vivo, refletindo nao so a luz, mas o mundo inteiro â€”
+<h3 class="sub">Extreme close-up ê¢â¬â um detalhe que vira monumento</h3>
+<p data-ARCKHê-block="m4-3-t3-p4">O <strong>extreme close-up</strong> isola um detalhe minusculo e o
+              torna monumental. Um olho vira um espelho vivo, refletindo nao so a luz, mas o mundo inteiro ê¢â¬â
               imagine a cornea de Ella refletindo dunas e naves alienigenas, deformadas pela curvatura do olho. E
               o plano do primeiro contato, da pista que muda a historia, do climax. Combina-se lindamente com um
-              <em>push-in</em> lento e com som â€” um batimento cardiaco que comeca lento e acelera â€”,
+              <em>push-in</em> lento e com som ê¢â¬â um batimento cardiaco que comeca lento e acelera ê¢â¬â,
               empurrando o publico da observacao para a imersao. Seu efeito e suspense e espanto.<span class="sidenote-ref">2</span></p>
-<div class="codeblock"><span class="c"># Extreme close-up â€” um detalhe vira o mundo inteiro</span>
+<div class="codeblock"><span class="c"># Extreme close-up ê¢â¬â um detalhe vira o mundo inteiro</span>
 <span class="c"># a distancia mais intima da escala; combine com push-in lento e som</span>
-<span class="k">Format:</span> cARCKHÉtic 16:9, macro lens, ultra-shallow depth, film grain.
+<span class="k">Format:</span> cARCKHêtic 16:9, macro lens, ultra-shallow depth, film grain.
 <span class="k">Shot:</span> extreme close-up of a woman's eye, starting a few centimeters out, slowly pushing in until the iris fills the frame.
 <span class="k">Detail:</span> in the corneal reflection, a vast desert with dunes and several futuristic spacecraft, warped by the curve of the eye.
-<span class="k">Action:</span> the eye moves naturally â€” glances left, then right, then blinks softly.
+<span class="k">Action:</span> the eye moves naturally ê¢â¬â glances left, then right, then blinks softly.
 <span class="k">Lighting:</span> soft natural daylight, warm catchlight, high micro-contrast on the iris.
 <span class="k">Sound:</span> low slow heartbeat that accelerates as the camera pushes closer.</div>
 </div>
 <!-- figura 3: a escala fechada -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 3</span> Â· Aproximando: <b>medio</b> â†’ <b>close</b> â†’ <b>extreme close</b></figcaption>
+<figcaption><span class="fig-n">Fig. 3</span> êÂ· Aproximando: <b>medio</b> ê¢â â <b>close</b> ê¢â â <b>extreme close</b></figcaption>
 <svg aria-label="Diagrama com tres quadros mostrando o mesmo rosto cada vez mais perto: plano medio com cintura, close com rosto e ombros, e extreme close so com o olho." class="diagram" role="img" viewbox="0 0 720 188">
 <!-- medium -->
 <rect class="rule-stroke" fill="none" height="116" rx="3" stroke-width="1.3" width="180" x="50" y="36"></rect>
@@ -442,13 +442,13 @@
 </svg>
 </figure>
 <details class="go-deeper">
-<summary><span class="chev">â–¸</span> Indo mais fundo: lente e som como parte do plano
+<summary><span class="chev">ê¢âÂ¸</span> Indo mais fundo: lente e som como parte do plano
               <span class="opt">opcional</span></summary>
 <div class="inner">
-<p>Camada opcional â€” dois reforcos que potencializam cada distancia.</p>
-<p><strong>A escolha da lente e escolha de personagem.</strong> Lentes grande-angulares (21â€“35mm)
-                exageram espaco e movimento â€” casam com planos amplos e acao. Teleobjetivas (85mm e acima)
-                comprimem o espaco e isolam o rosto â€” casam com closes e intimidade. Escolher a distancia
+<p>Camada opcional ê¢â¬â dois reforcos que potencializam cada distancia.</p>
+<p><strong>A escolha da lente e escolha de personagem.</strong> Lentes grande-angulares (21ê¢â¬â35mm)
+                exageram espaco e movimento ê¢â¬â casam com planos amplos e acao. Teleobjetivas (85mm e acima)
+                comprimem o espaco e isolam o rosto ê¢â¬â casam com closes e intimidade. Escolher a distancia
                 focal e, de novo, escolher uma emocao. <strong>E o audio e metade da emocao.</strong> Nos prompts,
                 inclua sons diegeticos (vento, passos, o estalo de um isqueiro) e nao-diegeticos (um grave baixo,
                 um pulso sintetico). Um extreme close-up com batimento cardiaco vale o dobro de um sem som: o
@@ -457,35 +457,35 @@
 </details>
 </section>
 <!-- ============================= SECAO 4 ============================= -->
-<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-4" data-ARCKHÉ-track="4" id="topico-4">
+<section data-ARCKHê-module="4-3" data-ARCKHê-topic="modulo-4-3#topico-4" data-ARCKHê-track="4" id="topico-4">
 <div class="section-mark">
-<span class="where">Secao 4 de 5</span><span>Â·</span><span>As regras</span>
+<span class="where">Secao 4 de 5</span><span>êÂ·</span><span>As regras</span>
 </div>
 <h2 class="head"><span class="num">4.</span>A regra de ouro e a regra de decisao</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m4-3-t4-p1">Conhecer os planos nao basta; e preciso saber
+<p class="lede" data-ARCKHê-block="m4-3-t4-p1">Conhecer os planos nao basta; e preciso saber
               <em>encadea-los</em>. Aqui entra a regra de ouro, a que nunca falha: <strong>comece amplo para
-              estabelecer o mundo, mova para o medio para a acao, depois feche para a emocao â€” e, no momento
+              estabelecer o mundo, mova para o medio para a acao, depois feche para a emocao ê¢â¬â e, no momento
               crucial, um extreme close-up sobre um detalhe.</strong><span class="sidenote-ref">3</span> E a
-              gramatica natural do cARCKHÉ: do â€œonde estamosâ€ ao â€œcomo ele ou ela se senteâ€.
+              gramatica natural do cARCKHê: do ê¢â¬Åonde estamosê¢â¬Â ao ê¢â¬Åcomo ele ou ela se senteê¢â¬Â.
               Comece amplo, termine perto.</p>
-<p data-ARCKHÉ-block="m4-3-t4-p2">A essa regra se soma uma disciplina: <strong>um plano, uma
+<p data-ARCKHê-block="m4-3-t4-p2">A essa regra se soma uma disciplina: <strong>um plano, uma
               emocao.</strong> Nao tente fazer tudo num unico quadro. Planos amplos dao contexto; closes dao
-              emocao â€” respeite a funcao de cada um. Querer que um plano so estabeleca o mundo <em>e</em>
-              entregue a lagrima e pedir que ele faÃ§a dois trabalhos opostos; o resultado nao faz nenhum dos dois
+              emocao ê¢â¬â respeite a funcao de cada um. Querer que um plano so estabeleca o mundo <em>e</em>
+              entregue a lagrima e pedir que ele faêÂ§a dois trabalhos opostos; o resultado nao faz nenhum dos dois
               bem. Atribua uma tarefa por plano, e a sequencia ganha clareza.</p>
 <h3 class="sub">A pergunta que escolhe o plano por voce</h3>
-<p data-ARCKHÉ-block="m4-3-t4-p3">Quando bater a duvida sobre qual plano usar, faca uma unica pergunta:
-              <em>o que e mais importante agora â€” a localizacao e a acao, ou o rosto e a emocao?</em> Se o
+<p data-ARCKHê-block="m4-3-t4-p3">Quando bater a duvida sobre qual plano usar, faca uma unica pergunta:
+              <em>o que e mais importante agora ê¢â¬â a localizacao e a acao, ou o rosto e a emocao?</em> Se o
               que importa e o espaco, a escala, o ambiente ou a acao, va de plano amplo (establishing, wide ou
               medium wide). Se o que importa e o rosto, a emocao, a decisao interna ou a reacao, va de plano
               fechado (medio para perto, close). Se for uma conversa comum, sem emocao forte nem circunstancia
-              epica, fique no medium shot neutro. E se um pequeno detalhe entra em cena e <em>vira o enredo</em> â€”
-              um botao, um simbolo, uma rachadura, um toque â€”, voce precisa de um extreme close-up.</p>
+              epica, fique no medium shot neutro. E se um pequeno detalhe entra em cena e <em>vira o enredo</em> ê¢â¬â
+              um botao, um simbolo, uma rachadura, um toque ê¢â¬â, voce precisa de um extreme close-up.</p>
 </div>
 <!-- figura 4: a curva amplo->perto -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 4</span> Â· A regra de ouro: a cena <b>caminha</b> do amplo ao close</figcaption>
+<figcaption><span class="fig-n">Fig. 4</span> êÂ· A regra de ouro: a cena <b>caminha</b> do amplo ao close</figcaption>
 <svg aria-label="Diagrama de progressao: cinco quadros em sequencia, do establishing ao extreme close-up, com a atencao subindo e a pergunta mudando de onde estamos para como se sente." class="diagram" role="img" viewbox="0 0 720 198">
 <line class="rule-stroke" stroke-width="1" x1="40" x2="700" y1="150" y2="150"></line>
 <!-- 5 marcos -->
@@ -510,8 +510,8 @@
 <text x="473" y="170">close</text>
 <text class="accent" x="589" y="170">ext. close</text>
 </g>
-<text class="faint" font-family="Source Serif 4, serif" font-size="11" font-style="italic" x="120" y="32">â€œonde estamos?â€</text>
-<text class="ink" font-family="Source Serif 4, serif" font-size="11" font-style="italic" text-anchor="end" x="600" y="32">â€œcomo se sente?â€</text>
+<text class="faint" font-family="Source Serif 4, serif" font-size="11" font-style="italic" x="120" y="32">ê¢â¬Åonde estamos?ê¢â¬Â</text>
+<text class="ink" font-family="Source Serif 4, serif" font-size="11" font-style="italic" text-anchor="end" x="600" y="32">ê¢â¬Åcomo se sente?ê¢â¬Â</text>
 <path class="accent-stroke" d="M70 26 L660 26" fill="none" opacity="0.7" stroke-dasharray="2 5" stroke-width="1.2"></path>
 </svg>
 </figure>
@@ -522,49 +522,49 @@
 <details>
 <summary>Ver uma resposta possivel</summary>
 <p class="answer">O <strong>medium shot</strong> neutro. Para uma conversa comum, sem emocao forte
-                nem circunstancia epica, ele e o cavalo de batalha que â€œraramente falhaâ€: perto o
+                nem circunstancia epica, ele e o cavalo de batalha que ê¢â¬Åraramente falhaê¢â¬Â: perto o
                 bastante para ler o rosto, longe o bastante para a linguagem corporal. Depois, voce <em>adiciona</em>
                 um close para a emocao mais forte e, se preciso, um wide para reestabelecer o espaco.</p>
 </details>
 </div>
 </section>
 <!-- ============================= SECAO 5 ============================= -->
-<section data-ARCKHÉ-module="4-3" data-ARCKHÉ-topic="modulo-4-3#topico-5" data-ARCKHÉ-track="4" id="topico-5">
+<section data-ARCKHê-module="4-3" data-ARCKHê-topic="modulo-4-3#topico-5" data-ARCKHê-track="4" id="topico-5">
 <div class="section-mark">
-<span class="where">Secao 5 de 5</span><span>Â·</span><span>Continuidade</span>
+<span class="where">Secao 5 de 5</span><span>êÂ·</span><span>Continuidade</span>
 </div>
 <h2 class="head"><span class="num">5.</span>Eyeline e a regra dos 180 graus</h2>
 <div class="prose">
-<p class="lede" data-ARCKHÉ-block="m4-3-t5-p1">Escolher bons planos nao adianta se, ao corta-los juntos,
-              o espectador se perde no espaco. Duas regras de continuidade guardam essa coerencia â€” e ambas
+<p class="lede" data-ARCKHê-block="m4-3-t5-p1">Escolher bons planos nao adianta se, ao corta-los juntos,
+              o espectador se perde no espaco. Duas regras de continuidade guardam essa coerencia ê¢â¬â e ambas
               importam ainda mais com IA, porque o gerador nao tem nocao de geografia e precisa que voce a
-              imponha. A primeira e a <span class="dfn"><details class="dfn"><summary>linha de olhar</summary><span class="body"><b>Linha de olhar</b> (eyeline) e a direcao para onde um personagem olha. Se ele olha para fora do quadro a direita, o que ele ve deve estar a esquerda no plano seguinte â€” assim os dois planos â€œse olhamâ€ e o publico entende que estao no mesmo espaco.</span></details></span>:
+              imponha. A primeira e a <span class="dfn"><details class="dfn"><summary>linha de olhar</summary><span class="body"><b>Linha de olhar</b> (eyeline) e a direcao para onde um personagem olha. Se ele olha para fora do quadro a direita, o que ele ve deve estar a esquerda no plano seguinte ê¢â¬â assim os dois planos ê¢â¬Åse olhamê¢â¬Â e o publico entende que estao no mesmo espaco.</span></details></span>:
               a direcao para onde o personagem olha.</p>
-<p data-ARCKHÉ-block="m4-3-t5-p2">A regra do <em>eyeline</em> e intuitiva quando dita em voz alta: se um
+<p data-ARCKHê-block="m4-3-t5-p2">A regra do <em>eyeline</em> e intuitiva quando dita em voz alta: se um
               personagem olha para a direita, fora do quadro, o objeto ou a pessoa que ele observa deve aparecer a
-              esquerda no plano seguinte â€” como se os dois planos se olhassem. Quando o eyeline bate, o
+              esquerda no plano seguinte ê¢â¬â como se os dois planos se olhassem. Quando o eyeline bate, o
               cerebro costura os dois quadros num espaco unico, mesmo que tenham sido gerados separadamente.
-              Quando nao bate â€” os dois olhando para o mesmo lado â€”, parece que se ignoram, e a cena
-              desorienta. Em prompts de IA, dizer explicitamente â€œela olha para fora do quadro, a
-              direitaâ€ e â€œele entra pela esquerda, retribuindo o olharâ€ salva a continuidade.</p>
-<h3 class="sub">A regra dos 180 graus â€” uma linha imaginaria</h3>
-<p data-ARCKHÉ-block="m4-3-t5-p3">A <strong>regra dos 180Â°</strong> e a irma geografica do eyeline.
+              Quando nao bate ê¢â¬â os dois olhando para o mesmo lado ê¢â¬â, parece que se ignoram, e a cena
+              desorienta. Em prompts de IA, dizer explicitamente ê¢â¬Åela olha para fora do quadro, a
+              direitaê¢â¬Â e ê¢â¬Åele entra pela esquerda, retribuindo o olharê¢â¬Â salva a continuidade.</p>
+<h3 class="sub">A regra dos 180 graus ê¢â¬â uma linha imaginaria</h3>
+<p data-ARCKHê-block="m4-3-t5-p3">A <strong>regra dos 180êÂ°</strong> e a irma geografica do eyeline.
               Imagine uma linha invisivel ligando dois personagens em cena; a camera deve permanecer sempre do
               <em>mesmo lado</em> dessa linha. Enquanto ela respeita esse semicirculo, as posicoes se mantem
               coerentes: quem estava a esquerda continua a esquerda, quem estava a direita continua a direita.
               Se a camera <em>cruza a linha</em>, as posicoes se invertem de um corte para o outro, e o publico
-              sente â€” sem saber por que â€” que algo ficou errado, como se os personagens tivessem
+              sente ê¢â¬â sem saber por que ê¢â¬â que algo ficou errado, como se os personagens tivessem
               trocado de lugar magicamente.<span class="sidenote-ref">4</span></p>
-<p data-ARCKHÉ-block="m4-3-t5-p4">Guarde a aula numa frase: <em>a distancia escolhe a emocao, e a
-              continuidade â€” eyeline e 180Â° â€” mantem o espaco crivel.</em> Voce ja tem, agora, os
+<p data-ARCKHê-block="m4-3-t5-p4">Guarde a aula numa frase: <em>a distancia escolhe a emocao, e a
+              continuidade ê¢â¬â eyeline e 180êÂ° ê¢â¬â mantem o espaco crivel.</em> Voce ja tem, agora, os
               tres verbos da linguagem de camera: o que ela <strong>faz</strong> (movimento, 4.2), de que
               <strong>distancia</strong> observa (planos, esta aula) e como manter tudo coerente. A proxima e a
-              ultima aula da trilha junta esse vocabulario inteiro e o escreve dentro de um gerador de verdade â€”
-              o Seedance â€” com storyboard, trava de identidade e estrutura em YAML.</p>
+              ultima aula da trilha junta esse vocabulario inteiro e o escreve dentro de um gerador de verdade ê¢â¬â
+              o Seedance ê¢â¬â com storyboard, trava de identidade e estrutura em YAML.</p>
 </div>
 <!-- figura 5: a regra dos 180 graus -->
 <figure class="figure">
-<figcaption><span class="fig-n">Fig. 5</span> Â· A <b>linha dos 180Â°</b>: fique de um lado, e o espaco se mantem</figcaption>
+<figcaption><span class="fig-n">Fig. 5</span> êÂ· A <b>linha dos 180êÂ°</b>: fique de um lado, e o espaco se mantem</figcaption>
 <svg aria-label="Diagrama: dois personagens A e B ligados por uma linha; do lado permitido as cameras mantem A a esquerda e B a direita; uma camera que cruza a linha inverte as posicoes e e marcada como erro." class="diagram" role="img" viewbox="0 0 720 200">
 <!-- a linha de acao -->
 <line class="rule-stroke" stroke-dasharray="5 4" stroke-width="1.3" x1="230" x2="490" y1="70" y2="70"></line>
@@ -595,13 +595,13 @@
 <p class="intro">Sem nota, sem placar. Responda de cabeca, depois revele para comparar.</p>
 <details class="q-item">
 <summary><span class="qn">01</span><span>Que pergunta cada lado da escala de planos responde?</span><span class="reveal">Revelar</span></summary>
-<div class="ans"><p>Planos amplos respondem <em>â€œonde estamos?â€</em> â€” contexto,
-              geografia, escala. Planos fechados respondem <em>â€œcomo se sente?â€</em> â€” reacao,
+<div class="ans"><p>Planos amplos respondem <em>ê¢â¬Åonde estamos?ê¢â¬Â</em> ê¢â¬â contexto,
+              geografia, escala. Planos fechados respondem <em>ê¢â¬Åcomo se sente?ê¢â¬Â</em> ê¢â¬â reacao,
               emocao, decisao. E o extreme close-up revela um detalhe que pode mudar a historia. A distancia, por
               si so, escolhe entre contexto e emocao.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">02</span><span>Por que â€œquanto mais fechado o plano, menos o publico desvia o olharâ€?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">02</span><span>Por que ê¢â¬Åquanto mais fechado o plano, menos o publico desvia o olharê¢â¬Â?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Porque o close <em>preenche</em> o quadro com o rosto: nao sobra para onde o olho
               fugir. O plano amplo deixa o olho passear pelo cenario; o fechado prende a atencao. Por isso a cena
               caminha do amplo (solta o olhar) ao close (captura-o) no momento decisivo.</p></div>
@@ -609,44 +609,44 @@
 <details class="q-item">
 <summary><span class="qn">03</span><span>Qual a regra de ouro do encadeamento de planos?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Comece amplo para estabelecer o mundo, mova para o medio na acao, feche para a
-              emocao â€” e, no momento crucial, um extreme close-up num detalhe. Do <em>onde estamos</em> ao
-              <em>como se sente</em>. E uma emocao por plano: amplo da contexto, close da emocao; nao peÃ§a os dois
+              emocao ê¢â¬â e, no momento crucial, um extreme close-up num detalhe. Do <em>onde estamos</em> ao
+              <em>como se sente</em>. E uma emocao por plano: amplo da contexto, close da emocao; nao peêÂ§a os dois
               ao mesmo quadro.</p></div>
 </details>
 <details class="q-item">
-<summary><span class="qn">04</span><span>O que a regra dos 180Â° protege, e o que acontece se a camera cruza a linha?</span><span class="reveal">Revelar</span></summary>
+<summary><span class="qn">04</span><span>O que a regra dos 180êÂ° protege, e o que acontece se a camera cruza a linha?</span><span class="reveal">Revelar</span></summary>
 <div class="ans"><p>Protege a <em>geografia</em> da cena: uma linha imaginaria liga dois personagens e
               a camera fica sempre do mesmo lado dela, mantendo quem esta a esquerda a esquerda. Se cruza a linha,
-              as posicoes se invertem de um corte para o outro â€” o publico sente que algo ficou errado, como
+              as posicoes se invertem de um corte para o outro ê¢â¬â o publico sente que algo ficou errado, como
               se os personagens trocassem de lugar. O eyeline e a versao do olhar dessa mesma coerencia.</p></div>
 </details>
 </section>
 <!-- ============================= MINHA JORNADA ============================= -->
-<section aria-label="Minha jornada â€” progresso consolidado" class="journey">
+<section aria-label="Minha jornada ê¢â¬â progresso consolidado" class="journey">
 <div class="journey-top">
-<h2><span class="ico">â§</span> Minha jornada</h2>
-<button class="journey-cta" data-ARCKHÉ-journey-open="" type="button">Abrir caderno â†’</button>
+<h2><span class="ico">ê¢ÂÂ§</span> Minha jornada</h2>
+<button class="journey-cta" data-ARCKHê-journey-open="" type="button">Abrir caderno ê¢â â</button>
 </div>
 <div class="journey-body">
 <div class="jstat">
 <div class="k">Neste modulo</div>
-<div class="v" data-ARCKHÉ-meter="modulo:4-3">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="modulo:4-3">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 5</span> <span class="nm">secoes lidas</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">Na trilha 4</div>
-<div class="v" data-ARCKHÉ-meter="trilha:4">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="trilha:4">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 19</span> <span class="nm">topicos</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 <div class="jstat">
 <div class="k">No curso</div>
-<div class="v" data-ARCKHÉ-meter="curso">
-<span data-ARCKHÉ-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
-<div class="progress-line"><span class="progress-line__fill" data-ARCKHÉ-meter-fill=""></span></div>
+<div class="v" data-ARCKHê-meter="curso">
+<span data-ARCKHê-meter-frac=""><strong>0</strong> de 138</span> <span class="nm">percorrido</span>
+<div class="progress-line"><span class="progress-line__fill" data-ARCKHê-meter-fill=""></span></div>
 </div>
 </div>
 </div>
@@ -655,27 +655,27 @@
 <div class="nextup">
 <div class="txt">
 <div class="k">Continuar</div>
-<div class="t">Modulo 4.4 â€” Video CARCKHÉtografico no Seedance 2</div>
+<div class="t">Modulo 4.4 ê¢â¬â Video CARCKHêtografico no Seedance 2</div>
 </div>
-<a class="go" href="modulo-4-4.html">Proximo â†’</a>
+<a class="go" href="modulo-4-4.html">Proximo ê¢â â</a>
 </div>
 </article>
 <!-- ============================= TRILHO DE MARGEM ============================= -->
 <aside aria-label="Margem: notas de autor, definicoes e seu painel de aprendizado" class="margin-rail">
 <!-- ---- SECAO 1 ---- -->
-<aside data-ARCKHÉ-rail="modulo-4-3#topico-1"></aside>
+<aside data-ARCKHê-rail="modulo-4-3#topico-1"></aside>
 <aside class="sidenote" data-kind="fonte">
 <div class="tag">Fonte</div>
-          Lesson 12 â€” <i>Shot Sizes and Framing</i> (Block 4). A tese: <i>â€œShot size is not just
-          camera distance. It is an emotional and narrative decision.â€</i>
+          Lesson 12 ê¢â¬â <i>Shot Sizes and Framing</i> (Block 4). A tese: <i>ê¢â¬ÅShot size is not just
+          camera distance. It is an emotional and narrative decision.ê¢â¬Â</i>
 </aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Tamanho de plano (shot size).</b> A distancia aparente entre camera e sujeito. Controla tres coisas:
-          contextoÂ ouÂ emocao, ritmo, e atencao â€” quanto mais fechado, menos o olho escapa.
+          contextoêÂ ouêÂ emocao, ritmo, e atencao ê¢â¬â quanto mais fechado, menos o olho escapa.
         </aside>
 <!-- ---- SECAO 2 ---- -->
-<aside data-ARCKHÉ-rail="modulo-4-3#topico-2"></aside>
+<aside data-ARCKHê-rail="modulo-4-3#topico-2"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Establishing vs wide.</b> O establishing e sobre <i>lugar</i> (geografia, clima, escala do mundo);
@@ -683,14 +683,14 @@
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          O angulo baixo no wide nao e detalhe: ele faz a nave â€œpairar como um gigante adormecidoâ€.
-          Sem humano no quadro, o proprio objeto vira o personagem â€” uma forca da natureza.
+          O angulo baixo no wide nao e detalhe: ele faz a nave ê¢â¬Åpairar como um gigante adormecidoê¢â¬Â.
+          Sem humano no quadro, o proprio objeto vira o personagem ê¢â¬â uma forca da natureza.
         </aside>
 <!-- ---- SECAO 3 ---- -->
-<aside data-ARCKHÉ-rail="modulo-4-3#topico-3"></aside>
+<aside data-ARCKHê-rail="modulo-4-3#topico-3"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
-<b>Medium shot.</b> Da cintura para cima, o plano mais neutro â€” imita como vemos pessoas no dia
+<b>Medium shot.</b> Da cintura para cima, o plano mais neutro ê¢â¬â imita como vemos pessoas no dia
           a dia. A regra de socorro: <i>se estiver perdido, comece com um medium shot. Raramente falha.</i>
 </aside>
 <aside class="sidenote" data-kind="fundo">
@@ -699,37 +699,37 @@
           minusculo carrega o mundo inteiro. E onde o som (batimento que acelera) vira metade da emocao.
         </aside>
 <!-- ---- SECAO 4 ---- -->
-<aside data-ARCKHÉ-rail="modulo-4-3#topico-4"></aside>
+<aside data-ARCKHê-rail="modulo-4-3#topico-4"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Um plano, uma emocao.</b> Cada plano faz um trabalho: amplo da contexto, close da emocao. Pedir os
-          dois ao mesmo quadro e pedir tarefas opostas â€” e nenhuma sai bem.
+          dois ao mesmo quadro e pedir tarefas opostas ê¢â¬â e nenhuma sai bem.
         </aside>
 <aside class="sidenote" data-kind="fundo">
 <div class="tag">Indo mais fundo</div>
-          A pergunta-bussola: <i>o que importa mais agora â€” localizacao/acao ou rosto/emocao?</i>
-          Localizacao â†’ amplo. Emocao â†’ fechado. Conversa comum â†’ medio. Detalhe que vira enredo
-          â†’ extreme close.
+          A pergunta-bussola: <i>o que importa mais agora ê¢â¬â localizacao/acao ou rosto/emocao?</i>
+          Localizacao ê¢â â amplo. Emocao ê¢â â fechado. Conversa comum ê¢â â medio. Detalhe que vira enredo
+          ê¢â â extreme close.
         </aside>
 <!-- ---- SECAO 5 ---- -->
-<aside data-ARCKHÉ-rail="modulo-4-3#topico-5"></aside>
+<aside data-ARCKHê-rail="modulo-4-3#topico-5"></aside>
 <aside class="sidenote" data-kind="definicao">
 <div class="tag">Definicao</div>
 <b>Eyeline.</b> A direcao do olhar de um personagem. Se ele olha a direita, o que ve aparece a esquerda
-          no proximo plano â€” os planos â€œse olhamâ€ e o espaco se costura.
+          no proximo plano ê¢â¬â os planos ê¢â¬Åse olhamê¢â¬Â e o espaco se costura.
         </aside>
 <aside class="sidenote" data-kind="fundo" style="margin-bottom:0">
 <div class="tag">Indo mais fundo</div>
-          Na IA, eyeline e regra dos 180Â° precisam ser <i>ditos</i> no prompt â€” o gerador nao tem
-          geografia propria. â€œEla olha a direita; ele entra pela esquerdaâ€ salva a continuidade.
+          Na IA, eyeline e regra dos 180êÂ° precisam ser <i>ditos</i> no prompt ê¢â¬â o gerador nao tem
+          geografia propria. ê¢â¬ÅEla olha a direita; ele entra pela esquerdaê¢â¬Â salva a continuidade.
         </aside>
 </aside>
 </div>
 </main>
 <!-- COLOFAO -->
 <footer class="colophon">
-<span>ARCKHÉ AI Â· Caderno do aluno</span>
-<span class="pg">Modulo 4.3 â€” folio iii</span>
+<span>ARCKHê AI êÂ· Caderno do aluno</span>
+<span class="pg">Modulo 4.3 ê¢â¬â folio iii</span>
 <span>Composto em Spectral &amp; Source Serif 4</span>
 </footer>
 <!-- ===================================================================
@@ -738,8 +738,8 @@
        =================================================================== -->
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') {
-      window.ARCKHÉ.init();
+    if (window.ARCKHê && typeof window.ARCKHê.init === 'function') {
+      window.ARCKHê.init();
     }
   </script>
 </body>
